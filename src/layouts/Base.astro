@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = 'The Observatory — the path to AGI',
-  description = 'A public epistemic instrument watching the emergence — or non-emergence — of machine general intelligence. Sources, claims, forecasts, revisions. A record that can be inspected, not an oracle.',
+  title = 'pathtoAGI — the Observatory',
+  description = 'pathtoAGI — the Observatory: a public epistemic instrument watching the emergence — or non-emergence — of machine general intelligence. Sources, claims, forecasts, revisions. A record that can be inspected, not an oracle.',
 } = Astro.props;
 
 const nav = [
@@ -45,11 +45,23 @@ const isActive = (href: string) => path === href || path.startsWith(href);
       <nav
         class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-3.5"
       >
-        <a href="/" class="group flex items-center gap-2.5 no-underline">
-          <span class="pulse" aria-hidden="true"></span>
-          <span class="mono text-sm tracking-wide" style="color: var(--color-ink);"
-            >the&nbsp;observatory</span
+        <a
+          href="/"
+          class="group flex items-baseline gap-2.5 no-underline"
+          aria-label="pathtoAGI — the Observatory"
+        >
+          <span class="pulse self-center" aria-hidden="true"></span>
+          <span class="mono text-sm tracking-wide">
+            <span style="color: var(--color-ink);">pathto</span><span
+              style="color: var(--color-accent);">AGI</span
+            >
+          </span>
+          <span
+            class="hidden text-xs sm:inline"
+            style="color: var(--color-faint);"
           >
+            the&nbsp;observatory
+          </span>
         </a>
         <ul class="flex items-center gap-0.5 text-sm">
           {

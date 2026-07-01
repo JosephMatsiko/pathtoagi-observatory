@@ -1,6 +1,6 @@
-# The Observatory
+# pathtoAGI — the Observatory
 
-A lean, inspectable public record tracking the path to AGI — a clean-room rebuild of the original *Path to AGI* Observatory, kept small on purpose so it can be regrown deliberately.
+A lean, inspectable public record tracking the path to AGI — a clean-room rebuild of the *Path to AGI* Observatory, kept small on purpose so it can be regrown deliberately.
 
 The central question it exists to track:
 
