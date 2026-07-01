@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-07-01",
+    "kind": "build",
+    "title": "Command Center — separate autonomous operator",
+    "detail": "Operation split into a separate, linked app: the Command Center, an autonomous builder substrate that runs the maintenance cycle on Claude Max, re-gates every change (check:record + build), and ships to production on its own. Full autonomy across the board, bounded by deterministic gates and a pause kill-switch — not human review. It holds commit/deploy power, so it stays local."
+  },
+  {
+    "date": "2026-07-01",
     "kind": "method",
     "title": "Control room + bounded self-improvement",
     "detail": "Added /operate — a space to observe and run the loop (live calibration, resolution queue, run history) — and a method-health surface where the instrument tracks where its own probes, axes, and calibration are decaying and names the next improvement. The honest form of recursive self-improvement: methods sharpen under evidence and review; the system does not go sovereign. Runner set to Claude Max via Claude Code."

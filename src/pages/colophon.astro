@@ -5,7 +5,7 @@ import Base from '../layouts/Base.astro';
 // unturned stones is itself part of the discipline.
 const negativeSpace = [
   'Multimodal ingestion — the instrument reads text and numbers, not yet video, audio, deployments, or markets as first-class evidence.',
-  'Live source watch — a maintenance loop is designed (deterministic gates + an agent runbook, see MAINTENANCE.md) but not yet scheduled. Evidence is still added by hand, so the record can go stale between runs.',
+  'Live source watch — the Command Center runs the maintenance cycle autonomously on a schedule, but it still relies on the agent noticing new signal each run; there is no dedicated crawler pulling and preserving sources before links rot.',
   'Forecast resolution — forecasts resolve and carry a Brier score, but the resolutions are self-adjudicated. None has been graded by an independent party.',
   'Non-physics frame probes — the suite is physics-only (v0.1); the contamination floor stays high until biology and economics probes exist.',
   'Independent scoring — the FCS runs described are dry runs; none has been scored by a party other than the Observatory.',

@@ -54,7 +54,7 @@ const toImprove = METHOD_HEALTH.filter((m) => m.status === 'act').length;
         <div>
           <p class="eyebrow">Loop state</p>
           <p class="serif text-lg" style="color: var(--color-ink);">
-            Designed & gated · schedule off · runs on Claude Max
+            Operated by the Command Center · autonomous · gated · on Claude Max
           </p>
         </div>
       </div>
@@ -289,11 +289,14 @@ const toImprove = METHOD_HEALTH.filter((m) => m.status === 'act').length;
         &gt; "Run a maintenance cycle. Follow MAINTENANCE.md."
       </p>
     </div>
-    <p class="mt-4 text-sm" style="color: var(--color-muted);">
-      To run unattended, a scheduled Claude Code routine fires the same
-      instruction on a cadence. The loop opens changes for review — it never
-      merges itself. See <a href="/colophon/" class="link-accent">the colophon</a>
-      and <span class="mono">MAINTENANCE.md</span>.
+    <p class="mt-4 max-w-2xl text-sm" style="color: var(--color-muted);">
+      This page is the public window. The actual operating is done by a separate,
+      linked app — <span class="mono" style="color: var(--color-ink-dim);">the
+      Command Center</span> — an autonomous builder substrate that runs the cycle
+      on Claude Max, re-gates every change, and ships to production on its own.
+      It holds commit and deploy power, so it stays local, never public. The
+      deterministic gate is its safety boundary; a pause halts it. See
+      <span class="mono">MAINTENANCE.md</span>.
     </p>
   </section>
 </Base>
