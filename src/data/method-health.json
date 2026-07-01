@@ -9,9 +9,9 @@
   {
     "id": "calibration",
     "method": "Forecast calibration (Brier)",
-    "reading": "Mean Brier 0.046 over 3 resolved — better than baseline, but the sample is far too small to trust.",
-    "status": "watch",
-    "nextImprovement": "Resolve more forecasts before claiming calibration; feed the running Brier back into how confident new forecasts are allowed to be."
+    "reading": "Brier record is honestly empty: the three seeded resolutions were retracted from calibration as backfilled (authored after resolution). Calibration is unclaimed until live forecasts resolve.",
+    "status": "act",
+    "nextImprovement": "Let open forecasts reach their horizons and resolve them live; only live resolutions enter the Brier score."
   },
   {
     "id": "adversarial-mesh",

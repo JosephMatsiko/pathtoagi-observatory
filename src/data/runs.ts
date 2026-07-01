@@ -2,7 +2,7 @@
 // scripts/record-run.mjs so the Control Room can show the loop working.
 import raw from './runs.json';
 
-export type RunTrigger = 'genesis' | 'manual' | 'scheduled';
+export type RunTrigger = 'genesis' | 'manual' | 'scheduled' | 'backfill';
 
 export interface Run {
   id: string;

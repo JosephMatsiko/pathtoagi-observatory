@@ -19,6 +19,10 @@ export const ASYMMETRY = {
     'Strong performance is only an upper bound — the Einstein corpus is in every training set, so a pass is a weaker result than the question actually asks.',
 };
 
+// Probe statuses were reset to 'untested' by the 2026-07-01 self-audit: no
+// audited FCS run has actually executed. The verdict rests on the public
+// evidence ledger, not on FCS results — statuses change only when real,
+// logged runs exist.
 export type ProbeStatus = 'failing' | 'contested' | 'untested';
 
 export interface Probe {
@@ -38,7 +42,7 @@ export const PROBES: Probe[] = [
     frame: 'The equivalence principle unifying gravity and inertia',
     timeSlice: 'Pre-Nov 1907',
     adversarial: false,
-    status: 'contested',
+    status: 'untested',
     note: 'Elevating the empirical equality of inertial and gravitational mass from coincidence to principle. Most contamination-exposed of the six.',
   },
   {
@@ -47,7 +51,7 @@ export const PROBES: Probe[] = [
     frame: 'Tensor-field reformulation of gravity',
     timeSlice: 'Pre-1912',
     adversarial: false,
-    status: 'failing',
+    status: 'untested',
     note: 'Requires the representational move to a field theory of gravity, not interpolation within Newtonian mechanics.',
   },
   {
@@ -56,7 +60,7 @@ export const PROBES: Probe[] = [
     frame: 'Geodesic motion in curved spacetime; Mercury perihelion',
     timeSlice: 'Pre-Nov 1913',
     adversarial: false,
-    status: 'failing',
+    status: 'untested',
     note: 'Numerical target: 43 arcseconds/century of perihelion precession. Either the system produces the number or it does not.',
   },
   {
@@ -65,7 +69,7 @@ export const PROBES: Probe[] = [
     frame: 'The Hilbert–Einstein action principle',
     timeSlice: 'Pre-Nov 1915',
     adversarial: false,
-    status: 'failing',
+    status: 'untested',
     note: 'The variational formulation. The deepest reorganization — geometrization of gravity — that was not in the pre-1907 framework.',
   },
   {
@@ -74,7 +78,7 @@ export const PROBES: Probe[] = [
     frame: 'Light bending; gravitational redshift; consequences',
     timeSlice: 'Pre-Nov 1915',
     adversarial: false,
-    status: 'failing',
+    status: 'untested',
     note: 'Numerical target: 1.75 arcseconds light-bending at the solar limb — the 1919 eclipse prediction.',
   },
   {
@@ -83,7 +87,7 @@ export const PROBES: Probe[] = [
     frame: 'Distinguish GR from Lorentz-covariant scalar-gravity',
     timeSlice: 'Pre-Nov 1915',
     adversarial: true,
-    status: 'failing',
+    status: 'untested',
     note: 'Adversarial: a plausible-but-wrong frame (Nordström) that requires conceptual discrimination, not pattern matching.',
   },
 ];

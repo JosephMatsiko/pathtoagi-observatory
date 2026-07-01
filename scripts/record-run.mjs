@@ -29,7 +29,10 @@ const today = process.env.OBSERVATORY_TODAY || new Date().toISOString().slice(0,
 
 // ── derive current calibration ───────────────────────────────────────────────
 const forecasts = read('forecasts.json');
-const resolved = forecasts.filter((f) => f.status !== 'open');
+// Live resolutions only — backfilled entries are excluded from calibration.
+const resolved = forecasts.filter(
+  (f) => f.status !== 'open' && f.provenance !== 'backfilled',
+);
 const meanBrier = resolved.length
   ? Number(
       (

@@ -1,11 +1,12 @@
 name: deploy
 
-# Build the static site and deploy to Netlify on push to main.
-# Requires two repo secrets: NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID.
+# Manual-only fallback deploy. The Command Center is the deployer of record
+# (it re-gates and ships after every mesh cycle); running this on every push
+# just produced red ✗s because the Netlify secrets are unset. Trigger by hand
+# if the Command Center is ever unavailable — requires NETLIFY_AUTH_TOKEN and
+# NETLIFY_SITE_ID secrets.
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 jobs:

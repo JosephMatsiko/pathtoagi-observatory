@@ -48,6 +48,9 @@ for (const e of evidence) {
   for (const k of ['source', 'sourceUrl', 'signal', 'implication', 'bounded', 'nextNeeded'])
     if (!nonEmpty(e[k])) err(w, `missing ${k}`);
   if (!EV_CLASSES.has(e.class)) err(w, `invalid class "${e.class}"`);
+  // Every evidence record must cite a real, external source.
+  if (!/^https?:\/\//.test(e.sourceUrl ?? ''))
+    err(w, 'sourceUrl must be an http(s) URL — a record without a real source is not evidence');
   validTheories(e.theories, w);
   // Discipline: a single record never encodes a health promotion.
   if ('healthDelta' in e && e.healthDelta !== 0)
@@ -70,6 +73,8 @@ for (const f of forecasts) {
   if (!FC_STATUS.has(f.status)) err(w, `invalid status "${f.status}"`);
   if (f.status !== 'open' && !ISO.test(f.resolvedAt ?? ''))
     err(w, 'resolved forecast must have resolvedAt (YYYY-MM-DD)');
+  if ('provenance' in f && f.provenance !== 'backfilled')
+    err(w, `invalid provenance "${f.provenance}" (only "backfilled" is defined)`);
   validTheories(f.theories, w);
 }
 

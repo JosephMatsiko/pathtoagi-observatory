@@ -21,6 +21,10 @@ export interface Forecast {
   status: ForecastStatus;
   resolvedAt?: string;
   resolvedNote?: string;
+  // 'backfilled' = authored after its resolution date (2026-07-01 self-audit).
+  // Backfilled resolutions are shown on the record but excluded from
+  // calibration — a forecast you cannot lose is not a forecast.
+  provenance?: 'backfilled';
 }
 
 export const FORECASTS: Forecast[] = raw as Forecast[];
@@ -41,12 +45,17 @@ export function brierOf(f: Forecast): number | null {
   return (f.probability - o) ** 2;
 }
 
+// Calibration counts ONLY live resolutions — forecasts that were open on the
+// record before their outcome was known. Backfilled entries are excluded.
 export function calibration(forecasts: Forecast[]) {
-  const resolved = forecasts.filter((f) => outcomeOf(f) !== null);
-  const scores = resolved.map((f) => brierOf(f)!) as number[];
+  const live = forecasts.filter(
+    (f) => outcomeOf(f) !== null && f.provenance !== 'backfilled',
+  );
+  const scores = live.map((f) => brierOf(f)!) as number[];
   const mean =
     scores.length === 0
       ? null
       : scores.reduce((s, v) => s + v, 0) / scores.length;
-  return { resolvedCount: resolved.length, meanBrier: mean, baseline: 0.25 };
+  const backfilled = forecasts.filter((f) => f.provenance === 'backfilled').length;
+  return { resolvedCount: live.length, backfilled, meanBrier: mean, baseline: 0.25 };
 }

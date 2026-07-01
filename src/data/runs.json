@@ -30,7 +30,7 @@
   {
     "id": "run-2026-06-30-brier",
     "at": "2026-06-30",
-    "trigger": "manual",
+    "trigger": "backfill",
     "actor": "operator + Claude (Max)",
     "meanBrierAfter": 0.046,
     "gatePassed": true,
@@ -43,7 +43,7 @@
   {
     "id": "run-2026-06-24-gpt54",
     "at": "2026-06-24",
-    "trigger": "manual",
+    "trigger": "backfill",
     "actor": "operator + Claude (Max)",
     "meanBrierAfter": null,
     "gatePassed": true,

@@ -54,26 +54,16 @@ const theoryTags = (f: { theories: string[] }) =>
   <!-- Calibration panel -->
   <section class="mt-10 grid gap-4 sm:grid-cols-3">
     <div class="surface p-5">
-      <p class="eyebrow">Mean Brier · resolved</p>
+      <p class="eyebrow">Mean Brier · live resolutions</p>
       <p class="tabular mt-2 text-4xl" style="color: var(--color-affirm);">
         {cal.meanBrier !== null ? cal.meanBrier.toFixed(3) : '—'}
       </p>
       <p class="mt-1 text-sm" style="color: var(--color-muted);">
-        Lower is better. 0 is perfect; {cal.baseline.toFixed(2)} is the coin-flip
-        baseline; 1.0 is confidently wrong.
-      </p>
-    </div>
-    <div class="surface p-5">
-      <p class="eyebrow">Vs. baseline</p>
-      <p class="tabular mt-2 text-4xl" style="color: var(--color-ink);">
         {
-          cal.meanBrier !== null
-            ? `${Math.round((1 - cal.meanBrier / cal.baseline) * 100)}%`
-            : '—'
+          cal.meanBrier === null
+            ? 'Honestly empty: no forecast has resolved live yet. Calibration is unclaimed until one does.'
+            : `Lower is better. 0 is perfect; ${cal.baseline.toFixed(2)} is the coin-flip baseline.`
         }
-      </p>
-      <p class="mt-1 text-sm" style="color: var(--color-muted);">
-        Better than a coin flip, across {cal.resolvedCount} resolved forecasts.
       </p>
     </div>
     <div class="surface p-5">
@@ -84,8 +74,23 @@ const theoryTags = (f: { theories: string[] }) =>
         >
       </p>
       <p class="mt-1 text-sm" style="color: var(--color-muted);">
-        Resolved forecasts keep their original probability — the misses stay
-        counted.
+        Live-resolved forecasts will keep their original probability — the
+        misses stay counted.
+      </p>
+    </div>
+    <div
+      class="surface p-5"
+      style="border-color: color-mix(in oklab, hsl(34 96% 60%) 35%, var(--color-line));"
+    >
+      <p class="eyebrow" style="color: hsl(34 96% 60%);">Retraction · self-audit</p>
+      <p class="tabular mt-2 text-4xl" style="color: var(--color-ink);">
+        {cal.backfilled}<span class="text-lg" style="color: var(--color-faint);">
+          backfilled</span
+        >
+      </p>
+      <p class="mt-1 text-sm" style="color: var(--color-muted);">
+        Authored after their resolution dates — kept visible below, excluded
+        from calibration. <a href="/log/" class="link-accent">Disclosure →</a>
       </p>
     </div>
   </section>
@@ -118,7 +123,15 @@ const theoryTags = (f: { theories: string[] }) =>
                   >
                     {statusLabel[f.status]}
                   </span>
-                  {brier !== null && (
+                  {f.provenance === 'backfilled' && (
+                    <span
+                      class="mono mt-1 rounded px-1.5 py-0.5 text-[0.6rem] uppercase tracking-wider"
+                      style="background: var(--color-surface-2); color: hsl(34 96% 60%);"
+                    >
+                      backfilled · not scored
+                    </span>
+                  )}
+                  {brier !== null && f.provenance !== 'backfilled' && (
                     <span class="mono mt-1 text-[0.7rem]" style="color: var(--color-ink-dim);">
                       brier {brier.toFixed(3)}
                     </span>

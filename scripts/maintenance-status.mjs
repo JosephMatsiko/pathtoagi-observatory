@@ -24,8 +24,10 @@ const due = forecasts.filter(
   (f) => f.status === 'open' && f.horizonDate <= today,
 );
 
-// ── Calibration (Brier) ──────────────────────────────────────────────────────
-const resolved = forecasts.filter((f) => f.status !== 'open');
+// ── Calibration (Brier) — live resolutions only; backfilled are excluded ─────
+const resolved = forecasts.filter(
+  (f) => f.status !== 'open' && f.provenance !== 'backfilled',
+);
 const brier = (f) => (f.probability - (f.status === 'resolved-yes' ? 1 : 0)) ** 2;
 const meanBrier = resolved.length
   ? resolved.reduce((s, f) => s + brier(f), 0) / resolved.length

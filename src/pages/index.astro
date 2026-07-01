@@ -16,7 +16,6 @@ const leader = topTheories[0];
 const frontierMean =
   Object.values(FRONTIER_2026).reduce((s, v) => s + v, 0) /
   Object.values(FRONTIER_2026).length;
-const probesFailing = PROBES.filter((p) => p.status === 'failing').length;
 const recentEvidence = EVIDENCE.slice(0, 2);
 const liveForecast = FORECASTS.find((f) => f.id === 'fc-verdict-holds')!;
 ---
@@ -79,12 +78,13 @@ const liveForecast = FORECASTS.find((f) => f.id === 'fc-verdict-holds')!;
     <a href="/test/" class="surface-quiet block p-5 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
       <p class="eyebrow">Frame-construction probes</p>
       <p class="tabular mt-2 text-3xl" style="color: var(--color-verdict);">
-        {probesFailing}<span class="text-base" style="color: var(--color-faint);">
-          / {PROBES.length} failing</span
+        {PROBES.length}<span class="text-base" style="color: var(--color-faint);">
+          designed · 0 run</span
         >
       </p>
       <p class="mt-1 text-sm" style="color: var(--color-muted);">
-        The Einstein Test, operationalized into six falsifier-rich probes.
+        The Einstein Test, operationalized into six falsifier-rich probes —
+        untested until audited runs exist.
       </p>
     </a>
     <a href="/theories/" class="surface-quiet block p-5 no-underline transition-colors hover:bg-[var(--color-surface-2)]">

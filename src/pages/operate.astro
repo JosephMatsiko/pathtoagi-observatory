@@ -20,8 +20,11 @@ const evAge = lastEvidence === '—' ? Infinity : daysAgo(lastEvidence);
 const lastRun = [...RUNS].sort((a, b) => b.at.localeCompare(a.at))[0];
 const runs = [...RUNS].sort((a, b) => b.at.localeCompare(a.at));
 
-// Brier over resolved forecasts, oldest → newest, for the trend row.
-const resolvedSeries = FORECASTS.filter((f) => f.status !== 'open')
+// Brier over LIVE resolved forecasts, oldest → newest, for the trend row.
+// Backfilled resolutions (2026-07-01 self-audit) are excluded from scoring.
+const resolvedSeries = FORECASTS.filter(
+  (f) => f.status !== 'open' && f.provenance !== 'backfilled',
+)
   .sort((a, b) => (a.resolvedAt ?? '').localeCompare(b.resolvedAt ?? ''))
   .map((f) => ({ f, brier: brierOf(f)! }));
 
@@ -107,9 +110,17 @@ const toImprove = METHOD_HEALTH.filter((m) => m.status === 'act').length;
   <section class="mt-12">
     <h2 class="serif text-2xl">Calibration, resolved</h2>
     <p class="mt-1 text-sm" style="color: var(--color-muted);">
-      Each resolved forecast's Brier contribution — shorter is better. The misses
-      stay on the record.
+      Each live-resolved forecast's Brier contribution — shorter is better. The
+      misses stay on the record. Backfilled resolutions are excluded (2026-07-01
+      self-audit).
     </p>
+    {
+      resolvedSeries.length === 0 && (
+        <p class="mt-4 text-sm" style="color: var(--color-faint);">
+          Honestly empty — no forecast has resolved live yet.
+        </p>
+      )
+    }
     <ul class="mt-5 space-y-2.5">
       {
         resolvedSeries.map(({ f, brier }) => (

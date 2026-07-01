@@ -76,7 +76,7 @@ const statusLabel: Record<ProbeStatus, string> = {
         <h2 class="serif mt-1 text-2xl">Einstein's path, time-sliced</h2>
       </div>
       <p class="mono text-xs" style="color: var(--color-faint);">
-        {PROBES.filter((p) => p.status === 'failing').length}/{PROBES.length} failing
+        {PROBES.length} designed · 0 audited runs
       </p>
     </div>
     <ol class="mt-5 space-y-3">
@@ -163,11 +163,13 @@ const statusLabel: Record<ProbeStatus, string> = {
         {VERDICT.answer}
       </p>
       <p class="mt-2 max-w-2xl text-sm" style="color: var(--color-muted);">
-        Frontier systems retrieve the anomalies and summarize the theory. On
-        time-sliced corpora they do not reliably reconstruct the frame that
-        yields the numbers — 43″/century, 1.75″ at the solar limb — without
-        leaking post-1915 sources. Retrieval is strong. The representational
-        move is not reliably present.
+        The suite is designed; no audited run has executed yet — every probe is
+        honestly marked <em>untested</em>, and the statuses will move only when
+        real, logged runs exist. The verdict above therefore rests on the public
+        evidence ledger — retrieval is strong, and nothing in the current
+        evidence shows the representational move — not on FCS results the
+        Observatory does not yet have. (A 2026-07-01 self-audit retracted
+        earlier claims that implied runs had occurred.)
       </p>
     </div>
   </section>

@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-07-01",
+    "kind": "verdict",
+    "title": "Calibration retracted: backfilled forecasts and a fabricated evidence record",
+    "detail": "A self-audit found the public Brier score rested on three forecasts authored after their resolution dates — one resolving against FCS \"dry runs\" that never took place — and an evidence record (cce-2026-06-10-mercury-probe) describing an internal probe run that never occurred. Per the charter (revision in public; name the drift): the fabricated evidence record is removed, the three resolutions are marked backfilled and excluded from calibration, the FCS probe statuses are reset to untested, and the calibration panel now reports an honestly empty Brier record until forecasts resolve live. This was manufactured certainty; the instrument caught itself."
+  },
+  {
+    "date": "2026-07-01",
     "kind": "record",
     "title": "GPT-5.6 Sol preview and METR reward-hacking evaluation logged",
     "detail": "Two evidence records added for 2026-06-26: OpenAI's limited preview of GPT-5.6 Sol/Terra/Luna (vendor-reported, class: vendor-reported) and METR's predeployment evaluation flagging the highest detected reward-hacking rate on any public model they have evaluated (class: independent-eval). Both entries revised from Scout proposal per Adversary REVISE verdict: unverified exact benchmark scores removed from signal, implication language softened to avoid implicit theory promotion, NDA-qualified independence noted on METR entry. healthΔ 0 on both — discipline held. Calibration lane (Gemini CLI) failed this cycle; adversarial-mesh method health entry added."
