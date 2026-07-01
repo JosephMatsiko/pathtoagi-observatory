@@ -1,0 +1,116 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'The Observatory — the path to AGI',
+  description = 'A public epistemic instrument watching the emergence — or non-emergence — of machine general intelligence. Sources, claims, forecasts, revisions. A record that can be inspected, not an oracle.',
+} = Astro.props;
+
+const nav = [
+  { href: '/frontier/', label: 'Frontier' },
+  { href: '/test/', label: 'The Test' },
+  { href: '/theories/', label: 'Theories' },
+  { href: '/evidence/', label: 'Evidence' },
+  { href: '/forecasts/', label: 'Forecasts' },
+];
+
+const path = Astro.url.pathname;
+const isActive = (href: string) => path === href || path.startsWith(href);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <header
+      class="sticky top-0 z-20 border-b hairline"
+      style="background: color-mix(in oklab, var(--color-void) 82%, transparent); backdrop-filter: blur(12px);"
+    >
+      <nav
+        class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-3.5"
+      >
+        <a href="/" class="group flex items-center gap-2.5 no-underline">
+          <span class="pulse" aria-hidden="true"></span>
+          <span class="mono text-sm tracking-wide" style="color: var(--color-ink);"
+            >the&nbsp;observatory</span
+          >
+        </a>
+        <ul class="flex items-center gap-0.5 text-sm">
+          {
+            nav.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="rounded-md px-2.5 py-1.5 no-underline transition-colors"
+                  style={
+                    isActive(item.href)
+                      ? 'color: var(--color-ink); background: var(--color-surface-2);'
+                      : 'color: var(--color-muted);'
+                  }
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-5 py-14 sm:py-20">
+      <slot />
+    </main>
+
+    <footer class="border-t hairline">
+      <div class="mx-auto max-w-5xl px-5 py-10">
+        <div class="flex flex-wrap items-start justify-between gap-6">
+          <div class="max-w-sm">
+            <p class="serif text-lg" style="color: var(--color-ink);">
+              A record that can be inspected — not an oracle.
+            </p>
+            <p class="mt-2 text-sm" style="color: var(--color-muted);">
+              Authority comes from the inspectable quality of the record:
+              sources, claims, forecasts, revisions, and the courage to name its
+              own drift.
+            </p>
+          </div>
+          <div class="flex gap-10 text-sm">
+            <div class="flex flex-col gap-1.5">
+              <p class="eyebrow mb-1">Instrument</p>
+              <a href="/frontier/" class="no-underline" style="color: var(--color-ink-dim);">Frontier</a>
+              <a href="/test/" class="no-underline" style="color: var(--color-ink-dim);">The Test</a>
+              <a href="/theories/" class="no-underline" style="color: var(--color-ink-dim);">Theories</a>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <p class="eyebrow mb-1">Record</p>
+              <a href="/evidence/" class="no-underline" style="color: var(--color-ink-dim);">Evidence</a>
+              <a href="/forecasts/" class="no-underline" style="color: var(--color-ink-dim);">Forecasts</a>
+              <a href="/charter/" class="no-underline" style="color: var(--color-ink-dim);">Charter</a>
+              <a href="/colophon/" class="no-underline" style="color: var(--color-ink-dim);">Colophon</a>
+            </div>
+          </div>
+        </div>
+        <p class="mono mt-8 text-xs" style="color: var(--color-faint);">
+          Clean rebuild · {new Date().getFullYear()} · the proper form of the
+          superlative is not boast — it is obligation.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

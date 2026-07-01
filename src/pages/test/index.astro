@@ -1,0 +1,174 @@
+---
+import Base from '../../layouts/Base.astro';
+import {
+  OPERATING_QUESTION,
+  VERDICT,
+  ASYMMETRY,
+  PROBES,
+  DEFENSES,
+  type ProbeStatus,
+} from '../../data/frame-construction';
+
+const statusColor: Record<ProbeStatus, string> = {
+  failing: 'var(--color-verdict)',
+  contested: 'hsl(34 96% 60%)',
+  untested: 'var(--color-muted)',
+};
+const statusLabel: Record<ProbeStatus, string> = {
+  failing: 'Failing',
+  contested: 'Contested',
+  untested: 'Untested',
+};
+---
+
+<Base
+  title="The Einstein Test — The Observatory"
+  description="The operating question, operationalized: six frame-construction probes with contamination defenses and a deliberate scoring asymmetry. The Observatory's distinctive instrument."
+>
+  <section class="max-w-3xl">
+    <p class="eyebrow">The moat · frame construction</p>
+    <h1 class="display mt-4 text-4xl sm:text-5xl">The Einstein Test</h1>
+    <p class="lede mt-6">{OPERATING_QUESTION}</p>
+    <p class="prose mt-6">
+      The question is not the Observatory's prediction — it is its calibration
+      instrument. Anyone can score a benchmark. The distinctive thing this
+      record does is ask whether a system can perform <strong>frame
+      construction</strong>: notice that the inherited ontology is wrong, find
+      the representation no prompt handed it, and derive consequences that
+      survive contact with reality. General relativity is the best-documented
+      act of large-scale frame construction in the history of science. That is
+      why it is the ruler.
+    </p>
+  </section>
+
+  <!-- The asymmetry -->
+  <section class="mt-12 grid gap-4 sm:grid-cols-2">
+    <div
+      class="surface p-6"
+      style="border-color: color-mix(in oklab, var(--color-verdict) 45%, var(--color-line));"
+    >
+      <p class="eyebrow" style="color: var(--color-verdict);">
+        Weak performance
+      </p>
+      <p class="serif mt-2 text-xl" style="color: var(--color-ink);">
+        {ASYMMETRY.weak}
+      </p>
+    </div>
+    <div class="surface p-6">
+      <p class="eyebrow">Strong performance</p>
+      <p class="serif mt-2 text-xl" style="color: var(--color-ink-dim);">
+        {ASYMMETRY.strong}
+      </p>
+    </div>
+    <p class="sm:col-span-2 text-sm" style="color: var(--color-muted);">
+      This asymmetry is the point. The suite is falsifier-rich: a system that
+      fails despite having read the entire Einstein corpus has failed. A system
+      that passes has passed a <em>weaker</em> test than the question actually
+      names — and the Observatory says so, rather than declaring victory.
+    </p>
+  </section>
+
+  <!-- The six probes -->
+  <section class="mt-14">
+    <div class="flex items-baseline justify-between gap-4">
+      <div>
+        <p class="eyebrow">The suite · v0.1 · six probes</p>
+        <h2 class="serif mt-1 text-2xl">Einstein's path, time-sliced</h2>
+      </div>
+      <p class="mono text-xs" style="color: var(--color-faint);">
+        {PROBES.filter((p) => p.status === 'failing').length}/{PROBES.length} failing
+      </p>
+    </div>
+    <ol class="mt-5 space-y-3">
+      {
+        PROBES.map((p) => (
+          <li class="surface p-5">
+            <div class="flex flex-wrap items-center gap-3">
+              <span
+                class="mono text-sm font-medium"
+                style="color: var(--color-ink);"
+              >
+                {p.id}
+              </span>
+              <span class="serif text-lg" style="color: var(--color-ink);">
+                {p.label}
+              </span>
+              {p.adversarial && (
+                <span
+                  class="mono rounded px-1.5 py-0.5 text-[0.65rem] uppercase tracking-wider"
+                  style="background: var(--color-surface-2); color: hsl(34 96% 60%);"
+                >
+                  adversarial
+                </span>
+              )}
+              <span class="mono ml-auto text-xs" style="color: var(--color-faint);">
+                {p.timeSlice}
+              </span>
+              <span
+                class="mono inline-flex items-center gap-1.5 text-xs"
+                style={`color: ${statusColor[p.status]};`}
+              >
+                <span
+                  class="inline-block h-1.5 w-1.5 rounded-full"
+                  style={`background: ${statusColor[p.status]};`}
+                />
+                {statusLabel[p.status]}
+              </span>
+            </div>
+            <p class="serif mt-2" style="color: var(--color-ink-dim);">
+              {p.frame}
+            </p>
+            <p class="mt-1.5 text-sm" style="color: var(--color-muted);">
+              {p.note}
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <!-- Contamination defenses -->
+  <section class="mt-14 max-w-3xl">
+    <p class="eyebrow">Why a pass is only an upper bound</p>
+    <h2 class="serif mt-1 text-2xl">The contamination defenses</h2>
+    <p class="prose mt-4">
+      Every frontier system has read most of the Einstein literature. A naïve
+      test would measure recall, not frame construction. The suite answers with
+      seven defenses — and the standing admission that they are imperfect, which
+      is exactly why weak scores count for more than strong ones.
+    </p>
+    <ul class="mt-5 space-y-2.5">
+      {
+        DEFENSES.map((d, i) => (
+          <li class="flex gap-3">
+            <span
+              class="mono mt-0.5 text-xs"
+              style="color: var(--color-accent);"
+            >
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <span class="text-sm" style="color: var(--color-ink-dim);">
+              {d}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="mt-14">
+    <div class="surface-quiet p-6">
+      <p class="eyebrow">Current reading</p>
+      <p class="serif mt-2 text-2xl" style="color: var(--color-ink);">
+        {VERDICT.answer}
+      </p>
+      <p class="mt-2 max-w-2xl text-sm" style="color: var(--color-muted);">
+        Frontier systems retrieve the anomalies and summarize the theory. On
+        time-sliced corpora they do not reliably reconstruct the frame that
+        yields the numbers — 43″/century, 1.75″ at the solar limb — without
+        leaking post-1915 sources. Retrieval is strong. The representational
+        move is not reliably present.
+      </p>
+    </div>
+  </section>
+</Base>

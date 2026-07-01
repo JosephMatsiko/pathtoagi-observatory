@@ -1,0 +1,98 @@
+---
+import Base from '../../layouts/Base.astro';
+import { EVIDENCE, EVIDENCE_CLASS_LABEL } from '../../data/evidence';
+import { THEORY_BY_ID } from '../../data/theories';
+
+const records = [...EVIDENCE].sort((a, b) => b.observedAt.localeCompare(a.observedAt));
+---
+
+<Base
+  title="Evidence ledger — The Observatory"
+  description="Capability events noticed, interpreted under discipline, and bound to sources. A single vendor-reported or benchmark-centered event does not promote a theory."
+>
+  <section class="max-w-3xl">
+    <p class="eyebrow">Ledger · evidence under discipline</p>
+    <h1 class="display mt-4 text-4xl sm:text-5xl">The evidence ledger</h1>
+    <p class="lede mt-6">
+      Each record is a capability event the Observatory noticed, interpreted,
+      and bound to a source. The discipline is the point: a single
+      vendor-reported or benchmark-centered event <strong>does not promote a
+      theory</strong>. The <span class="mono">healthDelta</span> is zero until
+      independent, durable, off-distribution evidence earns the move.
+    </p>
+  </section>
+
+  <ul class="mt-10 space-y-4">
+    {
+      records.map((e) => (
+        <li class="surface p-6">
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="mono text-xs" style="color: var(--color-faint);">
+              {e.observedAt}
+            </span>
+            <span
+              class="mono rounded px-1.5 py-0.5 text-[0.65rem] uppercase tracking-wider"
+              style="background: var(--color-surface-2); color: var(--color-accent);"
+            >
+              {EVIDENCE_CLASS_LABEL[e.class]}
+            </span>
+            <span
+              class="mono ml-auto rounded px-1.5 py-0.5 text-[0.65rem] tracking-wider"
+              style="background: var(--color-surface-2); color: var(--color-muted);"
+            >
+              healthΔ 0
+            </span>
+          </div>
+
+          <p class="serif mt-3 text-lg" style="color: var(--color-ink);">
+            {e.signal}
+          </p>
+
+          <dl class="mt-4 grid gap-4 sm:grid-cols-3">
+            <div>
+              <dt class="eyebrow">Implication</dt>
+              <dd class="mt-1 text-sm" style="color: var(--color-ink-dim);">
+                {e.implication}
+              </dd>
+            </div>
+            <div>
+              <dt class="eyebrow">Why it's bounded</dt>
+              <dd class="mt-1 text-sm" style="color: var(--color-muted);">
+                {e.bounded}
+              </dd>
+            </div>
+            <div>
+              <dt class="eyebrow">Next evidence needed</dt>
+              <dd class="mt-1 text-sm" style="color: var(--color-muted);">
+                {e.nextNeeded}
+              </dd>
+            </div>
+          </dl>
+
+          <div class="mt-4 flex flex-wrap items-center gap-2 border-t pt-4 hairline">
+            <span class="eyebrow">Theories</span>
+            {e.theories.map((id) => {
+              const t = THEORY_BY_ID[id];
+              return (
+                <a
+                  href={`/theories/${id}/`}
+                  class="mono text-xs no-underline"
+                  style={`color: ${t?.accent ?? 'var(--color-muted)'};`}
+                >
+                  {t?.title ?? id}
+                </a>
+              );
+            })}
+            <a
+              href={e.sourceUrl}
+              class="mono ml-auto text-xs link-accent"
+              rel="noopener"
+            >
+              source ↗
+            </a>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

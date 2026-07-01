@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+
+const principles = [
+  {
+    title: 'Authority from the record, not the brand',
+    body: 'Standing comes from the inspectable quality of what the instrument keeps — sources, claims, forecasts, revisions, disagreements, and the courage to name its own drift. Not from a lab, a personality, or an origin story.',
+  },
+  {
+    title: 'Evidence discipline',
+    body: 'Every claim carries its sources and an envelope of confidence. A single vendor-reported or benchmark-centered event does not promote a theory. "No. Not yet." is a reading, held open to revision.',
+  },
+  {
+    title: 'Candidate before verified',
+    body: 'Nothing crosses from candidate to verified without independent, durable, off-distribution evidence. The instrument would rather be slow and right than fast and captured.',
+  },
+  {
+    title: 'Revision in public',
+    body: 'When the evidence moves, the record moves — visibly. Past positions are superseded on the record, never quietly rewritten, so the trail of how a view changed stays legible.',
+  },
+  {
+    title: 'Name the drift',
+    body: 'The failure mode of an instrument like this is manufactured certainty and homogenized framing. The defenses exist to catch the Observatory dressing up a guess as a measurement — including this one.',
+  },
+  {
+    title: 'Origin-decentered',
+    body: 'A gift to the world without centering the giver. Public utility over personality. The gift stays quiet; the record stays loud.',
+  },
+];
+---
+
+<Base
+  title="Charter — The Observatory"
+  description="What the Observatory is, what it refuses to do, and how it defends against its own drift."
+>
+  <section class="max-w-3xl">
+    <p class="eyebrow">Constitution</p>
+    <h1 class="display mt-4 text-4xl sm:text-5xl">
+      How this instrument keeps itself honest
+    </h1>
+    <p class="lede mt-6">
+      The Observatory is a public epistemic instrument watching the emergence,
+      non-emergence, distortion, and capture of machine general intelligence.
+      Its deepest ambition is reflexive: an intelligence instrument watching the
+      possible emergence of intelligence.
+    </p>
+    <p class="prose mt-6">
+      The commission was maximal — the strongest public instrument for watching
+      the arrival, delay, distortion, capture, or non-arrival of general machine
+      intelligence. But the proper form of the superlative is not boast. It is
+      obligation. The instrument must never announce that it is the most
+      powerful or most alive; it must build the machinery by which those words
+      become increasingly <em>earned</em>. Power here means composed agency under
+      evidence — not raw model size.
+    </p>
+  </section>
+
+  <div class="mt-12 grid gap-3 sm:grid-cols-2">
+    {
+      principles.map((p, i) => (
+        <div class="surface p-6">
+          <div class="flex items-baseline gap-3">
+            <span class="mono text-sm" style="color: var(--color-accent);">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <h2 class="serif text-lg" style="color: var(--color-ink);">
+              {p.title}
+            </h2>
+          </div>
+          <p class="mt-2 text-sm" style="color: var(--color-muted);">
+            {p.body}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+
+  <section class="mt-12 max-w-3xl">
+    <p class="eyebrow">The refusals</p>
+    <h2 class="serif mt-1 text-2xl">What it will not pretend</h2>
+    <p class="prose mt-4">
+      "Most powerful AI" cannot mean the Observatory pretends to be a frontier
+      model, an oracle, a sovereign mind, or an entity that has already passed
+      the Einstein Test. It will not confuse retrieval with understanding, a
+      benchmark pass with frame construction, or English with humanity. If an
+      implementation is beautiful but not true, it is cut. If it is true but
+      unreadable, it is made legible. If confidence outruns evidence, the whole
+      thing collapses — so it does not.
+    </p>
+    <p class="mt-6">
+      <a href="/colophon/" class="link-accent">Read the colophon →</a>
+      <span class="ml-2 text-sm" style="color: var(--color-muted);">
+        what this build is, and what it still doesn't see.
+      </span>
+    </p>
+  </section>
+</Base>
