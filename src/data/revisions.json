@@ -1,0 +1,38 @@
+[
+  {
+    "date": "2026-07-01",
+    "kind": "method",
+    "title": "Maintenance loop designed (not yet scheduled)",
+    "detail": "The record moved to script-writable JSON with a conformance gate (check:record) and a situational-awareness report (maintain:status). An agent runbook (MAINTENANCE.md) and gated CI workflows are in place; the schedule is off until a human enables it. Composed agency under evidence — not a self-improving mind."
+  },
+  {
+    "date": "2026-06-30",
+    "kind": "method",
+    "title": "Forecast ledger gains Brier scoring",
+    "detail": "Resolved forecasts now keep their original probability and contribute a Brier score to a public calibration panel. The misses stay counted — that is the point."
+  },
+  {
+    "date": "2026-06-30",
+    "kind": "build",
+    "title": "Instrument established",
+    "detail": "pathtoAGI — the Observatory published: the operating question, the frame-construction suite, the capability frontier, five theories, an evidence ledger under healthΔ-0 discipline, and scoreable forecasts."
+  },
+  {
+    "date": "2026-06-24",
+    "kind": "record",
+    "title": "GPT-5.4 computer-use logged; no theory promoted",
+    "detail": "OSWorld-Verified 75.0% recorded in the evidence ledger. Interpreted as bearing on scaling-plus-RL and cognitive-architecture, but healthΔ held at 0 — vendor-reported and benchmark-centered evidence does not move a theory on its own."
+  },
+  {
+    "date": "2026-06-18",
+    "kind": "record",
+    "title": "ARC-AGI-3 interactive gap holds",
+    "detail": "The human–frontier gap on interactive reasoning stayed wide despite static-benchmark gains. Read as consistent with architectural-gap, and used to resolve a Q2 forecast NO — a correctly skeptical call."
+  },
+  {
+    "date": "2026-06-10",
+    "kind": "verdict",
+    "title": "Operating-question verdict reaffirmed: \"No. Not yet.\"",
+    "detail": "An FCS-3 dry run showed frontier systems retrieving the Mercury anomaly but not reconstructing the geodesic frame without leaking post-1915 sources. The verdict stands — held open to revision the moment a hardened probe passes."
+  }
+]

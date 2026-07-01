@@ -1,0 +1,29 @@
+name: deploy
+
+# Build the static site and deploy to Netlify on push to main.
+# Requires two repo secrets: NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Conformance gate
+        run: npm run check:record
+      - name: Build
+        run: npm run build
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: npx --yes netlify-cli deploy --dir=dist --prod --message "deploy ${{ github.sha }}"

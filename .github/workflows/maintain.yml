@@ -1,0 +1,49 @@
+name: maintain
+
+# The autonomous maintenance loop (see MAINTENANCE.md).
+#
+# DESIGNED, NOT YET LIVE. The trigger is manual (workflow_dispatch) on purpose.
+# The scheduled cron below is commented out so nothing runs unattended until a
+# human enables it. The deterministic steps (status + gate) work today; the
+# agent step is opt-in and requires ANTHROPIC_API_KEY plus a human review of the
+# opened PR before anything merges.
+
+on:
+  workflow_dispatch:
+  # Uncomment to run the loop on a cadence (e.g. daily at 13:00 UTC):
+  # schedule:
+  #   - cron: '0 13 * * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  maintain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      # ── Deterministic: always safe to run ────────────────────────────────
+      - name: Situational awareness
+        run: npm run maintain:status | tee "$GITHUB_STEP_SUMMARY"
+      - name: Conformance gate
+        run: npm run check:record
+
+      # ── Judgment: the agent proposes record updates as a PR ───────────────
+      # Opt-in. Requires the secret ANTHROPIC_API_KEY. The agent follows
+      # MAINTENANCE.md, edits only src/data/*.json (+ theories.ts when earned),
+      # must pass `npm run check:record` and `npm run build`, and opens a PR.
+      # A human reviews and merges — the loop never merges itself.
+      #
+      # - name: Maintenance agent (opt-in)
+      #   uses: anthropics/claude-code-action@v1
+      #   with:
+      #     anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+      #     prompt_file: MAINTENANCE.md
+      #     create_pull_request: true
