@@ -1,0 +1,260 @@
+SOURCE: https://cryptobriefing.com/xai-grok-4-5-v9-model-upgrade/
+CAPTURED: 2026-07-01T22:18:49.804Z
+HTTP: 200
+TRUNCATED: false
+
+xAI unveils Grok 4.5, a significant upgrade powered by 1.5 trillion parameter V9 model 
+
+ English
+
+ Español 
+
+ Crypto
+
+ Markets 
+ Prediction Markets 
+ Macro 
+ AI 
+ Tech 
+
+ Sports
+
+ Newsletter 
+ Podcasts 
+ Advertising 
+
+ Sections 
+
+ Bitcoin 
+ DeFi 
+ Ethereum 
+ NFTs 
+ AI Agents 
+ Regulation 
+ Web3 
+ Business 
+ Ecosystem 
+
+ Sections 
+
+ Soccer 
+ Esports 
+
+ Crypto 
+
+ Bitcoin 
+ DeFi 
+ Ethereum 
+ NFTs 
+ AI Agents 
+ Regulation 
+ Web3 
+ Business 
+ Ecosystem 
+
+ Markets 
+ Prediction Markets 
+ Macro 
+ AI 
+ Tech 
+ Sports 
+
+ Soccer 
+ Esports 
+ 
+ Newsletter 
+ Podcasts 
+ Advertising 
+
+ , viewability ~27-35%). -->
+
+ SEARCH 
+
+ Searching... 
+
+ xAI unveils Grok 4.5, a significant upgrade powered by 1.5 trillion parameter V9 model 
+
+ Elon Musk s AI company skips the public launch and sends its biggest model straight to SpaceX and Tesla for private beta testing 
+
+ Share 
+
+ this.removeAttribute('data-copied'), 2000);"
+ class="w-7 h-7 border border-foreground/30 text-foreground rounded-full flex items-center justify-center hover:bg-muted transition-colors"
+ aria-label="Copy link"
+ >
+
+ Add us on Google
+
+ by 
+ Editorial Team 
+ 
+ Jun. 28, 2026 
+
+ xAI s latest model isn t going to the public. It s going to work. 
+ Grok 4.5, announced on June 28 via Elon Musk s X account, has entered a private beta testing phase exclusively with teams at SpaceX and Tesla. The model is built on xAI s new V9 foundation, which packs 1.5 trillion parameters, making it roughly three times larger than the V8-small architecture that powered earlier Grok 4 variants. 
+ What s under the hood 
+ xAI supplemented its training pipeline with Cursor data, a move specifically designed to sharpen coding and technical competencies. Cursor is a popular AI-powered code editor. 
+ Advertisement 
+
+ Early internal evaluations suggest Grok 4.5 s performance is comparable to, if not superior to, Anthropic s Claude Opus. 
+ Musk has also referenced advancements tied to reinforcement learning features and the Grok Build system, an internal tooling framework. Real-world applications inside SpaceX and Tesla are reportedly feeding back beneficial improvements, creating a loop where the model gets better by actually doing useful things rather than just training on static datasets. 
+ The private beta strategy 
+ xAI has not specified a public release date for Grok 4.5 or outlined broader accessibility plans. The original timeline had pegged the model for a late May 2026 launch, meaning it s already running behind schedule by about a month. 
+ Grok 4 itself only launched in July 2025. Going from Grok 4 to a 1.5 trillion parameter successor in under a year is an aggressive pace. 
+ xAI s roadmap includes monthly model releases throughout 2026, with variants of Grok 5 projected to reach 10 trillion parameters. 
+
+ Disclosure: This article was edited by Editorial Team. For more information on how we create and review content, see our Editorial Policy .
+
+ AI 
+
+ xAI unveils Grok 4.5, a significant upgrade powered by 1.5 trillion parameter V9 model 
+
+ Elon Musk s AI company skips the public launch and sends its biggest model straight to SpaceX and Tesla for private beta testing 
+
+ by 
+ Editorial Team 
+ 
+ Jun. 28, 2026 
+
+ Share 
+
+ this.removeAttribute('data-copied'), 2000);"
+ class="w-7 h-7 border border-foreground/30 text-foreground rounded-full flex items-center justify-center hover:bg-muted transition-colors"
+ aria-label="Copy link"
+ >
+
+ Add us on Google
+
+ xAI s latest model isn t going to the public. It s going to work. 
+ Grok 4.5, announced on June 28 via Elon Musk s X account, has entered a private beta testing phase exclusively with teams at SpaceX and Tesla. The model is built on xAI s new V9 foundation, which packs 1.5 trillion parameters, making it roughly three times larger than the V8-small architecture that powered earlier Grok 4 variants. 
+ What s under the hood 
+ xAI supplemented its training pipeline with Cursor data, a move specifically designed to sharpen coding and technical competencies. Cursor is a popular AI-powered code editor. 
+ Advertisement 
+
+ Early internal evaluations suggest Grok 4.5 s performance is comparable to, if not superior to, Anthropic s Claude Opus. 
+ Musk has also referenced advancements tied to reinforcement learning features and the Grok Build system, an internal tooling framework. Real-world applications inside SpaceX and Tesla are reportedly feeding back beneficial improvements, creating a loop where the model gets better by actually doing useful things rather than just training on static datasets. 
+ The private beta strategy 
+ xAI has not specified a public release date for Grok 4.5 or outlined broader accessibility plans. The original timeline had pegged the model for a late May 2026 launch, meaning it s already running behind schedule by about a month. 
+ Grok 4 itself only launched in July 2025. Going from Grok 4 to a 1.5 trillion parameter successor in under a year is an aggressive pace. 
+ xAI s roadmap includes monthly model releases throughout 2026, with variants of Grok 5 projected to reach 10 trillion parameters. 
+
+ Disclosure: This article was edited by Editorial Team. For more information on how we create and review content, see our Editorial Policy .
+
+ Loading more articles... 
+ You've reached the end 
+
+ Follow Us 
+
+ Quick Links 
+
+ Bitcoin 
+ Ethereum 
+
+ DeFi 
+ Markets 
+
+ NFTs 
+ AI 
+
+ Tech 
+
+ AI Agents 
+ Newsletter 
+
+ Regulation 
+ Podcast Notes 
+
+ Macro 
+ Advertising 
+
+ CB Select 
+
+ Company 
+ 
+ Team 
+ Contact 
+ Advertising 
+
+ Account 
+
+ Log In
+
+ Quick Links 
+
+ Bitcoin 
+ Ethereum 
+
+ DeFi 
+ Markets 
+
+ NFTs 
+ AI 
+
+ Tech 
+
+ AI Agents 
+ Newsletter 
+
+ Regulation 
+ Podcast Notes 
+
+ Macro 
+ Advertising 
+
+ CB Select 
+
+ Follow Us 
+
+ Account 
+
+ Log In
+
+ All content is for informational purposes only and does not constitute investment advice. CryptoBriefing does not provide recommendations to buy, sell, or hold any asset or contract. See our Disclaimer Risk Disclosure .
+
+ Decentral Media and Crypto Briefing 2026.
+
+ About Us 
+ Editorial Policy 
+ Disclaimer 
+ Privacy Policy 
+
+ RSS
+
+ Login 
+
+ Sign Up 
+
+ Sign in to your account 
+
+ Forgot Password? 
+
+ Staff Editor login (2FA required) 
+
+ Sign In 
+
+ or 
+
+ Continue with Google 
+
+ Create your account 
+
+ CryptoBriefing may send me offers and promotions. I accept Terms and Conditions / Privacy Policy 
+
+ Create account 
+
+ or 
+
+ Continue with Google 
+ Already have an account? Sign In 
+
+ Forgot your password? 
+
+ Please enter your email address. You will receive a link to create a new password via email. 
+
+ Email Reset Link 
+ Sign In 
+
+ Get Crypto Briefing in your inbox 
+ Daily news, analysis market insights delivered free. 
+
+ Subscribe

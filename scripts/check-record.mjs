@@ -21,6 +21,10 @@ const THEORY_IDS = new Set(
   [...theoriesSrc.matchAll(/id:\s*'([a-z-]+)'/g)].map((m) => m[1]),
 );
 if (THEORY_IDS.size < 3) err('theories.ts', 'could not parse theory ids');
+for (const m of theoriesSrc.matchAll(/health:\s*([0-9.]+)/g)) {
+  const h = Number(m[1]);
+  if (!(h >= 0 && h <= 1)) err('theories.ts', `health out of bounds: ${m[1]}`);
+}
 
 const nonEmpty = (v) => typeof v === 'string' && v.trim().length > 0;
 const validTheories = (arr, where) => {
