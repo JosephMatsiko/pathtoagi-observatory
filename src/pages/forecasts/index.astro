@@ -1,19 +1,44 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { FORECASTS, type ForecastStatus } from '../../data/forecasts';
+import {
+  FORECASTS,
+  calibration,
+  brierOf,
+  type ForecastStatus,
+} from '../../data/forecasts';
 import { THEORY_BY_ID } from '../../data/theories';
 
-const forecasts = [...FORECASTS].sort((a, b) => b.probability - a.probability);
+const open = FORECASTS.filter((f) => f.status === 'open').sort(
+  (a, b) => b.probability - a.probability,
+);
+const resolved = FORECASTS.filter((f) => f.status !== 'open').sort((a, b) =>
+  (b.resolvedAt ?? '').localeCompare(a.resolvedAt ?? ''),
+);
+const cal = calibration(FORECASTS);
+
 const statusLabel: Record<ForecastStatus, string> = {
   open: 'Open',
   'resolved-yes': 'Resolved · yes',
   'resolved-no': 'Resolved · no',
 };
+const statusColor: Record<ForecastStatus, string> = {
+  open: 'var(--color-accent)',
+  'resolved-yes': 'var(--color-affirm)',
+  'resolved-no': 'var(--color-verdict)',
+};
+
+const groups = [
+  { heading: 'Open', items: open },
+  { heading: 'Resolved', items: resolved },
+];
+
+const theoryTags = (f: { theories: string[] }) =>
+  f.theories.map((id) => THEORY_BY_ID[id]).filter((t) => Boolean(t));
 ---
 
 <Base
   title="Forecast ledger — pathtoAGI"
-  description="Predictions that punish vague confidence: every forecast carries a probability, a hard resolution criterion, and a horizon, so it can be scored when it resolves."
+  description="Predictions that punish vague confidence: every forecast carries a probability, a hard resolution criterion, and a horizon, so it can be scored (Brier) when it resolves."
 >
   <section class="max-w-3xl">
     <p class="eyebrow">Ledger · scoreable predictions</p>
@@ -26,62 +51,116 @@ const statusLabel: Record<ForecastStatus, string> = {
     </p>
   </section>
 
-  <ul class="mt-10 space-y-4">
-    {
-      forecasts.map((f) => (
-        <li class="surface grid gap-5 p-6 sm:grid-cols-[7rem_1fr] sm:items-start">
-          <div class="flex flex-col items-start gap-1">
-            <p class="tabular text-4xl" style="color: var(--color-accent);">
-              {Math.round(f.probability * 100)}%
-            </p>
-            <div
-              class="h-1.5 w-full overflow-hidden rounded-full"
-              style="background: var(--color-surface-2);"
-            >
-              <div
-                class="h-full rounded-full"
-                style={`width: ${Math.round(f.probability * 100)}%; background: var(--color-accent);`}
-              />
-            </div>
-            <span class="mono mt-1 text-[0.65rem] uppercase tracking-wider" style="color: var(--color-muted);">
-              {statusLabel[f.status]}
-            </span>
-          </div>
+  <!-- Calibration panel -->
+  <section class="mt-10 grid gap-4 sm:grid-cols-3">
+    <div class="surface p-5">
+      <p class="eyebrow">Mean Brier · resolved</p>
+      <p class="tabular mt-2 text-4xl" style="color: var(--color-affirm);">
+        {cal.meanBrier !== null ? cal.meanBrier.toFixed(3) : '—'}
+      </p>
+      <p class="mt-1 text-sm" style="color: var(--color-muted);">
+        Lower is better. 0 is perfect; {cal.baseline.toFixed(2)} is the coin-flip
+        baseline; 1.0 is confidently wrong.
+      </p>
+    </div>
+    <div class="surface p-5">
+      <p class="eyebrow">Vs. baseline</p>
+      <p class="tabular mt-2 text-4xl" style="color: var(--color-ink);">
+        {
+          cal.meanBrier !== null
+            ? `${Math.round((1 - cal.meanBrier / cal.baseline) * 100)}%`
+            : '—'
+        }
+      </p>
+      <p class="mt-1 text-sm" style="color: var(--color-muted);">
+        Better than a coin flip, across {cal.resolvedCount} resolved forecasts.
+      </p>
+    </div>
+    <div class="surface p-5">
+      <p class="eyebrow">On the record</p>
+      <p class="tabular mt-2 text-4xl" style="color: var(--color-ink);">
+        {open.length}<span class="text-lg" style="color: var(--color-faint);">
+          open</span
+        >
+      </p>
+      <p class="mt-1 text-sm" style="color: var(--color-muted);">
+        Resolved forecasts keep their original probability — the misses stay
+        counted.
+      </p>
+    </div>
+  </section>
 
-          <div>
-            <p class="serif text-lg" style="color: var(--color-ink);">
-              {f.claim}
-            </p>
-            <p class="mono mt-2 text-xs" style="color: var(--color-faint);">
-              {f.horizon}
-            </p>
-            <p class="mt-3 text-sm" style="color: var(--color-muted);">
-              <span class="eyebrow">Resolution</span>
-              <span class="ml-2">{f.resolution}</span>
-            </p>
-            <div class="mt-3 flex flex-wrap gap-2">
-              {f.theories.map((id) => {
-                const t = THEORY_BY_ID[id];
-                return (
-                  <a
-                    href={`/theories/${id}/`}
-                    class="mono text-xs no-underline"
-                    style={`color: ${t?.accent ?? 'var(--color-muted)'};`}
+  {
+    groups.map((group) => (
+      <section class="mt-14">
+        <h2 class="serif text-2xl">{group.heading}</h2>
+        <ul class="mt-5 space-y-4">
+          {group.items.map((f) => {
+            const brier = brierOf(f);
+            return (
+              <li class="surface grid gap-5 p-6 sm:grid-cols-[8rem_1fr] sm:items-start">
+                <div class="flex flex-col items-start">
+                  <p class="tabular text-4xl" style={`color: ${statusColor[f.status]};`}>
+                    {Math.round(f.probability * 100)}%
+                  </p>
+                  <div
+                    class="mt-1.5 h-1.5 w-full overflow-hidden rounded-full"
+                    style="background: var(--color-surface-2);"
                   >
-                    {t?.title ?? id}
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        </li>
-      ))
-    }
-  </ul>
+                    <div
+                      class="h-full rounded-full"
+                      style={`width: ${Math.round(f.probability * 100)}%; background: ${statusColor[f.status]};`}
+                    />
+                  </div>
+                  <span
+                    class="mono mt-2 text-[0.65rem] uppercase tracking-wider"
+                    style={`color: ${statusColor[f.status]};`}
+                  >
+                    {statusLabel[f.status]}
+                  </span>
+                  {brier !== null && (
+                    <span class="mono mt-1 text-[0.7rem]" style="color: var(--color-ink-dim);">
+                      brier {brier.toFixed(3)}
+                    </span>
+                  )}
+                </div>
 
-  <p class="mt-8 text-sm" style="color: var(--color-muted);">
-    Probabilities are Observatory seed credences. When a forecast resolves, its
-    Brier contribution goes on the record — including the ones the Observatory
-    got wrong. That is the mechanism that keeps confidence honest.
-  </p>
+                <div>
+                  <p class="serif text-lg" style="color: var(--color-ink);">
+                    {f.claim}
+                  </p>
+                  <p class="mono mt-2 text-xs" style="color: var(--color-faint);">
+                    {f.horizon}
+                    {f.resolvedAt && ` · resolved ${f.resolvedAt}`}
+                  </p>
+                  <p class="mt-3 text-sm" style="color: var(--color-muted);">
+                    <span class="eyebrow">Resolution</span>
+                    <span class="ml-2">{f.resolution}</span>
+                  </p>
+                  {f.resolvedNote && (
+                    <p class="mt-2 text-sm" style="color: var(--color-ink-dim);">
+                      {f.resolvedNote}
+                    </p>
+                  )}
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    {theoryTags(f).map((t) => (
+                      <a
+                        href={`/theories/${t.id}/`}
+                        class="mono text-xs no-underline"
+                        style={`color: ${t.accent};`}
+                      >
+                        {t.title}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    ))
+  }
 </Base>
+
+<script></script>

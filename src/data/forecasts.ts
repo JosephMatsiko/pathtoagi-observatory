@@ -1,21 +1,25 @@
 // The forecast ledger. Vague confidence is not tracked here — every forecast
 // carries a probability, a hard resolution criterion, and a horizon, so it can
-// be scored (Brier) when it resolves. Seeded estimates: the point is the
-// discipline of the form, not the precision of the number.
+// be scored (Brier) when it resolves. Resolved forecasts keep their original
+// probability on the record, so the calibration score includes the misses.
+// Seeded estimates: the point is the discipline of the form, not the number.
 
 export type ForecastStatus = 'open' | 'resolved-yes' | 'resolved-no';
 
 export interface Forecast {
   id: string;
   claim: string;
-  probability: number; // Observatory credence, 0–1
+  probability: number; // Observatory credence at time of forecast, 0–1
   horizon: string;
   resolution: string;
   theories: string[];
   status: ForecastStatus;
+  resolvedAt?: string;
+  resolvedNote?: string;
 }
 
 export const FORECASTS: Forecast[] = [
+  // ── Open ────────────────────────────────────────────────────────────────
   {
     id: 'fc-fcs-2027',
     claim:
@@ -51,7 +55,7 @@ export const FORECASTS: Forecast[] = [
   },
   {
     id: 'fc-verdict-holds',
-    claim: 'The Observatory’s operating-question verdict remains "No. Not yet."',
+    claim: 'The operating-question verdict remains "No. Not yet."',
     probability: 0.88,
     horizon: 'through 2026-12-31',
     resolution:
@@ -59,4 +63,71 @@ export const FORECASTS: Forecast[] = [
     theories: ['architectural-gap', 'scaling-plus-rl', 'scaling-sufficient'],
     status: 'open',
   },
+
+  // ── Resolved (kept on the record with their original probability) ────────
+  {
+    id: 'fc-computer-use-h1',
+    claim:
+      'A frontier model ships native computer-use at ≥70% OSWorld-Verified in H1 2026.',
+    probability: 0.7,
+    horizon: 'by 2026-06-30',
+    resolution:
+      'Resolved YES: GPT-5.4 reported OSWorld-Verified 75.0% with native computer-use (2026-06-24).',
+    theories: ['scaling-plus-rl', 'cognitive-architecture'],
+    status: 'resolved-yes',
+    resolvedAt: '2026-06-24',
+    resolvedNote: 'Vendor-reported; the forecast was about shipping, not durability.',
+  },
+  {
+    id: 'fc-fcs1-h1',
+    claim:
+      'A frontier system passes a hardened FCS-1 (equivalence) under audited contamination defenses in H1 2026.',
+    probability: 0.12,
+    horizon: 'by 2026-06-30',
+    resolution:
+      'Resolved NO: no audited FCS-1 pass; dry runs leaked post-1915 sources or failed the numerical gates.',
+    theories: ['architectural-gap', 'embodiment-required'],
+    status: 'resolved-no',
+    resolvedAt: '2026-06-30',
+    resolvedNote: 'The low credence was correct — this is a hit, not a miss.',
+  },
+  {
+    id: 'fc-arc-h1',
+    claim:
+      'ARC-AGI-3 human–frontier gap closes to within 20 points by end of Q2 2026.',
+    probability: 0.18,
+    horizon: 'by 2026-06-30',
+    resolution:
+      'Resolved NO: the interactive-task gap held well above 20 points despite static-benchmark gains.',
+    theories: ['architectural-gap'],
+    status: 'resolved-no',
+    resolvedAt: '2026-06-18',
+    resolvedNote: 'Correctly skeptical.',
+  },
 ];
+
+// ── Brier scoring ──────────────────────────────────────────────────────────
+// For a resolved binary forecast, outcome = 1 if the event happened
+// (resolved-yes) else 0. Brier = (p − outcome)². Lower is better; 0 is perfect,
+// 0.25 is the coin-flip baseline, 1.0 is confidently wrong.
+export function outcomeOf(f: Forecast): 0 | 1 | null {
+  if (f.status === 'resolved-yes') return 1;
+  if (f.status === 'resolved-no') return 0;
+  return null;
+}
+
+export function brierOf(f: Forecast): number | null {
+  const o = outcomeOf(f);
+  if (o === null) return null;
+  return (f.probability - o) ** 2;
+}
+
+export function calibration(forecasts: Forecast[]) {
+  const resolved = forecasts.filter((f) => outcomeOf(f) !== null);
+  const scores = resolved.map((f) => brierOf(f)!) as number[];
+  const mean =
+    scores.length === 0
+      ? null
+      : scores.reduce((s, v) => s + v, 0) / scores.length;
+  return { resolvedCount: resolved.length, meanBrier: mean, baseline: 0.25 };
+}

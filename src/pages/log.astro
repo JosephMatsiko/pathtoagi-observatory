@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+import {
+  REVISIONS,
+  REVISION_KIND_LABEL,
+  type RevisionKind,
+} from '../data/revisions';
+
+const kindColor: Record<RevisionKind, string> = {
+  build: 'var(--color-accent)',
+  record: 'hsl(212 80% 64%)',
+  verdict: 'var(--color-verdict)',
+  method: 'hsl(270 60% 72%)',
+};
+
+const revisions = [...REVISIONS].sort((a, b) => b.date.localeCompare(a.date));
+---
+
+<Base
+  title="Revision log — pathtoAGI"
+  description="When the record changes, the change goes here — visibly, with a reason. Revision in public: past positions are superseded on the record, never quietly rewritten."
+>
+  <section class="max-w-3xl">
+    <p class="eyebrow">Revision in public</p>
+    <h1 class="display mt-4 text-4xl sm:text-5xl">The revision log</h1>
+    <p class="lede mt-6">
+      An instrument that changes its mind in public needs a place to do it. When
+      the record moves, the change is recorded here — with a reason — rather than
+      quietly rewritten. The value of the record is that you can watch it change.
+    </p>
+  </section>
+
+  <ol class="mt-12 space-y-0">
+    {
+      revisions.map((r, i) => (
+        <li class="grid grid-cols-[auto_1fr] gap-5">
+          <div class="flex flex-col items-center">
+            <span
+              class="mt-1.5 inline-block h-2.5 w-2.5 shrink-0 rounded-full"
+              style={`background: ${kindColor[r.kind]}; box-shadow: 0 0 10px ${kindColor[r.kind]};`}
+            />
+            {i < revisions.length - 1 && (
+              <span
+                class="w-px flex-1"
+                style="background: var(--color-line); min-height: 2.5rem;"
+              />
+            )}
+          </div>
+          <div class="pb-8">
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="mono text-xs" style="color: var(--color-faint);">
+                {r.date}
+              </span>
+              <span
+                class="mono rounded px-1.5 py-0.5 text-[0.62rem] uppercase tracking-wider"
+                style={`background: var(--color-surface-2); color: ${kindColor[r.kind]};`}
+              >
+                {REVISION_KIND_LABEL[r.kind]}
+              </span>
+            </div>
+            <p class="serif mt-2 text-lg" style="color: var(--color-ink);">
+              {r.title}
+            </p>
+            <p class="mt-1.5 text-sm" style="color: var(--color-muted);">
+              {r.detail}
+            </p>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+
+  <p class="mt-4 text-sm" style="color: var(--color-muted);">
+    The full commit-level history lives in the repository. This log is the
+    human-readable trail of the moments the record's <em>meaning</em> changed.
+  </p>
+</Base>
