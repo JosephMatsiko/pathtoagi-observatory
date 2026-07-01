@@ -88,12 +88,23 @@ for (const r of revisions) {
   for (const k of ['title', 'detail']) if (!nonEmpty(r[k])) err(w, `missing ${k}`);
 }
 
+// ── superlatives.json ────────────────────────────────────────────────────────
+const SUP_TRENDS = new Set(['earning', 'holding', 'slipping']);
+const sups = read('superlatives.json');
+for (const s of sups) {
+  const w = `superlative[${s.id ?? '?'}]`;
+  for (const k of ['id', 'word', 'obligation', 'measure', 'reading'])
+    if (!nonEmpty(s[k])) err(w, `missing ${k}`);
+  if (!SUP_TRENDS.has(s.trend)) err(w, `invalid trend "${s.trend}"`);
+  // Obligations-never-claims: a reading may not declare a superlative achieved.
+  if (/\b(is|now) the (most|smartest|wisest|best)\b/i.test(s.reading ?? ''))
+    err(w, 'reading declares a superlative achieved — obligations, never claims');
+}
+
 // ── report ───────────────────────────────────────────────────────────────────
 if (errors.length) {
   console.error(`✗ record conformance: ${errors.length} violation(s)\n`);
   for (const e of errors) console.error('  - ' + e);
   process.exit(1);
 }
-console.log(
-  `✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories — all valid`,
-);
+console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives — all valid`);

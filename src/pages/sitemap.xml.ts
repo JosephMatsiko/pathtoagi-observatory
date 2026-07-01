@@ -5,7 +5,7 @@ import { THEORIES } from '../data/theories';
 const BASE = 'https://pathtoagi-observatory.netlify.app';
 const routes = [
   '/', '/frontier/', '/test/', '/theories/', '/evidence/', '/forecasts/',
-  '/log/', '/operate/', '/charter/', '/colophon/',
+  '/log/', '/operate/', '/superlatives/', '/charter/', '/colophon/',
   ...THEORIES.map((t) => `/theories/${t.id}/`),
 ];
 

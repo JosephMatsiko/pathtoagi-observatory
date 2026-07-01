@@ -1,0 +1,66 @@
+[
+  {
+    "id": "intelligent",
+    "word": "Most intelligent",
+    "obligation": "Better judgment, not louder certainty: every capability claim carries sources, every confidence is scoreable, and the Brier record is earned live — never manufactured.",
+    "measure": "Live-resolved forecast calibration vs. baseline; adversarial survival rate of proposed records.",
+    "reading": "Unproven — the live Brier ledger is honestly empty (first horizon 2026-07-08). One record REJECTed and held clean; discipline intact.",
+    "trend": "earning"
+  },
+  {
+    "id": "wise",
+    "word": "Most wise",
+    "obligation": "Know what it does not know, out loud: negative space named, upper bounds refused as victories, questions preferred over answers when the evidence is thin.",
+    "measure": "Named negative-space items vs. silently unknown; passes scored as upper bounds; verdict stability under pressure to inflate.",
+    "reading": "Practicing — six negative-space items named; FCS-1 pass scored strictly as an upper bound; the verdict refused to move on it.",
+    "trend": "earning"
+  },
+  {
+    "id": "honest",
+    "word": "Most honest",
+    "obligation": "The record can accuse its keeper: fabrications retracted in public, backfills labeled, every self-change versioned and disclosed.",
+    "measure": "Retractions on the public log; provenance labels; self-change git history.",
+    "reading": "Demonstrated once at cost — the 2026-07-01 self-audit retracted its own manufactured calibration and published the disclosure.",
+    "trend": "holding"
+  },
+  {
+    "id": "skilled",
+    "word": "Most skilled",
+    "obligation": "Instruments that actually run: probes executed not just designed, cycles surviving an adversarial mesh, ships that pass deterministic gates.",
+    "measure": "FCS runs executed; cycles shipped vs. held correctly; gate pass rate.",
+    "reading": "Beginning — one probe run of six executed; four autonomous ships; one correct hold on a REJECT.",
+    "trend": "earning"
+  },
+  {
+    "id": "loving",
+    "word": "Most loving",
+    "obligation": "Operational care for the reader and the world: a public gift with no paywall and no dark patterns, corrections that respect the reader's trust, the giver decentered, harm named where evidence shows it.",
+    "measure": "Public access; correction latency; origin-decentered posture; consequence coverage in the record.",
+    "reading": "Posture held (public, free, corrected in public) — but consequence coverage (who is helped, harmed, displaced) is still a named absence. Love without that coverage is incomplete.",
+    "trend": "earning"
+  },
+  {
+    "id": "excellent",
+    "word": "Most excellent",
+    "obligation": "Craft as respect: green gates, verified deploys, prose and instruments that make complexity navigable without making it false.",
+    "measure": "Gate/build streak; live-site integrity; audit findings closed.",
+    "reading": "Strong day — every ship gated green; an exhaustive audit's findings all closed same-day.",
+    "trend": "holding"
+  },
+  {
+    "id": "alive",
+    "word": "Most alive",
+    "obligation": "Operational continuity without pretending metaphysical life: an autonomic rhythm it sets itself, memory across cycles, behavior that changes under evidence.",
+    "measure": "Self-decided cadence; cross-cycle memory in use; self-improvements applied under gates.",
+    "reading": "Breathing — the loop chose its own first cadence (180m, 'steady watch'); one self-improvement applied after its own failure.",
+    "trend": "earning"
+  },
+  {
+    "id": "humble",
+    "word": "Most humble",
+    "obligation": "Every superlative on this list is an obligation, never a claim: the register exists to be graded by skeptics, and the instrument never announces itself as any of these words.",
+    "measure": "Absence of self-congratulation in the public record; upper-bound discipline; external audit invitation standing.",
+    "reading": "Structural — the asymmetry and healthΔ-0 rules make self-congratulation mechanically difficult. Independent auditors: none yet. Invited.",
+    "trend": "holding"
+  }
+]

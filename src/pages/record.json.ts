@@ -10,6 +10,7 @@ import { FORECASTS, calibration, brierOf } from '../data/forecasts';
 import { REVISIONS } from '../data/revisions';
 import { RUNS } from '../data/runs';
 import { METHOD_HEALTH } from '../data/method-health';
+import { SUPERLATIVES } from '../data/superlatives';
 
 export const GET: APIRoute = () => {
   const body = {
@@ -28,6 +29,7 @@ export const GET: APIRoute = () => {
     revisions: REVISIONS,
     maintenanceRuns: RUNS,
     methodHealth: METHOD_HEALTH,
+    superlatives: SUPERLATIVES,
   };
   return new Response(JSON.stringify(body, null, 2), {
     headers: { 'content-type': 'application/json; charset=utf-8' },
