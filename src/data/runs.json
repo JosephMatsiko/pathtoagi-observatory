@@ -1,0 +1,42 @@
+[
+  {
+    "id": "run-2026-07-01-genesis",
+    "at": "2026-07-01",
+    "trigger": "genesis",
+    "actor": "operator + Claude (Max)",
+    "meanBrierAfter": 0.046,
+    "gatePassed": true,
+    "actions": [
+      "Established the instrument and the record",
+      "Designed the maintenance loop (deterministic gates + agent runbook)",
+      "Moved mutable records to script-writable JSON"
+    ],
+    "note": "Genesis run. The loop is designed and gated; scheduling is off until enabled."
+  },
+  {
+    "id": "run-2026-06-30-brier",
+    "at": "2026-06-30",
+    "trigger": "manual",
+    "actor": "operator + Claude (Max)",
+    "meanBrierAfter": 0.046,
+    "gatePassed": true,
+    "actions": [
+      "Added Brier scoring and the public calibration panel",
+      "Resolved three H1-2026 forecasts on the record"
+    ],
+    "note": "Calibration mechanism installed; misses kept counted."
+  },
+  {
+    "id": "run-2026-06-24-gpt54",
+    "at": "2026-06-24",
+    "trigger": "manual",
+    "actor": "operator + Claude (Max)",
+    "meanBrierAfter": null,
+    "gatePassed": true,
+    "actions": [
+      "Logged GPT-5.4 computer-use to the evidence ledger",
+      "Held healthΔ at 0 — no theory promoted on vendor-reported evidence"
+    ],
+    "note": "Discipline exercised: strong benchmark, no promotion."
+  }
+]

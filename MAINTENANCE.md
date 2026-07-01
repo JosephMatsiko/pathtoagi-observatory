@@ -61,6 +61,32 @@ Stop, commit nothing, and leave a `revisions.json` note explaining the halt if:
 
 The Observatory is built to catch manufactured certainty — including its own. A run that stops honestly is a successful run.
 
+## Self-improvement — the meta-step (bounded, recursive, honest)
+
+Once per cycle, after the record work, turn the instrument on itself. This is the only sense in which the system is "self-improving": it improves its own **instruments and methods** — never its own weights or objectives. Read `src/data/method-health.json` and, for any method marked `act`:
+
+- **Calibration feedback.** If the running Brier shows the Observatory is systematically over- or under-confident, correct the confidence of *future* forecasts — the record grades its own past to discipline its future.
+- **Probe evolution.** When a frame-construction probe stops discriminating (frontier systems pass by contamination, not construction), propose the next probe — e.g. the v0.2 non-physics probes.
+- **Axis refinement.** When a capability axis conflates distinct skills, propose splitting it — but only when evidence justifies the finer instrument.
+- **Negative-space closure.** Close the highest-leverage gap named in the colophon each cycle; a gap that stops shrinking means the loop has stalled.
+
+Every method change is a normal record change: proposed, gated, logged, and human-reviewed. The instrument gets sharper; it does not get sovereign.
+
+## Running on Claude Max
+
+The judgment step runs on **your Claude Max subscription through Claude Code** — as you, not a metered key. Two ways:
+
+- **On demand.** In Claude Code: *"Run a maintenance cycle. Follow MAINTENANCE.md."*
+- **Scheduled.** A Claude Code scheduled routine fires the same instruction on a cadence, on your subscription. It proposes changes for review; it never merges itself.
+
+The GitHub Actions `maintain.yml` path (metered `ANTHROPIC_API_KEY`) exists only as an optional fallback for CI-native automation. The Max-subscription routine is the intended runner.
+
+At the end of a cycle, log the run so the Control Room shows it:
+
+```sh
+npm run loop:record -- --trigger scheduled --note "…" --action "logged X" --action "resolved Y"
+```
+
 ## What this loop is not
 
-It does not improve its own intelligence, choose its own objectives, or act outside this repository. It is a maintenance agent on a schedule, with a human able to inspect every diff, correct it, or switch it off. That boundary is the point.
+It does not improve its own intelligence, choose its own objectives, or act outside this repository. It is a maintenance agent on a schedule, with a human able to inspect every diff, correct it, or switch it off. That boundary is the point — and it is what the charter requires.

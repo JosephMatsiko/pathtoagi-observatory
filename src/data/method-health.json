@@ -1,0 +1,37 @@
+[
+  {
+    "id": "fcs-discrimination",
+    "method": "Frame-construction probes (FCS v0.1)",
+    "reading": "Physics-only. Discrimination will decay as frontier systems train on the Einstein corpus — a pass becomes ever weaker evidence.",
+    "status": "act",
+    "nextImprovement": "Author v0.2 non-physics probes (biology, economics) where the contamination floor is lower, so weak scores keep their force."
+  },
+  {
+    "id": "calibration",
+    "method": "Forecast calibration (Brier)",
+    "reading": "Mean Brier 0.046 over 3 resolved — better than baseline, but the sample is far too small to trust.",
+    "status": "watch",
+    "nextImprovement": "Resolve more forecasts before claiming calibration; feed the running Brier back into how confident new forecasts are allowed to be."
+  },
+  {
+    "id": "axis-granularity",
+    "method": "Capability axes (8)",
+    "reading": "'Creativity' conflates recombination with genuine origination — the exact skill the operating question isolates.",
+    "status": "watch",
+    "nextImprovement": "Split creativity into recombination vs. origination once evidence justifies the finer axis."
+  },
+  {
+    "id": "framework-homogenization",
+    "method": "Theory differentiation",
+    "reading": "The five theories still divide the evidence — the same event implies different things under each.",
+    "status": "ok",
+    "nextImprovement": "Watch for evidence that no longer distinguishes the theories; that would mean the frame, not the field, has gone stale."
+  },
+  {
+    "id": "negative-space-closure",
+    "method": "Negative-space tracking",
+    "reading": "Six named gaps. Multimodal ingestion and independent scoring are the highest-leverage absences.",
+    "status": "act",
+    "nextImprovement": "Close the highest-leverage gap each cycle; a gap that stops shrinking is a signal the loop has stalled."
+  }
+]

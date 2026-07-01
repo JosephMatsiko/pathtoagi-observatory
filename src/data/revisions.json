@@ -2,6 +2,12 @@
   {
     "date": "2026-07-01",
     "kind": "method",
+    "title": "Control room + bounded self-improvement",
+    "detail": "Added /operate — a space to observe and run the loop (live calibration, resolution queue, run history) — and a method-health surface where the instrument tracks where its own probes, axes, and calibration are decaying and names the next improvement. The honest form of recursive self-improvement: methods sharpen under evidence and review; the system does not go sovereign. Runner set to Claude Max via Claude Code."
+  },
+  {
+    "date": "2026-07-01",
+    "kind": "method",
     "title": "Maintenance loop designed (not yet scheduled)",
     "detail": "The record moved to script-writable JSON with a conformance gate (check:record) and a situational-awareness report (maintain:status). An agent runbook (MAINTENANCE.md) and gated CI workflows are in place; the schedule is off until a human enables it. Composed agency under evidence — not a self-improving mind."
   },

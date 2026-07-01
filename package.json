@@ -10,7 +10,9 @@
     "preview": "astro preview",
     "check": "astro check",
     "check:record": "node scripts/check-record.mjs",
-    "maintain:status": "node scripts/maintenance-status.mjs"
+    "maintain:status": "node scripts/maintenance-status.mjs",
+    "loop:run": "node scripts/maintenance-status.mjs && node scripts/check-record.mjs",
+    "loop:record": "node scripts/record-run.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",
