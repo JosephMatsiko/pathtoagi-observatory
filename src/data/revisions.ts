@@ -29,9 +29,9 @@ export const REVISIONS: Revision[] = [
   {
     date: '2026-06-30',
     kind: 'build',
-    title: 'Clean-room rebuild published',
+    title: 'Instrument established',
     detail:
-      'pathtoAGI — the Observatory rebuilt as a lean spine: the operating question, the frame-construction suite, the capability frontier, five theories, an evidence ledger under healthΔ-0 discipline, and scoreable forecasts.',
+      'pathtoAGI — the Observatory published: the operating question, the frame-construction suite, the capability frontier, five theories, an evidence ledger under healthΔ-0 discipline, and scoreable forecasts.',
   },
   {
     date: '2026-06-24',

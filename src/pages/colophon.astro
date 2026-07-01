@@ -6,7 +6,7 @@ import Base from '../layouts/Base.astro';
 const negativeSpace = [
   'Multimodal ingestion — the instrument reads text and numbers, not yet video, audio, deployments, or markets as first-class evidence.',
   'Live source watch — evidence records are seeded by hand, not yet pulled and preserved by an autonomous loop before links rot.',
-  'Forecast resolution — no forecast here has resolved yet, so the Brier record is empty. Calibration is claimed, not yet demonstrated.',
+  'Forecast resolution — forecasts resolve and carry a Brier score, but the resolutions are self-adjudicated. None has been graded by an independent party.',
   'Non-physics frame probes — the suite is physics-only (v0.1); the contamination floor stays high until biology and economics probes exist.',
   'Independent scoring — the FCS runs described are dry runs; none has been scored by a party other than the Observatory.',
   'Consequence and governance layers — who is helped, harmed, displaced, or governed is not yet tracked.',
@@ -17,7 +17,7 @@ const stack = [
   ['Interactive', 'React 19 islands (the frontier radar)'],
   ['Language', 'TypeScript, strict'],
   ['Styling', 'Tailwind CSS v4 + Newsreader / JetBrains Mono'],
-  ['Data', 'Typed seed records — capabilities, theories, FCS, evidence, forecasts'],
+  ['Data', 'Typed records — capabilities, theories, FCS, evidence, forecasts'],
   ['Source of truth', 'The record is the code; the code is inspectable'],
 ];
 ---
@@ -47,10 +47,10 @@ const stack = [
         forecast probability on this site is a <strong>seed estimate</strong>.
       </p>
       <p class="mt-2 text-sm" style="color: var(--color-muted);">
-        They are deliberately conservative, carried from the original register,
-        and meant to be re-grounded against fresh evidence before they are
-        treated as measured fact. The value of the record is that it can be
-        inspected and revised — not that it is already right.
+        They are deliberately conservative and meant to be re-grounded against
+        fresh evidence before they are treated as measured fact. The value of the
+        record is that it can be inspected and revised — not that it is already
+        right.
       </p>
     </div>
   </section>
@@ -90,10 +90,8 @@ const stack = [
       }
     </dl>
     <p class="mt-6 text-sm" style="color: var(--color-muted);">
-      A lean, clean-room core — kept small on purpose so it can be regrown
-      deliberately. The full original Observatory (313 routes, ~100
-      conformance-check scripts, forecast ledgers, self-state records) lives in a
-      separate repository. This is the spine.
+      The record is the code; the code is inspectable. There is no hidden
+      backend — what you can read here is the whole instrument.
     </p>
   </section>
 </Base>

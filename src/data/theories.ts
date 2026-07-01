@@ -2,7 +2,7 @@
 // Observatory reading of how much current evidence supports the theory, with a
 // direction of travel. Each carries the fields that make it inspectable rather
 // than merely stated: who holds it, the assumption it rests on, and the
-// observation that would move it. Seeded from the original Observatory register.
+// observation that would move it.
 
 export type Trend = 'gaining' | 'holding' | 'decelerating';
 

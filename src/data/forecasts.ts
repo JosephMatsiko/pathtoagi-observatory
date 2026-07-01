@@ -2,7 +2,7 @@
 // carries a probability, a hard resolution criterion, and a horizon, so it can
 // be scored (Brier) when it resolves. Resolved forecasts keep their original
 // probability on the record, so the calibration score includes the misses.
-// Seeded estimates: the point is the discipline of the form, not the number.
+// Estimates: the point is the discipline of the form, not the number.
 
 export type ForecastStatus = 'open' | 'resolved-yes' | 'resolved-no';
 

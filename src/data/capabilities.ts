@@ -6,9 +6,9 @@
 //   0.9 = robust across substrates / domains
 //   1.0 = human-level breadth and reliability
 //
-// Carried over from the original Observatory. The axes slice "AGI" along the
-// dimensions Hassabis himself names as gaps. Capability moves slower than
-// benchmark scores; frontier maxima per axis change slowly.
+// The axes slice "AGI" along the dimensions Hassabis himself names as gaps.
+// Capability moves slower than benchmark scores; frontier maxima per axis
+// change slowly.
 
 export const CAPABILITY_AXES = [
   {
@@ -73,11 +73,11 @@ export type CapabilityId = (typeof CAPABILITY_AXES)[number]['id'];
 
 export type CapabilityVector = Record<CapabilityId, number>;
 
-// Observatory seed estimate of the 2026 frontier maximum per axis. These are
-// starting values for the clean rebuild — deliberately conservative and meant
-// to be revised against evidence, not treated as measured fact. The shape
-// encodes the current answer: strong perception/reasoning, weak memory,
-// world-models, embodiment, and creativity (frame construction).
+// Observatory estimate of the 2026 frontier maximum per axis — deliberately
+// conservative and held open to revision against evidence, not treated as
+// measured fact. The shape encodes the current answer: strong
+// perception/reasoning, weak memory, world-models, embodiment, and creativity
+// (frame construction).
 export const FRONTIER_2026: CapabilityVector = {
   perception: 0.72,
   reasoning: 0.68,

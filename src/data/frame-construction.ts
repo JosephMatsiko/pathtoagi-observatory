@@ -1,7 +1,6 @@
-// The Frame Construction Evaluation Suite — the Observatory's distinctive
-// instrument. It operationalizes the operating question (the Einstein Test) into
-// six probes with an explicit scoring asymmetry. Seeded from the original
-// charter's FRAME_CONSTRUCTION_SUITE (v0.1).
+// The Frame Construction Evaluation Suite (v0.1) — the Observatory's
+// distinctive instrument. It operationalizes the operating question (the
+// Einstein Test) into six probes with an explicit scoring asymmetry.
 
 export const OPERATING_QUESTION =
   'Could an AI, given only what was known in 1911, derive general relativity by 1915?';

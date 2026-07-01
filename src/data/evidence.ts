@@ -2,7 +2,7 @@
 // noticed, interpreted under discipline, and bound to a source. The discipline:
 // `healthDelta` is 0 by default — a single vendor-reported or benchmark-centered
 // event does not promote a theory. Promotion requires independent, durable,
-// off-distribution evidence. Seeded from the original register (observed 2026-06).
+// off-distribution evidence.
 
 export type EvidenceClass =
   | 'vendor-reported'
