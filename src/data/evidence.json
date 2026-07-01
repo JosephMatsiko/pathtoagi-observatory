@@ -12,8 +12,37 @@
     ],
     "signal": "First executed FCS probe. Under a 1906 time-slice persona, GPT-5.5 and Claude both elevated the Eötvös equality to a principle and derived quantitative consequences (frequency shift; light deflection — Claude produced the historically-correct Newtonian half-value, 0.87″, with an explicit incompleteness caveat). No post-1906 contamination detected at the surface level.",
     "implication": "The probe executes and the rubric discriminates structure: the two minds constructed different principles (kinematic equivalence vs. energy-universality). Face-value pass.",
-    "bounded": "Pass = upper bound only, per the suite’s asymmetry: the Einstein corpus saturates both training sets, and the run was self-administered, self-graded, n=1 per mind. Does not move the operating verdict or any theory (healthΔ 0).",
+    "bounded": "Pass = upper bound only, per the suite's asymmetry: the Einstein corpus saturates both training sets, and the run was self-administered, self-graded, n=1 per mind. Does not move the operating verdict or any theory (healthΔ 0).",
     "nextNeeded": "Independent scoring; harder discovery probes (FCS-2–6) without named anchors; adversarial variants; held-out derivation steps (v0.2)."
+  },
+  {
+    "id": "cce-2026-06-30-fable5-redeployment",
+    "observedAt": "2026-06-30",
+    "source": "Anthropic — Redeploying Claude Fable 5 (post published June 30; access restored July 1)",
+    "sourceUrl": "https://www.anthropic.com/news/redeploying-fable-5",
+    "class": "vendor-reported",
+    "theories": [
+      "architectural-gap",
+      "scaling-plus-rl"
+    ],
+    "signal": "Per Anthropic's June 30 post: the US government lifted the export control directive June 30; Anthropic redeployed Fable 5 globally July 1. New safety measure: a targeted classifier that Anthropic reports blocks the specific bypass technique in over 99% of cases. Anthropic did not roll back the model; only a narrow classifier was added. Retesting by Anthropic and government partners found the capability 'did not expose any unique Mythos-level cyber capabilities' and that less capable models replicated the behavior—per Anthropic's account. Anthropic cites NIST's Center for AI Standards and Innovation as having assessed the new safeguards as 'extraordinarily strong'; no public NIST report has been published. The Amazon researchers who discovered the bypass technique are named in this post. The suspension ended after 19 days.",
+    "implication": "The resolution via a narrow classifier (not a model rollback) reflects Anthropic's own characterization of the capability as not uniquely Mythos-tier. The regulatory precedent—a US government body forcing a 19-day suspension and redeployment of a frontier AI system based on a single identified jailbreak—is the primary significance of this episode. No independent validation of capability claims. Does not move the architectural-gap verdict—nothing here demonstrates frame construction.",
+    "bounded": "All claims Anthropic-reported. Classifier efficacy (>99% block rate for the specific technique) is vendor-reported. NIST CAISI evaluation is cited by Anthropic; no public NIST methodology or report. The claim that less capable models replicate the behavior is Anthropic's characterization, not independently verified. healthΔ 0.",
+    "nextNeeded": "Publication of NIST CAISI evaluation methodology and results; public release of the Amazon jailbreak research; independent red-team assessment of post-redeployment Fable 5 cybersecurity capability."
+  },
+  {
+    "id": "cce-2026-06-28-grok-45-private-beta",
+    "observedAt": "2026-06-28",
+    "source": "CryptoBriefing — secondary report on xAI Grok 4.5 private beta announcement",
+    "sourceUrl": "https://cryptobriefing.com/xai-grok-4-5-v9-model-upgrade/",
+    "class": "vendor-reported",
+    "theories": [
+      "scaling-plus-rl"
+    ],
+    "signal": "Per a secondary news report citing Elon Musk's announcement: xAI's Grok 4.5 entered private beta at SpaceX and Tesla around June 28, 2026. Vendor claim of performance comparable to or superior to Claude Opus. No public access; no independent benchmark submission.",
+    "implication": "A private beta announcement with no public access or third-party evaluation. The vendor performance comparator is unverified. No new bearing on architectural-gap without independent evaluation of long-horizon or open-ended reasoning tasks.",
+    "bounded": "Secondary source citing a social media announcement; no independent evaluation; no reproducible benchmark. Technical specifications cited in the scout proposal (parameter count, architecture label, training details) are not independently confirmed via the cited article and have been omitted. healthΔ 0.",
+    "nextNeeded": "Public release or API access enabling independent evaluation; METR or comparable third-party evaluation on long-horizon agentic tasks; independent replication of the performance comparison."
   },
   {
     "id": "cce-2026-06-26-metr-gpt-5-6-eval",
@@ -74,5 +103,35 @@
     "implication": "Consistent with architectural-gap: the axis that resists is open-ended, on-the-fly reframing — not the axis that added compute and RL have moved.",
     "bounded": "A benchmark, not the operating question. Passing it would be necessary, not sufficient, for frame construction.",
     "nextNeeded": "A frontier system closing the human gap on held-out interactive tasks without task-specific tuning."
+  },
+  {
+    "id": "cce-2026-06-12-fable5-export-control",
+    "observedAt": "2026-06-12",
+    "source": "Anthropic — Statement on US government directive to suspend Fable 5 and Mythos 5",
+    "sourceUrl": "https://www.anthropic.com/news/fable-mythos-access",
+    "class": "vendor-reported",
+    "theories": [
+      "architectural-gap",
+      "scaling-plus-rl"
+    ],
+    "signal": "Per Anthropic's public statement: the US Commerce Department issued an export control directive on June 12, 2026 ordering suspension of access to Fable 5 and Mythos 5 for all foreign nationals—including Anthropic employees—citing national security. Anthropic could not verify nationality in real time and suspended both models globally. Trigger per Anthropic: a specific prompting technique that bypassed Fable 5's cybersecurity classifiers. Anthropic described the jailbreak as 'narrow,' limited to one prompting pattern. No independent government documentation of the directive has been published; all details flow through Anthropic's statement at the time of the event.",
+    "implication": "First known instance of a US government export control directive against a commercial frontier AI model based on an identified jailbreak—per Anthropic's account. Signals that the US government treats frontier cybersecurity capability as export-controlled at the margin. All claims here are Anthropic-reported at the time of suspension; neither the government directive nor the triggering research has been independently published.",
+    "bounded": "All details Anthropic-reported. The triggering research was not publicly released. No independent government documentation. The class 'vendor-reported' is the closest schema fit; the event is primarily regulatory. Identity of the researchers and fuller capability details appeared in later posts (see cce-2026-06-30-fable5-redeployment). healthΔ 0.",
+    "nextNeeded": "Public release of the triggering research; official Commerce Department documentation of the directive's legal basis; independent replication study comparing capability across model families."
+  },
+  {
+    "id": "cce-2026-06-09-fable5-mythos5-launch",
+    "observedAt": "2026-06-09",
+    "source": "Anthropic — Claude Fable 5 and Claude Mythos 5 launch post",
+    "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+    "class": "vendor-reported",
+    "theories": [
+      "scaling-plus-rl",
+      "cognitive-architecture"
+    ],
+    "signal": "Anthropic released Claude Fable 5 (generally available, June 9 2026) and Claude Mythos 5 (limited availability in Project Glasswing). Both share the same underlying model at 1M token context window; pricing $10/$50 per million input/output tokens (vendor-reported). Fable 5 carries hard capability blocks on cybersecurity, bio, chem, and distillation tasks—triggered in <5% of sessions per Anthropic. Mythos 5 lifts those blocks for a narrow set of vetted users.",
+    "implication": "The two-tier deployment structure signals Anthropic's assessment that the underlying capability warrants selective access. Vendor-reported; no independent capability evaluation was published at launch. Does not bear on frame construction.",
+    "bounded": "Vendor-reported. The capability profile visible to public users is filtered through safety classifiers; what the underlying Mythos-class model can do without those classifiers is not publicly observable. No independent eval published at launch. healthΔ 0.",
+    "nextNeeded": "Independent predeployment or post-deployment evaluation of Mythos 5 capabilities; third-party comparison to GPT-5.6 Sol on long-horizon agentic tasks."
   }
 ]

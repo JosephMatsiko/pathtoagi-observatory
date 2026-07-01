@@ -4,6 +4,22 @@
     "at": "2026-07-01",
     "trigger": "scheduled",
     "actor": "operator + Claude (Max)",
+    "meanBrierAfter": null,
+    "gatePassed": true,
+    "actions": [
+      "logged cce-2026-06-09-fable5-mythos5-launch",
+      "logged cce-2026-06-12-fable5-export-control",
+      "logged cce-2026-06-30-fable5-redeployment",
+      "logged cce-2026-06-28-grok-45-private-beta",
+      "updated adversarial-mesh method health (two consecutive calibration lane failures)"
+    ],
+    "note": "Cycle 2026-07-01T21-29-32-114Z: REVISE verdict applied. Four evidence records added: Fable 5/Mythos 5 launch (June 9), export control suspension (June 12), redeployment (June 30), Grok 4.5 private beta (June 28). Adversary corrections applied: source contamination fixed in Record 2, Record 3 observedAt corrected to 2026-06-30, CAISI marked Anthropic-cited only, Grok record downgraded to secondary source. fc-fable5-cap-transition held open for human review. Adversarial mesh ran two-lane (no calibration.md). healthΔ 0 — discipline held."
+  },
+  {
+    "id": "run-2026-07-01-scheduled",
+    "at": "2026-07-01",
+    "trigger": "scheduled",
+    "actor": "operator + Claude (Max)",
     "meanBrierAfter": 0.046,
     "gatePassed": true,
     "actions": [

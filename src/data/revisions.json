@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-07-01",
+    "kind": "record",
+    "title": "Fable 5/Mythos 5 episode + Grok 4.5 private beta logged",
+    "detail": "Four evidence records added: Anthropic Fable 5/Mythos 5 launch (June 9), US export control suspension (June 12), redeployment with enhanced classifier (June 30/July 1), and xAI Grok 4.5 private beta (June 28). All revised from Scout proposal per Adversary REVISE verdict: Record 2 stripped of later-sourced details (Amazon researcher attribution confined to the June 30 redeployment record per source-contamination flag); Record 3 observedAt corrected to 2026-06-30 (source post date), id updated accordingly; NIST CAISI evaluation marked Anthropic-cited only (no public report); Record 4 source downgraded to CryptoBriefing secondary with unverified technical specifications removed. All regulatory claims explicitly flagged as Anthropic-reported; no independent government documentation exists. healthΔ 0 — discipline held. Forecast fc-fable5-cap-transition flagged for human review; not resolved this cycle. Calibration lane absent (no calibration.md produced); adversarial mesh ran two-lane again."
+  },
+  {
+    "date": "2026-07-01",
     "kind": "method",
     "title": "FCS-1 executed — the suite’s first real run",
     "detail": "The Frame Construction Suite moved from blueprint to instrument: FCS-1 (equivalence) was administered to two minds under a 1906 time-slice. Both passed at face value — GPT-5.5 via the accelerated-chamber argument, Claude via an energy-universality principle with the historically-correct Newtonian half-deflection (0.87″) and an incompleteness caveat. Scored strictly as an upper bound under the asymmetry (contamination-dominated; self-administered; n=1). FCS-1: untested → contested. Verdict unmoved. Transcripts and grading published in-repo."
