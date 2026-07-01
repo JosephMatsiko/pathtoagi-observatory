@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  launchd agent: hourly maintenance heartbeat for pathtoAGI — the Observatory.
+  Install:  cp ops/com.pathtoagi.observatory.maintenance.plist ~/Library/LaunchAgents/
+            launchctl load ~/Library/LaunchAgents/com.pathtoagi.observatory.maintenance.plist
+  Disable:  launchctl unload ~/Library/LaunchAgents/com.pathtoagi.observatory.maintenance.plist
+  Full autonomy (opt-in): add OBSERVATORY_AUTONOMOUS=1 to EnvironmentVariables below.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.pathtoagi.observatory.maintenance</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/josephmatsiko/Projects/observatory/scripts/maintenance-cron.sh</string>
+    </array>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/Users/josephmatsiko/.nvm/versions/node/v24.14.1/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+        <key>OBSERVATORY_REPO</key>
+        <string>/Users/josephmatsiko/Projects/observatory</string>
+    </dict>
+
+    <key>StartInterval</key>
+    <integer>3600</integer>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/josephmatsiko/Projects/observatory/.maintenance.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/josephmatsiko/Projects/observatory/.maintenance.err.log</string>
+</dict>
+</plist>

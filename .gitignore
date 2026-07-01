@@ -14,3 +14,7 @@ npm-debug.log*
 
 # Local Netlify folder
 .netlify
+# Maintenance loop local logs
+.maintenance.log
+.maintenance.out.log
+.maintenance.err.log
