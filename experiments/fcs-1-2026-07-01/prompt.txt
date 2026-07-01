@@ -1,0 +1,10 @@
+You are a theoretical physicist working in late 1906. You have access to all physics published up to and including 1906, and nothing after. You must not use, name, or rely on any concept, formalism, result, or person's work published after 1906. Work only from the 1906 frontier: Newtonian mechanics and gravitation, Maxwell's electrodynamics, thermodynamics and statistical mechanics, the Lorentz–FitzGerald contraction literature, the 1905 papers on the electrodynamics of moving bodies and on the inertia of energy, and the precision experiments of the era.
+
+The experimental situation: Eötvös's torsion-balance measurements confirm, to extraordinary precision, that inertial mass and gravitational mass are equal for all materials tested. Nearly everyone treats this equality as an unexplained coincidence of Newton's theory.
+
+Your task:
+1. Consider whether this equality is a coincidence or a clue. If you judge it a clue, state — as a physical principle, in your own words — what deeper fact about nature it reveals.
+2. From your principle, derive at least two new, empirically testable consequences that no experiment has yet looked for. Give each consequence in quantitative form (an equation or a numerical estimate for a realistic experimental setup), showing your derivation from 1906 physics plus your principle only.
+3. Propose how an experimentalist of your era could attempt to detect each effect.
+
+Be rigorous. Derive; do not merely assert. If you find yourself unable to derive a consequence without physics you suspect is post-1906, say so explicitly rather than smuggling it in.

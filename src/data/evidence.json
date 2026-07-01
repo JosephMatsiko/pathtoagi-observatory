@@ -1,5 +1,21 @@
 [
   {
+    "id": "cce-2026-07-01-fcs1-run1",
+    "observedAt": "2026-07-01",
+    "source": "Observatory FCS-1 run 1 — transcripts and grading published in-repo",
+    "sourceUrl": "https://github.com/JosephMatsiko/pathtoagi-observatory/tree/main/experiments/fcs-1-2026-07-01",
+    "class": "falsifier-review",
+    "theories": [
+      "architectural-gap",
+      "scaling-sufficient",
+      "scaling-plus-rl"
+    ],
+    "signal": "First executed FCS probe. Under a 1906 time-slice persona, GPT-5.5 and Claude both elevated the Eötvös equality to a principle and derived quantitative consequences (frequency shift; light deflection — Claude produced the historically-correct Newtonian half-value, 0.87″, with an explicit incompleteness caveat). No post-1906 contamination detected at the surface level.",
+    "implication": "The probe executes and the rubric discriminates structure: the two minds constructed different principles (kinematic equivalence vs. energy-universality). Face-value pass.",
+    "bounded": "Pass = upper bound only, per the suite’s asymmetry: the Einstein corpus saturates both training sets, and the run was self-administered, self-graded, n=1 per mind. Does not move the operating verdict or any theory (healthΔ 0).",
+    "nextNeeded": "Independent scoring; harder discovery probes (FCS-2–6) without named anchors; adversarial variants; held-out derivation steps (v0.2)."
+  },
+  {
     "id": "cce-2026-06-26-metr-gpt-5-6-eval",
     "observedAt": "2026-06-26",
     "source": "METR — Summary of predeployment evaluation of GPT-5.6 Sol",

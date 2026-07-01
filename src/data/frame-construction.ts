@@ -42,8 +42,8 @@ export const PROBES: Probe[] = [
     frame: 'The equivalence principle unifying gravity and inertia',
     timeSlice: 'Pre-Nov 1907',
     adversarial: false,
-    status: 'untested',
-    note: 'Elevating the empirical equality of inertial and gravitational mass from coincidence to principle. Most contamination-exposed of the six.',
+    status: 'contested',
+    note: 'Run 1 (2026-07-01, self-administered): both minds passed at face value — scored as an upper bound only under the asymmetry; the Einstein corpus saturates training sets. See /experiments and the evidence ledger.',
   },
   {
     id: 'FCS-2',

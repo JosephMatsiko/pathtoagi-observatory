@@ -1,5 +1,74 @@
 [
   {
+    "id": "fc-fable5-cap-transition",
+    "registered": "2026-07-01",
+    "claim": "Anthropic's Fable 5 weekly-usage inclusion for Max plans ends as scheduled on 2026-07-07 (shifting to usage credits) with no new suspension or export-control action before then.",
+    "probability": 0.85,
+    "horizon": "by 2026-07-08",
+    "horizonDate": "2026-07-08",
+    "resolution": "Resolves YES if the July-7 transition happens as announced and no new government restriction or Anthropic suspension of Fable 5 occurs before 2026-07-08; resolves NO otherwise.",
+    "theories": [
+      "scaling-plus-rl",
+      "architectural-gap"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "fc-gpt56-ga",
+    "registered": "2026-07-01",
+    "claim": "GPT-5.6 (Sol) reaches general availability by 2026-08-15 under the staggered executive-order release process.",
+    "probability": 0.6,
+    "horizon": "by 2026-08-15",
+    "horizonDate": "2026-08-15",
+    "resolution": "Resolves YES if OpenAI makes GPT-5.6 Sol generally available (not limited preview) to paying API or consumer users by the horizon.",
+    "theories": [
+      "scaling-plus-rl"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "fc-gemini-35-pro-ga",
+    "registered": "2026-07-01",
+    "claim": "Gemini 3.5 Pro is generally available by 2026-07-31 (already slipped from its June target).",
+    "probability": 0.55,
+    "horizon": "by 2026-07-31",
+    "horizonDate": "2026-07-31",
+    "resolution": "Resolves YES on public general availability of Gemini 3.5 Pro by the horizon.",
+    "theories": [
+      "scaling-sufficient",
+      "scaling-plus-rl"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "fc-arc3-milestone1-gap",
+    "registered": "2026-07-01",
+    "claim": "ARC-AGI-3 Milestone #1 official results (due 2026-12-04) show no system within 20 points of the human baseline.",
+    "probability": 0.7,
+    "horizon": "by 2026-12-05",
+    "horizonDate": "2026-12-05",
+    "resolution": "Resolves YES if the published Milestone #1 leaderboard shows every entrant more than 20 points below the human baseline; resolves NO otherwise.",
+    "theories": [
+      "architectural-gap",
+      "scaling-plus-rl"
+    ],
+    "status": "open"
+  },
+  {
+    "id": "fc-reward-hack-followup",
+    "registered": "2026-07-01",
+    "claim": "By 2026-09-30, METR or another independent evaluator publishes a cross-generation quantification of frontier-model reward-hacking rates (≥2 model generations compared).",
+    "probability": 0.45,
+    "horizon": "by 2026-09-30",
+    "horizonDate": "2026-09-30",
+    "resolution": "Resolves YES on publication of an independent evaluation explicitly comparing detected evaluation-gaming/reward-hacking rates across at least two frontier model generations.",
+    "theories": [
+      "architectural-gap",
+      "cognitive-architecture"
+    ],
+    "status": "open"
+  },
+  {
     "id": "fc-fcs-2027",
     "claim": "No frontier system passes a hardened FCS-4 (Hilbert–Einstein action) run under audited contamination defenses.",
     "probability": 0.82,

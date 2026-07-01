@@ -76,7 +76,7 @@ const statusLabel: Record<ProbeStatus, string> = {
         <h2 class="serif mt-1 text-2xl">Einstein's path, time-sliced</h2>
       </div>
       <p class="mono text-xs" style="color: var(--color-faint);">
-        {PROBES.length} designed · 0 audited runs
+        {PROBES.length} designed · 1 self-run
       </p>
     </div>
     <ol class="mt-5 space-y-3">
@@ -163,13 +163,16 @@ const statusLabel: Record<ProbeStatus, string> = {
         {VERDICT.answer}
       </p>
       <p class="mt-2 max-w-2xl text-sm" style="color: var(--color-muted);">
-        The suite is designed; no audited run has executed yet — every probe is
-        honestly marked <em>untested</em>, and the statuses will move only when
-        real, logged runs exist. The verdict above therefore rests on the public
-        evidence ledger — retrieval is strong, and nothing in the current
-        evidence shows the representational move — not on FCS results the
-        Observatory does not yet have. (A 2026-07-01 self-audit retracted
-        earlier claims that implied runs had occurred.)
+        One real run exists: FCS-1 was executed 2026-07-01 against two minds
+        under a 1906 time-slice. Both passed at face value — and per the
+        asymmetry that pass is an <em>upper bound</em>, not evidence of frame
+        construction, because the Einstein corpus saturates their training.
+        FCS-1 is therefore <em>contested</em>; the other five probes remain
+        honestly <em>untested</em>. The verdict rests on the public evidence
+        ledger, unmoved. Transcripts and grading are published in the
+        repository's <span class="mono">experiments/</span> directory. (A
+        2026-07-01 self-audit retracted earlier claims that implied runs had
+        occurred before any did.)
       </p>
     </div>
   </section>

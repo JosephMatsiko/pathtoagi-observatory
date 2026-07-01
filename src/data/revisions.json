@@ -1,6 +1,18 @@
 [
   {
     "date": "2026-07-01",
+    "kind": "method",
+    "title": "FCS-1 executed — the suite’s first real run",
+    "detail": "The Frame Construction Suite moved from blueprint to instrument: FCS-1 (equivalence) was administered to two minds under a 1906 time-slice. Both passed at face value — GPT-5.5 via the accelerated-chamber argument, Claude via an energy-universality principle with the historically-correct Newtonian half-deflection (0.87″) and an incompleteness caveat. Scored strictly as an upper bound under the asymmetry (contamination-dominated; self-administered; n=1). FCS-1: untested → contested. Verdict unmoved. Transcripts and grading published in-repo."
+  },
+  {
+    "date": "2026-07-01",
+    "kind": "record",
+    "title": "Five live forecasts registered — the calibration clock starts",
+    "detail": "Five genuinely-live predictions registered before their outcomes are known (Fable 5 cap transition by Jul 8; GPT-5.6 GA by Aug 15; Gemini 3.5 Pro GA by Jul 31; ARC-AGI-3 Milestone #1 gap; independent reward-hacking follow-up). These are the first forecasts eligible for the Brier record since the backfill retraction."
+  },
+  {
+    "date": "2026-07-01",
     "kind": "verdict",
     "title": "Calibration retracted: backfilled forecasts and a fabricated evidence record",
     "detail": "A self-audit found the public Brier score rested on three forecasts authored after their resolution dates — one resolving against FCS \"dry runs\" that never took place — and an evidence record (cce-2026-06-10-mercury-probe) describing an internal probe run that never occurred. Per the charter (revision in public; name the drift): the fabricated evidence record is removed, the three resolutions are marked backfilled and excluded from calibration, the FCS probe statuses are reset to untested, and the calibration panel now reports an honestly empty Brier record until forecasts resolve live. This was manufactured certainty; the instrument caught itself."
