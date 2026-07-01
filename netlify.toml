@@ -1,0 +1,9 @@
+# Build config for pathtoAGI — the Observatory.
+# This is a NEW, separate Netlify site — it must never deploy to the original
+# `pathtoagi` site (id 90da678d-b2df-4be6-8afb-ce2c22bb616c).
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
