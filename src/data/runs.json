@@ -1,5 +1,19 @@
 [
   {
+    "id": "run-2026-07-01-scheduled",
+    "at": "2026-07-01",
+    "trigger": "scheduled",
+    "actor": "operator + Claude (Max)",
+    "meanBrierAfter": 0.046,
+    "gatePassed": true,
+    "actions": [
+      "logged cce-2026-06-26-gpt-5-6-preview (vendor-reported)",
+      "logged cce-2026-06-26-metr-gpt-5-6-eval (independent-eval, NDA caveat noted)",
+      "added adversarial-mesh to method-health.json (calibration lane failed)"
+    ],
+    "note": "Scout proposal REVISE'd by adversary; two GPT-5.6 evidence records applied with adversary corrections; adversarial-mesh method-health entry added for failed Gemini calibration lane"
+  },
+  {
     "id": "run-2026-07-01-genesis",
     "at": "2026-07-01",
     "trigger": "genesis",

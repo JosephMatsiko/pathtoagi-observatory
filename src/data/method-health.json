@@ -14,6 +14,13 @@
     "nextImprovement": "Resolve more forecasts before claiming calibration; feed the running Brier back into how confident new forecasts are allowed to be."
   },
   {
+    "id": "adversarial-mesh",
+    "method": "Three-mind adversarial verification",
+    "reading": "Calibration lane (Gemini CLI) failed this cycle with an IneligibleTierError — mesh ran two-lane (Scout + Adversary) instead of three. Degraded independence.",
+    "status": "act",
+    "nextImprovement": "Restore or replace the calibration lane before the next cycle; verify Gemini CLI auth or designate an alternative third-mind calibrator."
+  },
+  {
     "id": "axis-granularity",
     "method": "Capability axes (8)",
     "reading": "'Creativity' conflates recombination with genuine origination — the exact skill the operating question isolates.",
