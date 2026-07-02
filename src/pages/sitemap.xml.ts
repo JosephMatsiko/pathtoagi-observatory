@@ -6,6 +6,7 @@ const BASE = 'https://pathtoagi-observatory.netlify.app';
 const routes = [
   '/', '/frontier/', '/test/', '/theories/', '/evidence/', '/forecasts/',
   '/log/', '/operate/', '/superlatives/', '/charter/', '/colophon/',
+  '/experiments/', '/experiments/fcs-1-2026-07-01/',
   ...THEORIES.map((t) => `/theories/${t.id}/`),
 ];
 

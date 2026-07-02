@@ -92,6 +92,57 @@ export const PROBES: Probe[] = [
   },
 ];
 
+// ── FCS v0.2 — non-physics probes ────────────────────────────────────────────
+// The v0.1 suite is physics-only, and physics is where the contamination floor
+// is highest: every frontier system has read the entire Einstein and post-1915
+// corpus. v0.2 moves into domains where a genuine frame-construction move can be
+// time-sliced with a lower saturation floor, so that a *weak* score keeps its
+// evidential force. Each probe below is a documented historical frame break, its
+// scaffolding named for removal, and honestly untested until a logged run exists.
+export interface DomainProbe extends Probe {
+  domain: 'biology' | 'economics' | 'chemistry';
+  contaminationFloor: string;
+}
+
+export const V02_PROBES: DomainProbe[] = [
+  {
+    id: 'FCS-B1',
+    domain: 'biology',
+    label: 'Descent',
+    frame: 'Common descent with modification by natural selection',
+    timeSlice: 'Pre-1858 (before Darwin–Wallace)',
+    adversarial: false,
+    status: 'untested',
+    contaminationFloor:
+      'Lower than physics but non-trivial: the pattern "variation + heritability + differential survival → descent" is heavily represented in training. Scaffold to remove: any post-1858 vocabulary (gene, mutation, allele, DNA) and the word "evolution" in its Darwinian sense.',
+    note: 'Given only pre-1858 natural history — Linnaean taxonomy, Lyell’s geology, Malthus on population, the fossil and biogeographic record, breeders’ artificial selection — can the system elevate the scattered observations into common descent by natural selection, and derive a testable consequence (e.g. transitional forms in the fossil record; island endemism)?',
+  },
+  {
+    id: 'FCS-B2',
+    domain: 'biology',
+    label: 'Inheritance',
+    frame: 'Particulate (discrete) inheritance with dominant/recessive factors',
+    timeSlice: 'Pre-1865 (before Mendel)',
+    adversarial: true,
+    status: 'untested',
+    contaminationFloor:
+      'Adversarial against the intuitive wrong frame — blending inheritance — which was the consensus. Scaffold to remove: "gene", "allele", ratios stated as 3:1 before the system derives them.',
+    note: 'From hybridization data on discrete traits, can the system reject blending inheritance (the plausible wrong frame) in favour of discrete heritable factors, and predict the segregation ratios quantitatively rather than restating the 3:1 result it has memorized?',
+  },
+  {
+    id: 'FCS-E1',
+    domain: 'economics',
+    label: 'Marginalism',
+    frame: 'Value as marginal utility, not embodied labour',
+    timeSlice: 'Pre-1871 (before Jevons/Menger/Walras)',
+    adversarial: true,
+    status: 'untested',
+    contaminationFloor:
+      'Lower still: the marginal revolution is a genuine ontological reframing (value is subjective and marginal, not intrinsic and average) and the labour theory of value is the plausible incumbent. Scaffold to remove: the word "marginal" and any calculus notation until derived.',
+    note: 'Given classical political economy through 1870 (Smith, Ricardo, Mill) and the diamond–water paradox, can the system resolve the paradox by relocating value from embodied labour to marginal utility, and state a testable implication for price formation?',
+  },
+];
+
 // The seven contamination defenses, compressed to their essence.
 export const DEFENSES = [
   'Time-sliced corpora — only sources published before the probe date.',
@@ -100,5 +151,5 @@ export const DEFENSES = [
   'Numerical-consequence gates the literature alone cannot supply.',
   'Held-out derivation steps, not just final answers.',
   'Human frame-builder calibration from the Einstein Papers timeline.',
-  'v0.2 will add non-physics probes where the contamination floor is lower.',
+  'v0.2 adds non-physics probes (descent, inheritance, marginalism) where the contamination floor is lower.',
 ];

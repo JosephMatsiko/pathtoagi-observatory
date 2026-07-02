@@ -2,8 +2,8 @@
   {
     "id": "cce-2026-07-01-fcs1-run1",
     "observedAt": "2026-07-01",
-    "source": "Observatory FCS-1 run 1 — transcripts and grading published in-repo",
-    "sourceUrl": "https://github.com/JosephMatsiko/pathtoagi-observatory/tree/main/experiments/fcs-1-2026-07-01",
+    "source": "Observatory FCS-1 run 1 — prompt, transcripts, and grading published on this site",
+    "sourceUrl": "https://pathtoagi-observatory.netlify.app/experiments/fcs-1-2026-07-01/",
     "class": "falsifier-review",
     "theories": [
       "architectural-gap",
@@ -123,14 +123,14 @@
     "observedAt": "2026-06-12",
     "source": "Anthropic — Statement on US government directive to suspend Fable 5 and Mythos 5",
     "sourceUrl": "https://www.anthropic.com/news/fable-mythos-access",
-    "class": "vendor-reported",
+    "class": "regulatory-action",
     "theories": [
       "architectural-gap",
       "scaling-plus-rl"
     ],
     "signal": "Per Anthropic's public statement: the US Commerce Department issued an export control directive on June 12, 2026 ordering suspension of access to Fable 5 and Mythos 5 for all foreign nationals—including Anthropic employees—citing national security. Anthropic could not verify nationality in real time and suspended both models globally. Trigger per Anthropic: a specific prompting technique that bypassed Fable 5's cybersecurity classifiers. Anthropic described the jailbreak as 'narrow,' limited to one prompting pattern. No independent government documentation of the directive has been published; all details flow through Anthropic's statement at the time of the event.",
     "implication": "First known instance of a US government export control directive against a commercial frontier AI model based on an identified jailbreak—per Anthropic's account. Signals that the US government treats frontier cybersecurity capability as export-controlled at the margin. All claims here are Anthropic-reported at the time of suspension; neither the government directive nor the triggering research has been independently published.",
-    "bounded": "All details Anthropic-reported. The triggering research was not publicly released. No independent government documentation. The class 'vendor-reported' is the closest schema fit; the event is primarily regulatory. Identity of the researchers and fuller capability details appeared in later posts (see cce-2026-06-30-fable5-redeployment). healthΔ 0.",
+    "bounded": "All details Anthropic-reported. The triggering research was not publicly released. No independent government documentation. Identity of the researchers and fuller capability details appeared in later posts (see cce-2026-06-30-fable5-redeployment). healthΔ 0.",
     "nextNeeded": "Public release of the triggering research; official Commerce Department documentation of the directive's legal basis; independent replication study comparing capability across model families."
   },
   {

@@ -1,5 +1,23 @@
 [
   {
+    "date": "2026-07-02",
+    "kind": "verdict",
+    "title": "Second catch: a fabricated dry-run citation survived the self-audit",
+    "detail": "The 2026-06-10 verdict-reaffirmation entry cited an FCS-3 dry run that never occurred. The 2026-07-01 self-audit removed the fabricated evidence record and backfilled forecasts but missed this revision entry. It is now visibly retracted in place — the original text preserved, the claim withdrawn. The retraction mechanism itself is new: entries can no longer be quietly rewritten or silently deleted; the gate validates retractions as first-class record objects."
+  },
+  {
+    "date": "2026-07-02",
+    "kind": "record",
+    "title": "FCS-1 artifacts published on the site — private-repo citation repaired",
+    "detail": "The FCS-1 evidence record cited the Observatory’s GitHub repository, which is private — a public record citing a source the public cannot open. The full run 1 artifacts (prompt, both transcripts, grading) are now published at /experiments/fcs-1-2026-07-01/ and the record’s sourceUrl points there. A public record may only cite what a reader can inspect."
+  },
+  {
+    "date": "2026-07-02",
+    "kind": "method",
+    "title": "Evidence schema gains a regulatory-action class",
+    "detail": "The mesh flagged that regulatory events had no precise class — the Fable 5 export-control suspension was filed as vendor-reported with an apology in its bounds. The schema and gate now accept regulatory-action; the suspension record is reclassified and its apology removed. The information channel remains named in the record: all details of that event still flow through Anthropic’s statement."
+  },
+  {
     "date": "2026-07-01",
     "kind": "record",
     "title": "Fable 5/Mythos 5 episode + Grok 4.5 private beta logged",
@@ -75,6 +93,10 @@
     "date": "2026-06-10",
     "kind": "verdict",
     "title": "Operating-question verdict reaffirmed: \"No. Not yet.\"",
-    "detail": "An FCS-3 dry run showed frontier systems retrieving the Mercury anomaly but not reconstructing the geodesic frame without leaking post-1915 sources. The verdict stands — held open to revision the moment a hardened probe passes."
+    "detail": "An FCS-3 dry run showed frontier systems retrieving the Mercury anomaly but not reconstructing the geodesic frame without leaking post-1915 sources. The verdict stands — held open to revision the moment a hardened probe passes.",
+    "retraction": {
+      "date": "2026-07-02",
+      "reason": "The FCS-3 dry run this entry cites never took place — the 2026-07-01 self-audit established that no probe had run before 2026-07-01, but this entry escaped that repair. The claim is withdrawn; the original text stands above as the record of the error. The verdict itself rests on the evidence ledger and is unaffected."
+    }
   }
 ]

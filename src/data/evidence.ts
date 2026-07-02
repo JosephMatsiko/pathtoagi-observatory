@@ -12,7 +12,8 @@ export type EvidenceClass =
   | 'vendor-reported'
   | 'independent-eval'
   | 'benchmark-design'
-  | 'falsifier-review';
+  | 'falsifier-review'
+  | 'regulatory-action';
 
 export interface EvidenceRecord {
   id: string;
@@ -32,6 +33,7 @@ export const EVIDENCE_CLASS_LABEL: Record<EvidenceClass, string> = {
   'independent-eval': 'Independent evaluation',
   'benchmark-design': 'Benchmark design',
   'falsifier-review': 'Falsifier review',
+  'regulatory-action': 'Regulatory action',
 };
 
 export const EVIDENCE: EvidenceRecord[] = raw as EvidenceRecord[];

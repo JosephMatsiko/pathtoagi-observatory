@@ -12,6 +12,9 @@ export interface Revision {
   kind: RevisionKind;
   title: string;
   detail: string;
+  /** A later catch that withdraws this entry's claim. The original text stays
+   *  on the record — visibly superseded, never quietly rewritten. */
+  retraction?: { date: string; reason: string };
 }
 
 export const REVISION_KIND_LABEL: Record<RevisionKind, string> = {

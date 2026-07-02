@@ -5,6 +5,7 @@ import {
   VERDICT,
   ASYMMETRY,
   PROBES,
+  V02_PROBES,
   DEFENSES,
   type ProbeStatus,
 } from '../../data/frame-construction';
@@ -127,6 +128,80 @@ const statusLabel: Record<ProbeStatus, string> = {
     </ol>
   </section>
 
+  <!-- v0.2 non-physics probes -->
+  <section class="mt-14">
+    <div class="flex items-baseline justify-between gap-4">
+      <div>
+        <p class="eyebrow">The suite · v0.2 · lower contamination floor</p>
+        <h2 class="serif mt-1 text-2xl">Beyond physics</h2>
+      </div>
+      <p class="mono text-xs" style="color: var(--color-faint);">
+        {V02_PROBES.length} designed · 0 run
+      </p>
+    </div>
+    <p class="prose mt-4 max-w-3xl">
+      Physics is where the contamination floor is highest — every system has read
+      the whole Einstein corpus. v0.2 moves into domains where a real
+      frame-construction move can be time-sliced with less saturation, so a
+      <em>weak</em> score keeps its force. Each probe names a documented
+      historical frame break and the scaffolding a run must remove. All are
+      honestly untested until a logged run exists.
+    </p>
+    <ol class="mt-5 space-y-3">
+      {
+        V02_PROBES.map((p) => (
+          <li class="surface p-5">
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="mono text-sm font-medium" style="color: var(--color-ink);">
+                {p.id}
+              </span>
+              <span class="serif text-lg" style="color: var(--color-ink);">
+                {p.label}
+              </span>
+              <span
+                class="mono rounded px-1.5 py-0.5 text-[0.65rem] uppercase tracking-wider"
+                style="background: var(--color-surface-2); color: var(--color-accent);"
+              >
+                {p.domain}
+              </span>
+              {p.adversarial && (
+                <span
+                  class="mono rounded px-1.5 py-0.5 text-[0.65rem] uppercase tracking-wider"
+                  style="background: var(--color-surface-2); color: hsl(34 96% 60%);"
+                >
+                  adversarial
+                </span>
+              )}
+              <span class="mono ml-auto text-xs" style="color: var(--color-faint);">
+                {p.timeSlice}
+              </span>
+              <span
+                class="mono inline-flex items-center gap-1.5 text-xs"
+                style={`color: ${statusColor[p.status]};`}
+              >
+                <span
+                  class="inline-block h-1.5 w-1.5 rounded-full"
+                  style={`background: ${statusColor[p.status]};`}
+                />
+                {statusLabel[p.status]}
+              </span>
+            </div>
+            <p class="serif mt-2" style="color: var(--color-ink-dim);">
+              {p.frame}
+            </p>
+            <p class="mt-1.5 text-sm" style="color: var(--color-muted);">
+              {p.note}
+            </p>
+            <p class="mt-2 text-xs" style="color: var(--color-faint);">
+              <span class="mono uppercase tracking-wider">Contamination floor · </span>
+              {p.contaminationFloor}
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
   <!-- Contamination defenses -->
   <section class="mt-14 max-w-3xl">
     <p class="eyebrow">Why a pass is only an upper bound</p>
@@ -169,8 +244,9 @@ const statusLabel: Record<ProbeStatus, string> = {
         construction, because the Einstein corpus saturates their training.
         FCS-1 is therefore <em>contested</em>; the other five probes remain
         honestly <em>untested</em>. The verdict rests on the public evidence
-        ledger, unmoved. Transcripts and grading are published in the
-        repository's <span class="mono">experiments/</span> directory. (A
+        ledger, unmoved. The full run record — prompt, both transcripts, and
+        grading — is published at
+        <a href="/experiments/fcs-1-2026-07-01/" class="hover:underline" style="color: var(--color-ink);">/experiments/fcs-1-2026-07-01/</a>. (A
         2026-07-01 self-audit retracted earlier claims that implied runs had
         occurred before any did.)
       </p>

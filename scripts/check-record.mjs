@@ -40,6 +40,7 @@ const EV_CLASSES = new Set([
   'independent-eval',
   'benchmark-design',
   'falsifier-review',
+  'regulatory-action',
 ]);
 const evidence = read('evidence.json');
 const evIds = new Set();
@@ -90,6 +91,12 @@ for (const r of revisions) {
   if (!ISO.test(r.date ?? '')) err(w, 'date must be YYYY-MM-DD');
   if (!REV_KINDS.has(r.kind)) err(w, `invalid kind "${r.kind}"`);
   for (const k of ['title', 'detail']) if (!nonEmpty(r[k])) err(w, `missing ${k}`);
+  // A retraction preserves the original text and names the catch — visible, never a quiet rewrite.
+  if ('retraction' in r) {
+    if (!ISO.test(r.retraction?.date ?? '')) err(w, 'retraction.date must be YYYY-MM-DD');
+    if (!nonEmpty(r.retraction?.reason)) err(w, 'retraction.reason is required');
+    if (r.retraction?.date < r.date) err(w, 'retraction.date cannot precede the entry date');
+  }
 }
 
 // ── superlatives.json ────────────────────────────────────────────────────────
