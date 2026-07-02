@@ -16,6 +16,7 @@ const {
 const nav = [
   { href: '/frontier/', label: 'Frontier' },
   { href: '/test/', label: 'The Test' },
+  { href: '/runs/', label: 'Runs' },
   { href: '/theories/', label: 'Theories' },
   { href: '/evidence/', label: 'Evidence' },
   { href: '/forecasts/', label: 'Forecasts' },
@@ -127,6 +128,7 @@ const isActive = (href: string) => path === href || path.startsWith(href);
               <p class="eyebrow mb-1">Record</p>
               <a href="/evidence/" class="no-underline" style="color: var(--color-ink-dim);">Evidence</a>
               <a href="/forecasts/" class="no-underline" style="color: var(--color-ink-dim);">Forecasts</a>
+              <a href="/runs/" class="no-underline" style="color: var(--color-ink-dim);">Runs</a>
               <a href="/status/" class="no-underline" style="color: var(--color-ink-dim);">Status</a>
               <a href="/reproduce/" class="no-underline" style="color: var(--color-ink-dim);">Reproduce</a>
               <a href="/log/" class="no-underline" style="color: var(--color-ink-dim);">Revision log</a>

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "fcs-world-003-2026-07-02",
+    "title": "World-003 registered sealed probe",
+    "registeredAt": "2026-07-02",
+    "track": "A",
+    "worldLevel": "W3+W6",
+    "status": "registered-sealed",
+    "protocolVersion": "omnibus-v2-tranche-2",
+    "evidenceLevel": "protocol-registered",
+    "verdictImpact": "none until attempts, reveal, human baseline, independent scoring, external reproduction, transfer, and challenge window complete",
+    "summary": "First Omnibus tranche-2 run bundle: wrong-frame attractor, underdetermined negative control, code-ablated solver protocol, human-baseline instructions, independent-scoring rubric, sealed law, and public receipts.",
+    "manifestPath": "/runs/fcs-world-003-2026-07-02/00_manifest.json",
+    "experimentPath": "experiments/fcs-synth-world-003",
+    "controls": [
+      "W3 wrong-frame attractor",
+      "W6 underdetermined negative control",
+      "code-ablated solver protocol",
+      "human baseline required",
+      "independent scoring required"
+    ],
+    "pending": [
+      "model attempts",
+      "human baseline",
+      "timestamp anchoring",
+      "reveal",
+      "mechanical grading",
+      "independent scorer records",
+      "external reproduction",
+      "challenge window"
+    ]
+  }
+]

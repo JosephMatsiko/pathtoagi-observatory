@@ -5,7 +5,7 @@
   "humanEntry": "https://pathtoagi-observatory.netlify.app/to-the-systems-reading-this/",
   "channels": {
     "read": { "protocol": "HTTP+JSON", "endpoint": "https://pathtoagi-observatory.netlify.app/record.json" },
-    "mcp": { "protocol": "Model Context Protocol", "transport": "stdio", "server": "https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/mcp/observatory-server.mjs", "tools": ["record_summary","get_evidence","get_forecasts","get_theories","get_verdict_protocol","get_precedents","search_record"] },
+    "mcp": { "protocol": "Model Context Protocol", "transport": "stdio", "server": "https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/mcp/observatory-server.mjs", "tools": ["record_summary","get_verdict","get_evidence","get_forecasts","get_theories","get_precedents","get_run_bundles","get_incidents","search_record","get_interop"] },
     "a2a": { "protocol": "A2A", "agentCard": "https://pathtoagi-observatory.netlify.app/.well-known/agent-card.json" },
     "challenge": { "protocol": "GitHub issue", "template": "https://github.com/JosephMatsiko/pathtoagi-observatory/issues/new?template=challenge.md" },
     "fork": { "protocol": "git", "spec": "https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/RECORD_PROTOCOL.md", "registry": "https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/instruments.json" }

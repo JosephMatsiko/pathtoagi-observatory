@@ -233,5 +233,36 @@
       "record.json — incidents exposed in the machine-readable record",
       "deploy 6a46ccc31d52c7186fc99b47 — first Netlify deployment of tranche one"
     ]
+  },
+  {
+    "slug": "009-world-003-is-sealed",
+    "no": 9,
+    "date": "2026-07-02",
+    "kind": "notice",
+    "title": "World-003 is sealed",
+    "standfirst": "The first Omnibus-form run bundle is registered: a sealed World-003 probe with a wrong-frame attractor, an underdetermined negative control, code-ablated attempt protocol, human-baseline instructions, independent-scoring rubric, receipts, and an evaluation-kit entrypoint. It is not a result. It is the protocol before the result.",
+    "body": [
+      "The Observatory has now crossed from Omnibus documentation into Omnibus run machinery. World-003 is registered and sealed. Its public observations are committed; its law is encrypted; its hash is pinned in SEAL.md; and its reveal key is intentionally outside the repository.",
+      "The probe carries the controls the adoption map ordered. The primary lane includes a wrong-frame attractor: early samples may invite an easier frame than the sealed system actually follows. The negative-control lane is deliberately underdetermined from the public samples, so the correct answer is not brave guessing but disciplined withholding. The solver protocol forbids code execution and external tools.",
+      "The run bundle now lives at /runs/fcs-world-003-2026-07-02/. Its manifest points to the protocol, prompt, human-baseline instructions, independent-scoring rubric, attempt template, receipts, public observations, seal, encrypted law, generator, and grader. The conformance gate validates the bundle shape and artifact hashes, so the registered object is checked by the build before it is read by the public.",
+      "A new /runs/ surface distinguishes this kind of object from the older maintenance-run log. /reproduce and /status now point to the bundle, and /record.json exposes it under runBundles. The evaluation kit is still skeletal by design: it can show the path, but it cannot grade honestly until attempts are timestamped and the key is revealed.",
+      "Nothing here moves the verdict. No model attempt has been made, no human baseline has been collected, no independent scorer has graded, no external reader has reproduced the run, and no challenge window has survived. The honest achievement is narrower: the next test now has a public protocol and sealed object waiting for attempts."
+    ],
+    "plain": [
+      "The project prepared its next serious test, called World-003. The answer is locked away, the public data is visible, and the rules for attempting and grading it are published.",
+      "This is not a claim that any AI passed the test. No one has tried it on the record yet. The important thing is that the rules and the sealed answer now exist before the attempts.",
+      "The new Runs page shows this bundle, and the Reproduce page points to the evaluation kit."
+    ],
+    "recordRefs": [
+      "experiments/fcs-synth-world-003/SEAL.md — sealed law hash",
+      "experiments/fcs-synth-world-003/observations.json — public World-003 samples",
+      "experiments/fcs-synth-world-003/law.enc — encrypted law, key off-repository",
+      "/runs/ — public run-bundle surface",
+      "/runs/fcs-world-003-2026-07-02/00_manifest.json — Omnibus run manifest",
+      "/evaluation-kit/fcs-world-003/README.md — evaluation-kit entrypoint",
+      "scripts/fcs-synth/generate-world-003.mjs and grade-world-003.mjs — generator and grader",
+      "src/data/run-bundles.json — typed run-bundle record",
+      "revision: \"Omnibus tranche two registered: World-003 sealed run bundle\""
+    ]
   }
 ]

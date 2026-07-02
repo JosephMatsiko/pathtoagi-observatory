@@ -333,6 +333,57 @@ for (const i of incidents) {
     err(w, 'open incidents may not claim a resolved/fixed resolution');
 }
 
+// ── run-bundles.json (Omnibus run manifests and reproduction kits) ─────────
+const RUN_BUNDLE_STATUS = new Set([
+  'registered-sealed',
+  'attempts-anchored',
+  'revealed',
+  'graded',
+  'reproduced',
+  'retired',
+]);
+const runBundles = read('run-bundles.json');
+const rbIds = new Set();
+const artifactPath = (p) => p.startsWith('/') ? join(ROOT, 'public', p.slice(1)) : join(ROOT, p);
+for (const rb of runBundles) {
+  const w = `runBundle[${rb.id ?? '?'}]`;
+  if (!nonEmpty(rb.id)) err(w, 'missing id');
+  else if (rbIds.has(rb.id)) err(w, 'duplicate id');
+  else rbIds.add(rb.id);
+  if (!ISO.test(rb.registeredAt ?? '')) err(w, 'registeredAt must be YYYY-MM-DD');
+  if (!RUN_BUNDLE_STATUS.has(rb.status)) err(w, `invalid status "${rb.status}"`);
+  for (const k of ['title', 'track', 'worldLevel', 'protocolVersion', 'evidenceLevel', 'verdictImpact', 'summary', 'manifestPath', 'experimentPath'])
+    if (!nonEmpty(rb[k])) err(w, `missing ${k}`);
+  if (!Array.isArray(rb.controls) || !rb.controls.length) err(w, 'controls must be non-empty');
+  if (!Array.isArray(rb.pending)) err(w, 'pending must be an array');
+  const manifestFsPath = artifactPath(rb.manifestPath ?? '');
+  if (!existsSync(manifestFsPath)) err(w, `manifest missing at ${rb.manifestPath}`);
+  else {
+    const manifest = JSON.parse(readFileSync(manifestFsPath, 'utf8'));
+    if (manifest.run_id !== rb.id) err(w, 'manifest.run_id must match data id');
+    if (manifest.status !== rb.status) err(w, 'manifest.status must match data status');
+    if (manifest.protocol_version !== rb.protocolVersion) err(w, 'manifest.protocol_version must match data protocolVersion');
+    if (!Array.isArray(manifest.artifacts) || !manifest.artifacts.length)
+      err(w, 'manifest.artifacts must be non-empty');
+    for (const a of manifest.artifacts ?? []) {
+      const aw = `${w}.artifact[${a.role ?? '?'}]`;
+      if (!nonEmpty(a.role) || !nonEmpty(a.path)) err(aw, 'artifact needs role + path');
+      const fsPath = artifactPath(a.path ?? '');
+      if (!existsSync(fsPath)) err(aw, `artifact path not found: ${a.path}`);
+      if (a.sha256) {
+        const got = createHash('sha256').update(readFileSync(fsPath)).digest('hex');
+        if (got !== a.sha256) err(aw, `sha256 mismatch for ${a.path}`);
+      }
+    }
+    if (!Array.isArray(manifest.gate_state) || !manifest.gate_state.length)
+      err(w, 'manifest.gate_state must be non-empty');
+    for (const g of manifest.gate_state ?? []) {
+      if (!nonEmpty(g.gate) || !nonEmpty(g.status) || !nonEmpty(g.note))
+        err(w, 'each gate_state entry needs gate, status, note');
+    }
+  }
+}
+
 // ── Omnibus adoption source/docs ─────────────────────────────────────────────
 for (const f of ['docs/OMNIBUS_V2_ADOPTION.md', 'docs/OMNIBUS_V2_SOURCE.md', 'docs/THREAT_MODEL.md', 'docs/DOCTRINES.md']) {
   if (!existsSync(join(ROOT, f))) err('omnibus', `${f} missing`);
@@ -344,4 +395,4 @@ if (errors.length) {
   for (const e of errors) console.error('  - ' + e);
   process.exit(1);
 }
-console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${dispatches.length} dispatches · ${silences.length} silence-audits · ${precedents.length} precedents · ${challenges.length} challenges · ${futures.length} futures · ${correspondence.length} correspondence · ${incidents.length} incidents · Omnibus docs present · constitution pinned — all valid`);
+console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${runBundles.length} run-bundles · ${dispatches.length} dispatches · ${silences.length} silence-audits · ${precedents.length} precedents · ${challenges.length} challenges · ${futures.length} futures · ${correspondence.length} correspondence · ${incidents.length} incidents · Omnibus docs present · constitution pinned — all valid`);

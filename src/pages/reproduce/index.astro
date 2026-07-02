@@ -3,11 +3,11 @@ import Base from '../../layouts/Base.astro';
 import { CYCLES } from '../../data/cycles';
 import { DISPATCHES } from '../../data/dispatches';
 import { INCIDENTS } from '../../data/incidents';
-import { RUNS } from '../../data/runs';
+import { RUN_BUNDLES } from '../../data/run-bundles';
 
 const latestCycle = [...CYCLES].sort((a, b) => b.shippedAt.localeCompare(a.shippedAt))[0];
 const latestDispatch = [...DISPATCHES].sort((a, b) => b.no - a.no)[0];
-const latestRun = [...RUNS].sort((a, b) => b.at.localeCompare(a.at))[0];
+const latestBundle = [...RUN_BUNDLES].sort((a, b) => b.registeredAt.localeCompare(a.registeredAt))[0];
 
 const commands = [
   'git clone https://github.com/JosephMatsiko/pathtoagi-observatory.git',
@@ -17,6 +17,11 @@ const commands = [
   'npm run check:timestamps',
   'npm run build',
   'bash scripts/verify.sh',
+];
+
+const world003Commands = [
+  'node scripts/fcs-synth/generate-world-003.mjs /path/outside/repo/world-003.key',
+  'node scripts/fcs-synth/grade-world-003.mjs /path/to/revealed/world-003.key',
 ];
 
 const docs = [
@@ -67,10 +72,10 @@ const docs = [
       </p>
     </div>
     <div class="surface-quiet p-5">
-      <p class="eyebrow">Latest run</p>
-      <p class="mono mt-2 text-sm" style="color: var(--color-ink);">{latestRun?.id ?? 'none'}</p>
+      <p class="eyebrow">Latest bundle</p>
+      <p class="mono mt-2 text-sm" style="color: var(--color-ink);">{latestBundle?.id ?? 'none'}</p>
       <p class="mt-1 text-sm" style="color: var(--color-muted);">
-        {latestRun?.gatePassed ? 'gate passed' : 'gate not passed or absent'}
+        {latestBundle?.status ?? 'no Omnibus bundle'}
       </p>
     </div>
     <div class="surface-quiet p-5">
@@ -80,6 +85,35 @@ const docs = [
         {latestDispatch?.title ?? 'none published'}
       </p>
     </div>
+  </section>
+
+  <section class="mt-14 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+    <div>
+      <h2 class="serif text-2xl">World-003 evaluation kit</h2>
+      <p class="mt-2 text-sm" style="color: var(--color-muted);">
+        The first Omnibus-form run bundle is registered and sealed. The key is
+        not in the repository; the grader becomes usable only after a reveal.
+      </p>
+      <p class="mt-4 flex flex-wrap gap-3 text-sm">
+        <a href="/runs/" class="link-accent">runs surface</a>
+        <a href="/runs/fcs-world-003-2026-07-02/00_manifest.json" class="link-accent">manifest</a>
+        <a href="/evaluation-kit/fcs-world-003/README.md" class="link-accent">kit readme</a>
+      </p>
+    </div>
+    <ol class="surface overflow-hidden">
+      {
+        world003Commands.map((command, index) => (
+          <li class="grid grid-cols-[3rem_minmax(0,1fr)] border-b last:border-b-0 hairline">
+            <span class="mono p-4 text-right text-xs" style="color: var(--color-faint);">
+              {index + 1}
+            </span>
+            <code class="mono block min-w-0 overflow-x-auto p-4 text-sm" style="color: var(--color-ink-dim);">
+              {command}
+            </code>
+          </li>
+        ))
+      }
+    </ol>
   </section>
 
   <section class="mt-14 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">

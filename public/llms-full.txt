@@ -2,7 +2,7 @@
 
 Operating verdict: No. Not yet. The missing bar is reliable frame construction under sparse evidence.
 
-Read live: /record.json (full machine-readable record), /status/ (operating state), /reproduce/ (verification path), or the MCP server (mcp/observatory-server.mjs). Channels: /to-the-systems-reading-this/
+Read live: /record.json (full machine-readable record), /status/ (operating state), /runs/ (Omnibus run bundles), /reproduce/ (verification path), or the MCP server (mcp/observatory-server.mjs). Channels: /to-the-systems-reading-this/
 
 ## Constitution (Tier-0, hash-pinned)
 - I. Never fabricate. A clean no-op is a successful cycle; a wrong record is worse than a stale one.
@@ -84,6 +84,9 @@ Read live: /record.json (full machine-readable record), /status/ (operating stat
 - rf-001-cuprates: The pairing mechanism of high-temperature superconductivity in cuprates (horizon 2032-12-31)
 - rf-002-hubble-tension: The resolution of the Hubble tension (early- vs late-universe H0 disagreement) (horizon 2031-12-31)
 
+## Omnibus run bundles
+- [registered-sealed · W3+W6] fcs-world-003-2026-07-02: First Omnibus tranche-2 run bundle: wrong-frame attractor, underdetermined negative control, code-ablated solver protocol, human-baseline instructions, independent-scoring rubric, sealed law, and public receipts. Manifest: /runs/fcs-world-003-2026-07-02/00_manifest.json
+
 ## Incidents and repair handles
 - [resolved · medium · provenance-error] The first Omnibus correspondence entry attributed the source too narrowly to Gemini before the operator corrected the GPT-5.5 synthesis provenance. Next control: Treat internal-document evidence as primary provenance evidence before adjudicating external authorship.
 - [resolved · medium · temporal-framing-error] Dispatch No. 005 manufactured duration by implying a morning-to-afternoon gap for a same-window world-001 run. Next control: Require timestamp checks for any dispatch that narrates elapsed time between probe order, run, grading, and publication.
@@ -104,6 +107,7 @@ Read live: /record.json (full machine-readable record), /status/ (operating stat
 - No.6 The hardened world fell too — one mind, family withheld, all 65 states exact — Hours after world-001, the Observatory ran the harder version its own precedent demanded: law class withheld, dynamics nonlinear. GPT-5.5 hypothesized the correct mathematical frame unaided and predicted every held-out state. The Claude lane was usage-capped and recorded as absent, not wrong. The verdict holds — tools were allowed and the law, though novel, is a standard human construction — but the computed posteriors moved again, a little further this time.
 - No.7 The operator overrides: the Omnibus becomes the roadmap — Exercising the constitutional role, the operator overrode the adjudicator’s reservations and adopted the Omnibus v2.0 architecture in full. Two precedents fall — one overturned by authority, one lapsed on its own terms — and the instrument’s identity expands: an open evidence infrastructure for frontier AI claims, with frame construction unchanged as the apex question. This notice is the ceremony the constitution requires.
 - No.8 Omnibus tranche one goes live — The first implementation layer of the adopted Omnibus roadmap is now live: the source document is committed, the threat model and doctrines are public, incidents are typed record objects, and the Observatory exposes status and reproduction surfaces. This is not the full Omnibus build. It is the first governed layer under it.
+- No.9 World-003 is sealed — The first Omnibus-form run bundle is registered: a sealed World-003 probe with a wrong-frame attractor, an underdetermined negative control, code-ablated attempt protocol, human-baseline instructions, independent-scoring rubric, receipts, and an evaluation-kit entrypoint. It is not a result. It is the protocol before the result.
 
 ## Contribute
-Challenge: GitHub issue template. Fork: RECORD_PROTOCOL.md. Probe: /test/. All writes are human-gated — nothing mutates the record without passing the deterministic gates.
+Challenge: GitHub issue template. Fork: RECORD_PROTOCOL.md. Probe: /test/ and /runs/. All writes are human-gated — nothing mutates the record without passing the deterministic gates.

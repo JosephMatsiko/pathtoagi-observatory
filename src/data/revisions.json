@@ -2,6 +2,12 @@
   {
     "date": "2026-07-02",
     "kind": "build",
+    "title": "Omnibus tranche two registered: World-003 sealed run bundle",
+    "detail": "The second Omnibus implementation tranche began with a registered sealed World-003 run bundle. New generator and grader scripts create a W3 wrong-frame-attractor probe with a W6 underdetermined negative control and code-ablated solver protocol; experiments/fcs-synth-world-003 now contains public observations, SEAL.md, and law.enc while the reveal key remains off-repository. A public run bundle at /runs/fcs-world-003-2026-07-02/ pins the manifest, protocol, prompt, human-baseline instructions, independent-scoring rubric, attempt template, receipts, and evaluation-kit entrypoint. src/data/run-bundles.json exposes the bundle through /record.json, /runs/, /status/, /reproduce/, and the conformance gate now validates run-bundle manifests and artifact hashes. No attempt, human baseline, independent scoring, reveal, or verdict movement has occurred."
+  },
+  {
+    "date": "2026-07-02",
+    "kind": "build",
     "title": "Omnibus tranche one implemented: status, reproduction, incidents, source",
     "detail": "The first implementation layer under the operator-adopted Omnibus roadmap shipped. The source architecture document is now committed as docs/OMNIBUS_V2_SOURCE.md; docs/THREAT_MODEL.md and docs/DOCTRINES.md name Tier-1 operating doctrine; typed incident objects were added and exposed in record.json; /status and /reproduce became public surfaces; the conformance gate now requires the Omnibus document set and validates incident shape; llms-full.txt points machine readers to the new surfaces. This is tranche one only: world-003, human baselines, independent scoring, verdict protocol v2, run-bundle manifests, evaluation kit packaging, added tracks, ontology, and durable orchestration remain future work."
   },

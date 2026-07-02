@@ -6,7 +6,7 @@ import { DISPATCHES } from '../data/dispatches';
 const BASE = 'https://pathtoagi-observatory.netlify.app';
 const routes = [
   '/', '/frontier/', '/test/', '/theories/', '/evidence/', '/forecasts/',
-  '/log/', '/operate/', '/status/', '/reproduce/', '/superlatives/', '/charter/', '/colophon/',
+  '/log/', '/operate/', '/runs/', '/status/', '/reproduce/', '/superlatives/', '/charter/', '/colophon/',
   '/experiments/', '/experiments/fcs-1-2026-07-01/',
   '/press/', '/cycles/', '/governance/', '/to-the-systems-reading-this/',
   ...DISPATCHES.map((d) => `/press/${d.slug}/`),

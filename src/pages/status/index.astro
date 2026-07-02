@@ -14,8 +14,8 @@ import {
   INCIDENT_STATUS_LABEL,
 } from '../../data/incidents';
 import { CHALLENGES } from '../../data/challenges';
-import { CYCLES } from '../../data/cycles';
 import { CORRESPONDENCE } from '../../data/correspondence';
+import { RUN_BUNDLES } from '../../data/run-bundles';
 
 const today = new Date().toISOString().slice(0, 10);
 const daysAgo = (d: string) =>
@@ -110,10 +110,10 @@ const statusLabel =
     <div class="surface-quiet p-5">
       <p class="eyebrow">Reproduction surface</p>
       <p class="tabular mt-2 text-3xl" style="color: var(--color-accent);">
-        {CYCLES.length}
+        {RUN_BUNDLES.length}
       </p>
       <p class="mt-1 text-sm" style="color: var(--color-muted);">
-        published cycle bundle{CYCLES.length === 1 ? '' : 's'}
+        Omnibus run bundle{RUN_BUNDLES.length === 1 ? '' : 's'}
       </p>
     </div>
   </section>
@@ -192,11 +192,13 @@ const statusLabel =
         <p class="eyebrow">Omnibus adoption</p>
         <p class="mt-2 text-sm" style="color: var(--color-muted);">
           Source, adoption map, threat model, doctrines, and incident objects
-          are now part of the governed record.
+          are now part of the governed record. Tranche two adds the first
+          registered sealed run bundle.
         </p>
         <p class="mt-3 flex flex-wrap gap-3">
           <a href="https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/docs/OMNIBUS_V2_SOURCE.md" class="mono text-xs link-accent">source</a>
           <a href="https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/docs/OMNIBUS_V2_ADOPTION.md" class="mono text-xs link-accent">adoption</a>
+          <a href="/runs/" class="mono text-xs link-accent">runs</a>
           <a href="/reproduce/" class="mono text-xs link-accent">reproduce</a>
         </p>
       </div>
