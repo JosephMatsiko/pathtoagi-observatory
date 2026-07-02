@@ -16,6 +16,20 @@
     "nextNeeded": "Independent scoring; harder discovery probes (FCS-2–6) without named anchors; adversarial variants; held-out derivation steps (v0.2)."
   },
   {
+    "id": "cce-2026-06-30-sonnet-5-launch",
+    "observedAt": "2026-06-30",
+    "source": "Anthropic — Introducing Claude Sonnet 5 (published June 30, 2026)",
+    "sourceUrl": "https://www.anthropic.com/news/claude-sonnet-5",
+    "class": "vendor-reported",
+    "theories": [
+      "scaling-plus-rl"
+    ],
+    "signal": "Anthropic released Claude Sonnet 5 on June 30, positioning it as frontier performance across coding, agents, and professional work. Claims verified against the primary post: it is the default model for Free and Pro plans; API id claude-sonnet-5; introductory pricing $2/$10 per Mtok input/output through August 31, 2026, then $3/$15; footnote 2 states an updated tokenizer consumes roughly 1.0–1.35x more tokens than previous models depending on content type. Anthropic's official model docs (platform.claude.com/docs/en/about-claude/models/overview, checked 2026-07-02) additionally confirm a 1M-token context window and 128k max output. Safety claims (Anthropic's own): overall lower rate of undesirable behaviors than Sonnet 4.6; 'much lower ability to perform cybersecurity tasks than our current Opus models'; on the Firefox exploit-development eval, 'Neither of the Sonnet models could successfully develop a working exploit (both scored 0.0%)' — the 0.0% applies to both Sonnet 5 and Sonnet 4.6.",
+    "implication": "Routine mid-tier frontier refresh days after the Fable 5 redeployment: the release cadence resumed immediately after the export-control episode, and the launch emphasizes agentic/professional work over raw capability jumps. The effective price is murkier than the headline: the 1.0–1.35x tokenizer inflation partially offsets the $2/$10 introductory rate.",
+    "bounded": "All claims are vendor-reported and unaudited. The announcement's benchmark comparison table ('Scores for Sonnet 5 ... compared to those of Sonnet 4.6 and Opus 4.8') is published as an image whose cell values could not be programmatically verified; per the source-fidelity rule — and after two prior cycles were rejected for misattributing footnoted Sonnet 4.6 scores to Sonnet 5 — every benchmark number is deliberately omitted from this record rather than risked. The 1M-token context window, absent from the launch post itself, is confirmed in Anthropic's official model docs — still vendor-published, not independently audited. 'Default model in Claude Code', circulating in secondary coverage, remains unconfirmed by any primary source and is excluded. No independent evaluation of Sonnet 5 exists yet. healthΔ 0.",
+    "nextNeeded": "Independent benchmark replication (METR, Epoch, or academic); OCR-verified or API-doc-confirmed benchmark figures with exact column attribution."
+  },
+  {
     "id": "cce-2026-06-30-fable5-redeployment",
     "observedAt": "2026-06-30",
     "source": "Anthropic — Redeploying Claude Fable 5 (post published June 30; access restored July 1)",

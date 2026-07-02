@@ -4,7 +4,7 @@
     "word": "Most intelligent",
     "obligation": "Better judgment, not louder certainty: every capability claim carries sources, every confidence is scoreable, and the Brier record is earned live — never manufactured.",
     "measure": "Live-resolved forecast calibration vs. baseline; adversarial survival rate of proposed records.",
-    "reading": "Unproven — the live Brier ledger is honestly empty (first horizon 2026-07-08). One record REJECTed and held clean; discipline intact.",
+    "reading": "Unproven — the live Brier ledger is honestly empty (first horizon 2026-07-08). Two records REJECTed and held clean; a third (Sonnet 5 launch) survived the adversary under REVISE only after its required correction was independently verified. Discipline intact.",
     "trend": "earning"
   },
   {
@@ -28,7 +28,7 @@
     "word": "Most skilled",
     "obligation": "Instruments that actually run: probes executed not just designed, cycles surviving an adversarial mesh, ships that pass deterministic gates.",
     "measure": "FCS runs executed; cycles shipped vs. held correctly; gate pass rate.",
-    "reading": "Beginning — one probe run of six executed; four autonomous ships; one correct hold on a REJECT.",
+    "reading": "Beginning — one probe run of six executed; five autonomous ships; two REJECTs held correctly before the corrected record survived the mesh.",
     "trend": "earning"
   },
   {

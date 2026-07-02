@@ -16,7 +16,7 @@
   {
     "id": "adversarial-mesh",
     "method": "Three-mind adversarial verification",
-    "reading": "Calibration lane failed for the second consecutive cycle (2026-07-01 run 2): no calibration.md produced. Mesh ran two-lane (Scout + Adversary only) again. Two consecutive failures makes this a pattern, not an exception. Also noted: the evidence class enum ('vendor-reported | independent-eval | benchmark-design | falsifier-review') lacks a 'regulatory-action' category; regulatory events must currently use 'vendor-reported' as the closest fit.",
+    "reading": "Calibration lane failed for the third consecutive shipping cycle (2026-07-02: no calibration.md produced). Mesh ran two-lane (Scout + Adversary only) again; the Adversary lane itself ran degraded — its read-only sandbox blocked writing verdict.md, and the verdict survived only because the Command Center captured the session transcript. Also noted: the evidence class enum ('vendor-reported | independent-eval | benchmark-design | falsifier-review') lacks a 'regulatory-action' category; regulatory events must currently use 'vendor-reported' as the closest fit.",
     "status": "act",
     "nextImprovement": "Restore the calibration lane before the next cycle — fix Gemini CLI auth, designate a separate Claude session as calibrator, or arrange a human reviewer. Also consider adding 'regulatory-action' as a valid class in the evidence schema to give regulatory events a precise fit."
   },

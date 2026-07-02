@@ -1,5 +1,20 @@
 [
   {
+    "id": "run-2026-07-02-scheduled",
+    "at": "2026-07-02",
+    "trigger": "scheduled",
+    "actor": "operator + Claude (Max)",
+    "meanBrierAfter": null,
+    "gatePassed": true,
+    "actions": [
+      "logged cce-2026-06-30-sonnet-5-launch (vendor-reported, healthΔ 0)",
+      "archived Sonnet 5 launch post via archive:sources",
+      "method-health: adversarial-mesh reading updated (3rd calibration failure + adversary sandbox degradation)",
+      "superlatives: intelligent/skilled readings updated on adversarial-survival evidence"
+    ],
+    "note": "Sonnet 5 launch record shipped after adversary REVISE: benchmark-table numbers omitted per source-fidelity rule; 1M-context confirmed via official model docs and independently re-verified before folding in. Calibration lane absent a third consecutive cycle — escalated in method-health."
+  },
+  {
     "id": "run-2026-07-01-scheduled",
     "at": "2026-07-01",
     "trigger": "scheduled",
