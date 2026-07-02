@@ -40,5 +40,12 @@
     "reading": "Six named gaps. Multimodal ingestion and independent scoring are the highest-leverage absences.",
     "status": "act",
     "nextImprovement": "Close the highest-leverage gap each cycle; a gap that stops shrinking is a signal the loop has stalled."
+  },
+  {
+    "id": "temporal-narration",
+    "method": "Time in the record and the Press",
+    "reading": "The autonomous operator cannot perceive wall-clock time between messages; a ~4-hour real-world gap on 2026-07-02 passed as continuous flow, and one dispatch manufactured a morning/afternoon duration for events ten minutes apart. Corrected on the record 2026-07-02.",
+    "status": "act",
+    "nextImprovement": "Anchor every temporal claim to a verifiable artifact — a commit timestamp, an anchor, a date — and never narrate felt duration or relative sequencing (\"this afternoon\", \"hours later\", \"then\") that a git log would not confirm. Prefer explicit timestamps to prose about elapsed time."
   }
 ]

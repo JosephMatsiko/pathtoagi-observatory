@@ -2,8 +2,9 @@
 
 **Status:** Adopted in full by operator override, 2026-07-02 (revision: "The
 operator overrides: the Omnibus is embraced in full"). P-10 overturned by
-override; P-8 lapsed on its own terms (the document is the record's first
-external reader).
+override; P-8 released (see the Temporal note — the freeze’s condition was
+treated as met, though the Omnibus was contemporaneous parallel-track
+co-development, not a clean downstream arrival).
 
 **Provenance:** Synthesized by GPT-5.5 (ChatGPT) over an earlier Gemini
 transcript, via the operator. GPT-5.5 is the same model that serves as this
@@ -17,6 +18,20 @@ committing it as `docs/OMNIBUS_V2_SOURCE.md` is an open operator action.
    folder/schema layout is a target the system migrates toward.
 2. **Language discipline.** The document's own language policy is gate-enforced
    (already live) and applies to everything built under this adoption.
+
+## Temporal note (added 2026-07-02)
+
+The Omnibus was composed contemporaneously with the build, in a parallel
+Gemini→GPT-5.5 track, reading a mid-session snapshot of the site (it cites
+Press 005). Its Phase 0–7 "first-week" roadmap describes as future work a
+constitution, schemas, timestamping, a first synthetic world, a dashboard,
+lights-out operation, and challenge intake — all of which the live system had
+already shipped, and in several dimensions (anchoring, signing, capability
+ladder, computed inference, the Press, MCP channels, two probe runs) exceeds.
+"Convergence" here therefore means adopting the document's genuine *extensions*
+and *forward* items — not building from its assumed near-zero baseline. The
+live record is the more advanced artifact; the Omnibus is its contemporaneous
+mirror-and-extension.
 
 ## Convergence map — Omnibus part → current state → action
 
