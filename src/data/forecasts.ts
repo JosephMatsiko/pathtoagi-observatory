@@ -26,6 +26,20 @@ export interface Forecast {
   // Backfilled resolutions are shown on the record but excluded from
   // calibration — a forecast you cannot lose is not a forecast.
   provenance?: 'backfilled';
+  // Credence trajectory: belief is a path, not a point. Updating is
+  // encouraged; every update is logged, reasoned, and anchored. Scoring uses
+  // the final pre-horizon credence; the whole path stays public.
+  updates?: { at: string; probability: number; note: string }[];
+  // Borrowed stakes: the same question mirrored on an external market or
+  // aggregator the record does not control, so calibration races the crowd.
+  mirrors?: { platform: string; url: string }[];
+}
+
+// The credence that counts: the last logged update before the horizon, or
+// the registration probability if the mind never moved.
+export function effectiveProbability(f: Forecast): number {
+  if (!f.updates?.length) return f.probability;
+  return f.updates[f.updates.length - 1].probability;
 }
 
 export const FORECASTS: Forecast[] = raw as Forecast[];
@@ -43,7 +57,7 @@ export function outcomeOf(f: Forecast): 0 | 1 | null {
 export function brierOf(f: Forecast): number | null {
   const o = outcomeOf(f);
   if (o === null) return null;
-  return (f.probability - o) ** 2;
+  return (effectiveProbability(f) - o) ** 2;
 }
 
 // Calibration counts ONLY live resolutions — forecasts that were open on the

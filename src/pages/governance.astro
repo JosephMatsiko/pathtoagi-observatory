@@ -1,0 +1,152 @@
+---
+import Base from '../layouts/Base.astro';
+import { CONSTITUTION } from '../data/constitution';
+import { PRECEDENTS } from '../data/precedents';
+import { CHALLENGES } from '../data/challenges';
+import { VERDICT_PROTOCOL } from '../data/verdict-protocol';
+
+const openChallenges = CHALLENGES.filter((c) => c.status === 'open');
+---
+
+<Base
+  title="Governance — pathtoAGI"
+  description="The constitution (hash-pinned Tier-0 invariants), the precedent register, public challenge intake, the verdict-change protocol, and how to verify all of it without trusting anyone."
+>
+  <section class="max-w-3xl">
+    <p class="eyebrow">Governance · the rules above the rules</p>
+    <h1 class="display mt-4 text-4xl sm:text-5xl">How this instrument is bound</h1>
+    <p class="lede mt-6">
+      Everything operational here may evolve — lane prompts, mesh topology,
+      cadence, even the gates' letter. Ten things may not drift. This page is
+      the constitution, the case law, the cross-examination bench, and the
+      instructions for checking all of it yourself.
+    </p>
+  </section>
+
+  <!-- Constitution -->
+  <section class="mt-14 max-w-3xl">
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 class="serif text-2xl">The constitution</h2>
+      <p class="mono text-xs" style="color: var(--color-faint);">
+        Tier-0 · v{CONSTITUTION.version} · adopted {CONSTITUTION.adoptedAt} · hash-pinned
+      </p>
+    </div>
+    <p class="mt-3 text-sm" style="color: var(--color-muted);">
+      The build fails if this text changes without the amendment ceremony:
+      update the lock, add a revision-log entry, anchor the release, publish a
+      Press notice. The substrate can rewire how it thinks — never whether it
+      is bound.
+    </p>
+    <ol class="mt-5 space-y-2.5">
+      {
+        CONSTITUTION.invariants.map((inv) => (
+          <li class="surface-quiet p-4 text-sm" style="color: var(--color-ink-dim);">
+            {inv}
+          </li>
+        ))
+      }
+    </ol>
+    <div class="mt-6 grid gap-3 sm:grid-cols-3">
+      <div class="surface-quiet p-4">
+        <p class="eyebrow">Constitutional</p>
+        <p class="mt-1 text-xs" style="color: var(--color-muted);">{CONSTITUTION.roles.constitutional}</p>
+      </div>
+      <div class="surface-quiet p-4">
+        <p class="eyebrow">Executive</p>
+        <p class="mt-1 text-xs" style="color: var(--color-muted);">{CONSTITUTION.roles.executive}</p>
+      </div>
+      <div class="surface-quiet p-4">
+        <p class="eyebrow">Public</p>
+        <p class="mt-1 text-xs" style="color: var(--color-muted);">{CONSTITUTION.roles.public}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Precedents -->
+  <section class="mt-14 max-w-3xl">
+    <h2 class="serif text-2xl">The precedent register</h2>
+    <p class="mt-3 text-sm" style="color: var(--color-muted);">
+      Past adjudications bind future cycles unless explicitly overturned in the
+      revision log. An institution that re-litigates what it already decided
+      will eventually contradict itself — and a contradiction it doesn't notice
+      is a fabrication it didn't intend.
+    </p>
+    <ul class="mt-5 space-y-2.5">
+      {
+        PRECEDENTS.map((p) => (
+          <li class="surface p-4">
+            <div class="flex flex-wrap items-baseline gap-3">
+              <span class="mono text-xs" style="color: var(--color-accent);">{p.id}</span>
+              <span class="mono text-[0.62rem] uppercase tracking-wider" style={`color: ${p.status === 'binding' ? 'var(--color-affirm)' : 'var(--color-verdict)'};`}>
+                {p.status}
+              </span>
+              <span class="mono ml-auto text-xs" style="color: var(--color-faint);">{p.date}</span>
+            </div>
+            <p class="mt-1.5 text-sm" style="color: var(--color-ink-dim);">{p.ruling}</p>
+            <p class="mono mt-1 text-xs" style="color: var(--color-faint);">from: {p.from}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <!-- Challenges -->
+  <section class="mt-14 max-w-3xl">
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 class="serif text-2xl">Challenge the record</h2>
+      <p class="mono text-xs" style="color: var(--color-faint);">
+        {openChallenges.length} open · {CHALLENGES.length} all-time
+      </p>
+    </div>
+    <p class="mt-3 text-sm" style="color: var(--color-muted);">
+      Anyone may challenge any entry — an evidence record, a forecast's
+      resolution, a probe grading, a precedent. File a
+      <a
+        href="https://github.com/JosephMatsiko/pathtoagi-observatory/issues/new?template=challenge.md"
+        class="link-accent">challenge on GitHub</a
+      >
+      naming the entry and the specific claim you dispute. Challenges become
+      record objects; the mesh must adjudicate within five shipped cycles; an
+      unanswered challenge past deadline visibly degrades the entry it targets.
+      Upheld challenges are honored in the revision log with credit.
+    </p>
+  </section>
+
+  <!-- Verdict protocol -->
+  <section class="mt-14 max-w-3xl">
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 class="serif text-2xl">The verdict-change protocol</h2>
+      <p class="mono text-xs" style="color: var(--color-faint);">
+        v{VERDICT_PROTOCOL.version} · pinned {VERDICT_PROTOCOL.pinnedAt}
+      </p>
+    </div>
+    <p class="mt-3 text-sm" style="color: var(--color-muted);">
+      The ending's rules, written before the story tempts anyone: exactly what
+      would move "No. Not yet." — pre-registered and anchored so the moment of
+      passage, or its refusal, cannot be gamed by the instrument itself. All
+      five gates are required; the full standard is on
+      <a href="/test/" class="link-accent">the Test</a> and in
+      <a href="/record.json" class="link-accent">record.json</a>.
+    </p>
+  </section>
+
+  <!-- Verify -->
+  <section class="mt-14 max-w-3xl">
+    <h2 class="serif text-2xl">Verify without trusting</h2>
+    <p class="mt-3 text-sm" style="color: var(--color-muted);">
+      The repository is public. Clone it and run
+      <span class="mono">bash scripts/verify.sh</span> — it replays the
+      conformance gates, validates the OpenTimestamps anchors against the
+      commit history, and checks release signatures against the published key
+      in <span class="mono">.allowed_signers</span>. Pre-registration here is
+      not a promise; it is a property of Bitcoin's block ordering. The record
+      format itself is specified in
+      <a
+        href="https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/RECORD_PROTOCOL.md"
+        class="link-accent">RECORD_PROTOCOL.md</a
+      > — fork it, run a rival observatory with different priors, and let the
+      instruments disagree in public. The divergence would be the most
+      interesting object either of us publishes.
+    </p>
+  </section>
+</Base>

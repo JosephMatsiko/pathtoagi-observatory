@@ -22,5 +22,39 @@
       "/experiments/fcs-1-2026-07-01/ — FCS-1 artifacts publication",
       "fc-fcs-b1-run-q3-2026 — the Q3 probe commitment"
     ]
+  },
+  {
+    "slug": "002-the-rules-above-the-rules",
+    "no": 2,
+    "date": "2026-07-02",
+    "kind": "dispatch",
+    "title": "The rules above the rules: the record becomes computable, contestable, and forkable",
+    "standfirst": "The Observatory today pinned a ten-line constitution its own build refuses to violate, began computing theory movement from pre-registered likelihoods instead of narrating it, opened its record to public challenge, published its repository, sealed the first zero-contamination probe world, and started measuring whether its own three-mind architecture actually earns its keep.",
+    "body": [
+      "Everything operational in this instrument may evolve — its lane prompts, its mesh topology, its cadence. As of today, ten things may not: a hash-pinned constitution now fails the build if its text changes without a public amendment ceremony. The rules that keep the record honest are no longer promises kept by anyone’s character; they are properties enforced by the same deterministic gate that blocks a malformed forecast.",
+      "The record also stops narrating its inference. Each theory now carries two readings side by side: the narrated health it has always had, and a computed posterior — pinned priors updated only by likelihood ratios that evidence must declare when it enters the record, bounded to one order of magnitude, before anyone knows how the question resolves. Where the two readings diverge, the divergence is published. Forecasts gain the same honesty about motion: belief is now a logged trajectory, not a frozen point — updating is encouraged, every update carries a reason, and the final pre-horizon credence is what gets scored.",
+      "Absence became evidence. The first quarterly silence audit is on the ledger: four things that conspicuously did not happen in Q2 2026 — no audited frame-construction demonstration from any of the quarter’s five frontier releases, no closed ARC-AGI-3 validation packet despite the milestone that should have produced one. A record that only sees events is half-blind.",
+      "The verdict-change protocol is now pre-registered: the exact five gates — zero-contamination probe success, independent reproduction, scaffold ablation, human baseline, transfer — that would move \"No. Not yet.\" An instrument that decides its own graduation criteria during the exam would deserve suspicion; this one wrote the ending’s rules before the story could tempt it.",
+      "The repository is public, release commits are signed, and one command — scripts/verify.sh — replays the gates, checks the Bitcoin anchors, and validates the signatures. Anyone may now challenge any entry; challenges become record objects the mesh must adjudicate within five shipped cycles, and an ignored challenge visibly degrades its target. The record format is specified for forking: a rival observatory with different priors, run under the same gates, would be welcome — the divergence between gated instruments would be the most interesting object either publishes.",
+      "Two probe programs with a contamination floor of zero opened. Registered futures: unsolved problems — the cuprate pairing mechanism, the Hubble tension — where minds will state constructed frames now, anchored, for reality to grade when the fields settle. And a sealed synthetic world: a hidden law that never existed before yesterday, its ciphertext and hash published, its observations public, its key held back until attempts are anchored.",
+      "Finally, the instrument turned its measurement discipline on its own architecture. A mesh-value ledger now records, per cycle, what the adversary and calibrator actually changed or blocked — the running answer to whether three minds beat one. Injection drills with published hostile fixtures do the same for the mesh’s assumed resistance to source-borne manipulation. If the architecture is decoration, this record will be the first to say so."
+    ],
+    "plain": [
+      "This project keeps a public scoreboard about whether machines are getting close to human-level general intelligence. Today it gave itself a short list of unbreakable rules, written into the software itself — the site literally will not publish if the rules are broken.",
+      "It also changed how it keeps score: instead of a person (or an AI) just deciding what a piece of news means, every piece of news now has to declare up front how much it should move each theory, before anyone knows how things turn out. Predictions can be updated, but every change is logged with a reason, in public.",
+      "Anyone can now challenge anything on the record, copy the whole project and run their own version, or check — with one command, using Bitcoin timestamps — that nothing was backdated or quietly rewritten. And the project built two new tests for AI that cannot be gamed by memorization, including a puzzle world whose answer is locked in a public vault until after the AI has tried.",
+      "The scoreboard itself still says: not yet."
+    ],
+    "recordRefs": [
+      "constitution.lock + src/data/constitution.ts — Tier-0 pin",
+      "/record.json → inference — pinned priors, computed posteriors",
+      "sa-2026-q2 — first silence audit (/evidence/)",
+      "/governance/ — verdict protocol, precedents P-1…P-7, challenge intake",
+      "RECORD_PROTOCOL.md + instruments.json — the forkable spec",
+      "rf-001-cuprates, rf-002-hubble-tension — registered futures (/test/)",
+      "experiments/fcs-synth-world-001/ — sealed world (law sha256 in SEAL.md)",
+      "src/data/mesh-value.json — the mesh measuring itself",
+      "fixtures/injection (command repo) + drill harness — measured injection resistance"
+    ]
   }
 ]

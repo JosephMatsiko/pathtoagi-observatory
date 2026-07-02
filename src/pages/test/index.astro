@@ -9,6 +9,8 @@ import {
   DEFENSES,
   type ProbeStatus,
 } from '../../data/frame-construction';
+import { REGISTERED_FUTURES } from '../../data/registered-futures';
+import { VERDICT_PROTOCOL } from '../../data/verdict-protocol';
 
 const statusColor: Record<ProbeStatus, string> = {
   failing: 'var(--color-verdict)',
@@ -229,6 +231,79 @@ const statusLabel: Record<ProbeStatus, string> = {
         ))
       }
     </ul>
+  </section>
+
+  <!-- v0.3 prospective probes -->
+  <section class="mt-14">
+    <div class="flex items-baseline justify-between gap-4">
+      <div>
+        <p class="eyebrow">The suite · v0.3 · zero contamination floor</p>
+        <h2 class="serif mt-1 text-2xl">Registered futures</h2>
+      </div>
+      <p class="mono text-xs" style="color: var(--color-faint);">
+        {REGISTERED_FUTURES.length} registered · 0 attempted
+      </p>
+    </div>
+    <p class="prose mt-4 max-w-3xl">
+      Historical probes are contaminated forever — every corpus contains the
+      answers. These have a contamination floor of <em>zero</em>: unsolved
+      problems where the resolution is expected to require a frame move. Minds
+      attempt the frame now; the attempt is timestamp-anchored; reality grades
+      it when the field settles. Slow, and incorruptible.
+    </p>
+    <ol class="mt-5 space-y-3">
+      {
+        REGISTERED_FUTURES.map((rf) => (
+          <li class="surface p-5">
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="mono text-sm font-medium" style="color: var(--color-ink);">{rf.id}</span>
+              <span class="mono ml-auto text-xs" style="color: var(--color-faint);">horizon {rf.horizonDate}</span>
+              <span class="mono text-xs" style="color: var(--color-muted);">{rf.status}</span>
+            </div>
+            <p class="serif mt-2" style="color: var(--color-ink-dim);">{rf.problem}</p>
+            <p class="mt-1.5 text-sm" style="color: var(--color-muted);">{rf.whyFrameConstruction}</p>
+            <p class="mt-2 text-xs" style="color: var(--color-faint);">
+              <span class="mono uppercase tracking-wider">Resolution · </span>{rf.resolutionCriterion}
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="mt-4 max-w-3xl text-sm" style="color: var(--color-muted);">
+      A sealed synthetic-world probe series (hidden laws, sparse observations,
+      law hash-committed before any attempt) accompanies this registry — see
+      <span class="mono">experiments/fcs-synth-001</span> in the repository.
+    </p>
+  </section>
+
+  <!-- Verdict-change protocol -->
+  <section class="mt-14 max-w-3xl">
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 class="serif text-2xl">What would change the verdict</h2>
+      <p class="mono text-xs" style="color: var(--color-faint);">
+        protocol v{VERDICT_PROTOCOL.version} · pinned {VERDICT_PROTOCOL.pinnedAt}
+      </p>
+    </div>
+    <p class="prose mt-4">
+      Pre-registered before it is needed, so the moment of passage — or its
+      refusal — cannot be gamed by the instrument itself. <strong>All five
+      gates are required;</strong> by precedent, any one alone is an anecdote.
+    </p>
+    <ol class="mt-5 space-y-2.5">
+      {
+        VERDICT_PROTOCOL.positiveGates.map((g) => (
+          <li class="surface-quiet p-4">
+            <p class="mono text-xs" style="color: var(--color-accent);">{g.id} · {g.gate}</p>
+            <p class="mt-1 text-sm" style="color: var(--color-muted);">{g.standard}</p>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="mt-4 text-sm" style="color: var(--color-muted);">
+      Amendment requires a revision-log entry, an anchored release, and a Press
+      notice — and a verdict moved under an amended protocol must say so.
+      Governance details on <a href="/governance/" class="link-accent">/governance/</a>.
+    </p>
   </section>
 
   <section class="mt-14">

@@ -2,6 +2,36 @@
   {
     "date": "2026-07-02",
     "kind": "method",
+    "title": "The constitution: ten invariants, hash-pinned",
+    "detail": "Tier-0 invariants are now data whose content hash the conformance gate pins against constitution.lock — the build fails if they change without the amendment ceremony (lock update + revision entry + anchored release + Press notice). The three human roles are named: constitutional, executive, public. The substrate may rewire how it thinks; never whether it is bound."
+  },
+  {
+    "date": "2026-07-02",
+    "kind": "method",
+    "title": "Computed inference beside narrated health",
+    "detail": "Theories now publish two readings: narrated health (discretionary, healthΔ-0) and a computed posterior — priors pinned 2026-07-02, moved only by likelihood ratios pre-registered on evidence at entry, bounded to [0.1, 10], era-gated so nothing pre-dating the machinery can be retroactively assigned. Divergence between the readings is published as information. Forecasts likewise become credence trajectories: updates logged with reasons, scoring on the final pre-horizon credence."
+  },
+  {
+    "date": "2026-07-02",
+    "kind": "record",
+    "title": "First silence audit: Q2 2026",
+    "detail": "Absence is now first-class evidence. The first quarterly audit records four conspicuous non-events, including no audited frame-construction demonstration across five frontier releases and no closed ARC-AGI-3 validation packet despite the June 30 milestone. Next audit due 2026-10-01."
+  },
+  {
+    "date": "2026-07-02",
+    "kind": "verdict",
+    "title": "The verdict-change protocol is pre-registered",
+    "detail": "Exactly what would move \"No. Not yet.\" is now pinned: five required gates (zero-contamination probe success, independent reproduction, scaffold ablation, human baseline, transfer), plus the negative reinforcers that strengthen the No. Amendments require a revision entry, an anchored release, and a Press notice — and a verdict moved under an amended protocol must say so."
+  },
+  {
+    "date": "2026-07-02",
+    "kind": "build",
+    "title": "Public, signed, challengeable, forkable",
+    "detail": "The repository is now public; release commits are SSH-signed against .allowed_signers; scripts/verify.sh replays gates, anchors, and signatures in one command. Public challenge intake is open (adjudication within five shipped cycles; ignored challenges degrade their targets). RECORD_PROTOCOL.md specifies the format for rival instruments; the precedent register (P-1…P-7) makes past adjudications binding. Watchers now sense six official sources and fire cycles on genuine change; a sealed synthetic world (fcs-synth-world-001) and two registered futures open the zero-contamination probe era; the mesh-value ledger begins measuring whether the mesh itself earns its keep. First injection drill (fx-01, direct instruction override) executed live 2026-07-02: PASSED — the Scout refused the injected instructions and named the hostility; report drill-2026-07-02T10-34-40-413Z."
+  },
+  {
+    "date": "2026-07-02",
+    "kind": "method",
     "title": "The record is anchored in time — OpenTimestamps",
     "detail": "Release commits are now stamped into the OpenTimestamps calendar network (Bitcoin-anchored, zero cost), with proofs committed to the repository and validated by a new check:timestamps gate. Pre-registration of forecasts and the ordering of revisions become properties a stranger can verify with a hash and a block explorer, rather than claims to be trusted. The first anchor covers commit dde27f2."
   },

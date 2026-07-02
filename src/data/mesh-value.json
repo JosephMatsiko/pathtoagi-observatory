@@ -1,0 +1,9 @@
+[
+  {
+    "cycleId": "2026-07-02T08-47-03-657Z",
+    "verdict": "REVISE",
+    "shipped": true,
+    "proposalBytes": null,
+    "note": "Seeded from the first published cycle: adversary REVISE folded an independent re-verification into the Sonnet 5 record before ship. Automated measurement begins with the next cycle."
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "id": "pathtoagi-observatory",
+    "name": "pathtoAGI — the Observatory",
+    "url": "https://pathtoagi-observatory.netlify.app",
+    "record": "https://pathtoagi-observatory.netlify.app/record.json",
+    "priors": "PINNED_PRIORS in src/data/inference.ts, pinned 2026-07-02",
+    "since": "2026-06-30",
+    "note": "The reference instrument. Rival instruments register here by PR — divergence welcome, impersonation not."
+  }
+]

@@ -4,7 +4,8 @@
 // so the maintenance loop cannot silently corrupt the record. Exits non-zero on
 // any violation — this is the gate the CI job and the agent both run.
 
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -60,6 +61,16 @@ for (const e of evidence) {
   // Discipline: a single record never encodes a health promotion.
   if ('healthDelta' in e && e.healthDelta !== 0)
     err(w, 'healthDelta must be 0 — evidence does not promote a theory on its own');
+  // Inference layer: pre-registered likelihood ratios, bounded, era-gated.
+  if ('likelihoods' in e && e.likelihoods !== undefined) {
+    if ((e.observedAt ?? '') < '2026-07-02')
+      err(w, 'likelihoods may not be assigned to pre-inference-era records (retroactive assignment is backfilling)');
+    for (const [tid, lr] of Object.entries(e.likelihoods)) {
+      if (!THEORY_IDS.has(tid)) err(w, `likelihood names unknown theory "${tid}"`);
+      if (typeof lr !== 'number' || lr < 0.1 || lr > 10)
+        err(w, `likelihood for "${tid}" must be a number in [0.1, 10]`);
+    }
+  }
 }
 
 // ── forecasts.json ───────────────────────────────────────────────────────────
@@ -90,6 +101,22 @@ for (const f of forecasts) {
   }
   if ('provenance' in f && f.provenance !== 'backfilled')
     err(w, `invalid provenance "${f.provenance}" (only "backfilled" is defined)`);
+  // Credence trajectory: updating is encouraged, hiding the path is not.
+  if ('updates' in f && f.updates !== undefined) {
+    if (!Array.isArray(f.updates)) err(w, 'updates must be an array');
+    else {
+      let prev = f.registeredAt ?? '';
+      for (const u of f.updates) {
+        if (!ISO.test((u.at ?? '').slice(0, 10))) err(w, 'update.at must start YYYY-MM-DD');
+        if ((u.at ?? '').slice(0, 10) < prev) err(w, 'updates must be chronological, at/after registration');
+        if ((u.at ?? '').slice(0, 10) > (f.horizonDate ?? '')) err(w, 'updates may not postdate the horizon');
+        if (typeof u.probability !== 'number' || u.probability < 0.01 || u.probability > 0.99)
+          err(w, 'update.probability must be in [0.01, 0.99]');
+        if (!nonEmpty(u.note)) err(w, 'every credence update needs a note — a mind changing without a reason is drift');
+        prev = (u.at ?? '').slice(0, 10);
+      }
+    }
+  }
   validTheories(f.theories, w);
 }
 
@@ -163,10 +190,84 @@ for (const d of dispatches) {
     err(w, 'dispatch declares a superlative achieved — obligations, never claims');
 }
 
+// ── silences.json (quarterly absence audits) ────────────────────────────────
+const silences = read('silences.json');
+for (const sa of silences) {
+  const w = `silence[${sa.id ?? '?'}]`;
+  if (!nonEmpty(sa.id)) err(w, 'missing id');
+  if (!/^\d{4}-Q[1-4]$/.test(sa.period ?? '')) err(w, 'period must be YYYY-Qn');
+  if (!ISO.test(sa.date ?? '')) err(w, 'date must be YYYY-MM-DD');
+  if (!ISO.test(sa.nextDue ?? '')) err(w, 'nextDue must be YYYY-MM-DD');
+  if (!Array.isArray(sa.absences) || !sa.absences.length) err(w, 'absences must be non-empty');
+  for (const a of sa.absences ?? []) {
+    if (!nonEmpty(a.absence) || !nonEmpty(a.reading)) err(w, 'each absence needs absence + reading');
+    validTheories(a.bearsOn, w);
+    if (a.likelihoods)
+      for (const [tid, lr] of Object.entries(a.likelihoods)) {
+        if (!THEORY_IDS.has(tid)) err(w, `likelihood names unknown theory "${tid}"`);
+        if (typeof lr !== 'number' || lr < 0.1 || lr > 10) err(w, `likelihood for "${tid}" out of [0.1, 10]`);
+      }
+  }
+}
+
+// ── precedents.json ──────────────────────────────────────────────────────────
+const precedents = read('precedents.json');
+const pIds = new Set();
+for (const pr of precedents) {
+  const w = `precedent[${pr.id ?? '?'}]`;
+  if (!/^P-\d+$/.test(pr.id ?? '')) err(w, 'id must be P-<n>');
+  else if (pIds.has(pr.id)) err(w, 'duplicate id');
+  else pIds.add(pr.id);
+  for (const k of ['ruling', 'from']) if (!nonEmpty(pr[k])) err(w, `missing ${k}`);
+  if (!ISO.test(pr.date ?? '')) err(w, 'date must be YYYY-MM-DD');
+  if (!['binding', 'overturned'].includes(pr.status)) err(w, `invalid status "${pr.status}"`);
+  if (pr.status === 'overturned' && !nonEmpty(pr.overturnedBy))
+    err(w, 'an overturned precedent must cite what overturned it');
+}
+
+// ── challenges.json ──────────────────────────────────────────────────────────
+const challenges = read('challenges.json');
+for (const c of challenges) {
+  const w = `challenge[${c.id ?? '?'}]`;
+  for (const k of ['id', 'source', 'targets', 'claim']) if (!nonEmpty(c[k])) err(w, `missing ${k}`);
+  if (!ISO.test(c.filedAt ?? '')) err(w, 'filedAt must be YYYY-MM-DD');
+  if (!['open', 'upheld', 'rejected', 'partially-upheld'].includes(c.status)) err(w, `invalid status "${c.status}"`);
+  if (c.status !== 'open' && !nonEmpty(c.adjudication?.note)) err(w, 'adjudicated challenge needs adjudication.note');
+}
+
+// ── registered-futures.json ──────────────────────────────────────────────────
+const futures = read('registered-futures.json');
+for (const rf of futures) {
+  const w = `future[${rf.id ?? '?'}]`;
+  for (const k of ['id', 'problem', 'whyFrameConstruction', 'resolutionCriterion']) if (!nonEmpty(rf[k])) err(w, `missing ${k}`);
+  if (!ISO.test(rf.horizonDate ?? '')) err(w, 'horizonDate must be YYYY-MM-DD');
+  if (!['registered', 'attempted', 'resolved-graded'].includes(rf.status)) err(w, `invalid status "${rf.status}"`);
+  for (const a of rf.attempts ?? []) {
+    if (!nonEmpty(a.mind) || !nonEmpty(a.frameSummary) || !nonEmpty(a.artifactPath))
+      err(w, 'each attempt needs mind, frameSummary, artifactPath');
+  }
+}
+
+// ── constitution pin (Tier-0) ────────────────────────────────────────────────
+// The constitution's content hash must match constitution.lock. Amendment is
+// a ceremony, not an edit: update the lock, add a revision entry, anchor the
+// release, publish a Press notice.
+{
+  const lockPath = join(DATA, '..', '..', 'constitution.lock');
+  const constPath = join(DATA, 'constitution.ts');
+  if (!existsSync(lockPath)) err('constitution', 'constitution.lock missing — Tier-0 is unpinned');
+  else {
+    const want = readFileSync(lockPath, 'utf8').trim();
+    const got = createHash('sha256').update(readFileSync(constPath)).digest('hex');
+    if (want !== got)
+      err('constitution', `Tier-0 hash mismatch (locked ${want.slice(0, 12)}…, actual ${got.slice(0, 12)}…) — amendments require the ceremony: update the lock, add a revision entry, anchor, publish a notice`);
+  }
+}
+
 // ── report ───────────────────────────────────────────────────────────────────
 if (errors.length) {
   console.error(`✗ record conformance: ${errors.length} violation(s)\n`);
   for (const e of errors) console.error('  - ' + e);
   process.exit(1);
 }
-console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${dispatches.length} dispatches — all valid`);
+console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${dispatches.length} dispatches · ${silences.length} silence-audits · ${precedents.length} precedents · ${challenges.length} challenges · ${futures.length} futures · constitution pinned — all valid`);

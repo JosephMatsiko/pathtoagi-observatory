@@ -1,6 +1,9 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { THEORIES } from '../../data/theories';
+import { computedPosteriors, PRIORS_PINNED_AT } from '../../data/inference';
+
+const posteriors = Object.fromEntries(computedPosteriors().map((p) => [p.theoryId, p]));
 
 const theories = [...THEORIES].sort((a, b) => b.health - a.health);
 const trendGlyph: Record<string, string> = {
@@ -22,6 +25,11 @@ const trendGlyph: Record<string, string> = {
       supports it — and a direction of travel. They are held in tension on
       purpose. The Observatory's job is to track which way the evidence moves,
       not to crown a winner.
+    </p>
+    <p class="mono mt-4 text-xs" style="color: var(--color-faint);">
+      Two readings per theory: <span style="color: var(--color-ink-dim);">narrated</span> (discretionary, healthΔ-0 discipline) and
+      <span style="color: var(--color-ink-dim);">computed</span> (pinned priors {PRIORS_PINNED_AT} × pre-registered likelihood ratios on new evidence, bounds [0.1, 10]).
+      Divergence between them is itself information. Machinery in <a href="/record.json" class="hover:underline" style="color: var(--color-accent);">record.json</a>.
     </p>
   </section>
 
@@ -56,6 +64,9 @@ const trendGlyph: Record<string, string> = {
               </div>
               <span class="tabular text-sm" style={`color: ${t.accent};`}>
                 {t.health.toFixed(2)}
+                <span class="ml-2 text-xs" style="color: var(--color-faint);" title={`Computed posterior: pinned priors × pre-registered likelihoods (${posteriors[t.id]?.evidenceApplied ?? 0} applied)`}>
+                  · computed {posteriors[t.id]?.posterior.toFixed(2)}
+                </span>
               </span>
             </div>
           </a>

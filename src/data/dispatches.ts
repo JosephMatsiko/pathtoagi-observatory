@@ -26,6 +26,10 @@ export interface Dispatch {
   standfirst: string; // one-paragraph summary above the fold
   body: string[]; // paragraphs, rendered as-is
   recordRefs: string[]; // ids/paths on the record this dispatch derives from
+  // One record, many registers: a plain-language rendering generated from the
+  // same source of truth, so the registers cannot diverge. An epistemic
+  // institution only the initiated can read fails its own publication clause.
+  plain?: string[];
 }
 
 export const DISPATCH_KIND_LABEL: Record<DispatchKind, string> = {

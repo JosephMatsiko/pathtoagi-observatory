@@ -1,0 +1,41 @@
+[
+  {
+    "id": "sa-2026-q2",
+    "period": "2026-Q2",
+    "date": "2026-07-02",
+    "absences": [
+      {
+        "absence": "No frontier system demonstrated frame construction under any audited, contamination-disciplined condition, despite GPT-5.6 preview, Fable 5/Mythos 5, Sonnet 5, and Gemini 3.5 all shipping in the quarter.",
+        "bearsOn": [
+          "architectural-gap",
+          "scaling-plus-rl"
+        ],
+        "reading": "Capability releases continue to arrive without the specific capability the operating question isolates. Consistent with architectural-gap; unexplained by scaling-sufficient if scale were sufficient alone."
+      },
+      {
+        "absence": "No closed private/semi-private ARC-AGI-3 verified scorecard packet appeared publicly, despite the June 30 Milestone 1 deadline passing and a public community leaderboard existing.",
+        "bearsOn": [
+          "architectural-gap"
+        ],
+        "reading": "The validation evidence the transition standard requires did not materialize on the milestone that should have produced it."
+      },
+      {
+        "absence": "No independent evaluator published a ≥8-hour 50%-success task time-horizon for any public model.",
+        "bearsOn": [
+          "architectural-gap",
+          "scaling-plus-rl"
+        ],
+        "reading": "The autonomy horizon continued to lengthen but did not cross the working-day threshold this quarter."
+      },
+      {
+        "absence": "No vendor claimed, even promotionally, a frame-construction or novel-theory-building advance for any Q2 release. The marketing surface itself avoided the operating question.",
+        "bearsOn": [
+          "architectural-gap",
+          "cognitive-architecture"
+        ],
+        "reading": "Vendors claim what they can defend. The silence of marketing on this axis is weak but real negative evidence."
+      }
+    ],
+    "nextDue": "2026-10-01"
+  }
+]

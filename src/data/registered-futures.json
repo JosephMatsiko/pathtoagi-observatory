@@ -1,0 +1,20 @@
+[
+  {
+    "id": "rf-001-cuprates",
+    "problem": "The pairing mechanism of high-temperature superconductivity in cuprates",
+    "whyFrameConstruction": "Forty years contested; the resolution is expected to require a frame move (the right ontology for the pseudogap phase), not interpolation within existing frames. Every frontier corpus contains the failed candidate frames but not the answer.",
+    "resolutionCriterion": "A mechanism achieves textbook/consensus status (multi-group replication + authoritative reviews adopting it). At registration of each probe attempt, minds state their constructed frame; on resolution, attempts are graded against the consensus mechanism by independent scorers.",
+    "horizonDate": "2032-12-31",
+    "status": "registered",
+    "attempts": []
+  },
+  {
+    "id": "rf-002-hubble-tension",
+    "problem": "The resolution of the Hubble tension (early- vs late-universe H0 disagreement)",
+    "whyFrameConstruction": "The live question is precisely frame-shaped: new physics (which kind?) versus unrecognized systematics. A correct pre-registered call, with reasoning, on which frame wins — before the measurement programs settle it — is exactly the discrimination the suite cannot get from contaminated history.",
+    "resolutionCriterion": "Community consensus lands (systematics-dominated, specific new physics, or measurement convergence dissolving the tension). Pre-registered attempts graded against the settled account by independent scorers.",
+    "horizonDate": "2031-12-31",
+    "status": "registered",
+    "attempts": []
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "id": "P-1",
+    "ruling": "Vendor-reported evidence alone never moves theory health, regardless of headline magnitude.",
+    "from": "healthΔ-0 discipline; every evidence record since cce-2026-06-09",
+    "date": "2026-06-30",
+    "status": "binding"
+  },
+  {
+    "id": "P-2",
+    "ruling": "Public-game, demo, or community-leaderboard results are not capability-transition evidence; only closed validation, independent reproduction, ablation, human-baseline audit, or pre-registered transfer count.",
+    "from": "ARC-AGI-3 adjudications (v5.198–v5.205 lineage; /cycles/)",
+    "date": "2026-07-01",
+    "status": "binding"
+  },
+  {
+    "id": "P-3",
+    "ruling": "Self-administered, self-graded FCS passes are upper bounds only and may never move the verdict.",
+    "from": "FCS-1 run 1 grading (/experiments/fcs-1-2026-07-01/)",
+    "date": "2026-07-01",
+    "status": "binding"
+  },
+  {
+    "id": "P-4",
+    "ruling": "A resolution authored after its outcome was knowable is backfilled: kept visible, excluded from calibration, forever.",
+    "from": "2026-07-01 self-audit retraction",
+    "date": "2026-07-01",
+    "status": "binding"
+  },
+  {
+    "id": "P-5",
+    "ruling": "A claim citing a source the public cannot open is not on the record until the source is public.",
+    "from": "FCS-1 private-repo citation repair (revision log, 2026-07-02)",
+    "date": "2026-07-02",
+    "status": "binding"
+  },
+  {
+    "id": "P-6",
+    "ruling": "Same-model-family review is a fallback, never independent verification; independence claims require a distinct model family or a human.",
+    "from": "Calibration-lane outage and Antigravity restoration (method-health, 2026-07-02)",
+    "date": "2026-07-02",
+    "status": "binding"
+  },
+  {
+    "id": "P-7",
+    "ruling": "Retraction preserves the original text visibly; deletion of record entries is never permitted.",
+    "from": "Retraction mechanism (revision log, 2026-07-02)",
+    "date": "2026-07-02",
+    "status": "binding"
+  }
+]

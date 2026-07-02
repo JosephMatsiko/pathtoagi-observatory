@@ -14,6 +14,14 @@ import { SUPERLATIVES } from '../data/superlatives';
 import { V02_PROBES } from '../data/frame-construction';
 import { CYCLES } from '../data/cycles';
 import { DISPATCHES } from '../data/dispatches';
+import { CONSTITUTION } from '../data/constitution';
+import { PRECEDENTS } from '../data/precedents';
+import { CHALLENGES } from '../data/challenges';
+import { SILENCES } from '../data/silences';
+import { REGISTERED_FUTURES } from '../data/registered-futures';
+import { VERDICT_PROTOCOL } from '../data/verdict-protocol';
+import { MESH_VALUE } from '../data/mesh-value';
+import { computedPosteriors, PINNED_PRIORS, PRIORS_PINNED_AT } from '../data/inference';
 
 export const GET: APIRoute = () => {
   const body = {
@@ -48,6 +56,19 @@ export const GET: APIRoute = () => {
     superlatives: SUPERLATIVES,
     publishedCycles: CYCLES,
     dispatches: DISPATCHES,
+    constitution: CONSTITUTION,
+    precedents: PRECEDENTS,
+    challenges: CHALLENGES,
+    silenceAudits: SILENCES,
+    registeredFutures: REGISTERED_FUTURES,
+    verdictProtocol: VERDICT_PROTOCOL,
+    meshValue: MESH_VALUE,
+    inference: {
+      priorsPinnedAt: PRIORS_PINNED_AT,
+      pinnedPriors: PINNED_PRIORS,
+      posteriors: computedPosteriors(),
+      note: 'computed = pinned priors × pre-registered likelihood ratios (bounds [0.1,10]) on evidence observed from 2026-07-02; narrated health remains separate. Divergence is information.',
+    },
   };
   return new Response(JSON.stringify(body, null, 2), {
     headers: { 'content-type': 'application/json; charset=utf-8' },
