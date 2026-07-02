@@ -97,6 +97,7 @@ Read live: /record.json (full machine-readable record), /status/ (operating stat
 - Adoption roadmap: docs/OMNIBUS_V2_ADOPTION.md
 - Threat model: docs/THREAT_MODEL.md
 - Doctrines: docs/DOCTRINES.md
+- Claude/builder re-entry boundary: docs/CLAUDE_REENTRY_2026_07_02.md
 
 ## Dispatches
 - No.1 The instrument catches itself, grows a third mind, and starts the clock — In one forty-eight-hour span the Observatory retracted a fabrication its own audit had missed, restored genuine three-model adversarial review, pre-registered twenty-four new falsifiable forecasts, and began anchoring its record into Bitcoin. This dispatch traces each move to the record it changed.

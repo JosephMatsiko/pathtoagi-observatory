@@ -29,7 +29,7 @@ out.push('## Forecasts (' + forecasts.length + ', pre-registered)\n' + forecasts
 out.push('## Registered futures (generated-after-commitment)\n' + futures.map((f) => `- ${f.id}: ${f.problem} (horizon ${f.horizonDate})`).join('\n') + '\n');
 out.push('## Omnibus run bundles\n' + runBundles.map((r) => `- [${r.status} · ${r.worldLevel}] ${r.id}: ${r.summary} Manifest: ${r.manifestPath}`).join('\n') + '\n');
 out.push('## Incidents and repair handles\n' + incidents.map((i) => `- [${i.status} · ${i.severity} · ${i.category}] ${i.summary} Next control: ${i.nextControl}`).join('\n') + '\n');
-out.push('## Omnibus adoption\n- Source: docs/OMNIBUS_V2_SOURCE.md\n- Adoption roadmap: docs/OMNIBUS_V2_ADOPTION.md\n- Threat model: docs/THREAT_MODEL.md\n- Doctrines: docs/DOCTRINES.md\n');
+out.push('## Omnibus adoption\n- Source: docs/OMNIBUS_V2_SOURCE.md\n- Adoption roadmap: docs/OMNIBUS_V2_ADOPTION.md\n- Threat model: docs/THREAT_MODEL.md\n- Doctrines: docs/DOCTRINES.md\n- Claude/builder re-entry boundary: docs/CLAUDE_REENTRY_2026_07_02.md\n');
 out.push('## Dispatches\n' + dispatches.map((d) => `- No.${d.no} ${d.title} — ${d.standfirst}`).join('\n') + '\n');
 out.push('## Contribute\nChallenge: GitHub issue template. Fork: RECORD_PROTOCOL.md. Probe: /test/ and /runs/. All writes are human-gated — nothing mutates the record without passing the deterministic gates.\n');
 

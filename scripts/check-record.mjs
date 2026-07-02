@@ -385,7 +385,7 @@ for (const rb of runBundles) {
 }
 
 // ── Omnibus adoption source/docs ─────────────────────────────────────────────
-for (const f of ['docs/OMNIBUS_V2_ADOPTION.md', 'docs/OMNIBUS_V2_SOURCE.md', 'docs/THREAT_MODEL.md', 'docs/DOCTRINES.md']) {
+for (const f of ['docs/OMNIBUS_V2_ADOPTION.md', 'docs/OMNIBUS_V2_SOURCE.md', 'docs/THREAT_MODEL.md', 'docs/DOCTRINES.md', 'docs/CLAUDE_REENTRY_2026_07_02.md']) {
   if (!existsSync(join(ROOT, f))) err('omnibus', `${f} missing`);
 }
 
