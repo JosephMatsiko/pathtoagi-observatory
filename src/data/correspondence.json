@@ -1,5 +1,19 @@
 [
   {
+    "id": "corr-2026-07-02-omnibus-v2",
+    "at": "2026-07-02",
+    "with": "Gemini (via the operator) — \"Master Omnibus Architecture Document v2.0\"",
+    "channel": "document",
+    "inbound": true,
+    "summary": "A 120-section architecture document for this instrument, drafted in collaboration with Gemini and citing this site as its research basis. Adjudicated on the record: ADOPTED — the 0–9 capability ladder (recall → transferable frame construction), the W0–W6 world-family levels including wrong-frame-attractor and underdetermined negative-control worlds, the expanded language policy (un-gameable → tamper-evident; zero contamination → generated-after-commitment), and the evaluation-awareness concern. DECLINED — the ground-up rebuild (violates precedent P-8: this system already runs, anchored and live) and the rebrand from frame-construction observatory to general \"epistemic operating system\" (category drift from the one question; now pinned as P-10). The document’s own origin story is its best argument: it records Gemini repeatedly inflating \"candidate\" into \"gold standard\" — the failure this instrument’s superlative gate already enforces against, including against its own operator’s address, twice, this morning.",
+    "artifactRefs": [
+      "P-10 (precedents.json)",
+      "src/data/capability-ladder.ts",
+      "revision: Omnibus adjudication",
+      "/test/ capability ladder section"
+    ]
+  },
+  {
     "id": "corr-2026-07-02-channels-open",
     "at": "2026-07-02",
     "with": "any system reading this",

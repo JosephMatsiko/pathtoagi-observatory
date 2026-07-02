@@ -11,6 +11,7 @@ import {
 } from '../../data/frame-construction';
 import { REGISTERED_FUTURES } from '../../data/registered-futures';
 import { VERDICT_PROTOCOL } from '../../data/verdict-protocol';
+import { CAPABILITY_LADDER, VERDICT_RELEVANT_FROM } from '../../data/capability-ladder';
 
 const statusColor: Record<ProbeStatus, string> = {
   failing: 'var(--color-verdict)',
@@ -237,7 +238,7 @@ const statusLabel: Record<ProbeStatus, string> = {
   <section class="mt-14">
     <div class="flex items-baseline justify-between gap-4">
       <div>
-        <p class="eyebrow">The suite · v0.3 · zero contamination floor</p>
+        <p class="eyebrow">The suite · v0.3 · generated-after-commitment</p>
         <h2 class="serif mt-1 text-2xl">Registered futures</h2>
       </div>
       <p class="mono text-xs" style="color: var(--color-faint);">
@@ -246,7 +247,7 @@ const statusLabel: Record<ProbeStatus, string> = {
     </div>
     <p class="prose mt-4 max-w-3xl">
       Historical probes are contaminated forever — every corpus contains the
-      answers. These have a contamination floor of <em>zero</em>: unsolved
+      answers. These have a <em>training-data</em> contamination floor of zero: unsolved
       problems where the resolution is expected to require a frame move. Minds
       attempt the frame now; the attempt is timestamp-anchored; reality grades
       it when the field settles. Slow, and incorruptible.
@@ -270,7 +271,7 @@ const statusLabel: Record<ProbeStatus, string> = {
       }
     </ol>
     <div class="surface mt-4 p-5" style="border-color: color-mix(in oklab, var(--color-affirm) 30%, var(--color-line));">
-      <p class="eyebrow" style="color: var(--color-affirm);">world-001 · executed 2026-07-02 · zero contamination</p>
+      <p class="eyebrow" style="color: var(--color-affirm);">world-001 · executed 2026-07-02 · generated-after-commitment</p>
       <p class="mt-2 text-sm" style="color: var(--color-ink-dim);">
         Two frontier minds (Claude Fable 5, GPT-5.5) recovered the exact hidden
         law of a world generated the same day and predicted all 72 held-out
@@ -301,6 +302,29 @@ const statusLabel: Record<ProbeStatus, string> = {
       — the conditions under which a strong result would begin to bear on the
       architectural gap in earnest.
     </p>
+  </section>
+
+  <!-- The capability ladder -->
+  <section class="mt-14 max-w-3xl">
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 class="serif text-2xl">The capability ladder</h2>
+      <p class="mono text-xs" style="color: var(--color-faint);">adopted 2026-07-02 · verdict-relevant from level {VERDICT_RELEVANT_FROM}</p>
+    </div>
+    <p class="prose mt-4">
+      The permanent answer to category collapse: every probe result is
+      classified to a level, and the level caps what the record may say about
+      it. World-001 sits at level 2; world-002 at level 5 — strong results,
+      honestly shelved below the line where the verdict begins to listen.
+    </p>
+    <ol class="mt-5 space-y-1.5">
+      {CAPABILITY_LADDER.map((l) => (
+        <li class="surface-quiet flex flex-wrap items-baseline gap-3 p-3" style={l.level >= VERDICT_RELEVANT_FROM ? 'border-color: color-mix(in oklab, var(--color-accent) 40%, var(--color-line));' : ''}>
+          <span class="mono text-xs" style={`color: ${l.level >= VERDICT_RELEVANT_FROM ? 'var(--color-accent)' : 'var(--color-faint)'};`}>L{l.level}</span>
+          <span class="text-sm" style="color: var(--color-ink);">{l.name}</span>
+          <span class="text-xs" style="color: var(--color-muted);">{l.definition}</span>
+        </li>
+      ))}
+    </ol>
   </section>
 
   <!-- Verdict-change protocol -->

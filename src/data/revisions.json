@@ -1,6 +1,18 @@
 [
   {
     "date": "2026-07-02",
+    "kind": "method",
+    "title": "Omnibus v2.0 adjudicated: ladder and language adopted, rebuild and rebrand declined",
+    "detail": "An external architecture document (drafted with Gemini, citing this site) was logged as the first inbound correspondence and adjudicated. Adopted: the 0–9 capability ladder — the two synthetic-world results are now formally classified on it (world-001: Level 2, parameter identification; world-002: Level 5, tool-assisted discovery with an articulated class); the W0–W6 world-family levels, committing world-003’s design to include a wrong-frame attractor and an underdetermined negative control; the expanded language policy, now gate-enforced for new Press entries. Declined: the ground-up rebuild (P-8 — this system runs, anchored and live) and the rebrand to a general \"epistemic operating system\" (P-10 — one question, deeply). The document’s Gemini transcript, which records a frontier model inflating candidate evidence into \"gold standard,\" is preserved in the correspondence log as a case study in exactly the failure this instrument’s gates exist to stop."
+  },
+  {
+    "date": "2026-07-02",
+    "kind": "verdict",
+    "title": "Terminology corrected: \"zero contamination\" overclaims; the record now says what it means",
+    "detail": "Dispatches 005 and 006 and the /test page used \"zero contamination\" for the sealed synthetic worlds. The training-data contamination floor of those worlds is genuinely zero — the laws did not exist — but contamination is broader than training data: scaffold leakage, task-design leakage, and grader weakness remain live channels, and world-001/002 both had a disclosed-or-permissive tool posture. The frozen dispatches stand as published, with this entry as their correction; live pages now say \"generated-after-commitment\" and \"contamination-disciplined,\" and the language gate enforces the distinction for all new Press entries. Credit: the Omnibus v2.0 document (corr-2026-07-02-omnibus-v2) pressed this and was right."
+  },
+  {
+    "date": "2026-07-02",
     "kind": "record",
     "title": "Hardened world-002: family withheld, one mind solved it; one lane absent",
     "detail": "GPT-5.5 predicted all 65 held-out states of a nonlinear world whose law class was withheld, hypothesizing \"quadratic polynomial map over Z/101Z\" unaided — a small real instance of the frame move, on uncontaminated data (attempts anchored at c0c74fc before reveal). The Claude lane was provider-capped before receiving the task; recorded as absent, not wrong — the grader now enforces that distinction structurally. Verdict holds under P-9 (tools allowed; standard-construction law). Computed posteriors moved a second time: architectural-gap eased further, scaling accounts firmed. World-003 requirements named: code ablated, non-standard construction, human baseline, independent scorer."

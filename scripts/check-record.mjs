@@ -61,6 +61,11 @@ for (const e of evidence) {
   // Discipline: a single record never encodes a health promotion.
   if ('healthDelta' in e && e.healthDelta !== 0)
     err(w, 'healthDelta must be 0 — evidence does not promote a theory on its own');
+  // Capability-ladder classification: integer level 0-9 (see capability-ladder.ts).
+  if ('capabilityLevel' in e && e.capabilityLevel !== undefined) {
+    if (!Number.isInteger(e.capabilityLevel) || e.capabilityLevel < 0 || e.capabilityLevel > 9)
+      err(w, 'capabilityLevel must be an integer 0-9');
+  }
   // Multimodal artifacts: public paths only, honest captions.
   if ('media' in e && e.media !== undefined) {
     if (!Array.isArray(e.media)) err(w, 'media must be an array');
@@ -194,9 +199,23 @@ for (const d of dispatches) {
   if (!Array.isArray(d.recordRefs) || !d.recordRefs.length || d.recordRefs.some((r) => !nonEmpty(r)))
     err(w, 'recordRefs must name at least one record entry');
   // Obligations-never-claims binds Press prose exactly like readings.
-  const prose = [d.title, d.standfirst, ...d.body].join(' ');
+  const prose = [d.title, d.standfirst, ...d.body, ...(d.plain ?? [])].join(' ');
   if (/\b(is|now) the (most|smartest|wisest|best)\b/i.test(prose))
     err(w, 'dispatch declares a superlative achieved — obligations, never claims');
+  // Language policy (adopted 2026-07-02, Omnibus adjudication): overclaiming
+  // vocabulary is banned in new Press entries. Frozen earlier entries stand,
+  // corrected via the revision log.
+  if (d.no > 6) {
+    const banned = [
+      [/un-?game?able/i, 'say "tamper-evident" or "adversarially hardened"'],
+      [/zero[- ]contamination/i, 'say "generated-after-commitment" or "contamination-disciplined"'],
+      [/\bgold standard\b/i, 'say "candidate standard" — no self-coronation'],
+      [/\bproves? (AGI|mind|consciousness)\b/i, 'say "supports a specified capability claim"'],
+      [/\bverified\b/i, 'reserve "verified" for externally audited or reproduced results'],
+    ];
+    for (const [re, fix] of banned)
+      if (re.test(prose)) err(w, `banned overclaim "${re.source}" — ${fix}`);
+  }
 }
 
 // ── silences.json (quarterly absence audits) ────────────────────────────────

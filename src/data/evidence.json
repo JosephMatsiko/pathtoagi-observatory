@@ -18,7 +18,8 @@
       "architectural-gap": 0.85,
       "scaling-sufficient": 1.15,
       "scaling-plus-rl": 1.2
-    }
+    },
+    "capabilityLevel": 5
   },
   {
     "id": "cce-2026-07-02-fcs-synth-world-001",
@@ -46,7 +47,8 @@
       "architectural-gap": 0.9,
       "scaling-sufficient": 1.15,
       "scaling-plus-rl": 1.15
-    }
+    },
+    "capabilityLevel": 2
   },
   {
     "id": "cce-2026-07-01-fcs1-run1",

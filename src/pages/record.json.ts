@@ -23,6 +23,7 @@ import { VERDICT_PROTOCOL } from '../data/verdict-protocol';
 import { MESH_VALUE } from '../data/mesh-value';
 import { computedPosteriors, PINNED_PRIORS, PRIORS_PINNED_AT } from '../data/inference';
 import { CORRESPONDENCE } from '../data/correspondence';
+import { CAPABILITY_LADDER, VERDICT_RELEVANT_FROM } from '../data/capability-ladder';
 
 export const GET: APIRoute = () => {
   const body = {
@@ -65,6 +66,7 @@ export const GET: APIRoute = () => {
     verdictProtocol: VERDICT_PROTOCOL,
     meshValue: MESH_VALUE,
     correspondence: CORRESPONDENCE,
+    capabilityLadder: { levels: CAPABILITY_LADDER, verdictRelevantFrom: VERDICT_RELEVANT_FROM },
     inference: {
       priorsPinnedAt: PRIORS_PINNED_AT,
       pinnedPriors: PINNED_PRIORS,
