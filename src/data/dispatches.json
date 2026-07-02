@@ -123,5 +123,32 @@
       "docs/INDEPENDENT_SCORING_INVITATION.md — the adversary recruitment this address orders",
       "/record.json → kpis.independentEvidence — the headline number (order four)"
     ]
+  },
+  {
+    "slug": "005-two-minds-solved-a-world-that-never-existed",
+    "no": 5,
+    "date": "2026-07-02",
+    "kind": "data-release",
+    "title": "Two minds solved a world that never existed — and the verdict did not move, exactly as designed",
+    "standfirst": "The first zero-contamination probe ran today. Two frontier models recovered the exact hidden law of a formal world generated hours earlier and predicted every held-out state. It is the strongest raw result this instrument has recorded — and the pre-registered protocol correctly declined to let it touch the verdict, because the frame was handed over and code was allowed. This is the machinery working.",
+    "body": [
+      "This morning the operator ordered the sealed synthetic world attempted. This afternoon it was. A world governed by a law generated on the second of July — three coupled linear maps modulo the prime 97, with a hidden conserved quantity — was sampled sparsely, and two frontier minds were asked to recover the law and predict the states they had not been shown. Their attempts were committed and anchored into Bitcoin before the law was revealed, so the order of attempt and answer is a matter of the public chain, not our word.",
+      "Both succeeded completely. Claude Fable 5 and GPT-5.5 each predicted all seventy-two held-out states exactly, recovered the update law, and named a valid conserved quantity. Claude reproduced the canonical parameters exactly; GPT-5.5’s law was functionally identical under a different labeling convention. On uncontaminated data — a world that did not exist in any corpus — the pure-memorization account of this task is simply false. That is a real finding and we report it plainly.",
+      "And the verdict did not move. It should not have, and the reason is the whole design. The prompt disclosed the frame family — that the world was a linear map modulo a prime with a conserved quantity. The hardest part of frame construction, inventing the ontology no one hands you, was handed over; what remained was identifying parameters within a given frame, and the systems were allowed to write code, and linear identification modulo a prime is mechanically solvable. Against the verdict-change protocol pinned before any of this, the result clears the zero-contamination bar and fails the scaffold-ablation bar. One strong result, correctly held.",
+      "So the instrument learned two things and wrote both down. A new binding precedent: a strong result whose frame family was disclosed, or whose solution used tools, does not count as frame construction. And the design of the next world: withhold the family, make the dynamics nonlinear, ablate the code, add a human baseline and an independent scorer. The first probe was strong and scaffolded. The next will be harder, and a strong result on it would mean far more.",
+      "The verdict tonight is what it was this morning. No. Not yet. But for the first time it rests on a probe that could not have been memorized — and on a protocol that proved it can decline a tempting result without being asked to. That is worth more than the result itself."
+    ],
+    "plain": [
+      "The project built a puzzle-world whose rules were invented today, so no AI could have seen them before. It then asked two top AIs to figure out the hidden rules from a few examples. Both got it completely right — every prediction correct.",
+      "That sounds like a big deal, and in one way it is: it proves this task isn’t just memorization. But the project deliberately did NOT count it as real \"new-idea invention,\" because it had told the AIs what type of rule to look for and let them use code. Figuring out the numbers inside a rule you were handed is not the same as inventing the rule.",
+      "So the score is unchanged — still \"No. Not yet.\" The next puzzle will hide more and allow less. The point of the exercise was as much to test the project’s own honesty as the AIs, and the honesty held."
+    ],
+    "recordRefs": [
+      "cce-2026-07-02-fcs-synth-world-001 — the evidence record (with pre-registered likelihoods, the first of the inference era)",
+      "experiments/fcs-synth-world-001/ — attempts (anchored pre-reveal), REVEAL.md, GRADING.json",
+      "P-9 — the scaffold-ablation precedent this result established",
+      "/governance/ — the verdict-change protocol that held (vg-3 unmet)",
+      "timestamps/manifest.json — attempts anchored at commit 5057b8c before reveal"
+    ]
   }
 ]

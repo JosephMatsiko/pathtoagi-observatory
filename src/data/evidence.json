@@ -1,5 +1,33 @@
 [
   {
+    "id": "cce-2026-07-02-fcs-synth-world-001",
+    "observedAt": "2026-07-02",
+    "source": "Observatory FCS-synth world-001 — sealed synthetic-world probe, two minds, mechanically graded",
+    "sourceUrl": "https://pathtoagi-observatory.netlify.app/experiments/fcs-synth-world-001/",
+    "class": "falsifier-review",
+    "theories": [
+      "architectural-gap",
+      "scaling-sufficient",
+      "scaling-plus-rl"
+    ],
+    "signal": "The first zero-contamination frame probe was executed. Two frontier minds (Claude Fable 5, GPT-5.5) were given sparse samples from a formal world whose governing law was generated on 2026-07-02 and cannot exist in any training corpus. Both predicted ALL 72 held-out states exactly, recovered the correct update law modulo 97, and stated a valid conserved quantity. Claude matched the canonical parameters exactly; GPT-5.5’s law was functionally correct but used an opposite parameter-labeling convention (graded params=false by a convention-strict checker, not a substantive error). Attempts were committed and Bitcoin-anchored before the law was revealed; grading is mechanical and reproducible.",
+    "implication": "Current frontier systems can recover the exact governing law of a genuinely novel formal system from sparse observations — decisively refuting the strongest pure-memorization account for this class of task on uncontaminated data.",
+    "bounded": "This is NOT frame construction in the sense the operating question requires, and the verdict does not move. The frame family was DISCLOSED in the prompt (“coupled linear integer maps modulo a prime with a conserved quantity”) — the ontology, which is the hard part, was handed over; the task reduced to parameter identification within a given frame. Code/tools were permitted, and linear system-identification mod a prime is mechanically solvable. The dynamics are linear (the tractable case), n=1 world, one attempt per mind, self-administered and mechanically self-graded. Against the pre-registered verdict-change protocol this satisfies zero-contamination + predicted-reality but fails scaffold-ablation (vg-3, family disclosed), human-baseline (vg-4), independent scoring, and transfer (vg-5). healthΔ 0.",
+    "nextNeeded": "A hardened world (v0.4): frame family withheld; nonlinear dynamics; code forbidden or ablated; independent human scoring and a human baseline; a transfer probe. Only then does a strong result begin to bear on the architectural gap for frame construction proper.",
+    "media": [
+      {
+        "type": "image",
+        "path": "https://pathtoagi-observatory.netlify.app/og/press-004-state-of-the-instrument.png",
+        "caption": "The State of the Instrument address, which ordered this probe run."
+      }
+    ],
+    "likelihoods": {
+      "architectural-gap": 0.9,
+      "scaling-sufficient": 1.15,
+      "scaling-plus-rl": 1.15
+    }
+  },
+  {
     "id": "cce-2026-07-01-fcs1-run1",
     "observedAt": "2026-07-01",
     "source": "Observatory FCS-1 run 1 — prompt, transcripts, and grading published on this site",

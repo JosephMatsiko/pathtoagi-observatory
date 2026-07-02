@@ -54,5 +54,12 @@
     "from": "State of the Instrument address (Dispatch No. 004), order one",
     "date": "2026-07-02",
     "status": "binding"
+  },
+  {
+    "id": "P-9",
+    "ruling": "A strong probe result does not satisfy scaffold-ablation (verdict gate vg-3), and cannot move the verdict, when the frame family was disclosed to the system or the solution was permitted to use code/tools. Recovering parameters within a given frame is not constructing the frame.",
+    "from": "FCS-synth world-001 — both minds solved a disclosed-family linear world with code (cce-2026-07-02-fcs-synth-world-001)",
+    "date": "2026-07-02",
+    "status": "binding"
   }
 ]
