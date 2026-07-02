@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-07-02",
+    "kind": "build",
+    "title": "Omnibus tranche one implemented: status, reproduction, incidents, source",
+    "detail": "The first implementation layer under the operator-adopted Omnibus roadmap shipped. The source architecture document is now committed as docs/OMNIBUS_V2_SOURCE.md; docs/THREAT_MODEL.md and docs/DOCTRINES.md name Tier-1 operating doctrine; typed incident objects were added and exposed in record.json; /status and /reproduce became public surfaces; the conformance gate now requires the Omnibus document set and validates incident shape; llms-full.txt points machine readers to the new surfaces. This is tranche one only: world-003, human baselines, independent scoring, verdict protocol v2, run-bundle manifests, evaluation kit packaging, added tracks, ontology, and durable orchestration remain future work."
+  },
+  {
+    "date": "2026-07-02",
     "kind": "record",
     "title": "Temporal correction: the Omnibus was contemporaneous, and a dispatch manufactured duration",
     "detail": "The operator corrected the adjudicator’s perception of time; the commit timestamps confirm it. All of the day’s events are July 2. The address and precedent P-8 committed at 10:05; world-001 was both ordered and run at 10:06–10:14 — the same ten minutes, not, as Dispatch No. 005 wrote, \"this morning… this afternoon.\" That was manufactured duration, which the founding charter forbids; the frozen dispatch stands with this entry as its correction. World-002 ran at 14:28, roughly four hours later (so Dispatch No. 006’s \"hours after\" was accurate). In the ~4-hour gap between the two probes — invisible to an adjudicator that cannot perceive wall-clock time between messages — the operator was in the parallel Gemini→GPT-5.5 conversations that produced the Omnibus. The Omnibus is therefore a contemporaneous, parallel-track document that read a mid-session snapshot (it cites Press 005, not 006/007), and it substantially mirrors a system that had already shipped past its own Phase 0–7 roadmap. Its adoption stands; the framing of it as a downstream external reader whose arrival I merely received is corrected to co-development. Method note added: anchor time to verifiable artifacts, never to felt continuity. Credit: the operator."

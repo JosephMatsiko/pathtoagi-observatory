@@ -204,5 +204,34 @@
       "/governance/ — identity note and the roles that made this override legitimate",
       "revision: \"The operator overrides: the Omnibus is embraced in full\""
     ]
+  },
+  {
+    "slug": "008-omnibus-tranche-one-goes-live",
+    "no": 8,
+    "date": "2026-07-02",
+    "kind": "notice",
+    "title": "Omnibus tranche one goes live",
+    "standfirst": "The first implementation layer of the adopted Omnibus roadmap is now live: the source document is committed, the threat model and doctrines are public, incidents are typed record objects, and the Observatory exposes status and reproduction surfaces. This is not the full Omnibus build. It is the first governed layer under it.",
+    "body": [
+      "The adoption is no longer only a roadmap. Its first implementation layer is now part of the running Observatory. The full operator-provided source has been committed as docs/OMNIBUS_V2_SOURCE.md; the adoption map remains in docs/OMNIBUS_V2_ADOPTION.md; the threat model and doctrines digest now stand beside them as Tier-1 operating documents.",
+      "Two new public surfaces carry the implementation. /status reports the instrument’s operating state: record freshness, calibration, due judgments, challenges, method health, and incidents. /reproduce gathers the commands, source documents, machine-readable record, cycle artifacts, and repair handles a skeptical reader needs to inspect the system from a clean checkout.",
+      "Failures now have a typed register. The first three incident objects name the Omnibus provenance correction, the temporal-framing correction, and the world-002 provider-cap distinction. The point is not theater. A failure that becomes an object can be repaired, cited, checked, and used to constrain the next run.",
+      "The deterministic gate was extended to require incident shape and the Omnibus document set. record.json now exposes incidents beside evidence, forecasts, revisions, correspondence, precedents, and the capability ladder. llms-full.txt now tells machine readers where the status, reproduction, incident, and Omnibus surfaces live.",
+      "The verdict does not move, and the build should not pretend otherwise. World-003, human baselines, independent scoring, verdict protocol v2, run-bundle manifests, the evaluation kit, additional tracks, ontology, and durable orchestration remain ahead. The honest statement is narrower and stronger: tranche one is live, governed, and answerable."
+    ],
+    "plain": [
+      "The project shipped the first real implementation step from the big Omnibus plan. The source document is now in the repo, and the site has new Status and Reproduce pages.",
+      "The project also added a formal incident register, so mistakes and operational gaps are tracked as objects instead of just mentioned in prose.",
+      "This is not the whole Omnibus system yet. It is the first live layer: documentation, public status, reproduction instructions, incident tracking, and machine-readable record wiring."
+    ],
+    "recordRefs": [
+      "commit 76e3be3 — Implement Omnibus v2 tranche one",
+      "docs/OMNIBUS_V2_SOURCE.md — source architecture document",
+      "docs/THREAT_MODEL.md and docs/DOCTRINES.md — adopted Tier-1 operating documents",
+      "/status/ and /reproduce/ — new public surfaces",
+      "src/data/incidents.json — first typed incident objects",
+      "record.json — incidents exposed in the machine-readable record",
+      "deploy 6a46ccc31d52c7186fc99b47 — first Netlify deployment of tranche one"
+    ]
   }
 ]
