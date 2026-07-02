@@ -15,7 +15,10 @@
     "loop:record": "node scripts/record-run.mjs",
     "archive:sources": "node scripts/archive-sources.mjs",
     "timestamp:record": "node scripts/timestamp-record.mjs",
-    "check:timestamps": "node scripts/check-timestamps.mjs"
+    "check:timestamps": "node scripts/check-timestamps.mjs",
+    "media:narrate": "node scripts/narrate-dispatches.mjs",
+    "media:og": "node scripts/og-images.mjs",
+    "media:build": "npm run media:narrate && npm run media:og"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",
@@ -31,6 +34,7 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "opentimestamps": "^0.4.9",
+    "sharp": "^0.35.3",
     "typescript": "^5.7.0"
   }
 }

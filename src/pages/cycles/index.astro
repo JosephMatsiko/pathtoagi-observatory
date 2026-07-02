@@ -28,6 +28,35 @@ const fileLabel: Record<string, string> = {
     </p>
   </section>
 
+  <!-- The mesh, breathing: five coinhering lanes; the loop closes -->
+  <figure class="mt-10" aria-label="The five-lane mesh: Scout feeds Adversary feeds Calibrator and Steward; Recursion closes the loop back to Scout.">
+    <svg viewBox="0 0 640 150" class="mesh-svg" role="img">
+      <defs>
+        <marker id="mesh-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="var(--color-line)"></path>
+        </marker>
+      </defs>
+      {[
+        { x: 60, label: 'Scout', glyph: '◇', c: 'hsl(184 84% 54%)' },
+        { x: 190, label: 'Adversary', glyph: '◆', c: 'hsl(8 84% 64%)' },
+        { x: 320, label: 'Calibrator', glyph: '◈', c: 'hsl(270 60% 72%)' },
+        { x: 450, label: 'Steward', glyph: '◉', c: 'hsl(152 58% 52%)' },
+        { x: 580, label: 'Recursion', glyph: '⟳', c: 'hsl(34 96% 60%)' },
+      ].map((n, i, all) => (
+        <>
+          {i < all.length - 1 && (
+            <line class="mesh-flow" x1={n.x + 18} y1="60" x2={all[i + 1].x - 18} y2="60" stroke="var(--color-line)" stroke-width="1.2" marker-end="url(#mesh-arrow)" style={`animation-delay: ${i * 0.5}s;`}></line>
+          )}
+          <circle cx={n.x} cy="60" r="16" fill="var(--color-surface)" stroke={n.c} stroke-width="1.4"></circle>
+          <text x={n.x} y="65" text-anchor="middle" font-size="13" fill={n.c}>{n.glyph}</text>
+          <text x={n.x} y="98" text-anchor="middle" class="mesh-label" fill="var(--color-muted)">{n.label}</text>
+        </>
+      ))}
+      <path class="mesh-flow mesh-close" d="M 580 78 Q 320 150 60 78" fill="none" stroke="hsl(34 96% 60%)" stroke-opacity="0.7" stroke-width="1.2" marker-end="url(#mesh-arrow)"></path>
+      <text x="320" y="136" text-anchor="middle" class="mesh-label" fill="var(--color-faint)">the loop closes — recursion feeds scout</text>
+    </svg>
+  </figure>
+
   <ul class="mt-10 space-y-4">
     {
       cycles.map((c) => (
@@ -79,3 +108,11 @@ const fileLabel: Record<string, string> = {
     private material — the gate and the mesh's mandates both bind them to that.
   </p>
 </Base>
+
+<style>
+  .mesh-svg { width: 100%; max-width: 42rem; height: auto; display: block; }
+  .mesh-label { font-family: var(--font-mono, monospace); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .mesh-flow { stroke-dasharray: 5 6; animation: mesh-run 1.6s linear infinite; }
+  .mesh-close { animation-duration: 2.6s; }
+  @keyframes mesh-run { to { stroke-dashoffset: -22; } }
+</style>

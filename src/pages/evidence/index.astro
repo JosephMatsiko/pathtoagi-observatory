@@ -105,6 +105,19 @@ const records = [...EVIDENCE].sort((a, b) => b.observedAt.localeCompare(a.observ
             </div>
           </dl>
 
+          {e.media && e.media.length > 0 && (
+            <div class="mt-4 grid gap-3 sm:grid-cols-2">
+              {e.media.map((m) => (
+                <figure class="overflow-hidden rounded-lg border hairline">
+                  {m.type === 'image' && <img src={m.path} alt={m.caption} loading="lazy" class="w-full" />}
+                  {m.type === 'audio' && <audio controls preload="none" src={m.path} class="w-full p-2"></audio>}
+                  {m.type === 'video' && <video controls preload="none" src={m.path} class="w-full"></video>}
+                  <figcaption class="mono px-3 py-2 text-xs" style="color: var(--color-faint);">{m.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          )}
+
           <div class="mt-4 flex flex-wrap items-center gap-2 border-t pt-4 hairline">
             <span class="eyebrow">Theories</span>
             {e.theories.map((id) => {

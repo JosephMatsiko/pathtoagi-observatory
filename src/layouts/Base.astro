@@ -4,9 +4,11 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
 }
 
 const {
+  ogImage = '/og/default.png',
   title = 'pathtoAGI — the Observatory',
   description = 'pathtoAGI — the Observatory: a public epistemic instrument watching the emergence — or non-emergence — of machine general intelligence. Sources, claims, forecasts, revisions. A record that can be inspected, not an oracle.',
 } = Astro.props;
@@ -44,6 +46,8 @@ const isActive = (href: string) => path === href || path.startsWith(href);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content={new URL(ogImage, 'https://pathtoagi-observatory.netlify.app').href} />
+    <meta name="twitter:image" content={new URL(ogImage, 'https://pathtoagi-observatory.netlify.app').href} />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
@@ -130,9 +134,28 @@ const isActive = (href: string) => path === href || path.startsWith(href);
           </div>
         </div>
         <p class="mono mt-8 text-xs" style="color: var(--color-faint);">
+          <span id="live-strip">record breathing…</span>
+          <span class="mx-2" aria-hidden="true">·</span>
           {new Date().getFullYear()} · the proper form of the superlative is not
           boast — it is obligation.
         </p>
+        <script>
+          // The live strip — the record checking its own pulse in the reader's
+          // hands. Fetches the same record.json anyone can audit; fails silent.
+          (async () => {
+            const el = document.getElementById('live-strip');
+            if (!el) return;
+            try {
+              const r = await (await fetch('/record.json')).json();
+              const last = (r.evidence?.[0]?.observedAt) ?? null;
+              const days = last ? Math.max(0, Math.round((Date.now() - Date.parse(last)) / 86400000)) : null;
+              const open = r.kpis?.openForecasts ?? '—';
+              el.textContent = `record live · ${r.evidence?.length ?? '—'} evidence · ${open} open forecasts · last event ${days === null ? '—' : days + 'd'} ago`;
+            } catch {
+              el.textContent = 'record static (offline view)';
+            }
+          })();
+        </script>
       </div>
     </footer>
   </body>

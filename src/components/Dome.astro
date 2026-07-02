@@ -1,0 +1,191 @@
+---
+// The dome — form embodying the metaphor. A real observatory's sky, where
+// every motion carries meaning and nothing moves for decoration:
+//   · theories are stars — luminosity is narrated health, halo is computed
+//     posterior; they twinkle because readings are estimates, not facts
+//   · open forecasts are bodies approaching the meridian — position is time
+//     elapsed toward horizon; crossing the line means resolution is due
+//   · recent evidence events are meteor streaks
+//   · the pole star is the verdict, and it does not twinkle
+// Pure SVG + CSS. prefers-reduced-motion stills the whole sky (global.css).
+import { THEORIES } from '../data/theories';
+import { FORECASTS, effectiveProbability } from '../data/forecasts';
+import { EVIDENCE } from '../data/evidence';
+import { VERDICT } from '../data/frame-construction';
+import { computedPosteriors } from '../data/inference';
+
+const W = 800;
+const H = 400;
+const posteriors = Object.fromEntries(computedPosteriors().map((p) => [p.theoryId, p.posterior]));
+
+// Deterministic star placement from the theory id — the sky is stable
+// between visits; only the readings move it.
+const hash = (s: string) => [...s].reduce((a, c) => (a * 31 + c.charCodeAt(0)) % 9973, 7);
+const stars = THEORIES.map((t, i) => {
+  const h = hash(t.id);
+  return {
+    id: t.id,
+    label: t.title,
+    x: 90 + ((h % 620) + i * 41) % 620,
+    y: 60 + ((h * 7) % 200),
+    r: 2 + t.health * 5,
+    halo: 4 + (posteriors[t.id] ?? t.health) * 14,
+    health: t.health,
+    posterior: posteriors[t.id] ?? t.health,
+    accent: t.accent,
+    delay: (h % 40) / 10,
+  };
+});
+
+// Open forecasts as approaching bodies along the ecliptic arc.
+const today = new Date().toISOString().slice(0, 10);
+const frac = (a: string, b: string, t: string) => {
+  const A = Date.parse(a), B = Date.parse(b), T = Date.parse(t);
+  if (B <= A) return 1;
+  return Math.max(0, Math.min(1, (T - A) / (B - A)));
+};
+const bodies = FORECASTS.filter((f) => f.status === 'open')
+  .map((f) => ({
+    id: f.id,
+    p: effectiveProbability(f),
+    progress: frac(f.registeredAt, f.horizonDate, today),
+    horizonDate: f.horizonDate,
+    claim: f.claim,
+  }))
+  .sort((a, b) => b.progress - a.progress);
+const nearest = bodies[0];
+
+// Ecliptic: a shallow arc across the lower sky. Meridian at x = 700.
+const eclipticY = (x: number) => 330 - 40 * Math.sin((x / W) * Math.PI);
+const bodyX = (progress: number) => 60 + progress * 640;
+
+const streaks = EVIDENCE.slice(0, 3).map((e, i) => ({
+  id: e.id,
+  x1: 120 + i * 190,
+  y1: 40 + i * 26,
+}));
+---
+
+<figure class="dome-wrap" aria-label="The dome: an animated sky where theories are stars, forecast horizons approach the meridian, and recent evidence streaks past. All values also appear as text on this page.">
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" class="dome">
+    <defs>
+      <radialGradient id="dome-sky" cx="50%" cy="110%" r="120%">
+        <stop offset="0%" stop-color="color-mix(in oklab, var(--color-accent) 7%, var(--color-void))"></stop>
+        <stop offset="100%" stop-color="var(--color-void)"></stop>
+      </radialGradient>
+      <linearGradient id="dome-streak" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="transparent"></stop>
+        <stop offset="100%" stop-color="var(--color-accent)"></stop>
+      </linearGradient>
+    </defs>
+    <rect width={W} height={H} fill="url(#dome-sky)"></rect>
+
+    <!-- graticule: the slow sky -->
+    <g class="dome-graticule" style={`transform-origin: ${W / 2}px ${H + 260}px;`}>
+      {[140, 260, 380, 500].map((r) => (
+        <circle cx={W / 2} cy={H + 260} r={r + 160} fill="none" stroke="var(--color-line)" stroke-opacity="0.5" stroke-width="0.6"></circle>
+      ))}
+      {[-30, -15, 0, 15, 30].map((deg) => (
+        <line
+          x1={W / 2} y1={H + 260}
+          x2={W / 2 + 900 * Math.sin((deg * Math.PI) / 180)}
+          y2={H + 260 - 900 * Math.cos((deg * Math.PI) / 180)}
+          stroke="var(--color-line)" stroke-opacity="0.35" stroke-width="0.6"
+        ></line>
+      ))}
+    </g>
+
+    <!-- meridian: cross it and your forecast is due -->
+    <line x1="700" y1="30" x2="700" y2={eclipticY(700) + 18} stroke="var(--color-verdict)" stroke-opacity="0.5" stroke-width="1" stroke-dasharray="2 5"></line>
+    <text x="700" y="24" text-anchor="middle" class="dome-label" fill="var(--color-verdict)">meridian · due</text>
+
+    <!-- pole star: the verdict. It does not twinkle. -->
+    <g>
+      <circle cx="64" cy="46" r="3.2" fill="var(--color-ink)"></circle>
+      <circle cx="64" cy="46" r="8" fill="none" stroke="var(--color-ink)" stroke-opacity="0.25"></circle>
+      <text x="80" y="50" class="dome-label" fill="var(--color-ink-dim)">{VERDICT.answer}</text>
+    </g>
+
+    <!-- theories: stars. luminosity = narrated health; halo = computed posterior -->
+    {stars.map((s) => (
+      <g class="dome-star" style={`animation-delay: ${s.delay}s;`}>
+        <circle cx={s.x} cy={s.y} r={s.halo} fill={s.accent} opacity="0.10"></circle>
+        <circle cx={s.x} cy={s.y} r={s.r} fill={s.accent} opacity="0.9">
+          <title>{s.label} — narrated {s.health.toFixed(2)} · computed {s.posterior.toFixed(2)}</title>
+        </circle>
+        <text x={s.x + s.halo + 4} y={s.y + 3} class="dome-label" fill="var(--color-muted)">{s.id}</text>
+      </g>
+    ))}
+
+    <!-- evidence: meteor streaks -->
+    {streaks.map((m, i) => (
+      <line
+        class="dome-meteor"
+        x1={m.x1} y1={m.y1} x2={m.x1 + 56} y2={m.y1 + 14}
+        stroke="url(#dome-streak)" stroke-width="1.4" stroke-linecap="round"
+        style={`animation-delay: ${3 + i * 7}s;`}
+      >
+        <title>{m.id}</title>
+      </line>
+    ))}
+
+    <!-- ecliptic + approaching forecast bodies -->
+    <path d={`M 40 ${eclipticY(40)} Q ${W / 2} ${eclipticY(W / 2) - 30} 760 ${eclipticY(760)}`} fill="none" stroke="var(--color-line)" stroke-width="0.8"></path>
+    {bodies.map((b) => (
+      <circle cx={bodyX(b.progress)} cy={eclipticY(bodyX(b.progress))} r={1.6 + b.p * 2.4} fill="var(--color-accent)" opacity={0.35 + b.progress * 0.6}>
+        <title>{b.id} — p {b.p.toFixed(2)} · horizon {b.horizonDate}</title>
+      </circle>
+    ))}
+    {nearest && (
+      <text x={Math.min(bodyX(nearest.progress), 596)} y={eclipticY(bodyX(nearest.progress)) + 20} class="dome-label" fill="var(--color-accent)">
+        next: {nearest.id} · {nearest.horizonDate}
+      </text>
+    )}
+  </svg>
+  <figcaption class="mono mt-2 text-xs" style="color: var(--color-faint);">
+    The dome — nothing moves for decoration. Stars are theories (brightness:
+    narrated health · halo: computed posterior; they twinkle because readings
+    are estimates). Bodies on the ecliptic are open forecasts approaching the
+    meridian — crossing it means resolution is due. Streaks are the latest
+    evidence. The pole star is the verdict; it does not twinkle.
+  </figcaption>
+</figure>
+
+<style>
+  .dome {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--color-line);
+    border-radius: 0.75rem;
+    display: block;
+  }
+  .dome-label {
+    font-family: var(--font-mono, monospace);
+    font-size: 9px;
+    letter-spacing: 0.06em;
+  }
+  .dome-graticule {
+    animation: dome-rotate 480s linear infinite;
+  }
+  @keyframes dome-rotate {
+    to { transform: rotate(8deg); }
+  }
+  .dome-star {
+    animation: dome-twinkle 5.5s ease-in-out infinite;
+  }
+  @keyframes dome-twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+  .dome-meteor {
+    stroke-dasharray: 70;
+    stroke-dashoffset: 70;
+    animation: dome-shoot 14s ease-in infinite;
+  }
+  @keyframes dome-shoot {
+    0% { stroke-dashoffset: 70; opacity: 0; }
+    4% { opacity: 1; }
+    9% { stroke-dashoffset: -70; opacity: 0; }
+    100% { stroke-dashoffset: -70; opacity: 0; }
+  }
+</style>

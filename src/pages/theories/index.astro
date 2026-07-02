@@ -54,12 +54,17 @@ const trendGlyph: Record<string, string> = {
             </p>
             <div class="mt-4 flex items-center gap-3">
               <div
-                class="h-2 flex-1 overflow-hidden rounded-full"
+                class="relative h-2 flex-1 rounded-full"
                 style="background: var(--color-surface-2);"
               >
                 <div
                   class="h-full rounded-full"
                   style={`width: ${Math.round(t.health * 100)}%; background: ${t.accent};`}
+                />
+                <div
+                  class="posterior-tick absolute top-[-3px] h-[14px] w-[2px] rounded-full"
+                  style={`left: ${Math.round((posteriors[t.id]?.posterior ?? t.health) * 100)}%; background: var(--color-ink);`}
+                  title={`computed posterior ${posteriors[t.id]?.posterior.toFixed(2)} — pinned priors × pre-registered likelihoods; where it separates from the bar, the divergence is information`}
                 />
               </div>
               <span class="tabular text-sm" style={`color: ${t.accent};`}>

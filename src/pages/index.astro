@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Frontier from '../components/Frontier.tsx';
+import Dome from '../components/Dome.astro';
 import { THEORIES } from '../data/theories';
 import { FRONTIER_2026 } from '../data/capabilities';
 import {
@@ -60,6 +61,14 @@ const liveForecast = FORECASTS.find((f) => f.id === 'fc-verdict-holds')!;
           {VERDICT.gloss}
         </p>
       </div>
+    </div>
+  </section>
+
+  <!-- ── The dome ───────────────────────────────────────────── -->
+  <section class="rise mt-10" style="animation-delay: 120ms;">
+    <p class="eyebrow">The dome · form embodying the metaphor</p>
+    <div class="mt-4">
+      <Dome />
     </div>
   </section>
 

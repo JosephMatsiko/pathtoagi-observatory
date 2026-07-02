@@ -18,3 +18,4 @@ npm-debug.log*
 .maintenance.log
 .maintenance.out.log
 .maintenance.err.log
+# media artifacts ARE committed (public record); tmp aiff excluded

@@ -15,6 +15,13 @@ const resolved = FORECASTS.filter((f) => f.status !== 'open').sort((a, b) =>
   (b.resolvedAt ?? '').localeCompare(a.resolvedAt ?? ''),
 );
 const cal = calibration(FORECASTS);
+const today = new Date().toISOString().slice(0, 10);
+const horizonProgress = (f: any) => {
+  const A = Date.parse(f.registeredAt), B = Date.parse(f.horizonDate), T = Date.parse(today);
+  if (!A || !B || B <= A) return 1;
+  return Math.max(0, Math.min(1, (T - A) / (B - A)));
+};
+const daysLeft = (f: any) => Math.max(0, Math.round((Date.parse(f.horizonDate) - Date.parse(today)) / 86400000));
 
 const statusLabel: Record<ForecastStatus, string> = {
   open: 'Open',
@@ -110,7 +117,20 @@ const theoryTags = (f: { theories: string[] }) =>
           {group.items.map((f) => {
             const brier = brierOf(f);
             return (
-              <li class="surface grid gap-5 p-6 sm:grid-cols-[8rem_1fr] sm:items-start">
+              <li class="surface relative grid gap-5 overflow-hidden p-6 sm:grid-cols-[8rem_1fr] sm:items-start">
+                {f.status === 'open' && (
+                  <div
+                    class="absolute inset-x-0 bottom-0 h-[3px]"
+                    style="background: var(--color-surface-2);"
+                    aria-hidden="true"
+                  >
+                    <div
+                      class={daysLeft(f) <= 30 ? 'horizon-bar horizon-near' : 'horizon-bar'}
+                      style={`width: ${(horizonProgress(f) * 100).toFixed(1)}%;`}
+                      title={`${daysLeft(f)} days to horizon`}
+                    />
+                  </div>
+                )}
                 <div class="flex flex-col items-start">
                   <p class="tabular text-4xl" style={`color: ${statusColor[f.status]};`}>
                     {Math.round(f.probability * 100)}%
@@ -182,5 +202,23 @@ const theoryTags = (f: { theories: string[] }) =>
     ))
   }
 </Base>
+
+<style>
+  /* Horizon approach: the bar is time elapsed toward the horizon. Near-term
+     (≤30d) breathes — the instrument leaning toward a due date. */
+  .horizon-bar {
+    height: 100%;
+    background: color-mix(in oklab, var(--color-accent) 55%, transparent);
+    transition: width 0.6s var(--ease-out, ease);
+  }
+  .horizon-near {
+    background: var(--color-accent);
+    animation: horizon-breathe 2.8s ease-in-out infinite;
+  }
+  @keyframes horizon-breathe {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.45; }
+  }
+</style>
 
 <script></script>

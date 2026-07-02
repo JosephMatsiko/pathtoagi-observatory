@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "001-the-instrument-catches-itself",
+    "file": "/press/audio/001-the-instrument-catches-itself.m4a",
+    "bytes": 796952,
+    "voice": "Samantha",
+    "textHash": "1b63ed85a04d0da0",
+    "generatedAt": "2026-07-02T14:23:16.110Z"
+  },
+  {
+    "slug": "002-the-rules-above-the-rules",
+    "file": "/press/audio/002-the-rules-above-the-rules.m4a",
+    "bytes": 971288,
+    "voice": "Samantha",
+    "textHash": "7bbeb7cbb6e8deb0",
+    "generatedAt": "2026-07-02T14:23:17.946Z"
+  }
+]

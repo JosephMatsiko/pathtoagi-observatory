@@ -61,6 +61,15 @@ for (const e of evidence) {
   // Discipline: a single record never encodes a health promotion.
   if ('healthDelta' in e && e.healthDelta !== 0)
     err(w, 'healthDelta must be 0 — evidence does not promote a theory on its own');
+  // Multimodal artifacts: public paths only, honest captions.
+  if ('media' in e && e.media !== undefined) {
+    if (!Array.isArray(e.media)) err(w, 'media must be an array');
+    else for (const m of e.media) {
+      if (!['image', 'audio', 'video'].includes(m.type)) err(w, `invalid media type "${m.type}"`);
+      if (!/^(\/archive\/|\/media\/|https?:\/\/)/.test(m.path ?? '')) err(w, 'media.path must be /archive/, /media/, or http(s) — the public must be able to open it');
+      if (!nonEmpty(m.caption)) err(w, 'media needs a caption');
+    }
+  }
   // Inference layer: pre-registered likelihood ratios, bounded, era-gated.
   if ('likelihoods' in e && e.likelihoods !== undefined) {
     if ((e.observedAt ?? '') < '2026-07-02')

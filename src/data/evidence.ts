@@ -26,6 +26,10 @@ export interface EvidenceRecord {
   implication: string;
   bounded: string;
   nextNeeded: string;
+  /** Multimodal artifacts backing the record — archived images/audio/video.
+   *  Paths must be public (in-repo /archive/ or /media/, or http(s)). */
+  media?: { type: 'image' | 'audio' | 'video'; path: string; caption: string }[];
+  likelihoods?: Record<string, number>;
 }
 
 export const EVIDENCE_CLASS_LABEL: Record<EvidenceClass, string> = {
