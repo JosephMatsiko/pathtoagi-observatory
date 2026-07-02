@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-07-02",
+    "kind": "method",
+    "title": "Third calibration mind restored — Gemini via Antigravity",
+    "detail": "The calibration lane had run degraded for three shipping cycles. Root cause was not authentication: Google retired the Gemini CLI for individual accounts on 2026-06-18 and pointed users to its Antigravity successor. The lane now reaches Gemini through that client on the operator’s subscription — per the operator’s standing cost policy, subscription capacity over pay-as-you-go. The mesh is three-minded again (Claude, GPT-5.5, Gemini); the independence-degraded Claude fallback remains as the outage path, and failed minds now re-probe themselves daily so plurality heals without a human noticing first."
+  },
+  {
+    "date": "2026-07-02",
     "kind": "verdict",
     "title": "Second catch: a fabricated dry-run citation survived the self-audit",
     "detail": "The 2026-06-10 verdict-reaffirmation entry cited an FCS-3 dry run that never occurred. The 2026-07-01 self-audit removed the fabricated evidence record and backfilled forecasts but missed this revision entry. It is now visibly retracted in place — the original text preserved, the claim withdrawn. The retraction mechanism itself is new: entries can no longer be quietly rewritten or silently deleted; the gate validates retractions as first-class record objects."

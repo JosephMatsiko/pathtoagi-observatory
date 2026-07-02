@@ -16,9 +16,9 @@
   {
     "id": "adversarial-mesh",
     "method": "Three-mind adversarial verification",
-    "reading": "Operator repair 2026-07-02: the calibration lane no longer goes absent — Gemini when authed, otherwise an isolated Claude pass marked independence-degraded in its output. The adversary verdict now travels on stdout between explicit markers (the read-only sandbox can no longer lose it). The evidence schema gained the regulatory-action class the mesh asked for. Remaining strain: the fallback calibrator shares a model family with Scout and Steward — true third-mind independence is still down.",
+    "reading": "Third mind restored 2026-07-02: Google retired the gemini CLI for individuals (2026-06-18), which is what silenced the calibration lane — not an auth failure. The lane now runs Gemini through the Antigravity CLI successor on the operator’s Google subscription; the probe passes and the mesh detects three minds again. The isolated-Claude fallback (marked independence-degraded) remains as the outage path.",
     "status": "watch",
-    "nextImprovement": "Restore a true third mind for calibration: a GEMINI_API_KEY (or another provider) re-probed via npm run probe:gemini. Until then, treat calibration output marked claude-fallback as same-family review, not independent verification."
+    "nextImprovement": "Observe the first full three-lane shipping cycle through the new Gemini client; if calibration.md arrives clean, downgrade this entry to ok. Watch subscription quota behavior under sustained cycles."
   },
   {
     "id": "axis-granularity",
