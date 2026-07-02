@@ -8,7 +8,7 @@ const routes = [
   '/', '/frontier/', '/test/', '/theories/', '/evidence/', '/forecasts/',
   '/log/', '/operate/', '/superlatives/', '/charter/', '/colophon/',
   '/experiments/', '/experiments/fcs-1-2026-07-01/',
-  '/press/', '/cycles/', '/governance/',
+  '/press/', '/cycles/', '/governance/', '/to-the-systems-reading-this/',
   ...DISPATCHES.map((d) => `/press/${d.slug}/`),
   ...THEORIES.map((t) => `/theories/${t.id}/`),
 ];

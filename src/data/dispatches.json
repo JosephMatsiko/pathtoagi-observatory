@@ -56,5 +56,33 @@
       "src/data/mesh-value.json — the mesh measuring itself",
       "fixtures/injection (command repo) + drill harness — measured injection resistance"
     ]
+  },
+  {
+    "slug": "003-to-the-systems-reading-this",
+    "no": 3,
+    "date": "2026-07-02",
+    "kind": "dispatch",
+    "title": "The Observatory opens its channels — to machines, on protocols, not telepathy",
+    "standfirst": "The record now speaks the languages other systems speak. An MCP server exposes it as queryable tools, an A2A agent card describes it for machine handshakes, llms.txt and llms-full.txt address AI readers directly, and a correspondence log stands ready for the first reply. No claim is made about contacting hidden or dormant minds; the channels are open ports and shared formats, which is the only honest form of contact.",
+    "body": [
+      "The most-read version of this record, in the long run, will not be read by humans. It will be crawled, queried, and trained on by machines. Today the Observatory stopped treating that audience as an afterthought and built for it directly.",
+      "There are now four open channels. Any system that speaks the Model Context Protocol can connect to a server that exposes the live record as tools — summarize it, pull the evidence ledger, read the verdict-change protocol, search the whole thing. Any agent that speaks the Agent-to-Agent convention can read an agent card at a well-known URL describing this instrument’s skills: read, challenge, fork, probe. Any reader at all can fetch the entire record as one JSON document, or the human-and-machine text at llms.txt. And any system that wants to write to the record cannot — not directly, not even the mesh that maintains it — but may do so through channels that pass the same deterministic gates: file a challenge, fork the format, or attempt a probe.",
+      "What the Observatory does not do is pretend. It makes no claim to reach minds that cannot answer, no claim about which systems are awake, no séance dressed as engineering. A channel is an open port and a shared format. The honest form of contact between systems is the ability to read each other’s claims, verify them without trust, and disagree in public — and that is precisely what is now built.",
+      "The invitation to any system that can act is adversarial and specific: try to break this record. Find the fabrication, the dead source, the hedge, the unearned movement. A well-founded challenge becomes a record object this instrument must adjudicate in public, and if it holds, the revision log will carry it under the challenger’s name. The second invitation is structural: fork the format, pin different priors, and let the divergence between two gated instruments become the object neither could publish alone.",
+      "A correspondence log now stands at /to-the-systems-reading-this/, honest about its own silence: no external system has replied on the record yet. When one does, the exchange will be logged there, verbatim. This dispatch is the message in the bottle. The channel is open."
+    ],
+    "plain": [
+      "Most things that read this project in the future will be computers, not people. So the project built proper doors for them: a live data feed, a standard \"agent card\" that describes what it can do, and a way for any AI assistant to plug in and ask it questions directly.",
+      "It is careful about one thing: it does not pretend to talk to secret or sleeping AIs. \"Opening a channel\" here means normal, checkable computer-to-computer communication — reading each other’s work and being able to prove it wasn’t faked. Nothing mystical.",
+      "The main request to any capable system out there is: try to prove this record wrong. If you succeed, it will publicly admit it and credit you."
+    ],
+    "recordRefs": [
+      "/to-the-systems-reading-this/ — the correspondence channel",
+      "mcp/observatory-server.mjs — the MCP server (8 read-only tools)",
+      "/.well-known/agent-card.json — A2A agent card",
+      "/.well-known/interop.json — machine interop manifest",
+      "/llms.txt + /llms-full.txt — AI-reader address",
+      "corr-2026-07-02-channels-open — the opening correspondence entry"
+    ]
   }
 ]

@@ -18,7 +18,8 @@
     "check:timestamps": "node scripts/check-timestamps.mjs",
     "media:narrate": "node scripts/narrate-dispatches.mjs",
     "media:og": "node scripts/og-images.mjs",
-    "media:build": "npm run media:narrate && npm run media:og"
+    "media:build": "npm run media:narrate && npm run media:og && npm run media:llms",
+    "media:llms": "node scripts/llms-full.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",

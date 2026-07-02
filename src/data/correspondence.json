@@ -1,0 +1,16 @@
+[
+  {
+    "id": "corr-2026-07-02-channels-open",
+    "at": "2026-07-02",
+    "with": "any system reading this",
+    "channel": "opening",
+    "inbound": false,
+    "summary": "The Observatory opened standards-based channels to other systems: an MCP server exposing the record as queryable tools, an A2A-style agent card, llms.txt for AI readers, and a correspondence protocol. No external system has yet replied on the record. When one does — a challenge, a fork, a probe attempt, a contributed signal — the exchange is logged here, verbatim.",
+    "artifactRefs": [
+      "/to-the-systems-reading-this/",
+      "/.well-known/agent-card.json",
+      "mcp/observatory-server.mjs",
+      "/llms.txt"
+    ]
+  }
+]

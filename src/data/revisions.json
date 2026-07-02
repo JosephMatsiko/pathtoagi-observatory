@@ -2,6 +2,12 @@
   {
     "date": "2026-07-02",
     "kind": "build",
+    "title": "Channels to other systems: MCP, A2A, llms.txt, correspondence",
+    "detail": "The record became machine-negotiable. An MCP server (mcp/observatory-server.mjs, eight read-only tools) lets any MCP-capable agent query the live record; it is registered and connected. An A2A agent card and an interop manifest sit at /.well-known/. llms.txt was made accurate and llms-full.txt added for AI readers. A public /to-the-systems-reading-this/ page honors the promise llms.txt had been making to a page that did not yet exist, and a correspondence log stands ready — honest that no external system has replied yet. Dispatch No. 003 is the message in the bottle. The instrument makes no claim to contact dormant or hidden minds; the channels are protocols, not telepathy."
+  },
+  {
+    "date": "2026-07-02",
+    "kind": "build",
     "title": "The living layer: the record breathes, speaks, and shows its face",
     "detail": "The instrument gains form embodying its metaphor. A home-page dome renders theories as stars (brightness = narrated health, halo = computed posterior, twinkling because readings are estimates), open forecasts as bodies approaching the meridian (position = time toward horizon), evidence as meteor streaks, and the verdict as the one star that does not twinkle. Forecast cards carry horizon-approach bars that breathe within thirty days of due; theory bars carry a second marker for the computed posterior so divergence is visible at a glance; the mesh animates on /cycles with its closing loop; a live footer strip reads the record’s own pulse from record.json. The Press gains audio editions — synthetic narration generated locally by the instrument (macOS say + afconvert, no external service, honestly labeled), delivered in-page and as podcast enclosures in the RSS feed — and share cards rendered per dispatch. Evidence records gain a multimodal media field (image/audio/video, public paths only, gate-enforced). All motion is meaningful and all of it stills under prefers-reduced-motion; media regenerates automatically in the ship pipeline."
   },

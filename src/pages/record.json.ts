@@ -22,6 +22,7 @@ import { REGISTERED_FUTURES } from '../data/registered-futures';
 import { VERDICT_PROTOCOL } from '../data/verdict-protocol';
 import { MESH_VALUE } from '../data/mesh-value';
 import { computedPosteriors, PINNED_PRIORS, PRIORS_PINNED_AT } from '../data/inference';
+import { CORRESPONDENCE } from '../data/correspondence';
 
 export const GET: APIRoute = () => {
   const body = {
@@ -63,6 +64,7 @@ export const GET: APIRoute = () => {
     registeredFutures: REGISTERED_FUTURES,
     verdictProtocol: VERDICT_PROTOCOL,
     meshValue: MESH_VALUE,
+    correspondence: CORRESPONDENCE,
     inference: {
       priorsPinnedAt: PRIORS_PINNED_AT,
       pinnedPriors: PINNED_PRIORS,

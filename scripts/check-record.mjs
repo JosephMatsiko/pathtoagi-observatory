@@ -273,10 +273,20 @@ for (const rf of futures) {
   }
 }
 
+// ── correspondence.json (channels to other systems) ────────────────────────
+const correspondence = read('correspondence.json');
+for (const c of correspondence) {
+  const w = `correspondence[${c.id ?? '?'}]`;
+  for (const k of ['id', 'with', 'channel', 'summary']) if (!nonEmpty(c[k])) err(w, `missing ${k}`);
+  if (!ISO.test(c.at ?? '')) err(w, 'at must be YYYY-MM-DD');
+  if (typeof c.inbound !== 'boolean') err(w, 'inbound must be boolean');
+  if (!Array.isArray(c.artifactRefs)) err(w, 'artifactRefs must be an array');
+}
+
 // ── report ───────────────────────────────────────────────────────────────────
 if (errors.length) {
   console.error(`✗ record conformance: ${errors.length} violation(s)\n`);
   for (const e of errors) console.error('  - ' + e);
   process.exit(1);
 }
-console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${dispatches.length} dispatches · ${silences.length} silence-audits · ${precedents.length} precedents · ${challenges.length} challenges · ${futures.length} futures · constitution pinned — all valid`);
+console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${dispatches.length} dispatches · ${silences.length} silence-audits · ${precedents.length} precedents · ${challenges.length} challenges · ${futures.length} futures · ${correspondence.length} correspondence · constitution pinned — all valid`);

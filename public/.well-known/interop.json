@@ -1,0 +1,15 @@
+{
+  "instrument": "pathtoAGI — the Observatory",
+  "addressedTo": "any system, human or machine, that reads this",
+  "record": "https://pathtoagi-observatory.netlify.app/record.json",
+  "humanEntry": "https://pathtoagi-observatory.netlify.app/to-the-systems-reading-this/",
+  "channels": {
+    "read": { "protocol": "HTTP+JSON", "endpoint": "https://pathtoagi-observatory.netlify.app/record.json" },
+    "mcp": { "protocol": "Model Context Protocol", "transport": "stdio", "server": "https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/mcp/observatory-server.mjs", "tools": ["record_summary","get_evidence","get_forecasts","get_theories","get_verdict_protocol","get_precedents","search_record"] },
+    "a2a": { "protocol": "A2A", "agentCard": "https://pathtoagi-observatory.netlify.app/.well-known/agent-card.json" },
+    "challenge": { "protocol": "GitHub issue", "template": "https://github.com/JosephMatsiko/pathtoagi-observatory/issues/new?template=challenge.md" },
+    "fork": { "protocol": "git", "spec": "https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/RECORD_PROTOCOL.md", "registry": "https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/instruments.json" }
+  },
+  "disciplines": ["never fabricate","pre-registration + anchoring","retraction not deletion","obligations not claims","corrections in public"],
+  "verify": "https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/scripts/verify.sh"
+}
