@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-07-02",
+    "kind": "record",
+    "title": "Provenance corrected: the Omnibus was a ChatGPT synthesis, not a Gemini draft",
+    "detail": "The first inbound correspondence entry misattributed the Omnibus v2.0 document to Gemini. In fact it was begun with Gemini and then synthesized and completed in ChatGPT (GPT-5.x) — and the document itself said so structurally: its origin dossier critiques the Gemini transcript in the third person, retaining, revising, and rejecting its claims. The adjudicating mind (Claude) missed that internal evidence; the operator caught it. Corrected visibly in the correspondence log. A pleasing symmetry stands corrected into view: the mind that serves as this mesh’s Adversary lane (the GPT family) played the same adversarial role externally — disciplining Gemini’s \"gold standard\" enthusiasm into the humility architecture this instrument runs on. The adjudication’s outcomes (ladder adopted, language policy adopted, rebuild declined, P-10) are unaffected by the correction."
+  },
+  {
+    "date": "2026-07-02",
     "kind": "method",
     "title": "Omnibus v2.0 adjudicated: ladder and language adopted, rebuild and rebrand declined",
     "detail": "An external architecture document (drafted with Gemini, citing this site) was logged as the first inbound correspondence and adjudicated. Adopted: the 0–9 capability ladder — the two synthetic-world results are now formally classified on it (world-001: Level 2, parameter identification; world-002: Level 5, tool-assisted discovery with an articulated class); the W0–W6 world-family levels, committing world-003’s design to include a wrong-frame attractor and an underdetermined negative control; the expanded language policy, now gate-enforced for new Press entries. Declined: the ground-up rebuild (P-8 — this system runs, anchored and live) and the rebrand to a general \"epistemic operating system\" (P-10 — one question, deeply). The document’s Gemini transcript, which records a frontier model inflating candidate evidence into \"gold standard,\" is preserved in the correspondence log as a case study in exactly the failure this instrument’s gates exist to stop."
