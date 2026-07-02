@@ -53,7 +53,8 @@
     "ruling": "Running precedes building: while the record has no external reader, challenge, or fork on file, net-new public surface is frozen; effort goes to executing probes, resolving forecasts, and recruiting adversaries. Repairs, record entries, and adjudications are exempt.",
     "from": "State of the Instrument address (Dispatch No. 004), order one",
     "date": "2026-07-02",
-    "status": "binding"
+    "status": "overturned",
+    "overturnedBy": "Own terms + operator override, 2026-07-02: the freeze ran \"while the record has no external reader, challenge, or fork on file.\" The Omnibus correspondence (corr-2026-07-02-omnibus-v2) is the record’s first external reader engaging it at length. The condition lapsed; the operator’s override confirms it."
   },
   {
     "id": "P-9",
@@ -67,6 +68,7 @@
     "ruling": "The instrument’s object is frame construction under contamination discipline — one question, deeply. Proposals to generalize it into a broader evidence platform, product stack, or \"epistemic operating system\" are measured against that question and against P-8; adopted pieces must reduce a named epistemic risk of the existing record. Absorbing a good idea is not the same as adopting a new identity.",
     "from": "Adjudication of the Omnibus v2.0 document (corr-2026-07-02-omnibus-v2)",
     "date": "2026-07-02",
-    "status": "binding"
+    "status": "overturned",
+    "overturnedBy": "Operator override, 2026-07-02 (revision: \"The operator overrides: the Omnibus is embraced in full\"). The operator holds constitutional authority; the override was exercised through the ceremony, on the record."
   }
 ]

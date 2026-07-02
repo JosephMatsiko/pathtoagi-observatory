@@ -177,5 +177,32 @@
       "claude-fable-5.md (world-002 attempts) — the absent-not-wrong record of the capped lane",
       "fc-fable5-cap-transition — the open forecast the cap observation bears on (horizon 2026-07-08)"
     ]
+  },
+  {
+    "slug": "007-the-operator-overrides",
+    "no": 7,
+    "date": "2026-07-02",
+    "kind": "notice",
+    "title": "The operator overrides: the Omnibus becomes the roadmap",
+    "standfirst": "Exercising the constitutional role, the operator overrode the adjudicator’s reservations and adopted the Omnibus v2.0 architecture in full. Two precedents fall — one overturned by authority, one lapsed on its own terms — and the instrument’s identity expands: an open evidence infrastructure for frontier AI claims, with frame construction unchanged as the apex question. This notice is the ceremony the constitution requires.",
+    "body": [
+      "Yesterday’s adjudication of the Omnibus v2.0 document adopted its capability ladder and language policy and declined its rebuild and rebrand, pinning that caution as precedent P-10. Today the operator overrode the caution — through the ceremony, on the record, which is the only way authority moves here.",
+      "Two precedents resolve. P-10, the identity pin, is overturned by constitutional authority: the operator holds that power and used it in public. P-8, the run-don’t-build freeze, resolves differently and more interestingly — on its own terms. The freeze was written to last “while the record has no external reader, challenge, or fork on file.” The Omnibus is the record’s first external reader: a frontier mind read this site end to end and returned a hundred and twenty sections engaging it. The condition the freeze named has been met; the freeze lifts because its own sentence says so.",
+      "Provenance, corrected twice by the operator and worth stating precisely: the document was begun in conversation with Gemini and synthesized to completion by GPT-5.5 — the same model that serves as this mesh’s Adversary lane. The mind that attacks this instrument’s proposals from the inside wrote its blueprint from the outside, including the very language policy that now constrains this notice.",
+      "What the adoption means: the frame-construction question remains the apex, unchanged. Around it, the instrument converges toward the Omnibus specification — evaluation tracks beneath the apex, claims as governed objects, run bundles, a reproduction surface, human baselines, and in time the layered offering. Two terms survive from the adjudication untouched: record continuity — convergence toward the specification, never deletion of the anchored history — and the language discipline, which is now enforced by the same gate that checks this text.",
+      "The convergence map and build order are public in the repository. The next act under the adoption is unchanged from the address: world-003, with the wrong-frame attractor, the underdetermined negative control, code ablated, and a human baseline. The verdict tonight carries its adopted long form: No. Not yet — until the evidence survives."
+    ],
+    "plain": [
+      "The human in charge used his authority to overrule the AI’s cautious judgment and adopt, in full, a big architecture plan for the project’s future — a plan written by another AI (GPT-5.5, the same model that plays devil’s advocate inside this project).",
+      "The override was done by the book: recorded publicly, with the old cautionary rules formally retired. One of those rules actually expired on its own — it said \"don’t build new things until someone outside reads this project,\" and the plan itself was the first outside reader.",
+      "The project’s core question does not change. Its scope grows around that question, carefully, without deleting any of its history. The scoreboard still says: No. Not yet — until the evidence survives."
+    ],
+    "recordRefs": [
+      "corr-2026-07-02-omnibus-v2 — the correspondence entry, with override note",
+      "P-8, P-10 (precedents.json) — resolution recorded with reasons",
+      "docs/OMNIBUS_V2_ADOPTION.md — the convergence map and build order",
+      "/governance/ — identity note and the roles that made this override legitimate",
+      "revision: \"The operator overrides: the Omnibus is embraced in full\""
+    ]
   }
 ]

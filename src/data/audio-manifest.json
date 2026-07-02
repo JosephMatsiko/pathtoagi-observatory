@@ -46,5 +46,13 @@
     "voice": "Samantha",
     "textHash": "c7e9fbf879c51695",
     "generatedAt": "2026-07-02T19:30:01.561Z"
+  },
+  {
+    "slug": "007-the-operator-overrides",
+    "file": "/press/audio/007-the-operator-overrides.m4a",
+    "bytes": 734794,
+    "voice": "Samantha",
+    "textHash": "0d07fc798995e2e6",
+    "generatedAt": "2026-07-02T19:54:03.092Z"
   }
 ]

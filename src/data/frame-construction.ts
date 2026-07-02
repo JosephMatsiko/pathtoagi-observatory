@@ -7,6 +7,7 @@ export const OPERATING_QUESTION =
 
 export const VERDICT = {
   answer: 'No. Not yet.',
+  tagline: 'No. Not yet — until the evidence survives.',
   since: '2026',
   gloss:
     'The missing bar is reliable frame construction under sparse evidence: noticing the inherited ontology is wrong, finding the representation no prompt handed it, and deriving consequences that survive contact with reality.',
