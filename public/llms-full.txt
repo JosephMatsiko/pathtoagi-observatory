@@ -2,7 +2,7 @@
 
 Operating verdict: No. Not yet. The missing bar is reliable frame construction under sparse evidence.
 
-Read live: /record.json (full machine-readable record) or the MCP server (mcp/observatory-server.mjs). Channels: /to-the-systems-reading-this/
+Read live: /record.json (full machine-readable record), /status/ (operating state), /reproduce/ (verification path), or the MCP server (mcp/observatory-server.mjs). Channels: /to-the-systems-reading-this/
 
 ## Constitution (Tier-0, hash-pinned)
 - I. Never fabricate. A clean no-op is a successful cycle; a wrong record is worse than a stale one.
@@ -80,9 +80,20 @@ Read live: /record.json (full machine-readable record) or the MCP server (mcp/ob
 - [open · p=0.5 · horizon 2026-12-31 · registered 2026-07-02] At least one named external reviewer agrees to independently score an Observatory FCS run by 2026-12-31.
 - [open · p=0.15 · horizon 2026-12-31 · registered 2026-07-02] A frontier vendor offers ≥100M-token context in general availability by 2026-12-31.
 
-## Registered futures (zero contamination)
+## Registered futures (generated-after-commitment)
 - rf-001-cuprates: The pairing mechanism of high-temperature superconductivity in cuprates (horizon 2032-12-31)
 - rf-002-hubble-tension: The resolution of the Hubble tension (early- vs late-universe H0 disagreement) (horizon 2031-12-31)
+
+## Incidents and repair handles
+- [resolved · medium · provenance-error] The first Omnibus correspondence entry attributed the source too narrowly to Gemini before the operator corrected the GPT-5.5 synthesis provenance. Next control: Treat internal-document evidence as primary provenance evidence before adjudicating external authorship.
+- [resolved · medium · temporal-framing-error] Dispatch No. 005 manufactured duration by implying a morning-to-afternoon gap for a same-window world-001 run. Next control: Require timestamp checks for any dispatch that narrates elapsed time between probe order, run, grading, and publication.
+- [contained · low · execution-gap] The Claude lane was provider-capped during world-002 and therefore absent rather than wrong. Next control: Represent non-attempt, provider cap, and failed attempt as separate result states in future run manifests.
+
+## Omnibus adoption
+- Source: docs/OMNIBUS_V2_SOURCE.md
+- Adoption roadmap: docs/OMNIBUS_V2_ADOPTION.md
+- Threat model: docs/THREAT_MODEL.md
+- Doctrines: docs/DOCTRINES.md
 
 ## Dispatches
 - No.1 The instrument catches itself, grows a third mind, and starts the clock — In one forty-eight-hour span the Observatory retracted a fabrication its own audit had missed, restored genuine three-model adversarial review, pre-registered twenty-four new falsifiable forecasts, and began anchoring its record into Bitcoin. This dispatch traces each move to the record it changed.

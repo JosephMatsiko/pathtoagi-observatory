@@ -73,7 +73,7 @@ const liveForecast = FORECASTS.find((f) => f.id === 'fc-verdict-holds')!;
   </section>
 
   <!-- ── Instrument strip ───────────────────────────────────── -->
-  <section class="mt-4 grid gap-4 sm:grid-cols-3">
+  <section class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
     <a href="/frontier/" class="surface-quiet block p-5 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
       <p class="eyebrow">Frontier · mean of 8 axes</p>
       <p class="tabular mt-2 text-3xl" style="color: var(--color-accent);">
@@ -103,6 +103,16 @@ const liveForecast = FORECASTS.find((f) => f.id === 'fc-verdict-holds')!;
       </p>
       <p class="mt-1 text-sm" style="color: var(--color-muted);">
         {leader.title} — {leader.trend}.
+      </p>
+    </a>
+    <a href="/status/" class="surface-quiet block p-5 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
+      <p class="eyebrow">Omnibus implementation</p>
+      <p class="tabular mt-2 text-3xl" style="color: var(--color-affirm);">
+        live
+      </p>
+      <p class="mt-1 text-sm" style="color: var(--color-muted);">
+        Source, incident objects, threat model, doctrines, status, and
+        reproduction surfaces are now on record.
       </p>
     </a>
   </section>

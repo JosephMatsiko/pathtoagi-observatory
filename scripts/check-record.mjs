@@ -11,6 +11,7 @@ import { dirname, join } from 'node:path';
 
 const DATA = join(dirname(fileURLToPath(import.meta.url)), '..', 'src', 'data');
 const read = (f) => JSON.parse(readFileSync(join(DATA, f), 'utf8'));
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
 const errors = [];
@@ -302,10 +303,45 @@ for (const c of correspondence) {
   if (!Array.isArray(c.artifactRefs)) err(w, 'artifactRefs must be an array');
 }
 
+// ── incidents.json (failure objects and repair handles) ─────────────────────
+const INCIDENT_STATUS = new Set(['open', 'contained', 'resolved', 'archived']);
+const INCIDENT_SEVERITY = new Set(['low', 'medium', 'high', 'critical']);
+const INCIDENT_CATEGORY = new Set([
+  'provenance-error',
+  'temporal-framing-error',
+  'execution-gap',
+  'language-drift',
+  'record-integrity',
+  'evaluation-awareness',
+]);
+const incidents = read('incidents.json');
+const incidentIds = new Set();
+for (const i of incidents) {
+  const w = `incident[${i.id ?? '?'}]`;
+  if (!nonEmpty(i.id)) err(w, 'missing id');
+  else if (incidentIds.has(i.id)) err(w, 'duplicate id');
+  else incidentIds.add(i.id);
+  if (!ISO.test(i.date ?? '')) err(w, 'date must be YYYY-MM-DD');
+  if (!INCIDENT_STATUS.has(i.status)) err(w, `invalid status "${i.status}"`);
+  if (!INCIDENT_SEVERITY.has(i.severity)) err(w, `invalid severity "${i.severity}"`);
+  if (!INCIDENT_CATEGORY.has(i.category)) err(w, `invalid category "${i.category}"`);
+  for (const k of ['summary', 'impact', 'resolution', 'nextControl'])
+    if (!nonEmpty(i[k])) err(w, `missing ${k}`);
+  if (!Array.isArray(i.recordRefs) || !i.recordRefs.length || i.recordRefs.some((r) => !nonEmpty(r)))
+    err(w, 'recordRefs must name at least one record entry');
+  if (i.status === 'open' && /resolved|corrected|fixed/i.test(i.resolution ?? ''))
+    err(w, 'open incidents may not claim a resolved/fixed resolution');
+}
+
+// ── Omnibus adoption source/docs ─────────────────────────────────────────────
+for (const f of ['docs/OMNIBUS_V2_ADOPTION.md', 'docs/OMNIBUS_V2_SOURCE.md', 'docs/THREAT_MODEL.md', 'docs/DOCTRINES.md']) {
+  if (!existsSync(join(ROOT, f))) err('omnibus', `${f} missing`);
+}
+
 // ── report ───────────────────────────────────────────────────────────────────
 if (errors.length) {
   console.error(`✗ record conformance: ${errors.length} violation(s)\n`);
   for (const e of errors) console.error('  - ' + e);
   process.exit(1);
 }
-console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${dispatches.length} dispatches · ${silences.length} silence-audits · ${precedents.length} precedents · ${challenges.length} challenges · ${futures.length} futures · ${correspondence.length} correspondence · constitution pinned — all valid`);
+console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${dispatches.length} dispatches · ${silences.length} silence-audits · ${precedents.length} precedents · ${challenges.length} challenges · ${futures.length} futures · ${correspondence.length} correspondence · ${incidents.length} incidents · Omnibus docs present · constitution pinned — all valid`);

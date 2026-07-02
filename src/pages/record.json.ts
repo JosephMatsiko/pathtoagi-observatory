@@ -24,6 +24,7 @@ import { MESH_VALUE } from '../data/mesh-value';
 import { computedPosteriors, PINNED_PRIORS, PRIORS_PINNED_AT } from '../data/inference';
 import { CORRESPONDENCE } from '../data/correspondence';
 import { CAPABILITY_LADDER, VERDICT_RELEVANT_FROM } from '../data/capability-ladder';
+import { INCIDENTS } from '../data/incidents';
 
 export const GET: APIRoute = () => {
   const body = {
@@ -61,6 +62,7 @@ export const GET: APIRoute = () => {
     revisions: REVISIONS,
     maintenanceRuns: RUNS,
     methodHealth: METHOD_HEALTH,
+    incidents: INCIDENTS,
     superlatives: SUPERLATIVES,
     publishedCycles: CYCLES,
     dispatches: DISPATCHES,

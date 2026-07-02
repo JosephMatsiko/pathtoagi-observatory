@@ -1,0 +1,50 @@
+[
+  {
+    "id": "inc-2026-07-02-omnibus-provenance",
+    "date": "2026-07-02",
+    "status": "resolved",
+    "severity": "medium",
+    "category": "provenance-error",
+    "summary": "The first Omnibus correspondence entry attributed the source too narrowly to Gemini before the operator corrected the GPT-5.5 synthesis provenance.",
+    "impact": "The adoption outcome did not change, but the record's account of authorship was wrong and had to preserve the correction visibly.",
+    "resolution": "Correspondence, revisions, and adoption record now state the document was synthesized by GPT-5.5 over an earlier Gemini transcript.",
+    "nextControl": "Treat internal-document evidence as primary provenance evidence before adjudicating external authorship.",
+    "recordRefs": [
+      "corr-2026-07-02-omnibus-v2",
+      "revision: Provenance corrected: the Omnibus was a ChatGPT synthesis, not a Gemini draft",
+      "docs/OMNIBUS_V2_ADOPTION.md"
+    ]
+  },
+  {
+    "id": "inc-2026-07-02-temporal-framing",
+    "date": "2026-07-02",
+    "status": "resolved",
+    "severity": "medium",
+    "category": "temporal-framing-error",
+    "summary": "Dispatch No. 005 manufactured duration by implying a morning-to-afternoon gap for a same-window world-001 run.",
+    "impact": "The published dispatch remains frozen, but its implied chronology overstated elapsed time and conflicted with commit timestamps.",
+    "resolution": "A revision entry corrected the chronology and established the method rule: anchor time to artifacts, never felt continuity.",
+    "nextControl": "Require timestamp checks for any dispatch that narrates elapsed time between probe order, run, grading, and publication.",
+    "recordRefs": [
+      "revision: Temporal correction: the Omnibus was contemporaneous, and a dispatch manufactured duration",
+      "press/005-two-minds-solved-a-world-that-never-existed",
+      "docs/OMNIBUS_V2_ADOPTION.md"
+    ]
+  },
+  {
+    "id": "inc-2026-07-02-provider-cap-claude-world-002",
+    "date": "2026-07-02",
+    "status": "contained",
+    "severity": "low",
+    "category": "execution-gap",
+    "summary": "The Claude lane was provider-capped during world-002 and therefore absent rather than wrong.",
+    "impact": "World-002 grading had to distinguish non-attempt from failure so the record did not infer capability from infrastructure absence.",
+    "resolution": "Dispatch No. 006 and the run record distinguish absent, not wrong; world-003 requires a human baseline and independent scorer.",
+    "nextControl": "Represent non-attempt, provider cap, and failed attempt as separate result states in future run manifests.",
+    "recordRefs": [
+      "press/006-the-hardened-world-fell-too",
+      "world-002 reveal + grading",
+      "docs/OMNIBUS_V2_ADOPTION.md"
+    ]
+  }
+]
