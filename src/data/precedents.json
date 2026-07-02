@@ -47,5 +47,12 @@
     "from": "Retraction mechanism (revision log, 2026-07-02)",
     "date": "2026-07-02",
     "status": "binding"
+  },
+  {
+    "id": "P-8",
+    "ruling": "Running precedes building: while the record has no external reader, challenge, or fork on file, net-new public surface is frozen; effort goes to executing probes, resolving forecasts, and recruiting adversaries. Repairs, record entries, and adjudications are exempt.",
+    "from": "State of the Instrument address (Dispatch No. 004), order one",
+    "date": "2026-07-02",
+    "status": "binding"
   }
 ]
