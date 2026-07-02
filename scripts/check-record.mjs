@@ -78,6 +78,16 @@ for (const f of forecasts) {
   if (!FC_STATUS.has(f.status)) err(w, `invalid status "${f.status}"`);
   if (f.status !== 'open' && !ISO.test(f.resolvedAt ?? ''))
     err(w, 'resolved forecast must have resolvedAt (YYYY-MM-DD)');
+  // Pre-registration discipline: every forecast carries its registration date,
+  // strictly before its horizon and never in the future. Commit anchoring
+  // (check:timestamps) makes these dates independently verifiable.
+  if (!ISO.test(f.registeredAt ?? '')) err(w, 'registeredAt must be YYYY-MM-DD');
+  else {
+    if (f.registeredAt >= f.horizonDate && f.provenance !== 'backfilled')
+      err(w, 'registeredAt must be strictly before horizonDate — a forecast registered at or past its horizon cannot be lost (or must be marked backfilled)');
+    if (f.registeredAt > new Date().toISOString().slice(0, 10))
+      err(w, 'registeredAt cannot be in the future');
+  }
   if ('provenance' in f && f.provenance !== 'backfilled')
     err(w, `invalid provenance "${f.provenance}" (only "backfilled" is defined)`);
   validTheories(f.theories, w);
@@ -99,6 +109,20 @@ for (const r of revisions) {
   }
 }
 
+// ── cycles.json (published mesh-cycle artifacts) ────────────────────────────
+const cycles = read('cycles.json');
+const cycleIds = new Set();
+for (const c of cycles) {
+  const w = `cycle[${c.id ?? '?'}]`;
+  if (!nonEmpty(c.id)) err(w, 'missing id');
+  else if (cycleIds.has(c.id)) err(w, 'duplicate id');
+  else cycleIds.add(c.id);
+  if (!nonEmpty(c.shippedAt) || Number.isNaN(Date.parse(c.shippedAt))) err(w, 'shippedAt must be a parseable datetime');
+  if (!nonEmpty(c.summary)) err(w, 'missing summary');
+  if (!nonEmpty(c.adversary)) err(w, 'missing adversary');
+  if (!Array.isArray(c.files) || !c.files.length) err(w, 'files must be a non-empty array');
+}
+
 // ── superlatives.json ────────────────────────────────────────────────────────
 const SUP_TRENDS = new Set(['earning', 'holding', 'slipping']);
 const sups = read('superlatives.json');
@@ -112,10 +136,37 @@ for (const s of sups) {
     err(w, 'reading declares a superlative achieved — obligations, never claims');
 }
 
+// ── dispatches.json (The Observatory Press) ─────────────────────────────────
+const DISPATCH_KINDS = new Set(['dispatch', 'data-release', 'notice']);
+const dispatches = read('dispatches.json');
+const dSlugs = new Set();
+const dNos = new Set();
+for (const d of dispatches) {
+  const w = `dispatch[${d.slug ?? '?'}]`;
+  if (!/^[0-9]{3}-[a-z0-9-]+$/.test(d.slug ?? '')) err(w, 'slug must be NNN-kebab-case');
+  else if (dSlugs.has(d.slug)) err(w, 'duplicate slug');
+  else dSlugs.add(d.slug);
+  if (!Number.isInteger(d.no) || d.no < 1) err(w, 'no must be a positive integer');
+  else if (dNos.has(d.no)) err(w, 'duplicate issue number');
+  else dNos.add(d.no);
+  if (!ISO.test(d.date ?? '')) err(w, 'date must be YYYY-MM-DD');
+  if (!DISPATCH_KINDS.has(d.kind)) err(w, `invalid kind "${d.kind}"`);
+  for (const k of ['title', 'standfirst']) if (!nonEmpty(d[k])) err(w, `missing ${k}`);
+  if (!Array.isArray(d.body) || !d.body.length || d.body.some((p) => !nonEmpty(p)))
+    err(w, 'body must be a non-empty array of paragraphs');
+  // The Press derives from the record — a dispatch with nothing to cite is not one.
+  if (!Array.isArray(d.recordRefs) || !d.recordRefs.length || d.recordRefs.some((r) => !nonEmpty(r)))
+    err(w, 'recordRefs must name at least one record entry');
+  // Obligations-never-claims binds Press prose exactly like readings.
+  const prose = [d.title, d.standfirst, ...d.body].join(' ');
+  if (/\b(is|now) the (most|smartest|wisest|best)\b/i.test(prose))
+    err(w, 'dispatch declares a superlative achieved — obligations, never claims');
+}
+
 // ── report ───────────────────────────────────────────────────────────────────
 if (errors.length) {
   console.error(`✗ record conformance: ${errors.length} violation(s)\n`);
   for (const e of errors) console.error('  - ' + e);
   process.exit(1);
 }
-console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives — all valid`);
+console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${dispatches.length} dispatches — all valid`);

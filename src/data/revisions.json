@@ -2,6 +2,30 @@
   {
     "date": "2026-07-02",
     "kind": "method",
+    "title": "The record is anchored in time — OpenTimestamps",
+    "detail": "Release commits are now stamped into the OpenTimestamps calendar network (Bitcoin-anchored, zero cost), with proofs committed to the repository and validated by a new check:timestamps gate. Pre-registration of forecasts and the ordering of revisions become properties a stranger can verify with a hash and a block explorer, rather than claims to be trusted. The first anchor covers commit dde27f2."
+  },
+  {
+    "date": "2026-07-02",
+    "kind": "record",
+    "title": "The calibration program scales: 24 forecasts pre-registered",
+    "detail": "Twenty-four new live forecasts entered the ledger — model releases, benchmark thresholds, regulatory actions, compute buildout, and the Observatory’s own commitments — each with a hard resolution criterion and a registration date. The gate now requires registeredAt strictly before the horizon (past-horizon registration is only legal under the visible backfilled marking), and the calibration panel names its baselines: coin-flip 0.25 and the base-rate forecaster. The Brier record stays honestly empty until horizons arrive; the first is 2026-07-08."
+  },
+  {
+    "date": "2026-07-02",
+    "kind": "method",
+    "title": "Shipped cycles publish their working artifacts",
+    "detail": "From the 2026-07-02 Sonnet 5 cycle forward, every shipped maintenance cycle publishes its raw artifacts at /cycles/ — the Scout’s proposal, the Adversary’s verdict, the Calibrator’s grading, the trace — verbatim and frozen. Any change to the record can now be traced from draft to adversarial review to ship, including the disagreements."
+  },
+  {
+    "date": "2026-07-02",
+    "kind": "build",
+    "title": "The Observatory Press opens",
+    "detail": "The record gains a publishing arm at /press/: dispatches, data releases, and notices, with RSS syndication. The editorial charter is four lines — every claim traces to a record entry (gate-enforced via recordRefs); corrections happen in the revision log, never by silent edit; obligations, never claims; no embargoes, no access, no exclusives. The mesh holds a bounded publishing power: at most one dispatch per shipped cycle, restraint being part of the voice. Dispatch No. 001 is out."
+  },
+  {
+    "date": "2026-07-02",
+    "kind": "method",
     "title": "Third calibration mind restored — Gemini via Antigravity",
     "detail": "The calibration lane had run degraded for three shipping cycles. Root cause was not authentication: Google retired the Gemini CLI for individual accounts on 2026-06-18 and pointed users to its Antigravity successor. The lane now reaches Gemini through that client on the operator’s subscription — per the operator’s standing cost policy, subscription capacity over pay-as-you-go. The mesh is three-minded again (Claude, GPT-5.5, Gemini); the independence-degraded Claude fallback remains as the outage path, and failed minds now re-probe themselves daily so plurality heals without a human noticing first."
   },

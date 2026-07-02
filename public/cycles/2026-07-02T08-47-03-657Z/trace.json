@@ -1,0 +1,31 @@
+{
+  "lanes": [
+    {
+      "lane": "scout",
+      "verdict": "PROPOSE",
+      "note": "One record: cce-2026-06-30-sonnet-5-launch (vendor-reported). Full coverage sweep; benchmark-table numbers deliberately omitted per source-fidelity rule after two prior misattribution REJECTs. No forecasts past horizon."
+    },
+    {
+      "lane": "adversary",
+      "verdict": "REVISE",
+      "note": "codex (gpt-5.5) verified primary source; required one revision: 1M-token context window is confirmed in Anthropic's official model docs, so the stale 'confirmation needed' language had to go. Adversary ran degraded — read-only sandbox blocked writing verdict.md; verdict survived via captured transcript."
+    },
+    {
+      "lane": "calibrator",
+      "verdict": "ABSENT",
+      "note": "No calibration.md — third consecutive shipping cycle without the calibration lane. Escalated in method-health.json (adversarial-mesh, status act)."
+    },
+    {
+      "lane": "steward",
+      "verdict": "SHIPPED",
+      "note": "Independently re-verified the model docs (WebFetch: claude-sonnet-5, 1M context, 128k max output, $2/$10 intro pricing) before honoring the REVISE. Applied the record with the revision folded into signal/bounded/nextNeeded; healthΔ 0; no theory or forecast changes. Archived the Sonnet 5 launch post (archive:sources: 1 saved, 2 pre-existing unreachable noted). check:record and build green."
+    },
+    {
+      "lane": "recursion",
+      "verdict": "UPDATED",
+      "note": "method-health adversarial-mesh reading updated: third consecutive calibration failure is now the named pattern, plus the adversary's read-only-sandbox writing failure. Superlatives readings (intelligent, skilled) updated on earned evidence only. No prompt/config/rhythm/power proposals — the open fixes (Gemini auth or designated calibrator) require operator action already named in method-health."
+    }
+  ],
+  "shipped": true,
+  "summary": "Shipped cce-2026-06-30-sonnet-5-launch after adversary REVISE (1M-context docs citation folded in, independently re-verified); calibration lane absent a third time — escalated in method-health."
+}

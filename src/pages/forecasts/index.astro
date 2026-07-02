@@ -49,6 +49,13 @@ const theoryTags = (f: { theories: string[] }) =>
       scored (Brier) when it resolves. A forecast you cannot lose is not a
       forecast.
     </p>
+    <p class="mt-4 text-sm" style="color: var(--color-muted);">
+      Every entry is <strong>pre-registered</strong>: its registration date is
+      part of the record, the gate refuses registration at or past the horizon,
+      and release commits are anchored into Bitcoin via OpenTimestamps — so the
+      ordering of prediction and outcome can be verified by strangers, not
+      taken on trust.
+    </p>
   </section>
 
   <!-- Calibration panel -->
@@ -62,7 +69,7 @@ const theoryTags = (f: { theories: string[] }) =>
         {
           cal.meanBrier === null
             ? 'Honestly empty: no forecast has resolved live yet. Calibration is unclaimed until one does.'
-            : `Lower is better. 0 is perfect; ${cal.baseline.toFixed(2)} is the coin-flip baseline.`
+            : `Lower is better. 0 is perfect. Baselines to beat: coin-flip ${cal.baseline.toFixed(2)}${cal.baseRateBrier !== null ? `, base-rate ${cal.baseRateBrier.toFixed(3)}` : ''}.`
         }
       </p>
     </div>

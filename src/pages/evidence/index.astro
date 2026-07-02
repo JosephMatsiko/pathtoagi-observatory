@@ -20,6 +20,11 @@ const records = [...EVIDENCE].sort((a, b) => b.observedAt.localeCompare(a.observ
       theory</strong>. The <span class="mono">healthDelta</span> is zero until
       independent, durable, off-distribution evidence earns the move.
     </p>
+    <p class="mono mt-4 text-xs" style="color: var(--color-faint);">
+      Independence KPI: {EVIDENCE.filter((e) => e.class === 'independent-eval').length} of {EVIDENCE.length} records
+      are independent-class. Public target: a majority-independent ledger —
+      tracked in <a href="/record.json" class="hover:underline" style="color: var(--color-accent);">record.json</a>.
+    </p>
   </section>
 
   <ul class="mt-10 space-y-4">

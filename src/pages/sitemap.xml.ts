@@ -1,12 +1,15 @@
 // Minimal, honest sitemap — the routes that exist, nothing speculative.
 import type { APIRoute } from 'astro';
 import { THEORIES } from '../data/theories';
+import { DISPATCHES } from '../data/dispatches';
 
 const BASE = 'https://pathtoagi-observatory.netlify.app';
 const routes = [
   '/', '/frontier/', '/test/', '/theories/', '/evidence/', '/forecasts/',
   '/log/', '/operate/', '/superlatives/', '/charter/', '/colophon/',
   '/experiments/', '/experiments/fcs-1-2026-07-01/',
+  '/press/', '/cycles/',
+  ...DISPATCHES.map((d) => `/press/${d.slug}/`),
   ...THEORIES.map((t) => `/theories/${t.id}/`),
 ];
 

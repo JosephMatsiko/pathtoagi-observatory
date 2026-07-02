@@ -13,7 +13,9 @@
     "maintain:status": "node scripts/maintenance-status.mjs",
     "loop:run": "node scripts/maintenance-status.mjs && node scripts/check-record.mjs",
     "loop:record": "node scripts/record-run.mjs",
-    "archive:sources": "node scripts/archive-sources.mjs"
+    "archive:sources": "node scripts/archive-sources.mjs",
+    "timestamp:record": "node scripts/timestamp-record.mjs",
+    "check:timestamps": "node scripts/check-timestamps.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",
@@ -28,6 +30,7 @@
   "devDependencies": {
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "opentimestamps": "^0.4.9",
     "typescript": "^5.7.0"
   }
 }

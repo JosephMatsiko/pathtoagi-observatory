@@ -17,6 +17,7 @@ const nav = [
   { href: '/theories/', label: 'Theories' },
   { href: '/evidence/', label: 'Evidence' },
   { href: '/forecasts/', label: 'Forecasts' },
+  { href: '/press/', label: 'Press' },
   { href: '/operate/', label: 'Operate' },
 ];
 
@@ -33,6 +34,12 @@ const isActive = (href: string) => path === href || path.startsWith(href);
     <meta name="description" content={description} />
     <meta name="color-scheme" content="dark" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="The Observatory Press"
+      href="/press/feed.xml"
+    />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />

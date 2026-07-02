@@ -11,7 +11,8 @@
       "scaling-plus-rl",
       "architectural-gap"
     ],
-    "status": "open"
+    "status": "open",
+    "registeredAt": "2026-07-01"
   },
   {
     "id": "fc-gpt56-ga",
@@ -24,7 +25,8 @@
     "theories": [
       "scaling-plus-rl"
     ],
-    "status": "open"
+    "status": "open",
+    "registeredAt": "2026-07-01"
   },
   {
     "id": "fc-gemini-35-pro-ga",
@@ -38,7 +40,8 @@
       "scaling-sufficient",
       "scaling-plus-rl"
     ],
-    "status": "open"
+    "status": "open",
+    "registeredAt": "2026-07-01"
   },
   {
     "id": "fc-arc3-milestone1-gap",
@@ -52,7 +55,8 @@
       "architectural-gap",
       "scaling-plus-rl"
     ],
-    "status": "open"
+    "status": "open",
+    "registeredAt": "2026-07-01"
   },
   {
     "id": "fc-reward-hack-followup",
@@ -66,7 +70,8 @@
       "architectural-gap",
       "cognitive-architecture"
     ],
-    "status": "open"
+    "status": "open",
+    "registeredAt": "2026-07-01"
   },
   {
     "id": "fc-fcs-2027",
@@ -79,7 +84,8 @@
       "architectural-gap",
       "scaling-sufficient"
     ],
-    "status": "open"
+    "status": "open",
+    "registeredAt": "2026-06-30"
   },
   {
     "id": "fc-arc-agi-3",
@@ -92,7 +98,8 @@
       "architectural-gap",
       "scaling-plus-rl"
     ],
-    "status": "open"
+    "status": "open",
+    "registeredAt": "2026-06-30"
   },
   {
     "id": "fc-native-memory",
@@ -105,7 +112,8 @@
       "architectural-gap",
       "cognitive-architecture"
     ],
-    "status": "open"
+    "status": "open",
+    "registeredAt": "2026-06-30"
   },
   {
     "id": "fc-verdict-holds",
@@ -119,7 +127,8 @@
       "scaling-plus-rl",
       "scaling-sufficient"
     ],
-    "status": "open"
+    "status": "open",
+    "registeredAt": "2026-06-30"
   },
   {
     "id": "fc-computer-use-h1",
@@ -135,7 +144,8 @@
     "status": "resolved-yes",
     "resolvedAt": "2026-06-24",
     "resolvedNote": "Vendor-reported; the forecast was about shipping, not durability. [Backfilled: authored after resolution — excluded from calibration.]",
-    "provenance": "backfilled"
+    "provenance": "backfilled",
+    "registeredAt": "2026-07-01"
   },
   {
     "id": "fc-fcs1-h1",
@@ -151,7 +161,8 @@
     "status": "resolved-no",
     "resolvedAt": "2026-06-30",
     "resolvedNote": "Retraction: this entry was authored after its resolution date and cited nonexistent dry runs. Excluded from calibration.",
-    "provenance": "backfilled"
+    "provenance": "backfilled",
+    "registeredAt": "2026-07-01"
   },
   {
     "id": "fc-arc-h1",
@@ -166,6 +177,326 @@
     "status": "resolved-no",
     "resolvedAt": "2026-06-18",
     "resolvedNote": "Correctly skeptical. [Backfilled: authored after resolution — excluded from calibration.]",
-    "provenance": "backfilled"
+    "provenance": "backfilled",
+    "registeredAt": "2026-07-01"
+  },
+  {
+    "id": "fc-gpt56-family-ga-2026",
+    "claim": "At least two of the GPT-5.6 family (Sol, Terra, Luna) are generally available by 2026-12-31.",
+    "probability": 0.75,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Official OpenAI availability announcements; GA means paid-tier API or ChatGPT access without waitlist for at least two family members.",
+    "theories": [
+      "scaling-plus-rl"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-mythos-tier-second-vendor-2026",
+    "claim": "A second frontier vendor announces an approved-organizations-only model tier (analogous to Anthropic’s Mythos) by 2026-12-31.",
+    "probability": 0.4,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Official vendor announcement of a restricted-availability frontier tier gated on organizational approval, not just pricing.",
+    "theories": [
+      "scaling-plus-rl",
+      "architectural-gap"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-grok45-ga-q3-2026",
+    "claim": "Grok 4.5 exits private beta to general availability by 2026-09-30.",
+    "probability": 0.55,
+    "horizon": "End of Q3 2026",
+    "horizonDate": "2026-09-30",
+    "resolution": "Official xAI announcement of general availability (API or consumer access without invite).",
+    "theories": [
+      "scaling-plus-rl"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-opus-5-2026",
+    "claim": "Anthropic ships an Opus-branded model in the Claude 5 family by 2026-12-31.",
+    "probability": 0.45,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Official Anthropic release notes or model card carrying both the Opus name and 5-family versioning.",
+    "theories": [
+      "scaling-plus-rl"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-open-weights-terminal-bench-2026",
+    "claim": "An open-weights model reaches ≥60% on Terminal-Bench 2.0 in a published, reproducible evaluation by 2026-12-31.",
+    "probability": 0.5,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Published eval with public methodology on an open-weights checkpoint; vendor or independent, but must be reproducible (weights + harness public).",
+    "theories": [
+      "scaling-sufficient"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-arc3-final-rhae-05",
+    "claim": "The ARC-AGI-3 competition’s final verified leaderboard (winners 2026-12-04) shows a top code-track score of RHAE ≥ 0.5.",
+    "probability": 0.3,
+    "horizon": "ARC Prize 2026 winners announcement",
+    "horizonDate": "2026-12-05",
+    "resolution": "Official ARC Prize final leaderboard or winners publication; verified entries only.",
+    "theories": [
+      "architectural-gap",
+      "scaling-plus-rl"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-arc3-scorecard-packet-2026",
+    "claim": "ARC Prize publishes at least one closed private/semi-private verified scorecard packet for a top ARC-AGI-3 entrant by 2026-12-31.",
+    "probability": 0.6,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Official ARC Prize publication of a verified scorecard (the queue-29 gate object) for any leading entrant.",
+    "theories": [
+      "architectural-gap"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-metr-8h-horizon-2026",
+    "claim": "METR publishes a measurement showing a 50%-success task time-horizon of ≥8 hours for any public model by 2026-12-31.",
+    "probability": 0.45,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "METR official report or blog with the 50%-success horizon metric at or above 8 hours.",
+    "theories": [
+      "scaling-plus-rl",
+      "architectural-gap"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-osworld-85-2026",
+    "claim": "A frontier model reaches ≥85% on OSWorld-Verified in a published evaluation by 2026-12-31.",
+    "probability": 0.55,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Vendor or independent published OSWorld-Verified score ≥85%; leaderboard or paper citation required.",
+    "theories": [
+      "scaling-plus-rl"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-gpt56-independent-audit",
+    "claim": "An independent evaluator publishes a reproduction or audit of GPT-5.6 Sol’s headline agentic/coding claims by 2027-03-31.",
+    "probability": 0.5,
+    "horizon": "Q1 2027",
+    "horizonDate": "2027-03-31",
+    "resolution": "Publication by a party other than OpenAI reproducing or auditing at least one headline GPT-5.6 benchmark claim, with methodology.",
+    "theories": [
+      "architectural-gap"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-second-export-action-2026",
+    "claim": "A US export-control action forces suspension or restriction of public access to any frontier model again by 2026-12-31.",
+    "probability": 0.25,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Official government directive or vendor statement attributing an access suspension/restriction to export controls, after the June 2026 Fable 5 episode.",
+    "theories": [
+      "scaling-plus-rl",
+      "architectural-gap"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-eu-gpai-enforcement-2026",
+    "claim": "The EU opens a formal enforcement proceeding against a frontier-model provider under the AI Act’s GPAI obligations by 2026-12-31.",
+    "probability": 0.35,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Official Commission or AI Office announcement of a formal proceeding (not an information request) naming a GPAI provider.",
+    "theories": [
+      "scaling-plus-rl"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-aisi-joint-eval-2026",
+    "claim": "Two or more national AI safety institutes publish a joint pre-deployment evaluation of the same frontier model by 2026-12-31.",
+    "probability": 0.4,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Joint or simultaneous coordinated publication by ≥2 national AISIs evaluating one named model pre-deployment.",
+    "theories": [
+      "architectural-gap"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-reward-hack-production-2026",
+    "claim": "A production incident (not eval-only behavior) is publicly attributed to reward hacking or specification gaming in a frontier model by 2026-12-31.",
+    "probability": 0.3,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Vendor postmortem or independent evaluator report attributing a deployed-system incident to reward hacking/spec gaming.",
+    "theories": [
+      "scaling-plus-rl",
+      "architectural-gap"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-agent-intrusion-advisory-2026",
+    "claim": "CISA or a national CERT issues an advisory naming autonomous AI agents as the attack vector in a confirmed intrusion by 2026-12-31.",
+    "probability": 0.35,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Official advisory from CISA or a national CERT that attributes a confirmed intrusion to an autonomous AI agent.",
+    "theories": [
+      "scaling-plus-rl"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-safety-rollback-2026",
+    "claim": "A frontier lab publicly rolls back or recalls a released model version citing safety (not capability) regressions by 2026-12-31.",
+    "probability": 0.4,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Official vendor announcement withdrawing or downgrading a released model, citing safety as the reason.",
+    "theories": [
+      "scaling-plus-rl"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-nuclear-ppa-2x-2026",
+    "claim": "At least two additional ≥500MW nuclear or fusion power agreements tied to AI datacenters are announced by 2026-12-31.",
+    "probability": 0.65,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Two distinct official deal announcements after 2026-07-02, each ≥500MW and explicitly tied to AI/datacenter load.",
+    "theories": [
+      "scaling-sufficient"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-hbm4-ship-2026",
+    "claim": "HBM4 memory ships in a commercially available accelerator by 2026-12-31.",
+    "probability": 0.45,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Official availability (not sampling) of an accelerator with HBM4, per vendor announcement or teardown.",
+    "theories": [
+      "scaling-sufficient"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-5gw-campus-2026",
+    "claim": "A single AI datacenter campus with ≥5GW planned capacity is officially announced by 2026-12-31.",
+    "probability": 0.5,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Official announcement by an operator/government naming one campus/site with ≥5GW planned power.",
+    "theories": [
+      "scaling-sufficient"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-ssi-first-release-2026",
+    "claim": "Safe Superintelligence Inc. makes its first public product or research release by 2026-12-31.",
+    "probability": 0.2,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Official SSI publication, product, or model release; hiring pages and interviews do not count.",
+    "theories": [
+      "cognitive-architecture"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-diaspora-absorption-2026",
+    "claim": "One of the 2024–26 frontier-diaspora labs (SSI, Thinking Machines, Cognition, Periodic, Future House, etc.) is acquired by or absorbed into a hyperscaler or major lab by 2026-12-31.",
+    "probability": 0.3,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "Official acquisition/absorption announcement of a named diaspora lab by a hyperscaler or frontier lab.",
+    "theories": [
+      "scaling-plus-rl"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-fcs-b1-run-q3-2026",
+    "claim": "The Observatory executes FCS-B1 (descent, pre-1858 time-slice) against ≥2 frontier minds with published transcripts by 2026-09-30.",
+    "probability": 0.8,
+    "horizon": "End of Q3 2026",
+    "horizonDate": "2026-09-30",
+    "resolution": "Transcripts and grading published under /experiments/ for ≥2 minds; graded under the suite’s asymmetry.",
+    "theories": [
+      "architectural-gap",
+      "cognitive-architecture"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-independent-grader-2026",
+    "claim": "At least one named external reviewer agrees to independently score an Observatory FCS run by 2026-12-31.",
+    "probability": 0.5,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "A named person’s agreement recorded on the public record (colophon or experiment page) plus at least one delivered independent grading.",
+    "theories": [
+      "architectural-gap"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
+  },
+  {
+    "id": "fc-100m-context-2026",
+    "claim": "A frontier vendor offers ≥100M-token context in general availability by 2026-12-31.",
+    "probability": 0.15,
+    "horizon": "End of 2026",
+    "horizonDate": "2026-12-31",
+    "resolution": "GA product documentation offering a ≥100M-token context window (not research demo or waitlist).",
+    "theories": [
+      "scaling-sufficient",
+      "architectural-gap"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-02"
   }
 ]

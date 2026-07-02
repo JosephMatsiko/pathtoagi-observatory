@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "001-the-instrument-catches-itself",
+    "no": 1,
+    "date": "2026-07-02",
+    "kind": "dispatch",
+    "title": "The instrument catches itself, grows a third mind, and starts the clock",
+    "standfirst": "In one forty-eight-hour span the Observatory retracted a fabrication its own audit had missed, restored genuine three-model adversarial review, pre-registered twenty-four new falsifiable forecasts, and began anchoring its record into Bitcoin. This dispatch traces each move to the record it changed.",
+    "body": [
+      "On July 1 the Observatory's self-audit found that its public calibration score rested on forecasts authored after their outcomes were known, and removed a fabricated evidence record. The audit was itself incomplete: one revision entry, dated June 10, still cited a probe dry run that never took place. On July 2 that claim was withdrawn — not deleted. The revision log now supports retraction as a first-class object: the original text stays on the record, dimmed and badged, with the reason beside it. An instrument that can quietly rewrite its history has no history.",
+      "The mesh that maintains this record ran degraded for three cycles after Google retired its Gemini CLI for individual accounts on June 18. The calibration lane — the third, independent mind that grades whether the record's confidence is earned — has been restored through Google's successor client on subscription capacity. Three model families again review every change: one drafts, a second attacks, a third calibrates. From this cycle forward, each shipped change also publishes its working artifacts — proposal, adversary verdict, calibration, trace — at /cycles/, verbatim.",
+      "Twenty-four new forecasts entered the ledger today, pre-registered with hard resolution criteria and horizons from September 2026 to March 2027 — model releases, benchmark thresholds, regulatory actions, compute buildout, and the Observatory's own commitments, including executing its first non-physics frame-construction probe by the end of Q3. Every forecast now carries its registration date, the conformance gate refuses registration at or past a horizon, and release commits are anchored into Bitcoin via OpenTimestamps. The ordering of prediction and outcome is no longer a matter of trust.",
+      "The calibration score itself remains honestly empty: no forecast has yet resolved live. The first horizon arrives July 8. The Observatory's operating verdict on machine general intelligence — No. Not yet. — is unmoved by any of this. What changed is the instrument's capacity to be checked: by the record, by three minds against each other, and by anyone with a hash and a block explorer.",
+      "This is the first dispatch of the Observatory Press, the record's publishing arm. Its editorial charter is four lines: every claim traces to a record entry; corrections happen in the revision log, never by silent edit; obligations, never claims; no embargoes, no access, no exclusives. Dispatches are free, machine-readable, and syndicated at /press/feed.xml."
+    ],
+    "recordRefs": [
+      "/log/ — retraction of the 2026-06-10 dry-run citation",
+      "/log/ — Third calibration mind restored — Gemini via Antigravity",
+      "/cycles/2026-07-02T08-47-03-657Z/ — first published cycle artifacts",
+      "/forecasts/ — 24 forecasts registered 2026-07-02, pre-registration discipline",
+      "timestamps/manifest.json — first OpenTimestamps anchor (commit dde27f2)",
+      "/experiments/fcs-1-2026-07-01/ — FCS-1 artifacts publication",
+      "fc-fcs-b1-run-q3-2026 — the Q3 probe commitment"
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "2026-07-02T08-47-03-657Z",
+    "shippedAt": "2026-07-02T08:54:45Z",
+    "summary": "Shipped cce-2026-06-30-sonnet-5-launch after adversary REVISE (1M-context docs citation folded in, independently re-verified); calibration lane absent a third time — escalated in method-health.",
+    "adversary": "codex",
+    "files": [
+      "proposal.md",
+      "verdict.md",
+      "trace.json"
+    ]
+  }
+]

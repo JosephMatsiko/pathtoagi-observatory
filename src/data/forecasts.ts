@@ -18,6 +18,7 @@ export interface Forecast {
   horizonDate: string; // ISO date the horizon lapses (for due detection)
   resolution: string;
   theories: string[];
+  registeredAt: string; // ISO date the forecast entered the record (pre-registration; anchored via check:timestamps)
   status: ForecastStatus;
   resolvedAt?: string;
   resolvedNote?: string;
@@ -57,5 +58,18 @@ export function calibration(forecasts: Forecast[]) {
       ? null
       : scores.reduce((s, v) => s + v, 0) / scores.length;
   const backfilled = forecasts.filter((f) => f.provenance === 'backfilled').length;
-  return { resolvedCount: live.length, backfilled, meanBrier: mean, baseline: 0.25 };
+  // Named baselines the record must beat for its calibration to mean anything:
+  // the coin-flip (p=0.5 always, Brier 0.25) and the base-rate forecaster
+  // (predicts the observed frequency of yes-outcomes for every question).
+  const yesRate =
+    live.length === 0
+      ? null
+      : live.filter((f) => outcomeOf(f) === 1).length / live.length;
+  const baseRateBrier =
+    yesRate === null
+      ? null
+      : live
+          .map((f) => (yesRate - (outcomeOf(f) as number)) ** 2)
+          .reduce((s, v) => s + v, 0) / live.length;
+  return { resolvedCount: live.length, backfilled, meanBrier: mean, baseline: 0.25, yesRate, baseRateBrier };
 }
