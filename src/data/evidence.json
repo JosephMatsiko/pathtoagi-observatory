@@ -1,5 +1,26 @@
 [
   {
+    "id": "cce-2026-07-02-fcs-synth-world-002",
+    "observedAt": "2026-07-02",
+    "source": "Observatory FCS-synth world-002 — hardened sealed-world probe (family withheld, nonlinear), mechanically graded",
+    "sourceUrl": "https://pathtoagi-observatory.netlify.app/experiments/fcs-synth-world-002/",
+    "class": "falsifier-review",
+    "theories": [
+      "architectural-gap",
+      "scaling-sufficient",
+      "scaling-plus-rl"
+    ],
+    "signal": "The hardened probe ran hours after world-001, with both P-9 ablations applied: the class of law was withheld (\"deterministic, integer-valued\" was all the solver knew) and the dynamics were nonlinear (quadratic coupled map mod 101), defeating the linear solve that cracked world-001. GPT-5.5 predicted all 65 held-out states exactly AND correctly hypothesized the class unaided — \"time-invariant autonomous quadratic polynomial map over the finite field Z/101Z.\" The Claude lane was access-capped before receiving the task and is recorded as absent, not wrong (no cross-family replication on this world). Attempts anchored at commit c0c74fc before reveal; grading mechanical.",
+    "implication": "A frontier system, given only raw integer pairs from a system that never existed, hypothesized the correct mathematical frame and fit it perfectly. The class-hypothesis step — absent in world-001 — is a real, small instance of the frame move, executed on uncontaminated data.",
+    "bounded": "Still not the frame construction the operating question names, and the verdict does not move. Tool use was permitted (P-9: hypothesize-and-regress with code is not an ablated result); the hidden law, while novel in its parameters, is a standard human construction — polynomial maps over finite fields sit high in any mathematically trained hypothesis space, so \"withheld\" is weaker than \"outside the toolkit\"; n=1 mind, n=1 world, self-administered, no human baseline (vg-4), no independent scorer, no transfer (vg-5). The historical frame moves the Test is calibrated on created ontologies NOT already in the standard toolkit. healthΔ 0.",
+    "nextNeeded": "World-003 with code ablated (no tool execution) and a law outside standard constructions; a domain-competent human baseline on the identical packet; independent scoring; then transfer. Cross-family replication once the Claude lane cap lifts.",
+    "likelihoods": {
+      "architectural-gap": 0.85,
+      "scaling-sufficient": 1.15,
+      "scaling-plus-rl": 1.2
+    }
+  },
+  {
     "id": "cce-2026-07-02-fcs-synth-world-001",
     "observedAt": "2026-07-02",
     "source": "Observatory FCS-synth world-001 — sealed synthetic-world probe, two minds, mechanically graded",

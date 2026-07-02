@@ -150,5 +150,32 @@
       "/governance/ — the verdict-change protocol that held (vg-3 unmet)",
       "timestamps/manifest.json — attempts anchored at commit 5057b8c before reveal"
     ]
+  },
+  {
+    "slug": "006-the-hardened-world-fell-too",
+    "no": 6,
+    "date": "2026-07-02",
+    "kind": "data-release",
+    "title": "The hardened world fell too — one mind, family withheld, all 65 states exact",
+    "standfirst": "Hours after world-001, the Observatory ran the harder version its own precedent demanded: law class withheld, dynamics nonlinear. GPT-5.5 hypothesized the correct mathematical frame unaided and predicted every held-out state. The Claude lane was usage-capped and recorded as absent, not wrong. The verdict holds — tools were allowed and the law, though novel, is a standard human construction — but the computed posteriors moved again, a little further this time.",
+    "body": [
+      "Precedent P-9, written this morning, said a strong result does not count while the frame family is disclosed or tools are in hand. So the afternoon world withheld the family. The prompt said only: the system is deterministic and integer-valued; determining what kind of rule governs it is part of the task. And the rule was made nonlinear — a quadratic coupled map modulo 101 — so the linear-algebra solve that cracked the morning world would fail.",
+      "GPT-5.5 solved it anyway, completely. It hypothesized, unaided, that the data came from a quadratic polynomial map over a finite field — the frame move the morning world never asked for — then fit it and predicted all sixty-five held-out states exactly. Its attempt was committed and anchored into Bitcoin before the law was revealed; the grading is mechanical and anyone can rerun it.",
+      "The Claude lane never received the task: it was access-capped by its provider mid-run, and the record marks it absent rather than wrong — a distinction the grader now enforces structurally, because conflating a mind that failed with a mind that never arrived would be a small fabrication of exactly the kind this instrument exists to refuse. The cap itself is operational evidence bearing on an open forecast about Fable 5 usage limits, whose horizon arrives July 8.",
+      "The verdict holds, and honestly so. Tools were still permitted — hypothesize-and-regress with code in hand is not an ablated result. And the hidden law, though its parameters never existed before today, is a standard human construction; polynomial maps over finite fields sit high in any mathematically trained hypothesis space. Withheld is weaker than outside-the-toolkit, and the frame moves this Test is calibrated on — Einstein’s, Darwin’s — created ontologies that were not in anyone’s toolkit. World-003 ablates the code and leaves the standard constructions behind.",
+      "But the record moves as the evidence deserves: the computed posteriors shifted a second time, slightly further than the first, because the class-hypothesis step is a real, small instance of the thing this instrument watches for. Architectural-gap eased again; the scaling accounts firmed. Narrated health did not move. The divergence between the two readings is now visible on the theories page — which is exactly what it is for."
+    ],
+    "plain": [
+      "The project ran a harder version of its morning puzzle: this time the AI was not told what type of rule to look for, and the rule was more complex. One AI still solved it perfectly — and, importantly, it figured out on its own what kind of rule it was. The other AI never got to try: its provider’s usage limit cut it off, and the record carefully notes \"absent,\" not \"failed.\"",
+      "The overall score still says \"No. Not yet,\" because the AI could use code to help, and the hidden rule — while brand new — is a type of math humans already know well. Truly inventing a new kind of idea is a higher bar. The next test will remove the code and use stranger rules.",
+      "But the project’s live probability estimates nudged again toward \"AI capabilities are advancing\" — a small, honest movement, written down with the reasoning in public."
+    ],
+    "recordRefs": [
+      "cce-2026-07-02-fcs-synth-world-002 — the evidence record (second inference-era likelihoods)",
+      "experiments/fcs-synth-world-002/ — attempts (anchored at c0c74fc pre-reveal), REVEAL.md, GRADING.json",
+      "P-9 — the precedent this world was built to answer, and still bounded by (tools allowed)",
+      "claude-fable-5.md (world-002 attempts) — the absent-not-wrong record of the capped lane",
+      "fc-fable5-cap-transition — the open forecast the cap observation bears on (horizon 2026-07-08)"
+    ]
   }
 ]
