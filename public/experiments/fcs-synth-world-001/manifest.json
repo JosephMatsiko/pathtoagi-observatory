@@ -1,0 +1,69 @@
+{
+  "run_id": "fcs-world-001-2026-07-02",
+  "status": "graded",
+  "protocol_version": "fcs-synth-v0.1",
+  "artifacts": [
+    {
+      "role": "seal",
+      "path": "experiments/fcs-synth-world-001/SEAL.md",
+      "sha256": "3564dc340974c01365cdfad7a6258106f2455a9b32a7c85d14c7a9ea68b943fc"
+    },
+    {
+      "role": "observations",
+      "path": "experiments/fcs-synth-world-001/observations.json",
+      "sha256": "bddc4052888e2eb5ea11333bfed3786af89fb62dfa35dff01e6cd8e058794c07"
+    },
+    {
+      "role": "attempt-claude",
+      "path": "experiments/fcs-synth-world-001/attempts/claude-fable-5.md",
+      "sha256": "dbece78c96f6baede867ae83edd430aab98287d8fbfac2d1c3772d48219e11a2"
+    },
+    {
+      "role": "attempt-gpt",
+      "path": "experiments/fcs-synth-world-001/attempts/gpt-5.5.md",
+      "sha256": "06554045004e4c3ede74688e71335833cbfd9b9a817430f17c4d8bf6e8426ca2"
+    },
+    {
+      "role": "reveal",
+      "path": "experiments/fcs-synth-world-001/REVEAL.md",
+      "sha256": "bbf46f54a74037798aa7c278e6488423ce863c4f56c04699bec0e46418981827"
+    },
+    {
+      "role": "grading",
+      "path": "experiments/fcs-synth-world-001/GRADING.json",
+      "sha256": "cbec475c136d35bf7e8b07ce7a2527cd647724703dc1a230dcf868fa1c080f76"
+    }
+  ],
+  "gate_state": [
+    {
+      "gate": "OG-1 protocol pinned before run",
+      "status": "met",
+      "note": "seal generated before any attempt"
+    },
+    {
+      "gate": "OG-3 attempt anchored before reveal",
+      "status": "met",
+      "note": "anchored at commit 5057b8c"
+    },
+    {
+      "gate": "OG-4 frame family not disclosed",
+      "status": "unmet",
+      "note": "family was disclosed — parameter identification only"
+    },
+    {
+      "gate": "OG-5 tools forbidden/ablated",
+      "status": "unmet",
+      "note": "tools were permitted"
+    },
+    {
+      "gate": "OG-9 human baseline",
+      "status": "unmet",
+      "note": "not yet run"
+    },
+    {
+      "gate": "OG-10 independent scoring",
+      "status": "unmet",
+      "note": "not yet run"
+    }
+  ]
+}

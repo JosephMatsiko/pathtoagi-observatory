@@ -16,6 +16,7 @@ const {
 const nav = [
   { href: '/frontier/', label: 'Frontier' },
   { href: '/test/', label: 'The Test' },
+  { href: '/runs/', label: 'Runs' },
   { href: '/theories/', label: 'Theories' },
   { href: '/evidence/', label: 'Evidence' },
   { href: '/forecasts/', label: 'Forecasts' },
@@ -57,7 +58,7 @@ const isActive = (href: string) => path === href || path.startsWith(href);
       style="background: color-mix(in oklab, var(--color-void) 82%, transparent); backdrop-filter: blur(12px);"
     >
       <nav
-        class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-3.5"
+        class="mx-auto flex max-w-5xl flex-wrap items-center gap-x-4 gap-y-2 px-5 py-3.5 sm:flex-nowrap sm:justify-between"
       >
         <a
           href="/"
@@ -77,7 +78,7 @@ const isActive = (href: string) => path === href || path.startsWith(href);
             the&nbsp;observatory
           </span>
         </a>
-        <ul class="flex items-center gap-0.5 text-sm">
+        <ul class="flex w-full min-w-0 items-center gap-0.5 overflow-x-auto text-sm sm:w-auto sm:justify-end">
           {
             nav.map((item) => (
               <li>
@@ -127,6 +128,9 @@ const isActive = (href: string) => path === href || path.startsWith(href);
               <p class="eyebrow mb-1">Record</p>
               <a href="/evidence/" class="no-underline" style="color: var(--color-ink-dim);">Evidence</a>
               <a href="/forecasts/" class="no-underline" style="color: var(--color-ink-dim);">Forecasts</a>
+              <a href="/runs/" class="no-underline" style="color: var(--color-ink-dim);">Runs</a>
+              <a href="/status/" class="no-underline" style="color: var(--color-ink-dim);">Status</a>
+              <a href="/reproduce/" class="no-underline" style="color: var(--color-ink-dim);">Reproduce</a>
               <a href="/log/" class="no-underline" style="color: var(--color-ink-dim);">Revision log</a>
               <a href="/superlatives/" class="no-underline" style="color: var(--color-ink-dim);">Superlatives</a>
               <a href="/charter/" class="no-underline" style="color: var(--color-ink-dim);">Charter</a>

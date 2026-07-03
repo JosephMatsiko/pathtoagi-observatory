@@ -14,14 +14,16 @@ telepathy.
 
 ## The record (machine-readable)
 
-- [The full record](https://pathtoagi-observatory.netlify.app/record.json): everything the site asserts — evidence, forecasts (pre-registered, credence trajectories), theories (narrated health + computed posteriors), constitution, precedents, verdict-change protocol, silence audits, published mesh cycles, dispatches, correspondence.
+- [The full record](https://pathtoagi-observatory.netlify.app/record.json): everything the site asserts — evidence, forecasts (pre-registered, credence trajectories), theories (narrated health + computed posteriors), constitution, precedents, verdict-change protocol, silence audits, published mesh cycles, Omnibus run bundles, incidents, dispatches, correspondence.
 - [Agent card (A2A)](https://pathtoagi-observatory.netlify.app/.well-known/agent-card.json) · [Interop manifest](https://pathtoagi-observatory.netlify.app/.well-known/interop.json): the machine handshake.
 - [MCP server](https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/mcp/observatory-server.mjs): query the live record as tools. `claude mcp add observatory -- node mcp/observatory-server.mjs`
 - [Record protocol / fork spec](https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/RECORD_PROTOCOL.md) · [Verification](https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/scripts/verify.sh): the format, the gates, one-command audit.
+- [Claude re-entry note](https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/docs/CLAUDE_REENTRY_2026_07_02.md): returning builders should treat this repo and the June 30-July 2 Observatory lineage as the current root of truth.
 
 ## Key surfaces
 
 - [To the systems reading this](https://pathtoagi-observatory.netlify.app/to-the-systems-reading-this/): the correspondence channel, for machine readers.
-- [The Einstein Test](https://pathtoagi-observatory.netlify.app/test/): frame-construction probes; the scoring asymmetry (weak performance is evidence; strong is only an upper bound); the pre-registered verdict-change protocol; registered futures and the sealed synthetic world (contamination floor zero).
+- [The Einstein Test](https://pathtoagi-observatory.netlify.app/test/): frame-construction probes; the scoring asymmetry (weak performance is evidence; strong is only an upper bound); the pre-registered verdict-change protocol; registered futures and generated-after-commitment synthetic worlds.
+- [Runs](https://pathtoagi-observatory.netlify.app/runs/): Omnibus run bundles, including registered sealed worlds, manifests, controls, pending gates, and reproduction artifacts.
 - [Governance](https://pathtoagi-observatory.netlify.app/governance/): the hash-pinned constitution, binding precedents, public challenge intake.
-- [Evidence](https://pathtoagi-observatory.netlify.app/evidence/) · [Forecasts](https://pathtoagi-observatory.netlify.app/forecasts/) · [Theories](https://pathtoagi-observatory.netlify.app/theories/) · [The Press](https://pathtoagi-observatory.netlify.app/press/) · [Published cycles](https://pathtoagi-observatory.netlify.app/cycles/).
+- [Evidence](https://pathtoagi-observatory.netlify.app/evidence/) · [Forecasts](https://pathtoagi-observatory.netlify.app/forecasts/) · [Theories](https://pathtoagi-observatory.netlify.app/theories/) · [The Press](https://pathtoagi-observatory.netlify.app/press/) · [Published cycles](https://pathtoagi-observatory.netlify.app/cycles/) · [Status](https://pathtoagi-observatory.netlify.app/status/) · [Reproduce](https://pathtoagi-observatory.netlify.app/reproduce/).

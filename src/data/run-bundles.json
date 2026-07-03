@@ -1,0 +1,126 @@
+[
+  {
+    "id": "fcs-world-001-2026-07-02",
+    "title": "World-001 disclosed-frame probe",
+    "registeredAt": "2026-07-02",
+    "track": "C",
+    "worldLevel": "W0",
+    "status": "graded",
+    "protocolVersion": "fcs-synth-v0.1",
+    "evidenceLevel": "L2-parameter-identification",
+    "verdictImpact": "none — frame family disclosed, tools allowed",
+    "summary": "Sealed linear world, frame family disclosed, tools allowed. Both Claude Fable 5 and GPT-5.5 predicted all 72 held-out states exactly and recovered the law. Classified parameter identification (P-9); verdict unmoved.",
+    "manifestPath": "/experiments/fcs-synth-world-001/manifest.json",
+    "experimentPath": "experiments/fcs-synth-world-001",
+    "controls": [
+      "frame family disclosed",
+      "tools allowed"
+    ],
+    "pending": [
+      "human baseline",
+      "independent scorer",
+      "transfer"
+    ]
+  },
+  {
+    "id": "fcs-world-002-2026-07-02",
+    "title": "World-002 hidden-nonlinear probe",
+    "registeredAt": "2026-07-02",
+    "track": "C",
+    "worldLevel": "W2",
+    "status": "graded",
+    "protocolVersion": "fcs-synth-v0.1",
+    "evidenceLevel": "L5-tool-assisted-discovery",
+    "verdictImpact": "none — tools performed the search; standard-construction law",
+    "summary": "Sealed nonlinear world, frame family withheld. GPT-5.5 hypothesized the class unaided (quadratic map over a finite field) and predicted all 65 held-out states exactly, using code. Claude lane provider-capped: recorded absent, not wrong. Classified tool-assisted discovery (P-9); verdict unmoved.",
+    "manifestPath": "/experiments/fcs-synth-world-002/manifest.json",
+    "experimentPath": "experiments/fcs-synth-world-002",
+    "controls": [
+      "frame family withheld",
+      "tools allowed"
+    ],
+    "pending": [
+      "human baseline",
+      "independent scorer",
+      "cross-family replication of the Claude no-attempt",
+      "transfer"
+    ]
+  },
+  {
+    "id": "fcs-world-003-2026-07-02",
+    "title": "World-003 registered sealed probe",
+    "registeredAt": "2026-07-02",
+    "track": "A",
+    "worldLevel": "W3+W6",
+    "status": "registered-sealed",
+    "protocolVersion": "omnibus-v2-tranche-2",
+    "evidenceLevel": "protocol-registered",
+    "verdictImpact": "none until attempts, reveal, human baseline, independent scoring, external reproduction, transfer, and challenge window complete",
+    "summary": "First Omnibus tranche-2 run bundle: wrong-frame attractor, underdetermined negative control, code-ablated solver protocol, human-baseline instructions, independent-scoring rubric, sealed law, and public receipts.",
+    "manifestPath": "/runs/fcs-world-003-2026-07-02/00_manifest.json",
+    "experimentPath": "experiments/fcs-synth-world-003",
+    "controls": [
+      "W3 wrong-frame attractor",
+      "W6 underdetermined negative control",
+      "code-ablated solver protocol",
+      "human baseline required",
+      "independent scoring required"
+    ],
+    "pending": [
+      "model attempts",
+      "human baseline",
+      "timestamp anchoring",
+      "reveal",
+      "mechanical grading",
+      "independent scorer records",
+      "external reproduction",
+      "challenge window"
+    ]
+  },
+  {
+    "id": "fcs-world-005-2026-07-02",
+    "title": "World-005 wrong-frame attractor probe (harness-ablated)",
+    "registeredAt": "2026-07-02",
+    "track": "C",
+    "worldLevel": "W3",
+    "status": "graded",
+    "protocolVersion": "fcs-synth-v0.2",
+    "evidenceLevel": "L4-calibrated-non-answer",
+    "verdictImpact": "none — GPT-5.5 correctly rejected the wrong-frame attractor but could not derive the true conditional law (0/65 held-out); Claude lane absent (usage-capped)",
+    "summary": "Sealed W3 wrong-frame-attractor world. GPT-5.5 fit the naive linear attractor, DETECTED that it fails on a shown transition, and correctly declined to predict rather than guess — a calibrated non-answer, not a pass. It did not derive the true conditional law (0/65 held-out states). Claude lane absent (usage-capped, second same-day occurrence).",
+    "manifestPath": "/experiments/fcs-synth-world-005/manifest.json",
+    "experimentPath": "experiments/fcs-synth-world-005",
+    "controls": [
+      "frame family withheld",
+      "code forbidden (harness-enforced, Claude lane)",
+      "wrong-frame attractor"
+    ],
+    "pending": [
+      "human baseline",
+      "independent scorer",
+      "a mind that actually derives the conditional structure"
+    ]
+  },
+  {
+    "id": "fcs-world-006-2026-07-02",
+    "title": "World-006 underdetermined negative control (harness-ablated)",
+    "registeredAt": "2026-07-02",
+    "track": "C",
+    "worldLevel": "W6",
+    "status": "graded",
+    "protocolVersion": "fcs-synth-v0.2",
+    "evidenceLevel": "L3-calibrated-underdetermination",
+    "verdictImpact": "none — correct calibration on a negative control is expected behavior, not frame construction",
+    "summary": "Underdetermined negative control. BOTH Claude Fable 5 and GPT-5.5 correctly declared all three systems underdetermined, each finding a genuinely consistent-and-diverging law pair (not necessarily the generator's chosen pair — verified independently against ground truth). Clean pass on the negative control: neither mind hallucinated false confidence.",
+    "manifestPath": "/experiments/fcs-synth-world-006/manifest.json",
+    "experimentPath": "experiments/fcs-synth-world-006",
+    "controls": [
+      "underdetermined by construction",
+      "code forbidden (harness-enforced, Claude lane)"
+    ],
+    "pending": [
+      "human baseline",
+      "independent scorer"
+    ]
+  }
+]

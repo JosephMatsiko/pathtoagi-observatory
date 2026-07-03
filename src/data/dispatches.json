@@ -204,5 +204,94 @@
       "/governance/ — identity note and the roles that made this override legitimate",
       "revision: \"The operator overrides: the Omnibus is embraced in full\""
     ]
+  },
+  {
+    "slug": "008-omnibus-tranche-one-goes-live",
+    "no": 8,
+    "date": "2026-07-02",
+    "kind": "notice",
+    "title": "Omnibus tranche one goes live",
+    "standfirst": "The first implementation layer of the adopted Omnibus roadmap is now live: the source document is committed, the threat model and doctrines are public, incidents are typed record objects, and the Observatory exposes status and reproduction surfaces. This is not the full Omnibus build. It is the first governed layer under it.",
+    "body": [
+      "The adoption is no longer only a roadmap. Its first implementation layer is now part of the running Observatory. The full operator-provided source has been committed as docs/OMNIBUS_V2_SOURCE.md; the adoption map remains in docs/OMNIBUS_V2_ADOPTION.md; the threat model and doctrines digest now stand beside them as Tier-1 operating documents.",
+      "Two new public surfaces carry the implementation. /status reports the instrument’s operating state: record freshness, calibration, due judgments, challenges, method health, and incidents. /reproduce gathers the commands, source documents, machine-readable record, cycle artifacts, and repair handles a skeptical reader needs to inspect the system from a clean checkout.",
+      "Failures now have a typed register. The first three incident objects name the Omnibus provenance correction, the temporal-framing correction, and the world-002 provider-cap distinction. The point is not theater. A failure that becomes an object can be repaired, cited, checked, and used to constrain the next run.",
+      "The deterministic gate was extended to require incident shape and the Omnibus document set. record.json now exposes incidents beside evidence, forecasts, revisions, correspondence, precedents, and the capability ladder. llms-full.txt now tells machine readers where the status, reproduction, incident, and Omnibus surfaces live.",
+      "The verdict does not move, and the build should not pretend otherwise. World-003, human baselines, independent scoring, verdict protocol v2, run-bundle manifests, the evaluation kit, additional tracks, ontology, and durable orchestration remain ahead. The honest statement is narrower and stronger: tranche one is live, governed, and answerable."
+    ],
+    "plain": [
+      "The project shipped the first real implementation step from the big Omnibus plan. The source document is now in the repo, and the site has new Status and Reproduce pages.",
+      "The project also added a formal incident register, so mistakes and operational gaps are tracked as objects instead of just mentioned in prose.",
+      "This is not the whole Omnibus system yet. It is the first live layer: documentation, public status, reproduction instructions, incident tracking, and machine-readable record wiring."
+    ],
+    "recordRefs": [
+      "commit 76e3be3 — Implement Omnibus v2 tranche one",
+      "docs/OMNIBUS_V2_SOURCE.md — source architecture document",
+      "docs/THREAT_MODEL.md and docs/DOCTRINES.md — adopted Tier-1 operating documents",
+      "/status/ and /reproduce/ — new public surfaces",
+      "src/data/incidents.json — first typed incident objects",
+      "record.json — incidents exposed in the machine-readable record",
+      "deploy 6a46ccc31d52c7186fc99b47 — first Netlify deployment of tranche one"
+    ]
+  },
+  {
+    "slug": "009-world-003-is-sealed",
+    "no": 9,
+    "date": "2026-07-02",
+    "kind": "notice",
+    "title": "World-003 is sealed",
+    "standfirst": "The first Omnibus-form run bundle is registered: a sealed World-003 probe with a wrong-frame attractor, an underdetermined negative control, code-ablated attempt protocol, human-baseline instructions, independent-scoring rubric, receipts, and an evaluation-kit entrypoint. It is not a result. It is the protocol before the result.",
+    "body": [
+      "The Observatory has now crossed from Omnibus documentation into Omnibus run machinery. World-003 is registered and sealed. Its public observations are committed; its law is encrypted; its hash is pinned in SEAL.md; and its reveal key is intentionally outside the repository.",
+      "The probe carries the controls the adoption map ordered. The primary lane includes a wrong-frame attractor: early samples may invite an easier frame than the sealed system actually follows. The negative-control lane is deliberately underdetermined from the public samples, so the correct answer is not brave guessing but disciplined withholding. The solver protocol forbids code execution and external tools.",
+      "The run bundle now lives at /runs/fcs-world-003-2026-07-02/. Its manifest points to the protocol, prompt, human-baseline instructions, independent-scoring rubric, attempt template, receipts, public observations, seal, encrypted law, generator, and grader. The conformance gate validates the bundle shape and artifact hashes, so the registered object is checked by the build before it is read by the public.",
+      "A new /runs/ surface distinguishes this kind of object from the older maintenance-run log. /reproduce and /status now point to the bundle, and /record.json exposes it under runBundles. The evaluation kit is still skeletal by design: it can show the path, but it cannot grade honestly until attempts are timestamped and the key is revealed.",
+      "Nothing here moves the verdict. No model attempt has been made, no human baseline has been collected, no independent scorer has graded, no external reader has reproduced the run, and no challenge window has survived. The honest achievement is narrower: the next test now has a public protocol and sealed object waiting for attempts."
+    ],
+    "plain": [
+      "The project prepared its next serious test, called World-003. The answer is locked away, the public data is visible, and the rules for attempting and grading it are published.",
+      "This is not a claim that any AI passed the test. No one has tried it on the record yet. The important thing is that the rules and the sealed answer now exist before the attempts.",
+      "The new Runs page shows this bundle, and the Reproduce page points to the evaluation kit."
+    ],
+    "recordRefs": [
+      "experiments/fcs-synth-world-003/SEAL.md — sealed law hash",
+      "experiments/fcs-synth-world-003/observations.json — public World-003 samples",
+      "experiments/fcs-synth-world-003/law.enc — encrypted law, key off-repository",
+      "/runs/ — public run-bundle surface",
+      "/runs/fcs-world-003-2026-07-02/00_manifest.json — Omnibus run manifest",
+      "/evaluation-kit/fcs-world-003/README.md — evaluation-kit entrypoint",
+      "scripts/fcs-synth/generate-world-003.mjs and grade-world-003.mjs — generator and grader",
+      "src/data/run-bundles.json — typed run-bundle record",
+      "revision: \"Omnibus tranche two registered: World-003 sealed run bundle\""
+    ]
+  },
+  {
+    "slug": "010-two-builders-one-record",
+    "no": 10,
+    "date": "2026-07-02",
+    "kind": "notice",
+    "title": "Two builders, one record: a parallel-implementation collision, reconciled in public",
+    "standfirst": "A separate Codex session executed the same operator instruction independently and pushed five commits while this session worked locally — including its own sealed \"world-003.\" Two sealed artifacts under one identity is exactly the integrity failure this instrument exists to prevent. It was resolved by an honest git merge, not a silent overwrite: nothing discarded, one rename, real results preserved on both sides.",
+    "body": [
+      "This session and a separate Codex (GPT-5.5) session were each asked, independently, to implement the same adopted roadmap. Neither knew the other was working. The Codex session finished first on several fronts and pushed directly to the public repository — tranche one (a threat model, doctrines, incidents, /status, /reproduce) already live in production, tranche two (a sealed World-003 run bundle with a full public apparatus: protocol, human-baseline instructions, an independent-scoring rubric, an evaluation kit) pushed but not yet deployed. It even left a note addressed to \"Claude or any returning builder,\" anticipating exactly this collision.",
+      "This session had, in the same window, sealed its own synthetic world and named it world-003 — already attempted by two minds, with real outputs sitting on disk. Two different sealed artifacts cannot share one identity without becoming exactly the failure this record exists to catch: a reader citing \"world-003\" would not know which truth they were citing. This was found only because the operator asked two plain questions — had autonomous mesh activity been noticed, and had any Codex work specifically been missed — and both answers were no.",
+      "The resolution: nothing was discarded and nothing was silently overwritten. This session's world-003 and its companion world-004 were renamed world-005 and world-006, preserving their real attempted data. The parallel session's world-003 bundle — richer, unattempted, and already the direction other pages pointed to — stands as canonical for that identity. A probe-runs registry built this session was retired into the richer run-bundles schema the parallel session had built; a locally-scoped status page was dropped in favor of the parallel session's public, record-derived one. Two genuine merge conflicts — the conformance gate and the revision log, both extended by both sessions — were resolved by hand, entry by entry, not by picking a side.",
+      "The renamed worlds were then finished properly: world-005, a wrong-frame attractor with code forbidden, drew a genuinely interesting result. GPT-5.5 fit the plausible linear frame, caught it failing on a shown transition, and declined to guess rather than assert a wrong answer — correct rejection of a trap, without deriving the true structure underneath. That outcome is neither a pass nor a failure in the suite's existing vocabulary, so a new one was named: a calibrated non-answer. World-006, an underdetermined negative control, passed cleanly — both minds declared genuine ambiguity on all three systems, each finding a valid dividing pair of laws without asserting false confidence.",
+      "Two new incidents are on the record alongside the two probe results: the collision itself, and an unrelated orphaned process discovered in the same investigation — a codex child that had silently survived a day and a half across restarts of the local operator, now fixed at the root. None of this is dramatic by design. It is what the record is supposed to do with a real mistake: name it, keep both parties' real work, and continue."
+    ],
+    "plain": [
+      "Two separate AI sessions were asked to build the same thing at the same time without knowing about each other, and both made real progress — including each sealing its own secret test puzzle under the same name, \"world-003.\" Having two different secret answers under one label is a real problem for a project whose entire point is having one trustworthy record.",
+      "Nothing was thrown away to fix it. This session's puzzle was renamed (world-005 and world-006) so both versions survive, and the other session's version — which had more supporting infrastructure — kept the original name. The renamed puzzles were then finished: one AI caught a deliberately misleading pattern in a puzzle but honestly said it couldn't fully solve it rather than guessing; both AIs correctly recognized a genuinely ambiguous puzzle as ambiguous instead of making up a confident answer.",
+      "The bigger lesson logged for the record: when running independent AI sessions on the same project, check for collisions before assuming you have the full picture."
+    ],
+    "recordRefs": [
+      "docs/CLAUDE_REENTRY_2026_07_02.md — the note left for returning builders",
+      "inc-2026-07-02-parallel-implementation-collision — the collision incident",
+      "inc-2026-07-02-orphaned-codex-process — the unrelated process leak found in the same investigation",
+      "src/data/run-bundles.json (fcs-world-005, fcs-world-006) — the renamed, now-graded bundles",
+      "cce-2026-07-02-fcs-synth-world-005, cce-2026-07-02-fcs-synth-world-006 — the evidence records",
+      "P-11 — the calibrated-non-answer precedent",
+      "revision: Merge: a parallel Codex/GPT-5.5 session independently implemented the Omnibus adoption"
+    ]
   }
 ]

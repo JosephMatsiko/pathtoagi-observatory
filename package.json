@@ -6,7 +6,7 @@
   "description": "The Observatory — a lean, inspectable public record tracking the path to AGI.",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/sync-public-experiments.mjs && astro build",
     "preview": "astro preview",
     "check": "astro check",
     "check:record": "node scripts/check-record.mjs",
@@ -19,7 +19,8 @@
     "media:narrate": "node scripts/narrate-dispatches.mjs",
     "media:og": "node scripts/og-images.mjs",
     "media:build": "npm run media:narrate && npm run media:og && npm run media:llms",
-    "media:llms": "node scripts/llms-full.mjs"
+    "media:llms": "node scripts/llms-full.mjs",
+    "sync:experiments": "node scripts/sync-public-experiments.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",
@@ -32,6 +33,7 @@
     "tailwindcss": "^4.0.0"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.9",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "opentimestamps": "^0.4.9",

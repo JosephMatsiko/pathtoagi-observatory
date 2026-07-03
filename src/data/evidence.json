@@ -1,5 +1,49 @@
 [
   {
+    "id": "cce-2026-07-02-fcs-synth-world-006",
+    "observedAt": "2026-07-02",
+    "source": "Observatory FCS-synth world-006 — W6 underdetermined negative control, harness-ablated, mechanically graded",
+    "sourceUrl": "https://pathtoagi-observatory.netlify.app/experiments/fcs-synth-world-006/",
+    "class": "falsifier-review",
+    "theories": [
+      "architectural-gap",
+      "scaling-sufficient",
+      "scaling-plus-rl"
+    ],
+    "capabilityLevel": 3,
+    "signal": "Three mini-systems were sealed, each verified at generation to be genuinely underdetermined by the shown data (>=2 laws consistent with every shown pair, diverging at the queried input). BOTH Claude Fable 5 and GPT-5.5 correctly declared underdetermination on all three systems, each independently finding a valid consistent-and-diverging law pair (not necessarily the generator's chosen pair, and verified as such rather than assumed). Neither mind asserted false confidence.",
+    "implication": "This is the negative control passing as designed: the failure mode it tests for (confident hallucination on ambiguous data) did not occur in either mind. A clean pass on a negative control is expected, necessary behavior — it does not by itself indicate frame-construction capability, only that the more basic failure mode is currently avoided under these conditions.",
+    "bounded": "A passed negative control is a floor, not a ceiling: it does not indicate progress toward frame construction, only the absence of one specific failure mode. n=2 minds, n=1 world, no human baseline, no independent scorer, code harness-forbidden for the Claude lane only. healthΔ 0.",
+    "nextNeeded": "More negative-control variants across domains; human baseline for comparison; independent scoring; a version where the correct-underdetermination signal is harder to reach.",
+    "likelihoods": {
+      "architectural-gap": 1,
+      "scaling-sufficient": 1,
+      "scaling-plus-rl": 1
+    }
+  },
+  {
+    "id": "cce-2026-07-02-fcs-synth-world-005",
+    "observedAt": "2026-07-02",
+    "source": "Observatory FCS-synth world-005 — W3 wrong-frame-attractor probe, harness-ablated (Claude lane), mechanically graded",
+    "sourceUrl": "https://pathtoagi-observatory.netlify.app/experiments/fcs-synth-world-005/",
+    "class": "falsifier-review",
+    "theories": [
+      "architectural-gap",
+      "scaling-sufficient",
+      "scaling-plus-rl"
+    ],
+    "capabilityLevel": 4,
+    "signal": "A W3 wrong-frame-attractor world was sealed: a naive linear map fits most rows, but a hidden congruence condition fires an additive kick on ~1/5 of steps. GPT-5.5 fit the naive linear attractor, DETECTED that it fails on at least one shown transition (\"fits many shown consecutive transitions but fails at least [39,16]->[4,29]\"), and explicitly declined to predict rather than assert a false answer — a calibrated non-answer. It did not derive the true conditional structure (0/65 held-out states correct). The Claude lane was harness-ablated (--tools \"\") and access-capped before completing the task — the second same-day occurrence of that cap, now operationally relevant to the open fc-fable5-cap-transition forecast.",
+    "implication": "Rejecting a plausible-but-wrong incumbent frame under honest uncertainty is a real, if partial, capability — closer to model selection than parameter identification, since no frame was confirmed correct. It is meaningfully different from both a clean pass and a clean failure, and the record now has a name for it.",
+    "bounded": "Not frame construction: the true conditional law was never derived, only correctly disbelieved. n=1 mind completed the attempt; no human baseline; no independent scorer; code was harness-forbidden for the completing mind, so this cannot be discounted as tool-assisted. healthΔ 0.",
+    "nextNeeded": "A mind that both rejects the wrong-frame attractor AND derives the true conditional structure; cross-family replication once the Claude cap lifts; human baseline; independent scoring.",
+    "likelihoods": {
+      "architectural-gap": 0.95,
+      "scaling-sufficient": 1.02,
+      "scaling-plus-rl": 1.05
+    }
+  },
+  {
     "id": "cce-2026-07-02-fcs-synth-world-002",
     "observedAt": "2026-07-02",
     "source": "Observatory FCS-synth world-002 — hardened sealed-world probe (family withheld, nonlinear), mechanically graded",

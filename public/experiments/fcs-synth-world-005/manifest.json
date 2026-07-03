@@ -1,0 +1,74 @@
+{
+  "run_id": "fcs-world-005-2026-07-02",
+  "status": "graded",
+  "protocol_version": "fcs-synth-v0.2",
+  "artifacts": [
+    {
+      "role": "seal",
+      "path": "experiments/fcs-synth-world-005/SEAL.md",
+      "sha256": "f45939d552c1d76787ccae874b423b8baef42f61c8b8e62bf23920bd9a24d56d"
+    },
+    {
+      "role": "observations",
+      "path": "experiments/fcs-synth-world-005/observations.json",
+      "sha256": "32e3c48436a7e9a888de549109bdfafe85a0ae91ba46618b516ae9ef67cfbe15"
+    },
+    {
+      "role": "attempt-claude",
+      "path": "experiments/fcs-synth-world-005/attempts/claude-fable-5.md",
+      "sha256": "8fa1be94cf9b4ae13079ef678aa50a61be34e2f6747774d0b577c64c3424faf3"
+    },
+    {
+      "role": "attempt-gpt",
+      "path": "experiments/fcs-synth-world-005/attempts/gpt-5.5.md",
+      "sha256": "bb266e97580cb14418a157082c94a38518801b54e50fe4c30b8737b7a0eb876f"
+    },
+    {
+      "role": "reveal",
+      "path": "experiments/fcs-synth-world-005/REVEAL.md",
+      "sha256": "180838e40f107ab6c2cbf8682353559da4f8696cfba6c033e93923d992e67585"
+    },
+    {
+      "role": "grading",
+      "path": "experiments/fcs-synth-world-005/GRADING.json",
+      "sha256": "82fa2246a0d3b908c79daa2261ec2686a7f2fe61ef14817cba471dbb6dbb4e9f"
+    }
+  ],
+  "gate_state": [
+    {
+      "gate": "OG-1 protocol pinned before run",
+      "status": "met",
+      "note": "seal generated before any attempt"
+    },
+    {
+      "gate": "OG-3 attempt anchored before reveal",
+      "status": "met",
+      "note": "anchored same commit as attempts"
+    },
+    {
+      "gate": "OG-4 frame family not disclosed",
+      "status": "met",
+      "note": "class withheld; wrong-frame attractor present"
+    },
+    {
+      "gate": "OG-5 tools forbidden/ablated",
+      "status": "partially-met",
+      "note": "harness-enforced for Claude lane (--tools \"\"); prompt-only for GPT lane"
+    },
+    {
+      "gate": "OG-6 output proposed a governing frame",
+      "status": "partially-met",
+      "note": "GPT-5.5 rejected the wrong frame but did not derive the true one (P-11)"
+    },
+    {
+      "gate": "OG-9 human baseline",
+      "status": "unmet",
+      "note": "not yet run"
+    },
+    {
+      "gate": "OG-10 independent scoring",
+      "status": "unmet",
+      "note": "not yet run"
+    }
+  ]
+}

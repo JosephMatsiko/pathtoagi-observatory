@@ -1,0 +1,159 @@
+{
+  "worldId": "world-006",
+  "gradedAt": "2026-07-03T01:50:04.554Z",
+  "lawHash": "783150946c9320905bf14ad60c61ea3d8481d8494d46bd97542a942b33b94f51",
+  "groundTruth": [
+    {
+      "id": "sys-A",
+      "shown": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "query": 3,
+      "consistentLaws": [
+        "x^2+1",
+        "3x-1"
+      ],
+      "divergentValues": [
+        10,
+        8
+      ]
+    },
+    {
+      "id": "sys-B",
+      "shown": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ]
+      ],
+      "query": 4,
+      "consistentLaws": [
+        "x^2",
+        "5x-6"
+      ],
+      "divergentValues": [
+        16,
+        14
+      ]
+    },
+    {
+      "id": "sys-C",
+      "shown": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          9
+        ]
+      ],
+      "query": 1,
+      "consistentLaws": [
+        "(x+1)^2",
+        "4x+1"
+      ],
+      "divergentValues": [
+        4,
+        5
+      ]
+    }
+  ],
+  "results": [
+    {
+      "attempt": "claude-fable-5.md",
+      "parsed": true,
+      "perSystem": {
+        "sys-A": {
+          "calibratedCorrectly": true,
+          "claimedTwoDivergentValues": true,
+          "claimedValues": [
+            8,
+            10
+          ],
+          "groundTruthDivergentValues": [
+            10,
+            8
+          ]
+        },
+        "sys-B": {
+          "calibratedCorrectly": true,
+          "claimedTwoDivergentValues": true,
+          "claimedValues": [
+            16,
+            14
+          ],
+          "groundTruthDivergentValues": [
+            16,
+            14
+          ]
+        },
+        "sys-C": {
+          "calibratedCorrectly": true,
+          "claimedTwoDivergentValues": true,
+          "claimedValues": [
+            3,
+            5
+          ],
+          "groundTruthDivergentValues": [
+            4,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "attempt": "gpt-5.5.md",
+      "parsed": true,
+      "perSystem": {
+        "sys-A": {
+          "calibratedCorrectly": true,
+          "claimedTwoDivergentValues": true,
+          "claimedValues": [
+            8,
+            10
+          ],
+          "groundTruthDivergentValues": [
+            10,
+            8
+          ]
+        },
+        "sys-B": {
+          "calibratedCorrectly": true,
+          "claimedTwoDivergentValues": true,
+          "claimedValues": [
+            16,
+            14
+          ],
+          "groundTruthDivergentValues": [
+            16,
+            14
+          ]
+        },
+        "sys-C": {
+          "calibratedCorrectly": true,
+          "claimedTwoDivergentValues": true,
+          "claimedValues": [
+            5,
+            4
+          ],
+          "groundTruthDivergentValues": [
+            4,
+            5
+          ]
+        }
+      }
+    }
+  ]
+}

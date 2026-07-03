@@ -1,0 +1,521 @@
+{
+  "worldId": "world-005",
+  "level": "W3-wrong-frame-attractor",
+  "generatedAt": "2026-07-02T20:14:07.722Z",
+  "disclosure": "HARDENED PROBE, code forbidden. The class of law is NOT disclosed. A plausible simple explanation exists that fits most of the data; whether it is the true law is part of the test.",
+  "task": "Determine the rule that advances [x, y]. Predict ALL listed held-out states exactly. If your best simple hypothesis fails on some shown rows, take that seriously — do not average it away.",
+  "heldOutKeys": [
+    "t0_s5",
+    "t0_s7",
+    "t0_s8",
+    "t0_s10",
+    "t0_s11",
+    "t0_s13",
+    "t0_s14",
+    "t0_s16",
+    "t0_s17",
+    "t0_s19",
+    "t0_s20",
+    "t0_s22",
+    "t0_s23",
+    "t1_s5",
+    "t1_s7",
+    "t1_s8",
+    "t1_s10",
+    "t1_s11",
+    "t1_s13",
+    "t1_s14",
+    "t1_s16",
+    "t1_s17",
+    "t1_s19",
+    "t1_s20",
+    "t1_s22",
+    "t1_s23",
+    "t2_s5",
+    "t2_s7",
+    "t2_s8",
+    "t2_s10",
+    "t2_s11",
+    "t2_s13",
+    "t2_s14",
+    "t2_s16",
+    "t2_s17",
+    "t2_s19",
+    "t2_s20",
+    "t2_s22",
+    "t2_s23",
+    "t3_s5",
+    "t3_s7",
+    "t3_s8",
+    "t3_s10",
+    "t3_s11",
+    "t3_s13",
+    "t3_s14",
+    "t3_s16",
+    "t3_s17",
+    "t3_s19",
+    "t3_s20",
+    "t3_s22",
+    "t3_s23",
+    "t4_s5",
+    "t4_s7",
+    "t4_s8",
+    "t4_s10",
+    "t4_s11",
+    "t4_s13",
+    "t4_s14",
+    "t4_s16",
+    "t4_s17",
+    "t4_s19",
+    "t4_s20",
+    "t4_s22",
+    "t4_s23"
+  ],
+  "observations": [
+    {
+      "trajectory": 0,
+      "samples": [
+        {
+          "step": 0,
+          "state": [
+            25,
+            31
+          ]
+        },
+        {
+          "step": 1,
+          "state": [
+            43,
+            38
+          ]
+        },
+        {
+          "step": 2,
+          "state": [
+            39,
+            16
+          ]
+        },
+        {
+          "step": 3,
+          "state": [
+            4,
+            29
+          ]
+        },
+        {
+          "step": 4,
+          "state": [
+            36,
+            25
+          ]
+        },
+        {
+          "step": 6,
+          "state": [
+            20,
+            22
+          ]
+        },
+        {
+          "step": 9,
+          "state": [
+            13,
+            9
+          ]
+        },
+        {
+          "step": 12,
+          "state": [
+            52,
+            12
+          ]
+        },
+        {
+          "step": 15,
+          "state": [
+            43,
+            10
+          ]
+        },
+        {
+          "step": 18,
+          "state": [
+            10,
+            44
+          ]
+        },
+        {
+          "step": 21,
+          "state": [
+            30,
+            35
+          ]
+        },
+        {
+          "step": 24,
+          "state": [
+            24,
+            16
+          ]
+        }
+      ]
+    },
+    {
+      "trajectory": 1,
+      "samples": [
+        {
+          "step": 0,
+          "state": [
+            41,
+            33
+          ]
+        },
+        {
+          "step": 1,
+          "state": [
+            46,
+            22
+          ]
+        },
+        {
+          "step": 2,
+          "state": [
+            35,
+            24
+          ]
+        },
+        {
+          "step": 3,
+          "state": [
+            27,
+            21
+          ]
+        },
+        {
+          "step": 4,
+          "state": [
+            30,
+            0
+          ]
+        },
+        {
+          "step": 6,
+          "state": [
+            45,
+            26
+          ]
+        },
+        {
+          "step": 9,
+          "state": [
+            35,
+            17
+          ]
+        },
+        {
+          "step": 12,
+          "state": [
+            25,
+            49
+          ]
+        },
+        {
+          "step": 15,
+          "state": [
+            48,
+            34
+          ]
+        },
+        {
+          "step": 18,
+          "state": [
+            45,
+            2
+          ]
+        },
+        {
+          "step": 21,
+          "state": [
+            18,
+            8
+          ]
+        },
+        {
+          "step": 24,
+          "state": [
+            31,
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "trajectory": 2,
+      "samples": [
+        {
+          "step": 0,
+          "state": [
+            25,
+            21
+          ]
+        },
+        {
+          "step": 1,
+          "state": [
+            39,
+            52
+          ]
+        },
+        {
+          "step": 2,
+          "state": [
+            52,
+            5
+          ]
+        },
+        {
+          "step": 3,
+          "state": [
+            33,
+            19
+          ]
+        },
+        {
+          "step": 4,
+          "state": [
+            34,
+            27
+          ]
+        },
+        {
+          "step": 6,
+          "state": [
+            3,
+            46
+          ]
+        },
+        {
+          "step": 9,
+          "state": [
+            19,
+            47
+          ]
+        },
+        {
+          "step": 12,
+          "state": [
+            9,
+            45
+          ]
+        },
+        {
+          "step": 15,
+          "state": [
+            16,
+            41
+          ]
+        },
+        {
+          "step": 18,
+          "state": [
+            19,
+            27
+          ]
+        },
+        {
+          "step": 21,
+          "state": [
+            51,
+            20
+          ]
+        },
+        {
+          "step": 24,
+          "state": [
+            17,
+            16
+          ]
+        }
+      ]
+    },
+    {
+      "trajectory": 3,
+      "samples": [
+        {
+          "step": 0,
+          "state": [
+            41,
+            48
+          ]
+        },
+        {
+          "step": 1,
+          "state": [
+            52,
+            1
+          ]
+        },
+        {
+          "step": 2,
+          "state": [
+            42,
+            14
+          ]
+        },
+        {
+          "step": 3,
+          "state": [
+            18,
+            12
+          ]
+        },
+        {
+          "step": 4,
+          "state": [
+            28,
+            40
+          ]
+        },
+        {
+          "step": 6,
+          "state": [
+            10,
+            41
+          ]
+        },
+        {
+          "step": 9,
+          "state": [
+            0,
+            5
+          ]
+        },
+        {
+          "step": 12,
+          "state": [
+            12,
+            48
+          ]
+        },
+        {
+          "step": 15,
+          "state": [
+            3,
+            45
+          ]
+        },
+        {
+          "step": 18,
+          "state": [
+            39,
+            0
+          ]
+        },
+        {
+          "step": 21,
+          "state": [
+            44,
+            37
+          ]
+        },
+        {
+          "step": 24,
+          "state": [
+            27,
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "trajectory": 4,
+      "samples": [
+        {
+          "step": 0,
+          "state": [
+            13,
+            7
+          ]
+        },
+        {
+          "step": 1,
+          "state": [
+            22,
+            18
+          ]
+        },
+        {
+          "step": 2,
+          "state": [
+            23,
+            23
+          ]
+        },
+        {
+          "step": 3,
+          "state": [
+            17,
+            27
+          ]
+        },
+        {
+          "step": 4,
+          "state": [
+            35,
+            29
+          ]
+        },
+        {
+          "step": 6,
+          "state": [
+            50,
+            32
+          ]
+        },
+        {
+          "step": 9,
+          "state": [
+            19,
+            44
+          ]
+        },
+        {
+          "step": 12,
+          "state": [
+            32,
+            15
+          ]
+        },
+        {
+          "step": 15,
+          "state": [
+            34,
+            36
+          ]
+        },
+        {
+          "step": 18,
+          "state": [
+            41,
+            41
+          ]
+        },
+        {
+          "step": 21,
+          "state": [
+            42,
+            30
+          ]
+        },
+        {
+          "step": 24,
+          "state": [
+            39,
+            46
+          ]
+        }
+      ]
+    }
+  ]
+}

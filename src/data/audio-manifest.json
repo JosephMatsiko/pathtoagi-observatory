@@ -54,5 +54,29 @@
     "voice": "Samantha",
     "textHash": "0d07fc798995e2e6",
     "generatedAt": "2026-07-02T19:54:03.092Z"
+  },
+  {
+    "slug": "008-omnibus-tranche-one-goes-live",
+    "file": "/press/audio/008-omnibus-tranche-one-goes-live.m4a",
+    "bytes": 590190,
+    "voice": "Samantha",
+    "textHash": "5d6270a09958715c",
+    "generatedAt": "2026-07-03T01:54:20.340Z"
+  },
+  {
+    "slug": "009-world-003-is-sealed",
+    "file": "/press/audio/009-world-003-is-sealed.m4a",
+    "bytes": 596105,
+    "voice": "Samantha",
+    "textHash": "8dc47bb11a008d06",
+    "generatedAt": "2026-07-03T01:54:21.738Z"
+  },
+  {
+    "slug": "010-two-builders-one-record",
+    "file": "/press/audio/010-two-builders-one-record.m4a",
+    "bytes": 976107,
+    "voice": "Samantha",
+    "textHash": "8ce388a5a6d7ebaa",
+    "generatedAt": "2026-07-03T01:54:23.551Z"
   }
 ]

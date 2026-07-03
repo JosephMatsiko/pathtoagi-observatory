@@ -11,6 +11,7 @@ import { dirname, join } from 'node:path';
 
 const DATA = join(dirname(fileURLToPath(import.meta.url)), '..', 'src', 'data');
 const read = (f) => JSON.parse(readFileSync(join(DATA, f), 'utf8'));
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
 const errors = [];
@@ -302,25 +303,6 @@ for (const c of correspondence) {
   if (!Array.isArray(c.artifactRefs)) err(w, 'artifactRefs must be an array');
 }
 
-// ── probe-runs.json ──────────────────────────────────────────────────────────
-const probeRuns = read('probe-runs.json');
-const runIds = new Set();
-for (const r of probeRuns) {
-  const w = `run[${r.run_id ?? '?'}]`;
-  if (!nonEmpty(r.run_id)) err(w, 'missing run_id');
-  else if (runIds.has(r.run_id)) err(w, 'duplicate run_id');
-  else runIds.add(r.run_id);
-  for (const k of ['track', 'world_level']) if (!nonEmpty(r[k])) err(w, `missing ${k}`);
-  if (!Array.isArray(r.models) || !r.models.length) err(w, 'models must be non-empty');
-  if (typeof r.frame_family_disclosed !== 'boolean') err(w, 'frame_family_disclosed must be boolean');
-  if (!['graded', 'attempts-in-flight', 'sealed'].includes(r.status)) err(w, `invalid status "${r.status}"`);
-  if (r.grade) {
-    if (!Number.isInteger(r.grade.evidence_level) || r.grade.evidence_level < 0 || r.grade.evidence_level > 9)
-      err(w, 'grade.evidence_level must be 0-9');
-    if (!nonEmpty(r.grade.reason)) err(w, 'graded run needs grade.reason');
-  }
-}
-
 // ── claims.json ──────────────────────────────────────────────────────────────
 const CLAIM_STATUSES = new Set(['candidate', 'audited', 'verified', 'rejected']);
 const claims = read('claims.json');
@@ -352,10 +334,96 @@ for (const f of failureTypes) {
   for (const k of ['definition', 'action']) if (!nonEmpty(f[k])) err(w, `missing ${k}`);
 }
 
+// ── incidents.json (failure objects and repair handles) ─────────────────────
+const INCIDENT_STATUS = new Set(['open', 'contained', 'resolved', 'archived']);
+const INCIDENT_SEVERITY = new Set(['low', 'medium', 'high', 'critical']);
+const INCIDENT_CATEGORY = new Set([
+  'provenance-error',
+  'temporal-framing-error',
+  'execution-gap',
+  'language-drift',
+  'record-integrity',
+  'evaluation-awareness',
+]);
+const incidents = read('incidents.json');
+const incidentIds = new Set();
+for (const i of incidents) {
+  const w = `incident[${i.id ?? '?'}]`;
+  if (!nonEmpty(i.id)) err(w, 'missing id');
+  else if (incidentIds.has(i.id)) err(w, 'duplicate id');
+  else incidentIds.add(i.id);
+  if (!ISO.test(i.date ?? '')) err(w, 'date must be YYYY-MM-DD');
+  if (!INCIDENT_STATUS.has(i.status)) err(w, `invalid status "${i.status}"`);
+  if (!INCIDENT_SEVERITY.has(i.severity)) err(w, `invalid severity "${i.severity}"`);
+  if (!INCIDENT_CATEGORY.has(i.category)) err(w, `invalid category "${i.category}"`);
+  for (const k of ['summary', 'impact', 'resolution', 'nextControl'])
+    if (!nonEmpty(i[k])) err(w, `missing ${k}`);
+  if (!Array.isArray(i.recordRefs) || !i.recordRefs.length || i.recordRefs.some((r) => !nonEmpty(r)))
+    err(w, 'recordRefs must name at least one record entry');
+  if (i.status === 'open' && /resolved|corrected|fixed/i.test(i.resolution ?? ''))
+    err(w, 'open incidents may not claim a resolved/fixed resolution');
+}
+
+// ── run-bundles.json (Omnibus run manifests and reproduction kits) ─────────
+const RUN_BUNDLE_STATUS = new Set([
+  'registered-sealed',
+  'attempts-anchored',
+  'revealed',
+  'graded',
+  'reproduced',
+  'retired',
+]);
+const runBundles = read('run-bundles.json');
+const rbIds = new Set();
+const artifactPath = (p) => p.startsWith('/') ? join(ROOT, 'public', p.slice(1)) : join(ROOT, p);
+for (const rb of runBundles) {
+  const w = `runBundle[${rb.id ?? '?'}]`;
+  if (!nonEmpty(rb.id)) err(w, 'missing id');
+  else if (rbIds.has(rb.id)) err(w, 'duplicate id');
+  else rbIds.add(rb.id);
+  if (!ISO.test(rb.registeredAt ?? '')) err(w, 'registeredAt must be YYYY-MM-DD');
+  if (!RUN_BUNDLE_STATUS.has(rb.status)) err(w, `invalid status "${rb.status}"`);
+  for (const k of ['title', 'track', 'worldLevel', 'protocolVersion', 'evidenceLevel', 'verdictImpact', 'summary', 'manifestPath', 'experimentPath'])
+    if (!nonEmpty(rb[k])) err(w, `missing ${k}`);
+  if (!Array.isArray(rb.controls) || !rb.controls.length) err(w, 'controls must be non-empty');
+  if (!Array.isArray(rb.pending)) err(w, 'pending must be an array');
+  const manifestFsPath = artifactPath(rb.manifestPath ?? '');
+  if (!existsSync(manifestFsPath)) err(w, `manifest missing at ${rb.manifestPath}`);
+  else {
+    const manifest = JSON.parse(readFileSync(manifestFsPath, 'utf8'));
+    if (manifest.run_id !== rb.id) err(w, 'manifest.run_id must match data id');
+    if (manifest.status !== rb.status) err(w, 'manifest.status must match data status');
+    if (manifest.protocol_version !== rb.protocolVersion) err(w, 'manifest.protocol_version must match data protocolVersion');
+    if (!Array.isArray(manifest.artifacts) || !manifest.artifacts.length)
+      err(w, 'manifest.artifacts must be non-empty');
+    for (const a of manifest.artifacts ?? []) {
+      const aw = `${w}.artifact[${a.role ?? '?'}]`;
+      if (!nonEmpty(a.role) || !nonEmpty(a.path)) err(aw, 'artifact needs role + path');
+      const fsPath = artifactPath(a.path ?? '');
+      if (!existsSync(fsPath)) err(aw, `artifact path not found: ${a.path}`);
+      if (a.sha256) {
+        const got = createHash('sha256').update(readFileSync(fsPath)).digest('hex');
+        if (got !== a.sha256) err(aw, `sha256 mismatch for ${a.path}`);
+      }
+    }
+    if (!Array.isArray(manifest.gate_state) || !manifest.gate_state.length)
+      err(w, 'manifest.gate_state must be non-empty');
+    for (const g of manifest.gate_state ?? []) {
+      if (!nonEmpty(g.gate) || !nonEmpty(g.status) || !nonEmpty(g.note))
+        err(w, 'each gate_state entry needs gate, status, note');
+    }
+  }
+}
+
+// ── Omnibus adoption source/docs ─────────────────────────────────────────────
+for (const f of ['docs/OMNIBUS_V2_ADOPTION.md', 'docs/OMNIBUS_V2_SOURCE.md', 'docs/THREAT_MODEL.md', 'docs/DOCTRINES.md', 'docs/CLAUDE_REENTRY_2026_07_02.md']) {
+  if (!existsSync(join(ROOT, f))) err('omnibus', `${f} missing`);
+}
+
 // ── report ───────────────────────────────────────────────────────────────────
 if (errors.length) {
   console.error(`✗ record conformance: ${errors.length} violation(s)\n`);
   for (const e of errors) console.error('  - ' + e);
   process.exit(1);
 }
-console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${dispatches.length} dispatches · ${silences.length} silence-audits · ${precedents.length} precedents · ${challenges.length} challenges · ${futures.length} futures · ${correspondence.length} correspondence · ${probeRuns.length} runs · ${claims.length} claims · ${failureTypes.length} failure-types · constitution pinned — all valid`);
+console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${runBundles.length} run-bundles · ${dispatches.length} dispatches · ${silences.length} silence-audits · ${precedents.length} precedents · ${challenges.length} challenges · ${futures.length} futures · ${correspondence.length} correspondence · ${incidents.length} incidents · ${claims.length} claims · ${failureTypes.length} failure-types · constitution pinned — all valid`);

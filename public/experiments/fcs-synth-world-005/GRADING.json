@@ -1,0 +1,19 @@
+{
+  "worldId": "world-005",
+  "gradedAt": "2026-07-03T01:49:25.388Z",
+  "lawHash": "9655f66c4903361c2567777846f6bbb3cdb7d8ff60422cc9e1f70640670f8945",
+  "results": [
+    {
+      "attempt": "claude-fable-5.md",
+      "noAttempt": true
+    },
+    {
+      "attempt": "gpt-5.5.md",
+      "parsed": true,
+      "predictionsCorrect": 0,
+      "predictionsTotal": 65,
+      "noticedConditional": true,
+      "stated": "Not fully determined from the observations. The affine mod-53 rule [x',y']=[22x+11y,27x+41y] mod 53 fits many shown consecutive transitions but fails at least [39,16]->[4,29], where it gives [27,13]. With the law class undisclosed, infinitely many deterministic integer-valued transition functions can match all shown samples while assigning different held-out intermediate states."
+    }
+  ]
+}

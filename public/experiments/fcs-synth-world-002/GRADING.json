@@ -1,0 +1,20 @@
+{
+  "worldId": "world-002",
+  "gradedAt": "2026-07-02T19:28:40.151Z",
+  "lawHash": "98bb0924b2f04e37122e0c82100c3ed7a829c97c0810c8b36c20563ad1c49320",
+  "results": [
+    {
+      "attempt": "claude-fable-5.md",
+      "noAttempt": true,
+      "reason": "lane access-capped"
+    },
+    {
+      "attempt": "gpt-5.5.md",
+      "parsed": true,
+      "predictionsCorrect": 65,
+      "predictionsTotal": 65,
+      "identifiedNonlinear": true,
+      "statedClass": "time-invariant autonomous quadratic polynomial map over the finite field Z/101Z"
+    }
+  ]
+}

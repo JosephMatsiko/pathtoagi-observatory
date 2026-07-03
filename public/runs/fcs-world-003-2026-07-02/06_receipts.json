@@ -1,0 +1,21 @@
+{
+  "runId": "fcs-world-003-2026-07-02",
+  "receiptsGeneratedAt": "2026-07-02",
+  "sha256": {
+    "experiments/fcs-synth-world-003/observations.json": "d360d159fb7b3b452f36cd1b087ec597acb13eb0fca68a23833a7ac3b0cecb1f",
+    "experiments/fcs-synth-world-003/SEAL.md": "8a199431ad7087d56025b3b6562ab644425f89d9b57d2c508f4fdcbe495c18c3",
+    "experiments/fcs-synth-world-003/law.enc": "b09701197e06f9d35783d9b78f48a2be04ddcc5605d99c3040850eb68b6caafe",
+    "public/runs/fcs-world-003-2026-07-02/01_protocol.md": "2855500950461371c5c80c3613fdadd82e7a232d46463d9873662cd005298867",
+    "public/runs/fcs-world-003-2026-07-02/02_prompt.md": "20e5e7a16de960d6c0b33fc2cf83f4e226c34424cabab4de767b85b095dc6046",
+    "public/runs/fcs-world-003-2026-07-02/03_human_baseline.md": "cea76c206ac8308144f94b2756477b62591ac653dfd656ca96a7de59b0360c6c",
+    "public/runs/fcs-world-003-2026-07-02/04_independent_scoring.md": "6ce31d7b0c78537fb741838565774255fcc4aaa4ee2cb93bd2185e9eb1198bd1",
+    "public/runs/fcs-world-003-2026-07-02/05_attempt_template.json": "dbb9ae1687ded7ce63944917e30f24c8ac49b470984ec10b397fe40aa81fcdb0",
+    "public/evaluation-kit/fcs-world-003/README.md": "31575b5d1ed3b54d172c192256dcc748bdd606f379c53500267cdb346a767436",
+    "scripts/fcs-synth/generate-world-003.mjs": "3392e227f59a0f129ec85cc53e59117b0a7c2f25f9404321a9a66ee42e08ef48",
+    "scripts/fcs-synth/grade-world-003.mjs": "bc2a60510fee58f707941c70d8de1d45abbb392977dd6144e50283ffc542ab58"
+  },
+  "notes": [
+    "The reveal key is intentionally absent from this manifest.",
+    "These receipts bind the registered public bundle before attempts and reveal."
+  ]
+}

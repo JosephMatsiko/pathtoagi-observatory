@@ -70,5 +70,12 @@
     "date": "2026-07-02",
     "status": "overturned",
     "overturnedBy": "Operator override, 2026-07-02 (revision: \"The operator overrides: the Omnibus is embraced in full\"). The operator holds constitutional authority; the override was exercised through the ceremony, on the record."
+  },
+  {
+    "id": "P-11",
+    "ruling": "A mind that correctly rejects a plausible-but-wrong incumbent frame, but does not derive the true governing structure, receives a distinct classification — calibrated non-answer — rather than being scored as a clean pass or a clean fail. It is evidence of partial capability (closer to model-rejection than to full frame construction) and does not by itself move the verdict.",
+    "from": "World-005 (W3 wrong-frame attractor): GPT-5.5 detected the naive linear attractor fails on shown data and declined to predict, without deriving the true conditional law.",
+    "date": "2026-07-02",
+    "status": "binding"
   }
 ]

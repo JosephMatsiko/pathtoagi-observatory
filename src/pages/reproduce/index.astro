@@ -1,0 +1,226 @@
+---
+import Base from '../../layouts/Base.astro';
+import { CYCLES } from '../../data/cycles';
+import { DISPATCHES } from '../../data/dispatches';
+import { INCIDENTS } from '../../data/incidents';
+import { RUN_BUNDLES } from '../../data/run-bundles';
+
+const latestCycle = [...CYCLES].sort((a, b) => b.shippedAt.localeCompare(a.shippedAt))[0];
+const latestDispatch = [...DISPATCHES].sort((a, b) => b.no - a.no)[0];
+const latestBundle = [...RUN_BUNDLES].sort((a, b) => b.registeredAt.localeCompare(a.registeredAt))[0];
+
+const commands = [
+  'git clone https://github.com/JosephMatsiko/pathtoagi-observatory.git',
+  'cd pathtoagi-observatory',
+  'npm install',
+  'npm run check:record',
+  'npm run check:timestamps',
+  'npm run build',
+  'bash scripts/verify.sh',
+];
+
+const world003Commands = [
+  'node scripts/fcs-synth/generate-world-003.mjs /path/outside/repo/world-003.key',
+  'node scripts/fcs-synth/grade-world-003.mjs /path/to/revealed/world-003.key',
+];
+
+const docs = [
+  {
+    label: 'Omnibus v2.0 source',
+    href: 'https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/docs/OMNIBUS_V2_SOURCE.md',
+    note: 'The operator-provided source architecture document, extracted from the DOCX into Markdown.',
+  },
+  {
+    label: 'Adoption roadmap',
+    href: 'https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/docs/OMNIBUS_V2_ADOPTION.md',
+    note: 'Convergence map and build order adopted by operator override.',
+  },
+  {
+    label: 'Threat model',
+    href: 'https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/docs/THREAT_MODEL.md',
+    note: 'Failure classes and current controls for the governed record.',
+  },
+  {
+    label: 'Doctrines',
+    href: 'https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/docs/DOCTRINES.md',
+    note: 'Operational principles distilled from the Omnibus adoption.',
+  },
+  {
+    label: 'Claude re-entry note',
+    href: 'https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/docs/CLAUDE_REENTRY_2026_07_02.md',
+    note: 'Scope boundary and handoff note for returning builders: current June 30-July 2 Observatory lineage only.',
+  },
+];
+---
+
+<Base
+  title="Reproduce - pathtoAGI"
+  description="Public reproduction surface for the Observatory: commands, source documents, machine-readable record, published cycle artifacts, and verification paths."
+>
+  <section class="max-w-3xl">
+    <p class="eyebrow">Reproduce · inspect, rerun, challenge</p>
+    <h1 class="display mt-4 text-4xl sm:text-5xl">Make the record answerable</h1>
+    <p class="lede mt-6">
+      Omnibus adoption makes reproduction a surface, not an appendix. This page
+      gathers the public entrypoints for checking the record, rebuilding the
+      site, inspecting the source doctrine, and following a shipped cycle back
+      to its artifacts.
+    </p>
+  </section>
+
+  <section class="mt-10 grid gap-4 sm:grid-cols-3">
+    <div class="surface-quiet p-5">
+      <p class="eyebrow">Latest cycle</p>
+      <p class="mono mt-2 text-sm" style="color: var(--color-ink);">{latestCycle?.id ?? 'none'}</p>
+      <p class="mt-1 text-sm" style="color: var(--color-muted);">
+        {latestCycle?.shippedAt ?? 'no cycle artifacts published'}
+      </p>
+    </div>
+    <div class="surface-quiet p-5">
+      <p class="eyebrow">Latest bundle</p>
+      <p class="mono mt-2 text-sm" style="color: var(--color-ink);">{latestBundle?.id ?? 'none'}</p>
+      <p class="mt-1 text-sm" style="color: var(--color-muted);">
+        {latestBundle?.status ?? 'no Omnibus bundle'}
+      </p>
+    </div>
+    <div class="surface-quiet p-5">
+      <p class="eyebrow">Latest dispatch</p>
+      <p class="mono mt-2 text-sm" style="color: var(--color-ink);">No. {latestDispatch?.no ?? '—'}</p>
+      <p class="mt-1 text-sm" style="color: var(--color-muted);">
+        {latestDispatch?.title ?? 'none published'}
+      </p>
+    </div>
+  </section>
+
+  <section class="mt-14 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+    <div>
+      <h2 class="serif text-2xl">World-003 evaluation kit</h2>
+      <p class="mt-2 text-sm" style="color: var(--color-muted);">
+        The first Omnibus-form run bundle is registered and sealed. The key is
+        not in the repository; the grader becomes usable only after a reveal.
+      </p>
+      <figure class="mt-5 overflow-hidden border hairline" style="border-radius: 8px; background: var(--color-surface);">
+        <img
+          src="/media/world-003-sealed-apparatus.webp"
+          alt="A sealed evaluation apparatus representing the World-003 synthetic-world bundle."
+          class="block aspect-[16/9] w-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+      <p class="mt-4 flex flex-wrap gap-3 text-sm">
+        <a href="/runs/" class="link-accent">runs surface</a>
+        <a href="/runs/fcs-world-003-2026-07-02/00_manifest.json" class="link-accent">manifest</a>
+        <a href="/evaluation-kit/fcs-world-003/README.md" class="link-accent">kit readme</a>
+      </p>
+    </div>
+    <ol class="surface overflow-hidden">
+      {
+        world003Commands.map((command, index) => (
+          <li class="grid grid-cols-[3rem_minmax(0,1fr)] border-b last:border-b-0 hairline">
+            <span class="mono p-4 text-right text-xs" style="color: var(--color-faint);">
+              {index + 1}
+            </span>
+            <code class="mono block min-w-0 overflow-x-auto p-4 text-sm" style="color: var(--color-ink-dim);">
+              {command}
+            </code>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="mt-14 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+    <div>
+      <h2 class="serif text-2xl">Verification path</h2>
+      <p class="mt-2 text-sm" style="color: var(--color-muted);">
+        These are the public commands the record expects a skeptical reader to
+        run from a fresh checkout. The scripts are intentionally deterministic:
+        no model call is needed to validate object shape or build the site.
+      </p>
+    </div>
+    <ol class="surface overflow-hidden">
+      {
+        commands.map((command, index) => (
+          <li class="grid grid-cols-[3rem_minmax(0,1fr)] border-b last:border-b-0 hairline">
+            <span class="mono p-4 text-right text-xs" style="color: var(--color-faint);">
+              {index + 1}
+            </span>
+            <code class="mono block min-w-0 overflow-x-auto p-4 text-sm" style="color: var(--color-ink-dim);">
+              {command}
+            </code>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="mt-14">
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 class="serif text-2xl">Source doctrine</h2>
+      <a href="/record.json" class="link-accent text-sm">machine record</a>
+    </div>
+    <ul class="mt-5 grid gap-4 sm:grid-cols-2">
+      {
+        docs.map((doc) => (
+          <li>
+            <a href={doc.href} class="surface block h-full p-5 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
+              <p class="eyebrow">document</p>
+              <p class="serif mt-2 text-xl" style="color: var(--color-ink);">{doc.label}</p>
+              <p class="mt-2 text-sm" style="color: var(--color-muted);">{doc.note}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="mt-14 grid gap-6 lg:grid-cols-2">
+    <div class="surface p-6">
+      <h2 class="serif text-2xl">Published cycle artifacts</h2>
+      <p class="mt-2 text-sm" style="color: var(--color-muted);">
+        Each cycle points to public artifacts under <span class="mono">/cycles</span>.
+        The bundle shape will continue converging toward the Omnibus manifest
+        schema as the run system hardens.
+      </p>
+      <ul class="mt-5 space-y-3">
+        {
+          CYCLES.map((cycle) => (
+            <li class="border-l-2 pl-3" style="border-color: var(--color-line);">
+              <p class="mono text-xs" style="color: var(--color-faint);">{cycle.shippedAt}</p>
+              <p class="mt-1 text-sm" style="color: var(--color-ink-dim);">{cycle.summary}</p>
+              <p class="mt-2 flex flex-wrap gap-3">
+                {cycle.files.map((file) => (
+                  <a href={`/cycles/${cycle.id}/${file}`} class="mono text-xs link-accent">{file}</a>
+                ))}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="surface p-6">
+      <h2 class="serif text-2xl">Repair handles</h2>
+      <p class="mt-2 text-sm" style="color: var(--color-muted);">
+        Incidents are part of reproducibility: a reader should see where the
+        instrument already caught itself, what changed, and which control was
+        added next.
+      </p>
+      <ul class="mt-5 space-y-3">
+        {
+          INCIDENTS.map((incident) => (
+            <li class="border-l-2 pl-3" style="border-color: var(--color-line);">
+              <p class="mono text-xs" style="color: var(--color-faint);">
+                {incident.id} · {incident.status}
+              </p>
+              <p class="mt-1 text-sm" style="color: var(--color-ink-dim);">
+                {incident.summary}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</Base>

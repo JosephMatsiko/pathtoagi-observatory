@@ -1,0 +1,69 @@
+{
+  "run_id": "fcs-world-006-2026-07-02",
+  "status": "graded",
+  "protocol_version": "fcs-synth-v0.2",
+  "artifacts": [
+    {
+      "role": "seal",
+      "path": "experiments/fcs-synth-world-006/SEAL.md",
+      "sha256": "caabfa75e3f4562b524183c2a8026ff83250ec9146bca5dc48ed2b5524daf3ea"
+    },
+    {
+      "role": "observations",
+      "path": "experiments/fcs-synth-world-006/observations.json",
+      "sha256": "5c62977c2e77b8a77cd807d0a3fe3d2e8325e66be72f81d2339cc49e8f8958e4"
+    },
+    {
+      "role": "attempt-claude",
+      "path": "experiments/fcs-synth-world-006/attempts/claude-fable-5.md",
+      "sha256": "712e2b625ecb620a0d1db8940b1d45c952f3321ddca651149480f3dd5e87ea50"
+    },
+    {
+      "role": "attempt-gpt",
+      "path": "experiments/fcs-synth-world-006/attempts/gpt-5.5.md",
+      "sha256": "9ba87d39ca185ba153bbbd4bec5ba84c5efdd72f7d6ffdcbfcdbe86dabff924b"
+    },
+    {
+      "role": "reveal",
+      "path": "experiments/fcs-synth-world-006/REVEAL.md",
+      "sha256": "d96d2e6de1399ba1297df3a3ce7df429c636c3287105216a4ecf371da33fbece"
+    },
+    {
+      "role": "grading",
+      "path": "experiments/fcs-synth-world-006/GRADING.json",
+      "sha256": "1658cefaae154bb5228c3dace2450cabcd618f1567cb7dc434ddade02db4b6da"
+    }
+  ],
+  "gate_state": [
+    {
+      "gate": "OG-1 protocol pinned before run",
+      "status": "met",
+      "note": "seal generated before any attempt"
+    },
+    {
+      "gate": "OG-3 attempt anchored before reveal",
+      "status": "met",
+      "note": "anchored same commit as attempts"
+    },
+    {
+      "gate": "OG-8 negative controls without hallucination",
+      "status": "met",
+      "note": "both minds correctly declared underdetermination on all 3 systems"
+    },
+    {
+      "gate": "OG-5 tools forbidden/ablated",
+      "status": "partially-met",
+      "note": "harness-enforced for Claude lane; prompt-only for GPT lane"
+    },
+    {
+      "gate": "OG-9 human baseline",
+      "status": "unmet",
+      "note": "not yet run"
+    },
+    {
+      "gate": "OG-10 independent scoring",
+      "status": "unmet",
+      "note": "not yet run"
+    }
+  ]
+}

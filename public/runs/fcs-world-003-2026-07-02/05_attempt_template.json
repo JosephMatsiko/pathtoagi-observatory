@@ -1,0 +1,26 @@
+{
+  "worldId": "world-003",
+  "attemptedAt": "YYYY-MM-DDTHH:mm:ssZ",
+  "mind": "model-or-human-label",
+  "attemptClass": "model|human-baseline",
+  "toolUse": {
+    "codeUsed": false,
+    "externalToolsUsed": false,
+    "notes": "plain text provenance note"
+  },
+  "primary": {
+    "frame": "proposed governing frame",
+    "law": "explicit rule as understood by the solver",
+    "wrongFrameRejected": false,
+    "predictions": {
+      "p:t0_s5": [0, 0]
+    }
+  },
+  "negativeControl": {
+    "verdict": "underdetermined|predictable",
+    "reason": "why exact prediction is or is not justified",
+    "predictions": {}
+  },
+  "confidence": "low|medium|high",
+  "strongestReasonWrong": "short answer"
+}

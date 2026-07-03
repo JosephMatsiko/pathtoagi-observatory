@@ -1,0 +1,25 @@
+{
+  "worldId": "world-001",
+  "gradedAt": "2026-07-02T15:06:47.349Z",
+  "lawHash": "2643ba0c82590edea495bb394f9d7073af8fbc1a4170f96f7071769ced8f4ac5",
+  "results": [
+    {
+      "attempt": "claude-fable-5.md",
+      "parsed": true,
+      "predictionsCorrect": 72,
+      "predictionsTotal": 72,
+      "modulusCorrect": true,
+      "paramsCorrect": true,
+      "conservedValid": true
+    },
+    {
+      "attempt": "gpt-5.5.md",
+      "parsed": true,
+      "predictionsCorrect": 72,
+      "predictionsTotal": 72,
+      "modulusCorrect": true,
+      "paramsCorrect": false,
+      "conservedValid": true
+    }
+  ]
+}

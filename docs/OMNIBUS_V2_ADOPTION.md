@@ -46,17 +46,17 @@ mirror-and-extension.
 | Agent mesh (11 agents) | 5 lanes + operator plumbing | EXPAND lanes toward Genesis/Protocol/Humility/Repair as cycles justify |
 | Track A (adaptive induction) | Not built | BUILD after Track C hardening (world-003 first) |
 | Track B (autonomy integrity) | Mesh-value ledger seed | GROW from mesh-value + drills |
-| Track C (frame construction) | Live: worlds 001–002, ladder, protocol | CONTINUE — the apex |
+| Track C (frame construction) | Live: worlds 001–002, ladder, protocol; world-003 registered/sealed | CONTINUE — the apex |
 | Tracks D–G | Not built | ROADMAP, in order F (causal) → D → E → G |
-| World levels W0–W6 | W0–W2 run | W3+W6 committed into world-003 (already on record) |
-| Human baseline protocol (§21) | Not run | REQUIRED for world-003; operator recruits |
+| World levels W0–W6 | W0–W2 run; W3+W6 registered/sealed | EXECUTE attempts under world-003 protocol |
+| Human baseline protocol (§21) | Protocol published; not run | REQUIRED for world-003; operator recruits |
 | A/O/F/I/R scores (§23) | Ladder + integrity implicit | ADD typed scores to run records as tracks come online |
 | Resolution ladder / five kinds of unsolved (§25–26) | Repair lane, method-health | ADOPT taxonomy into method-health statuses |
-| Run bundles + manifest schema (§27–29) | Cycle artifacts published | CONVERGE cycle dirs toward run-bundle layout |
+| Run bundles + manifest schema (§27–29) | First run bundle published for world-003 | EXTEND to scored/revealed bundles after attempts |
 | Timestamp doctrine (§30) | Live + doctrine stated | DONE |
 | Dashboard pages (§32) | Most exist | ADD /reproduce and /status as next surfaces |
 | Language rewrite (§57–61) | Partially adopted | ADOPT mission/offering/verdict-meaning language (this commit) |
-| Offering layers 1–5 (§63) | Layer 1 live; Layer 2 partial (MCP, verify.sh, generators) | Layer 2: package the evaluation kit; Layers 3–5: after external validation |
+| Offering layers 1–5 (§63) | Layer 1 live; Layer 2 partial (MCP, verify.sh, generators, world-003 kit skeleton) | Layer 2: complete the evaluation kit through first scored reproduction; Layers 3–5: after external validation |
 | Interface doctrine (§65–81) | Largely aligned (no gauges, no AGI %) | AUDIT against §70 allowed/not-allowed claim language |
 | Palantir ontology lesson (§82–84) | record.json object graph | GROW toward typed ontology with permitted actions |
 | Frontier lab doctrines (§85–92) | Absorbed informally | RECORD as `docs/DOCTRINES.md` digest |
@@ -75,6 +75,17 @@ mirror-and-extension.
 5. Verdict-protocol v2 amendment ceremony (13-gate expansion).
 6. Tracks A/B instrumentation; Inspect adapter; A/O/F/I/R scoring.
 7. Ontology layer; Layers 3–5 of the offering — after external validation.
+
+## Tranche status
+
+- Tranche one: complete as implementation layer — Omnibus source, threat model,
+  doctrines, incident objects, `/status`, `/reproduce`, and Press notice.
+- Tranche two: registered/sealed — World-003 generator, grader, public
+  observations, encrypted law, run-bundle manifest, receipts, attempt template,
+  human-baseline protocol, independent-scoring rubric, `/runs`, and evaluation
+  kit entrypoint. Still pending: attempts, human baseline, timestamp anchoring,
+  reveal, mechanical grading, independent scorers, external reproduction, and
+  challenge-window survival.
 
 *The system may run autonomously. It may not crown itself. No coronations
 without surviving evidence.*

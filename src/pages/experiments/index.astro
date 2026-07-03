@@ -1,9 +1,21 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { RUN_BUNDLES, RUN_BUNDLE_STATUS_LABEL } from '../../data/run-bundles';
 
 // Every executed probe run gets its artifacts published here, verbatim.
-// A public record may only cite what a reader can inspect.
-const runs = [
+// A public record may only cite what a reader can inspect. Driven off
+// run-bundles.json so this list can't go stale the way a hand-written one did.
+const bundleRuns = [...RUN_BUNDLES]
+  .sort((a, b) => b.registeredAt.localeCompare(a.registeredAt))
+  .map((b) => ({
+    href: b.manifestPath.startsWith('/') ? b.manifestPath.replace(/\/[^/]+$/, '/') : `/runs/`,
+    id: `${b.id.replace('fcs-', '').replace(/-2026.*/, '')} · ${RUN_BUNDLE_STATUS_LABEL[b.status]}`,
+    date: b.registeredAt,
+    title: b.title,
+    reading: b.summary,
+  }));
+
+const historicalRuns = [
   {
     href: '/experiments/fcs-1-2026-07-01/',
     id: 'FCS-1 · run 1',
@@ -13,6 +25,9 @@ const runs = [
       'Both minds passed at face value; scored as an upper bound only — the Einstein corpus saturates their training. FCS-1: untested → contested. Verdict unmoved.',
   },
 ];
+
+const runs = [...bundleRuns, ...historicalRuns];
+const gradedCount = RUN_BUNDLES.filter((b) => b.status === 'graded').length;
 ---
 
 <Base
@@ -64,8 +79,10 @@ const runs = [
   </ul>
 
   <p class="mt-8 max-w-2xl text-sm" style="color: var(--color-muted);">
-    One run exists. The other five probes of the suite remain honestly
-    <em>untested</em> — see <a href="/test/" class="hover:underline" style="color: var(--color-ink);">the Test</a>
+    One historical FCS run exists, and {RUN_BUNDLES.length} Omnibus-form run
+    bundles are registered ({gradedCount} graded). See
+    <a href="/runs/" class="hover:underline" style="color: var(--color-ink);">/runs/</a>
+    for the full governed-object view, or <a href="/test/" class="hover:underline" style="color: var(--color-ink);">the Test</a>
     for the suite's design and the asymmetry under which runs are graded.
   </p>
 </Base>
