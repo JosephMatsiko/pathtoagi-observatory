@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import ForecastHorizon from '../../components/ForecastHorizon.astro';
 import {
   FORECASTS,
   calibration,
@@ -63,6 +64,10 @@ const theoryTags = (f: { theories: string[] }) =>
       ordering of prediction and outcome can be verified by strangers, not
       taken on trust.
     </p>
+  </section>
+
+  <section class="mt-10">
+    <ForecastHorizon />
   </section>
 
   <!-- Calibration panel -->

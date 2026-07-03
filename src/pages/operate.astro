@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import ForecastHorizon from '../components/ForecastHorizon.astro';
+import RunLifecycle from '../components/RunLifecycle.astro';
 import { FORECASTS, calibration, brierOf } from '../data/forecasts';
 import { EVIDENCE } from '../data/evidence';
 import { RUNS } from '../data/runs';
@@ -104,6 +106,15 @@ const toImprove = METHOD_HEALTH.filter((m) => m.status === 'act').length;
         forecasts past horizon, awaiting judgment
       </p>
     </div>
+  </section>
+
+  <!-- Calibration trend -->
+  <section class="mt-12">
+    <ForecastHorizon />
+  </section>
+
+  <section class="mt-12">
+    <RunLifecycle current="registered" />
   </section>
 
   <!-- Calibration trend -->

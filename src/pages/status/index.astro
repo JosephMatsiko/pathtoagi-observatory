@@ -61,7 +61,7 @@ const statusLabel =
   </section>
 
   <section
-    class="mt-10 surface p-6"
+    class="mt-10 ops-frame p-6"
     style={`border-color: color-mix(in oklab, ${statusColor} 42%, var(--color-line));`}
   >
     <div class="flex flex-wrap items-center gap-4">
@@ -115,6 +115,42 @@ const statusLabel =
       <p class="mt-1 text-sm" style="color: var(--color-muted);">
         Omnibus run bundle{RUN_BUNDLES.length === 1 ? '' : 's'}
       </p>
+    </div>
+  </section>
+
+  <section class="mt-10 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+    <div class="ops-frame p-5">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <div>
+          <p class="eyebrow">Operations picture</p>
+          <h2 class="serif mt-1 text-2xl" style="color: var(--color-ink);">What requires attention</h2>
+        </div>
+        <a href="/handoff/" class="mono text-xs link-accent">handoff</a>
+      </div>
+      <div class="mt-5 grid gap-3 sm:grid-cols-2">
+        {[
+          ['Due judgments', String(due.length), due.length ? 'var(--color-verdict)' : 'var(--color-affirm)'],
+          ['Open incidents', String(openIncidents.length), openIncidents.length ? 'var(--color-verdict)' : 'var(--color-affirm)'],
+          ['Open challenges', String(openChallenges.length), openChallenges.length ? 'var(--color-verdict)' : 'var(--color-muted)'],
+          ['Run bundles', String(RUN_BUNDLES.length), 'var(--color-accent)'],
+        ].map(([label, value, color]) => (
+          <div class="surface-quiet p-4">
+            <p class="eyebrow">{label}</p>
+            <p class="tabular mt-2 text-3xl" style={`color: ${color};`}>{value}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="ops-frame p-5">
+      <p class="eyebrow">Current action path</p>
+      <ol class="mt-4 space-y-3">
+        {['execute World-003 attempt', 'collect human baseline', 'anchor before reveal', 'grade and score independently', 'open challenge window'].map((step, index) => (
+          <li class="flex gap-3">
+            <span class="mono text-xs" style="color: var(--color-accent);">{String(index + 1).padStart(2, '0')}</span>
+            <span class="text-sm" style="color: var(--color-ink-dim);">{step}</span>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
 

@@ -17,13 +17,17 @@ const dispatches = D('dispatches.json');
 const futures = D('registered-futures.json');
 const incidents = D('incidents.json');
 const runBundles = D('run-bundles.json');
+const ontologySrc = readFileSync(join(ROOT, 'src', 'data', 'ontology.ts'), 'utf8');
+const ontologyNodes = [...ontologySrc.matchAll(/id: '([^']+)',\n\s+label: '([^']+)',\n\s+layer: '([^']+)',\n\s+description: '([^']+)'/g)]
+  .map((m) => ({ id: m[1], label: m[2], layer: m[3], description: m[4] }));
 
 const out = [];
 out.push('# pathtoAGI — the Observatory · full text for machine readers\n');
 out.push('Operating verdict: No. Not yet. The missing bar is reliable frame construction under sparse evidence.\n');
-out.push('Read live: /record.json (full machine-readable record), /status/ (operating state), /runs/ (Omnibus run bundles), /reproduce/ (verification path), or the MCP server (mcp/observatory-server.mjs). Channels: /to-the-systems-reading-this/\n');
+out.push('Read live: /record.json (full machine-readable record), /ontology/ (object model), /status/ (operating state), /runs/ (Omnibus run bundles), /challenges/ (challenge court), /handoff/ (builder re-entry), /reproduce/ (verification path), or the MCP server (mcp/observatory-server.mjs). Channels: /to-the-systems-reading-this/\n');
 out.push('## Constitution (Tier-0, hash-pinned)\n' + invariants.map((i) => '- ' + i).join('\n') + '\n');
 out.push('## Binding precedents\n' + precedents.map((p) => `- ${p.id}: ${p.ruling}`).join('\n') + '\n');
+out.push('## Operational ontology\n' + ontologyNodes.map((n) => `- ${n.id} (${n.layer}): ${n.description}`).join('\n') + '\n');
 out.push('## Evidence ledger (' + evidence.length + ')\n' + evidence.map((e) => `- [${e.observedAt} · ${e.class}] ${e.signal} => ${e.implication} (bound: ${e.bounded})`).join('\n') + '\n');
 out.push('## Forecasts (' + forecasts.length + ', pre-registered)\n' + forecasts.map((f) => `- [${f.status} · p=${f.probability} · horizon ${f.horizonDate} · registered ${f.registeredAt}] ${f.claim}`).join('\n') + '\n');
 out.push('## Registered futures (generated-after-commitment)\n' + futures.map((f) => `- ${f.id}: ${f.problem} (horizon ${f.horizonDate})`).join('\n') + '\n');

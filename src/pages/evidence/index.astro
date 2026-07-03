@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import EvidenceProvenance from '../../components/EvidenceProvenance.astro';
 import { EVIDENCE, EVIDENCE_CLASS_LABEL } from '../../data/evidence';
 import { SILENCES } from '../../data/silences';
 import { THEORY_BY_ID } from '../../data/theories';
@@ -26,6 +27,10 @@ const records = [...EVIDENCE].sort((a, b) => b.observedAt.localeCompare(a.observ
       are independent-class. Public target: a majority-independent ledger —
       tracked in <a href="/record.json" class="hover:underline" style="color: var(--color-accent);">record.json</a>.
     </p>
+  </section>
+
+  <section class="mt-10">
+    <EvidenceProvenance />
   </section>
 
   <!-- Silence audits: absence as evidence -->

@@ -1,0 +1,38 @@
+---
+import { EVIDENCE, EVIDENCE_CLASS_LABEL } from '../data/evidence';
+import { THEORY_BY_ID } from '../data/theories';
+
+const record = EVIDENCE[0];
+---
+
+{record && (
+  <section class="ops-frame p-5">
+    <div class="flex flex-wrap items-baseline justify-between gap-3">
+      <div>
+        <p class="eyebrow">Provenance chain</p>
+        <h2 class="serif mt-1 text-2xl" style="color: var(--color-ink);">From source to next evidence</h2>
+      </div>
+      <a href={record.sourceUrl} class="mono text-xs link-accent" rel="noopener">source</a>
+    </div>
+    <div class="mt-6 grid gap-3 lg:grid-cols-5">
+      {[
+        ['Source', record.source],
+        ['Signal', record.signal],
+        ['Bound', record.bounded],
+        ['Theory bearing', record.theories.map((id) => THEORY_BY_ID[id]?.title ?? id).join(' · ')],
+        ['Next needed', record.nextNeeded],
+      ].map(([label, value], index) => (
+        <div class="relative surface-quiet p-4">
+          {index < 4 && (
+            <span class="absolute right-[-0.85rem] top-1/2 hidden h-px w-4 lg:block" style="background: var(--color-line);"></span>
+          )}
+          <p class="eyebrow">{label}</p>
+          <p class="mt-3 line-clamp-6 text-sm" style="color: var(--color-ink-dim);">{value}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mono mt-4 text-xs" style="color: var(--color-faint);">
+      latest record: {record.id} · {record.observedAt} · {EVIDENCE_CLASS_LABEL[record.class]} · healthDelta stays 0
+    </p>
+  </section>
+)}

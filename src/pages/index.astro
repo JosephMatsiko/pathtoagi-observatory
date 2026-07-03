@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Frontier from '../components/Frontier.tsx';
 import Dome from '../components/Dome.astro';
+import OntologyMap from '../components/OntologyMap.astro';
 import { THEORIES } from '../data/theories';
 import { FRONTIER_2026 } from '../data/capabilities';
 import {
@@ -115,6 +116,11 @@ const liveForecast = FORECASTS.find((f) => f.id === 'fc-verdict-holds')!;
         reproduction surfaces are now on record.
       </p>
     </a>
+  </section>
+
+  <!-- ── The frontier instrument ────────────────────────────── -->
+  <section class="mt-16">
+    <OntologyMap />
   </section>
 
   <!-- ── The frontier instrument ────────────────────────────── -->

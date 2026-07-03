@@ -1,0 +1,95 @@
+---
+import { ONTOLOGY_EDGES, ONTOLOGY_NODES, PERMITTED_ACTIONS } from '../data/ontology';
+
+const positions: Record<string, { x: number; y: number }> = {
+  claim: { x: 92, y: 78 },
+  evidence: { x: 270, y: 56 },
+  forecast: { x: 270, y: 152 },
+  theory: { x: 456, y: 104 },
+  'run-bundle': { x: 92, y: 260 },
+  'verdict-gate': { x: 270, y: 260 },
+  challenge: { x: 456, y: 260 },
+  correction: { x: 622, y: 214 },
+  incident: { x: 622, y: 308 },
+  correspondence: { x: 622, y: 80 },
+};
+---
+
+<section class="ops-frame overflow-hidden">
+  <div class="grid gap-0 lg:grid-cols-[1fr_18rem]">
+    <div class="p-5 sm:p-6">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <div>
+          <p class="eyebrow">Ontology · objects and actions</p>
+          <h2 class="serif mt-1 text-2xl" style="color: var(--color-ink);">The record as an operating system</h2>
+        </div>
+        <a href="/record.json" class="mono text-xs link-accent">record.json</a>
+      </div>
+      <svg viewBox="0 0 720 370" class="mt-5 w-full" role="img" aria-label="Ontology graph connecting claims, evidence, forecasts, theories, run bundles, verdict gates, challenges, corrections, incidents, and correspondence.">
+        <defs>
+          <marker id="ontology-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L8,4 L0,8 z" fill="var(--color-line)"></path>
+          </marker>
+        </defs>
+        <rect width="720" height="370" rx="14" fill="color-mix(in oklab, var(--color-surface) 62%, transparent)" stroke="var(--color-line)"></rect>
+        {ONTOLOGY_EDGES.map((edge) => {
+          const a = positions[edge.from];
+          const b = positions[edge.to];
+          return (
+            <g>
+              <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke="var(--color-line)" stroke-width="1" stroke-dasharray="4 7" marker-end="url(#ontology-arrow)"></line>
+              <text x={(a.x + b.x) / 2} y={(a.y + b.y) / 2 - 5} text-anchor="middle" class="ontology-relation">{edge.relation}</text>
+            </g>
+          );
+        })}
+        {ONTOLOGY_NODES.map((node) => {
+          const p = positions[node.id];
+          return (
+            <a href={node.href}>
+              <g class="ontology-node">
+                <rect x={p.x - 58} y={p.y - 22} width="116" height="44" rx="6" fill="var(--color-surface)" stroke={node.accent} stroke-opacity="0.72"></rect>
+                <circle cx={p.x - 42} cy={p.y} r="3.5" fill={node.accent}></circle>
+                <text x={p.x - 30} y={p.y - 3} class="ontology-label">{node.label}</text>
+                <text x={p.x - 30} y={p.y + 11} class="ontology-state">{node.state}</text>
+              </g>
+            </a>
+          );
+        })}
+      </svg>
+    </div>
+    <aside class="border-t p-5 lg:border-l lg:border-t-0 hairline">
+      <p class="eyebrow">Permitted actions</p>
+      <p class="mt-2 text-sm" style="color: var(--color-muted);">
+        The ontology is not a picture. It names what the system is allowed to do
+        to objects in the record.
+      </p>
+      <p class="mt-4 flex flex-wrap gap-2">
+        {PERMITTED_ACTIONS.map((action) => (
+          <span class="mono rounded px-2 py-1 text-[0.66rem]" style="background: var(--color-surface-2); color: var(--color-ink-dim);">{action}</span>
+        ))}
+      </p>
+    </aside>
+  </div>
+</section>
+
+<style>
+  .ontology-label {
+    fill: var(--color-ink);
+    font-family: var(--font-serif);
+    font-size: 12px;
+  }
+  .ontology-state,
+  .ontology-relation {
+    fill: var(--color-faint);
+    font-family: var(--font-mono);
+    font-size: 7px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .ontology-node {
+    transition: opacity 160ms var(--ease-out), transform 160ms var(--ease-out);
+  }
+  .ontology-node:hover {
+    opacity: 0.78;
+  }
+</style>

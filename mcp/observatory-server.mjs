@@ -33,8 +33,9 @@ const TOOLS = [
   { name: 'get_theories', description: 'The five theories with narrated health and computed posteriors.', inputSchema: { type: 'object', properties: {} } },
   { name: 'get_precedents', description: 'The binding precedent register — past adjudications that constrain future cycles.', inputSchema: { type: 'object', properties: {} } },
   { name: 'get_run_bundles', description: 'Omnibus run bundles: manifests, sealed worlds, controls, pending gates, and reproduction entrypoints.', inputSchema: { type: 'object', properties: {} } },
+  { name: 'get_ontology', description: 'The operational object model: nodes, edges, and permitted actions used by the Observatory surfaces.', inputSchema: { type: 'object', properties: {} } },
   { name: 'get_incidents', description: 'Failure objects and repair handles, including status, impact, resolution, and next control.', inputSchema: { type: 'object', properties: { status: { type: 'string' } } } },
-  { name: 'search_record', description: 'Full-text search across evidence, forecasts, revisions, dispatches, precedents, run bundles, and incidents.', inputSchema: { type: 'object', properties: { query: { type: 'string' } }, required: ['query'] } },
+  { name: 'search_record', description: 'Full-text search across evidence, forecasts, revisions, dispatches, precedents, run bundles, ontology, and incidents.', inputSchema: { type: 'object', properties: { query: { type: 'string' } }, required: ['query'] } },
   { name: 'get_interop', description: 'How to contribute: challenge an entry, fork the instrument, or attempt a probe. The channels a system uses to write to the record (all human-gated).', inputSchema: { type: 'object', properties: {} } },
 ];
 
@@ -45,7 +46,7 @@ async function call(name, args = {}) {
       return {
         instrument: r.instrument, generatedAt: r.generatedAt,
         verdict: r.verdict?.answer, operatingQuestion: r.operatingQuestion,
-        counts: { evidence: r.evidence?.length, forecasts: r.forecasts?.length, theories: r.theories?.length, precedents: r.precedents?.length, dispatches: r.dispatches?.length, registeredFutures: r.registeredFutures?.length, runBundles: r.runBundles?.length, incidents: r.incidents?.length, challenges: r.challenges?.length },
+        counts: { evidence: r.evidence?.length, forecasts: r.forecasts?.length, theories: r.theories?.length, precedents: r.precedents?.length, dispatches: r.dispatches?.length, registeredFutures: r.registeredFutures?.length, runBundles: r.runBundles?.length, ontologyNodes: r.ontology?.nodes?.length, incidents: r.incidents?.length, challenges: r.challenges?.length },
         calibration: r.calibration, kpis: r.kpis, disclosure: r.disclosure,
       };
     case 'get_verdict':
@@ -60,6 +61,8 @@ async function call(name, args = {}) {
       return r.precedents ?? [];
     case 'get_run_bundles':
       return r.runBundles ?? [];
+    case 'get_ontology':
+      return r.ontology ?? {};
     case 'get_incidents':
       return (r.incidents ?? []).filter((i) => !args.status || i.status === args.status);
     case 'search_record': {
@@ -72,6 +75,7 @@ async function call(name, args = {}) {
         dispatches: (r.dispatches ?? []).map((d) => ({ no: d.no, slug: d.slug, title: d.title })).filter((d) => hit(d)),
         precedents: (r.precedents ?? []).filter(hit),
         runBundles: (r.runBundles ?? []).filter(hit),
+        ontology: r.ontology && hit(r.ontology) ? r.ontology : null,
         incidents: (r.incidents ?? []).filter(hit),
       };
     }

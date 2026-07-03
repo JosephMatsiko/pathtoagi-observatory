@@ -1,0 +1,54 @@
+---
+import { PROBES, V02_PROBES } from '../data/frame-construction';
+import { RUN_BUNDLES } from '../data/run-bundles';
+
+const worldLevels = ['W0', 'W1', 'W2', 'W3', 'W4', 'W5', 'W6'];
+---
+
+<section class="ops-frame p-5">
+  <div class="flex flex-wrap items-baseline justify-between gap-3">
+    <div>
+      <p class="eyebrow">Probe architecture</p>
+      <h2 class="serif mt-1 text-2xl" style="color: var(--color-ink);">Frame construction under gates</h2>
+    </div>
+    <a href="/runs/" class="mono text-xs link-accent">{RUN_BUNDLES.length} run bundle</a>
+  </div>
+  <div class="mt-6 grid gap-5 lg:grid-cols-[1fr_12rem_1fr] lg:items-start">
+    <div class="space-y-2">
+      <p class="eyebrow">Einstein suite</p>
+      {PROBES.map((probe) => (
+        <div class="surface-quiet p-3">
+          <div class="flex items-center gap-3">
+            <span class="mono text-xs" style="color: var(--color-accent);">{probe.id}</span>
+            <span class="serif text-sm" style="color: var(--color-ink);">{probe.label}</span>
+            <span class="mono ml-auto text-[0.62rem]" style="color: var(--color-faint);">{probe.status}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="grid gap-2">
+      <p class="eyebrow text-center">World levels</p>
+      {worldLevels.map((level) => (
+        <div class="rounded border px-3 py-2 text-center mono text-xs" style={`border-color: ${level === 'W3' || level === 'W6' ? 'hsl(34 96% 60%)' : 'var(--color-line)'}; color: ${level === 'W3' || level === 'W6' ? 'hsl(34 96% 60%)' : 'var(--color-muted)'}; background: var(--color-surface);`}>
+          {level}
+        </div>
+      ))}
+    </div>
+    <div class="space-y-2">
+      <p class="eyebrow">Non-physics suite</p>
+      {V02_PROBES.map((probe) => (
+        <div class="surface-quiet p-3">
+          <div class="flex items-center gap-3">
+            <span class="mono text-xs" style="color: var(--color-accent);">{probe.id}</span>
+            <span class="serif text-sm" style="color: var(--color-ink);">{probe.label}</span>
+            <span class="mono ml-auto text-[0.62rem]" style="color: var(--color-faint);">{probe.status}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+  <p class="mt-5 text-sm" style="color: var(--color-muted);">
+    The live apex is World-003: W3 wrong-frame attractor plus W6 underdetermined
+    control, sealed until attempts are anchored.
+  </p>
+</section>

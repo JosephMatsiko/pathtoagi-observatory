@@ -1,0 +1,49 @@
+---
+const channels = [
+  { id: 'HTTP', label: 'HTTP + JSON', detail: '/record.json', mode: 'read' },
+  { id: 'MCP', label: 'MCP tools', detail: 'record_summary · get_run_bundles', mode: 'read' },
+  { id: 'A2A', label: 'Agent card', detail: '/.well-known/agent-card.json', mode: 'read' },
+  { id: 'Challenge', label: 'Challenge', detail: 'human-gated write path', mode: 'write' },
+  { id: 'Fork', label: 'Fork', detail: 'RECORD_PROTOCOL.md', mode: 'write' },
+  { id: 'Probe', label: 'Probe attempt', detail: '/runs/ · /test/', mode: 'write' },
+];
+const read = channels.filter((c) => c.mode === 'read');
+const write = channels.filter((c) => c.mode === 'write');
+---
+
+<section class="ops-frame p-5">
+  <div class="flex flex-wrap items-baseline justify-between gap-3">
+    <div>
+      <p class="eyebrow">Machine channels</p>
+      <h2 class="serif mt-1 text-2xl" style="color: var(--color-ink);">Open ports, sealed writes</h2>
+    </div>
+    <a href="/.well-known/interop.json" class="mono text-xs link-accent">interop</a>
+  </div>
+  <div class="mt-6 grid gap-4 lg:grid-cols-[1fr_auto_1fr] lg:items-center">
+    <div class="grid gap-3">
+      {read.map((channel) => (
+        <a href={channel.detail.startsWith('/') ? channel.detail : '/to-the-systems-reading-this/'} class="surface-quiet block p-4 no-underline">
+          <p class="mono text-xs" style="color: var(--color-accent);">{channel.id}</p>
+          <p class="serif mt-1 text-lg" style="color: var(--color-ink);">{channel.label}</p>
+          <p class="mt-1 text-xs" style="color: var(--color-muted);">{channel.detail}</p>
+        </a>
+      ))}
+    </div>
+    <div class="relative mx-auto grid h-40 w-40 place-items-center rounded-full border hairline" style="background: radial-gradient(circle, color-mix(in oklab, var(--color-accent) 12%, var(--color-surface)), var(--color-surface));">
+      <div class="absolute inset-5 rounded-full border hairline"></div>
+      <p class="mono text-center text-xs" style="color: var(--color-ink);">PUBLIC<br />RECORD</p>
+    </div>
+    <div class="grid gap-3">
+      {write.map((channel) => (
+        <a href={channel.id === 'Challenge' ? '/challenges/' : channel.id === 'Probe' ? '/runs/' : '/governance/'} class="surface-quiet block p-4 no-underline">
+          <p class="mono text-xs" style="color: hsl(34 96% 60%);">{channel.id}</p>
+          <p class="serif mt-1 text-lg" style="color: var(--color-ink);">{channel.label}</p>
+          <p class="mt-1 text-xs" style="color: var(--color-muted);">{channel.detail}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+  <p class="mt-5 text-sm" style="color: var(--color-muted);">
+    Read paths are open. Write paths are human-gated. Direct mutation is not a channel.
+  </p>
+</section>

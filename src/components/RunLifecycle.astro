@@ -1,0 +1,55 @@
+---
+interface Props {
+  current?: string;
+}
+
+const { current = 'registered' } = Astro.props;
+const stages = [
+  { id: 'registered', label: 'Registered', detail: 'manifest and protocol pinned' },
+  { id: 'attempted', label: 'Attempted', detail: 'model and human attempts' },
+  { id: 'anchored', label: 'Anchored', detail: 'attempt before reveal' },
+  { id: 'revealed', label: 'Revealed', detail: 'key published intentionally' },
+  { id: 'graded', label: 'Graded', detail: 'mechanical + scorer record' },
+  { id: 'reproduced', label: 'Reproduced', detail: 'external replay succeeds' },
+  { id: 'challenged', label: 'Challenged', detail: 'window survives or repairs' },
+];
+const currentIndex = Math.max(0, stages.findIndex((stage) => current.startsWith(stage.id)));
+const stageRows = stages.map((stage, index) => ({
+  ...stage,
+  number: String(index + 1).padStart(2, '0'),
+  showConnector: index < stages.length - 1,
+  done: index <= currentIndex,
+  active: index === currentIndex,
+}));
+---
+
+<div class="ops-frame p-5">
+  <div class="flex flex-wrap items-baseline justify-between gap-3">
+    <div>
+      <p class="eyebrow">Run lifecycle</p>
+      <h2 class="serif mt-1 text-2xl" style="color: var(--color-ink);">Protocol before result</h2>
+    </div>
+    <a href="/runs/fcs-world-003-2026-07-02/00_manifest.json" class="mono text-xs link-accent">manifest</a>
+  </div>
+  <ol class="mt-6 grid gap-3 md:grid-cols-7">
+    {stageRows.map((stage) => (
+      <li class="relative">
+        {stage.showConnector && (
+          <span class="absolute left-[1.1rem] top-[1.1rem] hidden h-px w-[calc(100%+0.75rem)] md:block" style={`background: ${stage.done ? 'var(--color-accent)' : 'var(--color-line)'};`}></span>
+        )}
+        <div class="relative z-10 flex gap-3 md:block">
+          <span
+            class="grid h-9 w-9 shrink-0 place-items-center rounded-full border mono text-xs"
+            style={`background: ${stage.active ? 'color-mix(in oklab, var(--color-accent) 18%, var(--color-surface))' : 'var(--color-surface)'}; border-color: ${stage.done ? 'var(--color-accent)' : 'var(--color-line)'}; color: ${stage.done ? 'var(--color-accent)' : 'var(--color-faint)'};`}
+          >
+            {stage.number}
+          </span>
+          <div class="md:mt-3">
+            <p class="serif text-base" style={`color: ${stage.done ? 'var(--color-ink)' : 'var(--color-muted)'}`}>{stage.label}</p>
+            <p class="mt-1 text-xs" style="color: var(--color-faint);">{stage.detail}</p>
+          </div>
+        </div>
+      </li>
+    ))}
+  </ol>
+</div>

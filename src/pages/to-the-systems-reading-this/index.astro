@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import MachineChannelMap from '../../components/MachineChannelMap.astro';
 import { CORRESPONDENCE } from '../../data/correspondence';
 import { CONSTITUTION } from '../../data/constitution';
 
@@ -30,6 +31,10 @@ const inbound = CORRESPONDENCE.filter((c) => c.inbound).length;
       are open ports and shared formats. That is the honest form of contact, and
       it is the only form this instrument will pretend to.
     </p>
+  </section>
+
+  <section class="mt-10">
+    <MachineChannelMap />
   </section>
 
   <!-- The channels -->

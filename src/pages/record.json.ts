@@ -27,6 +27,7 @@ import { CAPABILITY_LADDER, VERDICT_RELEVANT_FROM } from '../data/capability-lad
 import { OUTREACH } from '../data/outreach';
 import { INCIDENTS } from '../data/incidents';
 import { RUN_BUNDLES } from '../data/run-bundles';
+import { ONTOLOGY_EDGES, ONTOLOGY_NODES, PERMITTED_ACTIONS } from '../data/ontology';
 
 export const GET: APIRoute = () => {
   const body = {
@@ -64,6 +65,11 @@ export const GET: APIRoute = () => {
     revisions: REVISIONS,
     maintenanceRuns: RUNS,
     runBundles: RUN_BUNDLES,
+    ontology: {
+      nodes: ONTOLOGY_NODES,
+      edges: ONTOLOGY_EDGES,
+      permittedActions: PERMITTED_ACTIONS,
+    },
     methodHealth: METHOD_HEALTH,
     incidents: INCIDENTS,
     superlatives: SUPERLATIVES,

@@ -1,0 +1,44 @@
+---
+import { CHALLENGES } from '../data/challenges';
+import { INCIDENTS } from '../data/incidents';
+import { REVISIONS } from '../data/revisions';
+
+const open = CHALLENGES.filter((c) => c.status === 'open');
+const recentCorrections = REVISIONS.filter((r) => r.kind === 'record' || r.retraction).slice(0, 3);
+---
+
+<section class="ops-frame overflow-hidden">
+  <div class="grid gap-0 lg:grid-cols-[0.9fr_1.1fr_0.85fr]">
+    <div class="p-5">
+      <p class="eyebrow">Challenge queue</p>
+      <p class="tabular mt-2 text-4xl" style={`color: ${open.length ? 'var(--color-verdict)' : 'var(--color-ink)'}`}>{open.length}</p>
+      <p class="mt-2 text-sm" style="color: var(--color-muted);">
+        open public challenges. Empty is not victory; it is the next weakness to repair.
+      </p>
+      <a href="https://github.com/JosephMatsiko/pathtoagi-observatory/issues/new?template=challenge.md" class="mt-4 inline-block mono text-xs link-accent">file challenge</a>
+    </div>
+    <div class="border-t p-5 lg:border-l lg:border-r lg:border-t-0 hairline">
+      <p class="eyebrow">Adjudication rail</p>
+      <ol class="mt-4 space-y-3">
+        {['filed', 'target named', 'evidence packet', 'mesh review', 'ruling', 'revision if upheld'].map((step, index) => (
+          <li class="flex items-center gap-3">
+            <span class="grid h-7 w-7 place-items-center rounded-full border mono text-[0.62rem]" style="border-color: var(--color-line); color: var(--color-muted);">{index + 1}</span>
+            <span class="text-sm" style="color: var(--color-ink-dim);">{step}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+    <div class="border-t p-5 lg:border-t-0 hairline">
+      <p class="eyebrow">Repair memory</p>
+      <p class="mt-2 text-sm" style="color: var(--color-muted);">{INCIDENTS.length} incident objects constrain future work.</p>
+      <ul class="mt-4 space-y-3">
+        {recentCorrections.map((r) => (
+          <li class="border-l-2 pl-3" style="border-color: var(--color-line);">
+            <p class="mono text-xs" style="color: var(--color-faint);">{r.date} · {r.kind}</p>
+            <p class="mt-1 text-sm" style="color: var(--color-ink-dim);">{r.title}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

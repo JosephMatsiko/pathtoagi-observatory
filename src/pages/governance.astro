@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import ChallengeCourt from '../components/ChallengeCourt.astro';
 import { CONSTITUTION } from '../data/constitution';
 import { PRECEDENTS } from '../data/precedents';
 import { CHALLENGES } from '../data/challenges';
@@ -118,6 +119,10 @@ const openChallenges = CHALLENGES.filter((c) => c.status === 'open');
       unanswered challenge past deadline visibly degrades the entry it targets.
       Upheld challenges are honored in the revision log with credit.
     </p>
+  </section>
+
+  <section class="mt-8">
+    <ChallengeCourt />
   </section>
 
   <!-- Omnibus controls -->

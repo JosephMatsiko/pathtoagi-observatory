@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import ProbeArchitecture from '../../components/ProbeArchitecture.astro';
 import {
   OPERATING_QUESTION,
   VERDICT,
@@ -43,6 +44,10 @@ const statusLabel: Record<ProbeStatus, string> = {
       act of large-scale frame construction in the history of science. That is
       why it is the ruler.
     </p>
+  </section>
+
+  <section class="mt-10">
+    <ProbeArchitecture />
   </section>
 
   <!-- The asymmetry -->

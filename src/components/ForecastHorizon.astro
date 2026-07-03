@@ -1,0 +1,61 @@
+---
+import { FORECASTS, effectiveProbability, type Forecast } from '../data/forecasts';
+
+const today = new Date().toISOString().slice(0, 10);
+const open = FORECASTS.filter((f) => f.status === 'open').sort((a, b) => a.horizonDate.localeCompare(b.horizonDate));
+const first = open[0]?.registeredAt ?? today;
+const last = open.at(-1)?.horizonDate ?? today;
+const span = Math.max(1, Date.parse(last) - Date.parse(first));
+const progress = (date: string) => Math.max(4, Math.min(96, ((Date.parse(date) - Date.parse(first)) / span) * 92 + 4));
+const lanes = [
+  { label: '0-90d', items: open.filter((f) => Date.parse(f.horizonDate) - Date.parse(today) <= 90 * 86_400_000) },
+  { label: '90-180d', items: open.filter((f) => {
+    const d = Date.parse(f.horizonDate) - Date.parse(today);
+    return d > 90 * 86_400_000 && d <= 180 * 86_400_000;
+  }) },
+  { label: '180d+', items: open.filter((f) => Date.parse(f.horizonDate) - Date.parse(today) > 180 * 86_400_000) },
+];
+const markerStyle = (f: Forecast) => {
+  const p = effectiveProbability(f);
+  const days = Math.round((Date.parse(f.horizonDate) - Date.parse(today)) / 86_400_000);
+  const color = days <= 30 ? 'hsl(34 96% 60%)' : p >= 0.65 ? 'var(--color-accent)' : 'var(--color-ink-dim)';
+  return { p, days, color };
+};
+---
+
+<section class="ops-frame p-5">
+  <div class="flex flex-wrap items-baseline justify-between gap-3">
+    <div>
+      <p class="eyebrow">Forecast horizon</p>
+      <h2 class="serif mt-1 text-2xl" style="color: var(--color-ink);">A queue that time can judge</h2>
+    </div>
+    <p class="mono text-xs" style="color: var(--color-faint);">as of {today}</p>
+  </div>
+  <div class="mt-6 space-y-5">
+    {lanes.map((lane) => (
+      <div class="grid gap-3 sm:grid-cols-[5rem_1fr] sm:items-center">
+        <p class="mono text-xs" style="color: var(--color-faint);">{lane.label}</p>
+        <div class="relative min-h-16 border-y hairline" style="background: color-mix(in oklab, var(--color-surface) 58%, transparent);">
+          <div class="absolute left-0 right-0 top-1/2 h-px" style="background: var(--color-line);"></div>
+          {lane.items.map((f, index) => {
+            const m = markerStyle(f);
+            return (
+              <a
+                href="/forecasts/"
+                class="absolute top-1/2 block -translate-y-1/2 no-underline"
+                style={`left: ${progress(f.horizonDate)}%; margin-top: ${((index % 3) - 1) * 14}px;`}
+                title={`${f.id}: p=${m.p.toFixed(2)} · ${f.horizonDate}`}
+              >
+                <span class="block rounded-full border" style={`width: ${10 + m.p * 16}px; height: ${10 + m.p * 16}px; border-color: ${m.color}; background: color-mix(in oklab, ${m.color} 28%, var(--color-surface)); box-shadow: 0 0 18px color-mix(in oklab, ${m.color} 28%, transparent);`}></span>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    ))}
+  </div>
+  <p class="mt-5 text-sm" style="color: var(--color-muted);">
+    Each point is an open forecast. Position is horizon date; size is effective
+    probability. Amber means judgment is near.
+  </p>
+</section>

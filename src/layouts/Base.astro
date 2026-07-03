@@ -18,6 +18,7 @@ const nav = [
   { href: '/test/', label: 'The Test' },
   { href: '/play/', label: 'Play' },
   { href: '/runs/', label: 'Runs' },
+  { href: '/ontology/', label: 'Ontology' },
   { href: '/theories/', label: 'Theories' },
   { href: '/evidence/', label: 'Evidence' },
   { href: '/forecasts/', label: 'Forecasts' },
@@ -60,7 +61,7 @@ const isActive = (href: string) => path === href || path.startsWith(href);
       style="background: color-mix(in oklab, var(--color-void) 82%, transparent); backdrop-filter: blur(12px);"
     >
       <nav
-        class="mx-auto flex max-w-5xl flex-wrap items-center gap-x-4 gap-y-2 px-5 py-3.5 sm:flex-nowrap sm:justify-between"
+        class="mx-auto flex max-w-7xl flex-wrap items-center gap-x-4 gap-y-2 px-5 py-3.5 sm:flex-nowrap sm:justify-between"
       >
         <a
           href="/"
@@ -80,7 +81,7 @@ const isActive = (href: string) => path === href || path.startsWith(href);
             the&nbsp;observatory
           </span>
         </a>
-        <ul class="flex w-full min-w-0 items-center gap-0.5 overflow-x-auto text-sm sm:w-auto sm:justify-end">
+        <ul class="flex w-full min-w-0 items-center gap-0.5 overflow-x-auto whitespace-nowrap text-sm sm:w-auto sm:justify-end">
           {
             nav.map((item) => (
               <li>
@@ -131,6 +132,9 @@ const isActive = (href: string) => path === href || path.startsWith(href);
               <a href="/evidence/" class="no-underline" style="color: var(--color-ink-dim);">Evidence</a>
               <a href="/forecasts/" class="no-underline" style="color: var(--color-ink-dim);">Forecasts</a>
               <a href="/runs/" class="no-underline" style="color: var(--color-ink-dim);">Runs</a>
+              <a href="/ontology/" class="no-underline" style="color: var(--color-ink-dim);">Ontology</a>
+              <a href="/challenges/" class="no-underline" style="color: var(--color-ink-dim);">Challenges</a>
+              <a href="/handoff/" class="no-underline" style="color: var(--color-ink-dim);">Handoff</a>
               <a href="/status/" class="no-underline" style="color: var(--color-ink-dim);">Status</a>
               <a href="/reproduce/" class="no-underline" style="color: var(--color-ink-dim);">Reproduce</a>
               <a href="/log/" class="no-underline" style="color: var(--color-ink-dim);">Revision log</a>

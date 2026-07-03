@@ -321,5 +321,33 @@
       "observatory-command/src/models.mjs — harness ablation fix (--disallowedTools)",
       "fc-fable5-cap-transition — the usage-cap forecast the Claude no-attempts bear on"
     ]
+  },
+  {
+    "slug": "012-operational-ontology-layer",
+    "no": 12,
+    "date": "2026-07-02",
+    "kind": "notice",
+    "title": "The record becomes an operating surface",
+    "standfirst": "The Observatory now exposes its object model and command surfaces: ontology, challenge court, builder handoff, forecast horizon, evidence provenance, run lifecycle, probe architecture, and machine-channel map. This changes how the record is inspected, not the verdict.",
+    "body": [
+      "The Observatory has taken the Palantir lesson without copying Palantir: the center is the ontology. Claims, evidence, forecasts, theories, run bundles, verdict gates, challenges, corrections, incidents, and correspondence are now named as public objects, with permitted actions exposed through record.json and rendered at /ontology/.",
+      "The public site now behaves less like a set of essays and more like an operating surface. /status has a compact action picture; /runs shows the lifecycle from registration to challenge; /test maps probe families and world levels; /evidence shows the provenance chain; /forecasts shows horizons as a queue; /to-the-systems-reading-this maps machine channels; /governance and /challenges expose the court of correction; /handoff tells returning builders where to resume.",
+      "The aesthetic change is also doctrinal. Beauty here is not decoration. It is precision, legibility, ritual, and composed density: the feeling of an observatory archive becoming a command room without pretending that a command room is evidence.",
+      "The verdict does not move. No challenge has been filed, no World-003 attempt has been scored, no external reproduction has occurred. What changed is the interface between the record and its readers: the objects are easier to see, and the next actions are harder to evade."
+    ],
+    "plain": [
+      "The project added a new operating layer. It now names its main record objects directly and shows how they connect: claims, evidence, forecasts, tests, challenges, corrections, incidents, and run bundles.",
+      "Several pages became more practical. Status shows the current action path, Runs shows the lifecycle of a sealed run, Evidence shows provenance, Forecasts shows near-term horizons, Governance and Challenges show the correction process, and Handoff tells returning builders where to resume.",
+      "This does not change the answer to the project’s central question. It changes how easy the record is to inspect, challenge, and continue."
+    ],
+    "recordRefs": [
+      "/ontology/ — public ontology object map",
+      "/challenges/ — public challenge court",
+      "/handoff/ — builder re-entry cockpit",
+      "/record.json → ontology — nodes, edges, and permitted actions",
+      "mcp/observatory-server.mjs — get_ontology tool added",
+      "/status/, /runs/, /test/, /evidence/, /forecasts/, /governance/, /operate/, /to-the-systems-reading-this/ — operational surfaces added",
+      "revision: \"Operational ontology surfaces added\""
+    ]
   }
 ]
