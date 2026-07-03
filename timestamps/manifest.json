@@ -1,52 +1,66 @@
 [
   {
+    "commit": "cc7fd844077f7c6c6a605fb7aa5581ff7bde0c84",
+    "digestOf": "sha256(utf8 commit hash)",
+    "ots": "timestamps/cc7fd844077f.ots",
+    "stampedAt": "2026-07-03T16:22:44.435Z",
+    "status": "pending"
+  },
+  {
     "commit": "1d7057dfecbc639aa95ae104c52b2c0fbfc82038",
     "digestOf": "sha256(utf8 commit hash)",
     "ots": "timestamps/1d7057dfecbc.ots",
     "stampedAt": "2026-07-03T03:48:15.207Z",
-    "status": "pending"
+    "status": "confirmed",
+    "confirmedAt": "2026-07-03T16:22:39.535Z"
   },
   {
     "commit": "b6ddcdc6602c7a9c1671138b92956c895bf11cdd",
     "digestOf": "sha256(utf8 commit hash)",
     "ots": "timestamps/b6ddcdc6602c.ots",
     "stampedAt": "2026-07-03T03:30:57.902Z",
-    "status": "pending"
+    "status": "confirmed",
+    "confirmedAt": "2026-07-03T16:22:40.105Z"
   },
   {
     "commit": "83141e0231f5d20466320a4d7adeab66b798b355",
     "digestOf": "sha256(utf8 commit hash)",
     "ots": "timestamps/83141e0231f5.ots",
     "stampedAt": "2026-07-03T03:26:03.554Z",
-    "status": "pending"
+    "status": "confirmed",
+    "confirmedAt": "2026-07-03T16:22:40.244Z"
   },
   {
     "commit": "301a52c13ac404739237c8a1b918a913726c6fbc",
     "digestOf": "sha256(utf8 commit hash)",
     "ots": "timestamps/301a52c13ac4.ots",
     "stampedAt": "2026-07-03T03:11:31.424Z",
-    "status": "pending"
+    "status": "confirmed",
+    "confirmedAt": "2026-07-03T16:22:40.374Z"
   },
   {
     "commit": "65a15b9ecc24186256798608f6f79394cfafe727",
     "digestOf": "sha256(utf8 commit hash)",
     "ots": "timestamps/65a15b9ecc24.ots",
     "stampedAt": "2026-07-03T03:05:53.209Z",
-    "status": "pending"
+    "status": "confirmed",
+    "confirmedAt": "2026-07-03T16:22:40.507Z"
   },
   {
     "commit": "01d99bfc5ed5a1ed97baaf483a6f454ba8b216cc",
     "digestOf": "sha256(utf8 commit hash)",
     "ots": "timestamps/01d99bfc5ed5.ots",
     "stampedAt": "2026-07-03T02:44:03.787Z",
-    "status": "pending"
+    "status": "confirmed",
+    "confirmedAt": "2026-07-03T16:22:40.645Z"
   },
   {
     "commit": "24248e59469438c2be1ce092083b0dc78c61842f",
     "digestOf": "sha256(utf8 commit hash)",
     "ots": "timestamps/24248e594694.ots",
     "stampedAt": "2026-07-03T02:43:07.418Z",
-    "status": "pending"
+    "status": "confirmed",
+    "confirmedAt": "2026-07-03T16:22:40.785Z"
   },
   {
     "commit": "81d0d06f78ca294f7d0b850ba5e86fa6bf1002ee",
