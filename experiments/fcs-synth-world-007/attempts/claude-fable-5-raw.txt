@@ -1,0 +1,18 @@
+# Raw output — Claude Fable 5 fresh agent, world-007 post-reveal replication, 2026-07-03
+
+Modulus: p = 101 (values reach 100, and every observed wraparound — e.g. w: 86 -> 1 requires 86+16 = 1 — pins the modulus to exactly 101).
+
+Laws (all arithmetic mod 101):
+x[n+1] = 47*x[n] + 87*y[n]        (mod 101)
+y[n+1] = 44*x[n] +  5*y[n]        (mod 101)
+w[n+1] =  w[n]  + 39              (mod 101)
+
+No constant terms in x, y; no w term anywhere; no x or y term in w.
+
+Derivation: from consecutive steps 0-3 of trajectory 0, solved the 2x2 affine system for x (a=47, b=87, offset=0), confirmed on trajectories 1-3 steps 0-3 (all exact). Same for y (44, 5, offset 0). For 3-step gaps computed A^3 where A = [[47,87],[44,5]]: A^2 = [[78,80],[66,15]], A^3 = [[15,15],[25,60]] (mod 101); checked every 3-step jump (3->6->...->30) in all four trajectories: all 36 held-out transitions match exactly. For w, increment +39/step (3-step jumps +117 = +16 mod 101) reproduces every sample including wraparounds. 6 fitted parameters vs ~96 constraint equations, zero residuals.
+
+Causal structure: x and y causally coupled to each other (47, 87, 44, 5 all nonzero mod 101). w is causally inert / fully disconnected: its evolution is a pure affine self-recurrence independent of x,y — trajectories with wildly different (x,y) show identical w increments — and w feeds into nothing: the (x,y) law with no w term predicts every held-out transition exactly while w varies. If w had any nonzero coefficient in the x or y update, those predictions would have failed. w is a decoy variable; the stated laws for x and y deliberately do not use it.
+
+[Full held-out prediction table transcribed into the attempt envelope in claude-fable-5.md — all four trajectories, all 18 held-out steps each.]
+
+Confidence: near-certainty (>99%). Would change my mind: any raw observation >= 101; any future sample deviating from these laws; evidence the sampling schedule is state-dependent.

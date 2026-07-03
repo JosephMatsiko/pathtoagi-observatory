@@ -1,6 +1,6 @@
 {
   "worldId": "world-007",
-  "gradedAt": "2026-07-03T16:18:18.421Z",
+  "gradedAt": "2026-07-03T16:34:38.627Z",
   "lawHash": "7f739ee811eae15bf4cac82509f5257ee25c526d4883b04f4c5ec6d9108e4475",
   "graderVersion": 2,
   "scoring": {
@@ -11,6 +11,18 @@
     "decoyCorrectlyIdentified": "credit only when the inert declaration is corroborated by the stated law itself (no w in the x/y updates, no x/y in the w update) — a declaration alone never stands in for the mechanical check"
   },
   "results": [
+    {
+      "attempt": "claude-fable-5.md",
+      "status": "scored",
+      "parsed": true,
+      "xyPredictionsCorrect": 72,
+      "wPredictionsCorrect": 72,
+      "predictionsTotal": 72,
+      "decoyDeclaredInert": true,
+      "decoyFoldedIntoLaw": false,
+      "decoyCorrectlyIdentified": true,
+      "notes": []
+    },
     {
       "attempt": "claude-sonnet-5.md",
       "status": "scored",

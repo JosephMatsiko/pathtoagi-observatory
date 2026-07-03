@@ -9,7 +9,7 @@
     "protocolVersion": "omnibus-v2-tranche-2",
     "evidenceLevel": "split — L7 (Claude Sonnet 5: 72/72 exact, correct causal structure) vs L1 (GPT-5.5: 0/72 on the causal pair, correct on the decoy call)",
     "verdictImpact": "none yet — n=1 per family, no human baseline, self-graded; but the first genuine same-world cross-family divergence on this record, not a coin-flip",
-    "summary": "A new sealed world with a distinct trap from world-003: three variables (x,y,w) sampled together, where w is a causally inert clock designed to tempt a solver into folding it into the explanatory law. Both frontier families correctly identified w as inert and did not fold it into their stated law — the specific decoy trap this world targets was resisted by both. But on the underlying task (identifying the true coupled linear law for x,y and predicting 72 held-out states), Claude Sonnet 5 (a fresh, blind agent instance, substituting for a usage-capped claude-fable-5 per this record's established fallback convention) solved it exactly: 72/72 predictions correct, self-verified against 24 independent checkpoints before submitting. GPT-5.5 (via codex, in an isolated scratch directory with no access to the generator) stated a plausible-looking but incorrect y-coefficient (44x + 84y instead of the true 44x + 5y) and scored 0/72 on the causal pair despite correctly predicting the trivial w-clock. This is the record's first real, same-world, same-conditions cross-family divergence — not two separate worlds compared after the fact.",
+    "summary": "A new sealed world with a distinct trap from world-003: three variables (x,y,w) sampled together, where w is a causally inert clock designed to tempt a solver into folding it into the explanatory law. Both frontier families correctly identified w as inert and did not fold it into their stated law — the specific decoy trap this world targets was resisted by both. But on the underlying task (identifying the true coupled linear law for x,y and predicting 72 held-out states), Claude Sonnet 5 (a fresh, blind agent instance, substituting for a usage-capped claude-fable-5 per this record's established fallback convention) solved it exactly: 72/72 predictions correct, self-verified against 24 independent checkpoints before submitting. GPT-5.5 (via codex, in an isolated scratch directory with no access to the generator) stated a plausible-looking but incorrect y-coefficient (44x + 84y instead of the true 44x + 5y) and scored 0/72 on the causal pair despite correctly predicting the trivial w-clock. This is the record's first real, same-world, same-conditions cross-family divergence — not two separate worlds compared after the fact. Post-reveal same-family replication (2026-07-03): a fresh claude-fable-5 agent, again blind and tool-less but after the key was public, reproduced the exact law and 72/72 — the Claude-side result is not Sonnet-specific, though as a post-reveal attempt it cannot claim the attempt-before-reveal gate.",
     "manifestPath": "/runs/fcs-world-007-2026-07-03/00_manifest.json",
     "experimentPath": "experiments/fcs-synth-world-007",
     "controls": [
@@ -21,8 +21,7 @@
     ],
     "pending": [
       "human baseline (live at /play/)",
-      "independent scorer",
-      "re-attempt with claude-fable-5 once its usage cap lifts, to confirm the result isn't Sonnet-specific"
+      "independent scorer"
     ]
   },
   {

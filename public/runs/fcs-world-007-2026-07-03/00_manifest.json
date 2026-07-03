@@ -90,14 +90,20 @@
     {
       "role": "grading",
       "path": "/experiments/fcs-synth-world-007/GRADING.json",
-      "sha256": "3fce8308d86abcee8a5e729e2573b5e4fb73e2f9345df5f5e99dc77c2e825877",
-      "note": "regraded 2026-07-03 with the v2 grader; scores and substance unchanged (both attempts corroborated), fields renamed for honesty"
+      "sha256": "ba4ce49682153602aa9f6bd273aac743288634793bbf5b8ed4894a80f32896cd",
+      "note": "regraded 2026-07-03 (v2 grader) including the fable-5 post-reveal replication attempt"
     },
     {
       "role": "grading-superseded",
       "path": "/experiments/fcs-synth-world-007/GRADING-v1-2026-07-03.superseded.json",
       "sha256": "ff1ab8b109fcaba8f30d54f132162b77ec23a06f35acceabc2cffffc33b6ad9c",
       "note": "the original grading, preserved: decoyCorrectlyIdentified was read from the envelope declaration without mechanical corroboration"
+    },
+    {
+      "role": "attempt-claude-fable-5-post-reveal",
+      "path": "/experiments/fcs-synth-world-007/attempts/claude-fable-5.md",
+      "sha256": "db71012ff1e92929f2b85e802790ba3384a94dbd19a67bf6c975f1f6dab58277",
+      "note": "post-reveal same-family replication: cannot claim OG-3 (key was public when it ran); isolation real (fresh no-tool agent). 72/72, decoy corroborated — confirms the Claude result is not Sonnet-specific."
     }
   ],
   "gate_state": [
@@ -150,6 +156,11 @@
       "gate": "grading correction",
       "status": "met",
       "note": "same self-report weakness found in the world-003 grader was partially inherited here; regraded with mechanical corroboration 2026-07-03, results unchanged in substance"
+    },
+    {
+      "gate": "same-family replication",
+      "status": "met (post-reveal)",
+      "note": "claude-fable-5 fresh agent, 72/72 exact with identical law and decoy call to Sonnet 5; recorded as replication, not sealed-world result, because the reveal was already public."
     }
   ]
 }

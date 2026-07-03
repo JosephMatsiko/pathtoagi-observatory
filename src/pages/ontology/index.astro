@@ -1,27 +1,79 @@
 ---
 import Base from '../../layouts/Base.astro';
 import OntologyMap from '../../components/OntologyMap.astro';
-import { ONTOLOGY_NODES } from '../../data/ontology';
+import { ONTOLOGY, ONTOLOGY_NODES } from '../../data/ontology';
+
+// A real lineage trail, walked over the instance graph: start from the
+// newest graded run bundle and follow the actual typed edges outward.
+const bundles = ONTOLOGY.instances.nodes
+  .filter((n) => n.type === 'run-bundle')
+  .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
+const front = bundles[0];
+const edgesFrom = (id: string) => ONTOLOGY.instances.edges.filter((e) => e.from === id);
+const edgesTo = (id: string) => ONTOLOGY.instances.edges.filter((e) => e.to === id);
+const nodeOf = (id: string) => ONTOLOGY.instances.nodes.find((n) => n.id === id);
+
+const becameEvidence = edgesFrom(front?.id ?? '').filter((e) => e.rel === 'became evidence').map((e) => nodeOf(e.to));
+const evidenceNode = becameEvidence[0];
+const theoriesTouched = evidenceNode ? edgesFrom(evidenceNode.id).filter((e) => e.rel === 'bears on').map((e) => nodeOf(e.to)) : [];
+const incidentsTouching = edgesTo(front?.id ?? '').filter((e) => e.rel === 'references run').map((e) => nodeOf(e.from)).filter((n) => n?.type === 'incident');
+const correctionsFromIncidents = incidentsTouching.flatMap((i) => (i ? edgesFrom(i.id).filter((e) => e.rel === 'repaired by').map((e) => nodeOf(e.to)) : []));
+
+const trail = [
+  { role: 'Run bundle', node: front, note: front?.state },
+  { role: 'Became evidence', node: evidenceNode, note: evidenceNode?.date },
+  ...theoriesTouched.map((t) => ({ role: 'Bears on theory', node: t, note: '' })),
+  ...incidentsTouching.map((i) => ({ role: 'Incident touching this run', node: i, note: i?.state })),
+  ...correctionsFromIncidents.map((c) => ({ role: 'Repaired by correction', node: c, note: c?.date })),
+].filter((s) => s.node);
 ---
 
 <Base
   title="Ontology - pathtoAGI"
-  description="The Observatory record atlas: claims, evidence, forecasts, theories, run bundles, challenges, corrections, incidents, correspondence, and permitted actions."
+  description="The Observatory record atlas: every governed object on the record — claims, evidence, forecasts, theories, run bundles, gates, challenges, corrections, incidents — with computed counts and gate-enforced lineage."
 >
   <section class="max-w-3xl">
     <p class="eyebrow">Ontology · record atlas</p>
     <h1 class="display mt-4 text-4xl sm:text-5xl">The record has a shape</h1>
     <p class="lede mt-6">
-      The Observatory is not a pile of pages. It is a trail of claims, evidence,
-      forecasts, theories, run bundles, gates, objections, corrections, incidents,
-      and correspondence. The atlas exists so a reader can follow that trail
-      without trusting the narrator.
+      The Observatory is not a pile of pages. It is {ONTOLOGY.integrity.nodes}
+      governed objects joined by {ONTOLOGY.integrity.edges} typed relationships —
+      claims, evidence, forecasts, theories, run bundles, gates, objections,
+      corrections, incidents, correspondence. The atlas exists so a reader can
+      follow that trail without trusting the narrator: every count on this page
+      is computed from the record at build time, and the conformance gate fails
+      the build if any reference does not resolve.
     </p>
   </section>
 
   <section class="mt-10">
     <OntologyMap />
   </section>
+
+  {trail.length > 1 && (
+    <section class="mt-14 max-w-3xl">
+      <p class="eyebrow">Lineage · walked, not drawn</p>
+      <h2 class="serif mt-2 text-2xl">One real trail through the graph</h2>
+      <p class="prose mt-4">
+        The Omnibus demands that a reader be able to walk from a run to its
+        evidence to the theories it bears on to the failures it exposed — over
+        real objects, not a diagram. This trail is computed from the instance
+        graph at build time, starting from the newest run bundle:
+      </p>
+      <ol class="mt-6 grid gap-3">
+        {trail.map((step, i) => (
+          <li class="surface flex items-baseline gap-4 p-4" style="border-radius: 8px;">
+            <span class="mono text-xs" style="color: var(--color-faint); min-width: 1.4rem;">{i + 1}</span>
+            <div>
+              <p class="mono text-[0.66rem] uppercase tracking-wider" style="color: var(--color-faint);">{step.role}{step.note ? ` · ${step.note}` : ''}</p>
+              <a href={step.node!.href ?? '#'} class="serif text-lg hover:underline" style="color: var(--color-ink);">{step.node!.label}</a>
+              <p class="mono mt-1 text-[0.62rem]" style="color: var(--color-faint);">{step.node!.id}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )}
 
   <section class="mt-14 grid gap-4 sm:grid-cols-2">
     {ONTOLOGY_NODES.map((node) => (
@@ -32,6 +84,7 @@ import { ONTOLOGY_NODES } from '../../data/ontology';
           <span class="mono ml-auto text-xs" style="color: var(--color-faint);">{node.layer}</span>
         </div>
         <p class="mt-3 text-sm" style="color: var(--color-muted);">{node.description}</p>
+        <p class="mono mt-3 text-[0.66rem] uppercase tracking-wider" style="color: var(--color-ink-dim);">{node.state} · moves: {node.actions.join(', ')}</p>
       </a>
     ))}
   </section>

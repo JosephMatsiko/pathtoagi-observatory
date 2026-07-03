@@ -434,6 +434,30 @@ for (const o of outreach) {
   if (!ISO.test(o.openedAt ?? '')) err(w, 'openedAt must be YYYY-MM-DD');
 }
 
+// ── ontology instance graph: referential integrity ───────────────────────────
+// The graph is computed from the same data validated above; the gate's job
+// here is lineage: every typed cross-reference in the record must resolve to
+// an existing object, and every claimed repo artifact must exist on disk.
+const { buildOntology } = await import('./lib/ontology-graph.mjs');
+let ontology;
+try {
+  ontology = buildOntology();
+  for (const d of ontology.integrity.danglingTypedRefs) {
+    err(`ontology[${d.from}]`, `dangling typed reference "${d.ref}" (${d.sourceField ?? d.rel})`);
+  }
+  const ids = new Set();
+  for (const n of ontology.instances.nodes) {
+    if (ids.has(n.id)) err(`ontology[${n.id}]`, 'duplicate instance id across the graph');
+    ids.add(n.id);
+  }
+  for (const e of ontology.instances.edges) {
+    if (!ids.has(e.from)) err('ontology', `edge from unknown node "${e.from}"`);
+    if (!ids.has(e.to)) err('ontology', `edge to unknown node "${e.to}"`);
+  }
+} catch (e) {
+  err('ontology', `graph failed to build: ${e.message}`);
+}
+
 // ── report ───────────────────────────────────────────────────────────────────
 if (errors.length) {
   console.error(`✗ record conformance: ${errors.length} violation(s)\n`);
@@ -441,3 +465,4 @@ if (errors.length) {
   process.exit(1);
 }
 console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${runBundles.length} run-bundles · ${dispatches.length} dispatches · ${silences.length} silence-audits · ${precedents.length} precedents · ${challenges.length} challenges · ${futures.length} futures · ${correspondence.length} correspondence · ${incidents.length} incidents · ${outreach.length} outreach · ${claims.length} claims · ${failureTypes.length} failure-types · constitution pinned — all valid`);
+console.log(`✓ ontology graph: ${ontology.instances.nodes.length} governed objects · ${ontology.instances.edges.length} typed edges · ${ontology.integrity.verifiedArtifactRefs} artifact refs verified on disk · 0 dangling`);

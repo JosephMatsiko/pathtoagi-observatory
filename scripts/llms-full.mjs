@@ -17,9 +17,12 @@ const dispatches = D('dispatches.json');
 const futures = D('registered-futures.json');
 const incidents = D('incidents.json');
 const runBundles = D('run-bundles.json');
-const ontologySrc = readFileSync(join(ROOT, 'src', 'data', 'ontology.ts'), 'utf8');
-const ontologyNodes = [...ontologySrc.matchAll(/id: '([^']+)',\n\s+label: '([^']+)',\n\s+layer: '([^']+)',\n\s+description: '([^']+)'/g)]
-  .map((m) => ({ id: m[1], label: m[2], layer: m[3], description: m[4] }));
+const { buildOntology } = await import('./lib/ontology-graph.mjs');
+const ontologyGraph = buildOntology();
+const ontologyNodes = ontologyGraph.types.map((t) => ({
+  id: t.id, label: t.label, layer: t.layer,
+  description: `${t.description} ${t.count} on the record.`,
+}));
 
 const out = [];
 out.push('# pathtoAGI — the Observatory · full text for machine readers\n');
