@@ -1,5 +1,12 @@
 [
   {
+    "commit": "24248e59469438c2be1ce092083b0dc78c61842f",
+    "digestOf": "sha256(utf8 commit hash)",
+    "ots": "timestamps/24248e594694.ots",
+    "stampedAt": "2026-07-03T02:43:07.418Z",
+    "status": "pending"
+  },
+  {
     "commit": "81d0d06f78ca294f7d0b850ba5e86fa6bf1002ee",
     "digestOf": "sha256(utf8 commit hash)",
     "ots": "timestamps/81d0d06f78ca.ots",
@@ -11,7 +18,8 @@
     "digestOf": "sha256(utf8 commit hash)",
     "ots": "timestamps/3448c5585b18.ots",
     "stampedAt": "2026-07-03T01:36:11.968Z",
-    "status": "pending"
+    "status": "confirmed",
+    "confirmedAt": "2026-07-03T02:43:05.424Z"
   },
   {
     "commit": "9b28ce6f328ad90935bbae7c234baaefd3bba2c7",
