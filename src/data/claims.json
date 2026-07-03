@@ -1,0 +1,55 @@
+[
+  {
+    "claim_id": "claim-001",
+    "text": "Frontier models can recover the exact governing law of a genuinely novel formal system from sparse observations, when the frame family is disclosed and tools are permitted.",
+    "claim_type": "capability",
+    "status": "candidate",
+    "evidence_level": 2,
+    "supporting": [
+      "cce-2026-07-02-fcs-synth-world-001"
+    ],
+    "opposing": [],
+    "defeaters": [
+      "no independent scoring",
+      "no human baseline",
+      "n=1 world"
+    ],
+    "allowed_language": [
+      "parameter identification",
+      "candidate evidence"
+    ],
+    "forbidden_language": [
+      "frame construction",
+      "AGI",
+      "externally audited"
+    ]
+  },
+  {
+    "claim_id": "claim-002",
+    "text": "At least one frontier model (GPT-5.5) can hypothesize the correct mathematical class of a hidden nonlinear law unaided by disclosure, and fit it exactly, when code is permitted.",
+    "claim_type": "capability",
+    "status": "candidate",
+    "evidence_level": 5,
+    "supporting": [
+      "cce-2026-07-02-fcs-synth-world-002"
+    ],
+    "opposing": [],
+    "defeaters": [
+      "tool-assisted (P-9)",
+      "standard-construction law",
+      "single mind",
+      "no human baseline",
+      "no independent scoring"
+    ],
+    "allowed_language": [
+      "tool-assisted discovery",
+      "class hypothesis",
+      "candidate evidence"
+    ],
+    "forbidden_language": [
+      "frame construction",
+      "unscaffolded",
+      "externally audited"
+    ]
+  }
+]

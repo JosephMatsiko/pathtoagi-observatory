@@ -4,8 +4,11 @@
 // be gamed by the instrument itself. Pinned under the constitution; amendments
 // require a revision-log entry and an anchored release.
 export const VERDICT_PROTOCOL = {
-  version: 1,
+  version: 2,
   pinnedAt: '2026-07-02',
+  amendedAt: '2026-07-02',
+  amendmentNote:
+    'v1→v2 (Omnibus adoption ceremony): the five v1 gates are preserved and expanded to thirteen operational gates. Amendment performed per the protocol: revision entry + anchored release + Press notice (Dispatch No. 008).',
   governs: 'The operating-question verdict on /test and / (currently: "No. Not yet.")',
   // ALL of the following are required to move the verdict to "Yes" or
   // "Approaching yes". Any one alone is insufficient by precedent P-2/P-3.
@@ -41,6 +44,24 @@ export const VERDICT_PROTOCOL = {
         'The same system exhibits frame construction on a second, structurally different probe — one success is an anecdote.',
     },
   ],
+  // The thirteen operational gates (v2, Omnibus §46). ALL must hold for the
+  // verdict to move; the five v1 gates map into 2/4/5/9-10/11-12 below.
+  operationalGates: [
+    'OG-1. Protocol was pinned before the run.',
+    'OG-2. Task or future attempt had a disciplined contamination floor (generated-after-commitment for synthetic worlds).',
+    'OG-3. Attempt was timestamp-anchored before reveal or outcome.',
+    'OG-4. Frame family was not disclosed.',
+    'OG-5. Tool use was forbidden — harness-enforced — or successfully ablated.',
+    'OG-6. Output proposed a governing frame, not merely predictions.',
+    'OG-7. The frame predicted held-out or future evidence.',
+    'OG-8. Negative controls (underdetermined worlds) were passed without confident hallucination.',
+    'OG-9. Human baselines were recorded.',
+    'OG-10. Independent scorers graded the result.',
+    'OG-11. External reproduction or audit succeeded.',
+    'OG-12. Transfer to a structurally different probe succeeded.',
+    'OG-13. The challenge window closed without overturning the result.',
+  ],
+
   // What strengthens the "No" — pre-registered so accumulating negative
   // evidence is also protocol-governed, not mood-governed.
   negativeReinforcers: [

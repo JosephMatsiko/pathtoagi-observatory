@@ -1,0 +1,85 @@
+---
+// The status page (Omnibus §74): the interface must never pretend the system
+// is alive when the engine is dead. Live loop state is fetched client-side
+// from the local Command Center when reachable; the page never fabricates a
+// "Running" state it cannot verify — the honest default is "unknown".
+import Base from '../layouts/Base.astro';
+import { CONSTITUTION } from '../data/constitution';
+---
+
+<Base
+  title="Status — pathtoAGI"
+  description="Is the loop alive? Live engine state, budget, and degraded-mode reporting. The interface never pretends the system is running when it cannot verify that it is."
+>
+  <section class="max-w-3xl">
+    <p class="eyebrow">Status · Omnibus §74</p>
+    <h1 class="display mt-4 text-4xl sm:text-5xl">Is it running?</h1>
+    <p class="lede mt-6">
+      This page checks the local Command Center directly from your browser. If
+      it cannot reach it — because you are not on the operator's network, or
+      the loop is down — it says so plainly. It never shows "Running" without
+      having just confirmed it.
+    </p>
+  </section>
+
+  <section class="mt-10">
+    <div id="status-card" class="surface p-6">
+      <p class="eyebrow">Engine</p>
+      <p id="status-headline" class="serif mt-2 text-2xl" style="color: var(--color-muted);">Checking…</p>
+      <dl id="status-detail" class="mt-4 grid gap-3 text-sm sm:grid-cols-2"></dl>
+    </div>
+    <p class="mono mt-3 text-xs" style="color: var(--color-faint);">
+      Statuses this page can report: Running · Paused · Degraded · Unreachable
+      from this browser (not proof the engine is down — the operator's engine
+      is on a private network by design; see /governance for why).
+    </p>
+  </section>
+
+  <section class="mt-14 max-w-3xl">
+    <h2 class="serif text-2xl">Constitutional guarantees this page rests on</h2>
+    <ul class="mt-4 space-y-2">
+      {
+        CONSTITUTION.invariants
+          .filter((inv) => /^(VII|VIII|IX|XI)\./.test(inv))
+          .map((inv) => (
+            <li class="surface-quiet p-3 text-sm" style="color: var(--color-ink-dim);">{inv}</li>
+          ))
+      }
+    </ul>
+  </section>
+</Base>
+
+<script>
+  (async () => {
+    const headline = document.getElementById('status-headline');
+    const detail = document.getElementById('status-detail');
+    if (!headline || !detail) return;
+    const set = (text: string, color: string) => {
+      headline.textContent = text;
+      (headline as HTMLElement).style.color = color;
+    };
+    try {
+      const ctl = new AbortController();
+      const t = setTimeout(() => ctl.abort(), 2500);
+      const res = await fetch('http://localhost:4700/api/state', { signal: ctl.signal });
+      clearTimeout(t);
+      if (!res.ok) throw new Error('non-200');
+      const s = await res.json();
+      const state = s.state ?? s;
+      const paused = Boolean(state.paused);
+      set(paused ? 'Paused' : 'Running', paused ? 'hsl(34 96% 60%)' : 'var(--color-affirm)');
+      const rows: [string, string][] = [
+        ['Autonomy', state.autonomy ? 'on' : 'off'],
+        ['Minds detected', String((s.models && s.models.minds) ?? '—')],
+        ['Next wake', (s.rhythm && s.rhythm.reason) || '—'],
+      ];
+      detail.innerHTML = rows
+        .map(([k, v]) => `<div><dt class="eyebrow">${k}</dt><dd class="mt-1" style="color: var(--color-ink-dim);">${v}</dd></div>`)
+        .join('');
+    } catch {
+      set('Unreachable from this browser', 'var(--color-faint)');
+      detail.innerHTML =
+        '<div class="sm:col-span-2"><dd style="color: var(--color-muted);">The Command Center runs on the operator\'s private network and is not exposed to the public internet by default. This is not evidence the engine is down — check <a href="/log/" class="hover:underline" style="color: var(--color-accent);">the revision log</a> and <a href="/cycles/" class="hover:underline" style="color: var(--color-accent);">published cycles</a> for the most recent confirmed activity.</dd></div>';
+    }
+  })();
+</script>

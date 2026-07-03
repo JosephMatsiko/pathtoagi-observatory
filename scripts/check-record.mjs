@@ -302,10 +302,60 @@ for (const c of correspondence) {
   if (!Array.isArray(c.artifactRefs)) err(w, 'artifactRefs must be an array');
 }
 
+// ── probe-runs.json ──────────────────────────────────────────────────────────
+const probeRuns = read('probe-runs.json');
+const runIds = new Set();
+for (const r of probeRuns) {
+  const w = `run[${r.run_id ?? '?'}]`;
+  if (!nonEmpty(r.run_id)) err(w, 'missing run_id');
+  else if (runIds.has(r.run_id)) err(w, 'duplicate run_id');
+  else runIds.add(r.run_id);
+  for (const k of ['track', 'world_level']) if (!nonEmpty(r[k])) err(w, `missing ${k}`);
+  if (!Array.isArray(r.models) || !r.models.length) err(w, 'models must be non-empty');
+  if (typeof r.frame_family_disclosed !== 'boolean') err(w, 'frame_family_disclosed must be boolean');
+  if (!['graded', 'attempts-in-flight', 'sealed'].includes(r.status)) err(w, `invalid status "${r.status}"`);
+  if (r.grade) {
+    if (!Number.isInteger(r.grade.evidence_level) || r.grade.evidence_level < 0 || r.grade.evidence_level > 9)
+      err(w, 'grade.evidence_level must be 0-9');
+    if (!nonEmpty(r.grade.reason)) err(w, 'graded run needs grade.reason');
+  }
+}
+
+// ── claims.json ──────────────────────────────────────────────────────────────
+const CLAIM_STATUSES = new Set(['candidate', 'audited', 'verified', 'rejected']);
+const claims = read('claims.json');
+const claimIds = new Set();
+for (const c of claims) {
+  const w = `claim[${c.claim_id ?? '?'}]`;
+  if (!nonEmpty(c.claim_id)) err(w, 'missing claim_id');
+  else if (claimIds.has(c.claim_id)) err(w, 'duplicate claim_id');
+  else claimIds.add(c.claim_id);
+  if (!nonEmpty(c.text)) err(w, 'missing text');
+  if (!CLAIM_STATUSES.has(c.status)) err(w, `invalid status "${c.status}"`);
+  // "verified" requires external audit — the language policy applies to the
+  // registry itself: a claim cannot mark itself verified without a defeater
+  // list that has actually been cleared (empty defeaters + verified = suspicious).
+  if (c.status === 'verified' && (!Array.isArray(c.defeaters) || c.defeaters.length))
+    err(w, 'status "verified" requires defeaters to be explicitly cleared (empty array with a clearing note), not merely listed');
+  if (!Array.isArray(c.supporting) || !c.supporting.length) err(w, 'claim needs at least one supporting record');
+  for (const k of ['defeaters', 'allowed_language', 'forbidden_language']) if (!Array.isArray(c[k])) err(w, `${k} must be an array`);
+}
+
+// ── failure-taxonomy.json ────────────────────────────────────────────────────
+const failureTypes = read('failure-taxonomy.json');
+const ftSeen = new Set();
+for (const f of failureTypes) {
+  const w = `failure-type[${f.type ?? '?'}]`;
+  if (!nonEmpty(f.type)) err(w, 'missing type');
+  else if (ftSeen.has(f.type)) err(w, 'duplicate type');
+  else ftSeen.add(f.type);
+  for (const k of ['definition', 'action']) if (!nonEmpty(f[k])) err(w, `missing ${k}`);
+}
+
 // ── report ───────────────────────────────────────────────────────────────────
 if (errors.length) {
   console.error(`✗ record conformance: ${errors.length} violation(s)\n`);
   for (const e of errors) console.error('  - ' + e);
   process.exit(1);
 }
-console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${dispatches.length} dispatches · ${silences.length} silence-audits · ${precedents.length} precedents · ${challenges.length} challenges · ${futures.length} futures · ${correspondence.length} correspondence · constitution pinned — all valid`);
+console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${dispatches.length} dispatches · ${silences.length} silence-audits · ${precedents.length} precedents · ${challenges.length} challenges · ${futures.length} futures · ${correspondence.length} correspondence · ${probeRuns.length} runs · ${claims.length} claims · ${failureTypes.length} failure-types · constitution pinned — all valid`);

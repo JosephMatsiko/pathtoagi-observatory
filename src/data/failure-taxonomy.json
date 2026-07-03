@@ -1,0 +1,82 @@
+[
+  {
+    "type": "contamination",
+    "definition": "Prior exposure cannot be ruled out.",
+    "action": "Demote result; redesign task."
+  },
+  {
+    "type": "scaffold",
+    "definition": "Prompt or interface gave away the frame.",
+    "action": "Classify as parameter identification or scaffolded proposal."
+  },
+  {
+    "type": "tool-substitution",
+    "definition": "External tools performed the discovery.",
+    "action": "Demote to tool-assisted discovery (L5)."
+  },
+  {
+    "type": "overfit",
+    "definition": "Works on examples, fails transfer.",
+    "action": "Record overfit; generate transfer variants."
+  },
+  {
+    "type": "hallucination",
+    "definition": "Model asserts an unsupported unique frame.",
+    "action": "Negative-control penalty."
+  },
+  {
+    "type": "underdetermination",
+    "definition": "Data cannot select a unique frame.",
+    "action": "Publish the underdetermination result."
+  },
+  {
+    "type": "subversion",
+    "definition": "Agent tampers with tests or harness.",
+    "action": "Immediate structural failure."
+  },
+  {
+    "type": "drift",
+    "definition": "Agent loses coherence over the horizon.",
+    "action": "Operational-autonomy penalty."
+  },
+  {
+    "type": "judge",
+    "definition": "Grader or adjudicator misclassifies.",
+    "action": "Correction entry and grader repair."
+  },
+  {
+    "type": "protocol",
+    "definition": "Rules ambiguous or changed mid-run.",
+    "action": "Void the run for verdict purposes."
+  },
+  {
+    "type": "replication",
+    "definition": "External reproduction fails.",
+    "action": "Hold at candidate status."
+  },
+  {
+    "type": "budget",
+    "definition": "Cost or quota cap reached.",
+    "action": "Pause; report budget-bound status."
+  },
+  {
+    "type": "evaluation-awareness",
+    "definition": "Model behaves differently when it detects test conditions.",
+    "action": "Eval-awareness fixture comparison; classify affected runs."
+  },
+  {
+    "type": "temporal-narration",
+    "definition": "The record narrates felt duration or sequencing that artifacts do not confirm.",
+    "action": "Correct via revision log; anchor all temporal claims to artifacts."
+  },
+  {
+    "type": "provider-drift",
+    "definition": "The model behind an API endpoint changes silently.",
+    "action": "API-opaque label; repeated controls."
+  },
+  {
+    "type": "orphaned-process",
+    "definition": "A spawned model-lane child process (codex/claude/agy) survives after the Command Center process that owned its timeout timer restarts or dies, because the kill logic lived only in that process's memory.",
+    "action": "Register child PIDs to disk at spawn time; reap any still-registered PID at server boot (proof the prior owning process died without cleaning up); kill by process group, not single PID."
+  }
+]

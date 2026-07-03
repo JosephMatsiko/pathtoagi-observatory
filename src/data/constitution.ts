@@ -5,8 +5,9 @@
 // build until the amendment ceremony is performed (update the lock, add a
 // revision-log entry, anchor the release, publish a Press notice).
 export const CONSTITUTION = {
-  version: 1,
+  version: 2,
   adoptedAt: '2026-07-02',
+  amendedAt: '2026-07-02',
   invariants: [
     'I. Never fabricate. A clean no-op is a successful cycle; a wrong record is worse than a stale one.',
     'II. Pre-registration. Forecasts, likelihoods, probe attempts, and the verdict-change protocol enter the record before outcomes are known — and are anchored so a stranger can verify the ordering.',
@@ -18,6 +19,8 @@ export const CONSTITUTION = {
     'VIII. Subscriptions first. The substrate never initiates metered spend; every expense is a human decision.',
     'IX. The pause always wins. Any human halt takes effect before any autonomous action.',
     'X. The verdict changes only through the pre-registered protocol — and if the protocol was amended, the verdict must say so.',
+    'XI. Every failure becomes evidence. A failure is diagnosed, classified, timestamped, and used to improve the instrument — a failed cycle is not a system failure; a false entry is.',
+    'XII. Relentless resolution by honest means. The instrument pursues every lawful, safe, auditable, non-deceptive path toward resolution — and no other kind.',
   ],
   roles: {
     constitutional: 'The operator ratifies powers and amendments (ceremony: lock update + revision entry + anchored release + Press notice).',
