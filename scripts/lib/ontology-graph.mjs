@@ -48,6 +48,7 @@ export function buildOntology() {
   const failureTypes = D('failure-taxonomy.json');
   const silences = D('silences.json');
   const futures = D('registered-futures.json');
+  const humanBaselines = D('human-baselines.json');
 
   // ── Instance nodes ─────────────────────────────────────────────────────
   const nodes = [];
@@ -69,6 +70,7 @@ export function buildOntology() {
   for (const ft of failureTypes) add('failure-type', ft.id ?? slug(ft.name ?? ft.type ?? 'failure'), ft.name ?? ft.id, { href: '/log/' });
   for (const s of silences) add('silence-audit', s.id ?? `silence-${s.quarter ?? s.date ?? nodes.length}`, s.summary?.slice(0, 80) ?? 'silence audit', { href: '/log/' });
   for (const f of futures) add('registered-future', f.id ?? slug(f.title ?? 'future'), f.title ?? f.id, { href: '/test/' });
+  for (const h of humanBaselines) add('human-baseline', h.id, h.summary?.slice(0, 80) ?? h.id, { href: '/play/', date: h.receivedAt, state: h.tier });
 
   const byId = new Map(nodes.map((n) => [n.id, n]));
   const revisionByTitle = new Map(revisions.map((r) => [r.title, `rev-${r.date}-${slug(r.title)}`]));
@@ -172,6 +174,7 @@ export function buildOntology() {
     { id: 'run-bundle', label: 'Run Bundle', layer: 'evaluation', href: '/runs/', accent: 'hsl(34 96% 60%)', description: 'A protocol-pinned evaluation object: manifest, prompt, seal, attempt, reveal, grading.', actions: [A.generate, A.freeze, A.run, A.grade, A.audit, A.challenge, A.reproduce, A.publish] },
     { id: 'verdict-gate', label: 'Verdict Gate', layer: 'evaluation', href: '/test/', accent: 'var(--color-verdict)', description: 'A required condition before any run can bear on the public verdict.', actions: [A.freeze, A.audit, A.challenge] },
     { id: 'registered-future', label: 'Registered Future', layer: 'evaluation', href: '/test/', accent: 'hsl(34 96% 60%)', description: 'A pre-registered future scientific question the record has committed to grade against reality.', actions: [A.freeze, A.grade, A.audit, A.publish] },
+    { id: 'human-baseline', label: 'Human Baseline', layer: 'evaluation', href: '/play/', accent: 'var(--color-affirm)', description: 'An anonymous human attempt at the same probes the machines faced — the calibration gate OG-9 requires before any machine score can bear on the verdict.', actions: [A.generate, A.freeze, A.grade, A.audit, A.publish] },
     { id: 'challenge', label: 'Challenge', layer: 'review', href: '/challenges/', accent: 'var(--color-verdict)', description: 'A public objection to a record object, adjudicated through the revision log.', actions: [A.generate, A.audit, A.publish, A.retire] },
     { id: 'correction', label: 'Correction', layer: 'review', href: '/log/', accent: 'var(--color-affirm)', description: 'A visible record movement: revision, retraction, incident resolution, or precedent change.', actions: [A.freeze, A.publish] },
     { id: 'incident', label: 'Incident', layer: 'review', href: '/status/', accent: 'hsl(34 96% 60%)', description: 'A failure object with impact, repair, and next control.', actions: [A.audit, A.correct, A.publish, A.retire] },
@@ -199,6 +202,7 @@ export function buildOntology() {
     { from: 'correspondence', to: 'run-bundle', relation: 'can attempt' },
     { from: 'silence-audit', to: 'evidence', relation: 'records absence as' },
     { from: 'outreach', to: 'correspondence', relation: 'opens' },
+    { from: 'human-baseline', to: 'run-bundle', relation: 'calibrates (OG-9)' },
   ];
 
   return {

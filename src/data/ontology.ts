@@ -83,6 +83,7 @@ const stateFor = (t: OntologyType): string => {
     case 'failure-type': return `${t.count} named`;
     case 'silence-audit': return `${t.count} recorded`;
     case 'registered-future': return `${t.count} pinned`;
+    case 'human-baseline': return t.count === 0 ? '0 collected — OG-9 open' : `${t.count} collected`;
     default: return `${t.count}`;
   }
 };

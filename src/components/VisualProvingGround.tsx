@@ -100,7 +100,7 @@ const LEVELS: Level[] = [
   },
 ];
 
-function LevelCard({ level, onGrade }: { level: Level; onGrade: (correct: boolean) => void }) {
+function LevelCard({ level, onGrade }: { level: Level; onGrade: (correct: boolean, choice: string) => void }) {
   const [choice, setChoice] = useState<number | null>(null);
   const [graded, setGraded] = useState(false);
 
@@ -154,7 +154,7 @@ function LevelCard({ level, onGrade }: { level: Level; onGrade: (correct: boolea
       {!graded ? (
         <button
           disabled={choice === null}
-          onClick={() => { setGraded(true); onGrade(!!level.options[choice!]?.correct); }}
+          onClick={() => { setGraded(true); onGrade(!!level.options[choice!]?.correct, level.options[choice!]?.label ?? ''); }}
           style={{ marginTop: 18, background: choice === null ? 'var(--color-surface-2)' : A, color: choice === null ? 'var(--color-faint)' : '#08252a', border: 'none', borderRadius: 8, padding: '0.6rem 1.2rem', fontWeight: 600, cursor: choice === null ? 'default' : 'pointer' }}
         >
           Lock in my answer
@@ -171,15 +171,45 @@ function LevelCard({ level, onGrade }: { level: Level; onGrade: (correct: boolea
   );
 }
 
+const BACKGROUNDS = [
+  'no maths background',
+  'some maths (school level)',
+  'maths / science / engineering background',
+  'prefer not to say',
+];
+
 export default function VisualProvingGround() {
-  const [scores, setScores] = useState<Record<string, boolean>>({});
-  const done = Object.keys(scores).length;
-  const right = Object.values(scores).filter(Boolean).length;
+  const [results, setResults] = useState<Record<string, { correct: boolean; choice: string }>>({});
+  const [startedAt] = useState(() => Date.now());
+  const [background, setBackground] = useState<string>('');
+  const [sendState, setSendState] = useState<'idle' | 'sending' | 'sent' | 'failed'>('idle');
+  const done = Object.keys(results).length;
+  const right = Object.values(results).filter((r) => r.correct).length;
+
+  const contribute = async () => {
+    setSendState('sending');
+    const attempt = {
+      baselineTier: 'visual',
+      submittedAt: new Date().toISOString(),
+      secondsTaken: Math.round((Date.now() - startedAt) / 1000),
+      background: background || 'not stated',
+      score: `${right}/${LEVELS.length}`,
+      levels: Object.fromEntries(LEVELS.map((l) => [l.id, results[l.id] ?? null])),
+    };
+    const body = new URLSearchParams({ 'form-name': 'human-baseline-visual', attempt: JSON.stringify(attempt) });
+    try {
+      const r = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body.toString() });
+      setSendState(r.ok ? 'sent' : 'failed');
+    } catch {
+      setSendState('failed');
+    }
+  };
+
   return (
     <div style={{ display: 'grid', gap: 20 }}>
       <style>{`@keyframes vpg-pulse { 0%,100% { opacity: 1 } 50% { opacity: 0.45 } }`}</style>
       {LEVELS.map((lvl) => (
-        <LevelCard key={lvl.id} level={lvl} onGrade={(c) => setScores((p) => ({ ...p, [lvl.id]: c }))} />
+        <LevelCard key={lvl.id} level={lvl} onGrade={(correct, choice) => setResults((p) => ({ ...p, [lvl.id]: { correct, choice } }))} />
       ))}
       {done === LEVELS.length && (
         <div className="surface-quiet" style={{ padding: '1.4rem', borderRadius: 10 }}>
@@ -188,9 +218,44 @@ export default function VisualProvingGround() {
             You just did — in pictures — what the frontier models do in numbers: infer a hidden rule, resist a
             plausible-but-wrong one, and refuse to guess when the evidence can’t decide. The operating question is
             whether a machine can do the <em>hard</em> version, on a world no one has ever seen, without being told
-            what to look for. The record says: not yet. If you want the hard version yourself, the numeric worlds
-            are below — and your attempt on the live one becomes real data.
+            what to look for. The record says: not yet.
           </p>
+          {sendState !== 'sent' ? (
+            <div style={{ marginTop: 16, borderTop: '1px solid var(--color-line)', paddingTop: 16 }}>
+              <p style={{ color: 'var(--color-ink-dim)', fontSize: '0.85rem' }}>
+                <strong>This result is already a real baseline.</strong> The verdict cannot use any machine score
+                until enough humans have taken the same test (gate OG-9). One click adds yours — anonymous, no
+                account, and this visual tier counts on its own; you never have to touch the numbers below.
+              </p>
+              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 12, alignItems: 'center' }}>
+                <select
+                  value={background}
+                  onChange={(e) => setBackground(e.target.value)}
+                  style={{ background: 'var(--color-surface-2)', color: 'var(--color-ink-dim)', border: '1px solid var(--color-line)', borderRadius: 8, padding: '0.55rem 0.7rem', fontSize: '0.8rem' }}
+                >
+                  <option value="">optional: your background…</option>
+                  {BACKGROUNDS.map((b) => <option key={b} value={b}>{b}</option>)}
+                </select>
+                <button
+                  onClick={contribute}
+                  disabled={sendState === 'sending'}
+                  style={{ background: A, color: '#08252a', border: 'none', borderRadius: 8, padding: '0.6rem 1.2rem', fontWeight: 600, cursor: 'pointer' }}
+                >
+                  {sendState === 'sending' ? 'contributing…' : 'Contribute my result to the baseline'}
+                </button>
+              </div>
+              {sendState === 'failed' && (
+                <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '0.7rem', color: 'var(--color-verdict)', marginTop: 10 }}>
+                  Submission failed (the form service may not be live in this preview). Your result was not recorded.
+                </p>
+              )}
+            </div>
+          ) : (
+            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '0.75rem', color: 'var(--color-affirm)', marginTop: 14 }}>
+              ✓ Recorded. Your anonymous result joins the human baseline the verdict is waiting for. If you want more,
+              the numeric worlds below are the hard version — entirely optional.
+            </p>
+          )}
         </div>
       )}
     </div>

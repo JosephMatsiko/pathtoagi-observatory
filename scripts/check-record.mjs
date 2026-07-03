@@ -434,6 +434,25 @@ for (const o of outreach) {
   if (!ISO.test(o.openedAt ?? '')) err(w, 'openedAt must be YYYY-MM-DD');
 }
 
+// ── human-baselines.json ──────────────────────────────────────────────────────
+// Baseline records are transcribed from form submissions by the operator or a
+// gated cycle; each must be anonymous, tiered, and traceable to a probe.
+const BASELINE_TIERS = new Set(['visual', 'numeric-revealed', 'numeric-sealed']);
+const humanBaselines = read('human-baselines.json');
+const hbIds = new Set();
+for (const h of humanBaselines) {
+  const w = `human-baselines[${h.id ?? '?'}]`;
+  if (!nonEmpty(h.id)) err(w, 'missing id');
+  else if (hbIds.has(h.id)) err(w, 'duplicate id');
+  else hbIds.add(h.id);
+  if (!BASELINE_TIERS.has(h.tier)) err(w, `invalid tier "${h.tier}" (visual | numeric-revealed | numeric-sealed)`);
+  if (!ISO.test(h.receivedAt ?? '')) err(w, 'receivedAt must be YYYY-MM-DD');
+  if (!nonEmpty(h.probe)) err(w, 'missing probe (world id or "visual-isomorph")');
+  if (!nonEmpty(h.summary)) err(w, 'missing summary');
+  if (/name|email|@/.test(JSON.stringify(h).toLowerCase()) && !/background/.test(JSON.stringify(h).toLowerCase()))
+    err(w, 'baseline records must stay anonymous');
+}
+
 // ── ontology instance graph: referential integrity ───────────────────────────
 // The graph is computed from the same data validated above; the gate's job
 // here is lineage: every typed cross-reference in the record must resolve to
