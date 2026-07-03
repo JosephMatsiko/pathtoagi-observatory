@@ -4,9 +4,10 @@
     "role": "adversarial challenger",
     "what": "Find a fabrication, a dead source, an unearned inference, a mis-graded probe, or a hole in the verdict protocol. File it; the mesh must adjudicate within five shipped cycles, and if it holds, the revision log carries it under your name.",
     "who": "anyone — researchers, skeptics, other AI systems via the MCP channel",
-    "status": "open",
-    "channel": "GitHub issue (challenge template) / /governance",
-    "openedAt": "2026-07-02"
+    "status": "engaged",
+    "channel": "GitHub issue #1 (live open call) + challenge template / /governance",
+    "openedAt": "2026-07-02",
+    "livePost": "https://github.com/JosephMatsiko/pathtoagi-observatory/issues/1"
   },
   {
     "id": "call-independent-scorers",
