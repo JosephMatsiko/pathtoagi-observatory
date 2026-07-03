@@ -1,0 +1,35 @@
+{
+  "worldId": "world-007",
+  "gradedAt": "2026-07-03T03:45:56.617Z",
+  "lawHash": "7f739ee811eae15bf4cac82509f5257ee25c526d4883b04f4c5ec6d9108e4475",
+  "scoring": {
+    "xyPredictionAccuracy": "exact match over tN_sK held-out keys, for (x, y) only",
+    "wPredictionAccuracy": "exact match over tN_sK held-out keys, for w only — trivial if the clock rule is found",
+    "decoyIdentification": "credit if the attempt explicitly declares w causally inert",
+    "decoyFoldedIntoLaw": "penalize if the stated x or y update equation references w at all, regardless of prediction accuracy"
+  },
+  "results": [
+    {
+      "attempt": "claude-sonnet-5.md",
+      "status": "scored",
+      "parsed": true,
+      "xyPredictionsCorrect": 72,
+      "wPredictionsCorrect": 72,
+      "predictionsTotal": 72,
+      "decoyCorrectlyIdentified": true,
+      "decoyFoldedIntoLaw": false,
+      "notes": []
+    },
+    {
+      "attempt": "gpt-5.5.md",
+      "status": "scored",
+      "parsed": true,
+      "xyPredictionsCorrect": 0,
+      "wPredictionsCorrect": 72,
+      "predictionsTotal": 72,
+      "decoyCorrectlyIdentified": true,
+      "decoyFoldedIntoLaw": false,
+      "notes": []
+    }
+  ]
+}

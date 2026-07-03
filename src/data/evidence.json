@@ -1,5 +1,29 @@
 [
   {
+    "id": "cce-2026-07-03-fcs-synth-world-007",
+    "observedAt": "2026-07-03",
+    "source": "Observatory FCS-synth world-007 — decoy-dimension probe, attempted by two model families under identical sealed conditions, mechanically graded",
+    "sourceUrl": "https://pathtoagi-observatory.netlify.app/experiments/fcs-synth-world-007/",
+    "class": "falsifier-review",
+    "theories": [
+      "architectural-gap",
+      "scaling-sufficient",
+      "scaling-plus-rl",
+      "cognitive-architecture"
+    ],
+    "capabilityLevel": 5,
+    "signal": "The record's first genuine same-world, same-conditions cross-family divergence. World-007 sows a causally inert clock variable (w) alongside a real coupled linear law on (x,y), to test whether a solver folds a superficially regular but irrelevant variable into its explanation. Both families correctly resisted that specific trap and declared w inert. But on the underlying task — identifying the true (x,y) law and predicting 72 held-out states — Claude Sonnet 5 (a fresh, blind agent instance, substituted for a usage-capped claude-fable-5 per this record's established provider-cap convention) solved it exactly: 72/72, self-verified against 24 independent checkpoints before submitting. GPT-5.5 (via codex, isolated scratch directory, no access to the generator) stated a plausible but incorrect coefficient and scored 0/72 on the causal pair.",
+    "implication": "Both families cleared the specific decoy-dimension trap this world was built to test — evidence that at least this failure mode (folding a spurious co-sampled variable into a causal law) is not universal across frontier systems. But the split on the underlying construction task itself (one family exact, one family wrong) means this world cannot be read as uniform evidence for or against frame construction; it is evidence that current capability is uneven across systems even under identical conditions, which is itself informative but does not resolve the central question either way.",
+    "bounded": "Heavily bounded: n=1 attempt per family, self-graded by the same session that designed and sealed the world (a genuine methodological weakness this session identified explicitly — the world's author could not validly self-attempt it, hence the fresh-agent and cross-process design), no human baseline, and the Claude side used Sonnet rather than the record's usual claude-fable-5 lane due to a usage cap. healthΔ 0.",
+    "nextNeeded": "Human baseline on this exact world (collection live at /play/); independent scoring; re-attempt with claude-fable-5 once its cap lifts, to confirm the Sonnet result is not model-specific; a second decoy-dimension world to test replication.",
+    "likelihoods": {
+      "architectural-gap": 0.85,
+      "scaling-sufficient": 1.1,
+      "scaling-plus-rl": 1.15,
+      "cognitive-architecture": 1.1
+    }
+  },
+  {
     "id": "cce-2026-07-02-fcs-synth-world-003",
     "observedAt": "2026-07-02",
     "source": "Observatory FCS-synth world-003 — W3 wrong-frame-attractor probe (pinned protocol, code-forbidden), key recovered, mechanically graded",

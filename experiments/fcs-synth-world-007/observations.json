@@ -1,0 +1,444 @@
+{
+  "worldId": "world-007",
+  "generatedAt": "2026-07-03T03:38:52.359Z",
+  "lawFamily": "Public: three integer state variables (x, y, w) mod a prime, sampled together at every observation. The update rule, the modulus, and whether all three variables are causally connected are secret.",
+  "task": "From the samples alone: (1) state the update law for each variable, (2) state which variables (if any) are causally disconnected from the others, (3) predict the held-out states for x, y, and w. Graded on held-out predictive accuracy for x and y, correct identification of w as causally inert (or not), and whether the stated law wrongly uses w to predict x or y.",
+  "observations": [
+    {
+      "trajectory": 0,
+      "samples": [
+        {
+          "step": 0,
+          "state": [
+            53,
+            19,
+            59
+          ]
+        },
+        {
+          "step": 1,
+          "state": [
+            3,
+            3,
+            98
+          ]
+        },
+        {
+          "step": 2,
+          "state": [
+            99,
+            46,
+            36
+          ]
+        },
+        {
+          "step": 3,
+          "state": [
+            70,
+            41,
+            75
+          ]
+        },
+        {
+          "step": 6,
+          "state": [
+            49,
+            69,
+            91
+          ]
+        },
+        {
+          "step": 9,
+          "state": [
+            53,
+            12,
+            6
+          ]
+        },
+        {
+          "step": 12,
+          "state": [
+            66,
+            25,
+            22
+          ]
+        },
+        {
+          "step": 15,
+          "state": [
+            52,
+            19,
+            38
+          ]
+        },
+        {
+          "step": 18,
+          "state": [
+            55,
+            16,
+            54
+          ]
+        },
+        {
+          "step": 21,
+          "state": [
+            55,
+            12,
+            70
+          ]
+        },
+        {
+          "step": 24,
+          "state": [
+            96,
+            75,
+            86
+          ]
+        },
+        {
+          "step": 27,
+          "state": [
+            40,
+            32,
+            1
+          ]
+        },
+        {
+          "step": 30,
+          "state": [
+            70,
+            92,
+            17
+          ]
+        }
+      ]
+    },
+    {
+      "trajectory": 1,
+      "samples": [
+        {
+          "step": 0,
+          "state": [
+            82,
+            15,
+            67
+          ]
+        },
+        {
+          "step": 1,
+          "state": [
+            8,
+            47,
+            5
+          ]
+        },
+        {
+          "step": 2,
+          "state": [
+            21,
+            82,
+            44
+          ]
+        },
+        {
+          "step": 3,
+          "state": [
+            41,
+            21,
+            83
+          ]
+        },
+        {
+          "step": 6,
+          "state": [
+            21,
+            63,
+            99
+          ]
+        },
+        {
+          "step": 9,
+          "state": [
+            48,
+            63,
+            14
+          ]
+        },
+        {
+          "step": 12,
+          "state": [
+            49,
+            31,
+            30
+          ]
+        },
+        {
+          "step": 15,
+          "state": [
+            89,
+            55,
+            46
+          ]
+        },
+        {
+          "step": 18,
+          "state": [
+            39,
+            71,
+            62
+          ]
+        },
+        {
+          "step": 21,
+          "state": [
+            34,
+            84,
+            78
+          ]
+        },
+        {
+          "step": 24,
+          "state": [
+            53,
+            32,
+            94
+          ]
+        },
+        {
+          "step": 27,
+          "state": [
+            63,
+            13,
+            9
+          ]
+        },
+        {
+          "step": 30,
+          "state": [
+            29,
+            32,
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "trajectory": 2,
+      "samples": [
+        {
+          "step": 0,
+          "state": [
+            50,
+            78,
+            87
+          ]
+        },
+        {
+          "step": 1,
+          "state": [
+            46,
+            65,
+            25
+          ]
+        },
+        {
+          "step": 2,
+          "state": [
+            40,
+            26,
+            64
+          ]
+        },
+        {
+          "step": 3,
+          "state": [
+            1,
+            72,
+            2
+          ]
+        },
+        {
+          "step": 6,
+          "state": [
+            85,
+            2,
+            18
+          ]
+        },
+        {
+          "step": 9,
+          "state": [
+            93,
+            23,
+            34
+          ]
+        },
+        {
+          "step": 12,
+          "state": [
+            23,
+            69,
+            50
+          ]
+        },
+        {
+          "step": 15,
+          "state": [
+            67,
+            69,
+            66
+          ]
+        },
+        {
+          "step": 18,
+          "state": [
+            20,
+            58,
+            82
+          ]
+        },
+        {
+          "step": 21,
+          "state": [
+            59,
+            41,
+            98
+          ]
+        },
+        {
+          "step": 24,
+          "state": [
+            86,
+            97,
+            13
+          ]
+        },
+        {
+          "step": 27,
+          "state": [
+            18,
+            92,
+            29
+          ]
+        },
+        {
+          "step": 30,
+          "state": [
+            34,
+            11,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "trajectory": 3,
+      "samples": [
+        {
+          "step": 0,
+          "state": [
+            100,
+            50,
+            8
+          ]
+        },
+        {
+          "step": 1,
+          "state": [
+            61,
+            4,
+            47
+          ]
+        },
+        {
+          "step": 2,
+          "state": [
+            84,
+            78,
+            86
+          ]
+        },
+        {
+          "step": 3,
+          "state": [
+            28,
+            46,
+            24
+          ]
+        },
+        {
+          "step": 6,
+          "state": [
+            100,
+            26,
+            40
+          ]
+        },
+        {
+          "step": 9,
+          "state": [
+            72,
+            20,
+            56
+          ]
+        },
+        {
+          "step": 12,
+          "state": [
+            67,
+            71,
+            72
+          ]
+        },
+        {
+          "step": 15,
+          "state": [
+            50,
+            77,
+            88
+          ]
+        },
+        {
+          "step": 18,
+          "state": [
+            87,
+            12,
+            3
+          ]
+        },
+        {
+          "step": 21,
+          "state": [
+            71,
+            67,
+            19
+          ]
+        },
+        {
+          "step": 24,
+          "state": [
+            50,
+            38,
+            35
+          ]
+        },
+        {
+          "step": 27,
+          "state": [
+            7,
+            96,
+            51
+          ]
+        },
+        {
+          "step": 30,
+          "state": [
+            30,
+            77,
+            67
+          ]
+        }
+      ]
+    }
+  ]
+}

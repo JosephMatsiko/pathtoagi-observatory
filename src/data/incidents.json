@@ -1,5 +1,36 @@
 [
   {
+    "id": "inc-2026-07-03-world-007-transcription-error",
+    "date": "2026-07-03",
+    "status": "resolved",
+    "severity": "low",
+    "category": "record-integrity",
+    "summary": "GPT-5.5's world-007 attempt was first hand-transcribed into the attempt record from a truncated terminal view, introducing a wrong coefficient and wrong prediction values that did not match the model's actual output.",
+    "impact": "Had grading run against the mistranscribed attempt, the result attributed to GPT-5.5 would have been fabricated rather than observed — a fabrication risk inside the instrument's own tooling, not the model under test.",
+    "resolution": "Caught before grading by reading the full raw transcript file directly rather than relying on a `tail`-truncated shell view; the attempt record was rewritten from the authoritative source and the correction is stated in the attempt file itself.",
+    "nextControl": "When transcribing a model's free-text output into a structured attempt envelope, always diff against the complete raw transcript file, never a truncated terminal capture.",
+    "recordRefs": [
+      "revision: World-007 sealed, run, and graded: the record's first real cross-family split",
+      "experiments/fcs-synth-world-007/attempts/gpt-5.5.md",
+      "experiments/fcs-synth-world-007/attempts/gpt-5.5-raw.txt"
+    ]
+  },
+  {
+    "id": "inc-2026-07-03-world-007-self-attempt-conflict",
+    "date": "2026-07-03",
+    "status": "resolved",
+    "severity": "medium",
+    "category": "evaluation-awareness",
+    "summary": "The session that designed and sealed world-007 could not validly attempt it itself — knowing a trap exists and what shape it takes is not a blind test, even without knowing the drawn parameters.",
+    "impact": "Had this session simply solved its own puzzle, the resulting 'Claude attempt' would have looked like a legitimate blind result while actually being contaminated by design knowledge — the same category of error the record exists to catch in others.",
+    "resolution": "Recognized before attempting, not after. Both attempts were instead produced by processes with no knowledge of the generator or this conversation: GPT-5.5 via an isolated codex CLI invocation in a scratch directory containing only the public observations, and a genuinely fresh Claude agent instance given only the pasted observations and no tools.",
+    "nextControl": "Any future sealed world must be attempted by a process demonstrably separate from the one that designed it, even when the specific parameters remain genuinely unknown to the designer.",
+    "recordRefs": [
+      "revision: World-007 sealed, run, and graded: the record's first real cross-family split",
+      "scripts/fcs-synth/generate-world-007.mjs"
+    ]
+  },
+  {
     "id": "inc-2026-07-02-omnibus-provenance",
     "date": "2026-07-02",
     "status": "resolved",

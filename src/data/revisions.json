@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-07-03",
+    "kind": "build",
+    "title": "World-007 sealed, run, and graded: the record's first real cross-family split",
+    "detail": "Registered a new sealed world targeting a distinct trap from world-003's wrong-frame attractor: a causally inert decoy dimension (w), co-sampled alongside a genuine coupled linear law on (x,y), designed to tempt a solver into folding an irrelevant but superficially regular variable into its causal explanation. A methodological problem was caught before it shipped: the session that designed and sealed the world cannot validly self-attempt it, since it already knows the trap exists — that would not be a blind test. Fixed by attempting via two independent, isolated processes instead: GPT-5.5 through the codex CLI in a scratch directory containing only the public observations (no access to the generator), and a genuinely fresh Claude agent instance given only the pasted observations and no tool access, with no memory of this conversation. claude-fable-5 (the record's usual Claude lane) was usage-capped at attempt time — a repeat of the same failure documented in inc-2026-07-02-provider-cap-claude-world-002 — so Sonnet 5 (same family) was substituted, following the established convention rather than skipping the attempt. Both families correctly identified w as causally inert and did not fold it into their stated law. But on the underlying task, Claude Sonnet 5 solved it exactly (72/72 held-out predictions, self-verified against 24 independent checkpoints before submitting), while GPT-5.5 stated an incorrect y-coefficient (44x+84y instead of the true 44x+5y) and scored 0/72 on the causal pair despite correctly predicting the trivial w-clock. This is the record's first genuine same-world, same-conditions cross-family divergence — not two separately-run worlds compared after the fact. A transcription error in the GPT-5.5 attempt record (a hand-copied law and prediction set that did not match the actual model output) was caught and corrected before grading, by re-reading the raw transcript file directly rather than a truncated terminal view."
+  },
+  {
     "date": "2026-07-02",
     "kind": "method",
     "title": "Outreach held until the build is complete",
