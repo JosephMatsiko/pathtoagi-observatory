@@ -21,11 +21,12 @@
   {
     "id": "call-human-baseline",
     "role": "human baseline contributor",
-    "what": "Play the same sealed worlds the frontier models faced. Your attempt on world-003 becomes verdict-gate-OG-9 baseline data. No account, no name required.",
+    "what": "Take the same test the frontier models faced — now in three tiers, where the two-minute visual tier (no maths, no account) counts on its own. Your attempt becomes verdict-gate-OG-9 baseline data, transcribed into a gate-validated public register.",
     "who": "everyone",
-    "status": "open",
-    "channel": "/play/",
-    "openedAt": "2026-07-02"
+    "status": "engaged",
+    "channel": "/play/ (three tiers, any one counts; anonymous one-click contribution) + homepage call + GitHub issue #2 (live public call) + Dispatch No. 014",
+    "openedAt": "2026-07-02",
+    "livePost": "https://github.com/JosephMatsiko/pathtoagi-observatory/issues/2"
   },
   {
     "id": "call-forkers",

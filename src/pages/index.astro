@@ -64,6 +64,22 @@ const liveForecast = FORECASTS.find((f) => f.id === 'fc-verdict-holds')!;
     </div>
   </section>
 
+  <!-- ── The baseline call: the one thing a visitor can do that the verdict needs ── -->
+  <section class="rise mt-6" style="animation-delay: 100ms;">
+    <a href="/play/" class="surface block p-5 no-underline transition-colors hover:bg-[var(--color-surface-2)]" style="border-color: color-mix(in oklab, var(--color-accent) 35%, var(--color-line));">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <div>
+          <p class="eyebrow" style="color: var(--color-accent);">You can move this record · two minutes, no maths</p>
+          <p class="serif mt-2 text-lg" style="color: var(--color-ink);">
+            Take the same test the machines take. The verdict cannot use any machine
+            score until humans have set the baseline — and the visual version counts on its own.
+          </p>
+        </div>
+        <span class="mono text-xs" style="color: var(--color-accent);">play the test →</span>
+      </div>
+    </a>
+  </section>
+
   <!-- ── The dome ───────────────────────────────────────────── -->
   <section class="rise mt-10" style="animation-delay: 120ms;">
     <p class="eyebrow">The dome · form embodying the metaphor</p>

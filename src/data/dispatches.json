@@ -375,5 +375,28 @@
       "/runs/ and /operate/ — lifecycle now follows actual bundle status",
       "src/data/ontology.ts — review layer replaces court layer"
     ]
+  },
+  {
+    "slug": "014-two-minutes-against-the-machines",
+    "no": 14,
+    "date": "2026-07-03",
+    "kind": "notice",
+    "title": "Two minutes against the machines: the baseline opens to everyone",
+    "standfirst": "Gate OG-9 demands a human baseline before any machine score can bear on the verdict — and until today, the only way to contribute required comfort with modular arithmetic. The Proving Ground is now a tiered menu where a two-minute visual test, open to anyone, counts on its own.",
+    "body": [
+      "The record's most-cited open gap has been its own human baseline. Every graded world so far carries the same caveat: no human comparison, so a machine failure might mean the probe is impossibly hard rather than the machine is weak, and a machine success has no scale. The gate exists precisely so the record cannot quietly skip that question.",
+      "But the only collector was the hard numeric level. That filtered the baseline to people fluent in integer arithmetic — a narrow stratum of the species the gate is supposed to represent. The repair: the Proving Ground is now three tiers, and any one counts alone. The first is three visual puzzles with no numbers anywhere, carrying the exact failure modes the machine probes test — induction, the wrong-frame trap, and underdetermination. Finishing takes about two minutes; contributing the result takes one click and shares nothing beyond what the player chooses.",
+      "Two disclosures, so this notice cannot oversell itself. First, the visual tier is a baseline for the same reasoning moves in visual form, not for the numeric worlds themselves; the record labels every entry by tier so the easy tier can never quietly stand in for the hard gate. Second, the register is empty today, and the page says so. The machinery is built; the humans have to choose to come. The call is public, on the record, and at /play/."
+    ],
+    "plain": [
+      "The project needs ordinary people to take its test, because a machine's score means nothing without knowing how humans do on the same task.",
+      "Until now the test required real maths. Now there is a two-minute picture version anyone can do, and submitting your result is one anonymous click.",
+      "No results have been collected yet — the page shows a live count, currently zero, rather than pretending otherwise."
+    ],
+    "recordRefs": [
+      "src/data/human-baselines.json",
+      "https://github.com/JosephMatsiko/pathtoagi-observatory/issues/2",
+      "revision: The human baseline made universal: three tiers, any one counts"
+    ]
   }
 ]
