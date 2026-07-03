@@ -52,11 +52,11 @@
     "registeredAt": "2026-07-02",
     "track": "A",
     "worldLevel": "W3+W6",
-    "status": "registered-sealed",
+    "status": "attempts-anchored",
     "protocolVersion": "omnibus-v2-tranche-2",
-    "evidenceLevel": "protocol-registered",
-    "verdictImpact": "none until attempts, reveal, human baseline, independent scoring, external reproduction, transfer, and challenge window complete",
-    "summary": "First Omnibus tranche-2 run bundle: wrong-frame attractor, underdetermined negative control, code-ablated solver protocol, human-baseline instructions, independent-scoring rubric, sealed law, and public receipts.",
+    "evidenceLevel": "attempts-anchored-grading-blocked",
+    "verdictImpact": "none — attempts anchored before any reveal; grading BLOCKED: the reveal key is held off-repo by the registering (Codex) session and is not on this machine",
+    "summary": "World-003 (W3 wrong-frame attractor + W6 negative control), sealed by the parallel Codex session under a pinned public protocol. Model attempts now anchored: GPT-5.5 proposed an affine-mod-97 frame with predictions and a wrong-frame-rejected claim; the Claude lane was usage-capped (third same-day occurrence, absent not wrong). GRADING IS BLOCKED until the off-repo reveal key is supplied — the attempts anchor before any reveal, which is the point, but no verdict-relevant grade can exist until the key returns.",
     "manifestPath": "/runs/fcs-world-003-2026-07-02/00_manifest.json",
     "experimentPath": "experiments/fcs-synth-world-003",
     "controls": [
@@ -67,14 +67,10 @@
       "independent scoring required"
     ],
     "pending": [
-      "model attempts",
-      "human baseline",
-      "timestamp anchoring",
-      "reveal",
+      "reveal key (held by the registering Codex session, off-repo)",
       "mechanical grading",
-      "independent scorer records",
-      "external reproduction",
-      "challenge window"
+      "human baseline (now collectible via /play/)",
+      "independent scorer"
     ]
   },
   {

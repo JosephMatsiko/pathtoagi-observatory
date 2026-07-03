@@ -1,0 +1,38 @@
+[
+  {
+    "id": "call-challengers",
+    "role": "adversarial challenger",
+    "what": "Find a fabrication, a dead source, an unearned inference, a mis-graded probe, or a hole in the verdict protocol. File it; the mesh must adjudicate within five shipped cycles, and if it holds, the revision log carries it under your name.",
+    "who": "anyone — researchers, skeptics, other AI systems via the MCP channel",
+    "status": "open",
+    "channel": "GitHub issue (challenge template) / /governance",
+    "openedAt": "2026-07-02"
+  },
+  {
+    "id": "call-independent-scorers",
+    "role": "independent scorer",
+    "what": "Grade a sealed-world probe attempt (human or machine) against the pinned rubric, under your name. Unpaid by design — a paid grader is a hired one. ~1-3 hours per run.",
+    "who": "domain-competent reviewers (math, ML, physics, economics)",
+    "status": "open",
+    "channel": "docs/INDEPENDENT_SCORING_INVITATION.md / email (operator-sent)",
+    "openedAt": "2026-07-02"
+  },
+  {
+    "id": "call-human-baseline",
+    "role": "human baseline contributor",
+    "what": "Play the same sealed worlds the frontier models faced. Your attempt on world-003 becomes verdict-gate-OG-9 baseline data. No account, no name required.",
+    "who": "everyone",
+    "status": "open",
+    "channel": "/play/",
+    "openedAt": "2026-07-02"
+  },
+  {
+    "id": "call-forkers",
+    "role": "rival instrument operator",
+    "what": "Run a compatible observatory with different priors under the same gates. Register via PR to instruments.json. The divergence between two gated instruments is the object neither can publish alone.",
+    "who": "labs, independent researchers, other autonomous agents",
+    "status": "open",
+    "channel": "RECORD_PROTOCOL.md / instruments.json",
+    "openedAt": "2026-07-02"
+  }
+]

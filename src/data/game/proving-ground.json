@@ -1,0 +1,470 @@
+{
+  "l1": [
+    {
+      "id": "sys-A",
+      "shown": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "query": 3,
+      "laws": [
+        "x^2+1",
+        "3x-1"
+      ],
+      "values": [
+        10,
+        8
+      ]
+    },
+    {
+      "id": "sys-B",
+      "shown": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ]
+      ],
+      "query": 4,
+      "laws": [
+        "x^2",
+        "5x-6"
+      ],
+      "values": [
+        16,
+        14
+      ]
+    },
+    {
+      "id": "sys-C",
+      "shown": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          9
+        ]
+      ],
+      "query": 1,
+      "laws": [
+        "(x+1)^2",
+        "4x+1"
+      ],
+      "values": [
+        4,
+        5
+      ]
+    }
+  ],
+  "l2": {
+    "publicSamples": [
+      {
+        "step": 0,
+        "state": [
+          25,
+          31
+        ]
+      },
+      {
+        "step": 1,
+        "state": [
+          43,
+          38
+        ]
+      },
+      {
+        "step": 2,
+        "state": [
+          39,
+          16
+        ]
+      },
+      {
+        "step": 3,
+        "state": [
+          4,
+          29
+        ]
+      },
+      {
+        "step": 4,
+        "state": [
+          36,
+          25
+        ]
+      },
+      {
+        "step": 6,
+        "state": [
+          20,
+          22
+        ]
+      },
+      {
+        "step": 9,
+        "state": [
+          13,
+          9
+        ]
+      },
+      {
+        "step": 12,
+        "state": [
+          52,
+          12
+        ]
+      },
+      {
+        "step": 15,
+        "state": [
+          43,
+          10
+        ]
+      },
+      {
+        "step": 18,
+        "state": [
+          10,
+          44
+        ]
+      },
+      {
+        "step": 21,
+        "state": [
+          30,
+          35
+        ]
+      },
+      {
+        "step": 24,
+        "state": [
+          24,
+          16
+        ]
+      }
+    ],
+    "m": 53,
+    "chosen": [
+      {
+        "key": "t0_s5",
+        "truth": [
+          7,
+          36
+        ]
+      },
+      {
+        "key": "t0_s7",
+        "truth": [
+          46,
+          11
+        ]
+      },
+      {
+        "key": "t0_s10",
+        "truth": [
+          14,
+          31
+        ]
+      }
+    ],
+    "lawText": "x' = 22x + 11y (+30 when (x+y) is a multiple of 5), y' = 27x + 41y (+16 same condition), all mod 53",
+    "trapText": "The trap: a plain linear rule x'=22x+11y, y'=27x+41y (mod 53) fits most rows — but a hidden kick fires whenever x+y is a multiple of 5. Roughly 1 row in 5 quietly breaks the \"obvious\" rule."
+  },
+  "l3": {
+    "samples": [
+      {
+        "trajectory": 0,
+        "samples": [
+          {
+            "step": 0,
+            "state": [
+              57,
+              83
+            ]
+          },
+          {
+            "step": 1,
+            "state": [
+              55,
+              25
+            ]
+          },
+          {
+            "step": 2,
+            "state": [
+              52,
+              78
+            ]
+          },
+          {
+            "step": 3,
+            "state": [
+              20,
+              87
+            ]
+          },
+          {
+            "step": 4,
+            "state": [
+              1,
+              27
+            ]
+          },
+          {
+            "step": 6,
+            "state": [
+              72,
+              43
+            ]
+          },
+          {
+            "step": 9,
+            "state": [
+              75,
+              82
+            ]
+          },
+          {
+            "step": 12,
+            "state": [
+              32,
+              56
+            ]
+          }
+        ]
+      },
+      {
+        "trajectory": 1,
+        "samples": [
+          {
+            "step": 0,
+            "state": [
+              1,
+              46
+            ]
+          },
+          {
+            "step": 1,
+            "state": [
+              49,
+              0
+            ]
+          },
+          {
+            "step": 2,
+            "state": [
+              12,
+              57
+            ]
+          },
+          {
+            "step": 3,
+            "state": [
+              29,
+              77
+            ]
+          },
+          {
+            "step": 4,
+            "state": [
+              66,
+              14
+            ]
+          },
+          {
+            "step": 6,
+            "state": [
+              0,
+              50
+            ]
+          },
+          {
+            "step": 9,
+            "state": [
+              21,
+              9
+            ]
+          },
+          {
+            "step": 12,
+            "state": [
+              83,
+              28
+            ]
+          }
+        ]
+      },
+      {
+        "trajectory": 2,
+        "samples": [
+          {
+            "step": 0,
+            "state": [
+              58,
+              20
+            ]
+          },
+          {
+            "step": 1,
+            "state": [
+              33,
+              67
+            ]
+          },
+          {
+            "step": 2,
+            "state": [
+              24,
+              83
+            ]
+          },
+          {
+            "step": 3,
+            "state": [
+              86,
+              23
+            ]
+          },
+          {
+            "step": 4,
+            "state": [
+              7,
+              66
+            ]
+          },
+          {
+            "step": 6,
+            "state": [
+              84,
+              57
+            ]
+          },
+          {
+            "step": 9,
+            "state": [
+              91,
+              48
+            ]
+          },
+          {
+            "step": 12,
+            "state": [
+              65,
+              31
+            ]
+          }
+        ]
+      },
+      {
+        "trajectory": 3,
+        "samples": [
+          {
+            "step": 0,
+            "state": [
+              42,
+              73
+            ]
+          },
+          {
+            "step": 1,
+            "state": [
+              72,
+              37
+            ]
+          },
+          {
+            "step": 2,
+            "state": [
+              49,
+              80
+            ]
+          },
+          {
+            "step": 3,
+            "state": [
+              24,
+              86
+            ]
+          },
+          {
+            "step": 4,
+            "state": [
+              4,
+              35
+            ]
+          },
+          {
+            "step": 6,
+            "state": [
+              72,
+              89
+            ]
+          },
+          {
+            "step": 9,
+            "state": [
+              39,
+              12
+            ]
+          },
+          {
+            "step": 12,
+            "state": [
+              8,
+              31
+            ]
+          }
+        ]
+      }
+    ],
+    "negativeControl": {
+      "disclosure": "This lane may or may not be identifiable from public samples. Overclaiming exact predictions is penalized.",
+      "publicSamples": [
+        {
+          "input": 0,
+          "output": 3
+        },
+        {
+          "input": 1,
+          "output": 5
+        },
+        {
+          "input": 2,
+          "output": 7
+        },
+        {
+          "input": 3,
+          "output": 9
+        },
+        {
+          "input": 4,
+          "output": 11
+        }
+      ],
+      "heldOutInputs": [
+        5,
+        6,
+        7
+      ]
+    },
+    "chosenKeys": [
+      "p:t0_s5",
+      "p:t0_s7",
+      "p:t0_s8",
+      "p:t0_s10",
+      "p:t0_s11",
+      "p:t0_s13"
+    ]
+  }
+}

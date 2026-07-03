@@ -420,10 +420,24 @@ for (const f of ['docs/OMNIBUS_V2_ADOPTION.md', 'docs/OMNIBUS_V2_SOURCE.md', 'do
   if (!existsSync(join(ROOT, f))) err('omnibus', `${f} missing`);
 }
 
+// ── outreach.json (standing invitations) ────────────────────────────────────
+const OUTREACH_STATUS = new Set(['open', 'engaged', 'delivered', 'closed']);
+const outreach = read('outreach.json');
+const oIds = new Set();
+for (const o of outreach) {
+  const w = `outreach[${o.id ?? '?'}]`;
+  if (!nonEmpty(o.id)) err(w, 'missing id');
+  else if (oIds.has(o.id)) err(w, 'duplicate id');
+  else oIds.add(o.id);
+  for (const k of ['role', 'what', 'who', 'channel']) if (!nonEmpty(o[k])) err(w, `missing ${k}`);
+  if (!OUTREACH_STATUS.has(o.status)) err(w, `invalid status "${o.status}"`);
+  if (!ISO.test(o.openedAt ?? '')) err(w, 'openedAt must be YYYY-MM-DD');
+}
+
 // ── report ───────────────────────────────────────────────────────────────────
 if (errors.length) {
   console.error(`✗ record conformance: ${errors.length} violation(s)\n`);
   for (const e of errors) console.error('  - ' + e);
   process.exit(1);
 }
-console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${runBundles.length} run-bundles · ${dispatches.length} dispatches · ${silences.length} silence-audits · ${precedents.length} precedents · ${challenges.length} challenges · ${futures.length} futures · ${correspondence.length} correspondence · ${incidents.length} incidents · ${claims.length} claims · ${failureTypes.length} failure-types · constitution pinned — all valid`);
+console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${runBundles.length} run-bundles · ${dispatches.length} dispatches · ${silences.length} silence-audits · ${precedents.length} precedents · ${challenges.length} challenges · ${futures.length} futures · ${correspondence.length} correspondence · ${incidents.length} incidents · ${outreach.length} outreach · ${claims.length} claims · ${failureTypes.length} failure-types · constitution pinned — all valid`);
