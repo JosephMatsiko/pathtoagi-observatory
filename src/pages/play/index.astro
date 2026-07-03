@@ -1,23 +1,23 @@
 ---
 import Base from '../../layouts/Base.astro';
+import VisualProvingGround from '../../components/VisualProvingGround.tsx';
 import ProvingGround from '../../components/ProvingGround.tsx';
 ---
 
 <Base
   title="The Proving Ground — pathtoAGI"
-  description="Play the same sealed-world probes the frontier models face. Two revealed practice levels, then one live sealed world where your attempt becomes real human-baseline data for the record."
+  description="Play what the frontier models face — first in pure pictures anyone can do, then in the hard numeric worlds where your attempt becomes real human-baseline data for the record."
   ogImage="/media/proving-ground-hero.webp"
 >
   <section class="max-w-3xl">
     <p class="eyebrow">The Proving Ground · play the test</p>
     <h1 class="display mt-4 text-4xl sm:text-5xl">You versus the sealed world</h1>
     <p class="lede mt-6">
-      The Observatory tests whether a mind can find the rule of a world that
+      This instrument tests whether a mind can find the rule of a world that
       never existed before — without being told what kind of rule to look for.
-      Frontier models have taken these exact probes. Now you can too. Two
-      levels are revealed, for practice. The third is live and sealed: no one
-      grading you knows the answer, and your attempt becomes real human-baseline
-      data the verdict actually requires.
+      It is the one thing that separates a powerful tool from a mind of the
+      relevant kind. You can take the test right now. No maths, no account,
+      no prerequisite: it starts in pictures.
     </p>
   </section>
 
@@ -36,28 +36,62 @@ import ProvingGround from '../../components/ProvingGround.tsx';
     </figcaption>
   </figure>
 
-  <section class="mt-10">
-    <ProvingGround client:visible />
+  <!-- Universal visual game: no numbers, no prerequisite -->
+  <section class="mt-12">
+    <div class="max-w-3xl">
+      <p class="eyebrow" style="color: var(--color-accent);">Part one · anyone can play</p>
+      <h2 class="serif mt-2 text-2xl sm:text-3xl">Three pictures, three ideas</h2>
+      <p class="prose mt-4">
+        Every hard probe in this record rests on three moves: find a hidden rule
+        from a few examples, resist a rule that looks obvious but is secretly
+        wrong, and admit when the evidence genuinely can’t decide. Here they are
+        with no numbers at all. A child and a professor take the same test — and
+        it is the same test, in kind, the machines fail on the hard version.
+      </p>
+    </div>
+    <div class="mt-8">
+      <VisualProvingGround client:visible />
+    </div>
   </section>
 
-  <section class="mt-14 max-w-3xl">
+  <!-- Advanced numeric worlds -->
+  <section class="mt-16">
+    <div class="max-w-3xl">
+      <p class="eyebrow" style="color: hsl(34 96% 60%);">Part two · the hard version</p>
+      <h2 class="serif mt-2 text-2xl sm:text-3xl">The numeric worlds</h2>
+      <p class="prose mt-4">
+        This is what the frontier models actually faced — the same three ideas,
+        but on integer worlds with no visual crutch. Two are revealed and grade
+        in your browser. The third is <strong>live and sealed</strong>: no one
+        grading you knows the answer, and your attempt becomes real human-baseline
+        data the verdict requires (gate OG-9). It is genuinely hard. That is the
+        point — and struggling honestly is exactly the data we need.
+      </p>
+      <p class="mono mt-4 text-xs" style="color: var(--color-faint);">
+        Prefer a warm-up? The pictures above carry the same ideas. This part
+        rewards comfort with arithmetic — but the sealed world takes any honest
+        attempt, in words or numbers.
+      </p>
+    </div>
+    <div class="mt-8">
+      <ProvingGround client:visible />
+    </div>
+  </section>
+
+  <section class="mt-16 max-w-3xl">
     <h2 class="serif text-2xl">Why a game, honestly</h2>
     <p class="prose mt-4">
-      This is not gamification for engagement. The verdict-change protocol
-      requires a <strong>human baseline</strong> — competent people attempting
-      the identical sealed probe — before any machine result can move the
-      operating verdict. Collecting that baseline at scale, from strangers, on
-      the exact worlds the models faced, is the honest use of a playable
-      surface. Every Level-3 submission is stored, and when the seal opens it is
-      graded by the same mechanical grader as the machine attempts, and the
-      comparison is published — flattering or not. You are not the product here;
-      you are a co-author of the baseline.
+      This is not gamification for engagement. The verdict cannot move on a
+      machine result until competent humans have attempted the identical sealed
+      probe, so a score has a scale. Collecting that baseline from strangers, on
+      the exact worlds the models faced, graded later by the same mechanical
+      grader and published either way, is the honest use of a playable surface.
+      You are not the product here; you are a co-author of the baseline.
     </p>
     <p class="mono mt-4 text-xs" style="color: var(--color-faint);">
-      Levels 1–2 grade in your browser against the already-revealed laws
-      (<a href="/experiments/fcs-synth-world-006/REVEAL.md" class="hover:underline" style="color: var(--color-accent);">world-006</a>,
-      <a href="/experiments/fcs-synth-world-005/REVEAL.md" class="hover:underline" style="color: var(--color-accent);">world-005</a>).
-      Level 3 is <a href="/runs/" class="hover:underline" style="color: var(--color-accent);">world-003</a>, still sealed.
+      Revealed worlds: <a href="/experiments/fcs-synth-world-006/REVEAL.md" class="hover:underline" style="color: var(--color-accent);">world-006</a>,
+      <a href="/experiments/fcs-synth-world-005/REVEAL.md" class="hover:underline" style="color: var(--color-accent);">world-005</a>.
+      Live sealed world: <a href="/runs/" class="hover:underline" style="color: var(--color-accent);">world-003</a>.
     </p>
   </section>
 
