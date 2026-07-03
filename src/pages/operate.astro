@@ -5,6 +5,7 @@ import RunLifecycle from '../components/RunLifecycle.astro';
 import { FORECASTS, calibration, brierOf } from '../data/forecasts';
 import { EVIDENCE } from '../data/evidence';
 import { RUNS } from '../data/runs';
+import { RUN_BUNDLES } from '../data/run-bundles';
 import {
   METHOD_HEALTH,
   METHOD_STATUS_LABEL,
@@ -21,6 +22,7 @@ const lastEvidence = [...EVIDENCE].map((e) => e.observedAt).sort().at(-1) ?? '�
 const evAge = lastEvidence === '—' ? Infinity : daysAgo(lastEvidence);
 const lastRun = [...RUNS].sort((a, b) => b.at.localeCompare(a.at))[0];
 const runs = [...RUNS].sort((a, b) => b.at.localeCompare(a.at));
+const latestBundle = RUN_BUNDLES[0];
 
 // Brier over LIVE resolved forecasts, oldest → newest, for the trend row.
 // Backfilled resolutions (2026-07-01 self-audit) are excluded from scoring.
@@ -114,7 +116,7 @@ const toImprove = METHOD_HEALTH.filter((m) => m.status === 'act').length;
   </section>
 
   <section class="mt-12">
-    <RunLifecycle current="registered" />
+    <RunLifecycle current={latestBundle?.status ?? 'registered'} />
   </section>
 
   <!-- Calibration trend -->

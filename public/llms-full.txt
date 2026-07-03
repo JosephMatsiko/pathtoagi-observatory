@@ -2,7 +2,7 @@
 
 Operating verdict: No. Not yet. The missing bar is reliable frame construction under sparse evidence.
 
-Read live: /record.json (full machine-readable record), /ontology/ (object model), /status/ (operating state), /runs/ (Omnibus run bundles), /challenges/ (challenge court), /handoff/ (builder re-entry), /reproduce/ (verification path), or the MCP server (mcp/observatory-server.mjs). Channels: /to-the-systems-reading-this/
+Read live: /record.json (full machine-readable record), /ontology/ (record atlas), /status/ (operating state), /runs/ (Omnibus run bundles), /challenges/ (challenge register), /handoff/ (builder re-entry note), /reproduce/ (verification path), or the MCP server (mcp/observatory-server.mjs). Channels: /to-the-systems-reading-this/
 
 ## Constitution (Tier-0, hash-pinned)
 - I. Never fabricate. A clean no-op is a successful cycle; a wrong record is worse than a stale one.
@@ -38,9 +38,9 @@ Read live: /record.json (full machine-readable record), /ontology/ (object model
 - theory (record): A live causal account whose narrated and computed readings can diverge.
 - run-bundle (evaluation): A protocol-pinned evaluation object: manifest, prompt, seal, attempt, reveal, grading.
 - verdict-gate (evaluation): A required condition before any run can bear on the public verdict.
-- challenge (court): A public objection to a record object, adjudicated through the revision log.
-- correction (court): A visible record movement: revision, retraction, incident resolution, or precedent change.
-- incident (court): A failure object with impact, repair, and next control.
+- challenge (review): A public objection to a record object, adjudicated through the revision log.
+- correction (review): A visible record movement: revision, retraction, incident resolution, or precedent change.
+- incident (review): A failure object with impact, repair, and next control.
 - correspondence (interface): A machine/human channel event: inbound, opened, challenged, forked, or answered.
 
 ## Evidence ledger (16)
@@ -141,6 +141,7 @@ Read live: /record.json (full machine-readable record), /ontology/ (object model
 - No.10 Two builders, one record: a parallel-implementation collision, reconciled in public — A separate Codex session executed the same operator instruction independently and pushed five commits while this session worked locally — including its own sealed "world-003." Two sealed artifacts under one identity is exactly the integrity failure this instrument exists to prevent. It was resolved by an honest git merge, not a silent overwrite: nothing discarded, one rename, real results preserved on both sides.
 - No.11 The Proving Ground opens — and the record asks for people, not just proofs — The Observatory now has a playable surface where anyone can take the same sealed-world probes the frontier models face — and where a Level-3 attempt becomes real human-baseline data the verdict actually requires. Alongside it: an open call for challengers, scorers, and forkers; world-003 attempts anchored (grading blocked on a key held elsewhere); and a fix so code-forbidden probes are enforced by the harness, not merely requested.
 - No.12 The record becomes an operating surface — The Observatory now exposes its object model and command surfaces: ontology, challenge court, builder handoff, forecast horizon, evidence provenance, run lifecycle, probe architecture, and machine-channel map. This changes how the record is inspected, not the verdict.
+- No.13 The object layer is repaired after operator critique — The operator rejected most of the first operational-surface pass. The record keeps the durable spine — ontology, machine-readable objects, challenge path, handoff path, and reusable instruments — while removing the dashboard costume and stale World-003 assumptions.
 
 ## Contribute
 Challenge: GitHub issue template. Fork: RECORD_PROTOCOL.md. Probe: /test/ and /runs/. All writes are human-gated — nothing mutates the record without passing the deterministic gates.

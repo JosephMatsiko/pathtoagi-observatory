@@ -3,15 +3,16 @@ import { PROBES, V02_PROBES } from '../data/frame-construction';
 import { RUN_BUNDLES } from '../data/run-bundles';
 
 const worldLevels = ['W0', 'W1', 'W2', 'W3', 'W4', 'W5', 'W6'];
+const latestBundle = RUN_BUNDLES[0];
 ---
 
 <section class="ops-frame p-5">
   <div class="flex flex-wrap items-baseline justify-between gap-3">
     <div>
-      <p class="eyebrow">Probe architecture</p>
-      <h2 class="serif mt-1 text-2xl" style="color: var(--color-ink);">Frame construction under gates</h2>
+      <p class="eyebrow">Probe families</p>
+      <h2 class="serif mt-1 text-2xl" style="color: var(--color-ink);">Ways the record can be surprised</h2>
     </div>
-    <a href="/runs/" class="mono text-xs link-accent">{RUN_BUNDLES.length} run bundle</a>
+    <a href="/runs/" class="mono text-xs link-accent">{RUN_BUNDLES.length} run bundle{RUN_BUNDLES.length === 1 ? '' : 's'}</a>
   </div>
   <div class="mt-6 grid gap-5 lg:grid-cols-[1fr_12rem_1fr] lg:items-start">
     <div class="space-y-2">
@@ -48,7 +49,7 @@ const worldLevels = ['W0', 'W1', 'W2', 'W3', 'W4', 'W5', 'W6'];
     </div>
   </div>
   <p class="mt-5 text-sm" style="color: var(--color-muted);">
-    The live apex is World-003: W3 wrong-frame attractor plus W6 underdetermined
-    control, sealed until attempts are anchored.
+    Current front: {latestBundle?.title}. World levels mark trap families, not a
+    ladder of prestige.
   </p>
 </section>

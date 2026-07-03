@@ -10,15 +10,15 @@ const recentCorrections = REVISIONS.filter((r) => r.kind === 'record' || r.retra
 <section class="ops-frame overflow-hidden">
   <div class="grid gap-0 lg:grid-cols-[0.9fr_1.1fr_0.85fr]">
     <div class="p-5">
-      <p class="eyebrow">Challenge queue</p>
+      <p class="eyebrow">Open objections</p>
       <p class="tabular mt-2 text-4xl" style={`color: ${open.length ? 'var(--color-verdict)' : 'var(--color-ink)'}`}>{open.length}</p>
       <p class="mt-2 text-sm" style="color: var(--color-muted);">
-        open public challenges. Empty is not victory; it is the next weakness to repair.
+        public challenges waiting. Empty is not victory; it is an invitation to read harder.
       </p>
-      <a href="https://github.com/JosephMatsiko/pathtoagi-observatory/issues/new?template=challenge.md" class="mt-4 inline-block mono text-xs link-accent">file challenge</a>
+      <a href="https://github.com/JosephMatsiko/pathtoagi-observatory/issues/new?template=challenge.md" class="mt-4 inline-block mono text-xs link-accent">file objection</a>
     </div>
     <div class="border-t p-5 lg:border-l lg:border-r lg:border-t-0 hairline">
-      <p class="eyebrow">Adjudication rail</p>
+      <p class="eyebrow">How objection becomes record</p>
       <ol class="mt-4 space-y-3">
         {['filed', 'target named', 'evidence packet', 'mesh review', 'ruling', 'revision if upheld'].map((step, index) => (
           <li class="flex items-center gap-3">
@@ -29,7 +29,7 @@ const recentCorrections = REVISIONS.filter((r) => r.kind === 'record' || r.retra
       </ol>
     </div>
     <div class="border-t p-5 lg:border-t-0 hairline">
-      <p class="eyebrow">Repair memory</p>
+      <p class="eyebrow">Repairs already paid for</p>
       <p class="mt-2 text-sm" style="color: var(--color-muted);">{INCIDENTS.length} incident objects constrain future work.</p>
       <ul class="mt-4 space-y-3">
         {recentCorrections.map((r) => (

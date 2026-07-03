@@ -30,7 +30,7 @@ const latest = [...RUN_BUNDLES].sort((a, b) => b.registeredAt.localeCompare(a.re
         decoding="async"
       />
       <figcaption class="px-4 py-3 text-xs" style="color: var(--color-faint);">
-        Visual metaphor for World-003: sealed object, public protocol, answer withheld.
+        Visual metaphor for the sealed-world method: public protocol before public answer.
       </figcaption>
     </figure>
   </section>
@@ -54,7 +54,7 @@ const latest = [...RUN_BUNDLES].sort((a, b) => b.registeredAt.localeCompare(a.re
   </section>
 
   <section class="mt-10">
-    <RunLifecycle current="registered" />
+    <RunLifecycle current={latest?.status ?? 'registered'} />
   </section>
 
   <section class="mt-14 space-y-5">

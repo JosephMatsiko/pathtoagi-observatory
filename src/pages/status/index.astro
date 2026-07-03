@@ -29,6 +29,10 @@ const openChallenges = CHALLENGES.filter((c) => c.status === 'open');
 const openIncidents = INCIDENTS.filter((i) => i.status === 'open');
 const containedIncidents = INCIDENTS.filter((i) => i.status === 'contained');
 const activeMethodIssues = METHOD_HEALTH.filter((m) => m.status !== 'ok');
+const latestBundle = RUN_BUNDLES[0];
+const nextActions = latestBundle?.pending?.length
+  ? latestBundle.pending
+  : ['human baseline', 'independent scorer', 'external reproduction', 'challenge window'];
 
 const statusColor =
   openIncidents.length > 0 || due.length > 0
@@ -51,7 +55,7 @@ const statusLabel =
   description="Public operating status for the Observatory: record freshness, calibration, incidents, challenges, method health, and reproduction readiness."
 >
   <section class="max-w-3xl">
-    <p class="eyebrow">Status · public operating readout</p>
+    <p class="eyebrow">Status · public record readout</p>
     <h1 class="display mt-4 text-4xl sm:text-5xl">The instrument's state</h1>
     <p class="lede mt-6">
       A compact status surface for the record itself: what is fresh, what is
@@ -122,7 +126,7 @@ const statusLabel =
     <div class="ops-frame p-5">
       <div class="flex flex-wrap items-baseline justify-between gap-3">
         <div>
-          <p class="eyebrow">Operations picture</p>
+          <p class="eyebrow">Attention register</p>
           <h2 class="serif mt-1 text-2xl" style="color: var(--color-ink);">What requires attention</h2>
         </div>
         <a href="/handoff/" class="mono text-xs link-accent">handoff</a>
@@ -142,9 +146,10 @@ const statusLabel =
       </div>
     </div>
     <div class="ops-frame p-5">
-      <p class="eyebrow">Current action path</p>
+      <p class="eyebrow">Next honest work</p>
+      <p class="mono mt-2 text-xs" style="color: var(--color-faint);">{latestBundle?.id}</p>
       <ol class="mt-4 space-y-3">
-        {['execute World-003 attempt', 'collect human baseline', 'anchor before reveal', 'grade and score independently', 'open challenge window'].map((step, index) => (
+        {nextActions.map((step, index) => (
           <li class="flex gap-3">
             <span class="mono text-xs" style="color: var(--color-accent);">{String(index + 1).padStart(2, '0')}</span>
             <span class="text-sm" style="color: var(--color-ink-dim);">{step}</span>

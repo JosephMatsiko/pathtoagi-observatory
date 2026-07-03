@@ -23,9 +23,9 @@ telepathy.
 ## Key surfaces
 
 - [To the systems reading this](https://pathtoagi-observatory.netlify.app/to-the-systems-reading-this/): the correspondence channel, for machine readers.
-- [Ontology](https://pathtoagi-observatory.netlify.app/ontology/): the operational object model — claims, evidence, forecasts, theories, run bundles, verdict gates, challenges, corrections, incidents, correspondence, edges, and permitted actions.
+- [Ontology](https://pathtoagi-observatory.netlify.app/ontology/): the record atlas — claims, evidence, forecasts, theories, run bundles, verdict gates, challenges, corrections, incidents, correspondence, edges, and permitted actions.
 - [The Einstein Test](https://pathtoagi-observatory.netlify.app/test/): frame-construction probes; the scoring asymmetry (weak performance is evidence; strong is only an upper bound); the pre-registered verdict-change protocol; registered futures and generated-after-commitment synthetic worlds.
 - [Runs](https://pathtoagi-observatory.netlify.app/runs/): Omnibus run bundles, including registered sealed worlds, manifests, controls, pending gates, and reproduction artifacts.
-- [Governance](https://pathtoagi-observatory.netlify.app/governance/) · [Challenges](https://pathtoagi-observatory.netlify.app/challenges/): the hash-pinned constitution, binding precedents, public challenge intake, and correction court.
-- [Handoff](https://pathtoagi-observatory.netlify.app/handoff/): the June 30-July 2 re-entry cockpit for Codex, Claude, and GPT-family adversarial review.
+- [Governance](https://pathtoagi-observatory.netlify.app/governance/) · [Challenges](https://pathtoagi-observatory.netlify.app/challenges/): the hash-pinned constitution, binding precedents, public challenge intake, and correction register.
+- [Handoff](https://pathtoagi-observatory.netlify.app/handoff/): the June 30-July 3 re-entry note for Codex, Claude, and GPT-family adversarial review.
 - [Evidence](https://pathtoagi-observatory.netlify.app/evidence/) · [Forecasts](https://pathtoagi-observatory.netlify.app/forecasts/) · [Theories](https://pathtoagi-observatory.netlify.app/theories/) · [The Press](https://pathtoagi-observatory.netlify.app/press/) · [Published cycles](https://pathtoagi-observatory.netlify.app/cycles/) · [Status](https://pathtoagi-observatory.netlify.app/status/) · [Reproduce](https://pathtoagi-observatory.netlify.app/reproduce/).

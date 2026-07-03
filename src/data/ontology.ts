@@ -13,7 +13,7 @@ export type OntologyObject =
 export interface OntologyNode {
   id: OntologyObject;
   label: string;
-  layer: 'record' | 'evaluation' | 'court' | 'interface';
+  layer: 'record' | 'evaluation' | 'review' | 'interface';
   description: string;
   href: string;
   state: string;
@@ -84,7 +84,7 @@ export const ONTOLOGY_NODES: OntologyNode[] = [
   {
     id: 'challenge',
     label: 'Challenge',
-    layer: 'court',
+    layer: 'review',
     description: 'A public objection to a record object, adjudicated through the revision log.',
     href: '/challenges/',
     state: '0 open',
@@ -93,7 +93,7 @@ export const ONTOLOGY_NODES: OntologyNode[] = [
   {
     id: 'correction',
     label: 'Correction',
-    layer: 'court',
+    layer: 'review',
     description: 'A visible record movement: revision, retraction, incident resolution, or precedent change.',
     href: '/log/',
     state: '38 revisions',
@@ -102,7 +102,7 @@ export const ONTOLOGY_NODES: OntologyNode[] = [
   {
     id: 'incident',
     label: 'Incident',
-    layer: 'court',
+    layer: 'review',
     description: 'A failure object with impact, repair, and next control.',
     href: '/status/',
     state: '3 objects',

@@ -349,5 +349,31 @@
       "/status/, /runs/, /test/, /evidence/, /forecasts/, /governance/, /operate/, /to-the-systems-reading-this/ — operational surfaces added",
       "revision: \"Operational ontology surfaces added\""
     ]
+  },
+  {
+    "slug": "013-the-object-layer-is-repaired",
+    "no": 13,
+    "date": "2026-07-03",
+    "kind": "notice",
+    "title": "The object layer is repaired after operator critique",
+    "standfirst": "The operator rejected most of the first operational-surface pass. The record keeps the durable spine — ontology, machine-readable objects, challenge path, handoff path, and reusable instruments — while removing the dashboard costume and stale World-003 assumptions.",
+    "body": [
+      "The operator's review of Dispatch 012 was short and binding: some of it was good; most of it was not. The record accepts that critique. A public instrument that can correct fabricated evidence can also correct its own taste, language, and posture.",
+      "What stays: the typed ontology exposed through record.json, the MCP get_ontology tool, the /ontology atlas, the challenge register, the handoff note, and the lifecycle, provenance, forecast, probe, and machine-channel instruments. Those pieces make the record easier to inspect and easier for returning builders to resume.",
+      "What changes: the site stops cosplaying a command room. The home page no longer interrupts the first reading with an ontology graph. Visible language shifts away from operating system, cockpit, court, and command surfaces toward atlas, register, handoff note, and record trail. The heavy gridded panels are softened. Status, Runs, Operate, Test, and Handoff now derive their current front from the latest run bundle, World-007, rather than hard-coding stale World-003 assumptions.",
+      "This is not a result and not a verdict movement. It is a repair to the interface between the record and its readers. The spine remains; the costume comes off."
+    ],
+    "plain": [
+      "The previous design pass had useful structure but the wrong feel. It looked too much like a generic command dashboard.",
+      "The repair keeps the useful parts — the object model, machine-readable data, challenge path, handoff path, and run/evidence/forecast tools — but makes the visible site quieter and more native to the Observatory.",
+      "It also fixes stale copy that still treated World-003 as the current front even after World-007 had entered the record."
+    ],
+    "recordRefs": [
+      "revision: \"Operator critique: the object layer kept its spine, lost the costume\"",
+      "/ontology/ — atlas language and softened object map",
+      "/status/ and /handoff/ — current front now derived from latest run bundle",
+      "/runs/ and /operate/ — lifecycle now follows actual bundle status",
+      "src/data/ontology.ts — review layer replaces court layer"
+    ]
   }
 ]
