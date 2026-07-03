@@ -1,4 +1,4 @@
-# Seal — world-003
+# Seal — world-005
 
 - law sha256: `9655f66c4903361c2567777846f6bbb3cdb7d8ff60422cc9e1f70640670f8945`
 - W3: a naive linear fit is the deliberate wrong-frame attractor; the true law is conditional.
