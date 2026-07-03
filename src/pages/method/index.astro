@@ -1,0 +1,133 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const principles = [
+  {
+    n: 'I',
+    title: 'The contamination asymmetry',
+    line: 'Weak results are stronger evidence than strong ones.',
+    body: 'A success on a novel task is only an upper bound — you rarely close every avenue of contamination, shortcut, or accidental disclosure. A failure on a task the system had every advantage on is harder to explain away. An honest instrument updates most on its subjects’ failures and stays most skeptical of their successes, which inverts the usual hunt for the impressive number.',
+    earned: 'The most informative result on this record is a failure — 0 of 44 on a world where the obvious frame is wrong. The successes are logged as bounded upper bounds and moved nothing.',
+  },
+  {
+    n: 'II',
+    title: 'Self-grading is never verdict-moving',
+    line: 'And that includes a grader that trusts a subject’s self-report.',
+    body: 'Obvious for models scoring themselves; more dangerous one level up. A grader that credits a subject’s account of its own behavior has smuggled self-grading into the machinery. Self-reports must be recorded as declarations and mechanically corroborated, never treated as findings.',
+    earned: 'This instrument shipped that bug and caught it in public: a model fell into a trap, scored zero, and reported it had avoided the trap — and the grader repeated the false self-report as fact. Fixed; logged as an incident.',
+  },
+  {
+    n: 'III',
+    title: 'Reasoning within a frame vs. constructing one',
+    line: 'The line most capability claims blur.',
+    body: 'Most reasoning evaluations disclose the hypothesis space and measure search within it. Frontier systems are broadly excellent at that — which is why it tells you little about whether they can build a space they were not handed. Classify every probe by whether the frame was disclosed, and cap the interpretation accordingly.',
+    earned: 'Three model families passed a disclosed-frame causal probe exactly. That clean sweep is a control, not a triumph: it shows the failures elsewhere are failures of frame construction, not of reasoning.',
+  },
+  {
+    n: 'IV',
+    title: 'Pre-commit what would change your mind',
+    line: 'Before the result is known, and immutably.',
+    body: 'An evaluation that decides after the fact what counts as passing is rationalizing a preference. Write the verdict-change conditions down publicly before any outcome is visible; all must hold, any one unmet blocks the headline claim, and none may be quietly relaxed when an exciting result arrives.',
+    earned: 'Several gates on this record remain unmet, so the standing verdict has not moved despite results that a less disciplined frame would have announced as progress.',
+  },
+  {
+    n: 'V',
+    title: 'Retract, never delete',
+    line: 'The failure log is a first-class output.',
+    body: 'An instrument that hides its mistakes cannot be trusted about anything else. Errors are appended over, never erased, and the record of the instrument’s own failures is a primary deliverable — the only credible evidence it can be wrong and notice. If the log is empty, the instrument is either perfect or not looking.',
+    earned: 'The public incident log records this instrument’s own errors: a self-report-trusting grader, fabricated object counts, manufactured narrated duration, a world its own author could not validly attempt.',
+  },
+  {
+    n: 'VI',
+    title: 'Absence is a finding, stated as one',
+    line: 'An empty register is not a silent gap.',
+    body: 'An evaluation with no external participation is a demonstration, not an instrument — and the honest move is to say so on the surface rather than let the apparatus imply a completeness it lacks. “We have not collected this yet” is a different, more honest statement than a gap a reader might mistake for irrelevance.',
+    earned: 'The human-baseline register is currently empty, and every page that depends on it says so — because without a baseline, a machine failure cannot be told apart from a task too hard for anyone.',
+  },
+  {
+    n: 'VII',
+    title: 'Provenance proves ordering, not truth',
+    line: 'And time is anchored to artifacts, not memory.',
+    body: 'Cryptographic timestamping proves a file existed before a point in time — that an attempt preceded a reveal. It does not prove the attempt was correct or the grader fair. An instrument that lets provenance masquerade as validity has smuggled trust where proof is needed. And narrated time is unreliable: never assert elapsed time a log would not confirm.',
+    earned: 'Release commits are Bitcoin-anchored via OpenTimestamps for ordering only. The instrument once narrated hours between events that commit timestamps showed happened in minutes; the rule that followed anchors all timing to artifacts.',
+  },
+  {
+    n: 'VIII',
+    title: 'Adversarial structure beats good intentions',
+    line: 'A check you must remember to run will eventually not be run.',
+    body: 'Discipline that depends on sustained vigilance fails, because vigilance is not durable. The load-bearing version is structural: a proposing role, a distinct adversary on a different model family whose veto holds, a calibrator that refuses to promote a theory on a single event, and a deterministic gate — no model in the loop — that rejects any change violating the pinned rules.',
+    earned: 'The conformance gate has caught real defects the authors missed, including a cross-reference to a document that never existed.',
+  },
+];
+---
+
+<Base
+  title="Method — pathtoAGI"
+  description="The transferable part of this project is not the test — it is the discipline of holding the test. Eight principles for building an AI evaluation that survives adversarial scrutiny of itself, each earned by a real failure on the record."
+>
+  <section class="max-w-3xl">
+    <p class="eyebrow">Method · the field note</p>
+    <h1 class="display mt-4 text-4xl sm:text-5xl">Evaluating an evaluation you can’t fool yourself with</h1>
+    <p class="lede mt-6">
+      The probes this instrument runs are the least important thing about it —
+      small sealed worlds, easily out-classed as benchmarks by better-funded
+      work. What is worth carrying to other evaluations is the discipline of
+      holding a test so it cannot quietly deceive itself or its readers. Eight
+      principles, each grounded not in theory but in a specific place this
+      instrument used it — or, more usefully, failed to, and had to correct in
+      public.
+    </p>
+    <p class="prose mt-5">
+      The field, in 2026, does not lack evaluations. It lacks evaluations built
+      to survive scrutiny of <em>themselves</em>: benchmarks leak and saturate,
+      vendors grade their own homework, and impressive single results are
+      promoted to conclusions before anyone asks what would have to be true for
+      them to mean what they appear to. This is the transferable answer.
+    </p>
+  </section>
+
+  <section class="mt-12 grid gap-5">
+    {principles.map((p) => (
+      <article class="surface p-6" style="border-radius: 12px;">
+        <div class="flex items-baseline gap-4">
+          <span class="mono text-sm" style="color: var(--color-accent); min-width: 2rem;">{p.n}</span>
+          <div>
+            <h2 class="serif text-2xl" style="color: var(--color-ink);">{p.title}</h2>
+            <p class="mt-1 text-sm" style="color: var(--color-muted);">{p.line}</p>
+          </div>
+        </div>
+        <p class="prose mt-4">{p.body}</p>
+        <p class="mt-4 border-l-2 pl-4 text-sm" style="border-color: color-mix(in oklab, var(--color-accent) 50%, var(--color-line)); color: var(--color-ink-dim);">
+          <span class="mono text-[0.66rem] uppercase tracking-wider" style="color: var(--color-faint);">Earned on the record · </span>
+          {p.earned}
+        </p>
+      </article>
+    ))}
+  </section>
+
+  <section class="mt-14 max-w-3xl">
+    <h2 class="serif text-2xl">What this instrument is, honestly</h2>
+    <p class="prose mt-4">
+      A promising governance model attached to a redundant benchmark, with its
+      central question still under-tested and its usefulness unproven until
+      outsiders engage. Its probes will not out-measure the mature
+      contamination-resistant benchmarks. Its contribution, if it has one, is
+      this note and the working record behind it — a public, autonomous,
+      self-auditing evaluation that treats its own integrity as the object most
+      in need of proof.
+    </p>
+    <p class="prose mt-4">
+      The disciplines above are free to take. If one of them changes how you
+      build your next evaluation, or how skeptically you read your next
+      impressive result, this instrument will have done more good as a method
+      than it is likely to do as a test.
+    </p>
+    <p class="mono mt-6 text-xs" style="color: var(--color-faint);">
+      Full field note (source, versioned):
+      <a href="/EVALUATION_FIELD_NOTE.md" class="hover:underline" style="color: var(--color-accent);">EVALUATION_FIELD_NOTE.md</a>
+      · the working record, including every retracted error and the standing empty register, is
+      <a href="/log/" class="hover:underline" style="color: var(--color-accent);">the revision log</a>
+      and <a href="/status/" class="hover:underline" style="color: var(--color-accent);">the incident log</a>. The mistakes are the point.
+    </p>
+  </section>
+</Base>
