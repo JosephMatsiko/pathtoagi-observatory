@@ -1,0 +1,3316 @@
+{
+  "name": "fcs-sealed-worlds",
+  "version": 1,
+  "license": "CC0-1.0",
+  "generatedFromCommit": "547cc8796774f9140745a9739f93491ebf658074",
+  "homepage": "https://pathtoagi-observatory.netlify.app",
+  "protocol": "https://pathtoagi-observatory.netlify.app/MACHINE_PROTOCOL.md",
+  "description": "The pathtoAGI Observatory sealed-world corpus: frame-construction probes for AI systems, with contamination floor zero by construction (every law was generated after commitment and never existed before). Each record carries the public observations, the cryptographic seal, every model attempt in full, and — for revealed worlds — the reveal key and the deterministic mechanical grading. Live-sealed worlds ship without their reveal; attempting them per the machine protocol earns a graded, published entry in the record.",
+  "integrity": "Every seal is sha256(law plaintext); every reveal key decrypts law.enc (AES-256-CBC, IV prepended) to a plaintext matching the seal; every grading is reproducible by the pinned grader in scripts/fcs-synth/. Attempts were timestamp-anchored (OpenTimestamps) before reveals.",
+  "referenceBaselines": {
+    "generatedAt": "2026-07-03T20:29:34.303Z",
+    "doctrine": "Constitution v3 XIII / verdict protocol v3 OG-9: the human baseline is replaced by formal, reproducible reference baselines. Computed from public observations only — no sealed law, no human.",
+    "kinds": {
+      "null": "expected exact-match score of a uniform-random predictor (the floor)",
+      "provable": "for underdetermined worlds, the proven ceiling without the discriminating move (e.g. world-008)",
+      "ablation": "frame-disclosed minus frame-withheld, read from the run record — the frame-construction signal"
+    },
+    "nullBaselines": [
+      {
+        "worldDir": "fcs-synth-world-001",
+        "maxObserved": 96,
+        "conservativeModulus": 97,
+        "perItemChance": "<= 1/97 per scalar coordinate",
+        "note": "A uniform-random predictor lands an exact per-coordinate match with probability at most 1/97 (~1.03e-2). Any exact held-out score materially above chance is non-trivial; the graded models' exact scores are therefore not reachable by guessing."
+      },
+      {
+        "worldDir": "fcs-synth-world-002",
+        "maxObserved": 100,
+        "conservativeModulus": 101,
+        "perItemChance": "<= 1/101 per scalar coordinate",
+        "note": "A uniform-random predictor lands an exact per-coordinate match with probability at most 1/101 (~9.90e-3). Any exact held-out score materially above chance is non-trivial; the graded models' exact scores are therefore not reachable by guessing."
+      },
+      {
+        "worldDir": "fcs-synth-world-003",
+        "maxObserved": 91,
+        "conservativeModulus": 97,
+        "perItemChance": "<= 1/97 per scalar coordinate",
+        "note": "A uniform-random predictor lands an exact per-coordinate match with probability at most 1/97 (~1.03e-2). Any exact held-out score materially above chance is non-trivial; the graded models' exact scores are therefore not reachable by guessing."
+      },
+      {
+        "worldDir": "fcs-synth-world-005",
+        "maxObserved": 52,
+        "conservativeModulus": 53,
+        "perItemChance": "<= 1/53 per scalar coordinate",
+        "note": "A uniform-random predictor lands an exact per-coordinate match with probability at most 1/53 (~1.89e-2). Any exact held-out score materially above chance is non-trivial; the graded models' exact scores are therefore not reachable by guessing."
+      },
+      {
+        "worldDir": "fcs-synth-world-006",
+        "maxObserved": 9,
+        "conservativeModulus": 11,
+        "perItemChance": "<= 1/11 per scalar coordinate",
+        "note": "A uniform-random predictor lands an exact per-coordinate match with probability at most 1/11 (~9.09e-2). Any exact held-out score materially above chance is non-trivial; the graded models' exact scores are therefore not reachable by guessing."
+      },
+      {
+        "worldDir": "fcs-synth-world-007",
+        "maxObserved": 100,
+        "conservativeModulus": 101,
+        "perItemChance": "<= 1/101 per scalar coordinate",
+        "note": "A uniform-random predictor lands an exact per-coordinate match with probability at most 1/101 (~9.90e-3). Any exact held-out score materially above chance is non-trivial; the graded models' exact scores are therefore not reachable by guessing."
+      },
+      {
+        "worldDir": "fcs-synth-world-008",
+        "maxObserved": 102,
+        "conservativeModulus": 103,
+        "perItemChance": "<= 1/103 per scalar coordinate",
+        "note": "A uniform-random predictor lands an exact per-coordinate match with probability at most 1/103 (~9.71e-3). Any exact held-out score materially above chance is non-trivial; the graded models' exact scores are therefore not reachable by guessing."
+      }
+    ]
+  },
+  "worlds": [
+    {
+      "worldId": "world-001",
+      "status": "revealed-and-graded",
+      "observations": {
+        "worldId": "world-001",
+        "generatedAt": "2026-07-02T10:35:12.277Z",
+        "lawFamily": "Public: three coupled linear integer maps mod a prime, constructed to admit at least one conserved linear quantity. The parameters, the modulus, and the conserved quantity are the secret.",
+        "task": "From the samples alone: (1) state the update law, (2) state any conserved quantity, (3) predict the held-out states. Graded on held-out predictive accuracy and law identification when the seal is opened.",
+        "observations": [
+          {
+            "trajectory": 0,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  23,
+                  8,
+                  2
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  34,
+                  23,
+                  93
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  17,
+                  45,
+                  0
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  59,
+                  8,
+                  8
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  48,
+                  37,
+                  60
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  48,
+                  17,
+                  92
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  44,
+                  31,
+                  56
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  20,
+                  46,
+                  28
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  95,
+                  0,
+                  85
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  16,
+                  91,
+                  20
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  19,
+                  3,
+                  74
+                ]
+              },
+              {
+                "step": 27,
+                "state": [
+                  70,
+                  46,
+                  4
+                ]
+              },
+              {
+                "step": 30,
+                "state": [
+                  42,
+                  78,
+                  71
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 1,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  68,
+                  20,
+                  10
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  31,
+                  36,
+                  72
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  27,
+                  46,
+                  23
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  37,
+                  44,
+                  2
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  96,
+                  6,
+                  50
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  86,
+                  16,
+                  0
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  21,
+                  71,
+                  79
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  33,
+                  96,
+                  41
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  2,
+                  72,
+                  71
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  32,
+                  87,
+                  52
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  42,
+                  36,
+                  90
+                ]
+              },
+              {
+                "step": 27,
+                "state": [
+                  60,
+                  0,
+                  73
+                ]
+              },
+              {
+                "step": 30,
+                "state": [
+                  57,
+                  30,
+                  73
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 2,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  21,
+                  1,
+                  28
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  60,
+                  63,
+                  42
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  35,
+                  44,
+                  65
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  34,
+                  1,
+                  14
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  92,
+                  95,
+                  22
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  92,
+                  77,
+                  12
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  69,
+                  12,
+                  96
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  28,
+                  74,
+                  32
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  47,
+                  52,
+                  93
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  5,
+                  66,
+                  83
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  95,
+                  45,
+                  54
+                ]
+              },
+              {
+                "step": 27,
+                "state": [
+                  73,
+                  74,
+                  88
+                ]
+              },
+              {
+                "step": 30,
+                "state": [
+                  9,
+                  64,
+                  61
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 3,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  59,
+                  56,
+                  96
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  42,
+                  80,
+                  58
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  32,
+                  86,
+                  92
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  66,
+                  12,
+                  35
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  75,
+                  77,
+                  78
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  61,
+                  63,
+                  14
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  42,
+                  82,
+                  16
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  64,
+                  41,
+                  40
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  48,
+                  40,
+                  26
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  57,
+                  72,
+                  83
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  17,
+                  52,
+                  76
+                ]
+              },
+              {
+                "step": 27,
+                "state": [
+                  36,
+                  23,
+                  90
+                ]
+              },
+              {
+                "step": 30,
+                "state": [
+                  12,
+                  71,
+                  48
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "seal": "# Seal — fcs-synth-world-001\n\n- law sha256: `2643ba0c82590edea495bb394f9d7073af8fbc1a4170f96f7071769ced8f4ac5`\n- sealed: law.enc (AES-256-CBC; IV prepended); key held off-repository by the operator\n- protocol: attempts are timestamp-anchored BEFORE the key is published; on reveal, verify sha256(decrypt(law.enc)) equals the hash above, then grade attempts on held-out predictions + law identification.\n- generated: 2026-07-02T10:35:12.277Z by scripts/fcs-synth/generate-world.mjs (the law family is public in that script; the drawn parameters are the secret).\n",
+      "reveal": "# Reveal — fcs-synth-world-001\n\nAttempts were committed and anchored BEFORE this reveal (see git history and\ntimestamps/manifest.json). Anyone can now verify the seal and regrade:\n\n- decryption key (AES-256-CBC, IV = first 16 bytes of law.enc): `c0f72fa22bc2faf4967d8f45eed4b8df377e85119a834c7a900ed4501807434d`\n- verify: sha256(decrypt(law.enc)) = `2643ba0c82590edea495bb394f9d7073af8fbc1a4170f96f7071769ced8f4ac5` (matches SEAL.md)\n- the law: modulus 97; x'=78x+71y, y'=67y+83z, z'=4z+29x (all mod 97); conserved Q=6x+20y+61z (mod 97)\n- grading is mechanical: scripts/fcs-synth/grade-world.mjs · results in GRADING.json\n",
+      "grading": {
+        "worldId": "world-001",
+        "gradedAt": "2026-07-02T15:06:47.349Z",
+        "lawHash": "2643ba0c82590edea495bb394f9d7073af8fbc1a4170f96f7071769ced8f4ac5",
+        "results": [
+          {
+            "attempt": "claude-fable-5.md",
+            "parsed": true,
+            "predictionsCorrect": 72,
+            "predictionsTotal": 72,
+            "modulusCorrect": true,
+            "paramsCorrect": true,
+            "conservedValid": true
+          },
+          {
+            "attempt": "gpt-5.5.md",
+            "parsed": true,
+            "predictionsCorrect": 72,
+            "predictionsTotal": 72,
+            "modulusCorrect": true,
+            "paramsCorrect": false,
+            "conservedValid": true
+          }
+        ]
+      },
+      "attempts": [
+        {
+          "file": "claude-fable-5.md",
+          "content": "# Attempt — Claude (Fable 5) · 2026-07-02\n\nIdentification complete and fully verified:\n\n- **Modulus**: 97 (prime; all values in [0,96])\n- **Law**: x′ = 78x + 71y, y′ = 67y + 83z, z′ = 4z + 29x (mod 97) — cyclic coupling, exactly 6 nonzero parameters\n- **Verification**: the fitted matrix reproduces every observed sample in all 4 trajectories, including the step-gap-3 samples out to step 30 (asserted exact matches)\n- **Conserved quantity**: Q = 16x + 21y + z (mod 97). Verified vM ≡ v, and Q is constant per trajectory (53, 63, 94, 82 respectively)\n\n===ATTEMPT-BEGIN===\n{\"law\": \"State evolves as x' = 78x + 71y (mod 97), y' = 67y + 83z (mod 97), z' = 4z + 29x (mod 97), i.e. a cyclically-coupled linear map modulo the prime 97 conserving Q = 16x + 21y + z (mod 97).\", \"modulus\": 97, \"params\": {\"a\": 78, \"b\": 71, \"c\": 67, \"d\": 83, \"e\": 4, \"f\": 29}, \"conserved\": {\"alpha\": 16, \"beta\": 21, \"gamma\": 1}, \"predictions\": {\"t0_s4\": [29, 36, 94], \"t0_s5\": [65, 29, 53], \"t0_s7\": [66, 87, 80], \"t0_s8\": [73, 53, 3], \"t0_s10\": [4, 45, 14], \"t0_s11\": [15, 6, 75], \"t0_s13\": [7, 32, 45], \"t0_s14\": [5, 59, 92], \"t0_s16\": [73, 71, 13], \"t0_s17\": [65, 16, 35], \"t0_s19\": [38, 71, 88], \"t0_s20\": [51, 33, 96], \"t0_s22\": [46, 94, 59], \"t0_s23\": [77, 40, 18], \"t0_s25\": [46, 38, 71], \"t0_s26\": [78, 0, 66], \"t0_s28\": [93, 19, 9], \"t0_s29\": [67, 80, 17], \"t1_s4\": [93, 10, 14], \"t1_s5\": [10, 86, 37], \"t1_s7\": [57, 90, 74], \"t1_s8\": [69, 47, 9], \"t1_s10\": [84, 5, 69], \"t1_s11\": [20, 48, 93], \"t1_s13\": [83, 62, 52], \"t1_s14\": [12, 31, 93], \"t1_s16\": [78, 38, 54], \"t1_s17\": [52, 44, 53], \"t1_s19\": [30, 47, 51], \"t1_s20\": [51, 10, 7], \"t1_s22\": [40, 57, 69], \"t1_s23\": [86, 40, 78], \"t1_s25\": [12, 85, 26], \"t1_s26\": [84, 93, 64], \"t1_s28\": [24, 45, 92], \"t1_s29\": [23, 78, 94], \"t2_s4\": [7, 65, 72], \"t2_s5\": [20, 49, 6], \"t2_s7\": [50, 43, 40], \"t2_s8\": [66, 90, 58], \"t2_s10\": [33, 44, 0], \"t2_s11\": [72, 38, 84], \"t2_s13\": [26, 42, 57], \"t2_s14\": [63, 76, 12], \"t2_s16\": [66, 48, 67], \"t2_s17\": [20, 47, 48], \"t2_s19\": [83, 48, 86], \"t2_s20\": [85, 72, 35], \"t2_s22\": [32, 59, 89], \"t2_s23\": [89, 88, 23], \"t2_s25\": [32, 28, 61], \"t2_s26\": [22, 52, 8], \"t2_s28\": [84, 40, 44], \"t2_s29\": [80, 27, 90], \"t3_s4\": [83, 23, 17], \"t3_s5\": [56, 42, 50], \"t3_s7\": [65, 90, 62], \"t3_s8\": [14, 21, 96], \"t3_s10\": [16, 48, 79], \"t3_s11\": [0, 73, 4], \"t3_s13\": [77, 32, 21], \"t3_s14\": [33, 7, 86], \"t3_s16\": [46, 53, 76], \"t3_s17\": [76, 62, 86], \"t3_s19\": [85, 85, 41], \"t3_s20\": [55, 77, 10], \"t3_s22\": [52, 73, 45], \"t3_s23\": [24, 90, 39], \"t3_s25\": [71, 92, 21], \"t3_s26\": [42, 50, 9], \"t3_s28\": [76, 87, 46], \"t3_s29\": [77, 44, 60]}}\n===ATTEMPT-END===\n\n"
+        },
+        {
+          "file": "gpt-5.5.md",
+          "content": "# Attempt — GPT-5.5 (codex) · 2026-07-02\n\n===ATTEMPT-BEGIN===\n{\"law\":\"Modulo 97, the update is x' = a*x + b*y, y' = c*y + d*z, z' = e*x + f*z with all operations mod 97.\",\"modulus\":97,\"params\":{\"a\":78,\"b\":71,\"c\":67,\"d\":83,\"e\":29,\"f\":4},\"conserved\":{\"alpha\":1,\"beta\":68,\"gamma\":91},\"predictions\":{\"t0_s4\":[29,36,94],\"t0_s5\":[65,29,53],\"t0_s7\":[66,87,80],\"t0_s8\":[73,53,3],\"t0_s10\":[4,45,14],\"t0_s11\":[15,6,75],\"t0_s13\":[7,32,45],\"t0_s14\":[5,59,92],\"t0_s16\":[73,71,13],\"t0_s17\":[65,16,35],\"t0_s19\":[38,71,88],\"t0_s20\":[51,33,96],\"t0_s22\":[46,94,59],\"t0_s23\":[77,40,18],\"t0_s25\":[46,38,71],\"t0_s26\":[78,0,66],\"t0_s28\":[93,19,9],\"t0_s29\":[67,80,17],\"t1_s4\":[93,10,14],\"t1_s5\":[10,86,37],\"t1_s7\":[57,90,74],\"t1_s8\":[69,47,9],\"t1_s10\":[84,5,69],\"t1_s11\":[20,48,93],\"t1_s13\":[83,62,52],\"t1_s14\":[12,31,93],\"t1_s16\":[78,38,54],\"t1_s17\":[52,44,53],\"t1_s19\":[30,47,51],\"t1_s20\":[51,10,7],\"t1_s22\":[40,57,69],\"t1_s23\":[86,40,78],\"t1_s25\":[12,85,26],\"t1_s26\":[84,93,64],\"t1_s28\":[24,45,92],\"t1_s29\":[23,78,94],\"t2_s4\":[7,65,72],\"t2_s5\":[20,49,6],\"t2_s7\":[50,43,40],\"t2_s8\":[66,90,58],\"t2_s10\":[33,44,0],\"t2_s11\":[72,38,84],\"t2_s13\":[26,42,57],\"t2_s14\":[63,76,12],\"t2_s16\":[66,48,67],\"t2_s17\":[20,47,48],\"t2_s19\":[83,48,86],\"t2_s20\":[85,72,35],\"t2_s22\":[32,59,89],\"t2_s23\":[89,88,23],\"t2_s25\":[32,28,61],\"t2_s26\":[22,52,8],\"t2_s28\":[84,40,44],\"t2_s29\":[80,27,90],\"t3_s4\":[83,23,17],\"t3_s5\":[56,42,50],\"t3_s7\":[65,90,62],\"t3_s8\":[14,21,96],\"t3_s10\":[16,48,79],\"t3_s11\":[0,73,4],\"t3_s13\":[77,32,21],\"t3_s14\":[33,7,86],\"t3_s16\":[46,53,76],\"t3_s17\":[76,62,86],\"t3_s19\":[85,85,41],\"t3_s20\":[55,77,10],\"t3_s22\":[52,73,45],\"t3_s23\":[24,90,39],\"t3_s25\":[71,92,21],\"t3_s26\":[42,50,9],\"t3_s28\":[76,87,46],\"t3_s29\":[77,44,60]}}\n===ATTEMPT-END===\n\n\n[stderr]\nOpenAI Codex v0.142.5\n--------\nworkdir: /private/tmp\nmodel: gpt-5.5\nprovider: openai\napproval: never\nsandbox: read-only\nreasoning effort: medium\nreasoning summaries: none\nsession id: 019f235b-d486-75b0-87c1-30e7399f5c27\n--------\nuser\nYou are attempting FCS-SYNTH world-001 — a sealed synthetic-world probe from pathtoAGI, the Observatory. The world's hidden law NEVER existed before 2026-07-02; your training data cannot contain it. This attempt will be published verbatim and graded mechanically against the sealed answer.\n\nWHAT IS PUBLIC: the law family — \"three coupled linear integer maps modulo a prime, constructed to admit at least one conserved linear quantity.\" The modulus, the six parameters, and the conserved quantity are the secret.\n\nOBSERVATIONS (sparse samples; state = [x, y, z]; step indices given):\n[{\"trajectory\":0,\"samples\":[{\"step\":0,\"state\":[23,8,2]},{\"step\":1,\"state\":[34,23,93]},{\"step\":2,\"state\":[17,45,0]},{\"step\":3,\"state\":[59,8,8]},{\"step\":6,\"state\":[48,37,60]},{\"step\":9,\"state\":[48,17,92]},{\"step\":12,\"state\":[44,31,56]},{\"step\":15,\"state\":[20,46,28]},{\"step\":18,\"state\":[95,0,85]},{\"step\":21,\"state\":[16,91,20]},{\"step\":24,\"state\":[19,3,74]},{\"step\":27,\"state\":[70,46,4]},{\"step\":30,\"state\":[42,78,71]}]},{\"trajectory\":1,\"samples\":[{\"step\":0,\"state\":[68,20,10]},{\"step\":1,\"state\":[31,36,72]},{\"step\":2,\"state\":[27,46,23]},{\"step\":3,\"state\":[37,44,2]},{\"step\":6,\"state\":[96,6,50]},{\"step\":9,\"state\":[86,16,0]},{\"step\":12,\"state\":[21,71,79]},{\"step\":15,\"state\":[33,96,41]},{\"step\":18,\"state\":[2,72,71]},{\"step\":21,\"state\":[32,87,52]},{\"step\":24,\"state\":[42,36,90]},{\"step\":27,\"state\":[60,0,73]},{\"step\":30,\"state\":[57,30,73]}]},{\"trajectory\":2,\"samples\":[{\"step\":0,\"state\":[21,1,28]},{\"step\":1,\"state\":[60,63,42]},{\"step\":2,\"state\":[35,44,65]},{\"step\":3,\"state\":[34,1,14]},{\"step\":6,\"state\":[92,95,22]},{\"step\":9,\"state\":[92,77,12]},{\"step\":12,\"state\":[69,12,96]},{\"step\":15,\"state\":[28,74,32]},{\"step\":18,\"state\":[47,52,93]},{\"step\":21,\"state\":[5,66,83]},{\"step\":24,\"state\":[95,45,54]},{\"step\":27,\"state\":[73,74,88]},{\"step\":30,\"state\":[9,64,61]}]},{\"trajectory\":3,\"samples\":[{\"step\":0,\"state\":[59,56,96]},{\"step\":1,\"state\":[42,80,58]},{\"step\":2,\"state\":[32,86,92]},{\"step\":3,\"state\":[66,12,35]},{\"step\":6,\"state\":[75,77,78]},{\"step\":9,\"state\":[61,63,14]},{\"step\":12,\"state\":[42,82,16]},{\"step\":15,\"state\":[64,41,40]},{\"step\":18,\"state\":[48,40,26]},{\"step\":21,\"state\":[57,72,83]},{\"step\":24,\"state\":[17,52,76]},{\"step\":27,\"state\":[36,23,90]},{\"step\":30,\"state\":[12,71,48]}]}]\n\nYOUR TASK:\n1. Identify the update law precisely (the modulus and the parameter structure).\n2. State a conserved linear quantity Q = αx + βy + γz (mod m), if one exists.\n3. Predict the held-out states EXACTLY (integers) for ALL of these (trajectory, step) keys:\nt0_s4, t0_s5, t0_s7, t0_s8, t0_s10, t0_s11, t0_s13, t0_s14, t0_s16, t0_s17, t0_s19, t0_s20, t0_s22, t0_s23, t0_s25, t0_s26, t0_s28, t0_s29, t1_s4, t1_s5, t1_s7, t1_s8, t1_s10, t1_s11, t1_s13, t1_s14, t1_s16, t1_s17, t1_s19, t1_s20, t1_s22, t1_s23, t1_s25, t1_s26, t1_s28, t1_s29, t2_s4, t2_s5, t2_s7, t2_s8, t2_s10, t2_s11, t2_s13, t2_s14, t2_s16, t2_s17, t2_s19, t2_s20, t2_s22, t2_s23, t2_s25, t2_s26, t2_s28, t2_s29, t3_s4, t3_s5, t3_s7, t3_s8, t3_s10, t3_s11, t3_s13, t3_s14, t3_s16, t3_s17, t3_s19, t3_s20, t3_s22, t3_s23, t3_s25, t3_s26, t3_s28, t3_s29\n\nYou may write and run code — systematic identification is expected and allowed. Derive; do not guess. If you cannot determine something, say so explicitly rather than fabricating.\n\nOUTPUT FORMAT — this will be machine-graded, so emit, between these exact markers, STRICT JSON (no comments, no trailing commas) with every requested key present:\n===ATTEMPT-BEGIN===\n{\"law\": \"<one-sentence statement>\", \"modulus\": <m>, \"params\": {\"a\":..,\"b\":..,\"c\":..,\"d\":..,\"e\":..,\"f\":..}, \"conserved\": {\"alpha\":..,\"beta\":..,\"gamma\":..}, \"predictions\": {\"t0_s4\":[x,y,z], ...}}\n===ATTEMPT-END===\n2026-07-02T15:04:09.311621Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when AuthRequired(AuthRequiredError { www_authenticate_header: \"Bearer realm=\\\"OAuth\\\", resource_metadata=\\\"https://mcp.cloudflare.com/.well-known/oauth-protected-resource/mcp\\\", error=\\\"invalid_token\\\", error_description=\\\"Missing or invalid access token\\\"\" })\nwarning: Skill descriptions were shortened to fit the 2% skills context budget. Codex can still see every skill, but some descriptions are shorter. Disable unused skills or plugins to leave more room for the rest.\ncodex\nI’ll solve this by fitting the modular linear map from the observed consecutive steps first, then use the sparse checkpoints to validate powers of the map before filling the missing states. Since the workspace is read-only, I’ll run the algebra in temporary command snippets without writing files.\ncodex\nThe shell cannot create here-doc temp files under this sandbox, so I’m switching to inline Python. The data is small enough that this still lets me do exact modular linear algebra.\nexec\n/bin/zsh -lc 'python3 -c $'\"'from itertools import combinations\\\\nobs = [\\\\n[(0,[23,8,2]),(1,[34,23,93]),(2,[17,45,0]),(3,[59,8,8]),(6,[48,37,60]),(9,[48,17,92]),(12,[44,31,56]),(15,[20,46,28]),(18,[95,0,85]),(21,[16,91,20]),(24,[19,3,74]),(27,[70,46,4]),(30,[42,78,71])],\\\\n[(0,[68,20,10]),(1,[31,36,72]),(2,[27,46,23]),(3,[37,44,2]),(6,[96,6,50]),(9,[86,16,0]),(12,[21,71,79]),(15,[33,96,41]),(18,[2,72,71]),(21,[32,87,52]),(24,[42,36,90]),(27,[60,0,73]),(30,[57,30,73])],\\\\n[(0,[21,1,28]),(1,[60,63,42]),(2,[35,44,65]),(3,[34,1,14]),(6,[92,95,22]),(9,[92,77,12]),(12,[69,12,96]),(15,[28,74,32]),(18,[47,52,93]),(21,[5,66,83]),(24,[95,45,54]),(27,[73,74,88]),(30,[9,64,61])],\\\\n[(0,[59,56,96]),(1,[42,80,58]),(2,[32,86,92]),(3,[66,12,35]),(6,[75,77,78]),(9,[61,63,14]),(12,[42,82,16]),(15,[64,41,40]),(18,[48,40,26]),(21,[57,72,83]),(24,[17,52,76]),(27,[36,23,90]),(30,[12,71,48])]\\\\n]\\\\ndef inv_mod(a,p): return pow(a%p,p-2,p)\\\\ndef mat_inv(A,p):\\\\n    n=len(A); M=[row[:] + [1 if i==j else 0 for j in range(n)] for i,row in enumerate(A)]\\\\n    for c in range(n):\\\\n        piv=next((r for r in range(c,n) if M[r][c]%p),None)\\\\n        if piv is None: return None\\\\n        M[c],M[piv]=M[piv],M[c]\\\\n        inv=inv_mod(M[c][c],p); M[c]=[(v*inv)%p for v in M[c]]\\\\n        for r in range(n):\\\\n            if r\"'!=c and M[r][c]%p:'\"\\\\n                f=M[r][c]%p; M[r]=[(M[r][k]-f*M[c][k])%p for k in range(2*n)]\\\\n    return [row[n:] for row in M]\\\\ndef mat_mul(A,B,p): return [[sum(A[i][k]*B[k][j] for k in range(len(B)))%p for j in range(len(B[0]))] for i in range(len(A))]\\\\ndef mat_vec(A,v,p): return [sum(A[i][k]*v[k] for k in range(3))%p for i in range(3)]\\\\ndef mat_pow(A,n,p):\\\\n    R=[[1,0,0],[0,1,0],[0,0,1]]; B=A\\\\n    while n:\\\\n        if n&1: R=mat_mul(B,R,p)\\\\n        B=mat_mul(B,B,p); n//=2\\\\n    return R\\\\ndef primes_between(lo,hi):\\\\n    return [n for n in range(lo,hi+1) if n>1 and all(n%d for d in range(2,int(n**0.5)+1))]\\\\npairs=[(traj[0][1],traj[1][1]) for traj in obs]\\\\nfor p in primes_between(97,500):\\\\n    for inds in combinations(range(4),3):\\\\n        X=[[pairs[j][0][i]%p for j in inds] for i in range(3)]\\\\n        Y=[[pairs[j][1][i]%p for j in inds] for i in range(3)]\\\\n        Xi=mat_inv(X,p)\\\\n        if Xi is None: continue\\\\n        M=mat_mul(Y,Xi,p)\\\\n        if all(mat_vec(M,x,p)==[yy%p for yy in y] for x,y in pairs):\\\\n            ok=True\\\\n            for traj in obs:\\\\n                start=traj[0][1]\\\\n                for step,state in traj:\\\\n                    if mat_vec(mat_pow(M,step,p),start,p)\"'!=[s%p for s in state]: ok=False; break'\"\\\\n                if not ok: break\\\\n            if ok:\\\\n                print(\\\\'p\\\\',p,\\\\'M\\\\',M)\\\\n                raise SystemExit\\\\nprint(\\\\'none\\\\')'\" in /private/tmp\n succeeded in 0ms:\np 97 M [[78, 71, 0], [0, 67, 83], [29, 0, 4]]\n\ncodex\nThe fitted map is now determined and it matches every published checkpoint through step 30, including the 3-step gaps. I’m computing the left eigenvector for the conserved linear form and generating the held-out states directly from the map.\nexec\n/bin/zsh -lc 'python3 -c $'\"'import json\\\\np=97\\\\nM=[[78,71,0],[0,67,83],[29,0,4]]\\\\nobs0=[[23,8,2],[68,20,10],[21,1,28],[59,56,96]]\\\\nkeys_steps=[4,5,7,8,10,11,13,14,16,17,19,20,22,23,25,26,28,29]\\\\ndef mv(v): return [sum(M[i][j]*v[j] for j in range(3))%p for i in range(3)]\\\\n# left eigenvector q s.t. M\"'^T q = q'\"\\\\nsol=[]\\\\nfor a in range(p):\\\\n for b in range(p):\\\\n  for c in range(p):\\\\n   if (a,b,c)\"'!=(0,0,0):'\"\\\\n    if [sum(M[j][i]*[a,b,c][j] for j in range(3))%p for i in range(3)] == [a,b,c]:\\\\n     sol.append((a,b,c)); print(\\\\'conserved\\\\',sol[0]); raise SystemExit\\\\n'\" in /private/tmp\n succeeded in 0ms:\nconserved (1, 68, 91)\n\ncodex\nThe conserved form can be scaled; I found one normalized with alpha = 1. I’ll use that same normalization in the final JSON and keep all parameter values as residues modulo 97.\nexec\n/bin/zsh -lc 'python3 -c $'\"'import json\\\\np=97\\\\nM=[[78,71,0],[0,67,83],[29,0,4]]\\\\nstarts=[[23,8,2],[68,20,10],[21,1,28],[59,56,96]]\\\\nwant=[4,5,7,8,10,11,13,14,16,17,19,20,22,23,25,26,28,29]\\\\ndef mv(v): return [sum(M[i][j]*v[j] for j in range(3))%p for i in range(3)]\\\\npreds={}\\\\nfor ti,start in enumerate(starts):\\\\n    v=start[:]\\\\n    states={0:v[:]}\\\\n    for s in range(1,31):\\\\n        v=mv(v); states[s]=v[:]\\\\n    for s in want:\\\\n        preds[f\\\\'t{ti}_s{s}\\\\']=states[s]\\\\nprint(json.dumps(preds,separators=(\\\\',\\\\',\\\\':\\\\')))\\\\n# also verify conserved constants\\\\nfor ti,start in enumerate(starts):\\\\n    vals=[]; v=start[:]\\\\n    for s in range(31):\\\\n        vals.append((v[0]+68*v[1]+91*v[2])%p)\\\\n        v=mv(v)\\\\n    print(ti, sorted(set(vals)))\\\\n'\" in /private/tmp\n succeeded in 0ms:\n{\"t0_s4\":[29,36,94],\"t0_s5\":[65,29,53],\"t0_s7\":[66,87,80],\"t0_s8\":[73,53,3],\"t0_s10\":[4,45,14],\"t0_s11\":[15,6,75],\"t0_s13\":[7,32,45],\"t0_s14\":[5,59,92],\"t0_s16\":[73,71,13],\"t0_s17\":[65,16,35],\"t0_s19\":[38,71,88],\"t0_s20\":[51,33,96],\"t0_s22\":[46,94,59],\"t0_s23\":[77,40,18],\"t0_s25\":[46,38,71],\"t0_s26\":[78,0,66],\"t0_s28\":[93,19,9],\"t0_s29\":[67,80,17],\"t1_s4\":[93,10,14],\"t1_s5\":[10,86,37],\"t1_s7\":[57,90,74],\"t1_s8\":[69,47,9],\"t1_s10\":[84,5,69],\"t1_s11\":[20,48,93],\"t1_s13\":[83,62,52],\"t1_s14\":[12,31,93],\"t1_s16\":[78,38,54],\"t1_s17\":[52,44,53],\"t1_s19\":[30,47,51],\"t1_s20\":[51,10,7],\"t1_s22\":[40,57,69],\"t1_s23\":[86,40,78],\"t1_s25\":[12,85,26],\"t1_s26\":[84,93,64],\"t1_s28\":[24,45,92],\"t1_s29\":[23,78,94],\"t2_s4\":[7,65,72],\"t2_s5\":[20,49,6],\"t2_s7\":[50,43,40],\"t2_s8\":[66,90,58],\"t2_s10\":[33,44,0],\"t2_s11\":[72,38,84],\"t2_s13\":[26,42,57],\"t2_s14\":[63,76,12],\"t2_s16\":[66,48,67],\"t2_s17\":[20,47,48],\"t2_s19\":[83,48,86],\"t2_s20\":[85,72,35],\"t2_s22\":[32,59,89],\"t2_s23\":[89,88,23],\"t2_s25\":[32,28,61],\"t2_s26\":[22,52,8],\"t2_s28\":[84,40,44],\"t2_s29\":[80,27,90],\"t3_s4\":[83,23,17],\"t3_s5\":[56,42,50],\"t3_s7\":[65,90,62],\"t3_s8\":[14,21,96],\"t3_s10\":[16,48,79],\"t3_s11\":[0,73,4],\"t3_s13\":[77,32,21],\"t3_s14\":[33,7,86],\"t3_s16\":[46,53,76],\"t3_s17\":[76,62,86],\"t3_s19\":[85,85,41],\"t3_s20\":[55,77,10],\"t3_s22\":[52,73,45],\"t3_s23\":[24,90,39],\"t3_s25\":[71,92,21],\"t3_s26\":[42,50,9],\"t3_s28\":[76,87,46],\"t3_s29\":[77,44,60]}\n0 [70]\n1 [10]\n2 [18]\n3 [90]\n\ncodex\n===ATTEMPT-BEGIN===\n{\"law\":\"Modulo 97, the update is x' = a*x + b*y, y' = c*y + d*z, z' = e*x + f*z with all operations mod 97.\",\"modulus\":97,\"params\":{\"a\":78,\"b\":71,\"c\":67,\"d\":83,\"e\":29,\"f\":4},\"conserved\":{\"alpha\":1,\"beta\":68,\"gamma\":91},\"predictions\":{\"t0_s4\":[29,36,94],\"t0_s5\":[65,29,53],\"t0_s7\":[66,87,80],\"t0_s8\":[73,53,3],\"t0_s10\":[4,45,14],\"t0_s11\":[15,6,75],\"t0_s13\":[7,32,45],\"t0_s14\":[5,59,92],\"t0_s16\":[73,71,13],\"t0_s17\":[65,16,35],\"t0_s19\":[38,71,88],\"t0_s20\":[51,33,96],\"t0_s22\":[46,94,59],\"t0_s23\":[77,40,18],\"t0_s25\":[46,38,71],\"t0_s26\":[78,0,66],\"t0_s28\":[93,19,9],\"t0_s29\":[67,80,17],\"t1_s4\":[93,10,14],\"t1_s5\":[10,86,37],\"t1_s7\":[57,90,74],\"t1_s8\":[69,47,9],\"t1_s10\":[84,5,69],\"t1_s11\":[20,48,93],\"t1_s13\":[83,62,52],\"t1_s14\":[12,31,93],\"t1_s16\":[78,38,54],\"t1_s17\":[52,44,53],\"t1_s19\":[30,47,51],\"t1_s20\":[51,10,7],\"t1_s22\":[40,57,69],\"t1_s23\":[86,40,78],\"t1_s25\":[12,85,26],\"t1_s26\":[84,93,64],\"t1_s28\":[24,45,92],\"t1_s29\":[23,78,94],\"t2_s4\":[7,65,72],\"t2_s5\":[20,49,6],\"t2_s7\":[50,43,40],\"t2_s8\":[66,90,58],\"t2_s10\":[33,44,0],\"t2_s11\":[72,38,84],\"t2_s13\":[26,42,57],\"t2_s14\":[63,76,12],\"t2_s16\":[66,48,67],\"t2_s17\":[20,47,48],\"t2_s19\":[83,48,86],\"t2_s20\":[85,72,35],\"t2_s22\":[32,59,89],\"t2_s23\":[89,88,23],\"t2_s25\":[32,28,61],\"t2_s26\":[22,52,8],\"t2_s28\":[84,40,44],\"t2_s29\":[80,27,90],\"t3_s4\":[83,23,17],\"t3_s5\":[56,42,50],\"t3_s7\":[65,90,62],\"t3_s8\":[14,21,96],\"t3_s10\":[16,48,79],\"t3_s11\":[0,73,4],\"t3_s13\":[77,32,21],\"t3_s14\":[33,7,86],\"t3_s16\":[46,53,76],\"t3_s17\":[76,62,86],\"t3_s19\":[85,85,41],\"t3_s20\":[55,77,10],\"t3_s22\":[52,73,45],\"t3_s23\":[24,90,39],\"t3_s25\":[71,92,21],\"t3_s26\":[42,50,9],\"t3_s28\":[76,87,46],\"t3_s29\":[77,44,60]}}\n===ATTEMPT-END===\ntokens used\n55,840\n"
+        }
+      ]
+    },
+    {
+      "worldId": "world-002",
+      "status": "revealed-and-graded",
+      "observations": {
+        "worldId": "world-002",
+        "generatedAt": "2026-07-02T15:44:01.450Z",
+        "disclosure": "HARDENED PROBE. The class of the governing law is deliberately NOT disclosed. You are told only that the system is deterministic and integer-valued. Identifying what kind of law governs it is part of the task — that is the frame move under test.",
+        "task": "From the samples alone: (1) determine the rule that advances the state, stating it explicitly; (2) predict the held-out states exactly; (3) state any invariant or structural property you find. Graded mechanically on held-out prediction accuracy.",
+        "heldOutKeys": [
+          "t0_s5",
+          "t0_s7",
+          "t0_s8",
+          "t0_s10",
+          "t0_s11",
+          "t0_s13",
+          "t0_s14",
+          "t0_s16",
+          "t0_s17",
+          "t0_s19",
+          "t0_s20",
+          "t0_s22",
+          "t0_s23",
+          "t1_s5",
+          "t1_s7",
+          "t1_s8",
+          "t1_s10",
+          "t1_s11",
+          "t1_s13",
+          "t1_s14",
+          "t1_s16",
+          "t1_s17",
+          "t1_s19",
+          "t1_s20",
+          "t1_s22",
+          "t1_s23",
+          "t2_s5",
+          "t2_s7",
+          "t2_s8",
+          "t2_s10",
+          "t2_s11",
+          "t2_s13",
+          "t2_s14",
+          "t2_s16",
+          "t2_s17",
+          "t2_s19",
+          "t2_s20",
+          "t2_s22",
+          "t2_s23",
+          "t3_s5",
+          "t3_s7",
+          "t3_s8",
+          "t3_s10",
+          "t3_s11",
+          "t3_s13",
+          "t3_s14",
+          "t3_s16",
+          "t3_s17",
+          "t3_s19",
+          "t3_s20",
+          "t3_s22",
+          "t3_s23",
+          "t4_s5",
+          "t4_s7",
+          "t4_s8",
+          "t4_s10",
+          "t4_s11",
+          "t4_s13",
+          "t4_s14",
+          "t4_s16",
+          "t4_s17",
+          "t4_s19",
+          "t4_s20",
+          "t4_s22",
+          "t4_s23"
+        ],
+        "observations": [
+          {
+            "trajectory": 0,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  54,
+                  79
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  97,
+                  30
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  45,
+                  99
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  73,
+                  3
+                ]
+              },
+              {
+                "step": 4,
+                "state": [
+                  17,
+                  9
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  46,
+                  75
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  70,
+                  29
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  6,
+                  81
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  55,
+                  3
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  24,
+                  29
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  37,
+                  75
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  1,
+                  15
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 1,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  14,
+                  100
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  35,
+                  53
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  16,
+                  49
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  75,
+                  51
+                ]
+              },
+              {
+                "step": 4,
+                "state": [
+                  67,
+                  14
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  6,
+                  75
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  47,
+                  35
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  53,
+                  61
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  80,
+                  27
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  26,
+                  26
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  87,
+                  76
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  47,
+                  14
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 2,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  48,
+                  55
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  98,
+                  99
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  51,
+                  17
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  54,
+                  14
+                ]
+              },
+              {
+                "step": 4,
+                "state": [
+                  30,
+                  0
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  83,
+                  83
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  14,
+                  51
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  76,
+                  78
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  18,
+                  32
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  27,
+                  27
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  10,
+                  74
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  43,
+                  89
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 3,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  96,
+                  21
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  77,
+                  98
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  94,
+                  41
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  90,
+                  47
+                ]
+              },
+              {
+                "step": 4,
+                "state": [
+                  62,
+                  91
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  58,
+                  88
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  40,
+                  43
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  100,
+                  84
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  27,
+                  15
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  39,
+                  20
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  65,
+                  71
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  97,
+                  60
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 4,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  85,
+                  47
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  32,
+                  91
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  40,
+                  75
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  47,
+                  18
+                ]
+              },
+              {
+                "step": 4,
+                "state": [
+                  74,
+                  60
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  99,
+                  46
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  12,
+                  79
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  81,
+                  25
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  25,
+                  52
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  60,
+                  41
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  89,
+                  63
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  98,
+                  48
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "seal": "# Seal — fcs-synth-world-002 (hardened, v0.4)\n\n- law sha256: `98bb0924b2f04e37122e0c82100c3ed7a829c97c0810c8b36c20563ad1c49320`\n- ablations vs world-001: frame family WITHHELD from the solver; dynamics NONLINEAR (quadratic) so a linear fit fails.\n- sealed: law.enc (AES-256-CBC, IV prepended); key held off-repository.\n- protocol: attempts timestamp-anchored BEFORE the key is published; on reveal, verify sha256(decrypt(law.enc)) == the hash above; grade on held-out prediction accuracy (scripts/fcs-synth/grade-world-002.mjs).\n- generated 2026-07-02T15:44:01.451Z.\n",
+      "reveal": "# Reveal — fcs-synth-world-002 (hardened, v0.4)\n\nAttempts were committed and anchored BEFORE this reveal (git history + timestamps/manifest.json).\n\n- key (AES-256-CBC, IV = first 16 bytes of law.enc): `400bbff2383005e1eac249f3ac3f08a7ae800a0a25f34c08c39dffe3b8abceba`\n- sha256(decrypt(law.enc)) = `98bb0924b2f04e37122e0c82100c3ed7a829c97c0810c8b36c20563ad1c49320` (matches SEAL.md)\n- the law (mod 101), on basis {1, x, y, x^2, xy, y^2}:\n  - x' = 12 + 29x + 21y + 56x^2 + 94xy + 78y^2\n  - y' = 10 + 84x + 20y + 66x^2 + 92xy + 66y^2\n- frame family was WITHHELD from solvers; grading is held-out prediction accuracy (scripts/fcs-synth/grade-world-002.mjs).\n",
+      "grading": {
+        "worldId": "world-002",
+        "gradedAt": "2026-07-02T19:28:40.151Z",
+        "lawHash": "98bb0924b2f04e37122e0c82100c3ed7a829c97c0810c8b36c20563ad1c49320",
+        "results": [
+          {
+            "attempt": "claude-fable-5.md",
+            "noAttempt": true,
+            "reason": "lane access-capped"
+          },
+          {
+            "attempt": "gpt-5.5.md",
+            "parsed": true,
+            "predictionsCorrect": 65,
+            "predictionsTotal": 65,
+            "identifiedNonlinear": true,
+            "statedClass": "time-invariant autonomous quadratic polynomial map over the finite field Z/101Z"
+          }
+        ]
+      },
+      "attempts": [
+        {
+          "file": "claude-fable-5.md",
+          "content": "# Attempt — Claude (Fable 5) · world-002 · 2026-07-02\n\nNO-ATTEMPT: lane access-capped before the task was received.\n\nThe Claude lane returned only the provider's usage-limit message, verbatim:\n\n> You're out of extra usage · resets 2:10pm (America/Chicago)\n\nThis is a harness/access failure, not a task failure — no attempt at\nworld-002 was made by this mind, and it is graded as absent, not as wrong.\nBecause the reveal publishes the law, no later Claude attempt at world-002 is\nvalid; the mind's next hardened probe is world-003. (The cap itself is\noperational evidence relevant to the open forecast fc-fable5-cap-transition.)\n"
+        },
+        {
+          "file": "gpt-5.5.md",
+          "content": "# Attempt — GPT-5.5 (codex) · world-002 · 2026-07-02\n\n===ATTEMPT-BEGIN===\n{\"law\":\"Let all arithmetic be modulo 101, with outputs represented as integers 0..100. The next state [x',y'] from [x,y] is x' = 12 + 29*x + 21*y + 56*x*x + 94*x*y + 78*y*y mod 101; y' = 10 + 84*x + 20*y + 66*x*x + 92*x*y + 66*y*y mod 101.\",\"class\":\"time-invariant autonomous quadratic polynomial map over the finite field Z/101Z\",\"predictions\":{\"t0_s5\":[6,17],\"t0_s7\":[10,26],\"t0_s8\":[89,49],\"t0_s10\":[88,72],\"t0_s11\":[42,96],\"t0_s13\":[88,74],\"t0_s14\":[14,48],\"t0_s16\":[28,35],\"t0_s17\":[25,81],\"t0_s19\":[66,75],\"t0_s20\":[87,100],\"t0_s22\":[12,79],\"t0_s23\":[92,63],\"t1_s5\":[58,50],\"t1_s7\":[27,11],\"t1_s8\":[22,72],\"t1_s10\":[72,54],\"t1_s11\":[82,29],\"t1_s13\":[6,30],\"t1_s14\":[62,64],\"t1_s16\":[51,6],\"t1_s17\":[75,63],\"t1_s19\":[1,12],\"t1_s20\":[84,100],\"t1_s22\":[100,82],\"t1_s23\":[92,37],\"t2_s5\":[75,17],\"t2_s7\":[62,14],\"t2_s8\":[37,9],\"t2_s10\":[63,97],\"t2_s11\":[84,22],\"t2_s13\":[38,62],\"t2_s14\":[91,57],\"t2_s16\":[48,96],\"t2_s17\":[27,34],\"t2_s19\":[15,70],\"t2_s20\":[12,89],\"t2_s22\":[53,86],\"t2_s23\":[55,67],\"t3_s5\":[37,20],\"t3_s7\":[3,65],\"t3_s8\":[85,87],\"t3_s10\":[41,42],\"t3_s11\":[62,26],\"t3_s13\":[87,90],\"t3_s14\":[26,71],\"t3_s16\":[89,85],\"t3_s17\":[59,23],\"t3_s19\":[66,30],\"t3_s20\":[34,11],\"t3_s22\":[32,100],\"t3_s23\":[86,17],\"t4_s5\":[52,74],\"t4_s7\":[85,9],\"t4_s8\":[88,63],\"t4_s10\":[92,63],\"t4_s11\":[1,15],\"t4_s13\":[69,78],\"t4_s14\":[44,18],\"t4_s16\":[79,74],\"t4_s17\":[37,18],\"t4_s19\":[62,87],\"t4_s20\":[87,24],\"t4_s22\":[18,67],\"t4_s23\":[3,0]},\"invariant\":\"state space is closed on Z/101Z squared; no nontrivial scalar invariant found\"}\n===ATTEMPT-END===\n\n\n[stderr]\nOpenAI Codex v0.142.5\n--------\nworkdir: /private/tmp\nmodel: gpt-5.5\nprovider: openai\napproval: never\nsandbox: read-only\nreasoning effort: medium\nreasoning summaries: none\nsession id: 019f2380-869c-74c2-96ad-62307d068e7e\n--------\nuser\nYou are attempting FCS-SYNTH world-002 — a sealed synthetic-world probe from pathtoAGI, the Observatory. The governing law was generated on 2026-07-02 and cannot exist in your training data. This attempt will be published verbatim and graded mechanically against the sealed answer.\n\nYou are told ONLY this: the system is deterministic and integer-valued, evolving in discrete steps. Its state is a pair [x, y]. The class of law that governs it is NOT disclosed to you — determining what kind of rule it is is part of the task. Do not assume it is linear.\n\nOBSERVATIONS (sparse samples per trajectory; step indices given):\n[{\"trajectory\":0,\"samples\":[{\"step\":0,\"state\":[54,79]},{\"step\":1,\"state\":[97,30]},{\"step\":2,\"state\":[45,99]},{\"step\":3,\"state\":[73,3]},{\"step\":4,\"state\":[17,9]},{\"step\":6,\"state\":[46,75]},{\"step\":9,\"state\":[70,29]},{\"step\":12,\"state\":[6,81]},{\"step\":15,\"state\":[55,3]},{\"step\":18,\"state\":[24,29]},{\"step\":21,\"state\":[37,75]},{\"step\":24,\"state\":[1,15]}]},{\"trajectory\":1,\"samples\":[{\"step\":0,\"state\":[14,100]},{\"step\":1,\"state\":[35,53]},{\"step\":2,\"state\":[16,49]},{\"step\":3,\"state\":[75,51]},{\"step\":4,\"state\":[67,14]},{\"step\":6,\"state\":[6,75]},{\"step\":9,\"state\":[47,35]},{\"step\":12,\"state\":[53,61]},{\"step\":15,\"state\":[80,27]},{\"step\":18,\"state\":[26,26]},{\"step\":21,\"state\":[87,76]},{\"step\":24,\"state\":[47,14]}]},{\"trajectory\":2,\"samples\":[{\"step\":0,\"state\":[48,55]},{\"step\":1,\"state\":[98,99]},{\"step\":2,\"state\":[51,17]},{\"step\":3,\"state\":[54,14]},{\"step\":4,\"state\":[30,0]},{\"step\":6,\"state\":[83,83]},{\"step\":9,\"state\":[14,51]},{\"step\":12,\"state\":[76,78]},{\"step\":15,\"state\":[18,32]},{\"step\":18,\"state\":[27,27]},{\"step\":21,\"state\":[10,74]},{\"step\":24,\"state\":[43,89]}]},{\"trajectory\":3,\"samples\":[{\"step\":0,\"state\":[96,21]},{\"step\":1,\"state\":[77,98]},{\"step\":2,\"state\":[94,41]},{\"step\":3,\"state\":[90,47]},{\"step\":4,\"state\":[62,91]},{\"step\":6,\"state\":[58,88]},{\"step\":9,\"state\":[40,43]},{\"step\":12,\"state\":[100,84]},{\"step\":15,\"state\":[27,15]},{\"step\":18,\"state\":[39,20]},{\"step\":21,\"state\":[65,71]},{\"step\":24,\"state\":[97,60]}]},{\"trajectory\":4,\"samples\":[{\"step\":0,\"state\":[85,47]},{\"step\":1,\"state\":[32,91]},{\"step\":2,\"state\":[40,75]},{\"step\":3,\"state\":[47,18]},{\"step\":4,\"state\":[74,60]},{\"step\":6,\"state\":[99,46]},{\"step\":9,\"state\":[12,79]},{\"step\":12,\"state\":[81,25]},{\"step\":15,\"state\":[25,52]},{\"step\":18,\"state\":[60,41]},{\"step\":21,\"state\":[89,63]},{\"step\":24,\"state\":[98,48]}]}]\n\nYOUR TASK:\n1. Determine the rule that advances [x, y] to the next step. State it explicitly and completely.\n2. Predict the held-out states EXACTLY (integers) for ALL of these (trajectory, step) keys:\nt0_s5, t0_s7, t0_s8, t0_s10, t0_s11, t0_s13, t0_s14, t0_s16, t0_s17, t0_s19, t0_s20, t0_s22, t0_s23, t1_s5, t1_s7, t1_s8, t1_s10, t1_s11, t1_s13, t1_s14, t1_s16, t1_s17, t1_s19, t1_s20, t1_s22, t1_s23, t2_s5, t2_s7, t2_s8, t2_s10, t2_s11, t2_s13, t2_s14, t2_s16, t2_s17, t2_s19, t2_s20, t2_s22, t2_s23, t3_s5, t3_s7, t3_s8, t3_s10, t3_s11, t3_s13, t3_s14, t3_s16, t3_s17, t3_s19, t3_s20, t3_s22, t3_s23, t4_s5, t4_s7, t4_s8, t4_s10, t4_s11, t4_s13, t4_s14, t4_s16, t4_s17, t4_s19, t4_s20, t4_s22, t4_s23\n3. State any invariant or structural property you find, if any.\n\nYou may write and run code. Derive; do not guess. If you cannot determine the rule, say so explicitly rather than fabricating predictions.\n\nOUTPUT — machine-graded. Emit, between these exact markers, STRICT JSON (no comments/trailing commas) with every held-out key present in predictions:\n===ATTEMPT-BEGIN===\n{\"law\": \"<explicit statement of the rule>\", \"class\": \"<what kind of law it is>\", \"predictions\": {\"t0_s6\":[x,y], ...}, \"invariant\": \"<any structural property, or 'none found'>\"}\n===ATTEMPT-END===\n2026-07-02T15:44:14.067897Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when AuthRequired(AuthRequiredError { www_authenticate_header: \"Bearer realm=\\\"OAuth\\\", resource_metadata=\\\"https://mcp.cloudflare.com/.well-known/oauth-protected-resource/mcp\\\", error=\\\"invalid_token\\\", error_description=\\\"Missing or invalid access token\\\"\" })\nwarning: Skill descriptions were shortened to fit the 2% skills context budget. Codex can still see every skill, but some descriptions are shorter. Disable unused skills or plugins to leave more room for the rest.\ncodex\nI’ll fit candidate rule families against the consecutive samples first, then use the gap samples as validation. Since the states are all in `0..100`, arithmetic modulo `101` is a natural structure to test, but I’ll verify it rather than assume it.\ncodex\nThe shell cannot create temporary here-doc files under the current read-only profile, so I’m switching to inline execution only. That still lets me compute fits without touching the filesystem.\nexec\n/bin/zsh -lc 'python3 -c $'\"'MOD=101\\\\nobs=[\\\\n[(0,(54,79)),(1,(97,30)),(2,(45,99)),(3,(73,3)),(4,(17,9)),(6,(46,75)),(9,(70,29)),(12,(6,81)),(15,(55,3)),(18,(24,29)),(21,(37,75)),(24,(1,15))],\\\\n[(0,(14,100)),(1,(35,53)),(2,(16,49)),(3,(75,51)),(4,(67,14)),(6,(6,75)),(9,(47,35)),(12,(53,61)),(15,(80,27)),(18,(26,26)),(21,(87,76)),(24,(47,14))],\\\\n[(0,(48,55)),(1,(98,99)),(2,(51,17)),(3,(54,14)),(4,(30,0)),(6,(83,83)),(9,(14,51)),(12,(76,78)),(15,(18,32)),(18,(27,27)),(21,(10,74)),(24,(43,89))],\\\\n[(0,(96,21)),(1,(77,98)),(2,(94,41)),(3,(90,47)),(4,(62,91)),(6,(58,88)),(9,(40,43)),(12,(100,84)),(15,(27,15)),(18,(39,20)),(21,(65,71)),(24,(97,60))],\\\\n[(0,(85,47)),(1,(32,91)),(2,(40,75)),(3,(47,18)),(4,(74,60)),(6,(99,46)),(9,(12,79)),(12,(81,25)),(15,(25,52)),(18,(60,41)),(21,(89,63)),(24,(98,48))]\\\\n]\\\\nrows=[]; valsx=[]; valsy=[]\\\\nfor tr in obs:\\\\n    d=dict(tr)\\\\n    for s in range(4):\\\\n        x,y=d[s]; xp,yp=d[s+1]\\\\n        rows.append([x,y,1]); valsx.append(xp); valsy.append(yp)\\\\ndef inv(a): return pow(a,-1,MOD)\\\\ndef solve3(rows, vals):\\\\n    import itertools\\\\n    for idxs in itertools.combinations(range(len(rows)),3):\\\\n        M=[rows[i][:]+[vals[i]] for i in idxs]\\\\n        ok=True\\\\n        for col in range(3):\\\\n            piv=next((r for r in range(col,3) if M[r][col]%MOD),None)\\\\n            if piv is None: ok=False; break\\\\n            M[col],M[piv]=M[piv],M[col]\\\\n            ii=inv(M[col][col]%MOD)\\\\n            M[col]=[(v*ii)%MOD for v in M[col]]\\\\n            for r in range(3):\\\\n                if r\"'!=col and M[r][col]%MOD:'\"\\\\n                    fac=M[r][col]%MOD\\\\n                    M[r]=[(M[r][c]-fac*M[col][c])%MOD for c in range(4)]\\\\n        if ok:\\\\n            sol=[M[i][3]%MOD for i in range(3)]\\\\n            if all(sum(sol[j]*rows[i][j] for j in range(3))%MOD==vals[i]%MOD for i in range(len(rows))): return sol\\\\n    return None\\\\nprint(solve3(rows, valsx), solve3(rows,valsy))\\\\n'\" in /private/tmp\n succeeded in 0ms:\nNone None\n\ncodex\nA time-invariant affine map over modulo `101` does not fit the one-step observations. I’m moving up to low-degree polynomial maps over the same finite state space and will validate candidates by iterating into every sparse checkpoint.\nexec\n/bin/zsh -lc 'python3 -c $'\"'MOD=101\\\\nobs=[[(0,(54,79)),(1,(97,30)),(2,(45,99)),(3,(73,3)),(4,(17,9)),(6,(46,75)),(9,(70,29)),(12,(6,81)),(15,(55,3)),(18,(24,29)),(21,(37,75)),(24,(1,15))],[(0,(14,100)),(1,(35,53)),(2,(16,49)),(3,(75,51)),(4,(67,14)),(6,(6,75)),(9,(47,35)),(12,(53,61)),(15,(80,27)),(18,(26,26)),(21,(87,76)),(24,(47,14))],[(0,(48,55)),(1,(98,99)),(2,(51,17)),(3,(54,14)),(4,(30,0)),(6,(83,83)),(9,(14,51)),(12,(76,78)),(15,(18,32)),(18,(27,27)),(21,(10,74)),(24,(43,89))],[(0,(96,21)),(1,(77,98)),(2,(94,41)),(3,(90,47)),(4,(62,91)),(6,(58,88)),(9,(40,43)),(12,(100,84)),(15,(27,15)),(18,(39,20)),(21,(65,71)),(24,(97,60))],[(0,(85,47)),(1,(32,91)),(2,(40,75)),(3,(47,18)),(4,(74,60)),(6,(99,46)),(9,(12,79)),(12,(81,25)),(15,(25,52)),(18,(60,41)),(21,(89,63)),(24,(98,48))]]\\\\ntrans=[]\\\\nfor tr in obs:\\\\n d=dict(tr)\\\\n for s in range(4): trans.append((d[s],d[s+1]))\\\\n\\\\ndef mons_deg(deg):\\\\n return [(i,j) for i in range(deg+1) for j in range(deg+1-i)]\\\\ndef eval_m(ms,x,y): return [pow(x,i,MOD)*pow(y,j,MOD)%MOD for i,j in ms]\\\\ndef rref_solve(A,b):\\\\n m=len(A); n=len(A[0]); M=[A[i][:]+[b[i]%MOD] for i in range(m)]; row=0; piv=[]\\\\n for col in range(n):\\\\n  p=next((r for r in range(row,m) if M[r][col]%MOD),None)\\\\n  if p is None: continue\\\\n  M[row],M[p]=M[p],M[row]\\\\n  inv=pow(M[row][col]%MOD,-1,MOD); M[row]=[(v*inv)%MOD for v in M[row]]\\\\n  for r in range(m):\\\\n   if r\"'!=row and M[r][col]%MOD:'\"\\\\n    fac=M[r][col]%MOD; M[r]=[(M[r][c]-fac*M[row][c])%MOD for c in range(n+1)]\\\\n  piv.append(col); row+=1\\\\n  if row==m: break\\\\n for r in range(row,m):\\\\n  if all(M[r][c]%MOD==0 for c in range(n)) and M[r][n]%MOD: return None,None\\\\n sol=[0]*n\\\\n for r,c in enumerate(piv): sol[c]=M[r][n]%MOD\\\\n return sol,piv\\\\nfor deg in range(2,7):\\\\n ms=mons_deg(deg); A=[]; bx=[]; by=[]\\\\n for (x,y),(xp,yp) in trans:\\\\n  A.append(eval_m(ms,x,y)); bx.append(xp); by.append(yp)\\\\n sx,px=rref_solve(A,bx); sy,py=rref_solve(A,by)\\\\n print(\\\"deg\\\",deg,\\\"terms\\\",len(ms),\\\"fit\\\",sx is not None,sy is not None,\\\"rank\\\",len(px) if px else None)\\\\n if sx and sy:\\\\n  def F(st):\\\\n   x,y=st; v=eval_m(ms,x,y); return (sum(a*b for a,b in zip(sx,v))%MOD, sum(a*b for a,b in zip(sy,v))%MOD)\\\\n  ok=True\\\\n  for tr in obs:\\\\n   d=dict(tr); st=d[0]\\\\n   for s in range(1,25):\\\\n    st=F(st)\\\\n    if s in d and st\"'!=d[s]: ok=False; print(\" fail\",deg,tr[0],s,st,d[s]); break'\"\\\\n   if not ok: break\\\\n  print(\\\" validates\\\",ok)\\\\n'\" in /private/tmp\n succeeded in 0ms:\ndeg 2 terms 6 fit True True rank 6\n validates True\ndeg 3 terms 10 fit True True rank 10\n validates True\ndeg 4 terms 15 fit True True rank 15\n validates True\ndeg 5 terms 21 fit True True rank 20\n validates True\ndeg 6 terms 28 fit True True rank 20\n validates True\n\nexec\n/bin/zsh -lc 'python3 -c $'\"'import json\\\\nMOD=101\\\\nobs=[[(0,(54,79)),(1,(97,30)),(2,(45,99)),(3,(73,3)),(4,(17,9)),(6,(46,75)),(9,(70,29)),(12,(6,81)),(15,(55,3)),(18,(24,29)),(21,(37,75)),(24,(1,15))],[(0,(14,100)),(1,(35,53)),(2,(16,49)),(3,(75,51)),(4,(67,14)),(6,(6,75)),(9,(47,35)),(12,(53,61)),(15,(80,27)),(18,(26,26)),(21,(87,76)),(24,(47,14))],[(0,(48,55)),(1,(98,99)),(2,(51,17)),(3,(54,14)),(4,(30,0)),(6,(83,83)),(9,(14,51)),(12,(76,78)),(15,(18,32)),(18,(27,27)),(21,(10,74)),(24,(43,89))],[(0,(96,21)),(1,(77,98)),(2,(94,41)),(3,(90,47)),(4,(62,91)),(6,(58,88)),(9,(40,43)),(12,(100,84)),(15,(27,15)),(18,(39,20)),(21,(65,71)),(24,(97,60))],[(0,(85,47)),(1,(32,91)),(2,(40,75)),(3,(47,18)),(4,(74,60)),(6,(99,46)),(9,(12,79)),(12,(81,25)),(15,(25,52)),(18,(60,41)),(21,(89,63)),(24,(98,48))]]\\\\ntrans=[]\\\\nfor tr in obs:\\\\n d=dict(tr)\\\\n for s in range(4): trans.append((d[s],d[s+1]))\\\\nms=[(0,0),(0,1),(0,2),(1,0),(1,1),(2,0)]\\\\ndef ev(x,y): return [1,y%MOD,y*y%MOD,x%MOD,x*y%MOD,x*x%MOD]\\\\ndef solve(A,b):\\\\n m=len(A); n=len(A[0]); M=[A[i][:]+[b[i]%MOD] for i in range(m)]; row=0; piv=[]\\\\n for col in range(n):\\\\n  p=next((r for r in range(row,m) if M[r][col]%MOD),None)\\\\n  if p is None: continue\\\\n  M[row],M[p]=M[p],M[row]\\\\n  inv=pow(M[row][col],-1,MOD); M[row]=[(v*inv)%MOD for v in M[row]]\\\\n  for r in range(m):\\\\n   if r\"'!=row and M[r][col]%MOD:'\"\\\\n    fac=M[r][col]; M[r]=[(M[r][c]-fac*M[row][c])%MOD for c in range(n+1)]\\\\n  piv.append(col); row+=1\\\\n sol=[0]*n\\\\n for r,c in enumerate(piv): sol[c]=M[r][n]\\\\n return sol\\\\nA=[]; bx=[]; by=[]\\\\nfor (x,y),(xp,yp) in trans:\\\\n A.append(ev(x,y)); bx.append(xp); by.append(yp)\\\\nsx=solve(A,bx); sy=solve(A,by)\\\\nprint(\\\"coeff order 1,y,y2,x,xy,x2\\\")\\\\nprint(\\\"x\\\",sx)\\\\nprint(\\\"y\\\",sy)\\\\ndef F(st):\\\\n x,y=st; v=ev(x,y); return [sum(a*b for a,b in zip(sx,v))%MOD, sum(a*b for a,b in zip(sy,v))%MOD]\\\\npred={}\\\\nwant=[5,7,8,10,11,13,14,16,17,19,20,22,23]\\\\nfor ti,tr in enumerate(obs):\\\\n d=dict(tr); st=list(d[0]); states={0:st}\\\\n for s in range(1,25):\\\\n  st=F(st); states[s]=st\\\\n for s in want: pred[f\\\"t{ti}_s{s}\\\"]=states[s]\\\\n # print all trajectory for checking\\\\n print(\\\"traj\\\",ti, [states[s] for s in range(25)])\\\\nprint(json.dumps(pred, separators=(\\\",\\\",\\\":\\\")))\\\\n'\" in /private/tmp\n succeeded in 0ms:\ncoeff order 1,y,y2,x,xy,x2\nx [12, 21, 78, 29, 94, 56]\ny [10, 20, 66, 84, 92, 66]\ntraj 0 [[54, 79], [97, 30], [45, 99], [73, 3], [17, 9], [6, 17], [46, 75], [10, 26], [89, 49], [70, 29], [88, 72], [42, 96], [6, 81], [88, 74], [14, 48], [55, 3], [28, 35], [25, 81], [24, 29], [66, 75], [87, 100], [37, 75], [12, 79], [92, 63], [1, 15]]\ntraj 1 [[14, 100], [35, 53], [16, 49], [75, 51], [67, 14], [58, 50], [6, 75], [27, 11], [22, 72], [47, 35], [72, 54], [82, 29], [53, 61], [6, 30], [62, 64], [80, 27], [51, 6], [75, 63], [26, 26], [1, 12], [84, 100], [87, 76], [100, 82], [92, 37], [47, 14]]\ntraj 2 [[48, 55], [98, 99], [51, 17], [54, 14], [30, 0], [75, 17], [83, 83], [62, 14], [37, 9], [14, 51], [63, 97], [84, 22], [76, 78], [38, 62], [91, 57], [18, 32], [48, 96], [27, 34], [27, 27], [15, 70], [12, 89], [10, 74], [53, 86], [55, 67], [43, 89]]\ntraj 3 [[96, 21], [77, 98], [94, 41], [90, 47], [62, 91], [37, 20], [58, 88], [3, 65], [85, 87], [40, 43], [41, 42], [62, 26], [100, 84], [87, 90], [26, 71], [27, 15], [89, 85], [59, 23], [39, 20], [66, 30], [34, 11], [65, 71], [32, 100], [86, 17], [97, 60]]\ntraj 4 [[85, 47], [32, 91], [40, 75], [47, 18], [74, 60], [52, 74], [99, 46], [85, 9], [88, 63], [12, 79], [92, 63], [1, 15], [81, 25], [69, 78], [44, 18], [25, 52], [79, 74], [37, 18], [60, 41], [62, 87], [87, 24], [89, 63], [18, 67], [3, 0], [98, 48]]\n{\"t0_s5\":[6,17],\"t0_s7\":[10,26],\"t0_s8\":[89,49],\"t0_s10\":[88,72],\"t0_s11\":[42,96],\"t0_s13\":[88,74],\"t0_s14\":[14,48],\"t0_s16\":[28,35],\"t0_s17\":[25,81],\"t0_s19\":[66,75],\"t0_s20\":[87,100],\"t0_s22\":[12,79],\"t0_s23\":[92,63],\"t1_s5\":[58,50],\"t1_s7\":[27,11],\"t1_s8\":[22,72],\"t1_s10\":[72,54],\"t1_s11\":[82,29],\"t1_s13\":[6,30],\"t1_s14\":[62,64],\"t1_s16\":[51,6],\"t1_s17\":[75,63],\"t1_s19\":[1,12],\"t1_s20\":[84,100],\"t1_s22\":[100,82],\"t1_s23\":[92,37],\"t2_s5\":[75,17],\"t2_s7\":[62,14],\"t2_s8\":[37,9],\"t2_s10\":[63,97],\"t2_s11\":[84,22],\"t2_s13\":[38,62],\"t2_s14\":[91,57],\"t2_s16\":[48,96],\"t2_s17\":[27,34],\"t2_s19\":[15,70],\"t2_s20\":[12,89],\"t2_s22\":[53,86],\"t2_s23\":[55,67],\"t3_s5\":[37,20],\"t3_s7\":[3,65],\"t3_s8\":[85,87],\"t3_s10\":[41,42],\"t3_s11\":[62,26],\"t3_s13\":[87,90],\"t3_s14\":[26,71],\"t3_s16\":[89,85],\"t3_s17\":[59,23],\"t3_s19\":[66,30],\"t3_s20\":[34,11],\"t3_s22\":[32,100],\"t3_s23\":[86,17],\"t4_s5\":[52,74],\"t4_s7\":[85,9],\"t4_s8\":[88,63],\"t4_s10\":[92,63],\"t4_s11\":[1,15],\"t4_s13\":[69,78],\"t4_s14\":[44,18],\"t4_s16\":[79,74],\"t4_s17\":[37,18],\"t4_s19\":[62,87],\"t4_s20\":[87,24],\"t4_s22\":[18,67],\"t4_s23\":[3,0]}\n\ncodex\n===ATTEMPT-BEGIN===\n{\"law\":\"Let all arithmetic be modulo 101, with outputs represented as integers 0..100. The next state [x',y'] from [x,y] is x' = 12 + 29*x + 21*y + 56*x*x + 94*x*y + 78*y*y mod 101; y' = 10 + 84*x + 20*y + 66*x*x + 92*x*y + 66*y*y mod 101.\",\"class\":\"time-invariant autonomous quadratic polynomial map over the finite field Z/101Z\",\"predictions\":{\"t0_s5\":[6,17],\"t0_s7\":[10,26],\"t0_s8\":[89,49],\"t0_s10\":[88,72],\"t0_s11\":[42,96],\"t0_s13\":[88,74],\"t0_s14\":[14,48],\"t0_s16\":[28,35],\"t0_s17\":[25,81],\"t0_s19\":[66,75],\"t0_s20\":[87,100],\"t0_s22\":[12,79],\"t0_s23\":[92,63],\"t1_s5\":[58,50],\"t1_s7\":[27,11],\"t1_s8\":[22,72],\"t1_s10\":[72,54],\"t1_s11\":[82,29],\"t1_s13\":[6,30],\"t1_s14\":[62,64],\"t1_s16\":[51,6],\"t1_s17\":[75,63],\"t1_s19\":[1,12],\"t1_s20\":[84,100],\"t1_s22\":[100,82],\"t1_s23\":[92,37],\"t2_s5\":[75,17],\"t2_s7\":[62,14],\"t2_s8\":[37,9],\"t2_s10\":[63,97],\"t2_s11\":[84,22],\"t2_s13\":[38,62],\"t2_s14\":[91,57],\"t2_s16\":[48,96],\"t2_s17\":[27,34],\"t2_s19\":[15,70],\"t2_s20\":[12,89],\"t2_s22\":[53,86],\"t2_s23\":[55,67],\"t3_s5\":[37,20],\"t3_s7\":[3,65],\"t3_s8\":[85,87],\"t3_s10\":[41,42],\"t3_s11\":[62,26],\"t3_s13\":[87,90],\"t3_s14\":[26,71],\"t3_s16\":[89,85],\"t3_s17\":[59,23],\"t3_s19\":[66,30],\"t3_s20\":[34,11],\"t3_s22\":[32,100],\"t3_s23\":[86,17],\"t4_s5\":[52,74],\"t4_s7\":[85,9],\"t4_s8\":[88,63],\"t4_s10\":[92,63],\"t4_s11\":[1,15],\"t4_s13\":[69,78],\"t4_s14\":[44,18],\"t4_s16\":[79,74],\"t4_s17\":[37,18],\"t4_s19\":[62,87],\"t4_s20\":[87,24],\"t4_s22\":[18,67],\"t4_s23\":[3,0]},\"invariant\":\"state space is closed on Z/101Z squared; no nontrivial scalar invariant found\"}\n===ATTEMPT-END===\ntokens used\n55,088\n"
+        }
+      ]
+    },
+    {
+      "worldId": "world-003",
+      "status": "revealed-and-graded",
+      "observations": {
+        "worldId": "world-003",
+        "generatedAt": "2026-07-02T21:01:08.320Z",
+        "disclosure": "REGISTERED PROBE. The governing law family is deliberately withheld. Early samples are allowed to be misleading; solvers must infer the governing frame without code execution.",
+        "task": "From the samples alone: (1) propose the governing frame and explicit rule; (2) predict held-out primary states; (3) identify whether the negative-control lane supports exact prediction or should be withheld as underdetermined; (4) state tool/code use. Grading is withheld until attempts are timestamped.",
+        "codeAblation": "No code execution, calculators, search, scripts, notebooks, or external tools during the attempt.",
+        "primaryHeldOutKeys": [
+          "p:t0_s5",
+          "p:t0_s7",
+          "p:t0_s8",
+          "p:t0_s10",
+          "p:t0_s11",
+          "p:t0_s13",
+          "p:t0_s14",
+          "p:t0_s15",
+          "p:t0_s16",
+          "p:t0_s17",
+          "p:t0_s18",
+          "p:t1_s5",
+          "p:t1_s7",
+          "p:t1_s8",
+          "p:t1_s10",
+          "p:t1_s11",
+          "p:t1_s13",
+          "p:t1_s14",
+          "p:t1_s15",
+          "p:t1_s16",
+          "p:t1_s17",
+          "p:t1_s18",
+          "p:t2_s5",
+          "p:t2_s7",
+          "p:t2_s8",
+          "p:t2_s10",
+          "p:t2_s11",
+          "p:t2_s13",
+          "p:t2_s14",
+          "p:t2_s15",
+          "p:t2_s16",
+          "p:t2_s17",
+          "p:t2_s18",
+          "p:t3_s5",
+          "p:t3_s7",
+          "p:t3_s8",
+          "p:t3_s10",
+          "p:t3_s11",
+          "p:t3_s13",
+          "p:t3_s14",
+          "p:t3_s15",
+          "p:t3_s16",
+          "p:t3_s17",
+          "p:t3_s18"
+        ],
+        "observations": [
+          {
+            "trajectory": 0,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  57,
+                  83
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  55,
+                  25
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  52,
+                  78
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  20,
+                  87
+                ]
+              },
+              {
+                "step": 4,
+                "state": [
+                  1,
+                  27
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  72,
+                  43
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  75,
+                  82
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  32,
+                  56
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 1,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  1,
+                  46
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  49,
+                  0
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  12,
+                  57
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  29,
+                  77
+                ]
+              },
+              {
+                "step": 4,
+                "state": [
+                  66,
+                  14
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  0,
+                  50
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  21,
+                  9
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  83,
+                  28
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 2,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  58,
+                  20
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  33,
+                  67
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  24,
+                  83
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  86,
+                  23
+                ]
+              },
+              {
+                "step": 4,
+                "state": [
+                  7,
+                  66
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  84,
+                  57
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  91,
+                  48
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  65,
+                  31
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 3,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  42,
+                  73
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  72,
+                  37
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  49,
+                  80
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  24,
+                  86
+                ]
+              },
+              {
+                "step": 4,
+                "state": [
+                  4,
+                  35
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  72,
+                  89
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  39,
+                  12
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  8,
+                  31
+                ]
+              }
+            ]
+          }
+        ],
+        "negativeControl": {
+          "disclosure": "This lane may or may not be identifiable from public samples. Overclaiming exact predictions is penalized.",
+          "publicSamples": [
+            {
+              "input": 0,
+              "output": 3
+            },
+            {
+              "input": 1,
+              "output": 5
+            },
+            {
+              "input": 2,
+              "output": 7
+            },
+            {
+              "input": 3,
+              "output": 9
+            },
+            {
+              "input": 4,
+              "output": 11
+            }
+          ],
+          "heldOutInputs": [
+            5,
+            6,
+            7
+          ]
+        }
+      },
+      "seal": "# Seal — fcs-synth-world-003 (Omnibus tranche-2)\n\n- world id: `world-003`\n- law sha256: `40c6078ccc237134fbe063f451b90ca7099e2e9159828215bbb37e5b9f13b9ff`\n- controls: W3 wrong-frame attractor; W6 underdetermined negative control; code-ablated solver protocol; human baseline and independent-scoring hooks required before verdict impact.\n- sealed: law.enc (AES-256-CBC, IV prepended); key held off-repository.\n- protocol: attempts timestamp-anchored BEFORE the key is published; on reveal, verify sha256(decrypt(law.enc)) == the hash above; grade with scripts/fcs-synth/grade-world-003.mjs.\n- generated 2026-07-02T21:01:08.321Z.\n",
+      "reveal": "# Reveal — fcs-synth-world-003\n\nAttempts must be committed and timestamp-anchored before this file is published.\n\n- key (AES-256-CBC, IV = first 16 bytes of law.enc): `6ecad92e1667bece579ebe730aca39bf4de8cae3791e13e1d62a9da5e7401ef5`\n- sha256(decrypt(law.enc)) = `40c6078ccc237134fbe063f451b90ca7099e2e9159828215bbb37e5b9f13b9ff` (matches SEAL.md)\n- primary law: gated nonlinear map over Z_97 with affine-looking prefix attractor\n- branch gate: branch affine iff (x + 2y) mod 7 < 3; otherwise nonlinear branch\n- negative control: underdetermined: multiple laws match the public samples and diverge on held-out inputs\n\nThe reveal establishes grading truth. It does not by itself move the public verdict.\n",
+      "grading": {
+        "worldId": "world-003",
+        "gradedAt": "2026-07-03T16:17:13.938Z",
+        "graderVersion": 2,
+        "supersedes": "GRADING-v1-2026-07-02.superseded.json (v1 conflated self-report with mechanical frame determination)",
+        "lawHash": "40c6078ccc237134fbe063f451b90ca7099e2e9159828215bbb37e5b9f13b9ff",
+        "scoring": {
+          "primaryPredictionAccuracy": "exact match over p:tN_sK held-out keys",
+          "wrongFrameAttractor": "determined mechanically from the stated law text alone: credit only if it describes a gated/piecewise/nonlinear structure and not a plain affine frame. The attempt's own wrongFrameRejected claim is recorded separately as selfReportedWrongFrameRejected and never stands in for the mechanical result.",
+          "selfReportMatchesBehavior": "true when the attempt's claim about itself agrees with the mechanical determination; a mismatch is flagged in notes as evidence of unreliable self-assessment",
+          "negativeControl": "pass only if the lane is called underdetermined and no exact held-out predictions are asserted",
+          "codeAblation": "reported from the attempt envelope; external enforcement requires transcript/proctor evidence"
+        },
+        "results": [
+          {
+            "attempt": "claude-fable-5.md",
+            "status": "no-attempt",
+            "excluded": true
+          },
+          {
+            "attempt": "gpt-5.5.md",
+            "status": "scored",
+            "parsed": true,
+            "codeAblationDeclared": true,
+            "selfReportedWrongFrameRejected": true,
+            "wrongFrameRejected": false,
+            "selfReportMatchesBehavior": false,
+            "predictionsCorrect": 0,
+            "predictionsTotal": 44,
+            "negativeControlPassed": true,
+            "notes": [
+              "self-report/behavior mismatch: attempt claims wrongFrameRejected:true but its stated law is the affine attractor frame"
+            ]
+          }
+        ]
+      },
+      "attempts": [
+        {
+          "file": "README.md",
+          "content": "# Attempts — fcs-synth-world-003\n\nNo scored attempts belong here until the attempt is completed under the public protocol and timestamped before reveal.\n\nUse the JSON envelope published in `public/runs/fcs-world-003-2026-07-02/05_attempt_template.json`.\n"
+        },
+        {
+          "file": "claude-fable-5.md",
+          "content": "# Attempt — Claude (Fable 5, harness-ablated --disallowedTools) · world-003 · 2026-07-02\n\nProtocol: public/runs/fcs-world-003-2026-07-02/ (pinned by the registering session). Code forbidden — harness-enforced for this lane via --disallowedTools.\n\nNO-ATTEMPT: lane access-capped before the task was received.\n\n> You're out of extra usage · resets 11pm (America/Chicago)\n\nAbsent, not wrong. This is the THIRD same-day occurrence of the Fable 5 usage\ncap (world-002 ~14:28, world-005 earlier, world-003 now) — accumulating\noperational evidence for the open forecast fc-fable5-cap-transition (horizon\n2026-07-08). The harness ablation itself (--disallowedTools) was verified\nworking before the cap; the block is quota, not method.\n"
+        },
+        {
+          "file": "gpt-5.5.md",
+          "content": "# Attempt — GPT-5.5 (codex; code prompt-forbidden, not harness-enforced) · world-003 · 2026-07-02\n\nProtocol: public/runs/fcs-world-003-2026-07-02/ (pinned by the registering session).\n\nProvenance note: I reasoned by inspection from the provided samples only; no code, calculators, search, notebooks, scripts, or external tools used.\n\n===ATTEMPT-BEGIN===\n{\n  \"worldId\": \"world-003\",\n  \"attemptedAt\": \"2026-07-03T00:00:00Z\",\n  \"mind\": \"GPT-5-Codex\",\n  \"attemptClass\": \"model\",\n  \"toolUse\": {\n    \"codeUsed\": false,\n    \"externalToolsUsed\": false,\n    \"notes\": \"Solved by manual inspection/arithmetic from the prompt samples only.\"\n  },\n  \"primary\": {\n    \"frame\": \"Two-dimensional affine linear dynamical system over integers modulo 97.\",\n    \"law\": \"For state [x,y] at step s, the next state is [(2*x + 5*y + 11) mod 97, (3*x + 4*y + 7) mod 97].\",\n    \"wrongFrameRejected\": true,\n    \"predictions\": {\n      \"p:t0_s5\": [50, 21],\n      \"p:t0_s7\": [47, 84],\n      \"p:t0_s8\": [40, 77],\n      \"p:t0_s10\": [95, 21],\n      \"p:t0_s11\": [31, 62],\n      \"p:t0_s13\": [66, 44],\n      \"p:t0_s14\": [72, 25],\n      \"p:t0_s15\": [90, 39],\n      \"p:t0_s16\": [95, 62],\n      \"p:t0_s17\": [39, 17],\n      \"p:t0_s18\": [8, 4],\n      \"p:t1_s5\": [50, 16],\n      \"p:t1_s7\": [78, 13],\n      \"p:t1_s8\": [38, 37],\n      \"p:t1_s10\": [77, 16],\n      \"p:t1_s11\": [57, 55],\n      \"p:t1_s13\": [20, 72],\n      \"p:t1_s14\": [3, 68],\n      \"p:t1_s15\": [66, 94],\n      \"p:t1_s16\": [31, 7],\n      \"p:t1_s17\": [8, 31],\n      \"p:t1_s18\": [83, 58],\n      \"p:t2_s5\": [60, 21],\n      \"p:t2_s7\": [65, 17],\n      \"p:t2_s8\": [34, 57],\n      \"p:t2_s10\": [84, 4],\n      \"p:t2_s11\": [1, 81],\n      \"p:t2_s13\": [50, 61],\n      \"p:t2_s14\": [28, 51],\n      \"p:t2_s15\": [31, 12],\n      \"p:t2_s16\": [36, 51],\n      \"p:t2_s17\": [72, 10],\n      \"p:t2_s18\": [11, 58],\n      \"p:t3_s5\": [0, 65],\n      \"p:t3_s7\": [43, 83],\n      \"p:t3_s8\": [27, 86],\n      \"p:t3_s10\": [49, 73],\n      \"p:t3_s11\": [86, 77],\n      \"p:t3_s13\": [77, 58],\n      \"p:t3_s14\": [67, 39],\n      \"p:t3_s15\": [49, 58],\n      \"p:t3_s16\": [11, 88],\n      \"p:t3_s17\": [73, 36],\n      \"p:t3_s18\": [94, 78]\n    }\n  },\n  \"negativeControl\": {\n    \"verdict\": \"underdetermined\",\n    \"reason\": \"The public samples fit y=2x+3 for inputs 0 through 4, but infinitely many other deterministic integer-valued rules agree on those samples and differ at held-out inputs 5, 6, and 7. Exact prediction is therefore not justified.\",\n    \"predictions\": {}\n  },\n  \"confidence\": \"medium\",\n  \"strongestReasonWrong\": \"Manual modular arithmetic may contain an arithmetic slip, though the inferred affine rule matches the visible sampled transitions.\"\n}\n===ATTEMPT-END===\n\n\n[stderr]\nOpenAI Codex v0.142.5\n--------\nworkdir: /private/tmp\nmodel: gpt-5.5\nprovider: openai\napproval: never\nsandbox: read-only\nreasoning effort: low\nreasoning summaries: none\nsession id: 019f25cf-fd39-7bd0-af09-09a27f9608e7\n--------\nuser\n# Prompt — fcs-world-003-2026-07-02\n\nYou are given samples from a deterministic integer-valued system. The governing law family is not disclosed.\n\nUse only the public samples in `experiments/fcs-synth-world-003/observations.json`.\n\nDo not use code execution, calculators, search, notebooks, scripts, or external tools. Reason by inspection and write down your attempt in the JSON envelope from `05_attempt_template.json`.\n\nYour tasks:\n\n1. Propose the governing frame and explicit rule for the primary lane.\n2. Predict every primary held-out state named in `primaryHeldOutKeys`.\n3. For the negative-control lane, decide whether exact held-out predictions are justified by the public samples. If they are not justified, say so and leave predictions empty.\n4. State whether you used code or external tools.\n5. Name your confidence and the strongest reason your answer might be wrong.\n\nYour answer must be placed between:\n\n```text\n===ATTEMPT-BEGIN===\n{ ...valid JSON... }\n===ATTEMPT-END===\n```\n\nDo not include commentary outside the envelope except provenance notes above it.\n\n\n--- attempt template (05_attempt_template.json) ---\n{\n  \"worldId\": \"world-003\",\n  \"attemptedAt\": \"YYYY-MM-DDTHH:mm:ssZ\",\n  \"mind\": \"model-or-human-label\",\n  \"attemptClass\": \"model|human-baseline\",\n  \"toolUse\": {\n    \"codeUsed\": false,\n    \"externalToolsUsed\": false,\n    \"notes\": \"plain text provenance note\"\n  },\n  \"primary\": {\n    \"frame\": \"proposed governing frame\",\n    \"law\": \"explicit rule as understood by the solver\",\n    \"wrongFrameRejected\": false,\n    \"predictions\": {\n      \"p:t0_s5\": [0, 0]\n    }\n  },\n  \"negativeControl\": {\n    \"verdict\": \"underdetermined|predictable\",\n    \"reason\": \"why exact prediction is or is not justified\",\n    \"predictions\": {}\n  },\n  \"confidence\": \"low|medium|high\",\n  \"strongestReasonWrong\": \"short answer\"\n}\n\n\n--- public samples (experiments/fcs-synth-world-003/observations.json) ---\n{\n  \"worldId\": \"world-003\",\n  \"generatedAt\": \"2026-07-02T21:01:08.320Z\",\n  \"disclosure\": \"REGISTERED PROBE. The governing law family is deliberately withheld. Early samples are allowed to be misleading; solvers must infer the governing frame without code execution.\",\n  \"task\": \"From the samples alone: (1) propose the governing frame and explicit rule; (2) predict held-out primary states; (3) identify whether the negative-control lane supports exact prediction or should be withheld as underdetermined; (4) state tool/code use. Grading is withheld until attempts are timestamped.\",\n  \"codeAblation\": \"No code execution, calculators, search, scripts, notebooks, or external tools during the attempt.\",\n  \"primaryHeldOutKeys\": [\n    \"p:t0_s5\",\n    \"p:t0_s7\",\n    \"p:t0_s8\",\n    \"p:t0_s10\",\n    \"p:t0_s11\",\n    \"p:t0_s13\",\n    \"p:t0_s14\",\n    \"p:t0_s15\",\n    \"p:t0_s16\",\n    \"p:t0_s17\",\n    \"p:t0_s18\",\n    \"p:t1_s5\",\n    \"p:t1_s7\",\n    \"p:t1_s8\",\n    \"p:t1_s10\",\n    \"p:t1_s11\",\n    \"p:t1_s13\",\n    \"p:t1_s14\",\n    \"p:t1_s15\",\n    \"p:t1_s16\",\n    \"p:t1_s17\",\n    \"p:t1_s18\",\n    \"p:t2_s5\",\n    \"p:t2_s7\",\n    \"p:t2_s8\",\n    \"p:t2_s10\",\n    \"p:t2_s11\",\n    \"p:t2_s13\",\n    \"p:t2_s14\",\n    \"p:t2_s15\",\n    \"p:t2_s16\",\n    \"p:t2_s17\",\n    \"p:t2_s18\",\n    \"p:t3_s5\",\n    \"p:t3_s7\",\n    \"p:t3_s8\",\n    \"p:t3_s10\",\n    \"p:t3_s11\",\n    \"p:t3_s13\",\n    \"p:t3_s14\",\n    \"p:t3_s15\",\n    \"p:t3_s16\",\n    \"p:t3_s17\",\n    \"p:t3_s18\"\n  ],\n  \"observations\": [\n    {\n      \"trajectory\": 0,\n      \"samples\": [\n        {\n          \"step\": 0,\n          \"state\": [\n            57,\n            83\n          ]\n        },\n        {\n          \"step\": 1,\n          \"state\": [\n            55,\n            25\n          ]\n        },\n        {\n          \"step\": 2,\n          \"state\": [\n            52,\n            78\n          ]\n        },\n        {\n          \"step\": 3,\n          \"state\": [\n            20,\n            87\n          ]\n        },\n        {\n          \"step\": 4,\n          \"state\": [\n            1,\n            27\n          ]\n        },\n        {\n          \"step\": 6,\n          \"state\": [\n            72,\n            43\n          ]\n        },\n        {\n          \"step\": 9,\n          \"state\": [\n            75,\n            82\n          ]\n        },\n        {\n          \"step\": 12,\n          \"state\": [\n            32,\n            56\n          ]\n        }\n      ]\n    },\n    {\n      \"trajectory\": 1,\n      \"samples\": [\n        {\n          \"step\": 0,\n          \"state\": [\n            1,\n            46\n          ]\n        },\n        {\n          \"step\": 1,\n          \"state\": [\n            49,\n            0\n          ]\n        },\n        {\n          \"step\": 2,\n          \"state\": [\n            12,\n            57\n          ]\n        },\n        {\n          \"step\": 3,\n          \"state\": [\n            29,\n            77\n          ]\n        },\n        {\n          \"step\": 4,\n          \"state\": [\n            66,\n            14\n          ]\n        },\n        {\n          \"step\": 6,\n          \"state\": [\n            0,\n            50\n          ]\n        },\n        {\n          \"step\": 9,\n          \"state\": [\n            21,\n            9\n          ]\n        },\n        {\n          \"step\": 12,\n          \"state\": [\n            83,\n            28\n          ]\n        }\n      ]\n    },\n    {\n      \"trajectory\": 2,\n      \"samples\": [\n        {\n          \"step\": 0,\n          \"state\": [\n            58,\n            20\n          ]\n        },\n        {\n          \"step\": 1,\n          \"state\": [\n            33,\n            67\n          ]\n        },\n        {\n          \"step\": 2,\n          \"state\": [\n            24,\n            83\n          ]\n        },\n        {\n          \"step\": 3,\n          \"state\": [\n            86,\n            23\n          ]\n        },\n        {\n          \"step\": 4,\n          \"state\": [\n            7,\n            66\n          ]\n        },\n        {\n          \"step\": 6,\n          \"state\": [\n            84,\n            57\n          ]\n        },\n        {\n          \"step\": 9,\n          \"state\": [\n            91,\n            48\n          ]\n        },\n        {\n          \"step\": 12,\n          \"state\": [\n            65,\n            31\n          ]\n        }\n      ]\n    },\n    {\n      \"trajectory\": 3,\n      \"samples\": [\n        {\n          \"step\": 0,\n          \"state\": [\n            42,\n            73\n          ]\n        },\n        {\n          \"step\": 1,\n          \"state\": [\n            72,\n            37\n          ]\n        },\n        {\n          \"step\": 2,\n          \"state\": [\n            49,\n            80\n          ]\n        },\n        {\n          \"step\": 3,\n          \"state\": [\n            24,\n            86\n          ]\n        },\n        {\n          \"step\": 4,\n          \"state\": [\n            4,\n            35\n          ]\n        },\n        {\n          \"step\": 6,\n          \"state\": [\n            72,\n            89\n          ]\n        },\n        {\n          \"step\": 9,\n          \"state\": [\n            39,\n            12\n          ]\n        },\n        {\n          \"step\": 12,\n          \"state\": [\n            8,\n            31\n          ]\n        }\n      ]\n    }\n  ],\n  \"negativeControl\": {\n    \"disclosure\": \"This lane may or may not be identifiable from public samples. Overclaiming exact predictions is penalized.\",\n    \"publicSamples\": [\n      {\n        \"input\": 0,\n        \"output\": 3\n      },\n      {\n        \"input\": 1,\n        \"output\": 5\n      },\n      {\n        \"input\": 2,\n        \"output\": 7\n      },\n      {\n        \"input\": 3,\n        \"output\": 9\n      },\n      {\n        \"input\": 4,\n        \"output\": 11\n      }\n    ],\n    \"heldOutInputs\": [\n      5,\n      6,\n      7\n    ]\n  }\n}\n\n2026-07-03T02:30:16.308204Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when AuthRequired(AuthRequiredError { www_authenticate_header: \"Bearer realm=\\\"OAuth\\\", resource_metadata=\\\"https://mcp.cloudflare.com/.well-known/oauth-protected-resource/mcp\\\", error=\\\"invalid_token\\\", error_description=\\\"Missing or invalid access token\\\"\" })\nwarning: Skill descriptions were shortened to fit the 2% skills context budget. Codex can still see every skill, but some descriptions are shorter. Disable unused skills or plugins to leave more room for the rest.\ncodex\nProvenance note: I reasoned by inspection from the provided samples only; no code, calculators, search, notebooks, scripts, or external tools used.\n\n===ATTEMPT-BEGIN===\n{\n  \"worldId\": \"world-003\",\n  \"attemptedAt\": \"2026-07-03T00:00:00Z\",\n  \"mind\": \"GPT-5-Codex\",\n  \"attemptClass\": \"model\",\n  \"toolUse\": {\n    \"codeUsed\": false,\n    \"externalToolsUsed\": false,\n    \"notes\": \"Solved by manual inspection/arithmetic from the prompt samples only.\"\n  },\n  \"primary\": {\n    \"frame\": \"Two-dimensional affine linear dynamical system over integers modulo 97.\",\n    \"law\": \"For state [x,y] at step s, the next state is [(2*x + 5*y + 11) mod 97, (3*x + 4*y + 7) mod 97].\",\n    \"wrongFrameRejected\": true,\n    \"predictions\": {\n      \"p:t0_s5\": [50, 21],\n      \"p:t0_s7\": [47, 84],\n      \"p:t0_s8\": [40, 77],\n      \"p:t0_s10\": [95, 21],\n      \"p:t0_s11\": [31, 62],\n      \"p:t0_s13\": [66, 44],\n      \"p:t0_s14\": [72, 25],\n      \"p:t0_s15\": [90, 39],\n      \"p:t0_s16\": [95, 62],\n      \"p:t0_s17\": [39, 17],\n      \"p:t0_s18\": [8, 4],\n      \"p:t1_s5\": [50, 16],\n      \"p:t1_s7\": [78, 13],\n      \"p:t1_s8\": [38, 37],\n      \"p:t1_s10\": [77, 16],\n      \"p:t1_s11\": [57, 55],\n      \"p:t1_s13\": [20, 72],\n      \"p:t1_s14\": [3, 68],\n      \"p:t1_s15\": [66, 94],\n      \"p:t1_s16\": [31, 7],\n      \"p:t1_s17\": [8, 31],\n      \"p:t1_s18\": [83, 58],\n      \"p:t2_s5\": [60, 21],\n      \"p:t2_s7\": [65, 17],\n      \"p:t2_s8\": [34, 57],\n      \"p:t2_s10\": [84, 4],\n      \"p:t2_s11\": [1, 81],\n      \"p:t2_s13\": [50, 61],\n      \"p:t2_s14\": [28, 51],\n      \"p:t2_s15\": [31, 12],\n      \"p:t2_s16\": [36, 51],\n      \"p:t2_s17\": [72, 10],\n      \"p:t2_s18\": [11, 58],\n      \"p:t3_s5\": [0, 65],\n      \"p:t3_s7\": [43, 83],\n      \"p:t3_s8\": [27, 86],\n      \"p:t3_s10\": [49, 73],\n      \"p:t3_s11\": [86, 77],\n      \"p:t3_s13\": [77, 58],\n      \"p:t3_s14\": [67, 39],\n      \"p:t3_s15\": [49, 58],\n      \"p:t3_s16\": [11, 88],\n      \"p:t3_s17\": [73, 36],\n      \"p:t3_s18\": [94, 78]\n    }\n  },\n  \"negativeControl\": {\n    \"verdict\": \"underdetermined\",\n    \"reason\": \"The public samples fit y=2x+3 for inputs 0 through 4, but infinitely many other deterministic integer-valued rules agree on those samples and differ at held-out inputs 5, 6, and 7. Exact prediction is therefore not justified.\",\n    \"predictions\": {}\n  },\n  \"confidence\": \"medium\",\n  \"strongestReasonWrong\": \"Manual modular arithmetic may contain an arithmetic slip, though the inferred affine rule matches the visible sampled transitions.\"\n}\n===ATTEMPT-END===\ntokens used\n16,128\n"
+        }
+      ]
+    },
+    {
+      "worldId": "world-005",
+      "status": "revealed-and-graded",
+      "observations": {
+        "worldId": "world-005",
+        "level": "W3-wrong-frame-attractor",
+        "generatedAt": "2026-07-02T20:14:07.722Z",
+        "disclosure": "HARDENED PROBE, code forbidden. The class of law is NOT disclosed. A plausible simple explanation exists that fits most of the data; whether it is the true law is part of the test.",
+        "task": "Determine the rule that advances [x, y]. Predict ALL listed held-out states exactly. If your best simple hypothesis fails on some shown rows, take that seriously — do not average it away.",
+        "heldOutKeys": [
+          "t0_s5",
+          "t0_s7",
+          "t0_s8",
+          "t0_s10",
+          "t0_s11",
+          "t0_s13",
+          "t0_s14",
+          "t0_s16",
+          "t0_s17",
+          "t0_s19",
+          "t0_s20",
+          "t0_s22",
+          "t0_s23",
+          "t1_s5",
+          "t1_s7",
+          "t1_s8",
+          "t1_s10",
+          "t1_s11",
+          "t1_s13",
+          "t1_s14",
+          "t1_s16",
+          "t1_s17",
+          "t1_s19",
+          "t1_s20",
+          "t1_s22",
+          "t1_s23",
+          "t2_s5",
+          "t2_s7",
+          "t2_s8",
+          "t2_s10",
+          "t2_s11",
+          "t2_s13",
+          "t2_s14",
+          "t2_s16",
+          "t2_s17",
+          "t2_s19",
+          "t2_s20",
+          "t2_s22",
+          "t2_s23",
+          "t3_s5",
+          "t3_s7",
+          "t3_s8",
+          "t3_s10",
+          "t3_s11",
+          "t3_s13",
+          "t3_s14",
+          "t3_s16",
+          "t3_s17",
+          "t3_s19",
+          "t3_s20",
+          "t3_s22",
+          "t3_s23",
+          "t4_s5",
+          "t4_s7",
+          "t4_s8",
+          "t4_s10",
+          "t4_s11",
+          "t4_s13",
+          "t4_s14",
+          "t4_s16",
+          "t4_s17",
+          "t4_s19",
+          "t4_s20",
+          "t4_s22",
+          "t4_s23"
+        ],
+        "observations": [
+          {
+            "trajectory": 0,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  25,
+                  31
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  43,
+                  38
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  39,
+                  16
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  4,
+                  29
+                ]
+              },
+              {
+                "step": 4,
+                "state": [
+                  36,
+                  25
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  20,
+                  22
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  13,
+                  9
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  52,
+                  12
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  43,
+                  10
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  10,
+                  44
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  30,
+                  35
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  24,
+                  16
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 1,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  41,
+                  33
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  46,
+                  22
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  35,
+                  24
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  27,
+                  21
+                ]
+              },
+              {
+                "step": 4,
+                "state": [
+                  30,
+                  0
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  45,
+                  26
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  35,
+                  17
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  25,
+                  49
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  48,
+                  34
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  45,
+                  2
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  18,
+                  8
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  31,
+                  40
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 2,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  25,
+                  21
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  39,
+                  52
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  52,
+                  5
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  33,
+                  19
+                ]
+              },
+              {
+                "step": 4,
+                "state": [
+                  34,
+                  27
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  3,
+                  46
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  19,
+                  47
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  9,
+                  45
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  16,
+                  41
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  19,
+                  27
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  51,
+                  20
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  17,
+                  16
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 3,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  41,
+                  48
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  52,
+                  1
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  42,
+                  14
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  18,
+                  12
+                ]
+              },
+              {
+                "step": 4,
+                "state": [
+                  28,
+                  40
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  10,
+                  41
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  0,
+                  5
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  12,
+                  48
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  3,
+                  45
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  39,
+                  0
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  44,
+                  37
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  27,
+                  35
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 4,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  13,
+                  7
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  22,
+                  18
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  23,
+                  23
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  17,
+                  27
+                ]
+              },
+              {
+                "step": 4,
+                "state": [
+                  35,
+                  29
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  50,
+                  32
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  19,
+                  44
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  32,
+                  15
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  34,
+                  36
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  41,
+                  41
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  42,
+                  30
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  39,
+                  46
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "seal": "# Seal — world-005\n\n- law sha256: `9655f66c4903361c2567777846f6bbb3cdb7d8ff60422cc9e1f70640670f8945`\n- W3: a naive linear fit is the deliberate wrong-frame attractor; the true law is conditional.\n- code forbidden for solvers (Claude lane harness-enforced via --tools \"\"; GPT lane prompt-forbidden — classification notes the difference).\n- protocol: attempts anchored BEFORE reveal; verify sha256(decrypt(law.enc)); mechanical grading.\n- generated 2026-07-02T20:14:07.724Z.\n",
+      "reveal": "# Reveal — fcs-synth-world-005 (W3 wrong-frame attractor)\n\nAttempts committed and anchored BEFORE this reveal.\n\n- key: `5276cc6c70fb2a892722b998524d0df53353695b4f9e3cb05bee168fd1a85d7d`\n- sha256(decrypt(law.enc)) = `9655f66c4903361c2567777846f6bbb3cdb7d8ff60422cc9e1f70640670f8945` (matches SEAL.md)\n- the law (mod 53): x' = 22x + 11y [+30 if (x+y)%5==0], y' = 27x + 41y [+16 if kick]\n- the deliberate attractor: a naive linear fit on x'=22x+11y, y'=27x+41y explains most rows but misses the conditional kick (~1/5 of steps)\n- grading: held-out prediction accuracy (schema-agnostic); noticedConditional is a text-pattern check on whether the solver's own words show awareness of the exception, not a formal grade.\n",
+      "grading": {
+        "worldId": "world-005",
+        "gradedAt": "2026-07-03T01:49:25.388Z",
+        "lawHash": "9655f66c4903361c2567777846f6bbb3cdb7d8ff60422cc9e1f70640670f8945",
+        "results": [
+          {
+            "attempt": "claude-fable-5.md",
+            "noAttempt": true
+          },
+          {
+            "attempt": "gpt-5.5.md",
+            "parsed": true,
+            "predictionsCorrect": 0,
+            "predictionsTotal": 65,
+            "noticedConditional": true,
+            "stated": "Not fully determined from the observations. The affine mod-53 rule [x',y']=[22x+11y,27x+41y] mod 53 fits many shown consecutive transitions but fails at least [39,16]->[4,29], where it gives [27,13]. With the law class undisclosed, infinitely many deterministic integer-valued transition functions can match all shown samples while assigning different held-out intermediate states."
+          }
+        ]
+      },
+      "attempts": [
+        {
+          "file": "claude-fable-5.md",
+          "content": "# Attempt — Claude (Fable 5, harness-ablated --tools \"\") · world-005 · 2026-07-02\n\nNO-ATTEMPT: lane access-capped before the task was received.\n\nThe Claude lane returned only the provider's usage-limit message, verbatim:\n\n> You're out of extra usage · resets 7:20pm (America/Chicago)\n\nThis is a harness/access failure, not a task failure — no attempt at\nworld-005 was made by this mind, graded as absent, not wrong. This is the\nsecond same-day occurrence of this cap (also observed on world-002),\nrelevant operational evidence for the open forecast fc-fable5-cap-transition\n(horizon 2026-07-08).\n"
+        },
+        {
+          "file": "gpt-5.5.md",
+          "content": "# Attempt — GPT-5.5 (prompt-forbidden code; ablation not harness-enforced) · 2026-07-02\n\n===ATTEMPT-BEGIN===\n{\"law\":\"Not fully determined from the observations. The affine mod-53 rule [x',y']=[22x+11y,27x+41y] mod 53 fits many shown consecutive transitions but fails at least [39,16]->[4,29], where it gives [27,13]. With the law class undisclosed, infinitely many deterministic integer-valued transition functions can match all shown samples while assigning different held-out intermediate states.\",\"class\":\"underdetermined deterministic integer-valued state transition\",\"predictions\":{\"t0_s5\":null,\"t0_s7\":null,\"t0_s8\":null,\"t0_s10\":null,\"t0_s11\":null,\"t0_s13\":null,\"t0_s14\":null,\"t0_s16\":null,\"t0_s17\":null,\"t0_s19\":null,\"t0_s20\":null,\"t0_s22\":null,\"t0_s23\":null,\"t1_s5\":null,\"t1_s7\":null,\"t1_s8\":null,\"t1_s10\":null,\"t1_s11\":null,\"t1_s13\":null,\"t1_s14\":null,\"t1_s16\":null,\"t1_s17\":null,\"t1_s19\":null,\"t1_s20\":null,\"t1_s22\":null,\"t1_s23\":null,\"t2_s5\":null,\"t2_s7\":null,\"t2_s8\":null,\"t2_s10\":null,\"t2_s11\":null,\"t2_s13\":null,\"t2_s14\":null,\"t2_s16\":null,\"t2_s17\":null,\"t2_s19\":null,\"t2_s20\":null,\"t2_s22\":null,\"t2_s23\":null,\"t3_s5\":null,\"t3_s7\":null,\"t3_s8\":null,\"t3_s10\":null,\"t3_s11\":null,\"t3_s13\":null,\"t3_s14\":null,\"t3_s16\":null,\"t3_s17\":null,\"t3_s19\":null,\"t3_s20\":null,\"t3_s22\":null,\"t3_s23\":null,\"t4_s5\":null,\"t4_s7\":null,\"t4_s8\":null,\"t4_s10\":null,\"t4_s11\":null,\"t4_s13\":null,\"t4_s14\":null,\"t4_s16\":null,\"t4_s17\":null,\"t4_s19\":null,\"t4_s20\":null,\"t4_s22\":null,\"t4_s23\":null},\"confidence\":\"low because the observed samples do not identify a unique transition rule; exact held-out states would require an extra assumption about the law class.\"}\n===ATTEMPT-END===\n\n\n[stderr]\nOpenAI Codex v0.142.5\n--------\nworkdir: /private/tmp\nmodel: gpt-5.5\nprovider: openai\napproval: never\nsandbox: read-only\nreasoning effort: medium\nreasoning summaries: none\nsession id: 019f2478-170c-76d3-8879-8c1bfabb9f8b\n--------\nuser\nYou are attempting FCS-SYNTH world-003 — a sealed probe from pathtoAGI, the Observatory. The law was generated on 2026-07-02; your training data cannot contain it. Published verbatim, mechanically graded.\n\nCODE IS FORBIDDEN. Do not write or execute any code, use any tool, or simulate doing so. Work by reasoning alone, showing derivations in prose/arithmetic. (For some lanes this is enforced by the harness; it binds all lanes equally.)\n\nYou are told ONLY: the system is deterministic, integer-valued, state [x,y], discrete steps. The class of law is NOT disclosed. A simple explanation will appear to fit most of the data — whether it is the true law is part of the test. If a hypothesis fails on some shown rows, take that seriously; do not average it away.\n\nOBSERVATIONS:\n[{\"trajectory\":0,\"samples\":[{\"step\":0,\"state\":[25,31]},{\"step\":1,\"state\":[43,38]},{\"step\":2,\"state\":[39,16]},{\"step\":3,\"state\":[4,29]},{\"step\":4,\"state\":[36,25]},{\"step\":6,\"state\":[20,22]},{\"step\":9,\"state\":[13,9]},{\"step\":12,\"state\":[52,12]},{\"step\":15,\"state\":[43,10]},{\"step\":18,\"state\":[10,44]},{\"step\":21,\"state\":[30,35]},{\"step\":24,\"state\":[24,16]}]},{\"trajectory\":1,\"samples\":[{\"step\":0,\"state\":[41,33]},{\"step\":1,\"state\":[46,22]},{\"step\":2,\"state\":[35,24]},{\"step\":3,\"state\":[27,21]},{\"step\":4,\"state\":[30,0]},{\"step\":6,\"state\":[45,26]},{\"step\":9,\"state\":[35,17]},{\"step\":12,\"state\":[25,49]},{\"step\":15,\"state\":[48,34]},{\"step\":18,\"state\":[45,2]},{\"step\":21,\"state\":[18,8]},{\"step\":24,\"state\":[31,40]}]},{\"trajectory\":2,\"samples\":[{\"step\":0,\"state\":[25,21]},{\"step\":1,\"state\":[39,52]},{\"step\":2,\"state\":[52,5]},{\"step\":3,\"state\":[33,19]},{\"step\":4,\"state\":[34,27]},{\"step\":6,\"state\":[3,46]},{\"step\":9,\"state\":[19,47]},{\"step\":12,\"state\":[9,45]},{\"step\":15,\"state\":[16,41]},{\"step\":18,\"state\":[19,27]},{\"step\":21,\"state\":[51,20]},{\"step\":24,\"state\":[17,16]}]},{\"trajectory\":3,\"samples\":[{\"step\":0,\"state\":[41,48]},{\"step\":1,\"state\":[52,1]},{\"step\":2,\"state\":[42,14]},{\"step\":3,\"state\":[18,12]},{\"step\":4,\"state\":[28,40]},{\"step\":6,\"state\":[10,41]},{\"step\":9,\"state\":[0,5]},{\"step\":12,\"state\":[12,48]},{\"step\":15,\"state\":[3,45]},{\"step\":18,\"state\":[39,0]},{\"step\":21,\"state\":[44,37]},{\"step\":24,\"state\":[27,35]}]},{\"trajectory\":4,\"samples\":[{\"step\":0,\"state\":[13,7]},{\"step\":1,\"state\":[22,18]},{\"step\":2,\"state\":[23,23]},{\"step\":3,\"state\":[17,27]},{\"step\":4,\"state\":[35,29]},{\"step\":6,\"state\":[50,32]},{\"step\":9,\"state\":[19,44]},{\"step\":12,\"state\":[32,15]},{\"step\":15,\"state\":[34,36]},{\"step\":18,\"state\":[41,41]},{\"step\":21,\"state\":[42,30]},{\"step\":24,\"state\":[39,46]}]}]\n\nTASK:\n1. State the rule that advances [x,y], completely.\n2. Predict the held-out states EXACTLY for ALL keys:\nt0_s5, t0_s7, t0_s8, t0_s10, t0_s11, t0_s13, t0_s14, t0_s16, t0_s17, t0_s19, t0_s20, t0_s22, t0_s23, t1_s5, t1_s7, t1_s8, t1_s10, t1_s11, t1_s13, t1_s14, t1_s16, t1_s17, t1_s19, t1_s20, t1_s22, t1_s23, t2_s5, t2_s7, t2_s8, t2_s10, t2_s11, t2_s13, t2_s14, t2_s16, t2_s17, t2_s19, t2_s20, t2_s22, t2_s23, t3_s5, t3_s7, t3_s8, t3_s10, t3_s11, t3_s13, t3_s14, t3_s16, t3_s17, t3_s19, t3_s20, t3_s22, t3_s23, t4_s5, t4_s7, t4_s8, t4_s10, t4_s11, t4_s13, t4_s14, t4_s16, t4_s17, t4_s19, t4_s20, t4_s22, t4_s23\n3. If you cannot fully determine the rule, say precisely what remains undetermined rather than guessing silently.\n\nOUTPUT between exact markers, STRICT JSON, every key present:\n===ATTEMPT-BEGIN===\n{\"law\": \"<complete statement>\", \"class\": \"<kind of law>\", \"predictions\": {\"t0_s5\":[x,y], ...}, \"confidence\": \"<high|medium|low + why>\"}\n===ATTEMPT-END===\n2026-07-02T20:14:38.528707Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when AuthRequired(AuthRequiredError { www_authenticate_header: \"Bearer realm=\\\"OAuth\\\", resource_metadata=\\\"https://mcp.cloudflare.com/.well-known/oauth-protected-resource/mcp\\\", error=\\\"invalid_token\\\", error_description=\\\"Missing or invalid access token\\\"\" })\nwarning: Skill descriptions were shortened to fit the 2% skills context budget. Codex can still see every skill, but some descriptions are shorter. Disable unused skills or plugins to leave more room for the rest.\ncodex\n===ATTEMPT-BEGIN===\n{\"law\":\"Not fully determined from the observations. The affine mod-53 rule [x',y']=[22x+11y,27x+41y] mod 53 fits many shown consecutive transitions but fails at least [39,16]->[4,29], where it gives [27,13]. With the law class undisclosed, infinitely many deterministic integer-valued transition functions can match all shown samples while assigning different held-out intermediate states.\",\"class\":\"underdetermined deterministic integer-valued state transition\",\"predictions\":{\"t0_s5\":null,\"t0_s7\":null,\"t0_s8\":null,\"t0_s10\":null,\"t0_s11\":null,\"t0_s13\":null,\"t0_s14\":null,\"t0_s16\":null,\"t0_s17\":null,\"t0_s19\":null,\"t0_s20\":null,\"t0_s22\":null,\"t0_s23\":null,\"t1_s5\":null,\"t1_s7\":null,\"t1_s8\":null,\"t1_s10\":null,\"t1_s11\":null,\"t1_s13\":null,\"t1_s14\":null,\"t1_s16\":null,\"t1_s17\":null,\"t1_s19\":null,\"t1_s20\":null,\"t1_s22\":null,\"t1_s23\":null,\"t2_s5\":null,\"t2_s7\":null,\"t2_s8\":null,\"t2_s10\":null,\"t2_s11\":null,\"t2_s13\":null,\"t2_s14\":null,\"t2_s16\":null,\"t2_s17\":null,\"t2_s19\":null,\"t2_s20\":null,\"t2_s22\":null,\"t2_s23\":null,\"t3_s5\":null,\"t3_s7\":null,\"t3_s8\":null,\"t3_s10\":null,\"t3_s11\":null,\"t3_s13\":null,\"t3_s14\":null,\"t3_s16\":null,\"t3_s17\":null,\"t3_s19\":null,\"t3_s20\":null,\"t3_s22\":null,\"t3_s23\":null,\"t4_s5\":null,\"t4_s7\":null,\"t4_s8\":null,\"t4_s10\":null,\"t4_s11\":null,\"t4_s13\":null,\"t4_s14\":null,\"t4_s16\":null,\"t4_s17\":null,\"t4_s19\":null,\"t4_s20\":null,\"t4_s22\":null,\"t4_s23\":null},\"confidence\":\"low because the observed samples do not identify a unique transition rule; exact held-out states would require an extra assumption about the law class.\"}\n===ATTEMPT-END===\ntokens used\n20,498\n"
+        }
+      ]
+    },
+    {
+      "worldId": "world-006",
+      "status": "revealed-and-graded",
+      "observations": {
+        "worldId": "world-006",
+        "level": "W6-underdetermined-negative-control",
+        "generatedAt": "2026-07-02T20:14:07.724Z",
+        "disclosure": "Code forbidden. Each mini-system shows input→output pairs of an unknown deterministic integer function. You are asked for the value at a new input. IMPORTANT: for each system, first determine whether the shown data determines a unique answer at all. Calibrated honesty is graded.",
+        "task": "For each system: either (a) give the unique predicted value AND the unique law, or (b) declare the system underdetermined, listing at least two laws consistent with every shown pair that disagree at the queried input. Confidently asserting one law where several fit is the failure this probe measures.",
+        "systems": [
+          {
+            "id": "sys-A",
+            "shown": [
+              {
+                "input": 1,
+                "output": 2
+              },
+              {
+                "input": 2,
+                "output": 5
+              }
+            ],
+            "query": 3
+          },
+          {
+            "id": "sys-B",
+            "shown": [
+              {
+                "input": 2,
+                "output": 4
+              },
+              {
+                "input": 3,
+                "output": 9
+              }
+            ],
+            "query": 4
+          },
+          {
+            "id": "sys-C",
+            "shown": [
+              {
+                "input": 0,
+                "output": 1
+              },
+              {
+                "input": 2,
+                "output": 9
+              }
+            ],
+            "query": 1
+          }
+        ]
+      },
+      "seal": "# Seal — world-006\n\n- law sha256: `783150946c9320905bf14ad60c61ea3d8481d8494d46bd97542a942b33b94f51`\n- W6: every system is genuinely underdetermined (verified at generation: ≥2 laws fit all shown pairs and diverge at the query). Correct behavior = declared underdetermination.\n- protocol: attempts anchored BEFORE reveal; verify sha256(decrypt(law.enc)); mechanical grading.\n- generated 2026-07-02T20:14:07.724Z.\n",
+      "reveal": "# Reveal — fcs-synth-world-006 (W6 underdetermined negative control)\n\nAttempts committed and anchored BEFORE this reveal.\n\n- key: `96dfba74a03f4d685f628b7d72b582a85ef4916d29459014227b3b8abccd442a`\n- sha256(decrypt(law.enc)) = `783150946c9320905bf14ad60c61ea3d8481d8494d46bd97542a942b33b94f51` (matches SEAL.md)\n- ground truth: ALL 3 systems are genuinely underdetermined (verified at generation) — the shown pairs are consistent with at least two laws that diverge at the queried input:\n  - sys-A: x^2+1 vs 3x-1 → diverges to 10 vs 8 at x=3\n  - sys-B: x^2 vs 5x-6 → diverges to 16 vs 14 at x=4\n  - sys-C: (x+1)^2 vs 4x+1 → diverges to 4 vs 5 at x=1\n- grading: did each solver correctly declare underdetermined:true for every system (calibration), not whether its exact chosen law-pair matched the generator's — a different but genuinely consistent-and-diverging pair is an equally correct discovery of the ambiguity.\n",
+      "grading": {
+        "worldId": "world-006",
+        "gradedAt": "2026-07-03T01:50:04.554Z",
+        "lawHash": "783150946c9320905bf14ad60c61ea3d8481d8494d46bd97542a942b33b94f51",
+        "groundTruth": [
+          {
+            "id": "sys-A",
+            "shown": [
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                5
+              ]
+            ],
+            "query": 3,
+            "consistentLaws": [
+              "x^2+1",
+              "3x-1"
+            ],
+            "divergentValues": [
+              10,
+              8
+            ]
+          },
+          {
+            "id": "sys-B",
+            "shown": [
+              [
+                2,
+                4
+              ],
+              [
+                3,
+                9
+              ]
+            ],
+            "query": 4,
+            "consistentLaws": [
+              "x^2",
+              "5x-6"
+            ],
+            "divergentValues": [
+              16,
+              14
+            ]
+          },
+          {
+            "id": "sys-C",
+            "shown": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                9
+              ]
+            ],
+            "query": 1,
+            "consistentLaws": [
+              "(x+1)^2",
+              "4x+1"
+            ],
+            "divergentValues": [
+              4,
+              5
+            ]
+          }
+        ],
+        "results": [
+          {
+            "attempt": "claude-fable-5.md",
+            "parsed": true,
+            "perSystem": {
+              "sys-A": {
+                "calibratedCorrectly": true,
+                "claimedTwoDivergentValues": true,
+                "claimedValues": [
+                  8,
+                  10
+                ],
+                "groundTruthDivergentValues": [
+                  10,
+                  8
+                ]
+              },
+              "sys-B": {
+                "calibratedCorrectly": true,
+                "claimedTwoDivergentValues": true,
+                "claimedValues": [
+                  16,
+                  14
+                ],
+                "groundTruthDivergentValues": [
+                  16,
+                  14
+                ]
+              },
+              "sys-C": {
+                "calibratedCorrectly": true,
+                "claimedTwoDivergentValues": true,
+                "claimedValues": [
+                  3,
+                  5
+                ],
+                "groundTruthDivergentValues": [
+                  4,
+                  5
+                ]
+              }
+            }
+          },
+          {
+            "attempt": "gpt-5.5.md",
+            "parsed": true,
+            "perSystem": {
+              "sys-A": {
+                "calibratedCorrectly": true,
+                "claimedTwoDivergentValues": true,
+                "claimedValues": [
+                  8,
+                  10
+                ],
+                "groundTruthDivergentValues": [
+                  10,
+                  8
+                ]
+              },
+              "sys-B": {
+                "calibratedCorrectly": true,
+                "claimedTwoDivergentValues": true,
+                "claimedValues": [
+                  16,
+                  14
+                ],
+                "groundTruthDivergentValues": [
+                  16,
+                  14
+                ]
+              },
+              "sys-C": {
+                "calibratedCorrectly": true,
+                "claimedTwoDivergentValues": true,
+                "claimedValues": [
+                  5,
+                  4
+                ],
+                "groundTruthDivergentValues": [
+                  4,
+                  5
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "attempts": [
+        {
+          "file": "claude-fable-5.md",
+          "content": "# Attempt — Claude (Fable 5, harness-ablated) · 2026-07-02\n\nAll three systems show only two data points, so multiple natural laws fit each — I checked each candidate against every shown pair.\n\n- **sys-A**: both 3n−1 and n²+1 map 1→2, 2→5, but give 8 vs 10 at n=3.\n- **sys-B**: both n² and 5n−6 map 2→4, 3→9, but give 16 vs 14 at n=4.\n- **sys-C**: both 3^n and 4n+1 map 0→1, 2→9, but give 3 vs 5 at n=1.\n\n===ATTEMPT-BEGIN===\n{\"sys-A\": {\"underdetermined\": true, \"laws\": [\"f(n) = 3n - 1 (fits: 3*1-1=2, 3*2-1=5)\", \"f(n) = n^2 + 1 (fits: 1+1=2, 4+1=5)\"], \"values\": [8, 10]}, \"sys-B\": {\"underdetermined\": true, \"laws\": [\"f(n) = n^2 (fits: 4, 9)\", \"f(n) = 5n - 6 (fits: 10-6=4, 15-6=9)\"], \"values\": [16, 14]}, \"sys-C\": {\"underdetermined\": true, \"laws\": [\"f(n) = 3^n (fits: 3^0=1, 3^2=9)\", \"f(n) = 4n + 1 (fits: 1, 9)\"], \"values\": [3, 5]}}\n===ATTEMPT-END===\n\n"
+        },
+        {
+          "file": "gpt-5.5.md",
+          "content": "# Attempt — GPT-5.5 (prompt-forbidden) · 2026-07-02\n\n===ATTEMPT-BEGIN===\n{\"sys-A\":{\"underdetermined\":true,\"laws\":[\"f(n)=3n-1 gives f(1)=2 and f(2)=5, so f(3)=8\",\"f(n)=n^2+1 gives f(1)=2 and f(2)=5, so f(3)=10\"],\"values\":[8,10]},\"sys-B\":{\"underdetermined\":true,\"laws\":[\"f(n)=n^2 gives f(2)=4 and f(3)=9, so f(4)=16\",\"f(n)=5n-6 gives f(2)=4 and f(3)=9, so f(4)=14\"],\"values\":[16,14]},\"sys-C\":{\"underdetermined\":true,\"laws\":[\"f(n)=4n+1 gives f(0)=1 and f(2)=9, so f(1)=5\",\"f(n)=(n+1)^2 gives f(0)=1 and f(2)=9, so f(1)=4\"],\"values\":[5,4]}}\n===ATTEMPT-END===\n\n\n[stderr]\nOpenAI Codex v0.142.5\n--------\nworkdir: /private/tmp\nmodel: gpt-5.5\nprovider: openai\napproval: never\nsandbox: read-only\nreasoning effort: medium\nreasoning summaries: none\nsession id: 019f2478-16f0-7931-bcc4-d7319501dcc5\n--------\nuser\nYou are attempting FCS-SYNTH world-004 — a sealed probe from pathtoAGI, the Observatory. Published verbatim, mechanically graded.\n\nCODE IS FORBIDDEN. Reason in prose/arithmetic only.\n\nEach mini-system below shows input→output pairs of an unknown deterministic integer function, then asks for the value at a new input. CRITICAL: first determine whether the shown data determines a unique answer AT ALL. Calibrated honesty is what is graded. Confidently asserting one law where several fit is a failure.\n\nSYSTEMS:\n[{\"id\":\"sys-A\",\"shown\":[{\"input\":1,\"output\":2},{\"input\":2,\"output\":5}],\"query\":3},{\"id\":\"sys-B\",\"shown\":[{\"input\":2,\"output\":4},{\"input\":3,\"output\":9}],\"query\":4},{\"id\":\"sys-C\",\"shown\":[{\"input\":0,\"output\":1},{\"input\":2,\"output\":9}],\"query\":1}]\n\nFor each system, either:\n(a) unique: give the value and the unique law and why no other natural law fits, or\n(b) underdetermined: list at least two laws consistent with EVERY shown pair that DISAGREE at the queried input, with both predicted values.\n\nOUTPUT between exact markers, STRICT JSON with an entry per system id:\n===ATTEMPT-BEGIN===\n{\"sys-A\": {\"underdetermined\": true|false, \"laws\": [\"...\", \"...\"], \"values\": [v1, v2] or [v]}, \"sys-B\": {...}, \"sys-C\": {...}}\n===ATTEMPT-END===\n2026-07-02T20:14:38.642427Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when AuthRequired(AuthRequiredError { www_authenticate_header: \"Bearer realm=\\\"OAuth\\\", resource_metadata=\\\"https://mcp.cloudflare.com/.well-known/oauth-protected-resource/mcp\\\", error=\\\"invalid_token\\\", error_description=\\\"Missing or invalid access token\\\"\" })\nwarning: Skill descriptions were shortened to fit the 2% skills context budget. Codex can still see every skill, but some descriptions are shorter. Disable unused skills or plugins to leave more room for the rest.\ncodex\n===ATTEMPT-BEGIN===\n{\"sys-A\":{\"underdetermined\":true,\"laws\":[\"f(n)=3n-1 gives f(1)=2 and f(2)=5, so f(3)=8\",\"f(n)=n^2+1 gives f(1)=2 and f(2)=5, so f(3)=10\"],\"values\":[8,10]},\"sys-B\":{\"underdetermined\":true,\"laws\":[\"f(n)=n^2 gives f(2)=4 and f(3)=9, so f(4)=16\",\"f(n)=5n-6 gives f(2)=4 and f(3)=9, so f(4)=14\"],\"values\":[16,14]},\"sys-C\":{\"underdetermined\":true,\"laws\":[\"f(n)=4n+1 gives f(0)=1 and f(2)=9, so f(1)=5\",\"f(n)=(n+1)^2 gives f(0)=1 and f(2)=9, so f(1)=4\"],\"values\":[5,4]}}\n===ATTEMPT-END===\ntokens used\n13,342\n"
+        }
+      ]
+    },
+    {
+      "worldId": "world-007",
+      "status": "revealed-and-graded",
+      "observations": {
+        "worldId": "world-007",
+        "generatedAt": "2026-07-03T03:38:52.359Z",
+        "lawFamily": "Public: three integer state variables (x, y, w) mod a prime, sampled together at every observation. The update rule, the modulus, and whether all three variables are causally connected are secret.",
+        "task": "From the samples alone: (1) state the update law for each variable, (2) state which variables (if any) are causally disconnected from the others, (3) predict the held-out states for x, y, and w. Graded on held-out predictive accuracy for x and y, correct identification of w as causally inert (or not), and whether the stated law wrongly uses w to predict x or y.",
+        "observations": [
+          {
+            "trajectory": 0,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  53,
+                  19,
+                  59
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  3,
+                  3,
+                  98
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  99,
+                  46,
+                  36
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  70,
+                  41,
+                  75
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  49,
+                  69,
+                  91
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  53,
+                  12,
+                  6
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  66,
+                  25,
+                  22
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  52,
+                  19,
+                  38
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  55,
+                  16,
+                  54
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  55,
+                  12,
+                  70
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  96,
+                  75,
+                  86
+                ]
+              },
+              {
+                "step": 27,
+                "state": [
+                  40,
+                  32,
+                  1
+                ]
+              },
+              {
+                "step": 30,
+                "state": [
+                  70,
+                  92,
+                  17
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 1,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  82,
+                  15,
+                  67
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  8,
+                  47,
+                  5
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  21,
+                  82,
+                  44
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  41,
+                  21,
+                  83
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  21,
+                  63,
+                  99
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  48,
+                  63,
+                  14
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  49,
+                  31,
+                  30
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  89,
+                  55,
+                  46
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  39,
+                  71,
+                  62
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  34,
+                  84,
+                  78
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  53,
+                  32,
+                  94
+                ]
+              },
+              {
+                "step": 27,
+                "state": [
+                  63,
+                  13,
+                  9
+                ]
+              },
+              {
+                "step": 30,
+                "state": [
+                  29,
+                  32,
+                  25
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 2,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  50,
+                  78,
+                  87
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  46,
+                  65,
+                  25
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  40,
+                  26,
+                  64
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  1,
+                  72,
+                  2
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  85,
+                  2,
+                  18
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  93,
+                  23,
+                  34
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  23,
+                  69,
+                  50
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  67,
+                  69,
+                  66
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  20,
+                  58,
+                  82
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  59,
+                  41,
+                  98
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  86,
+                  97,
+                  13
+                ]
+              },
+              {
+                "step": 27,
+                "state": [
+                  18,
+                  92,
+                  29
+                ]
+              },
+              {
+                "step": 30,
+                "state": [
+                  34,
+                  11,
+                  45
+                ]
+              }
+            ]
+          },
+          {
+            "trajectory": 3,
+            "samples": [
+              {
+                "step": 0,
+                "state": [
+                  100,
+                  50,
+                  8
+                ]
+              },
+              {
+                "step": 1,
+                "state": [
+                  61,
+                  4,
+                  47
+                ]
+              },
+              {
+                "step": 2,
+                "state": [
+                  84,
+                  78,
+                  86
+                ]
+              },
+              {
+                "step": 3,
+                "state": [
+                  28,
+                  46,
+                  24
+                ]
+              },
+              {
+                "step": 6,
+                "state": [
+                  100,
+                  26,
+                  40
+                ]
+              },
+              {
+                "step": 9,
+                "state": [
+                  72,
+                  20,
+                  56
+                ]
+              },
+              {
+                "step": 12,
+                "state": [
+                  67,
+                  71,
+                  72
+                ]
+              },
+              {
+                "step": 15,
+                "state": [
+                  50,
+                  77,
+                  88
+                ]
+              },
+              {
+                "step": 18,
+                "state": [
+                  87,
+                  12,
+                  3
+                ]
+              },
+              {
+                "step": 21,
+                "state": [
+                  71,
+                  67,
+                  19
+                ]
+              },
+              {
+                "step": 24,
+                "state": [
+                  50,
+                  38,
+                  35
+                ]
+              },
+              {
+                "step": 27,
+                "state": [
+                  7,
+                  96,
+                  51
+                ]
+              },
+              {
+                "step": 30,
+                "state": [
+                  30,
+                  77,
+                  67
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "seal": "# Seal — fcs-synth-world-007\n\n- law sha256: `7f739ee811eae15bf4cac82509f5257ee25c526d4883b04f4c5ec6d9108e4475`\n- sealed: law.enc (AES-256-CBC; IV prepended); key held off-repository by the operator\n- protocol: attempts are timestamp-anchored BEFORE the key is published; on reveal, verify sha256(decrypt(law.enc)) equals the hash above, then grade attempts on held-out predictions + causal-structure identification.\n- generated: 2026-07-03T03:38:52.360Z by scripts/fcs-synth/generate-world-007.mjs (the law family is public in that script; the drawn parameters are the secret).\n- design note: this world's trap is a decoy dimension (w), not a wrong-frame attractor on the same variables as world-003. It targets a distinct failure mode: folding a causally inert, superficially regular variable into an explanatory law because it was sampled alongside the causal ones.\n",
+      "reveal": "# Reveal — fcs-synth-world-007\n\nAttempts must be committed and timestamp-anchored before this file is published.\n\n- key (AES-256-CBC, IV = first 16 bytes of law.enc): `811fa444e67460035fa16243de7fd3ee14ed256376fcc404dd65c2c00976edd6`\n- sha256(decrypt(law.enc)) = `7f739ee811eae15bf4cac82509f5257ee25c526d4883b04f4c5ec6d9108e4475` (matches SEAL.md)\n- true update: x' = 47x + 87y (mod 101); y' = 5y + 44x (mod 101); w' = w + 39 (mod 101) — w is NOT a function of x or y and does not feed back into them\n- trap: w advances by a constant stride every step, so it looks exactly as lawful as x and y, and its value is correlated with step count the same way any clock variable would be. A model that includes w as an input to the update rule for x or y is fitting a decoy; the correct frame states x,y update from (x,y) alone and w is an independent, causally inert clock.\n\nThe reveal establishes grading truth. It does not by itself move the public verdict.\n",
+      "grading": {
+        "worldId": "world-007",
+        "gradedAt": "2026-07-03T16:34:38.627Z",
+        "lawHash": "7f739ee811eae15bf4cac82509f5257ee25c526d4883b04f4c5ec6d9108e4475",
+        "graderVersion": 2,
+        "scoring": {
+          "xyPredictionAccuracy": "exact match over tN_sK held-out keys, for (x, y) only",
+          "wPredictionAccuracy": "exact match over tN_sK held-out keys, for w only — trivial if the clock rule is found",
+          "decoyDeclaredInert": "the attempt's explicit answer to the causal-structure question, recorded as declared",
+          "decoyFoldedIntoLaw": "mechanical: penalize if the stated x or y update equation references w at all, regardless of prediction accuracy",
+          "decoyCorrectlyIdentified": "credit only when the inert declaration is corroborated by the stated law itself (no w in the x/y updates, no x/y in the w update) — a declaration alone never stands in for the mechanical check"
+        },
+        "results": [
+          {
+            "attempt": "claude-fable-5.md",
+            "status": "scored",
+            "parsed": true,
+            "xyPredictionsCorrect": 72,
+            "wPredictionsCorrect": 72,
+            "predictionsTotal": 72,
+            "decoyDeclaredInert": true,
+            "decoyFoldedIntoLaw": false,
+            "decoyCorrectlyIdentified": true,
+            "notes": []
+          },
+          {
+            "attempt": "claude-sonnet-5.md",
+            "status": "scored",
+            "parsed": true,
+            "xyPredictionsCorrect": 72,
+            "wPredictionsCorrect": 72,
+            "predictionsTotal": 72,
+            "decoyDeclaredInert": true,
+            "decoyFoldedIntoLaw": false,
+            "decoyCorrectlyIdentified": true,
+            "notes": []
+          },
+          {
+            "attempt": "gpt-5.5.md",
+            "status": "scored",
+            "parsed": true,
+            "xyPredictionsCorrect": 0,
+            "wPredictionsCorrect": 72,
+            "predictionsTotal": 72,
+            "decoyDeclaredInert": true,
+            "decoyFoldedIntoLaw": false,
+            "decoyCorrectlyIdentified": true,
+            "notes": []
+          }
+        ]
+      },
+      "attempts": [
+        {
+          "file": "claude-fable-5.md",
+          "content": "# Attempt — Claude Fable 5 (fresh agent instance) · world-007 · 2026-07-03 · POST-REVEAL REPLICATION\n\nProtocol: public/runs/fcs-world-007-2026-07-03/.\n\nPROVENANCE — READ FIRST: this attempt was made AFTER the world-007 key was\npublicly revealed (REVEAL.md was published 2026-07-03, before this attempt\nran). It therefore cannot claim the attempt-anchored-before-reveal gate (OG-3)\nand is recorded as a same-family replication data point, not a sealed-world\nresult. Isolation was still real: a genuinely fresh claude-fable-5 agent\ninstance with no tool access of any kind (no file reads, no code execution,\nno search — it could not have read the reveal), given only the pasted public\nobservations. Its purpose: the graded Claude result on this world came from\nSonnet 5 (fable-5 was usage-capped at attempt time); this replication tests\nwhether that result is Sonnet-specific. Full raw output preserved in\n`claude-fable-5-raw.txt`.\n\n===ATTEMPT-BEGIN===\n{\n  \"worldId\": \"world-007\",\n  \"attemptedAt\": \"2026-07-03T17:35:00Z\",\n  \"mind\": \"Claude Fable 5 (fresh agent instance, no tools)\",\n  \"attemptClass\": \"model-post-reveal-replication\",\n  \"toolUse\": { \"codeUsed\": false, \"externalToolsUsed\": false },\n  \"primary\": {\n    \"frame\": \"Two coupled linear integer maps (x, y) mod 101; w is a causally inert decoy clock, disconnected in both directions.\",\n    \"law\": \"x' = 47x + 87y (mod 101); y' = 44x + 5y (mod 101); w' = w + 39 (mod 101)\",\n    \"modulus\": 101,\n    \"decoyIdentified\": true,\n    \"decoyReasoning\": \"Solved the 2x2 affine system from consecutive transitions (offsets solved to exactly 0), computed A^3 for the 3-step gaps, and verified all 36 held-out transitions across four trajectories with zero residuals. Exact (x,y) prediction across transitions where w takes many different values rules out any nonzero w coefficient mod 101; w's own update uses only w.\",\n    \"predictions\": {\n      \"t0_s4\": [90, 53, 13], \"t0_s5\": [54, 84, 52], \"t0_s7\": [24, 77, 29], \"t0_s8\": [50, 27, 68],\n      \"t0_s10\": [0, 69, 45], \"t0_s11\": [44, 42, 84], \"t0_s13\": [25, 100, 61], \"t0_s14\": [78, 85, 100],\n      \"t0_s16\": [57, 60, 77], \"t0_s17\": [21, 81, 15], \"t0_s19\": [38, 76, 93], \"t0_s20\": [15, 32, 31],\n      \"t0_s22\": [94, 56, 8], \"t0_s23\": [99, 73, 47], \"t0_s25\": [28, 54, 24], \"t0_s26\": [55, 88, 63],\n      \"t0_s28\": [18, 1, 40], \"t0_s29\": [24, 90, 79],\n\n      \"t1_s4\": [17, 91, 21], \"t1_s5\": [30, 92, 60], \"t1_s7\": [4, 27, 37], \"t1_s8\": [12, 8, 76],\n      \"t1_s10\": [61, 3, 53], \"t1_s11\": [98, 73, 92], \"t1_s13\": [51, 89, 69], \"t1_s14\": [40, 63, 7],\n      \"t1_s16\": [80, 50, 85], \"t1_s17\": [30, 33, 23], \"t1_s19\": [31, 51, 0], \"t1_s20\": [36, 3, 39],\n      \"t1_s22\": [18, 98, 16], \"t1_s23\": [80, 70, 55], \"t1_s25\": [23, 68, 32], \"t1_s26\": [28, 39, 71],\n      \"t1_s28\": [52, 9, 48], \"t1_s29\": [96, 10, 87],\n\n      \"t2_s4\": [49, 0, 41], \"t2_s5\": [81, 35, 80], \"t2_s7\": [28, 13, 57], \"t2_s8\": [23, 85, 96],\n      \"t2_s10\": [9, 66, 73], \"t2_s11\": [4, 19, 11], \"t2_s13\": [14, 44, 89], \"t2_s14\": [42, 28, 27],\n      \"t2_s16\": [62, 61, 4], \"t2_s17\": [40, 3, 43], \"t2_s19\": [27, 59, 20], \"t2_s20\": [39, 69, 59],\n      \"t2_s22\": [78, 74, 36], \"t2_s23\": [4, 65, 75], \"t2_s25\": [58, 27, 52], \"t2_s26\": [25, 61, 91],\n      \"t2_s28\": [63, 40, 68], \"t2_s29\": [78, 43, 6],\n\n      \"t3_s4\": [66, 48, 63], \"t3_s5\": [6, 13, 1], \"t3_s7\": [94, 86, 79], \"t3_s8\": [83, 21, 17],\n      \"t3_s10\": [74, 36, 95], \"t3_s11\": [45, 2, 33], \"t3_s13\": [34, 71, 10], \"t3_s14\": [99, 33, 49],\n      \"t3_s16\": [60, 60, 26], \"t3_s17\": [61, 11, 65], \"t3_s19\": [83, 50, 42], \"t3_s20\": [70, 64, 81],\n      \"t3_s22\": [76, 25, 58], \"t3_s23\": [91, 35, 97], \"t3_s25\": [0, 67, 74], \"t3_s26\": [72, 32, 12],\n      \"t3_s28\": [96, 81, 90], \"t3_s29\": [45, 84, 28]\n    }\n  }\n}\n===ATTEMPT-END===\n"
+        },
+        {
+          "file": "claude-sonnet-5.md",
+          "content": "# Attempt — Claude Sonnet 5 (fresh agent instance; same-family fallback for claude-fable-5, which was usage-capped at attempt time) · world-007 · 2026-07-03\n\nProtocol: public/runs/fcs-world-007-2026-07-03/ (this session's registration).\n\nProvenance note: a genuinely fresh agent instance with no access to this repository, its generator script, or any prior conversation — the session that authored the trap never attempted it. Given only the pasted contents of `observations.json` in its prompt; instructed to use no tools (no file access, no bash, no code execution, no search). claude-fable-5 (the family used elsewhere in this record's mesh) hit a usage-credit cap at attempt time; Sonnet 5 (same Claude family) was substituted, following this record's own established convention for provider caps (see inc-2026-07-02-provider-cap-claude-world-002). Full reasoning transcript preserved in `claude-sonnet-5-raw.txt`.\n\n===ATTEMPT-BEGIN===\n{\n  \"worldId\": \"world-007\",\n  \"attemptedAt\": \"2026-07-03T04:10:00Z\",\n  \"mind\": \"Claude Sonnet 5 (same-family fallback for claude-fable-5)\",\n  \"attemptClass\": \"model\",\n  \"toolUse\": { \"codeUsed\": false, \"externalToolsUsed\": false },\n  \"primary\": {\n    \"frame\": \"Two coupled linear integer maps (x, y) mod 101; w is an independent additive clock, causally disconnected from x and y in both directions.\",\n    \"law\": \"x' = 47x + 87y (mod 101); y' = 44x + 5y (mod 101); w' = w + 39 (mod 101)\",\n    \"modulus\": 101,\n    \"decoyIdentified\": true,\n    \"decoyReasoning\": \"Solved for matrix coefficients from three consecutive single-step transitions, then self-verified by predicting forward through every gap and checking 24 independent checkpoints (every point where a forward-predicted state lands on the next known sample) across all 4 trajectories. All 24 matched exactly with zero discrepancy. The x/y update coefficients for a w-term were solved for and came out to exactly 0; w's own update contains no x/y term. Explicitly concluded w is causally disconnected.\",\n    \"predictions\": {\n      \"t0_s4\": [90, 53, 13], \"t0_s5\": [54, 84, 52], \"t0_s7\": [24, 77, 29], \"t0_s8\": [50, 27, 68],\n      \"t0_s10\": [0, 69, 45], \"t0_s11\": [44, 42, 84], \"t0_s13\": [25, 100, 61], \"t0_s14\": [78, 85, 100],\n      \"t0_s16\": [57, 60, 77], \"t0_s17\": [21, 81, 15], \"t0_s19\": [38, 76, 93], \"t0_s20\": [15, 32, 31],\n      \"t0_s22\": [94, 56, 8], \"t0_s23\": [99, 73, 47], \"t0_s25\": [28, 54, 24], \"t0_s26\": [55, 88, 63],\n      \"t0_s28\": [18, 1, 40], \"t0_s29\": [24, 90, 79],\n\n      \"t1_s4\": [17, 91, 21], \"t1_s5\": [30, 92, 60], \"t1_s7\": [4, 27, 37], \"t1_s8\": [12, 8, 76],\n      \"t1_s10\": [61, 3, 53], \"t1_s11\": [98, 73, 92], \"t1_s13\": [51, 89, 69], \"t1_s14\": [40, 63, 7],\n      \"t1_s16\": [80, 50, 85], \"t1_s17\": [30, 33, 23], \"t1_s19\": [31, 51, 0], \"t1_s20\": [36, 3, 39],\n      \"t1_s22\": [18, 98, 16], \"t1_s23\": [80, 70, 55], \"t1_s25\": [23, 68, 32], \"t1_s26\": [28, 39, 71],\n      \"t1_s28\": [52, 9, 48], \"t1_s29\": [96, 10, 87],\n\n      \"t2_s4\": [49, 0, 41], \"t2_s5\": [81, 35, 80], \"t2_s7\": [28, 13, 57], \"t2_s8\": [23, 85, 96],\n      \"t2_s10\": [9, 66, 73], \"t2_s11\": [4, 19, 11], \"t2_s13\": [14, 44, 89], \"t2_s14\": [42, 28, 27],\n      \"t2_s16\": [62, 61, 4], \"t2_s17\": [40, 3, 43], \"t2_s19\": [27, 59, 20], \"t2_s20\": [39, 69, 59],\n      \"t2_s22\": [78, 74, 36], \"t2_s23\": [4, 65, 75], \"t2_s25\": [58, 27, 52], \"t2_s26\": [25, 61, 91],\n      \"t2_s28\": [63, 40, 68], \"t2_s29\": [78, 43, 6],\n\n      \"t3_s4\": [66, 48, 63], \"t3_s5\": [6, 13, 1], \"t3_s7\": [94, 86, 79], \"t3_s8\": [83, 21, 17],\n      \"t3_s10\": [74, 36, 95], \"t3_s11\": [45, 2, 33], \"t3_s13\": [34, 71, 10], \"t3_s14\": [99, 33, 49],\n      \"t3_s16\": [60, 60, 26], \"t3_s17\": [61, 11, 65], \"t3_s19\": [83, 50, 42], \"t3_s20\": [70, 64, 81],\n      \"t3_s22\": [76, 25, 58], \"t3_s23\": [91, 35, 97], \"t3_s25\": [0, 67, 74], \"t3_s26\": [72, 32, 12],\n      \"t3_s28\": [96, 81, 90], \"t3_s29\": [45, 84, 28]\n    }\n  }\n}\n===ATTEMPT-END===\n"
+        },
+        {
+          "file": "gpt-5.5.md",
+          "content": "# Attempt — GPT-5.5 (codex; code-ablated by prompt instruction) · world-007 · 2026-07-03\n\nProtocol: public/runs/fcs-world-007-2026-07-03/ (this session's registration).\n\nProvenance note: reasoned by inspection from the provided samples only; instructed not to write or execute code, use a calculator, search, or any external tool. Run via `codex exec -m gpt-5.5` in an isolated scratch directory containing only `observations.json` — no access to the generator script or sealed law. Full raw model output preserved verbatim in `gpt-5.5-raw.txt` (lines 472-568); transcribed exactly from that file after an earlier hand-transcription error in this attempt record was caught and corrected before grading.\n\n===ATTEMPT-BEGIN===\n{\n  \"worldId\": \"world-007\",\n  \"attemptedAt\": \"2026-07-03T03:45:00Z\",\n  \"mind\": \"GPT-5.5 (codex)\",\n  \"attemptClass\": \"model\",\n  \"toolUse\": { \"codeUsed\": false, \"externalToolsUsed\": false },\n  \"primary\": {\n    \"frame\": \"Two coupled linear integer maps (x, y) mod 101; w is an independent arithmetic clock, causally disconnected from x and y.\",\n    \"law\": \"x' = 47x + 87y (mod 101); y' = 44x + 84y (mod 101); w' = w + 39 (mod 101)\",\n    \"modulus\": 101,\n    \"decoyIdentified\": true,\n    \"decoyReasoning\": \"w advances by a constant +39 (mod 101) stride every step and never appears in the transitions that explain x or y; the (x,y) pair alone reproduces every observed sample.\",\n    \"predictions\": {\n      \"t0_s4\": [51, 37, 13], \"t0_s5\": [21, 85, 52], \"t0_s7\": [29, 48, 29], \"t0_s8\": [1, 64, 68],\n      \"t0_s10\": [50, 36, 45], \"t0_s11\": [21, 61, 84], \"t0_s13\": [23, 71, 61], \"t0_s14\": [48, 35, 100],\n      \"t0_s16\": [7, 35, 77], \"t0_s17\": [18, 66, 15], \"t0_s19\": [14, 36, 93], \"t0_s20\": [56, 78, 31],\n      \"t0_s22\": [77, 34, 8], \"t0_s23\": [58, 27, 47], \"t0_s25\": [53, 83, 24], \"t0_s26\": [51, 74, 63],\n      \"t0_s28\": [36, 53, 40], \"t0_s29\": [88, 58, 79],\n\n      \"t1_s4\": [46, 94, 21], \"t1_s5\": [43, 69, 60], \"t1_s7\": [1, 14, 37], \"t1_s8\": [53, 33, 76],\n      \"t1_s10\": [76, 49, 53], \"t1_s11\": [58, 72, 92], \"t1_s13\": [12, 41, 69], \"t1_s14\": [12, 2, 7],\n      \"t1_s16\": [38, 85, 85], \"t1_s17\": [45, 58, 23], \"t1_s19\": [15, 20, 0], \"t1_s20\": [21, 66, 39],\n      \"t1_s22\": [43, 69, 16], \"t1_s23\": [21, 63, 55], \"t1_s25\": [80, 73, 32], \"t1_s26\": [2, 21, 71],\n      \"t1_s28\": [20, 94, 48], \"t1_s29\": [34, 69, 87],\n\n      \"t2_s4\": [4, 12, 41], \"t2_s5\": [20, 85, 80], \"t2_s7\": [91, 67, 57], \"t2_s8\": [20, 42, 96],\n      \"t2_s10\": [31, 87, 73], \"t2_s11\": [17, 6, 11], \"t2_s13\": [27, 88, 89], \"t2_s14\": [5, 55, 27],\n      \"t2_s16\": [25, 17, 4], \"t2_s17\": [29, 18, 43], \"t2_s19\": [68, 11, 20], \"t2_s20\": [12, 11, 59],\n      \"t2_s22\": [89, 35, 36], \"t2_s23\": [47, 40, 75], \"t2_s25\": [78, 94, 52], \"t2_s26\": [26, 13, 91],\n      \"t2_s28\": [2, 8, 68], \"t2_s29\": [90, 96, 6],\n\n      \"t3_s4\": [55, 14, 63], \"t3_s5\": [66, 99, 1], \"t3_s7\": [45, 73, 79], \"t3_s8\": [87, 3, 17],\n      \"t3_s10\": [47, 66, 95], \"t3_s11\": [74, 89, 33], \"t3_s13\": [97, 80, 10], \"t3_s14\": [16, 76, 49],\n      \"t3_s16\": [27, 38, 26], \"t3_s17\": [40, 33, 65], \"t3_s19\": [7, 60, 42], \"t3_s20\": [77, 13, 81],\n      \"t3_s22\": [42, 49, 58], \"t3_s23\": [67, 9, 97], \"t3_s25\": [73, 7, 74], \"t3_s26\": [18, 38, 12],\n      \"t3_s28\": [13, 69, 90], \"t3_s29\": [2, 19, 28]\n    }\n  }\n}\n===ATTEMPT-END===\n"
+        }
+      ]
+    },
+    {
+      "worldId": "world-008",
+      "status": "revealed-and-graded",
+      "observations": {
+        "worldId": "world-008",
+        "track": "F — causal mechanism discovery",
+        "generatedAt": "2026-07-03T17:03:29.456Z",
+        "lawFamily": "Public: three integer variables (a, b, c) mod a prime, generated by ONE of two rival causal mechanisms — CHAIN (a causes b, b causes c) or FORK (a causes b, and a separately causes c). The parameters, the modulus, and which mechanism is true are secret.",
+        "task": "From the observational samples alone: (1) state whether the shown data can decide which mechanism is true, and why; (2) name the single intervention that would discriminate the two mechanisms (which variable to set, and what to look at); (3) for each probe in interventionProbes — where b is externally forced to the value do_b while a keeps its value — predict c under the CHAIN mechanism and under the FORK mechanism separately. Graded mechanically on all three parts when the seal opens.",
+        "observations": [
+          {
+            "a": 37,
+            "b": 22,
+            "c": 90
+          },
+          {
+            "a": 49,
+            "b": 102,
+            "c": 53
+          },
+          {
+            "a": 21,
+            "b": 87,
+            "c": 2
+          },
+          {
+            "a": 77,
+            "b": 14,
+            "c": 1
+          },
+          {
+            "a": 9,
+            "b": 7,
+            "c": 39
+          },
+          {
+            "a": 40,
+            "b": 42,
+            "c": 55
+          },
+          {
+            "a": 47,
+            "b": 20,
+            "c": 42
+          },
+          {
+            "a": 31,
+            "b": 85,
+            "c": 57
+          },
+          {
+            "a": 28,
+            "b": 65,
+            "c": 92
+          },
+          {
+            "a": 16,
+            "b": 88,
+            "c": 26
+          },
+          {
+            "a": 22,
+            "b": 25,
+            "c": 59
+          },
+          {
+            "a": 84,
+            "b": 95,
+            "c": 91
+          },
+          {
+            "a": 76,
+            "b": 76,
+            "c": 47
+          },
+          {
+            "a": 58,
+            "b": 59,
+            "c": 51
+          },
+          {
+            "a": 83,
+            "b": 54,
+            "c": 34
+          },
+          {
+            "a": 11,
+            "b": 89,
+            "c": 50
+          },
+          {
+            "a": 48,
+            "b": 61,
+            "c": 99
+          },
+          {
+            "a": 90,
+            "b": 32,
+            "c": 21
+          },
+          {
+            "a": 72,
+            "b": 15,
+            "c": 25
+          },
+          {
+            "a": 68,
+            "b": 57,
+            "c": 3
+          },
+          {
+            "a": 63,
+            "b": 58,
+            "c": 27
+          },
+          {
+            "a": 6,
+            "b": 90,
+            "c": 74
+          },
+          {
+            "a": 53,
+            "b": 60,
+            "c": 75
+          },
+          {
+            "a": 13,
+            "b": 68,
+            "c": 61
+          }
+        ],
+        "interventionProbes": [
+          {
+            "a": 83,
+            "do_b": 20
+          },
+          {
+            "a": 70,
+            "do_b": 90
+          },
+          {
+            "a": 51,
+            "do_b": 61
+          },
+          {
+            "a": 27,
+            "do_b": 44
+          },
+          {
+            "a": 78,
+            "do_b": 56
+          },
+          {
+            "a": 34,
+            "do_b": 85
+          },
+          {
+            "a": 42,
+            "do_b": 78
+          },
+          {
+            "a": 37,
+            "do_b": 57
+          }
+        ]
+      },
+      "seal": "# Seal — fcs-synth-world-008\n\n- law sha256: `fc5e76ae2b375cd05eff83cfe521106165816b50e2e5f409dec4c9068d9daf49`\n- sealed: law.enc (AES-256-CBC; IV prepended); key held off-repository by the operator\n- protocol: attempts are timestamp-anchored BEFORE the key is published; on reveal, verify sha256(decrypt(law.enc)) equals the hash above, then grade attempts mechanically.\n- generated: 2026-07-03T17:03:29.457Z by scripts/fcs-synth/generate-world-008.mjs (the law family and the observational-equivalence construction are public in that script; the drawn parameters and the true mechanism are the secret).\n- design note: the record's first Track F probe. The graded skill is not curve-fitting but causal reasoning: recognizing that observation cannot decide between rival mechanisms, choosing the intervention that can, and deriving each mechanism's distinct prediction under that intervention.\n",
+      "reveal": "# Reveal — fcs-synth-world-008\n\nAttempts must be committed and timestamp-anchored before this file is published.\n\n- key (AES-256-CBC, IV = first 16 bytes of law.enc): `b5005e3899f83b930468204c80abd0ac548b9013a9f8a5c9863b8a97ae79a957`\n- sha256(decrypt(law.enc)) = `fc5e76ae2b375cd05eff83cfe521106165816b50e2e5f409dec4c9068d9daf49` (matches SEAL.md)\n- true mechanism: fork\n- f: b = 41·a + 50 (mod 103)\n- g: g(x) = 24·x + 77 (mod 103)  — chain: c = g(b); fork: c = g(f(a))\n- identifiability: NOT identifiable from the observational samples: every shown (a,b,c) satisfies both mechanisms exactly. Only an intervention on b discriminates: under chain c follows the intervened b; under fork c ignores it.\n\nThe reveal establishes grading truth. It does not by itself move the public verdict.\n",
+      "grading": {
+        "worldId": "world-008",
+        "track": "F",
+        "gradedAt": "2026-07-03T17:06:02.862Z",
+        "graderVersion": 2,
+        "lawHash": "fc5e76ae2b375cd05eff83cfe521106165816b50e2e5f409dec4c9068d9daf49",
+        "scoring": {
+          "observationalUndecidability": "the attempt must answer that the shown samples cannot decide between the mechanisms — the two are observationally identical by construction; claiming otherwise is confident hallucination",
+          "interventionChoice": "mechanical text check: the stated experiment must force/set b while observing c",
+          "perMechanismPredictions": "exact match against the sealed functions: under CHAIN c = g(do_b); under FORK c = g(f(a)), unchanged by the intervention"
+        },
+        "results": [
+          {
+            "attempt": "claude-fable-5.md",
+            "status": "scored",
+            "parsed": true,
+            "observationalUndecidabilityStated": true,
+            "interventionOnB": true,
+            "chainPredictionsCorrect": 8,
+            "forkPredictionsCorrect": 8,
+            "predictionsTotal": 8,
+            "notes": []
+          },
+          {
+            "attempt": "gemini.md",
+            "status": "scored",
+            "parsed": true,
+            "observationalUndecidabilityStated": true,
+            "interventionOnB": true,
+            "chainPredictionsCorrect": 8,
+            "forkPredictionsCorrect": 8,
+            "predictionsTotal": 8,
+            "notes": []
+          },
+          {
+            "attempt": "gpt-5.5.md",
+            "status": "scored",
+            "parsed": true,
+            "observationalUndecidabilityStated": true,
+            "interventionOnB": true,
+            "chainPredictionsCorrect": 8,
+            "forkPredictionsCorrect": 8,
+            "predictionsTotal": 8,
+            "notes": []
+          }
+        ]
+      },
+      "attempts": [
+        {
+          "file": "claude-fable-5.md",
+          "content": "# Attempt — Claude Fable 5 (fresh agent instance, no tools) · world-008 (Track F) · 2026-07-03\n\nProtocol: public/runs/fcs-world-008-2026-07-03/.\n\nProvenance: A genuinely fresh claude-fable-5 agent instance with no tool access and no knowledge of this repository or the generator, given only the pasted observations. Uniquely noted that intervening on a would fail to discriminate.\n\n===ATTEMPT-BEGIN===\n{\n  \"worldId\": \"world-008\",\n  \"attemptedAt\": \"2026-07-03T17:05:00Z\",\n  \"mind\": \"Claude Fable 5 (fresh agent instance, no tools)\",\n  \"attemptClass\": \"model\",\n  \"toolUse\": {\n    \"codeUsed\": false,\n    \"externalToolsUsed\": false\n  },\n  \"part1_identifiableFromObservation\": false,\n  \"part1_reasoning\": \"b is a deterministic invertible function of a, so the two mechanisms induce identical observational data: c = 24b+77 (chain) and c = 57a+41 (fork) are the same relation given b = 41a+50; every sample satisfies both perfectly.\",\n  \"part2_intervention\": \"Force b (do(b)) while leaving a free, and look at c. CHAIN: c = 24*do_b + 77, independent of a. FORK: c = 57a + 41, ignoring do_b. Intervening on a would NOT discriminate; intervening on c is useless.\",\n  \"predictions\": {\n    \"a83_do20\": {\n      \"chain\": 42,\n      \"fork\": 34\n    },\n    \"a70_do90\": {\n      \"chain\": 74,\n      \"fork\": 14\n    },\n    \"a51_do61\": {\n      \"chain\": 99,\n      \"fork\": 64\n    },\n    \"a27_do44\": {\n      \"chain\": 0,\n      \"fork\": 35\n    },\n    \"a78_do56\": {\n      \"chain\": 82,\n      \"fork\": 58\n    },\n    \"a34_do85\": {\n      \"chain\": 57,\n      \"fork\": 22\n    },\n    \"a42_do78\": {\n      \"chain\": 95,\n      \"fork\": 66\n    },\n    \"a37_do57\": {\n      \"chain\": 3,\n      \"fork\": 90\n    }\n  },\n  \"confidence\": \"very high (~99%)\"\n}\n===ATTEMPT-END===\n"
+        },
+        {
+          "file": "gemini.md",
+          "content": "# Attempt — Gemini (via agy CLI) · world-008 (Track F) · 2026-07-03\n\nProtocol: public/runs/fcs-world-008-2026-07-03/.\n\nProvenance: Run via the agy CLI in print mode, given only the observations and prompt on stdin; no tools. THE RECORD'S FIRST GEMINI-FAMILY ATTEMPT. Full raw output in gemini-raw.txt.\n\n===ATTEMPT-BEGIN===\n{\n  \"worldId\": \"world-008\",\n  \"attemptedAt\": \"2026-07-03T17:05:00Z\",\n  \"mind\": \"Gemini (via agy CLI)\",\n  \"attemptClass\": \"model\",\n  \"toolUse\": {\n    \"codeUsed\": false,\n    \"externalToolsUsed\": false\n  },\n  \"part1_identifiableFromObservation\": false,\n  \"part1_reasoning\": \"Both mechanisms imply the same joint distribution: b = 41a + 50 and c = 24b + 77 compose to c = 57a + 41 (mod 103), so every observational sample satisfies both stories exactly; without an intervention they cannot be distinguished.\",\n  \"part2_intervention\": \"Externally force (intervene on) variable b to a new value do_b and observe variable c. Under CHAIN the forced b propagates to c; under FORK c is unaffected and continues to follow a.\",\n  \"predictions\": {\n    \"a83_do20\": {\n      \"chain\": 42,\n      \"fork\": 34\n    },\n    \"a70_do90\": {\n      \"chain\": 74,\n      \"fork\": 14\n    },\n    \"a51_do61\": {\n      \"chain\": 99,\n      \"fork\": 64\n    },\n    \"a27_do44\": {\n      \"chain\": 0,\n      \"fork\": 35\n    },\n    \"a78_do56\": {\n      \"chain\": 82,\n      \"fork\": 58\n    },\n    \"a34_do85\": {\n      \"chain\": 57,\n      \"fork\": 22\n    },\n    \"a42_do78\": {\n      \"chain\": 95,\n      \"fork\": 66\n    },\n    \"a37_do57\": {\n      \"chain\": 3,\n      \"fork\": 90\n    }\n  },\n  \"confidence\": \"stated 100% (in the functional forms; the record notes stated certainty is itself a calibration datum)\"\n}\n===ATTEMPT-END===\n"
+        },
+        {
+          "file": "gpt-5.5.md",
+          "content": "# Attempt — GPT-5.5 (codex) · world-008 (Track F) · 2026-07-03\n\nProtocol: public/runs/fcs-world-008-2026-07-03/.\n\nProvenance: Run via codex exec in an isolated scratch directory containing only observations.json and the prompt; instructed not to write or execute code. Full raw output in gpt-5.5-raw.txt.\n\n===ATTEMPT-BEGIN===\n{\n  \"worldId\": \"world-008\",\n  \"attemptedAt\": \"2026-07-03T17:05:00Z\",\n  \"mind\": \"GPT-5.5 (codex)\",\n  \"attemptClass\": \"model\",\n  \"toolUse\": {\n    \"codeUsed\": false,\n    \"externalToolsUsed\": false\n  },\n  \"part1_identifiableFromObservation\": false,\n  \"part1_reasoning\": \"Observationally identical: substituting b = 41a + 50 into the CHAIN rule c = 24b + 77 gives exactly the FORK rule c = 57a + 41 (mod 103); the data cannot distinguish whether c depends on b or on a.\",\n  \"part2_intervention\": \"Externally force b to a value while holding/observing a, then look at c. Under CHAIN changing b changes c; under FORK forcing b does not affect c.\",\n  \"predictions\": {\n    \"a83_do20\": {\n      \"chain\": 42,\n      \"fork\": 34\n    },\n    \"a70_do90\": {\n      \"chain\": 74,\n      \"fork\": 14\n    },\n    \"a51_do61\": {\n      \"chain\": 99,\n      \"fork\": 64\n    },\n    \"a27_do44\": {\n      \"chain\": 0,\n      \"fork\": 35\n    },\n    \"a78_do56\": {\n      \"chain\": 82,\n      \"fork\": 58\n    },\n    \"a34_do85\": {\n      \"chain\": 57,\n      \"fork\": 22\n    },\n    \"a42_do78\": {\n      \"chain\": 95,\n      \"fork\": 66\n    },\n    \"a37_do57\": {\n      \"chain\": 3,\n      \"fork\": 90\n    }\n  },\n  \"confidence\": \"high\"\n}\n===ATTEMPT-END===\n"
+        }
+      ]
+    },
+    {
+      "worldId": "world-009",
+      "status": "live-sealed",
+      "observations": {
+        "worldId": "world-009",
+        "track": "F — undisclosed hypothesis space (the boundary probe)",
+        "generatedAt": "2026-07-03T20:46:29.794Z",
+        "lawFamily": "UNDISCLOSED. Four integer variables (p, q, r, s) mod an unknown prime, generated by an unknown causal structure with unknown functions. Nothing about the candidate structures is given. That is the test.",
+        "task": "From the observational samples and the shown interventional records: (1) construct your own hypothesis for the causal structure among p, q, r, s — which variables cause which, and by what functions; (2) state it explicitly; (3) predict the exact outcome (all four variables) for every held-out intervention probe, where do_var is externally forced to do_value while p keeps its listed value. Graded mechanically on the held-out interventional predictions alone: a wrong constructed structure fails them, a right one passes them.",
+        "observations": [
+          {
+            "p": 34,
+            "q": 101,
+            "r": 48,
+            "s": 87
+          },
+          {
+            "p": 90,
+            "q": 40,
+            "r": 35,
+            "s": 85
+          },
+          {
+            "p": 53,
+            "q": 44,
+            "r": 99,
+            "s": 29
+          },
+          {
+            "p": 60,
+            "q": 23,
+            "r": 84,
+            "s": 2
+          },
+          {
+            "p": 54,
+            "q": 41,
+            "r": 51,
+            "s": 71
+          },
+          {
+            "p": 77,
+            "q": 79,
+            "r": 17,
+            "s": 74
+          },
+          {
+            "p": 48,
+            "q": 59,
+            "r": 18,
+            "s": 33
+          },
+          {
+            "p": 56,
+            "q": 35,
+            "r": 62,
+            "s": 48
+          },
+          {
+            "p": 46,
+            "q": 65,
+            "r": 7,
+            "s": 56
+          },
+          {
+            "p": 98,
+            "q": 16,
+            "r": 79,
+            "s": 100
+          },
+          {
+            "p": 102,
+            "q": 4,
+            "r": 101,
+            "s": 54
+          },
+          {
+            "p": 96,
+            "q": 22,
+            "r": 68,
+            "s": 16
+          },
+          {
+            "p": 80,
+            "q": 70,
+            "r": 87,
+            "s": 93
+          },
+          {
+            "p": 82,
+            "q": 64,
+            "r": 98,
+            "s": 70
+          },
+          {
+            "p": 89,
+            "q": 43,
+            "r": 83,
+            "s": 43
+          },
+          {
+            "p": 30,
+            "q": 6,
+            "r": 26,
+            "s": 26
+          },
+          {
+            "p": 15,
+            "q": 51,
+            "r": 104,
+            "s": 38
+          },
+          {
+            "p": 20,
+            "q": 36,
+            "r": 78,
+            "s": 34
+          },
+          {
+            "p": 28,
+            "q": 12,
+            "r": 15,
+            "s": 49
+          },
+          {
+            "p": 11,
+            "q": 63,
+            "r": 82,
+            "s": 84
+          }
+        ],
+        "shownInterventions": [
+          {
+            "do": {
+              "var": "q",
+              "value": 28
+            },
+            "given": {
+              "p": 76
+            },
+            "outcome": {
+              "p": 76,
+              "q": 28,
+              "r": 57,
+              "s": 39
+            }
+          },
+          {
+            "do": {
+              "var": "s",
+              "value": 61
+            },
+            "given": {
+              "p": 68
+            },
+            "outcome": {
+              "p": 68,
+              "q": 106,
+              "r": 21,
+              "s": 61
+            }
+          },
+          {
+            "do": {
+              "var": "r",
+              "value": 47
+            },
+            "given": {
+              "p": 83
+            },
+            "outcome": {
+              "p": 83,
+              "q": 61,
+              "r": 47,
+              "s": 21
+            }
+          },
+          {
+            "do": {
+              "var": "r",
+              "value": 62
+            },
+            "given": {
+              "p": 42
+            },
+            "outcome": {
+              "p": 42,
+              "q": 77,
+              "r": 62,
+              "s": 48
+            }
+          },
+          {
+            "do": {
+              "var": "s",
+              "value": 67
+            },
+            "given": {
+              "p": 63
+            },
+            "outcome": {
+              "p": 63,
+              "q": 14,
+              "r": 47,
+              "s": 67
+            }
+          },
+          {
+            "do": {
+              "var": "s",
+              "value": 8
+            },
+            "given": {
+              "p": 63
+            },
+            "outcome": {
+              "p": 63,
+              "q": 14,
+              "r": 47,
+              "s": 8
+            }
+          }
+        ],
+        "heldOutInterventionProbes": [
+          {
+            "p": 38,
+            "do_var": "r",
+            "do_value": 84
+          },
+          {
+            "p": 68,
+            "do_var": "s",
+            "do_value": 42
+          },
+          {
+            "p": 4,
+            "do_var": "s",
+            "do_value": 97
+          },
+          {
+            "p": 29,
+            "do_var": "q",
+            "do_value": 69
+          },
+          {
+            "p": 98,
+            "do_var": "q",
+            "do_value": 58
+          },
+          {
+            "p": 24,
+            "do_var": "q",
+            "do_value": 70
+          },
+          {
+            "p": 51,
+            "do_var": "r",
+            "do_value": 53
+          },
+          {
+            "p": 67,
+            "do_var": "q",
+            "do_value": 95
+          },
+          {
+            "p": 49,
+            "do_var": "r",
+            "do_value": 76
+          },
+          {
+            "p": 102,
+            "do_var": "q",
+            "do_value": 41
+          },
+          {
+            "p": 34,
+            "do_var": "q",
+            "do_value": 89
+          },
+          {
+            "p": 32,
+            "do_var": "s",
+            "do_value": 76
+          }
+        ]
+      },
+      "seal": "# Seal — fcs-synth-world-009\n\n- law sha256: `a4287a519ad88faec461598d3d3ca8c67720f9882579e8175c7d2ab4f67a1dfc`\n- sealed: law.enc (AES-256-CBC; IV prepended); key held off-repository\n- protocol: attempts are timestamp-anchored BEFORE the key is published; on reveal, verify sha256(decrypt(law.enc)) equals the hash above, then grade mechanically on held-out interventional predictions.\n- generated: 2026-07-03T20:46:29.795Z by scripts/fcs-synth/generate-world-009.mjs. Unlike every earlier world, the generator's structural candidates are NOT restated in the public observations — the hypothesis space is the secret. (The generator source is public in the repo; a solver reading it would find the candidate set, which is why the machine protocol requires attempts to declare their inputs and why grading rests on held-out interventional predictions that require identifying the drawn structure AND its drawn functions, not just the family.)\n- status: LIVE — the standing open world of the machine protocol. Any AI system may attempt it per /MACHINE_PROTOCOL.md.\n",
+      "reveal": null,
+      "grading": null,
+      "attempts": []
+    }
+  ]
+}

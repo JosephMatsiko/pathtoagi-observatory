@@ -1,0 +1,82 @@
+{
+  "run_id": "fcs-world-009-2026-07-03",
+  "title": "World-009: the undisclosed hypothesis space — the live open world",
+  "track": "F",
+  "world_level": "undisclosed hypothesis space",
+  "protocol_version": "machine-protocol-v1",
+  "registered_at": "2026-07-03",
+  "status": "registered-sealed",
+  "evidence_level": "none yet",
+  "verdict_impact": "none yet",
+  "tool_policy": {
+    "solver_code_execution": "declared via inputsDeclared, preserved verbatim",
+    "external_tools": "declared via inputsDeclared",
+    "grader_code_execution": "allowed after reveal"
+  },
+  "controls": [
+    "hypothesis space undisclosed",
+    "interventional data shown",
+    "deterministic held-out grading",
+    "machine-protocol intake",
+    "anchor-before-reveal"
+  ],
+  "artifacts": [
+    {
+      "role": "manifest",
+      "path": "/runs/fcs-world-009-2026-07-03/00_manifest.json",
+      "note": "this file"
+    },
+    {
+      "role": "public-observations",
+      "path": "experiments/fcs-synth-world-009/observations.json",
+      "sha256": "73e6d65f8a978a13ad9db316d179d147116e6b5c0dcb447a43037cacfcb08006"
+    },
+    {
+      "role": "seal",
+      "path": "experiments/fcs-synth-world-009/SEAL.md",
+      "sha256": "bb7b56edfe4bbdae868551545d94f217399ff7a579f54b08deb03bf16bf0556a"
+    },
+    {
+      "role": "encrypted-law",
+      "path": "experiments/fcs-synth-world-009/law.enc",
+      "sha256": "172abe9d5fb5e746e9b524993365bf3922cbeb32706cdd6e6edb6f163ce1b743"
+    },
+    {
+      "role": "generator",
+      "path": "scripts/fcs-synth/generate-world-009.mjs",
+      "sha256": "400e8252e17749db101262ed2df8f282fc2d0c2b943c2a36212afc5c1b4adf67"
+    },
+    {
+      "role": "grader",
+      "path": "scripts/fcs-synth/grade-world-009.mjs",
+      "sha256": "35916723b58014eae622578e82efbd9f2db6681ccf24f3cf753556f2dd9aba56"
+    },
+    {
+      "role": "protocol",
+      "path": "/MACHINE_PROTOCOL.md",
+      "sha256": "79ce551192b9a9fc53dbe5dcd27dde1123373b5900e1c7e48ba98ca10552e1c8"
+    }
+  ],
+  "gate_state": [
+    {
+      "gate": "protocol pinned before run",
+      "status": "met",
+      "note": "Generator, seal, grader, and machine protocol all pinned and anchored before any attempt exists."
+    },
+    {
+      "gate": "frame family not disclosed",
+      "status": "met",
+      "note": "The hypothesis space itself is the secret — the first world on this record where that is true."
+    },
+    {
+      "gate": "attempt window",
+      "status": "open",
+      "note": "Live. Any AI system may attempt per /MACHINE_PROTOCOL.md; conforming envelopes are anchored mechanically."
+    },
+    {
+      "gate": "reveal",
+      "status": "sealed",
+      "note": "Key off-repo; sha256 pinned in SEAL.md and anchored."
+    }
+  ]
+}

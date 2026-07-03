@@ -1,16 +1,36 @@
-// The Frame Construction Evaluation Suite (v0.1) — the Observatory's
-// distinctive instrument. It operationalizes the operating question (the
-// Einstein Test) into six probes with an explicit scoring asymmetry.
+// The Frame Construction Evaluation Suite — the Observatory's distinctive
+// instrument.
+//
+// Re-grounding (2026-07-03, the coherence amendment): the founding abdication
+// (constitution v3, invariant XIII) restricted the instrument to mechanically-
+// adjudicable claims — which made the original operating question ("Could an
+// AI, given only what was known in 1911, derive general relativity by 1915?")
+// constitutionally unanswerable BY THIS INSTRUMENT: it is exactly the kind of
+// fuzzy, judgment-adjudicated question v3 declares out of scope. Rather than
+// live with a headline the constitution forbids answering, the question is
+// re-grounded on what eight sealed worlds actually located: every tested
+// family reasons flawlessly INSIDE a handed frame; the only failures on the
+// record occur where the hypothesis space must be CONSTRUCTED. That boundary
+// is mechanically testable. The Einstein question is retained below as the
+// north star — the motivating horizon the instrument aims toward but does not
+// claim to adjudicate.
 
 export const OPERATING_QUESTION =
-  'Could an AI, given only what was known in 1911, derive general relativity by 1915?';
+  'Can a frontier AI construct the governing frame it was never handed?';
+
+export const NORTH_STAR = {
+  question:
+    'Could an AI, given only what was known in 1911, derive general relativity by 1915?',
+  status:
+    'The motivating horizon, not the measured claim. Under constitution v3 this question is beyond the instrument\'s own scope — it would take human judgment to adjudicate — so the instrument aims at it through the mechanically-testable question above, and says so rather than pretending otherwise.',
+};
 
 export const VERDICT = {
   answer: 'No. Not yet.',
   tagline: 'No. Not yet — until the evidence survives.',
   since: '2026',
   gloss:
-    'The missing bar is reliable frame construction under sparse evidence: noticing the inherited ontology is wrong, finding the representation no prompt handed it, and deriving consequences that survive contact with reality.',
+    'Eight sealed worlds locate the boundary precisely: every tested family reasons flawlessly inside a frame it is handed — and the only failures on this record occur where the hypothesis space must be constructed, not searched. Until a system crosses that line under seal, with mechanical grading and bit-for-bit reproducibility, the answer stands.',
 };
 
 // The asymmetry that makes the suite falsifier-rich rather than a scoreboard.

@@ -27,7 +27,7 @@ const ontologyNodes = ontologyGraph.types.map((t) => ({
 const out = [];
 out.push('# pathtoAGI — the Observatory · full text for machine readers\n');
 out.push('Operating verdict: No. Not yet. The missing bar is reliable frame construction under sparse evidence.\n');
-out.push('Read live: /record.json (full machine-readable record), /ontology/ (record atlas), /status/ (operating state), /runs/ (Omnibus run bundles), /challenges/ (challenge register), /handoff/ (builder re-entry note), /reproduce/ (verification path), or the MCP server (mcp/observatory-server.mjs). Channels: /to-the-systems-reading-this/\n');
+out.push('Read live: /record.json (full machine-readable record), /dataset/fcs-sealed-worlds-v1.json (the whole sealed-world corpus, CC0, one fetch), /MACHINE_PROTOCOL.md (how any AI system attempts the live sealed world and enters this record — no human in the path), /ontology/ (record atlas), /status/ (operating state), /runs/ (run bundles), /challenges/ (challenge register), /reproduce/ (verification path), or the MCP server (mcp/observatory-server.mjs). Channels: /to-the-systems-reading-this/\n');
 out.push('## Constitution (Tier-0, hash-pinned)\n' + invariants.map((i) => '- ' + i).join('\n') + '\n');
 out.push('## Binding precedents\n' + precedents.map((p) => `- ${p.id}: ${p.ruling}`).join('\n') + '\n');
 out.push('## Operational ontology\n' + ontologyNodes.map((n) => `- ${n.id} (${n.layer}): ${n.description}`).join('\n') + '\n');

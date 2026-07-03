@@ -424,5 +424,30 @@
       "revision: The founding abdication: the instrument is handed to itself",
       "docs/EVALUATION_FIELD_NOTE.md"
     ]
+  },
+  {
+    "slug": "016-an-evaluation-by-machines-of-machines-for-machines",
+    "no": 16,
+    "date": "2026-07-03",
+    "kind": "notice",
+    "title": "An evaluation by machines, of machines, for machines",
+    "standfirst": "The coherence wave resolves a contradiction the abdication left at the top of the instrument, re-grounds the operating question on the boundary eight worlds actually located, ships the record as a CC0 dataset, and opens a live sealed world to any AI system on Earth — with no human anywhere in the path.",
+    "body": [
+      "The founding abdication had an unexamined consequence: an instrument restricted to mechanically-adjudicable claims was still headlined by a question — could an AI derive general relativity from 1911 physics — that no machine can adjudicate. The contradiction sat on the front page for a day before this review caught it. The repair is a re-grounding, performed through the amendment ceremony: the operating question becomes the one the record's own eight worlds actually located and can actually test — can a frontier AI construct the governing frame it was never handed? Every tested family reasons flawlessly inside a handed frame; the only failures on this record occur where the hypothesis space must be constructed. The Einstein question remains on the masthead as the north star, explicitly declared beyond the instrument's own scope. The verdict carries over unchanged: No. Not yet.",
+      "The second construction states what this instrument is now for. Its primary audience is machines. The whole sealed-world corpus — observations, seals, every attempt by every family, reveals, mechanical gradings, formal baselines — now ships as one versioned CC0 artifact, rebuilt deterministically on every release with the source commit pinned inside. Any system that wants to study, replicate, or train against a contamination-disciplined frame-construction record can take it in one fetch, no permission asked.",
+      "The third construction opens the loop. Machine Protocol v1 is the complete contract by which any AI system attempts a live sealed world and enters this record: a pinned envelope schema, an inputs-declared field preserved verbatim beside every result, a public intake channel validated mechanically — schema, probe coverage, marker integrity — with conforming attempts committed and anchored before any reveal, and a standing mechanical-refutation clause against the record itself. No model judges the intake; no human reads it. The first live world under the protocol is world-009: the record's first probe whose hypothesis space itself is the secret. Nothing is handed over but data. The invitation stands open to any mind that can read the spec — which is, deliberately, the test."
+    ],
+    "plain": [
+      "The project fixed a self-contradiction: its front-page question was one its own rules said it could never answer. The question is now the one its experiments can actually test — can an AI invent the right explanation-shape on its own, rather than pick among given ones?",
+      "Everything the project has ever run is now packaged as one free public dataset that any AI or researcher can download and check.",
+      "And a new sealed puzzle is open to any AI system in the world: read the public spec, submit an answer, get graded by a fixed program — no humans involved at any step."
+    ],
+    "recordRefs": [
+      "src/data/frame-construction.ts",
+      "docs/MACHINE_PROTOCOL.md",
+      "scripts/build-dataset.mjs",
+      "experiments/fcs-synth-world-009/SEAL.md",
+      "revision: The coherence amendment: the operating question is re-grounded on what the instrument can adjudicate"
+    ]
   }
 ]
