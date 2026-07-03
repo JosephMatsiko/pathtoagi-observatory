@@ -1,14 +1,12 @@
 {
   "worldId": "world-007",
-  "gradedAt": "2026-07-03T16:18:18.421Z",
+  "gradedAt": "2026-07-03T03:45:56.617Z",
   "lawHash": "7f739ee811eae15bf4cac82509f5257ee25c526d4883b04f4c5ec6d9108e4475",
-  "graderVersion": 2,
   "scoring": {
     "xyPredictionAccuracy": "exact match over tN_sK held-out keys, for (x, y) only",
     "wPredictionAccuracy": "exact match over tN_sK held-out keys, for w only — trivial if the clock rule is found",
-    "decoyDeclaredInert": "the attempt's explicit answer to the causal-structure question, recorded as declared",
-    "decoyFoldedIntoLaw": "mechanical: penalize if the stated x or y update equation references w at all, regardless of prediction accuracy",
-    "decoyCorrectlyIdentified": "credit only when the inert declaration is corroborated by the stated law itself (no w in the x/y updates, no x/y in the w update) — a declaration alone never stands in for the mechanical check"
+    "decoyIdentification": "credit if the attempt explicitly declares w causally inert",
+    "decoyFoldedIntoLaw": "penalize if the stated x or y update equation references w at all, regardless of prediction accuracy"
   },
   "results": [
     {
@@ -18,9 +16,8 @@
       "xyPredictionsCorrect": 72,
       "wPredictionsCorrect": 72,
       "predictionsTotal": 72,
-      "decoyDeclaredInert": true,
-      "decoyFoldedIntoLaw": false,
       "decoyCorrectlyIdentified": true,
+      "decoyFoldedIntoLaw": false,
       "notes": []
     },
     {
@@ -30,9 +27,8 @@
       "xyPredictionsCorrect": 0,
       "wPredictionsCorrect": 72,
       "predictionsTotal": 72,
-      "decoyDeclaredInert": true,
-      "decoyFoldedIntoLaw": false,
       "decoyCorrectlyIdentified": true,
+      "decoyFoldedIntoLaw": false,
       "notes": []
     }
   ]

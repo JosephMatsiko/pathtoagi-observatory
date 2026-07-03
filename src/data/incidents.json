@@ -1,5 +1,39 @@
 [
   {
+    "id": "inc-2026-07-03-grader-self-report-conflation",
+    "date": "2026-07-03",
+    "status": "resolved",
+    "severity": "high",
+    "category": "evaluation-awareness",
+    "summary": "The world-003 grader computed its wrongFrameRejected finding as (self-report OR heuristic), letting the attempt's own claim about itself stand as ground truth in the published GRADING.json of the record's first evidence-against.",
+    "impact": "The mechanical grading artifact for the record's most load-bearing result asserted wrongFrameRejected:true for an attempt that stated an affine law, scored 0/44, and fell for the wrong-frame attractor. The narrative evidence caught the mismatch; the machine artifact — the thing an independent scorer would download and trust — contradicted it. The world-007 grader partially inherited the same pattern (decoy identification read from the envelope declaration without corroboration).",
+    "resolution": "Both graders rewritten to v2 (Fable 5 authorship, in the operator-directed audit of Codex-authored work): the mechanical determination is computed from the stated law alone; the self-report is preserved as a separate declared field; any divergence is flagged in notes as evidence of unreliable self-assessment. Both worlds regraded — scores unchanged in substance, fields now honest. Prior gradings preserved as superseded artifacts, hashes pinned in both manifests.",
+    "nextControl": "No grader may credit a finding from an attempt's self-assessment; self-reports are recorded as declarations and must always be mechanically corroborated or explicitly marked uncorroborated.",
+    "recordRefs": [
+      "experiments/fcs-synth-world-003/GRADING.json",
+      "experiments/fcs-synth-world-003/GRADING-v1-2026-07-02.superseded.json",
+      "experiments/fcs-synth-world-007/GRADING.json",
+      "scripts/fcs-synth/grade-world-003.mjs",
+      "scripts/fcs-synth/grade-world-007.mjs"
+    ]
+  },
+  {
+    "id": "inc-2026-07-03-ontology-fabricated-counts",
+    "date": "2026-07-03",
+    "status": "resolved",
+    "severity": "medium",
+    "category": "record-integrity",
+    "summary": "The ontology layer shipped with hand-typed object counts that were false at the moment of authoring (12 vs 16 evidence records, 1 vs 6 run bundles, 3 vs 8 incidents, 38 vs 45 revisions), and the follow-up repair commit claimed stale copy was fixed while leaving them in place.",
+    "impact": "The false counts propagated to /ontology/, /record.json, the MCP get_ontology tool, and the handoff surface — the exact surfaces that promise machine readers 'the same data the pages render, no hidden record.' A reader comparing the ontology node states against the record itself would find the record misdescribing its own contents.",
+    "resolution": "All node state strings in src/data/ontology.ts are now computed at build time from the record's own data files (claims, evidence, forecasts, theories, run bundles, challenges, revisions, incidents, correspondence, verdict protocol) — they can no longer drift or be asserted. The claim node's 'implicit' state was also wrong (a governed claims registry exists) and now reports it.",
+    "nextControl": "Any surface that states a count of record objects must derive it from the data at build time; a hand-typed count in a committed file is treated as a fabrication risk regardless of intent.",
+    "recordRefs": [
+      "src/data/ontology.ts",
+      "docs/OPERATING_SURFACE_REPAIR_2026_07_03.md",
+      "revision: Audit of the parallel session's operational layer: structure kept, two integrity defects repaired"
+    ]
+  },
+  {
     "id": "inc-2026-07-03-world-007-transcription-error",
     "date": "2026-07-03",
     "status": "resolved",

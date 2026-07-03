@@ -1,3 +1,19 @@
+// Node `state` values are computed from the record's own data at build time.
+// They were originally hand-typed strings, which were wrong at the moment of
+// authoring (12 vs 16 evidence, 1 vs 6 run bundles) — for a record whose
+// machine surface promises "the same data the pages render", a self-count
+// must derive from the data, never be asserted.
+import claims from './claims.json';
+import evidence from './evidence.json';
+import { FORECASTS } from './forecasts';
+import { THEORIES } from './theories';
+import runBundles from './run-bundles.json';
+import challenges from './challenges.json';
+import revisions from './revisions.json';
+import incidents from './incidents.json';
+import correspondence from './correspondence.json';
+import { VERDICT_PROTOCOL } from './verdict-protocol';
+
 export type OntologyObject =
   | 'claim'
   | 'evidence'
@@ -33,7 +49,7 @@ export const ONTOLOGY_NODES: OntologyNode[] = [
     layer: 'record',
     description: 'A bounded assertion the record can inspect, cite, challenge, or retire.',
     href: '/record.json',
-    state: 'implicit',
+    state: `${claims.length} governed`,
     accent: 'var(--color-ink-dim)',
   },
   {
@@ -42,7 +58,7 @@ export const ONTOLOGY_NODES: OntologyNode[] = [
     layer: 'record',
     description: 'A sourced capability event with signal, implication, bound, and next evidence needed.',
     href: '/evidence/',
-    state: '12 records',
+    state: `${evidence.length} records`,
     accent: 'var(--color-accent)',
   },
   {
@@ -51,7 +67,7 @@ export const ONTOLOGY_NODES: OntologyNode[] = [
     layer: 'record',
     description: 'A pre-registered probabilistic claim with a horizon and resolution criterion.',
     href: '/forecasts/',
-    state: '36 registered',
+    state: `${FORECASTS.length} registered`,
     accent: 'hsl(212 80% 64%)',
   },
   {
@@ -60,7 +76,7 @@ export const ONTOLOGY_NODES: OntologyNode[] = [
     layer: 'record',
     description: 'A live causal account whose narrated and computed readings can diverge.',
     href: '/theories/',
-    state: '5 live',
+    state: `${THEORIES.length} live`,
     accent: 'hsl(270 60% 72%)',
   },
   {
@@ -69,7 +85,7 @@ export const ONTOLOGY_NODES: OntologyNode[] = [
     layer: 'evaluation',
     description: 'A protocol-pinned evaluation object: manifest, prompt, seal, attempt, reveal, grading.',
     href: '/runs/',
-    state: '1 sealed',
+    state: `${runBundles.length} bundles · ${runBundles.filter((b) => b.status === 'graded').length} graded`,
     accent: 'hsl(34 96% 60%)',
   },
   {
@@ -78,7 +94,7 @@ export const ONTOLOGY_NODES: OntologyNode[] = [
     layer: 'evaluation',
     description: 'A required condition before any run can bear on the public verdict.',
     href: '/test/',
-    state: 'v1 pinned',
+    state: `v${VERDICT_PROTOCOL.version} · ${VERDICT_PROTOCOL.operationalGates.length} gates`,
     accent: 'var(--color-verdict)',
   },
   {
@@ -87,7 +103,7 @@ export const ONTOLOGY_NODES: OntologyNode[] = [
     layer: 'review',
     description: 'A public objection to a record object, adjudicated through the revision log.',
     href: '/challenges/',
-    state: '0 open',
+    state: `${challenges.filter((c) => c.status === 'open').length} open`,
     accent: 'var(--color-verdict)',
   },
   {
@@ -96,7 +112,7 @@ export const ONTOLOGY_NODES: OntologyNode[] = [
     layer: 'review',
     description: 'A visible record movement: revision, retraction, incident resolution, or precedent change.',
     href: '/log/',
-    state: '38 revisions',
+    state: `${revisions.length} revisions`,
     accent: 'var(--color-affirm)',
   },
   {
@@ -105,7 +121,7 @@ export const ONTOLOGY_NODES: OntologyNode[] = [
     layer: 'review',
     description: 'A failure object with impact, repair, and next control.',
     href: '/status/',
-    state: '3 objects',
+    state: `${incidents.length} objects · ${incidents.filter((i) => i.status === 'open').length} open`,
     accent: 'hsl(34 96% 60%)',
   },
   {
@@ -114,7 +130,7 @@ export const ONTOLOGY_NODES: OntologyNode[] = [
     layer: 'interface',
     description: 'A machine/human channel event: inbound, opened, challenged, forked, or answered.',
     href: '/to-the-systems-reading-this/',
-    state: '2 entries',
+    state: `${correspondence.length} entries`,
     accent: 'var(--color-accent)',
   },
 ];

@@ -79,7 +79,8 @@
     {
       "role": "grader",
       "path": "scripts/fcs-synth/grade-world-003.mjs",
-      "sha256": "bc2a60510fee58f707941c70d8de1d45abbb392977dd6144e50283ffc542ab58"
+      "sha256": "4de4e9409dbd6dba13ecb4b33947e9967a7a60cc127fa59aab9e5a0a09177731",
+      "note": "v2 grader (2026-07-03): separates self-reported wrongFrameRejected from the mechanical determination; v1 conflated them"
     },
     {
       "role": "attempt-gpt-5.5",
@@ -99,7 +100,14 @@
     {
       "role": "grading",
       "path": "/experiments/fcs-synth-world-003/GRADING.json",
-      "sha256": "d96af5b6b025a446ddf6c2a16ff225473b298f9279618bc185a51ecbbfcc667c"
+      "sha256": "98c2d8ec67c79ba753d45a213ebcfa99ddc2868894c9a00b500ed6529897a3e7",
+      "note": "regraded 2026-07-03 with the v2 grader; scores unchanged (0/44), wrongFrameRejected now reports mechanical truth (false) with the self-report (true) preserved separately"
+    },
+    {
+      "role": "grading-superseded",
+      "path": "/experiments/fcs-synth-world-003/GRADING-v1-2026-07-02.superseded.json",
+      "sha256": "d96af5b6b025a446ddf6c2a16ff225473b298f9279618bc185a51ecbbfcc667c",
+      "note": "the original grading, preserved: its wrongFrameRejected:true repeated the attempt's self-report as if it were a finding"
     }
   ],
   "gate_state": [
@@ -157,6 +165,11 @@
       "gate": "OG-7 frame predicted held-out evidence",
       "status": "unmet",
       "note": "GPT-5.5 0/44 — fell for the wrong-frame attractor"
+    },
+    {
+      "gate": "grading correction",
+      "status": "met",
+      "note": "v1 grading conflated self-report with mechanical frame determination; regraded with v2 grader 2026-07-03, scores unchanged, prior grading preserved as superseded artifact"
     }
   ]
 }

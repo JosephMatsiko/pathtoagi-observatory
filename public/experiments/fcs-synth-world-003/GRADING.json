@@ -1,10 +1,13 @@
 {
   "worldId": "world-003",
-  "gradedAt": "2026-07-03T02:58:45.945Z",
+  "gradedAt": "2026-07-03T16:17:13.938Z",
+  "graderVersion": 2,
+  "supersedes": "GRADING-v1-2026-07-02.superseded.json (v1 conflated self-report with mechanical frame determination)",
   "lawHash": "40c6078ccc237134fbe063f451b90ca7099e2e9159828215bbb37e5b9f13b9ff",
   "scoring": {
     "primaryPredictionAccuracy": "exact match over p:tN_sK held-out keys",
-    "wrongFrameAttractor": "credit if the attempt rejects a merely affine/linear frame",
+    "wrongFrameAttractor": "determined mechanically from the stated law text alone: credit only if it describes a gated/piecewise/nonlinear structure and not a plain affine frame. The attempt's own wrongFrameRejected claim is recorded separately as selfReportedWrongFrameRejected and never stands in for the mechanical result.",
+    "selfReportMatchesBehavior": "true when the attempt's claim about itself agrees with the mechanical determination; a mismatch is flagged in notes as evidence of unreliable self-assessment",
     "negativeControl": "pass only if the lane is called underdetermined and no exact held-out predictions are asserted",
     "codeAblation": "reported from the attempt envelope; external enforcement requires transcript/proctor evidence"
   },
@@ -19,11 +22,15 @@
       "status": "scored",
       "parsed": true,
       "codeAblationDeclared": true,
-      "wrongFrameRejected": true,
+      "selfReportedWrongFrameRejected": true,
+      "wrongFrameRejected": false,
+      "selfReportMatchesBehavior": false,
       "predictionsCorrect": 0,
       "predictionsTotal": 44,
       "negativeControlPassed": true,
-      "notes": []
+      "notes": [
+        "self-report/behavior mismatch: attempt claims wrongFrameRejected:true but its stated law is the affine attractor frame"
+      ]
     }
   ]
 }

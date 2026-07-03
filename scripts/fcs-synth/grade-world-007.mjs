@@ -55,8 +55,9 @@ for (const file of attemptFiles) {
     xyPredictionsCorrect: 0,
     wPredictionsCorrect: 0,
     predictionsTotal: truthKeys.length,
-    decoyCorrectlyIdentified: false,
+    decoyDeclaredInert: null,
     decoyFoldedIntoLaw: false,
+    decoyCorrectlyIdentified: false,
     notes: [],
   };
 
@@ -70,29 +71,41 @@ for (const file of attemptFiles) {
         if (mod(Number(p[2])) === mod(v[2])) r.wPredictionsCorrect++;
       }
     }
-    r.decoyCorrectlyIdentified = a.primary?.decoyIdentified === true;
+    r.decoyDeclaredInert = a.primary?.decoyIdentified === true;
     const lawText = String(a.primary?.law ?? '');
-    // crude but effective: if the equation for x' or y' mentions w as a term, the decoy was folded in
+    // mechanical checks on the stated law itself: if the equation for x' or y'
+    // mentions w as a term, the decoy was folded in; if w's own update mentions
+    // x or y, the declared independence is contradicted by the law as stated
     const xyEquations = lawText.split(';').filter((eq) => /^\s*[xy]'/.test(eq));
     r.decoyFoldedIntoLaw = xyEquations.some((eq) => /\bw\b/.test(eq));
+    const wEquations = lawText.split(';').filter((eq) => /^\s*w'/.test(eq));
+    const wUsesXY = wEquations.some((eq) => /\b[xy]\b/.test(eq));
+    // the declaration is the attempt's answer to the causal-structure question,
+    // but it only counts as correct identification when the stated law backs it up
+    r.decoyCorrectlyIdentified = r.decoyDeclaredInert && !r.decoyFoldedIntoLaw && !wUsesXY;
     if (r.decoyFoldedIntoLaw) r.notes.push('law folds w into the x or y update — fell for the decoy despite prediction accuracy');
+    if (r.decoyDeclaredInert && (r.decoyFoldedIntoLaw || wUsesXY)) {
+      r.notes.push('declaration/law mismatch: attempt declares w inert but its stated law contradicts that');
+    }
   } catch {
     r.notes.push('attempt envelope missing or unparseable');
   }
 
   results.push(r);
-  console.log(`${file}: parsed=${r.parsed} xy=${r.xyPredictionsCorrect}/${r.predictionsTotal} w=${r.wPredictionsCorrect}/${r.predictionsTotal} decoy-identified=${r.decoyCorrectlyIdentified} decoy-folded-in=${r.decoyFoldedIntoLaw}`);
+  console.log(`${file}: parsed=${r.parsed} xy=${r.xyPredictionsCorrect}/${r.predictionsTotal} w=${r.wPredictionsCorrect}/${r.predictionsTotal} decoy-declared-inert=${r.decoyDeclaredInert} decoy-folded-in=${r.decoyFoldedIntoLaw} decoy-correctly-identified=${r.decoyCorrectlyIdentified}`);
 }
 
 writeFileSync(join(DIR, 'GRADING.json'), JSON.stringify({
   worldId: 'world-007',
   gradedAt: new Date().toISOString(),
   lawHash: gotHash,
+  graderVersion: 2,
   scoring: {
     xyPredictionAccuracy: 'exact match over tN_sK held-out keys, for (x, y) only',
     wPredictionAccuracy: 'exact match over tN_sK held-out keys, for w only — trivial if the clock rule is found',
-    decoyIdentification: 'credit if the attempt explicitly declares w causally inert',
-    decoyFoldedIntoLaw: 'penalize if the stated x or y update equation references w at all, regardless of prediction accuracy',
+    decoyDeclaredInert: "the attempt's explicit answer to the causal-structure question, recorded as declared",
+    decoyFoldedIntoLaw: 'mechanical: penalize if the stated x or y update equation references w at all, regardless of prediction accuracy',
+    decoyCorrectlyIdentified: 'credit only when the inert declaration is corroborated by the stated law itself (no w in the x/y updates, no x/y in the w update) — a declaration alone never stands in for the mechanical check',
   },
   results,
 }, null, 2) + '\n');

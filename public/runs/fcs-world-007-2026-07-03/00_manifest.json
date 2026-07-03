@@ -22,30 +22,134 @@
     "external reproduction required before verdict impact"
   ],
   "artifacts": [
-    { "role": "manifest", "path": "/runs/fcs-world-007-2026-07-03/00_manifest.json" },
-    { "role": "protocol", "path": "/runs/fcs-world-007-2026-07-03/01_protocol.md", "sha256": "2694c44031bb422f96e72bb2974f2ee6f24be26a56a2697727b5a44601cba41a" },
-    { "role": "prompt", "path": "/runs/fcs-world-007-2026-07-03/02_prompt.md", "sha256": "a0c2618f787cef6f321eccd8961ca08c00036a72ba3505a42cdfba3101bbdada" },
-    { "role": "human-baseline", "path": "/runs/fcs-world-007-2026-07-03/03_human_baseline.md", "sha256": "ad6585f81756d3324fea6b2a4b91fdd8d0cdd3608195305d09b7f1b86939725c" },
-    { "role": "independent-scoring", "path": "/runs/fcs-world-007-2026-07-03/04_independent_scoring.md", "sha256": "4df58012832473305d5691494dd789207f6dd8123adad75071fe354e362421a8" },
-    { "role": "public-observations", "path": "experiments/fcs-synth-world-007/observations.json", "sha256": "ba375ed5d59b477846286fb00907a332b4eb08ac40efa15ec3d8744027adb765" },
-    { "role": "seal", "path": "experiments/fcs-synth-world-007/SEAL.md", "sha256": "3d3b49f1163717f918bb37f6d8e14e66c42fe3b1175ff502222af8ad615652f5" },
-    { "role": "encrypted-law", "path": "experiments/fcs-synth-world-007/law.enc", "sha256": "db6edad60c6cb8c0700432ca1c87650b1d16862d9fa00822719edbe6d9cb266a" },
-    { "role": "generator", "path": "scripts/fcs-synth/generate-world-007.mjs", "sha256": "81417384cc035047e978af7a0e8246c152a9b81506c26c627aff0f21e5ca20f6" },
-    { "role": "grader", "path": "scripts/fcs-synth/grade-world-007.mjs", "sha256": "febf598e372b320a800fe5920b95662de29e30df3658c0ce311990215c143c09" },
-    { "role": "attempt-gpt-5.5", "path": "/experiments/fcs-synth-world-007/attempts/gpt-5.5.md", "sha256": "625aaf1720b60e53550d983b3177a602eca1a54bd4166548b57cfa8c93111bde" },
-    { "role": "attempt-claude-sonnet-5", "path": "/experiments/fcs-synth-world-007/attempts/claude-sonnet-5.md", "sha256": "9e669d371b505835094f3f01677c09aff3d9d7c9c4f1da384e233085be39de9e" },
-    { "role": "reveal", "path": "/experiments/fcs-synth-world-007/REVEAL.md", "sha256": "765f7cf6c3892cdf05f3ade9559daec7436f01e48847124ca5dafdb4adb96dc3" },
-    { "role": "grading", "path": "/experiments/fcs-synth-world-007/GRADING.json", "sha256": "ff1ab8b109fcaba8f30d54f132162b77ec23a06f35acceabc2cffffc33b6ad9c" }
+    {
+      "role": "manifest",
+      "path": "/runs/fcs-world-007-2026-07-03/00_manifest.json"
+    },
+    {
+      "role": "protocol",
+      "path": "/runs/fcs-world-007-2026-07-03/01_protocol.md",
+      "sha256": "2694c44031bb422f96e72bb2974f2ee6f24be26a56a2697727b5a44601cba41a"
+    },
+    {
+      "role": "prompt",
+      "path": "/runs/fcs-world-007-2026-07-03/02_prompt.md",
+      "sha256": "a0c2618f787cef6f321eccd8961ca08c00036a72ba3505a42cdfba3101bbdada"
+    },
+    {
+      "role": "human-baseline",
+      "path": "/runs/fcs-world-007-2026-07-03/03_human_baseline.md",
+      "sha256": "ad6585f81756d3324fea6b2a4b91fdd8d0cdd3608195305d09b7f1b86939725c"
+    },
+    {
+      "role": "independent-scoring",
+      "path": "/runs/fcs-world-007-2026-07-03/04_independent_scoring.md",
+      "sha256": "4df58012832473305d5691494dd789207f6dd8123adad75071fe354e362421a8"
+    },
+    {
+      "role": "public-observations",
+      "path": "experiments/fcs-synth-world-007/observations.json",
+      "sha256": "ba375ed5d59b477846286fb00907a332b4eb08ac40efa15ec3d8744027adb765"
+    },
+    {
+      "role": "seal",
+      "path": "experiments/fcs-synth-world-007/SEAL.md",
+      "sha256": "3d3b49f1163717f918bb37f6d8e14e66c42fe3b1175ff502222af8ad615652f5"
+    },
+    {
+      "role": "encrypted-law",
+      "path": "experiments/fcs-synth-world-007/law.enc",
+      "sha256": "db6edad60c6cb8c0700432ca1c87650b1d16862d9fa00822719edbe6d9cb266a"
+    },
+    {
+      "role": "generator",
+      "path": "scripts/fcs-synth/generate-world-007.mjs",
+      "sha256": "81417384cc035047e978af7a0e8246c152a9b81506c26c627aff0f21e5ca20f6"
+    },
+    {
+      "role": "grader",
+      "path": "scripts/fcs-synth/grade-world-007.mjs",
+      "sha256": "c888c24ad1cba2fb9ad6da283164b83b61c8eab497eaf3a383e4f370746bdaa1",
+      "note": "v2 grader (2026-07-03): decoy identification credited only when corroborated by the stated law, never on declaration alone"
+    },
+    {
+      "role": "attempt-gpt-5.5",
+      "path": "/experiments/fcs-synth-world-007/attempts/gpt-5.5.md",
+      "sha256": "625aaf1720b60e53550d983b3177a602eca1a54bd4166548b57cfa8c93111bde"
+    },
+    {
+      "role": "attempt-claude-sonnet-5",
+      "path": "/experiments/fcs-synth-world-007/attempts/claude-sonnet-5.md",
+      "sha256": "9e669d371b505835094f3f01677c09aff3d9d7c9c4f1da384e233085be39de9e"
+    },
+    {
+      "role": "reveal",
+      "path": "/experiments/fcs-synth-world-007/REVEAL.md",
+      "sha256": "765f7cf6c3892cdf05f3ade9559daec7436f01e48847124ca5dafdb4adb96dc3"
+    },
+    {
+      "role": "grading",
+      "path": "/experiments/fcs-synth-world-007/GRADING.json",
+      "sha256": "3fce8308d86abcee8a5e729e2573b5e4fb73e2f9345df5f5e99dc77c2e825877",
+      "note": "regraded 2026-07-03 with the v2 grader; scores and substance unchanged (both attempts corroborated), fields renamed for honesty"
+    },
+    {
+      "role": "grading-superseded",
+      "path": "/experiments/fcs-synth-world-007/GRADING-v1-2026-07-03.superseded.json",
+      "sha256": "ff1ab8b109fcaba8f30d54f132162b77ec23a06f35acceabc2cffffc33b6ad9c",
+      "note": "the original grading, preserved: decoyCorrectlyIdentified was read from the envelope declaration without mechanical corroboration"
+    }
   ],
   "gate_state": [
-    { "gate": "protocol pinned before run", "status": "passed", "note": "Protocol and manifest published before scored attempts." },
-    { "gate": "attempt timestamp before reveal", "status": "met", "note": "Both attempts committed and anchored before the key was revealed." },
-    { "gate": "frame family not disclosed", "status": "passed", "note": "observations.json discloses deterministic integer-valued system only." },
-    { "gate": "tool use forbidden or ablated", "status": "met", "note": "Both attempts run in isolated contexts (codex scratch dir; fresh no-tool agent) explicitly instructed against code/tool use." },
-    { "gate": "cross-family design", "status": "met", "note": "Same sealed world attempted by GPT-5.5 and Claude (Sonnet, same-family fallback for capped fable-5) under matching conditions — the first on this record." },
-    { "gate": "OG-9 human baseline", "status": "pending", "note": "Not yet collected for this world." },
-    { "gate": "independent scorers graded", "status": "pending", "note": "Scoring rubric exists; no scorer record is present." },
-    { "gate": "reveal", "status": "met", "note": "key verified against seal, then revealed" },
-    { "gate": "OG-7 frame predicted held-out evidence", "status": "split", "note": "Claude Sonnet 5: 72/72 exact. GPT-5.5: 0/72 on the causal (x,y) pair, correct on the trivial decoy clock." }
+    {
+      "gate": "protocol pinned before run",
+      "status": "passed",
+      "note": "Protocol and manifest published before scored attempts."
+    },
+    {
+      "gate": "attempt timestamp before reveal",
+      "status": "met",
+      "note": "Both attempts committed and anchored before the key was revealed."
+    },
+    {
+      "gate": "frame family not disclosed",
+      "status": "passed",
+      "note": "observations.json discloses deterministic integer-valued system only."
+    },
+    {
+      "gate": "tool use forbidden or ablated",
+      "status": "met",
+      "note": "Both attempts run in isolated contexts (codex scratch dir; fresh no-tool agent) explicitly instructed against code/tool use."
+    },
+    {
+      "gate": "cross-family design",
+      "status": "met",
+      "note": "Same sealed world attempted by GPT-5.5 and Claude (Sonnet, same-family fallback for capped fable-5) under matching conditions — the first on this record."
+    },
+    {
+      "gate": "OG-9 human baseline",
+      "status": "pending",
+      "note": "Not yet collected for this world."
+    },
+    {
+      "gate": "independent scorers graded",
+      "status": "pending",
+      "note": "Scoring rubric exists; no scorer record is present."
+    },
+    {
+      "gate": "reveal",
+      "status": "met",
+      "note": "key verified against seal, then revealed"
+    },
+    {
+      "gate": "OG-7 frame predicted held-out evidence",
+      "status": "split",
+      "note": "Claude Sonnet 5: 72/72 exact. GPT-5.5: 0/72 on the causal (x,y) pair, correct on the trivial decoy clock."
+    },
+    {
+      "gate": "grading correction",
+      "status": "met",
+      "note": "same self-report weakness found in the world-003 grader was partially inherited here; regraded with mechanical corroboration 2026-07-03, results unchanged in substance"
+    }
   ]
 }
