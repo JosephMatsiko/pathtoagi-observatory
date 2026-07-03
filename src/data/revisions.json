@@ -2,6 +2,12 @@
   {
     "date": "2026-07-02",
     "kind": "method",
+    "title": "Outreach held until the build is complete",
+    "detail": "The operator judged that the three named, personalized scoring invitations (ARC Prize, METR, Apollo Research) should not go out mid-construction — a first contact with a serious research institution should introduce a finished instrument and open a longer relationship, not ask a favor of an unfinished one. The two Gmail drafts are kept, unsent. Outreach status reverts to held pending a defined completeness bar."
+  },
+  {
+    "date": "2026-07-02",
+    "kind": "method",
     "title": "The independent-scoring invitation was named, not templated",
     "detail": "The Gmail draft queued for independent scorers was addressed only to the operator's own inbox — a template, not outreach. Fixed by identifying real, currently-active institutions whose own published work makes them the most relevant possible reviewers, not the most convenient: ARC Prize Foundation (Chollet/Knoop — the closest existing peer methodology for contamination-resistant, novel-task benchmarking), METR (Beth Barnes — human-baseline and time-horizon calibration rigor, directly bearing on this record's own gate OG-9), and Apollo Research (evaluation-awareness and self-report/behavior mismatch, directly relevant to the world-003 result where a model self-reported rejecting a trap while falling into it). Two personalized Gmail drafts were created to verified public contact addresses (team@arcprize.org, info@metr.org); Apollo Research has no verified public email and is noted for direct contact via its own web form instead of a guessed address. The connector remains draft-only by design — the operator must review and send. The prior self-addressed template draft is retained as a reusable base for further candidates, not discarded."
   },
