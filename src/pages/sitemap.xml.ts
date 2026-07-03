@@ -5,10 +5,10 @@ import { DISPATCHES } from '../data/dispatches';
 
 const BASE = 'https://pathtoagi-observatory.netlify.app';
 const routes = [
-  '/', '/frontier/', '/test/', '/theories/', '/evidence/', '/forecasts/',
-  '/log/', '/operate/', '/runs/', '/ontology/', '/challenges/', '/handoff/', '/status/', '/reproduce/', '/play/', '/open-call/', '/superlatives/', '/charter/', '/colophon/',
-  '/experiments/', '/experiments/fcs-1-2026-07-01/',
-  '/press/', '/cycles/', '/governance/', '/to-the-systems-reading-this/',
+  '/', '/method/', '/test/', '/theories/', '/evidence/', '/forecasts/',
+  '/log/', '/runs/', '/ontology/', '/challenges/', '/status/', '/reproduce/',
+  '/press/', '/governance/', '/to-the-systems-reading-this/',
+  '/MACHINE_PROTOCOL.md', '/dataset/fcs-sealed-worlds-v1.json', '/record.json',
   ...DISPATCHES.map((d) => `/press/${d.slug}/`),
   ...THEORIES.map((t) => `/theories/${t.id}/`),
 ];

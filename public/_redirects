@@ -1,0 +1,21 @@
+# Retired routes (the fresh-build trim, 2026-07-03) → nearest surviving surface.
+# Retraction, not deletion: the record of WHY they were retired is in the
+# revision log; these redirects keep old inbound links from dead-ending.
+/play             /method   301
+/play/            /method   301
+/frontier         /test     301
+/frontier/        /test     301
+/open-call        /MACHINE_PROTOCOL.md   301
+/open-call/       /MACHINE_PROTOCOL.md   301
+/operate          /status   301
+/operate/         /status   301
+/handoff          /method   301
+/handoff/         /method   301
+/superlatives     /         301
+/superlatives/    /         301
+/charter          /governance   301
+/charter/         /governance   301
+/colophon         /         301
+/colophon/        /         301
+/cycles           /status   301
+/cycles/          /status   301

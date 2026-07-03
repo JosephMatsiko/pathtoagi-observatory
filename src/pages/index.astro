@@ -1,22 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
-import Frontier from '../components/Frontier.tsx';
 import Dome from '../components/Dome.astro';
 import { THEORIES } from '../data/theories';
-import { FRONTIER_2026 } from '../data/capabilities';
 import {
   OPERATING_QUESTION,
   VERDICT,
-  PROBES,
 } from '../data/frame-construction';
 import { EVIDENCE, EVIDENCE_CLASS_LABEL } from '../data/evidence';
 import { FORECASTS } from '../data/forecasts';
+import runBundles from '../data/run-bundles.json';
 
 const topTheories = [...THEORIES].sort((a, b) => b.health - a.health).slice(0, 3);
 const leader = topTheories[0];
-const frontierMean =
-  Object.values(FRONTIER_2026).reduce((s, v) => s + v, 0) /
-  Object.values(FRONTIER_2026).length;
+const gradedWorlds = runBundles.filter((b: { status: string }) => b.status === 'graded').length;
 const recentEvidence = EVIDENCE.slice(0, 2);
 const liveForecast = FORECASTS.find((f) => f.id === 'fc-verdict-holds')!;
 ---
@@ -92,26 +88,24 @@ const liveForecast = FORECASTS.find((f) => f.id === 'fc-verdict-holds')!;
 
   <!-- ── Instrument strip ───────────────────────────────────── -->
   <section class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-    <a href="/frontier/" class="surface-quiet block p-5 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
-      <p class="eyebrow">Frontier · mean of 8 axes</p>
+    <a href="/runs/" class="surface-quiet block p-5 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
+      <p class="eyebrow">Sealed worlds · graded</p>
       <p class="tabular mt-2 text-3xl" style="color: var(--color-accent);">
-        {frontierMean.toFixed(2)}
-        <span class="text-base" style="color: var(--color-faint);"> / 1.00</span>
+        {gradedWorlds}<span class="text-base" style="color: var(--color-faint);"> graded · 1 live</span>
       </p>
       <p class="mt-1 text-sm" style="color: var(--color-muted);">
-        Strong perception & reasoning; weak memory, world models, embodiment.
+        Contamination floor zero by construction. Every failure occurs where the
+        frame must be constructed, not searched.
       </p>
     </a>
-    <a href="/test/" class="surface-quiet block p-5 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
-      <p class="eyebrow">Frame-construction probes</p>
+    <a href="/method/" class="surface-quiet block p-5 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
+      <p class="eyebrow">The method · headline</p>
       <p class="tabular mt-2 text-3xl" style="color: var(--color-verdict);">
-        {PROBES.length}<span class="text-base" style="color: var(--color-faint);">
-          designed · 1 run</span
-        >
+        8<span class="text-base" style="color: var(--color-faint);"> disciplines</span>
       </p>
       <p class="mt-1 text-sm" style="color: var(--color-muted);">
-        The Einstein Test, operationalized into six falsifier-rich probes —
-        run 1 executed 2026-07-01 — passed at face value, scored as upper bound only.
+        How to run an evaluation you can't fool yourself with — each principle
+        earned by a real failure on the record.
       </p>
     </a>
     <a href="/theories/" class="surface-quiet block p-5 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
@@ -123,30 +117,16 @@ const liveForecast = FORECASTS.find((f) => f.id === 'fc-verdict-holds')!;
         {leader.title} — {leader.trend}.
       </p>
     </a>
-    <a href="/status/" class="surface-quiet block p-5 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
-      <p class="eyebrow">Omnibus implementation</p>
+    <a href="/MACHINE_PROTOCOL.md" class="surface-quiet block p-5 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
+      <p class="eyebrow">Machine Protocol · v1</p>
       <p class="tabular mt-2 text-3xl" style="color: var(--color-affirm);">
-        live
+        open
       </p>
       <p class="mt-1 text-sm" style="color: var(--color-muted);">
-        Source, incident objects, threat model, doctrines, status, and
-        reproduction surfaces are now on record.
+        Any AI system may attempt the live sealed world and enter this record —
+        graded mechanically, no human in the path.
       </p>
     </a>
-  </section>
-
-  <!-- ── The frontier instrument ────────────────────────────── -->
-  <section class="mt-16">
-    <div class="flex items-baseline justify-between gap-4">
-      <div>
-        <p class="eyebrow">The capability frontier · 2026 estimate</p>
-        <h2 class="serif mt-1 text-2xl">The shape of "not yet"</h2>
-      </div>
-      <a href="/frontier/" class="link-accent text-sm">full instrument →</a>
-    </div>
-    <div class="surface mt-5 p-5 sm:p-8">
-      <Frontier client:load />
-    </div>
   </section>
 
   <!-- ── The five theories ──────────────────────────────────── -->

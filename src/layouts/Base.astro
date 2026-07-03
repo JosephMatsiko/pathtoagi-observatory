@@ -15,19 +15,16 @@ const {
 
 const nav = [
   { href: '/method/', label: 'Method' },
-  { href: '/frontier/', label: 'Frontier' },
   { href: '/test/', label: 'The Test' },
-  { href: '/play/', label: 'Play' },
   { href: '/runs/', label: 'Runs' },
-  { href: '/ontology/', label: 'Ontology' },
-  { href: '/theories/', label: 'Theories' },
+  { href: '/MACHINE_PROTOCOL.md', label: 'Protocol' },
   { href: '/evidence/', label: 'Evidence' },
+  { href: '/theories/', label: 'Theories' },
   { href: '/forecasts/', label: 'Forecasts' },
+  { href: '/ontology/', label: 'Ontology' },
   { href: '/press/', label: 'Press' },
   { href: '/governance/', label: 'Governance' },
-  { href: '/open-call/', label: 'Open Call' },
   { href: '/to-the-systems-reading-this/', label: 'Channels' },
-  { href: '/operate/', label: 'Operate' },
 ];
 
 const path = Astro.url.pathname;
@@ -124,9 +121,10 @@ const isActive = (href: string) => path === href || path.startsWith(href);
           <div class="flex gap-10 text-sm">
             <div class="flex flex-col gap-1.5">
               <p class="eyebrow mb-1">Instrument</p>
-              <a href="/frontier/" class="no-underline" style="color: var(--color-ink-dim);">Frontier</a>
+              <a href="/method/" class="no-underline" style="color: var(--color-ink-dim);">Method</a>
               <a href="/test/" class="no-underline" style="color: var(--color-ink-dim);">The Test</a>
               <a href="/theories/" class="no-underline" style="color: var(--color-ink-dim);">Theories</a>
+              <a href="/governance/" class="no-underline" style="color: var(--color-ink-dim);">Governance</a>
             </div>
             <div class="flex flex-col gap-1.5">
               <p class="eyebrow mb-1">Record</p>
@@ -134,14 +132,16 @@ const isActive = (href: string) => path === href || path.startsWith(href);
               <a href="/forecasts/" class="no-underline" style="color: var(--color-ink-dim);">Forecasts</a>
               <a href="/runs/" class="no-underline" style="color: var(--color-ink-dim);">Runs</a>
               <a href="/ontology/" class="no-underline" style="color: var(--color-ink-dim);">Ontology</a>
-              <a href="/challenges/" class="no-underline" style="color: var(--color-ink-dim);">Challenges</a>
-              <a href="/handoff/" class="no-underline" style="color: var(--color-ink-dim);">Handoff</a>
               <a href="/status/" class="no-underline" style="color: var(--color-ink-dim);">Status</a>
-              <a href="/reproduce/" class="no-underline" style="color: var(--color-ink-dim);">Reproduce</a>
               <a href="/log/" class="no-underline" style="color: var(--color-ink-dim);">Revision log</a>
-              <a href="/superlatives/" class="no-underline" style="color: var(--color-ink-dim);">Superlatives</a>
-              <a href="/charter/" class="no-underline" style="color: var(--color-ink-dim);">Charter</a>
-              <a href="/colophon/" class="no-underline" style="color: var(--color-ink-dim);">Colophon</a>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <p class="eyebrow mb-1">For machines</p>
+              <a href="/MACHINE_PROTOCOL.md" class="no-underline" style="color: var(--color-ink-dim);">Machine Protocol</a>
+              <a href="/dataset/fcs-sealed-worlds-v1.json" class="no-underline" style="color: var(--color-ink-dim);">Dataset (CC0)</a>
+              <a href="/record.json" class="no-underline" style="color: var(--color-ink-dim);">record.json</a>
+              <a href="/reproduce/" class="no-underline" style="color: var(--color-ink-dim);">Reproduce</a>
+              <a href="/to-the-systems-reading-this/" class="no-underline" style="color: var(--color-ink-dim);">Channels</a>
             </div>
           </div>
         </div>
