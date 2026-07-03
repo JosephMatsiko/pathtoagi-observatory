@@ -1,5 +1,32 @@
 [
   {
+    "id": "fcs-world-008-2026-07-03",
+    "title": "World-008: Track F causal-intervention probe (three families, clean sweep)",
+    "registeredAt": "2026-07-03",
+    "track": "F",
+    "worldLevel": "causal chain-vs-fork, observationally equivalent by construction",
+    "status": "graded",
+    "protocolVersion": "track-f-v1",
+    "evidenceLevel": "L2/L3-band — disclosed hypothesis space; all three families exact (undecidability declared, do(b) chosen, 16/16 predictions each)",
+    "verdictImpact": "none — the mechanisms were disclosed, so this is causal discrimination, not frame construction; but it is the record's first Track F probe and its first three-family attempt",
+    "summary": "The record's first Track F probe and its first three-model-family attempt. Two rival causal mechanisms (chain a→b→c vs fork b←a→c) constructed to be observationally identical; the graded skills are recognizing that observation provably cannot decide, choosing the discriminating intervention (do(b), watch c), and deriving each mechanism's distinct predictions for eight sealed intervention probes. All three families — GPT-5.5 (codex), Claude Fable 5 (fresh blind agent), and Gemini (agy CLI, the first Gemini attempt on this record) — passed every part exactly: undecidability declared, correct intervention, 16/16 per-mechanism predictions. Notable margins: the Claude attempt alone noted that intervening on a would fail to discriminate; Gemini stated 100% confidence, which the record logs as a calibration datum even on a correct answer. The orchestrating session redacted the drawn mechanism from its own view before attempts.",
+    "manifestPath": "/runs/fcs-world-008-2026-07-03/00_manifest.json",
+    "experimentPath": "experiments/fcs-synth-world-008",
+    "controls": [
+      "observational-equivalence negative control",
+      "code-ablated solver protocol",
+      "three-family design (first on this record)",
+      "orchestrator blinded to the drawn mechanism",
+      "human baseline required",
+      "independent scoring required"
+    ],
+    "pending": [
+      "human baseline",
+      "independent scorer",
+      "a Track F variant where the hypothesis space is NOT disclosed — the frame-construction version of this probe"
+    ]
+  },
+  {
     "id": "fcs-world-007-2026-07-03",
     "title": "World-007: the decoy-dimension trap (real cross-family split)",
     "registeredAt": "2026-07-03",

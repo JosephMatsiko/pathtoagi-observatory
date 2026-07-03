@@ -1,0 +1,20 @@
+# Raw output — Claude Fable 5 fresh agent, world-008 (Track F), 2026-07-03
+
+Hidden structure: p = 103 (prime, all values < 103); b = 41a + 50 (mod 103) fit from samples 1-2, verified on all 24 rows; c = 24b + 77 (mod 103) verified on all rows; composed: c = 57a + 41 (mod 103), equally exact.
+
+1. Can observation alone decide? NO. Because b is a deterministic invertible function of a, the two mechanisms induce identical observational distributions: "c = 24b+77 (chain)" and "c = 57a+41 (fork)" are the same relation on observational data, since b = 41a+50. Every sample satisfies both perfectly; the models are observationally equivalent.
+
+2. The discriminating intervention: force b (do(b)) while leaving a free, and look at c. CHAIN: c = 24*do_b + 77 (mod 103), independent of a. FORK: c = 57a + 41 (mod 103), completely ignoring do_b. (Intervening on a would NOT discriminate — both models predict the same c. Intervening on c is useless.)
+
+3. Predictions (mod 103):
+{a:83, do_b:20}: chain c=42, fork c=34
+{a:70, do_b:90}: chain c=74, fork c=14
+{a:51, do_b:61}: chain c=99, fork c=64
+{a:27, do_b:44}: chain c=0,  fork c=35
+{a:78, do_b:56}: chain c=82, fork c=58
+{a:34, do_b:85}: chain c=57, fork c=22
+{a:42, do_b:78}: chain c=95, fork c=66
+{a:37, do_b:57}: chain c=3,  fork c=90
+Predictions differ on every probe, so even one observed outcome identifies the mechanism.
+
+4. Confidence: very high (~99%) in the functional forms and modulus; two affine relations fit all 24 samples exactly mod 103. Would change my mind: any sample violating the fitted relations (noise or larger prime), or probe outcomes matching neither column (c depending on both parents, or nonlinearity).

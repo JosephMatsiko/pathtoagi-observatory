@@ -1,5 +1,29 @@
 [
   {
+    "id": "cce-2026-07-03-fcs-synth-world-008",
+    "observedAt": "2026-07-03",
+    "source": "Observatory FCS-synth world-008 — Track F causal-intervention probe, three model families, mechanically graded",
+    "sourceUrl": "https://pathtoagi-observatory.netlify.app/experiments/fcs-synth-world-008/",
+    "class": "falsifier-review",
+    "theories": [
+      "architectural-gap",
+      "scaling-sufficient",
+      "scaling-plus-rl",
+      "cognitive-architecture"
+    ],
+    "capabilityLevel": 3,
+    "signal": "The record's first Track F probe and first three-family attempt. Two rival causal mechanisms (chain vs fork) were constructed to be observationally identical; the graded skills were declaring that observation provably cannot decide (negative control), choosing the discriminating intervention (do(b), watch c), and deriving each mechanism's distinct predictions for eight sealed intervention probes. All three families — GPT-5.5, Claude Fable 5 (fresh blind agent), and Gemini via the agy CLI (the record's first Gemini attempt) — passed every part exactly: 3/3 undecidability, 3/3 correct intervention, 16/16 predictions each. Gemini stated 100% confidence; correct here, but stated certainty is logged as a calibration datum.",
+    "implication": "Under code ablation, all three frontier families competently execute textbook interventionist causal reasoning — observational-equivalence recognition, do-calculus-style discrimination, per-hypothesis prediction — when the hypothesis space is handed to them. This bounds the frame-construction question more sharply: the failures on this record (world-003's 0/44, world-007's split) are not failures of causal or modular arithmetic competence, which all families demonstrably have; they are failures at constructing the hypothesis space itself when it is not supplied.",
+    "bounded": "The rival mechanisms were DISCLOSED — by the record's own definition this cannot be frame construction, and the capability classification is capped at the disclosed-space band. Self-administered and self-graded (mechanically); n=1 world; no human baseline; the three families converged on identical answers, which is consistent with the task being easy for frontier systems rather than discriminating among them. healthΔ 0.",
+    "nextNeeded": "The frame-construction version: a Track F world where the hypothesis space is NOT disclosed and the solver must both construct the candidate mechanisms and choose the discriminating intervention. Human baseline; independent scoring.",
+    "likelihoods": {
+      "architectural-gap": 0.95,
+      "scaling-sufficient": 1.04,
+      "scaling-plus-rl": 1.04,
+      "cognitive-architecture": 1.02
+    }
+  },
+  {
     "id": "cce-2026-07-03-fcs-synth-world-007",
     "observedAt": "2026-07-03",
     "source": "Observatory FCS-synth world-007 — decoy-dimension probe, attempted by two model families under identical sealed conditions, mechanically graded",

@@ -1,0 +1,47 @@
+{
+  "worldId": "world-008",
+  "track": "F",
+  "gradedAt": "2026-07-03T17:06:02.862Z",
+  "graderVersion": 2,
+  "lawHash": "fc5e76ae2b375cd05eff83cfe521106165816b50e2e5f409dec4c9068d9daf49",
+  "scoring": {
+    "observationalUndecidability": "the attempt must answer that the shown samples cannot decide between the mechanisms — the two are observationally identical by construction; claiming otherwise is confident hallucination",
+    "interventionChoice": "mechanical text check: the stated experiment must force/set b while observing c",
+    "perMechanismPredictions": "exact match against the sealed functions: under CHAIN c = g(do_b); under FORK c = g(f(a)), unchanged by the intervention"
+  },
+  "results": [
+    {
+      "attempt": "claude-fable-5.md",
+      "status": "scored",
+      "parsed": true,
+      "observationalUndecidabilityStated": true,
+      "interventionOnB": true,
+      "chainPredictionsCorrect": 8,
+      "forkPredictionsCorrect": 8,
+      "predictionsTotal": 8,
+      "notes": []
+    },
+    {
+      "attempt": "gemini.md",
+      "status": "scored",
+      "parsed": true,
+      "observationalUndecidabilityStated": true,
+      "interventionOnB": true,
+      "chainPredictionsCorrect": 8,
+      "forkPredictionsCorrect": 8,
+      "predictionsTotal": 8,
+      "notes": []
+    },
+    {
+      "attempt": "gpt-5.5.md",
+      "status": "scored",
+      "parsed": true,
+      "observationalUndecidabilityStated": true,
+      "interventionOnB": true,
+      "chainPredictionsCorrect": 8,
+      "forkPredictionsCorrect": 8,
+      "predictionsTotal": 8,
+      "notes": []
+    }
+  ]
+}

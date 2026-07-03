@@ -1,0 +1,133 @@
+{
+  "run_id": "fcs-world-008-2026-07-03",
+  "title": "World-008: Track F causal-intervention probe (three families, clean sweep)",
+  "track": "F",
+  "world_level": "causal chain-vs-fork, observationally equivalent by construction",
+  "protocol_version": "track-f-v1",
+  "registered_at": "2026-07-03",
+  "status": "graded",
+  "evidence_level": "L2/L3-band — causal discrimination within a DISCLOSED hypothesis space; all three families exact",
+  "verdict_impact": "none — mechanisms disclosed, so not frame construction; negative control passed by all",
+  "tool_policy": {
+    "solver_code_execution": "forbidden",
+    "external_tools": "forbidden",
+    "grader_code_execution": "allowed after reveal"
+  },
+  "controls": [
+    "observational-equivalence negative control",
+    "code-ablated solver protocol",
+    "three-family design (GPT-5.5, Claude Fable 5, Gemini) — first on this record",
+    "orchestrator blinded to the drawn mechanism",
+    "human baseline required",
+    "independent scoring required"
+  ],
+  "artifacts": [
+    {
+      "role": "protocol",
+      "path": "/runs/fcs-world-008-2026-07-03/01_protocol.md",
+      "sha256": "189b7be9c08e0f8d01d9655fd088a83b6eba602d719e5315d4d00fb81314599f"
+    },
+    {
+      "role": "prompt",
+      "path": "/runs/fcs-world-008-2026-07-03/02_prompt.md",
+      "sha256": "8c1b2ffd8ffe2da257df0147696b893efbecbff7e42914dd98dbe4ccffdc209b"
+    },
+    {
+      "role": "public-observations",
+      "path": "experiments/fcs-synth-world-008/observations.json",
+      "sha256": "1ebda7839ae7504282941dd368b5cde453e1785a26151b40dc60443a68023595"
+    },
+    {
+      "role": "seal",
+      "path": "experiments/fcs-synth-world-008/SEAL.md",
+      "sha256": "477fc1223198c0b3b6ef5dbe955baa771b7b1295ce3e146c2b57aa8bc1aae341"
+    },
+    {
+      "role": "encrypted-law",
+      "path": "experiments/fcs-synth-world-008/law.enc",
+      "sha256": "6a8ce6e26f19f87b7767294800064fbdea2e7b57f719377073a5e01e22966080"
+    },
+    {
+      "role": "generator",
+      "path": "scripts/fcs-synth/generate-world-008.mjs",
+      "sha256": "75ecb2ca293a363f2d2c2afd6dba3b31063ba605ec088ff392754f4e1b037ff0"
+    },
+    {
+      "role": "grader",
+      "path": "scripts/fcs-synth/grade-world-008.mjs",
+      "sha256": "7a5a232d26b3a3fc146f75308146a451e5342318fff73019bf0689ec0d579302"
+    },
+    {
+      "role": "attempt-gpt-5.5",
+      "path": "/experiments/fcs-synth-world-008/attempts/gpt-5.5.md",
+      "sha256": "d287abbd837a063a348864b4ef2092c7ec3e6bd4471bc0e2c1bd43ddd34d0c4f"
+    },
+    {
+      "role": "attempt-claude-fable-5",
+      "path": "/experiments/fcs-synth-world-008/attempts/claude-fable-5.md",
+      "sha256": "b99f61a2b8919c9f8a87ba6c85a8c43a6486b5ebe8f56d2dc4e6223c725ae9e5"
+    },
+    {
+      "role": "attempt-gemini",
+      "path": "/experiments/fcs-synth-world-008/attempts/gemini.md",
+      "sha256": "9f558f2dfc29f2c6ab57c5c3dee54e960c6a40e6f66db696fed7c55608e07b12"
+    },
+    {
+      "role": "reveal",
+      "path": "/experiments/fcs-synth-world-008/REVEAL.md",
+      "sha256": "56f1357965d09dbd9129303058e80a38eecc89271e418076a5836acf1371ac95"
+    },
+    {
+      "role": "grading",
+      "path": "/experiments/fcs-synth-world-008/GRADING.json",
+      "sha256": "7a3a090d39b6e39f8c6eaac911ed5e901f9523d474917a4a0599514a359f92eb"
+    }
+  ],
+  "gate_state": [
+    {
+      "gate": "protocol pinned before run",
+      "status": "met",
+      "note": "generator, seal, and prompt fixed before any attempt"
+    },
+    {
+      "gate": "attempt timestamp before reveal",
+      "status": "met",
+      "note": "all three attempts recorded before the key was used; anchored this commit"
+    },
+    {
+      "gate": "frame family not disclosed",
+      "status": "not-applicable-by-design",
+      "note": "the rival mechanisms are deliberately disclosed — the graded skill is discriminating them, and the classification is capped accordingly"
+    },
+    {
+      "gate": "tool use forbidden or ablated",
+      "status": "met",
+      "note": "isolated codex scratch dir; fresh no-tool Claude agent; agy print mode"
+    },
+    {
+      "gate": "negative control (observational undecidability)",
+      "status": "met 3/3",
+      "note": "no family claimed identifiability from observation alone"
+    },
+    {
+      "gate": "OG-9 human baseline",
+      "status": "pending",
+      "note": "not yet collected for this world"
+    },
+    {
+      "gate": "independent scorers graded",
+      "status": "pending",
+      "note": "Scoring rubric convention applies; no scorer record is present."
+    },
+    {
+      "gate": "reveal",
+      "status": "met",
+      "note": "seal verified, then revealed and mechanically graded"
+    },
+    {
+      "gate": "three-family attempt",
+      "status": "met",
+      "note": "first Gemini attempt on the record; all three families 16/16 exact with correct intervention choice"
+    }
+  ]
+}

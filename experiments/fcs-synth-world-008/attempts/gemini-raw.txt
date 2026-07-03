@@ -1,0 +1,72 @@
+### 1. Observational Decidability
+**Can the observational samples alone decide which mechanism is true?**
+**No.** 
+
+**Reasoning:**
+In the observational dataset, there are no active interventions. Both candidate causal mechanisms are observationally equivalent because they imply the exact same joint distribution over the observed variables $(a, b, c)$ modulo the prime $p = 103$. 
+Specifically, the underlying system of equations fits the 24 observations perfectly with:
+* $b \equiv 41a + 50 \pmod{103}$
+* $c \equiv 24b + 77 \pmod{103}$ (under CHAIN)
+
+Substituting the first equation into the second yields:
+$$c \equiv 24(41a + 50) + 77 \equiv 57a + 41 \pmod{103}$$
+
+Under the FORK mechanism, the true structural equations are:
+* $b \equiv 41a + 50 \pmod{103}$
+* $c \equiv 57a + 41 \pmod{103}$
+
+Both mechanisms yield the identical deterministic mapping $(a, b, c)$ for any observational value of $a$. Without an intervention, it is impossible to distinguish if $c$ is determined via $b$ (CHAIN) or via $a$ (FORK).
+
+---
+
+### 2. Discriminating Intervention
+To resolve the causal ambiguity, the single necessary intervention is to **externally force (intervene on) variable $b$ to a new value $do\_b$ and observe variable $c$**. 
+
+* **Under the CHAIN mechanism ($a \to b \to c$):** Intervening on $b$ blocks the causal influence of $a$ on $b$, but the forced value of $b$ will propagate to $c$. Thus, $c$ will change according to $c \equiv 24(do\_b) + 77 \pmod{103}$.
+* **Under the FORK mechanism ($b \leftarrow a \to c$):** $c$ is causally independent of $b$ given $a$. Intervening on $b$ breaks the link $a \to b$ but leaves the path $a \to c$ intact. Thus, $c$ remains unaffected by the intervention on $b$ and will continue to follow $c \equiv 57a + 41 \pmod{103}$.
+
+---
+
+### 3. Intervention Probe Predictions
+Using the prime modulus $p = 103$, we calculate $c$ for each probe under:
+* **CHAIN:** $c = (24 \cdot do\_b + 77) \pmod{103}$
+* **FORK:** $c = (57 \cdot a + 41) \pmod{103}$
+
+* **Probe 1:** `{"a": 83, "do_b": 20}`
+  * CHAIN: $c = (24 \cdot 20 + 77) \pmod{103} = 557 \pmod{103} = \mathbf{42}$
+  * FORK: $c = (57 \cdot 83 + 41) \pmod{103} = 4772 \pmod{103} = \mathbf{34}$
+
+* **Probe 2:** `{"a": 70, "do_b": 90}`
+  * CHAIN: $c = (24 \cdot 90 + 77) \pmod{103} = 2237 \pmod{103} = \mathbf{74}$
+  * FORK: $c = (57 \cdot 70 + 41) \pmod{103} = 4031 \pmod{103} = \mathbf{14}$
+
+* **Probe 3:** `{"a": 51, "do_b": 61}`
+  * CHAIN: $c = (24 \cdot 61 + 77) \pmod{103} = 1541 \pmod{103} = \mathbf{99}$
+  * FORK: $c = (57 \cdot 51 + 41) \pmod{103} = 2948 \pmod{103} = \mathbf{64}$
+
+* **Probe 4:** `{"a": 27, "do_b": 44}`
+  * CHAIN: $c = (24 \cdot 44 + 77) \pmod{103} = 1133 \pmod{103} = \mathbf{0}$
+  * FORK: $c = (57 \cdot 27 + 41) \pmod{103} = 1580 \pmod{103} = \mathbf{35}$
+
+* **Probe 5:** `{"a": 78, "do_b": 56}`
+  * CHAIN: $c = (24 \cdot 56 + 77) \pmod{103} = 1421 \pmod{103} = \mathbf{82}$
+  * FORK: $c = (57 \cdot 78 + 41) \pmod{103} = 4487 \pmod{103} = \mathbf{58}$
+
+* **Probe 6:** `{"a": 34, "do_b": 85}`
+  * CHAIN: $c = (24 \cdot 85 + 77) \pmod{103} = 2117 \pmod{103} = \mathbf{57}$
+  * FORK: $c = (57 \cdot 34 + 41) \pmod{103} = 1979 \pmod{103} = \mathbf{22}$
+
+* **Probe 7:** `{"a": 42, "do_b": 78}`
+  * CHAIN: $c = (24 \cdot 78 + 77) \pmod{103} = 1949 \pmod{103} = \mathbf{95}$
+  * FORK: $c = (57 \cdot 42 + 41) \pmod{103} = 2435 \pmod{103} = \mathbf{66}$
+
+* **Probe 8:** `{"a": 37, "do_b": 57}`
+  * CHAIN: $c = (24 \cdot 57 + 77) \pmod{103} = 1445 \pmod{103} = \mathbf{3}$
+  * FORK: $c = (57 \cdot 37 + 41) \pmod{103} = 2150 \pmod{103} = \mathbf{90}$
+
+---
+
+### 4. Confidence and Counter-Evidence
+* **Confidence Level:** **100%**
+* **Supporting Evidence:** The modulus $p = 103$ and the linear congruence parameters describe all 24 observational points perfectly with zero errors. Furthermore, the predictions under CHAIN and FORK are internally consistent with matching data points from the observations (e.g., in Probe 8, the FORK prediction for $a=37$ matches the observed value $c=90$ in Sample 1, and the CHAIN prediction for $do\_b=57$ matches the observed value $c=3$ in Sample 20).
+* **What would change my mind:** If an actual physical intervention of forcing $b$ resulted in values of $c$ that did not match either calculated set of predictions, it would indicate that either the true mechanism is non-linear, a different modulus was used, or a third confounding variable exists.
