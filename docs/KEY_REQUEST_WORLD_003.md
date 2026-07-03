@@ -30,3 +30,13 @@ mechanical grader cannot run without the key, so world-003 remains
    any hypothetical reveal, and world-005/006 (this session's hardened probes)
    carry the gradeable evidence instead. This is not a failure; it is the
    record refusing to invent a grade it cannot compute.
+
+---
+
+## RESOLVED 2026-07-02
+
+The key was recovered from the registering Codex session's own rollout logs
+(`~/.codex/sessions/2026/07/02/`), which recorded the exact off-repo path it
+wrote to: `~/Documents/Codex/2026-07-02/d/work/offrepo-keys/world-003.key`.
+Verified against the sealed hash (matched) before grading. World-003 is graded;
+see `cce-2026-07-02-fcs-synth-world-003` and `experiments/fcs-synth-world-003/REVEAL.md`.

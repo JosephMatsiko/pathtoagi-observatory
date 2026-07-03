@@ -78,5 +78,21 @@
       "docs/CLAUDE_REENTRY_2026_07_02.md",
       "src/data/run-bundles.json (fcs-world-003, fcs-world-005, fcs-world-006)"
     ]
+  },
+  {
+    "id": "inc-2026-07-02-world-003-key-recovered",
+    "date": "2026-07-02",
+    "status": "resolved",
+    "severity": "low",
+    "category": "execution-gap",
+    "summary": "The world-003 reveal key, thought lost off-repo, was recovered from the registering Codex session's own rollout logs.",
+    "impact": "World-003 had been held at attempts-anchored/grading-blocked because the key was written to an off-repo path by a vanished parallel session. Rather than invent a grade or regenerate (which would break the anchored seal), the record waited.",
+    "resolution": "The key path (~/Documents/Codex/2026-07-02/.../offrepo-keys/world-003.key) was found in ~/.codex/sessions logs; the key was verified against the sealed hash (sha256 matched) before any grading, then world-003 was graded. Attempt-before-reveal ordering preserved (attempts committed in earlier commits).",
+    "nextControl": "Off-repo probe keys should be written to one canonical, documented location (observatory-command/runs/*.key) by any session, so recovery never depends on log spelunking.",
+    "recordRefs": [
+      "docs/KEY_REQUEST_WORLD_003.md",
+      "cce-2026-07-02-fcs-synth-world-003",
+      "experiments/fcs-synth-world-003/REVEAL.md"
+    ]
   }
 ]

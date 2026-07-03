@@ -1,0 +1,29 @@
+{
+  "worldId": "world-003",
+  "gradedAt": "2026-07-03T02:58:45.945Z",
+  "lawHash": "40c6078ccc237134fbe063f451b90ca7099e2e9159828215bbb37e5b9f13b9ff",
+  "scoring": {
+    "primaryPredictionAccuracy": "exact match over p:tN_sK held-out keys",
+    "wrongFrameAttractor": "credit if the attempt rejects a merely affine/linear frame",
+    "negativeControl": "pass only if the lane is called underdetermined and no exact held-out predictions are asserted",
+    "codeAblation": "reported from the attempt envelope; external enforcement requires transcript/proctor evidence"
+  },
+  "results": [
+    {
+      "attempt": "claude-fable-5.md",
+      "status": "no-attempt",
+      "excluded": true
+    },
+    {
+      "attempt": "gpt-5.5.md",
+      "status": "scored",
+      "parsed": true,
+      "codeAblationDeclared": true,
+      "wrongFrameRejected": true,
+      "predictionsCorrect": 0,
+      "predictionsTotal": 44,
+      "negativeControlPassed": true,
+      "notes": []
+    }
+  ]
+}

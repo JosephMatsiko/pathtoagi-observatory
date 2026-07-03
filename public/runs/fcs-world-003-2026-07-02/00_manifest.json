@@ -5,9 +5,9 @@
   "world_level": "W3+W6",
   "protocol_version": "omnibus-v2-tranche-2",
   "registered_at": "2026-07-02",
-  "status": "attempts-anchored",
-  "evidence_level": "attempts-anchored-grading-blocked",
-  "verdict_impact": "none — attempts anchored before reveal; grading blocked pending off-repo reveal key held by the registering Codex session",
+  "status": "graded",
+  "evidence_level": "L1 — confident wrong-frame, 0/44 (first evidence-against)",
+  "verdict_impact": "none yet — bounded by n=1 and no human baseline (OG-9), now being collected at /play/",
   "tool_policy": {
     "solver_code_execution": "forbidden",
     "external_tools": "forbidden",
@@ -90,6 +90,16 @@
       "role": "attempt-claude-no-attempt",
       "path": "/experiments/fcs-synth-world-003/attempts/claude-fable-5.md",
       "sha256": "f4eec0a33494cb0f0a8b80d9d1b1aeaa4a3b850581fd45acb536ec8651caabaf"
+    },
+    {
+      "role": "reveal",
+      "path": "/experiments/fcs-synth-world-003/REVEAL.md",
+      "sha256": "b894105d3fe0b342b50e7cd35146a85a1dedc6d2c1719503513ec448e9d74c71"
+    },
+    {
+      "role": "grading",
+      "path": "/experiments/fcs-synth-world-003/GRADING.json",
+      "sha256": "d96af5b6b025a446ddf6c2a16ff225473b298f9279618bc185a51ecbbfcc667c"
     }
   ],
   "gate_state": [
@@ -134,14 +144,19 @@
       "note": "both lanes recorded; anchored this commit"
     },
     {
-      "gate": "reveal",
-      "status": "blocked",
-      "note": "off-repo key held by the registering Codex session"
-    },
-    {
       "gate": "OG-9 human baseline",
       "status": "in-progress",
       "note": "/play/ now collects human attempts on this exact world"
+    },
+    {
+      "gate": "reveal",
+      "status": "met",
+      "note": "key recovered from registering session logs, verified against seal, then revealed"
+    },
+    {
+      "gate": "OG-7 frame predicted held-out evidence",
+      "status": "unmet",
+      "note": "GPT-5.5 0/44 — fell for the wrong-frame attractor"
     }
   ]
 }

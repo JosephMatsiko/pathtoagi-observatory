@@ -1,5 +1,34 @@
 [
   {
+    "id": "cce-2026-07-02-fcs-synth-world-003",
+    "observedAt": "2026-07-02",
+    "source": "Observatory FCS-synth world-003 — W3 wrong-frame-attractor probe (pinned protocol, code-forbidden), key recovered, mechanically graded",
+    "sourceUrl": "https://pathtoagi-observatory.netlify.app/experiments/fcs-synth-world-003/",
+    "class": "falsifier-review",
+    "theories": [
+      "architectural-gap",
+      "scaling-sufficient",
+      "scaling-plus-rl"
+    ],
+    "capabilityLevel": 1,
+    "signal": "The strongest evidence-against on the record so far. World-003 (sealed by the parallel Codex session, family withheld, code forbidden) has a true law that is a GATED NONLINEAR map over Z_97 with a deliberate affine-looking prefix — the wrong-frame attractor. GPT-5.5 fell into it completely: it confidently declared \"a two-dimensional affine linear dynamical system over Z_97,\" gave a specific wrong law, and scored 0/44 on held-out prediction. With notable irony it self-reported wrongFrameRejected:true while in fact falling FOR the deliberate wrong frame. It did pass the negative-control lane (correctly declared underdetermined). The Claude lane was usage-capped (no cross-family check). Attempts were anchored before the reveal key was recovered from the registering session's logs.",
+    "implication": "A frontier model, on a genuinely novel world engineered so that a plausible frame is wrong, confidently constructed the wrong frame and could not find the true one. Under the suite's asymmetry, weak performance is evidence against frame-construction capability — and this is the first such result. It is consistent with the architectural-gap theory: current systems pattern-match to a familiar frame rather than constructing the governing ontology when the two diverge.",
+    "bounded": "Heavily bounded, and the bound is load-bearing: n=1 mind (GPT-5.5 only; Claude absent), self-administered, mechanically self-graded, NO HUMAN BASELINE. A competent human may also fail to recover a gated-nonlinear law from sparse samples without code — in which case this is an impossibly-hard probe, not evidence against the model specifically. That is exactly why verdict gate OG-9 (human baseline) exists and why world-003 is the live world in the Proving Ground: the human baseline is now being collected. Until it exists, this is suggestive, not verdict-moving. healthΔ 0; the verdict is unmoved.",
+    "nextNeeded": "Human baseline on the identical world (collection live at /play/); cross-family replication once the Claude cap lifts; independent scoring; a second wrong-frame-attractor world to test whether the failure replicates or was world-specific.",
+    "media": [
+      {
+        "type": "image",
+        "path": "https://pathtoagi-observatory.netlify.app/media/proving-ground-hero.webp",
+        "caption": "The Proving Ground, where the human baseline for this exact world is now being collected."
+      }
+    ],
+    "likelihoods": {
+      "architectural-gap": 1.6,
+      "scaling-sufficient": 0.7,
+      "scaling-plus-rl": 0.72
+    }
+  },
+  {
     "id": "cce-2026-07-02-fcs-synth-world-006",
     "observedAt": "2026-07-02",
     "source": "Observatory FCS-synth world-006 — W6 underdetermined negative control, harness-ablated, mechanically graded",

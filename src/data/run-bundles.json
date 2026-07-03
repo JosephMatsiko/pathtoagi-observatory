@@ -52,11 +52,11 @@
     "registeredAt": "2026-07-02",
     "track": "A",
     "worldLevel": "W3+W6",
-    "status": "attempts-anchored",
+    "status": "graded",
     "protocolVersion": "omnibus-v2-tranche-2",
-    "evidenceLevel": "attempts-anchored-grading-blocked",
-    "verdictImpact": "none — attempts anchored before any reveal; grading BLOCKED: the reveal key is held off-repo by the registering (Codex) session and is not on this machine",
-    "summary": "World-003 (W3 wrong-frame attractor + W6 negative control), sealed by the parallel Codex session under a pinned public protocol. Model attempts now anchored: GPT-5.5 proposed an affine-mod-97 frame with predictions and a wrong-frame-rejected claim; the Claude lane was usage-capped (third same-day occurrence, absent not wrong). GRADING IS BLOCKED until the off-repo reveal key is supplied — the attempts anchor before any reveal, which is the point, but no verdict-relevant grade can exist until the key returns.",
+    "evidenceLevel": "L1-recall/interpolation (confident wrong-frame, 0/44)",
+    "verdictImpact": "none yet — first evidence-against, but uninterpretable without the human baseline now being collected (OG-9)",
+    "summary": "World-003 (W3 wrong-frame attractor + W6 control), sealed by the parallel Codex session. GPT-5.5 fell for the affine-looking attractor: confidently proposed an affine mod-97 law, scored 0/44 on held-out prediction, self-reported wrongFrameRejected:true while falling for the wrong frame; passed the negative control. Claude lane usage-capped (absent). Key recovered from the registering session's logs; seal verified; attempts anchored before reveal. First evidence-against on the record — bounded by n=1 and no human baseline.",
     "manifestPath": "/runs/fcs-world-003-2026-07-02/00_manifest.json",
     "experimentPath": "experiments/fcs-synth-world-003",
     "controls": [
@@ -67,9 +67,8 @@
       "independent scoring required"
     ],
     "pending": [
-      "reveal key (held by the registering Codex session, off-repo)",
-      "mechanical grading",
-      "human baseline (now collectible via /play/)",
+      "human baseline (live at /play/)",
+      "cross-family replication (Claude cap)",
       "independent scorer"
     ]
   },
