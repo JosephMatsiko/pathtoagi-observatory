@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-07-02",
+    "kind": "method",
+    "title": "The independent-scoring invitation was named, not templated",
+    "detail": "The Gmail draft queued for independent scorers was addressed only to the operator's own inbox — a template, not outreach. Fixed by identifying real, currently-active institutions whose own published work makes them the most relevant possible reviewers, not the most convenient: ARC Prize Foundation (Chollet/Knoop — the closest existing peer methodology for contamination-resistant, novel-task benchmarking), METR (Beth Barnes — human-baseline and time-horizon calibration rigor, directly bearing on this record's own gate OG-9), and Apollo Research (evaluation-awareness and self-report/behavior mismatch, directly relevant to the world-003 result where a model self-reported rejecting a trap while falling into it). Two personalized Gmail drafts were created to verified public contact addresses (team@arcprize.org, info@metr.org); Apollo Research has no verified public email and is noted for direct contact via its own web form instead of a guessed address. The connector remains draft-only by design — the operator must review and send. The prior self-addressed template draft is retained as a reusable base for further candidates, not discarded."
+  },
+  {
+    "date": "2026-07-02",
     "kind": "build",
     "title": "The Proving Ground made universal: frame construction in pure pictures",
     "detail": "The game required arithmetic; frame construction should be playable by anyone. A visual mode now leads /play/ (src/components/VisualProvingGround.tsx): three levels on a glowing 3x3 grid carry the exact ideas the numeric probes test — induction (find the hidden rule), the wrong-frame attractor (a dot rotates, but secretly pulses the centre each loop — the obvious answer is the trap), and underdetermination (two frames fit several rules; the correct move is to say so). No numbers, no account, no prerequisite; a child and a professor take the same test. The numeric worlds remain below as the hard version. Also this cycle: world-003 was graded (first evidence-against — GPT-5.5 fell for the attractor, 0/44), the key having been recovered from the registering session logs; the visual level 2 narrates that exact machine failure. Illustrations by GPT-5.5 via Codex."
