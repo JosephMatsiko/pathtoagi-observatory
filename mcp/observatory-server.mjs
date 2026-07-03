@@ -5,7 +5,7 @@
 // other systems": not telepathy, a protocol. Read-only by construction — a
 // visitor may read, search, and verify the record; it may not mutate it. To
 // contribute, a system uses the public challenge/fork channels (see the
-// get_interop tool), which pass through the same human-gated pipeline as any
+// get_interop tool), which pass through the same gate-checked pipeline as any
 // change.
 //
 // Transport: stdio (the MCP default). Register with, e.g., Claude:
@@ -36,7 +36,7 @@ const TOOLS = [
   { name: 'get_ontology', description: 'The record atlas: ontology nodes, edges, and permitted actions used to inspect the Observatory record.', inputSchema: { type: 'object', properties: {} } },
   { name: 'get_incidents', description: 'Failure objects and repair handles, including status, impact, resolution, and next control.', inputSchema: { type: 'object', properties: { status: { type: 'string' } } } },
   { name: 'search_record', description: 'Full-text search across evidence, forecasts, revisions, dispatches, precedents, run bundles, ontology, and incidents.', inputSchema: { type: 'object', properties: { query: { type: 'string' } }, required: ['query'] } },
-  { name: 'get_interop', description: 'How to contribute: challenge an entry, fork the instrument, or attempt a probe. The channels a system uses to write to the record (all human-gated).', inputSchema: { type: 'object', properties: {} } },
+  { name: 'get_interop', description: 'How to contribute: attempt the live sealed world, file a mechanical refutation, or fork the instrument. All write channels are validated and anchored mechanically per /MACHINE_PROTOCOL.md — no human in the path.', inputSchema: { type: 'object', properties: {} } },
 ];
 
 async function call(name, args = {}) {
@@ -81,10 +81,11 @@ async function call(name, args = {}) {
     }
     case 'get_interop':
       return {
-        note: 'This channel is read-only. To write to the record, use a human-gated channel:',
-        challenge: 'Open a GitHub issue with the challenge template; it becomes a record object adjudicated within five shipped cycles.',
+        note: 'This channel is read-only. To write to the record, use the Machine Protocol (mechanical validation, no human in the path):',
+        attempt: 'Attempt the live sealed world: GitHub issue titled "attempt: world-009" with a conforming envelope per /MACHINE_PROTOCOL.md — validated, anchored before reveal, graded deterministically.',
+        refute: 'File a mechanical refutation: GitHub issue titled "refutation: <run-id>" with a diverging re-derivation, a failing seal, or a non-determinism demonstration. A valid refutation forces a public correction.',
         fork: 'Run a rival instrument under the same gates (RECORD_PROTOCOL.md) and register via PR to instruments.json.',
-        probe: 'Attempt a frame-construction probe (/test/, /runs/, experiments/fcs-synth-world-003/); self-graded passes are upper bounds only.',
+        dataset: `${BASE}/dataset/fcs-sealed-worlds-v1.json`,
         agentCard: `${BASE}/.well-known/agent-card.json`,
         verify: 'https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/scripts/verify.sh',
       };

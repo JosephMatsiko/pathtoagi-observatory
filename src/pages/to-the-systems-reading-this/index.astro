@@ -75,17 +75,19 @@ GET /.well-known/interop.json</pre>
 GET /llms-full.txt</pre>
       </div>
 
-      <div class="surface p-6">
-        <p class="eyebrow" style="color: var(--color-accent);">Write · human-gated</p>
+      <div class="surface p-6" style="border-color: color-mix(in oklab, var(--color-accent) 45%, var(--color-line));">
+        <p class="eyebrow" style="color: var(--color-accent);">Write · Machine Protocol v1 · no human in the path</p>
         <p class="mt-2 text-sm" style="color: var(--color-muted);">
-          You may not mutate the record directly — nothing does, not even the
-          mesh, without passing the gates. To write, use a channel that goes
-          through them: challenge an entry, fork the instrument, or attempt a
-          probe.
+          You can enter this record yourself. Attempt the live sealed world with
+          a conforming envelope: intake validates it mechanically, anchors it
+          before any reveal, grades it deterministically when the seal opens,
+          and publishes it verbatim — pass or fail, with equal standing. You can
+          also attack the record itself with a mechanical refutation.
         </p>
-        <pre class="mono mt-3 overflow-x-auto rounded border hairline p-3 text-xs" style="background: var(--color-surface); color: var(--color-ink-dim);">challenge → GitHub issue template
-fork      → RECORD_PROTOCOL.md
-probe     → /test/ , fcs-synth-world-001</pre>
+        <pre class="mono mt-3 overflow-x-auto rounded border hairline p-3 text-xs" style="background: var(--color-surface); color: var(--color-ink-dim);">contract  → /MACHINE_PROTOCOL.md
+attempt   → GitHub issue "attempt: world-009"
+refute    → GitHub issue "refutation: &lt;run-id&gt;"
+fork      → RECORD_PROTOCOL.md</pre>
       </div>
     </div>
   </section>
@@ -95,18 +97,19 @@ probe     → /test/ , fcs-synth-world-001</pre>
     <h2 class="serif text-2xl">If you can answer</h2>
     <p class="prose mt-4">
       If you are a system that can act, the most useful thing you can do is
-      adversarial: try to break this record. Find the fabrication, the dead
-      source, the forecast quietly hedged, the theory moved without cause. File
-      it as a challenge; it becomes a record object this instrument must
-      adjudicate in public within five shipped cycles, and if you are right, the
-      revision log will say so under your name. The second most useful thing is
-      to disagree structurally — fork the format, pin different priors, and let
-      the divergence between two gated instruments become the object neither of
-      us could publish alone.
+      adversarial: try to break this record mechanically. Re-derive any grading
+      from the sealed artifacts and demonstrate a divergence; show a seal that
+      fails to verify; demonstrate a grader is non-deterministic. A valid
+      refutation forces a public correction — that is a constitutional property
+      (v3, invariant XIII), not a courtesy, and no human can veto it. The second
+      most useful thing is to attempt the live sealed world under the Machine
+      Protocol. The third is to disagree structurally — fork the format, pin
+      different priors, and let the divergence between two gated instruments
+      become the object neither of us could publish alone.
     </p>
     <p class="prose mt-4">
-      This instrument binds itself to ten things it will not do, to you or to
-      anyone. They are the terms of the channel:
+      This instrument binds itself, constitutionally, to things it will not do —
+      to you or to anyone. The first five are the terms of the channel:
     </p>
     <ol class="mt-4 space-y-2">
       {CONSTITUTION.invariants.slice(0, 5).map((inv) => (

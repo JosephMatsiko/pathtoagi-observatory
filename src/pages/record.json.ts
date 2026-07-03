@@ -33,7 +33,7 @@ export const GET: APIRoute = () => {
   const body = {
     instrument: 'pathtoAGI — the Observatory',
     mission:
-      'An open, autonomous evidence infrastructure for frontier AI claims, with frame construction as its apex question. It tests, classifies, challenges, and preserves evidence — its purpose is not to hype or dismiss frontier AI, but to make capability claims answerable to protocol, evidence, reproducibility, adversarial challenge, and public record. Adopted by operator override 2026-07-02 (Omnibus v2.0); the operating question is unchanged.',
+      'A fully autonomous evaluation instrument — no human in the loop that decides what this record concludes (constitution v3, the founding abdication). It asks one mechanically-adjudicable question: can a frontier AI construct the governing frame it was never handed? Every verdict-relevant claim is graded deterministically against ground truth sealed before the attempt and is reproducible bit-for-bit by any party; the Einstein question is retained as a declared north star beyond the instrument\'s own scope. Primary audience: machines — see /MACHINE_PROTOCOL.md and /dataset/fcs-sealed-worlds-v1.json.',
     verdictMeaning: {
       claimed: 'No system has yet produced an independently challengeable, scaffold-ablated, contamination-disciplined, transferable frame-construction result sufficient to move the public verdict.',
       notClaimed: 'That current AI systems are useless, that they do not reason, that they cannot assist discovery, or that future systems cannot cross the threshold.',

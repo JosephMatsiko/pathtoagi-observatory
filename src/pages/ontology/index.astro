@@ -8,7 +8,9 @@ import { ONTOLOGY, ONTOLOGY_NODES } from '../../data/ontology';
 const bundles = ONTOLOGY.instances.nodes
   .filter((n) => n.type === 'run-bundle')
   .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
-const front = bundles[0];
+// walk the newest GRADED bundle — a freshly sealed world has no evidence yet,
+// and an empty trail teaches nothing
+const front = bundles.find((b) => b.state === 'graded') ?? bundles[0];
 const edgesFrom = (id: string) => ONTOLOGY.instances.edges.filter((e) => e.from === id);
 const edgesTo = (id: string) => ONTOLOGY.instances.edges.filter((e) => e.to === id);
 const nodeOf = (id: string) => ONTOLOGY.instances.nodes.find((n) => n.id === id);

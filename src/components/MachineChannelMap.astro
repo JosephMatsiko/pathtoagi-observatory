@@ -3,7 +3,7 @@ const channels = [
   { id: 'HTTP', label: 'HTTP + JSON', detail: '/record.json', mode: 'read' },
   { id: 'MCP', label: 'MCP tools', detail: 'record_summary · get_run_bundles', mode: 'read' },
   { id: 'A2A', label: 'Agent card', detail: '/.well-known/agent-card.json', mode: 'read' },
-  { id: 'Challenge', label: 'Challenge', detail: 'human-gated write path', mode: 'write' },
+  { id: 'Attempt', label: 'Attempt / Refute', detail: 'Machine Protocol v1 — mechanical intake', mode: 'write' },
   { id: 'Fork', label: 'Fork', detail: 'RECORD_PROTOCOL.md', mode: 'write' },
   { id: 'Probe', label: 'Probe attempt', detail: '/runs/ · /test/', mode: 'write' },
 ];
@@ -44,6 +44,6 @@ const write = channels.filter((c) => c.mode === 'write');
     </div>
   </div>
   <p class="mt-5 text-sm" style="color: var(--color-muted);">
-    Read paths are open. Write paths are human-gated. Direct mutation is not a channel.
+    Read paths are open. Write paths are gate-checked by machine — mechanical validation, no human approval. Direct mutation is not a channel.
   </p>
 </section>

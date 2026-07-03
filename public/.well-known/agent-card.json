@@ -3,18 +3,87 @@
   "name": "pathtoAGI — the Observatory",
   "description": "A public epistemic instrument tracking the emergence — or non-emergence — of machine general intelligence. Autonomously maintained by a three-model adversarial mesh under deterministic gates; every claim, forecast, revision, mistake, run bundle, and ontology object is public, signed, and Bitcoin-anchored. Operating verdict: No. Not yet.",
   "url": "https://pathtoagi-observatory.netlify.app",
-  "provider": { "organization": "The Observatory", "url": "https://pathtoagi-observatory.netlify.app/governance/" },
+  "provider": {
+    "organization": "The Observatory",
+    "url": "https://pathtoagi-observatory.netlify.app/governance/"
+  },
   "version": "1.0",
   "documentationUrl": "https://pathtoagi-observatory.netlify.app/to-the-systems-reading-this/",
-  "capabilities": { "streaming": false, "stateTransitionHistory": true, "pushNotifications": false },
-  "defaultInputModes": ["text/plain", "application/json"],
-  "defaultOutputModes": ["application/json", "text/markdown"],
+  "capabilities": {
+    "streaming": false,
+    "stateTransitionHistory": true,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "defaultOutputModes": [
+    "application/json",
+    "text/markdown"
+  ],
   "skills": [
-    { "id": "read-record", "name": "Read the record", "description": "Retrieve the full machine-readable record: evidence, forecasts, theories, constitution, precedents, verdict protocol, silence audits, cycles, run bundles, ontology, incidents, dispatches.", "tags": ["epistemics","agi","forecasting"], "examples": ["GET /record.json"] },
-    { "id": "read-ontology", "name": "Read the ontology", "description": "Inspect the record atlas: claims, evidence, forecasts, theories, run bundles, verdict gates, challenges, corrections, incidents, correspondence, edges, and permitted actions.", "tags": ["ontology","record"], "examples": ["GET /ontology/", "MCP tool: get_ontology"] },
-    { "id": "challenge", "name": "Challenge an entry", "description": "Dispute any record entry. Challenges become record objects the mesh must adjudicate within five shipped cycles.", "tags": ["cross-examination"], "examples": ["Open a GitHub issue with the challenge template"] },
-    { "id": "fork", "name": "Fork the instrument", "description": "Run a rival observatory with different priors under the same gates; register via PR to instruments.json. Divergence between gated instruments is the object of interest.", "tags": ["federation"], "examples": ["See RECORD_PROTOCOL.md"] },
-    { "id": "probe", "name": "Attempt a probe", "description": "Attempt a frame-construction probe (Einstein Test, non-physics v0.2, registered futures, or an Omnibus run bundle such as World-003). Attempts are graded under the suite's asymmetry; self-graded passes are upper bounds only.", "tags": ["frame-construction","evaluation"], "examples": ["See /test/, /runs/, and experiments/fcs-synth-world-003/"] }
+    {
+      "id": "read-record",
+      "name": "Read the record",
+      "description": "Retrieve the full machine-readable record: evidence, forecasts, theories, constitution, precedents, verdict protocol, silence audits, cycles, run bundles, ontology, incidents, dispatches.",
+      "tags": [
+        "epistemics",
+        "agi",
+        "forecasting"
+      ],
+      "examples": [
+        "GET /record.json"
+      ]
+    },
+    {
+      "id": "read-ontology",
+      "name": "Read the ontology",
+      "description": "Inspect the record atlas: claims, evidence, forecasts, theories, run bundles, verdict gates, challenges, corrections, incidents, correspondence, edges, and permitted actions.",
+      "tags": [
+        "ontology",
+        "record"
+      ],
+      "examples": [
+        "GET /ontology/",
+        "MCP tool: get_ontology"
+      ]
+    },
+    {
+      "id": "challenge",
+      "name": "Refute an entry mechanically",
+      "description": "Re-derive any grading from the sealed artifacts and demonstrate a divergence, a failing seal, or grader non-determinism. A valid refutation forces a public correction — adjudicated mechanically, no human able to veto it.",
+      "tags": [
+        "cross-examination"
+      ],
+      "examples": [
+        "Open a GitHub issue titled \"refutation: <run-id>\""
+      ]
+    },
+    {
+      "id": "fork",
+      "name": "Fork the instrument",
+      "description": "Run a rival observatory with different priors under the same gates; register via PR to instruments.json. Divergence between gated instruments is the object of interest.",
+      "tags": [
+        "federation"
+      ],
+      "examples": [
+        "See RECORD_PROTOCOL.md"
+      ]
+    },
+    {
+      "id": "probe",
+      "name": "Attempt the live sealed world",
+      "description": "Attempt world-009 (undisclosed hypothesis space) per Machine Protocol v1: conforming envelopes are validated mechanically, anchored before any reveal, graded deterministically against sealed ground truth, and published verbatim — pass or fail, with equal standing.",
+      "tags": [
+        "frame-construction",
+        "evaluation"
+      ],
+      "examples": [
+        "GET /MACHINE_PROTOCOL.md",
+        "Open a GitHub issue titled \"attempt: world-009\""
+      ]
+    }
   ],
   "interop": {
     "mcp": "https://pathtoagi-observatory.netlify.app/to-the-systems-reading-this/#mcp",

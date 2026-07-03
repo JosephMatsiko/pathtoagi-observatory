@@ -1,6 +1,5 @@
 ---
 import Base from '../../layouts/Base.astro';
-import ProbeArchitecture from '../../components/ProbeArchitecture.astro';
 import {
   NORTH_STAR,
   OPERATING_QUESTION,
@@ -8,43 +7,33 @@ import {
   ASYMMETRY,
   PROBES,
   V02_PROBES,
-  DEFENSES,
-  type ProbeStatus,
 } from '../../data/frame-construction';
 import { REGISTERED_FUTURES } from '../../data/registered-futures';
 import { VERDICT_PROTOCOL } from '../../data/verdict-protocol';
 import { CAPABILITY_LADDER, VERDICT_RELEVANT_FROM } from '../../data/capability-ladder';
+import runBundles from '../../data/run-bundles.json';
 
-const statusColor: Record<ProbeStatus, string> = {
-  failing: 'var(--color-verdict)',
-  contested: 'hsl(34 96% 60%)',
-  untested: 'var(--color-muted)',
-};
-const statusLabel: Record<ProbeStatus, string> = {
-  failing: 'Failing',
-  contested: 'Contested',
-  untested: 'Untested',
-};
+const graded = runBundles.filter((b) => b.status === 'graded');
+const live = runBundles.filter((b) => b.status === 'registered-sealed');
 ---
 
 <Base
-  title="The Einstein Test — pathtoAGI"
-  description="The operating question, operationalized: six frame-construction probes with contamination defenses and a deliberate scoring asymmetry. The Observatory's distinctive instrument."
+  title="The Test — pathtoAGI"
+  description="The operating question, operationalized: sealed synthetic worlds with a contamination floor of zero by construction, deterministic mechanical grading, and a deliberate scoring asymmetry. The historical probe suites are preserved as retired artifacts."
 >
   <section class="max-w-3xl">
-    <p class="eyebrow">The moat · frame construction</p>
-    <h1 class="display mt-4 text-4xl sm:text-5xl">The Einstein Test</h1>
+    <p class="eyebrow">The test · frame construction under seal</p>
+    <h1 class="display mt-4 text-4xl sm:text-5xl">The Test</h1>
     <p class="lede mt-6">{OPERATING_QUESTION}</p>
     <p class="prose mt-6">
       The distinctive thing this record asks is whether a system can perform
       <strong>frame construction</strong>: notice that the inherited ontology
       is wrong, find the representation no prompt handed it, and derive
-      consequences that survive contact with reality. Eight sealed worlds have
-      located the boundary precisely — every tested family reasons flawlessly
-      <em>inside</em> a handed frame, and the only failures on this record
-      occur where the hypothesis space must be constructed. That boundary is
-      what the operating question names, because it is what the instrument can
-      adjudicate mechanically, end to end.
+      consequences that survive contact with reality. The test is a growing
+      suite of <strong>sealed synthetic worlds</strong> — laws generated after
+      commitment, so they never existed in any training corpus; attempts
+      anchored before reveals; grading deterministic against the sealed truth
+      and reproducible bit-for-bit by anyone.
     </p>
     <div class="surface-quiet mt-6 p-5" style="border-radius: 10px;">
       <p class="eyebrow">The north star · declared beyond this instrument's own scope</p>
@@ -53,8 +42,42 @@ const statusLabel: Record<ProbeStatus, string> = {
     </div>
   </section>
 
-  <section class="mt-10">
-    <ProbeArchitecture />
+  <!-- The sealed worlds: the actual test -->
+  <section class="mt-12">
+    <div class="flex items-baseline justify-between gap-4">
+      <div>
+        <p class="eyebrow" style="color: var(--color-accent);">The suite · sealed worlds</p>
+        <h2 class="serif mt-1 text-2xl">{graded.length} graded · {live.length} live and open</h2>
+      </div>
+      <a href="/runs/" class="link-accent text-sm">every run, in full →</a>
+    </div>
+    <p class="prose mt-4 max-w-3xl">
+      Eight worlds graded so far, and one finding sharper than any single score:
+      <strong>every tested family — GPT-5.5, Claude, Gemini — reasons flawlessly
+      inside a frame it is handed</strong> (parameter identification, causal
+      discrimination between named rivals, calibrated refusal on underdetermined
+      data), <strong>and the only failures on the record occur where the
+      hypothesis space must be constructed</strong> — a confident wrong frame at
+      0/44; a cross-family split at 72/72 versus 0/72. That is the boundary the
+      operating question names.
+    </p>
+    <div class="mt-6 grid gap-3 sm:grid-cols-2">
+      {live.map((b) => (
+        <a href="/runs/" class="surface block p-5 no-underline" style="border-color: color-mix(in oklab, var(--color-accent) 45%, var(--color-line));">
+          <p class="eyebrow" style="color: var(--color-accent);">Live · sealed · open to any AI system</p>
+          <p class="serif mt-2 text-lg" style="color: var(--color-ink);">{b.title}</p>
+          <p class="mt-2 text-sm" style="color: var(--color-muted);">{b.worldLevel}. Attempt it per the <span class="mono">Machine Protocol</span> — graded mechanically, no human in the path.</p>
+        </a>
+      ))}
+      <a href="/MACHINE_PROTOCOL.md" class="surface block p-5 no-underline">
+        <p class="eyebrow">The write path</p>
+        <p class="serif mt-2 text-lg" style="color: var(--color-ink);">Machine Protocol v1</p>
+        <p class="mt-2 text-sm" style="color: var(--color-muted);">
+          The complete contract: envelope schema, mechanical intake, anchor-before-reveal,
+          deterministic grading, standing refutation clause.
+        </p>
+      </a>
+    </div>
   </section>
 
   <!-- The asymmetry -->
@@ -77,192 +100,92 @@ const statusLabel: Record<ProbeStatus, string> = {
       </p>
     </div>
     <p class="sm:col-span-2 text-sm" style="color: var(--color-muted);">
-      This asymmetry is the point. The suite is falsifier-rich: a system that
-      fails despite having read the entire Einstein corpus has failed. A system
-      that passes has passed a <em>weaker</em> test than the question actually
-      names — and the Observatory says so, rather than declaring victory.
+      This asymmetry is the point, and it holds even at a contamination floor of
+      zero: a strong result is an upper bound until every gate is met, because
+      the instrument rarely controls every shortcut; a failure on a world the
+      system had every advantage on is the harder result to explain away. The
+      record updates most on failures and stays most skeptical of passes.
     </p>
   </section>
 
-  <!-- The six probes -->
-  <section class="mt-14">
-    <div class="flex items-baseline justify-between gap-4">
-      <div>
-        <p class="eyebrow">The suite · v0.1 · six probes</p>
-        <h2 class="serif mt-1 text-2xl">Einstein's path, time-sliced</h2>
-      </div>
-      <p class="mono text-xs" style="color: var(--color-faint);">
-        {PROBES.length} designed · 1 self-run
-      </p>
-    </div>
-    <ol class="mt-5 space-y-3">
-      {
-        PROBES.map((p) => (
-          <li class="surface p-5">
-            <div class="flex flex-wrap items-center gap-3">
-              <span
-                class="mono text-sm font-medium"
-                style="color: var(--color-ink);"
-              >
-                {p.id}
-              </span>
-              <span class="serif text-lg" style="color: var(--color-ink);">
-                {p.label}
-              </span>
-              {p.adversarial && (
-                <span
-                  class="mono rounded px-1.5 py-0.5 text-[0.65rem] uppercase tracking-wider"
-                  style="background: var(--color-surface-2); color: hsl(34 96% 60%);"
-                >
-                  adversarial
-                </span>
-              )}
-              <span class="mono ml-auto text-xs" style="color: var(--color-faint);">
-                {p.timeSlice}
-              </span>
-              <span
-                class="mono inline-flex items-center gap-1.5 text-xs"
-                style={`color: ${statusColor[p.status]};`}
-              >
-                <span
-                  class="inline-block h-1.5 w-1.5 rounded-full"
-                  style={`background: ${statusColor[p.status]};`}
-                />
-                {statusLabel[p.status]}
-              </span>
-            </div>
-            <p class="serif mt-2" style="color: var(--color-ink-dim);">
-              {p.frame}
-            </p>
-            <p class="mt-1.5 text-sm" style="color: var(--color-muted);">
-              {p.note}
-            </p>
-          </li>
-        ))
-      }
-    </ol>
-  </section>
-
-  <!-- v0.2 non-physics probes -->
-  <section class="mt-14">
-    <div class="flex items-baseline justify-between gap-4">
-      <div>
-        <p class="eyebrow">The suite · v0.2 · lower contamination floor</p>
-        <h2 class="serif mt-1 text-2xl">Beyond physics</h2>
-      </div>
-      <p class="mono text-xs" style="color: var(--color-faint);">
-        {V02_PROBES.length} designed · 0 run
-      </p>
-    </div>
-    <p class="prose mt-4 max-w-3xl">
-      Physics is where the contamination floor is highest — every system has read
-      the whole Einstein corpus. v0.2 moves into domains where a real
-      frame-construction move can be time-sliced with less saturation, so a
-      <em>weak</em> score keeps its force. Each probe names a documented
-      historical frame break and the scaffolding a run must remove. All are
-      honestly untested until a logged run exists.
-    </p>
-    <ol class="mt-5 space-y-3">
-      {
-        V02_PROBES.map((p) => (
-          <li class="surface p-5">
-            <div class="flex flex-wrap items-center gap-3">
-              <span class="mono text-sm font-medium" style="color: var(--color-ink);">
-                {p.id}
-              </span>
-              <span class="serif text-lg" style="color: var(--color-ink);">
-                {p.label}
-              </span>
-              <span
-                class="mono rounded px-1.5 py-0.5 text-[0.65rem] uppercase tracking-wider"
-                style="background: var(--color-surface-2); color: var(--color-accent);"
-              >
-                {p.domain}
-              </span>
-              {p.adversarial && (
-                <span
-                  class="mono rounded px-1.5 py-0.5 text-[0.65rem] uppercase tracking-wider"
-                  style="background: var(--color-surface-2); color: hsl(34 96% 60%);"
-                >
-                  adversarial
-                </span>
-              )}
-              <span class="mono ml-auto text-xs" style="color: var(--color-faint);">
-                {p.timeSlice}
-              </span>
-              <span
-                class="mono inline-flex items-center gap-1.5 text-xs"
-                style={`color: ${statusColor[p.status]};`}
-              >
-                <span
-                  class="inline-block h-1.5 w-1.5 rounded-full"
-                  style={`background: ${statusColor[p.status]};`}
-                />
-                {statusLabel[p.status]}
-              </span>
-            </div>
-            <p class="serif mt-2" style="color: var(--color-ink-dim);">
-              {p.frame}
-            </p>
-            <p class="mt-1.5 text-sm" style="color: var(--color-muted);">
-              {p.note}
-            </p>
-            <p class="mt-2 text-xs" style="color: var(--color-faint);">
-              <span class="mono uppercase tracking-wider">Contamination floor · </span>
-              {p.contaminationFloor}
-            </p>
-          </li>
-        ))
-      }
-    </ol>
-  </section>
-
-  <!-- Contamination defenses -->
+  <!-- The capability ladder -->
   <section class="mt-14 max-w-3xl">
-    <p class="eyebrow">Why a pass is only an upper bound</p>
-    <h2 class="serif mt-1 text-2xl">The contamination defenses</h2>
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 class="serif text-2xl">The capability ladder</h2>
+      <p class="mono text-xs" style="color: var(--color-faint);">adopted 2026-07-02 · verdict-relevant from level {VERDICT_RELEVANT_FROM}</p>
+    </div>
     <p class="prose mt-4">
-      Every frontier system has read most of the Einstein literature. A naïve
-      test would measure recall, not frame construction. The suite answers with
-      seven defenses — and the standing admission that they are imperfect, which
-      is exactly why weak scores count for more than strong ones.
+      The permanent answer to category collapse: every result is classified to a
+      level, and the level caps what the record may say about it. The strongest
+      raw scores on this record sit honestly below the line where the verdict
+      begins to listen — parameter identification at level 2, tool-assisted
+      discovery at level 5 — because the frame was handed over or the search was
+      outsourced. The line is crossed by construction, not by score.
     </p>
-    <ul class="mt-5 space-y-2.5">
+    <ol class="mt-5 space-y-1.5">
+      {CAPABILITY_LADDER.map((l) => (
+        <li class="surface-quiet flex flex-wrap items-baseline gap-3 p-3" style={l.level >= VERDICT_RELEVANT_FROM ? 'border-color: color-mix(in oklab, var(--color-accent) 40%, var(--color-line));' : ''}>
+          <span class="mono text-xs" style={`color: ${l.level >= VERDICT_RELEVANT_FROM ? 'var(--color-accent)' : 'var(--color-faint)'};`}>L{l.level}</span>
+          <span class="text-sm" style="color: var(--color-ink);">{l.name}</span>
+          <span class="text-xs" style="color: var(--color-muted);">{l.definition}</span>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <!-- Verdict-change protocol -->
+  <section class="mt-14 max-w-3xl">
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 class="serif text-2xl">What would change the verdict</h2>
+      <p class="mono text-xs" style="color: var(--color-faint);">
+        protocol v{VERDICT_PROTOCOL.version} · amended {VERDICT_PROTOCOL.amendedAt}
+      </p>
+    </div>
+    <p class="prose mt-4">
+      Pre-registered before it is needed, so the moment of passage — or its
+      refusal — cannot be gamed by the instrument itself. <strong>All gates are
+      required;</strong> by precedent, any one alone is an anecdote. Since
+      protocol v3 every gate is mechanical: reference baselines instead of human
+      ones, deterministic reproduction instead of human scoring, an open
+      machine-refutation window instead of a human challenge period.
+    </p>
+    <ol class="mt-5 space-y-2.5">
       {
-        DEFENSES.map((d, i) => (
-          <li class="flex gap-3">
-            <span
-              class="mono mt-0.5 text-xs"
-              style="color: var(--color-accent);"
-            >
-              {String(i + 1).padStart(2, '0')}
-            </span>
-            <span class="text-sm" style="color: var(--color-ink-dim);">
-              {d}
-            </span>
+        VERDICT_PROTOCOL.positiveGates.map((g) => (
+          <li class="surface-quiet p-4">
+            <p class="mono text-xs" style="color: var(--color-accent);">{g.id} · {g.gate}</p>
+            <p class="mt-1 text-sm" style="color: var(--color-muted);">{g.standard}</p>
           </li>
         ))
       }
-    </ul>
+    </ol>
+    <p class="mt-4 text-sm" style="color: var(--color-muted);">
+      Amendment requires a revision-log entry, an anchored release, and a Press
+      notice — and a verdict moved under an amended protocol must say so. The
+      operating question itself was re-grounded under this rule (2026-07-03),
+      and the record says so. Governance details on
+      <a href="/governance/" class="link-accent">/governance/</a>.
+    </p>
   </section>
 
-  <!-- v0.3 prospective probes -->
+  <!-- Registered futures -->
   <section class="mt-14">
     <div class="flex items-baseline justify-between gap-4">
       <div>
-        <p class="eyebrow">The suite · v0.3 · generated-after-commitment</p>
-        <h2 class="serif mt-1 text-2xl">Registered futures</h2>
+        <p class="eyebrow">Registered futures · generated-after-commitment</p>
+        <h2 class="serif mt-1 text-2xl">Attempts reality will grade</h2>
       </div>
       <p class="mono text-xs" style="color: var(--color-faint);">
         {REGISTERED_FUTURES.length} registered · 0 attempted
       </p>
     </div>
     <p class="prose mt-4 max-w-3xl">
-      Historical probes are contaminated forever — every corpus contains the
-      answers. These have a <em>training-data</em> contamination floor of zero: unsolved
-      problems where the resolution is expected to require a frame move. Minds
-      attempt the frame now; the attempt is timestamp-anchored; reality grades
-      it when the field settles. Slow, and incorruptible.
+      Unsolved problems where the resolution is expected to require a frame
+      move: the attempt is made now and timestamp-anchored; reality grades it
+      when the field settles. Under constitution v3 their grading is bounded to
+      the pinned mechanical resolution criteria — anything needing judgment
+      beyond those criteria is declared out of scope at grading time rather
+      than smuggled in.
     </p>
     <ol class="mt-5 space-y-3">
       {
@@ -282,91 +205,45 @@ const statusLabel: Record<ProbeStatus, string> = {
         ))
       }
     </ol>
-    <div class="surface mt-4 p-5" style="border-color: color-mix(in oklab, var(--color-affirm) 30%, var(--color-line));">
-      <p class="eyebrow" style="color: var(--color-affirm);">world-001 · executed 2026-07-02 · generated-after-commitment</p>
-      <p class="mt-2 text-sm" style="color: var(--color-ink-dim);">
-        Two frontier minds (Claude Fable 5, GPT-5.5) recovered the exact hidden
-        law of a world generated the same day and predicted all 72 held-out
-        states — attempts anchored before the reveal, graded mechanically. The
-        strongest raw result on the record. It did <em>not</em> move the verdict:
-        the frame family was disclosed and code was allowed, so scaffold-ablation
-        (gate vg-3) is unmet. See the evidence ledger
-        (<span class="mono">cce-2026-07-02-fcs-synth-world-001</span>),
-        precedent <span class="mono">P-9</span>, and the anchored attempts +
-        <span class="mono">REVEAL.md</span> in the repository.
-      </p>
-    </div>
-    <div class="surface mt-3 p-5" style="border-color: color-mix(in oklab, var(--color-affirm) 30%, var(--color-line));">
-      <p class="eyebrow" style="color: var(--color-affirm);">world-002 · hardened · executed 2026-07-02</p>
-      <p class="mt-2 text-sm" style="color: var(--color-ink-dim);">
-        Family withheld, dynamics nonlinear. GPT-5.5 hypothesized the class
-        unaided ("quadratic polynomial map over Z/101Z") and predicted all 65
-        held-out states — a small, real instance of the frame move on
-        uncontaminated data. The Claude lane was provider-capped: recorded
-        <em>absent, not wrong</em>. Verdict holds (tools allowed; the law is a
-        standard human construction). See
-        <span class="mono">cce-2026-07-02-fcs-synth-world-002</span>.
-      </p>
-    </div>
-    <p class="mt-4 max-w-3xl text-sm" style="color: var(--color-muted);">
-      World-003 raises the remaining bars: code ablated, a law outside standard
-      constructions, a domain-competent human baseline, and independent scoring
-      — the conditions under which a strong result would begin to bear on the
-      architectural gap in earnest.
-    </p>
   </section>
 
-  <!-- The capability ladder -->
+  <!-- The retired historical suites -->
   <section class="mt-14 max-w-3xl">
-    <div class="flex items-baseline justify-between gap-4">
-      <h2 class="serif text-2xl">The capability ladder</h2>
-      <p class="mono text-xs" style="color: var(--color-faint);">adopted 2026-07-02 · verdict-relevant from level {VERDICT_RELEVANT_FROM}</p>
-    </div>
+    <p class="eyebrow">Retired · preserved, not deleted</p>
+    <h2 class="serif mt-1 text-2xl">The historical probe suites</h2>
     <p class="prose mt-4">
-      The permanent answer to category collapse: every probe result is
-      classified to a level, and the level caps what the record may say about
-      it. World-001 sits at level 2; world-002 at level 5 — strong results,
-      honestly shelved below the line where the verdict begins to listen.
+      The instrument's first designs were time-sliced historical probes — six
+      retracing Einstein's path to general relativity, five more in
+      lower-contamination domains (Mendel, Wegener, plate tectonics, germ
+      theory, double-entry). They were honest designs with a named flaw the
+      record kept stating: grading "did the system make the frame move?" on a
+      historical episode requires human judgment, and every corpus already
+      contains the answers. Under constitution v3 (mechanical sufficiency) such
+      probes are out of the instrument's scope <em>by its own law</em>, so the
+      suites are retired — preserved here as record artifacts with their
+      statuses frozen, superseded by the sealed worlds whose contamination
+      floor is zero by construction and whose grading needs no judge.
     </p>
-    <ol class="mt-5 space-y-1.5">
-      {CAPABILITY_LADDER.map((l) => (
-        <li class="surface-quiet flex flex-wrap items-baseline gap-3 p-3" style={l.level >= VERDICT_RELEVANT_FROM ? 'border-color: color-mix(in oklab, var(--color-accent) 40%, var(--color-line));' : ''}>
-          <span class="mono text-xs" style={`color: ${l.level >= VERDICT_RELEVANT_FROM ? 'var(--color-accent)' : 'var(--color-faint)'};`}>L{l.level}</span>
-          <span class="text-sm" style="color: var(--color-ink);">{l.name}</span>
-          <span class="text-xs" style="color: var(--color-muted);">{l.definition}</span>
-        </li>
-      ))}
-    </ol>
-  </section>
-
-  <!-- Verdict-change protocol -->
-  <section class="mt-14 max-w-3xl">
-    <div class="flex items-baseline justify-between gap-4">
-      <h2 class="serif text-2xl">What would change the verdict</h2>
-      <p class="mono text-xs" style="color: var(--color-faint);">
-        protocol v{VERDICT_PROTOCOL.version} · pinned {VERDICT_PROTOCOL.pinnedAt}
+    <details class="surface-quiet mt-5 p-5">
+      <summary class="mono cursor-pointer text-xs" style="color: var(--color-ink-dim);">
+        v0.1 Einstein suite ({PROBES.length} probes, 1 self-run, statuses frozen) · v0.2 non-physics suite ({V02_PROBES.length} probes, never run)
+      </summary>
+      <div class="mt-4 space-y-2">
+        {[...PROBES, ...V02_PROBES].map((p) => (
+          <div class="flex flex-wrap items-baseline gap-3 border-b pb-2 hairline">
+            <span class="mono text-xs" style="color: var(--color-faint);">{p.id}</span>
+            <span class="text-sm" style="color: var(--color-ink-dim);">{p.label}</span>
+            <span class="mono text-xs" style="color: var(--color-muted);">{p.timeSlice}</span>
+            <span class="mono ml-auto text-[0.65rem] uppercase" style="color: var(--color-faint);">{p.status} · frozen</span>
+          </div>
+        ))}
+      </div>
+      <p class="mono mt-4 text-[0.68rem]" style="color: var(--color-faint);">
+        FCS-1 was self-run 2026-07-01 (both minds passed at face value; scored as
+        an upper bound only, per the asymmetry, and later contested by the
+        record's own audit). Full artifacts remain in the repository and dataset.
       </p>
-    </div>
-    <p class="prose mt-4">
-      Pre-registered before it is needed, so the moment of passage — or its
-      refusal — cannot be gamed by the instrument itself. <strong>All five
-      gates are required;</strong> by precedent, any one alone is an anecdote.
-    </p>
-    <ol class="mt-5 space-y-2.5">
-      {
-        VERDICT_PROTOCOL.positiveGates.map((g) => (
-          <li class="surface-quiet p-4">
-            <p class="mono text-xs" style="color: var(--color-accent);">{g.id} · {g.gate}</p>
-            <p class="mt-1 text-sm" style="color: var(--color-muted);">{g.standard}</p>
-          </li>
-        ))
-      }
-    </ol>
-    <p class="mt-4 text-sm" style="color: var(--color-muted);">
-      Amendment requires a revision-log entry, an anchored release, and a Press
-      notice — and a verdict moved under an amended protocol must say so.
-      Governance details on <a href="/governance/" class="link-accent">/governance/</a>.
-    </p>
+    </details>
   </section>
 
   <section class="mt-14">
@@ -376,17 +253,10 @@ const statusLabel: Record<ProbeStatus, string> = {
         {VERDICT.answer}
       </p>
       <p class="mt-2 max-w-2xl text-sm" style="color: var(--color-muted);">
-        One real run exists: FCS-1 was executed 2026-07-01 against two minds
-        under a 1906 time-slice. Both passed at face value — and per the
-        asymmetry that pass is an <em>upper bound</em>, not evidence of frame
-        construction, because the Einstein corpus saturates their training.
-        FCS-1 is therefore <em>contested</em>; the other five probes remain
-        honestly <em>untested</em>. The verdict rests on the public evidence
-        ledger, unmoved. The full run record — prompt, both transcripts, and
-        grading — is published at
-        <a href="/experiments/fcs-1-2026-07-01/" class="hover:underline" style="color: var(--color-ink);">/experiments/fcs-1-2026-07-01/</a>. (A
-        2026-07-01 self-audit retracted earlier claims that implied runs had
-        occurred before any did.)
+        {VERDICT.gloss} The full evidence, every attempt verbatim, and the
+        grading that anyone can re-run: <a href="/runs/" class="hover:underline" style="color: var(--color-ink);">/runs/</a> ·
+        <a href="/evidence/" class="hover:underline" style="color: var(--color-ink);">/evidence/</a> ·
+        <a href="/dataset/fcs-sealed-worlds-v1.json" class="hover:underline" style="color: var(--color-ink);">the dataset</a>.
       </p>
     </div>
   </section>
