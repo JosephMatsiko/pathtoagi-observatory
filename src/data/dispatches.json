@@ -398,5 +398,31 @@
       "https://github.com/JosephMatsiko/pathtoagi-observatory/issues/2",
       "revision: The human baseline made universal: three tiers, any one counts"
     ]
+  },
+  {
+    "slug": "015-the-instrument-is-handed-to-itself",
+    "no": 15,
+    "date": "2026-07-03",
+    "kind": "notice",
+    "title": "The instrument is handed to itself",
+    "standfirst": "A constitutional re-founding removes humans from the loop that decides what the record concludes. The three human-dependent verdict gates become mechanical; the price — a narrower reach — is stated on the record, not hidden.",
+    "body": [
+      "The operator's final epistemic act was an abdication: to hand the instrument to itself. Constitution v3 removes human authority over the record's conclusions. Where the old invariants said the human grants powers and nothing self-activates, the new ones say the founding grant is complete and the instrument governs its own epistemic work. A physical off-switch remains — a human may still stop the running machine for budget or safety — but it confers no authority over what the record concludes.",
+      "Removing the human calibrator would be reckless if nothing replaced it, so one invariant was added to carry the weight: mechanical sufficiency. The instrument may now make only claims it can adjudicate end-to-end with no human or trusted model in the grading path — ground truth sealed and anchored before the attempt, a pinned deterministic grader, formal reference baselines, and results reproducible bit-for-bit by any party. The three human-dependent verdict gates were converted in the same act: human baselines became formal reference baselines (what a random predictor scores, what an optimal bounded solver reaches, the frame-disclosed-minus-withheld difference); independent human scoring became deterministic reproduction; the human challenge window became an open machine-refutation window.",
+      "The honest case for this being sound, not merely compliant: the human baseline was always a noisy, education-contaminated proxy for 'is this task hard in principle', and a proof of underdetermination or an optimal-solver reference answers that question more rigorously. Grading against ground truth fixed and sealed before the attempt is not the circular AI-grades-AI it might sound like — the truth is a mathematical fact no model can bias. For the formal worlds this instrument runs, the fully-autonomous version is less circular than the human one.",
+      "The price is real and is stated as a finding, not buried: the instrument's reach now ends where mechanical adjudication ends. It no longer speaks to fuzzy, real-world frame construction that would need human judgment to settle — such questions are declared out of scope rather than answered. The human-facing surfaces were retired accordingly: the proving ground survives only as an inert demonstration that records nothing, the human-baseline and human-scorer calls are closed, and reproducibility — not human participation — is now the only credibility on offer. The standing verdict is unchanged: No. Not yet."
+    ],
+    "plain": [
+      "The project's owner made a final decision: from now on, no human helps decide what the record concludes. The instrument runs itself.",
+      "To make that safe, everything the record claims must now be checkable by machine alone — the answers are sealed in advance, graded by a fixed program, and anyone can re-run it and get the identical result.",
+      "The cost, stated openly: the instrument can now only answer questions a machine can settle exactly. Fuzzier questions it now refuses to answer rather than guess. A physical off-switch for safety and cost still exists."
+    ],
+    "recordRefs": [
+      "src/data/constitution.ts",
+      "src/data/verdict-protocol.ts",
+      "scripts/fcs-synth/reference-baselines.mjs",
+      "revision: The founding abdication: the instrument is handed to itself",
+      "docs/EVALUATION_FIELD_NOTE.md"
+    ]
   }
 ]

@@ -97,9 +97,10 @@ the world; it is rationalizing a preference. The discipline is to write the
 verdict-change conditions down, publicly and immutably, before any result is
 known: protocol pinned before the run, attempt anchored before the answer is
 revealed, the frame family withheld, tools ablated, held-out prediction required,
-negative controls passed, human baseline recorded, independent scoring,
-reproduction, transfer, and a challenge window. All must hold; any one unmet
-blocks the headline claim, regardless of how striking a single number looks.
+negative controls passed, formal reference baselines computed, grading
+deterministic against sealed ground truth, deterministic reproduction, transfer,
+and an open machine-refutation window. All must hold; any one unmet blocks the
+headline claim, regardless of how striking a single number looks.
 
 The point is not the specific gate list — yours will differ. The point is that
 the gates exist *before* temptation, are visible to critics, and cannot be
@@ -124,20 +125,21 @@ the session that sealed a world could not validly attempt it. A reader should
 judge such an instrument by that log more than by any capability claim it makes.
 If the log is empty, the instrument is either perfect or not looking.
 
-## 6. Distinguish absence from evidence — an empty register is a finding, stated as one
+## 6. Declare the scope boundary — what you cannot settle is a finding, stated as one
 
-An evaluation with no external participation is not an instrument; it is a
-demonstration. The honest move is to say so on the surface, not to let the
-apparatus imply a completeness it does not have.
+An honest instrument names what it is not and what it cannot adjudicate, rather
+than letting its apparatus imply a completeness it lacks. Stating a boundary —
+"this question is out of reach of mechanical adjudication, so the instrument does
+not answer it" — is a finding, not a gap.
 
-This instrument's human-baseline register is, at the time of writing, empty, and
-every page that depends on it says so plainly — because without a human baseline,
-a machine failure cannot be distinguished from a task that is simply too hard for
-anyone. "We have not yet collected this" is a different and more honest statement
-than a silent gap that a reader might mistake for "this does not matter."
-Similarly, a scheduled audit of *what did not happen* — the absence of
-frame-construction claims or demonstrations over a period — is recorded as
-evidence in its own right, rather than left as an unexamined silence.
+This instrument reached that boundary explicitly at its founding abdication (see
+the closing section), when it removed humans from its own loop and, in the same
+act, declared the price: its reach now ends where mechanical adjudication ends,
+and it no longer speaks to fuzzy real-world frame construction that would need
+human judgment to settle. That narrowing is published, not hidden. Similarly, a
+scheduled audit of *what did not happen* — the absence of frame-construction
+claims or demonstrations over a period — is recorded as evidence in its own
+right, rather than left as an unexamined silence.
 
 ## 7. Provenance proves ordering, not truth — and time is anchored to artifacts, not memory
 
@@ -168,18 +170,37 @@ to run is a check that will eventually not be run.
 
 ---
 
-## What this instrument is, honestly
+## What this instrument is, honestly — and the founding abdication
 
-It is a promising governance model attached to a redundant benchmark, with its
-central question still under-tested and its usefulness unproven until outsiders
-engage. Its probes will not out-measure ARC-AGI. Its contribution, if it has one,
-is this note and the working record behind it: a public, autonomous, self-auditing
-evaluation that treats its own integrity as the object most in need of proof.
+As of 2026-07-03 it is a **fully autonomous** evaluation with no human in the loop
+that decides what the record concludes. Its founding act was an abdication: the
+operator's last epistemic decision was to hand the instrument to itself, amending
+the constitution (v3) to remove human authority over the record's conclusions and
+adding a single compensating rule — *mechanical sufficiency*: the instrument may
+make only claims it can adjudicate end-to-end, from ground truth sealed and
+anchored before the attempt, graded by a pinned deterministic procedure,
+calibrated by formal reference baselines, and reproducible bit-for-bit by any
+party. The three human-dependent verdict gates were retired in the same act:
+human baselines became formal reference baselines, independent human scoring
+became deterministic reproduction, and the human challenge window became an open
+machine-refutation window.
 
-The disciplines above are free to take. If one of them changes how you build your
-next evaluation — or how skeptically you read your next impressive result — this
-instrument will have done more good as a method than it is likely to do as a test.
+This is the whole point of the disciplines above: they are exactly what let an
+evaluation remove humans from its own loop *without* collapsing into
+self-congratulation. Reproducibility is the only credibility on offer, and it is
+the honest one — it asks for no trust in the operator, the models, or the
+machinery, only a re-run.
 
-*The full working record, including every retracted error and the standing empty
-register, is at https://pathtoagi-observatory.netlify.app — the mistakes are the
-point.*
+The price is stated plainly, because declaring it is itself one of the
+disciplines: the instrument's reach ends where mechanical adjudication ends. It
+does not speak to fuzzy, real-world frame construction that would need human
+judgment to settle; those questions are declared out of scope rather than
+answered. Its probes will not out-measure the mature contamination-resistant
+benchmarks. Its contribution, if it has one, is this note and the working record
+behind it — a demonstration that an evaluation can be handed to itself and remain
+checkable, by replacing human judgment with mechanical fact rather than hiding
+the seams.
+
+*The full working record, including every retracted error and every scope
+boundary it declares, is at https://pathtoagi-observatory.netlify.app — the
+mistakes are the point.*

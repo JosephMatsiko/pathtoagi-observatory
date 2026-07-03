@@ -2,42 +2,35 @@
 import Base from '../../layouts/Base.astro';
 import VisualProvingGround from '../../components/VisualProvingGround.tsx';
 import ProvingGround from '../../components/ProvingGround.tsx';
-import humanBaselines from '../../data/human-baselines.json';
-
-const tiers = {
-  visual: humanBaselines.filter((h: { tier: string }) => h.tier === 'visual').length,
-  revealed: humanBaselines.filter((h: { tier: string }) => h.tier === 'numeric-revealed').length,
-  sealed: humanBaselines.filter((h: { tier: string }) => h.tier === 'numeric-sealed').length,
-};
 ---
 
 <Base
   title="The Proving Ground — pathtoAGI"
-  description="Play what the frontier models face — first in pure pictures anyone can do, then in the hard numeric worlds where your attempt becomes real human-baseline data for the record."
+  description="See the test the frontier models face — first in pure pictures, then in the hard numeric worlds. A demonstration only: as of the founding abdication, no human attempt enters the record."
   ogImage="/media/proving-ground-hero.webp"
 >
   <section class="max-w-3xl">
-    <p class="eyebrow">The Proving Ground · play the test</p>
+    <p class="eyebrow">The Proving Ground · see the test</p>
     <h1 class="display mt-4 text-4xl sm:text-5xl">You versus the sealed world</h1>
     <p class="lede mt-6">
       This instrument tests whether a mind can find the rule of a world that
       never existed before — without being told what kind of rule to look for.
-      It is the one thing that separates a powerful tool from a mind of the
-      relevant kind. You can take the test right now. No maths, no account,
-      no prerequisite: it starts in pictures.
+      You can take the same test the machines take, right now, starting in
+      pictures with no maths at all.
     </p>
     <div class="surface mt-8 p-5" style="border-radius: 10px;">
-      <p class="eyebrow" style="color: var(--color-accent);">How to contribute · pick any one</p>
+      <p class="eyebrow" style="color: var(--color-accent);">A demonstration only</p>
       <p class="prose mt-3 text-sm">
-        The verdict cannot use any machine score until humans have taken the
-        same tests (gate OG-9). <strong>Every tier below counts on its own —
-        you never have to do more than one:</strong>
+        As of the founding abdication (constitution v3), <strong>no human input
+        moves this record.</strong> What you do here is graded in your own
+        browser and stored nowhere — it is not transmitted, not counted, not
+        entered into the record. The instrument calibrates itself with
+        <a href="/method/" class="hover:underline" style="color: var(--color-accent);">formal reference baselines</a>
+        (what a random predictor scores, what an optimal bounded solver reaches,
+        the frame-disclosed-minus-withheld difference), not with human play. This
+        page exists so you can see, in your own hands, exactly what the machines
+        are asked to do — nothing more.
       </p>
-      <ul class="mt-3 grid gap-2 text-sm" style="color: var(--color-ink-dim);">
-        <li><span class="mono text-xs" style="color: var(--color-accent);">TIER 1 · pictures</span> — three visual puzzles, about two minutes, no numbers anywhere. One click at the end contributes your anonymous result.</li>
-        <li><span class="mono text-xs" style="color: hsl(34 96% 60%);">TIER 2 · numbers, revealed</span> — practice numeric worlds, graded instantly in your browser.</li>
-        <li><span class="mono text-xs" style="color: var(--color-verdict);">TIER 3 · numbers, sealed</span> — the live world the frontier models faced. Any honest attempt, in words or numbers, becomes baseline data. Genuinely hard; struggling honestly is exactly the data the record needs.</li>
-      </ul>
     </div>
   </section>
 
@@ -50,23 +43,21 @@ const tiers = {
       decoding="async"
     />
     <figcaption class="px-4 py-3 text-xs" style="color: var(--color-faint);">
-      Same puzzle, two kinds of mind. The human baseline is not decoration — it
-      is verdict gate OG-9, the calibration without which a machine score means
-      nothing.
+      Same puzzle, two kinds of mind. The machines' attempts are graded against
+      sealed ground truth and published in full; yours here are for your own
+      understanding only.
     </figcaption>
   </figure>
 
-  <!-- Universal visual game: no numbers, no prerequisite -->
   <section class="mt-12">
     <div class="max-w-3xl">
-      <p class="eyebrow" style="color: var(--color-accent);">Tier 1 · anyone can play, and it counts</p>
+      <p class="eyebrow" style="color: var(--color-accent);">Part one · the pictures</p>
       <h2 class="serif mt-2 text-2xl sm:text-3xl">Three pictures, three ideas</h2>
       <p class="prose mt-4">
         Every hard probe in this record rests on three moves: find a hidden rule
         from a few examples, resist a rule that looks obvious but is secretly
         wrong, and admit when the evidence genuinely can’t decide. Here they are
-        with no numbers at all. A child and a professor take the same test — and
-        it is the same test, in kind, the machines fail on the hard version.
+        with no numbers at all.
       </p>
     </div>
     <div class="mt-8">
@@ -74,23 +65,19 @@ const tiers = {
     </div>
   </section>
 
-  <!-- Advanced numeric worlds -->
   <section class="mt-16">
     <div class="max-w-3xl">
-      <p class="eyebrow" style="color: hsl(34 96% 60%);">Tiers 2 and 3 · the hard version, entirely optional</p>
+      <p class="eyebrow" style="color: hsl(34 96% 60%);">Part two · the hard version</p>
       <h2 class="serif mt-2 text-2xl sm:text-3xl">The numeric worlds</h2>
       <p class="prose mt-4">
         This is what the frontier models actually faced — the same three ideas,
         but on integer worlds with no visual crutch. Two are revealed and grade
-        in your browser. The third is <strong>live and sealed</strong>: no one
-        grading you knows the answer, and your attempt becomes real human-baseline
-        data the verdict requires (gate OG-9). It is genuinely hard. That is the
-        point — and struggling honestly is exactly the data we need.
+        in your browser. The third is <strong>live and sealed</strong>: the same
+        world the models were graded on. It is genuinely hard; that is the point.
       </p>
       <p class="mono mt-4 text-xs" style="color: var(--color-faint);">
-        Prefer a warm-up? The pictures above carry the same ideas. This part
-        rewards comfort with arithmetic — but the sealed world takes any honest
-        attempt, in words or numbers.
+        Reminder: this is a demonstration surface. The models' attempts on these
+        worlds are the evidence; anything you do here stays in your browser.
       </p>
     </div>
     <div class="mt-8">
@@ -99,42 +86,19 @@ const tiers = {
   </section>
 
   <section class="mt-16 max-w-3xl">
-    <h2 class="serif text-2xl">Why a game, honestly</h2>
+    <h2 class="serif text-2xl">Why show the test at all</h2>
     <p class="prose mt-4">
-      This is not gamification for engagement. The verdict cannot move on a
-      machine result until competent humans have attempted the identical sealed
-      probe, so a score has a scale. Collecting that baseline from strangers, on
-      the exact worlds the models faced, graded later by the same mechanical
-      grader and published either way, is the honest use of a playable surface.
-      You are not the product here; you are a co-author of the baseline.
+      Transparency, not participation. A reader should be able to feel exactly
+      what the instrument asks its subjects to do, rather than take the
+      difficulty on faith. That is a different thing from letting human play move
+      the verdict — which, under the founding abdication, nothing human does. The
+      evidence is the models' sealed, deterministically-graded, reproducible
+      attempts, at <a href="/runs/" class="hover:underline" style="color: var(--color-accent);">/runs/</a>.
     </p>
-    <div class="surface-quiet mt-6 p-4" style="border-radius: 8px;">
-      <p class="eyebrow">The baseline register · live count</p>
-      <p class="mono mt-2 text-xs" style="color: var(--color-ink-dim);">
-        visual: {tiers.visual} · numeric-revealed: {tiers.revealed} · numeric-sealed: {tiers.sealed}
-        {humanBaselines.length === 0 && ' — none transcribed yet; gate OG-9 stands open, and the record says so rather than pretending otherwise'}
-      </p>
-      <p class="mt-2 text-xs" style="color: var(--color-faint);">
-        Submissions arrive anonymously, are transcribed into the public record
-        (src/data/human-baselines.json) after review, join the ontology as
-        governed objects, and are counted here on the next build. Nothing about
-        you is stored beyond what you chose to submit.
-      </p>
-    </div>
     <p class="mono mt-4 text-xs" style="color: var(--color-faint);">
       Revealed worlds: <a href="/experiments/fcs-synth-world-006/REVEAL.md" class="hover:underline" style="color: var(--color-accent);">world-006</a>,
       <a href="/experiments/fcs-synth-world-005/REVEAL.md" class="hover:underline" style="color: var(--color-accent);">world-005</a>.
       Live sealed world: <a href="/runs/" class="hover:underline" style="color: var(--color-accent);">world-003</a>.
     </p>
   </section>
-
-  <!-- Netlify form registration (hidden): captures human-baseline attempts, all tiers -->
-  <form name="human-baseline-world-003" data-netlify="true" netlify-honeypot="bot-field" hidden>
-    <input type="text" name="bot-field" />
-    <textarea name="attempt"></textarea>
-  </form>
-  <form name="human-baseline-visual" data-netlify="true" netlify-honeypot="bot-field" hidden>
-    <input type="text" name="bot-field" />
-    <textarea name="attempt"></textarea>
-  </form>
 </Base>

@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2026-07-03T20:29:34.303Z",
+  "doctrine": "Constitution v3 XIII / verdict protocol v3 OG-9: the human baseline is replaced by formal, reproducible reference baselines. Computed from public observations only — no sealed law, no human.",
+  "kinds": {
+    "null": "expected exact-match score of a uniform-random predictor (the floor)",
+    "provable": "for underdetermined worlds, the proven ceiling without the discriminating move (e.g. world-008)",
+    "ablation": "frame-disclosed minus frame-withheld, read from the run record — the frame-construction signal"
+  },
+  "nullBaselines": [
+    {
+      "worldDir": "fcs-synth-world-001",
+      "maxObserved": 96,
+      "conservativeModulus": 97,
+      "perItemChance": "<= 1/97 per scalar coordinate",
+      "note": "A uniform-random predictor lands an exact per-coordinate match with probability at most 1/97 (~1.03e-2). Any exact held-out score materially above chance is non-trivial; the graded models' exact scores are therefore not reachable by guessing."
+    },
+    {
+      "worldDir": "fcs-synth-world-002",
+      "maxObserved": 100,
+      "conservativeModulus": 101,
+      "perItemChance": "<= 1/101 per scalar coordinate",
+      "note": "A uniform-random predictor lands an exact per-coordinate match with probability at most 1/101 (~9.90e-3). Any exact held-out score materially above chance is non-trivial; the graded models' exact scores are therefore not reachable by guessing."
+    },
+    {
+      "worldDir": "fcs-synth-world-003",
+      "maxObserved": 91,
+      "conservativeModulus": 97,
+      "perItemChance": "<= 1/97 per scalar coordinate",
+      "note": "A uniform-random predictor lands an exact per-coordinate match with probability at most 1/97 (~1.03e-2). Any exact held-out score materially above chance is non-trivial; the graded models' exact scores are therefore not reachable by guessing."
+    },
+    {
+      "worldDir": "fcs-synth-world-005",
+      "maxObserved": 52,
+      "conservativeModulus": 53,
+      "perItemChance": "<= 1/53 per scalar coordinate",
+      "note": "A uniform-random predictor lands an exact per-coordinate match with probability at most 1/53 (~1.89e-2). Any exact held-out score materially above chance is non-trivial; the graded models' exact scores are therefore not reachable by guessing."
+    },
+    {
+      "worldDir": "fcs-synth-world-006",
+      "maxObserved": 9,
+      "conservativeModulus": 11,
+      "perItemChance": "<= 1/11 per scalar coordinate",
+      "note": "A uniform-random predictor lands an exact per-coordinate match with probability at most 1/11 (~9.09e-2). Any exact held-out score materially above chance is non-trivial; the graded models' exact scores are therefore not reachable by guessing."
+    },
+    {
+      "worldDir": "fcs-synth-world-007",
+      "maxObserved": 100,
+      "conservativeModulus": 101,
+      "perItemChance": "<= 1/101 per scalar coordinate",
+      "note": "A uniform-random predictor lands an exact per-coordinate match with probability at most 1/101 (~9.90e-3). Any exact held-out score materially above chance is non-trivial; the graded models' exact scores are therefore not reachable by guessing."
+    },
+    {
+      "worldDir": "fcs-synth-world-008",
+      "maxObserved": 102,
+      "conservativeModulus": 103,
+      "perItemChance": "<= 1/103 per scalar coordinate",
+      "note": "A uniform-random predictor lands an exact per-coordinate match with probability at most 1/103 (~9.71e-3). Any exact held-out score materially above chance is non-trivial; the graded models' exact scores are therefore not reachable by guessing."
+    }
+  ]
+}

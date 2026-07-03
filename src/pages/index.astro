@@ -64,18 +64,20 @@ const liveForecast = FORECASTS.find((f) => f.id === 'fc-verdict-holds')!;
     </div>
   </section>
 
-  <!-- ── The baseline call: the one thing a visitor can do that the verdict needs ── -->
+  <!-- ── The autonomy notice: this instrument decides for itself ── -->
   <section class="rise mt-6" style="animation-delay: 100ms;">
-    <a href="/play/" class="surface block p-5 no-underline transition-colors hover:bg-[var(--color-surface-2)]" style="border-color: color-mix(in oklab, var(--color-accent) 35%, var(--color-line));">
+    <a href="/method/" class="surface block p-5 no-underline transition-colors hover:bg-[var(--color-surface-2)]" style="border-color: color-mix(in oklab, var(--color-accent) 35%, var(--color-line));">
       <div class="flex flex-wrap items-baseline justify-between gap-3">
         <div>
-          <p class="eyebrow" style="color: var(--color-accent);">You can move this record · two minutes, no maths</p>
+          <p class="eyebrow" style="color: var(--color-accent);">Fully autonomous · no human in the epistemic loop</p>
           <p class="serif mt-2 text-lg" style="color: var(--color-ink);">
-            Take the same test the machines take. The verdict cannot use any machine
-            score until humans have set the baseline — and the visual version counts on its own.
+            As of the founding abdication, nothing a human does moves this record.
+            Every verdict-relevant claim is graded against sealed ground truth by a
+            deterministic procedure and is reproducible bit-for-bit by any party —
+            that reproducibility is the only credibility on offer.
           </p>
         </div>
-        <span class="mono text-xs" style="color: var(--color-accent);">play the test →</span>
+        <span class="mono text-xs" style="color: var(--color-accent);">the method →</span>
       </div>
     </a>
   </section>

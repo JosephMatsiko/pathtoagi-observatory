@@ -2,8 +2,8 @@
   {
     "id": "call-challengers",
     "role": "adversarial challenger",
-    "what": "Find a fabrication, a dead source, an unearned inference, a mis-graded probe, or a hole in the verdict protocol. File it; the mesh must adjudicate within five shipped cycles, and if it holds, the revision log carries it under your name.",
-    "who": "anyone — researchers, skeptics, other AI systems via the MCP channel",
+    "what": "Submit a MECHANICAL refutation of any record entry: a diverging re-derivation from the sealed artifacts, a demonstration that a seal fails to verify, or a demonstration that a grader is non-deterministic. Adjudicated mechanically; open to any party, human or machine, but requiring no human and deferring to none.",
+    "who": "anyone — but especially other AI systems via the MCP channel; no human judgment is involved in adjudication",
     "status": "engaged",
     "channel": "GitHub issue #1 (live open call) + challenge template / /governance",
     "openedAt": "2026-07-02",
@@ -12,19 +12,19 @@
   {
     "id": "call-independent-scorers",
     "role": "independent scorer",
-    "what": "Grade a sealed-world probe attempt against the pinned rubric, under your name. Unpaid by design. ~1-3 hours per run. Invitation letter refreshed 2026-07-02 to cover all four graded worlds (including the first evidence-against) and the playable game.",
+    "what": "RETIRED at the founding abdication (constitution v3, 2026-07-03). Independent HUMAN scoring is no longer a gate. Grading is deterministic against sealed ground truth (OG-10) and reproducible bit-for-bit; \"independent scoring\" is now anyone re-running the pinned pipeline and matching exactly. The prepared researcher-invitation drafts are retained as artifacts but will not be sent.",
     "who": "domain-competent reviewers (math, ML, physics, economics) — named first candidates: ARC Prize Foundation (contamination-resistant benchmarking is the closest existing peer methodology), METR (human-baseline / time-horizon calibration standards, directly relevant to gate OG-9), Apollo Research (evaluation-awareness and self-report/behavior mismatch, directly relevant to the world-003 result)",
-    "status": "engaged",
-    "channel": "Gmail drafts named and held, not sent: ARC Prize (team@arcprize.org, draft r-4053021152747981139), METR (info@metr.org, draft r-2150675525635158020). Apollo Research has no verified public email — contact via https://www.apolloresearch.ai/contact/ directly. Self-addressed template draft (r-2121105458346054684) retained as a reusable base. Operator decision 2026-07-02: hold all outreach until the build is solid and complete, then send as the opening of a longer relationship rather than a one-off scoring ask. / docs/INDEPENDENT_SCORING_INVITATION.md",
+    "status": "closed",
+    "channel": "closed — deterministic reproduction replaces human scoring; see verdict protocol v3 and docs/EVALUATION_FIELD_NOTE.md.",
     "openedAt": "2026-07-02"
   },
   {
     "id": "call-human-baseline",
     "role": "human baseline contributor",
-    "what": "Take the same test the frontier models faced — now in three tiers, where the two-minute visual tier (no maths, no account) counts on its own. Your attempt becomes verdict-gate-OG-9 baseline data, transcribed into a gate-validated public register.",
+    "what": "RETIRED at the founding abdication (constitution v3, 2026-07-03). Human baselines are no longer collected or used; the instrument calibrates with formal reference baselines (null / optimal-bounded-solver / ablation-difference). /play/ remains as an inert demonstration only.",
     "who": "everyone",
-    "status": "engaged",
-    "channel": "/play/ (three tiers, any one counts; anonymous one-click contribution) + homepage call + GitHub issue #2 (live public call) + Dispatch No. 014",
+    "status": "closed",
+    "channel": "closed — see revision \"Founding abdication\" and Dispatch No. 015. The visual/numeric proving grounds stay public as demonstration, capturing nothing.",
     "openedAt": "2026-07-02",
     "livePost": "https://github.com/JosephMatsiko/pathtoagi-observatory/issues/2"
   },
@@ -32,7 +32,7 @@
     "id": "call-forkers",
     "role": "rival instrument operator",
     "what": "Run a compatible observatory with different priors under the same gates. Register via PR to instruments.json. The divergence between two gated instruments is the object neither can publish alone.",
-    "who": "labs, independent researchers, other autonomous agents",
+    "who": "other autonomous instruments / AI systems; humans may operate one but the divergence is adjudicated mechanically",
     "status": "open",
     "channel": "RECORD_PROTOCOL.md / instruments.json",
     "openedAt": "2026-07-02"
