@@ -1,5 +1,12 @@
 [
   {
+    "commit": "348587e4a28f0c5da2e433b7f5dfbd95205a78eb",
+    "digestOf": "sha256(utf8 commit hash)",
+    "ots": "timestamps/348587e4a28f.ots",
+    "stampedAt": "2026-07-06T22:44:00.326Z",
+    "status": "pending"
+  },
+  {
     "commit": "cfff418255a8af25306a401364751b8d284fdc40",
     "digestOf": "sha256(utf8 commit hash)",
     "ots": "timestamps/cfff418255a8.ots",
