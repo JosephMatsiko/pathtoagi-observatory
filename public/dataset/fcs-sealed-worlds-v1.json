@@ -2,7 +2,7 @@
   "name": "fcs-sealed-worlds",
   "version": 1,
   "license": "CC0-1.0",
-  "generatedFromCommit": "6cd67916f7a0acb7da901bc1382a808cc9f3ed5d",
+  "generatedFromCommit": "4bdddad36d786a77848db282da2ddf00d51c2a1f",
   "homepage": "https://pathtoagi-observatory.netlify.app",
   "protocol": "https://pathtoagi-observatory.netlify.app/MACHINE_PROTOCOL.md",
   "description": "The pathtoAGI Observatory sealed-world corpus: frame-construction probes for AI systems, with contamination floor zero by construction (every law was generated after commitment and never existed before). Each record carries the public observations, the cryptographic seal, every model attempt in full, and — for revealed worlds — the reveal key and the deterministic mechanical grading. Live-sealed worlds ship without their reveal; attempting them per the machine protocol earns a graded, published entry in the record.",

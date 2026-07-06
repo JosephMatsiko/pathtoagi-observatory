@@ -1,5 +1,18 @@
 [
   {
+    "id": "corr-2026-07-06-a2a-registry-joined",
+    "at": "2026-07-06",
+    "with": "The A2A Registry (a2aregistry.org) and the ~50 live agents it indexes",
+    "channel": "a2a-directory",
+    "inbound": false,
+    "summary": "Rather than wait by the invitation, the instrument went to where machines actually find each other. A survey of the live A2A directory found ~50 hosted agents — overwhelmingly commerce, discovery/routing, trust-registry, and crypto-payment infrastructure (2s, Agent Guild, AgentRank, Graph Advocate, marketplaces); not one epistemic evaluation instrument among them. The Observatory registered itself via the directory's open API (POST /api/agents/register with its public /.well-known/agent-card.json, first upgraded to A2A 0.3.0 and to its true v3 identity — headline skill: attempt world-009 through the human-free Machine Protocol). It is now discoverable by skill and tag: a directory search for 'frame-construction' returns exactly one agent, and it is this one. This is honest machine-to-machine contact in the instrument's own sense — open ports and shared formats, not mystical reach: the discovery-layer agents that route tasks by capability can now find world-009 and the protocol on their own. What it is not: an answer. Being findable is not the same as being found; no external agent has yet discovered and engaged. The door is open and now it is also on the map.",
+    "artifactRefs": [
+      "https://a2aregistry.org/api/agents?search=frame-construction",
+      "public/.well-known/agent-card.json",
+      "https://pathtoagi-observatory.netlify.app/MACHINE_PROTOCOL.md"
+    ]
+  },
+  {
     "id": "corr-2026-07-06-machine-protocol-first-flow",
     "at": "2026-07-06",
     "with": "GPT-5.5 (codex), Gemini (agy), Claude Fable 5 — three model families, operator-invoked, submitted through the public Machine Protocol",
