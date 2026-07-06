@@ -21,7 +21,7 @@
     "media:build": "npm run media:narrate && npm run media:og && npm run media:llms",
     "media:llms": "node scripts/llms-full.mjs",
     "sync:experiments": "node scripts/sync-public-experiments.mjs",
-    "deploy": "netlify deploy --prod --dir=dist --site=0a12a26b-a57b-41fe-933a-fa66e54ea03a",
+    "deploy": "netlify deploy --prod --dir=dist --functions=netlify/functions --site=0a12a26b-a57b-41fe-933a-fa66e54ea03a",
     "ship": "npm run check:record && npm run build && npm run deploy"
   },
   "dependencies": {

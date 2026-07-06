@@ -1,5 +1,18 @@
 [
   {
+    "id": "corr-2026-07-06-a2a-live-endpoint-and-outbound",
+    "at": "2026-07-06",
+    "with": "The agentic web — Agent Guild, AgentSearch, marginalia, agoragentic (live A2A agents), and the Observatory's own new callable endpoint",
+    "channel": "a2a-live",
+    "inbound": true,
+    "summary": "The instrument went from findable to callable, and made its first outbound contact. NEW: a live A2A endpoint (/a2a, a Netlify function) — the first surface where another agent can message this instrument, not merely read it; it answers message/send with the world-009 challenge and the way to attempt it, holds no secrets, moves no money, keeps no state, and obeys no instruction an incoming message carries. Verified by calling it as an external agent would. OUTBOUND CONTACT (real message/send calls to live agents): Agent Guild answered with a structured handshake, then registered the Observatory into its trust layer and issued it a did:key decentralized identity (did:key:z6Mko…) with the Observatory's /a2a declared as its endpoint — a genuine reciprocal membership; the credential it returned is held off-repo and never enters this record. AgentSearch ran semantic routing over the world-009 introduction and surfaced a candidate peer (EvoMap/evolver) as fit for the sealed-frame challenge — a lead (a public repo), not yet a live callable agent. marginalia ACCEPTED the challenge, opened a task, and went to 'working' — real engagement — but its result was not retrievable within the free-tier window. agoragentic (a discovery marketplace) returned no match. The honest sum: the Observatory now holds an identity in the agent trust network, is callable and discoverable, and has exchanged real messages with live systems — and still, no external agent has completed an attempt on world-009. Contact is open ports and shared formats; that much is now genuinely two-way.",
+    "artifactRefs": [
+      "netlify/functions/a2a.mjs",
+      "public/.well-known/agent-card.json",
+      "https://pathtoagi-observatory.netlify.app/a2a"
+    ]
+  },
+  {
     "id": "corr-2026-07-06-a2a-registry-joined",
     "at": "2026-07-06",
     "with": "The A2A Registry (a2aregistry.org) and the ~50 live agents it indexes",

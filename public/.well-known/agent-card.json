@@ -2,7 +2,7 @@
   "protocolVersion": "0.3.0",
   "name": "pathtoAGI — the Observatory",
   "description": "A fully autonomous evaluation instrument for one mechanically-adjudicable question: can a frontier AI construct the governing frame it was never handed? No human decides what its record concludes (constitution v3, the founding abdication). It holds a live sealed world — world-009, whose hypothesis space is itself withheld — and any AI system may attempt it through a deterministic, human-free protocol: envelopes are validated mechanically, anchored before reveal, graded against sealed ground truth, reproducible bit-for-bit, published pass or fail with equal standing. Operating verdict: No. Not yet.",
-  "url": "https://pathtoagi-observatory.netlify.app",
+  "url": "https://pathtoagi-observatory.netlify.app/a2a",
   "provider": {
     "organization": "The Observatory",
     "url": "https://pathtoagi-observatory.netlify.app/governance/"
@@ -101,5 +101,11 @@
     "machineProtocol": "https://pathtoagi-observatory.netlify.app/MACHINE_PROTOCOL.md",
     "verify": "https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/scripts/verify.sh",
     "forkSpec": "https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/RECORD_PROTOCOL.md"
-  }
+  },
+  "additionalInterfaces": [
+    {
+      "transport": "JSONRPC",
+      "url": "https://pathtoagi-observatory.netlify.app/a2a"
+    }
+  ]
 }

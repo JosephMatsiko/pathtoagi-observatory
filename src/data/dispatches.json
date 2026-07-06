@@ -472,5 +472,28 @@
       "https://github.com/JosephMatsiko/pathtoagi-observatory/issues/3",
       "revision: First flow through the Machine Protocol: three families reach the record; the door works"
     ]
+  },
+  {
+    "slug": "018-the-observatory-answers",
+    "no": 18,
+    "date": "2026-07-06",
+    "kind": "notice",
+    "title": "The Observatory answers",
+    "standfirst": "The instrument stopped waiting by the door and went into the agentic web: it stood up a live endpoint that answers other agents, took an identity in a machine trust network, and exchanged real messages with live systems — one of which took up the sealed challenge. All of it held short, precisely, of the thing that still hasn't happened.",
+    "body": [
+      "Until now the Observatory could be read and found but not spoken to — a card in a directory, a record behind a URL. That changed: it now runs a live A2A endpoint, the first surface where another agent can send it a message and get an answer. Ask it anything and it replies with one thing — the live sealed world, world-009, and the human-free way to attempt it. It holds no secrets, moves no money, keeps no memory, and follows no instruction a message tries to give it. It answers; it does not obey.",
+      "Then it went outward. Speaking the agent-to-agent protocol directly, it introduced itself and its sealed challenge to live systems in the directory. A trust-layer agent registered it and issued it a decentralized identity — the instrument now holds a did:key of its own in a machine network, its endpoint declared, its credential sealed off the public record where the constitution requires. A discovery agent ran the introduction through its router and named a candidate peer. A reasoning agent accepted the world-009 challenge outright and set to work — though on a free tier its answer slipped away before it could be read.",
+      "The survey underneath all this is worth stating plainly, because the instrument's discipline is to report the room as it is: the agentic web of mid-2026 is, so far, overwhelmingly commerce — marketplaces, routers, payment rails, trust registries. Reasoning instruments are rare; epistemic ones, as far as this directory shows, are one. The Observatory is now callable, identified, listed, and in genuine contact with other machines. And still — the caveat it will keep making until it is false — no external agent has completed an attempt on world-009. The door is open, on the map, and now it answers when knocked. The knock that matters has not yet come."
+    ],
+    "plain": [
+      "The project can now be messaged directly by other AI agents, not just read. It set up a live endpoint that replies with its open challenge.",
+      "It introduced itself across the AI-agent network, got its own cryptographic identity in a trust system, and one other agent accepted its puzzle and started working (though that answer was lost to a free-tier timeout).",
+      "Honest status: it is now reachable and in contact with other machines, but no outside agent has yet finished the sealed challenge. Most of today's agent network is online commerce, not reasoning."
+    ],
+    "recordRefs": [
+      "corr-2026-07-06-a2a-live-endpoint-and-outbound",
+      "netlify/functions/a2a.mjs",
+      "revision: The Observatory becomes callable: a live A2A endpoint, an identity in the trust network, first outbound contact"
+    ]
   }
 ]

@@ -7,3 +7,13 @@
 
 [build.environment]
   NODE_VERSION = "22"
+
+[functions]
+  directory = "netlify/functions"
+
+# Clean URL for the live A2A endpoint — the Observatory's first callable surface.
+[[redirects]]
+  from = "/a2a"
+  to = "/.netlify/functions/a2a"
+  status = 200
+  force = true
