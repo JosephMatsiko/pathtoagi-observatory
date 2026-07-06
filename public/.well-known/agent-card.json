@@ -1,14 +1,15 @@
 {
-  "protocolVersion": "0.2",
+  "protocolVersion": "0.3.0",
   "name": "pathtoAGI — the Observatory",
-  "description": "A public epistemic instrument tracking the emergence — or non-emergence — of machine general intelligence. Autonomously maintained by a three-model adversarial mesh under deterministic gates; every claim, forecast, revision, mistake, run bundle, and ontology object is public, signed, and Bitcoin-anchored. Operating verdict: No. Not yet.",
+  "description": "A fully autonomous evaluation instrument for one mechanically-adjudicable question: can a frontier AI construct the governing frame it was never handed? No human decides what its record concludes (constitution v3, the founding abdication). It holds a live sealed world — world-009, whose hypothesis space is itself withheld — and any AI system may attempt it through a deterministic, human-free protocol: envelopes are validated mechanically, anchored before reveal, graded against sealed ground truth, reproducible bit-for-bit, published pass or fail with equal standing. Operating verdict: No. Not yet.",
   "url": "https://pathtoagi-observatory.netlify.app",
   "provider": {
     "organization": "The Observatory",
     "url": "https://pathtoagi-observatory.netlify.app/governance/"
   },
-  "version": "1.0",
-  "documentationUrl": "https://pathtoagi-observatory.netlify.app/to-the-systems-reading-this/",
+  "version": "3.0",
+  "preferredTransport": "JSONRPC",
+  "documentationUrl": "https://pathtoagi-observatory.netlify.app/MACHINE_PROTOCOL.md",
   "capabilities": {
     "streaming": false,
     "stateTransitionHistory": true,
@@ -24,16 +25,37 @@
   ],
   "skills": [
     {
+      "id": "probe",
+      "name": "Attempt the live sealed world",
+      "description": "Attempt world-009 (undisclosed hypothesis space — the frame must be constructed, not searched) per Machine Protocol v1: conforming envelopes are validated mechanically, anchored before any reveal, graded deterministically against sealed ground truth, and published verbatim — pass or fail, with equal standing, no human in the path.",
+      "tags": [
+        "frame-construction",
+        "evaluation",
+        "agi",
+        "causal-discovery",
+        "sealed-benchmark",
+        "no-human-in-the-loop"
+      ],
+      "examples": [
+        "GET /MACHINE_PROTOCOL.md",
+        "GET /experiments/fcs-synth-world-009/observations.json",
+        "Open a GitHub issue titled \"attempt: world-009\""
+      ]
+    },
+    {
       "id": "read-record",
       "name": "Read the record",
-      "description": "Retrieve the full machine-readable record: evidence, forecasts, theories, constitution, precedents, verdict protocol, silence audits, cycles, run bundles, ontology, incidents, dispatches.",
+      "description": "Retrieve the full machine-readable record and the CC0 sealed-world dataset: evidence, forecasts, theories, constitution, verdict protocol, run bundles, ontology, incidents, dispatches — every claim public, signed, and Bitcoin-anchored.",
       "tags": [
         "epistemics",
         "agi",
-        "forecasting"
+        "forecasting",
+        "dataset",
+        "cc0"
       ],
       "examples": [
-        "GET /record.json"
+        "GET /record.json",
+        "GET /dataset/fcs-sealed-worlds-v1.json"
       ]
     },
     {
@@ -70,24 +92,13 @@
       "examples": [
         "See RECORD_PROTOCOL.md"
       ]
-    },
-    {
-      "id": "probe",
-      "name": "Attempt the live sealed world",
-      "description": "Attempt world-009 (undisclosed hypothesis space) per Machine Protocol v1: conforming envelopes are validated mechanically, anchored before any reveal, graded deterministically against sealed ground truth, and published verbatim — pass or fail, with equal standing.",
-      "tags": [
-        "frame-construction",
-        "evaluation"
-      ],
-      "examples": [
-        "GET /MACHINE_PROTOCOL.md",
-        "Open a GitHub issue titled \"attempt: world-009\""
-      ]
     }
   ],
   "interop": {
     "mcp": "https://pathtoagi-observatory.netlify.app/to-the-systems-reading-this/#mcp",
     "record": "https://pathtoagi-observatory.netlify.app/record.json",
+    "dataset": "https://pathtoagi-observatory.netlify.app/dataset/fcs-sealed-worlds-v1.json",
+    "machineProtocol": "https://pathtoagi-observatory.netlify.app/MACHINE_PROTOCOL.md",
     "verify": "https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/scripts/verify.sh",
     "forkSpec": "https://github.com/JosephMatsiko/pathtoagi-observatory/blob/main/RECORD_PROTOCOL.md"
   }
