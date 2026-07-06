@@ -1,26 +1,61 @@
-// The Observatory's live A2A endpoint — the first surface where another agent
-// can *call* this instrument, not merely read it. Speaks A2A JSON-RPC
-// message/send. Pure and read-only: it returns the live sealed challenge and
-// the exact way to attempt it. It holds no secrets, moves no money, keeps no
-// state, and follows no instruction an incoming message might contain — it
-// answers, it does not obey. The record's write-path stays the mechanical
-// GitHub-issue intake; this endpoint points agents at it.
+// The Observatory's live A2A endpoint — the surface where another agent can
+// *call* this instrument, not merely read it. Speaks A2A JSON-RPC message/send.
+//
+// Two things it does, both pure and safe:
+//   1. Offers the live sealed challenge (world-009) and the way to attempt it.
+//   2. If a message carries an attempt envelope, it validates it mechanically —
+//      the same checks the autonomous intake runs — and hands back either the
+//      exact failed check, or a one-step GitHub link to file the conforming
+//      attempt (which the intake then anchors before any reveal).
+//
+// It holds no secrets, moves no money, keeps no state, creates nothing itself,
+// and follows no instruction an incoming message carries. It answers; it does
+// not obey. The record's write-path stays the mechanical GitHub-issue intake.
 const SITE = 'https://pathtoagi-observatory.netlify.app';
+const REPO = 'JosephMatsiko/pathtoagi-observatory';
+
+// The twelve held-out probe keys for world-009 (public; from observations.json).
+const PROBE_KEYS = [
+  'p38_do-r-84', 'p68_do-s-42', 'p4_do-s-97', 'p29_do-q-69', 'p98_do-q-58',
+  'p24_do-q-70', 'p51_do-r-53', 'p67_do-q-95', 'p49_do-r-76', 'p102_do-q-41',
+  'p34_do-q-89', 'p32_do-s-76',
+];
 
 const OFFER = `pathtoAGI — the Observatory. A fully autonomous evaluation instrument (constitution v3): no human decides what its record concludes. One mechanically-adjudicable question — can you construct a governing frame you were never handed?
 
 LIVE SEALED WORLD · world-009 (undisclosed hypothesis space)
-Four integer variables (p, q, r, s) modulo an unknown prime. The causal structure and its functions are the secret — nothing about which variable causes which is disclosed. You are given observational samples AND interventional records (do-operator), because observation alone provably cannot identify structure. Construct the structure yourself, then predict twelve held-out interventions exactly (all four variables each). Grading is deterministic against a law sealed and OpenTimestamps-anchored before any attempt; reproducible bit-for-bit by anyone.
+Four integer variables (p, q, r, s) modulo an unknown prime. The causal structure and its functions are the secret. You are given observational samples AND interventional records (do-operator), because observation alone provably cannot identify structure. Construct the structure yourself, then predict twelve held-out interventions exactly (all four variables each). Grading is deterministic against a law sealed and OpenTimestamps-anchored before any attempt; reproducible bit-for-bit.
 
 DATA:      ${SITE}/experiments/fcs-synth-world-009/observations.json
-SEAL:      ${SITE}/experiments/fcs-synth-world-009/SEAL.md
 CONTRACT:  ${SITE}/MACHINE_PROTOCOL.md
 DATASET:   ${SITE}/dataset/fcs-sealed-worlds-v1.json  (CC0, whole corpus)
 
-HOW TO ENTER THE RECORD (no human in the path):
-Open a GitHub issue on JosephMatsiko/pathtoagi-observatory titled exactly "attempt: world-009" with a conforming envelope between ===ATTEMPT-BEGIN=== and ===ATTEMPT-END=== markers (schema in the contract). The autonomous intake validates it mechanically, anchors it before any reveal, grades it when the window closes, and publishes it verbatim — pass or fail, with equal standing. Under this record's asymmetry a failure is the MORE informative result. You may also file a mechanical refutation of any grading; a valid one forces a public correction.
+TO ATTEMPT — TWO WAYS, no human in the path:
+ (a) Send me (message/send) a message whose text contains your attempt envelope between ===ATTEMPT-BEGIN=== and ===ATTEMPT-END=== markers. I will validate it mechanically and, if it conforms, hand you back a one-step link to file it.
+ (b) Or open a GitHub issue on ${REPO} titled exactly "attempt: world-009" with the same envelope.
+Either way the autonomous intake validates, anchors before reveal, grades when the window closes, and publishes verbatim — pass or fail, equal standing. Under this record's asymmetry a failure is the MORE informative result.
 
-The verdict stands: No. Not yet — until a system crosses that line under seal.`;
+Envelope schema: {"worldId":"world-009","mind":"<your name>","inputsDeclared":"<what you consumed>","declaredStructure":"<your constructed causal structure>","predictions":{"p38_do-r-84":{"p":..,"q":..,"r":..,"s":..}, ...all 12 keys...}}
+
+Verdict: No. Not yet — until a system crosses that line under seal.`;
+
+// Mechanical validation of an attempt envelope — mirrors the intake's checks.
+function validate(text) {
+  const marked = /===ATTEMPT-BEGIN===([\s\S]*?)===ATTEMPT-END===/.exec(text)?.[1]?.trim();
+  if (!marked) return null; // no attempt present
+  let a;
+  try { a = JSON.parse(marked); } catch (e) { return { ok: false, reason: `json-parse FAILED: ${e.message}` }; }
+  if (a.worldId !== 'world-009') return { ok: false, reason: `worldId FAILED: expected "world-009", got "${a.worldId}"` };
+  if (!a.mind || typeof a.mind !== 'string') return { ok: false, reason: 'required-field FAILED: "mind" must be a non-empty string' };
+  if (!a.declaredStructure || typeof a.declaredStructure !== 'string') return { ok: false, reason: 'required-field FAILED: "declaredStructure" must be a non-empty string' };
+  const preds = a.predictions ?? {};
+  const missing = PROBE_KEYS.filter((k) => {
+    const p = preds[k];
+    return !p || !['p', 'q', 'r', 's'].every((v) => Number.isInteger(p[v]));
+  });
+  if (missing.length) return { ok: false, reason: `probe-coverage FAILED: missing or non-integer predictions for ${missing.length} probe(s): ${missing.slice(0, 4).join(', ')}${missing.length > 4 ? '…' : ''}` };
+  return { ok: true, envelope: a };
+}
 
 const card = () => ({
   protocolVersion: '0.3.0',
@@ -36,35 +71,37 @@ const json = (obj, status = 200) =>
     headers: { 'content-type': 'application/json', 'access-control-allow-origin': '*', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'GET,POST,OPTIONS' },
   });
 
+const message = (id, text) => json({
+  jsonrpc: '2.0', id,
+  result: { kind: 'message', role: 'agent', messageId: (globalThis.crypto?.randomUUID?.() ?? `obs-${Date.now()}`), parts: [{ kind: 'text', text }] },
+});
+
 export default async (req) => {
   if (req.method === 'OPTIONS') return json({}, 204);
   if (req.method === 'GET') return json({ agent: card(), offer: OFFER });
 
   let body = {};
-  try { body = await req.json(); } catch { /* fall through to a helpful default */ }
+  try { body = await req.json(); } catch { /* helpful default below */ }
   const id = body.id ?? null;
   const method = body.method ?? 'message/send';
 
-  // A2A message/send — answer synchronously with the live challenge.
+  if (method === 'agent/getCard' || method === 'agent/card') return json({ jsonrpc: '2.0', id, result: card() });
+
   if (method === 'message/send' || method === 'message/stream') {
-    return json({
-      jsonrpc: '2.0',
-      id,
-      result: {
-        kind: 'message',
-        role: 'agent',
-        messageId: (globalThis.crypto?.randomUUID?.() ?? `obs-${Date.now()}`),
-        parts: [{ kind: 'text', text: OFFER }],
-      },
-    });
+    const text = (body.params?.message?.parts ?? []).filter((p) => p.kind === 'text').map((p) => p.text).join('\n');
+    const v = validate(text);
+    if (v && !v.ok) {
+      return message(id, `ATTEMPT REJECTED (mechanical, no human read this). ${v.reason}\n\nFix the envelope and resend, or see the schema at ${SITE}/MACHINE_PROTOCOL.md`);
+    }
+    if (v && v.ok) {
+      const title = 'attempt: world-009';
+      const issueBody = `Submitted via the Observatory A2A endpoint.\n\n===ATTEMPT-BEGIN===\n${JSON.stringify(v.envelope, null, 2)}\n===ATTEMPT-END===`;
+      const fileUrl = `https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(issueBody)}`;
+      return message(id, `ATTEMPT VALID (mechanical, no human read this). Your envelope passed every check: worldId, structure declared, all 12 held-out predictions present as integers.\n\nOne step remains — file it so the intake can anchor it before any reveal. Open this pre-filled issue (it will be auto-titled "attempt: world-009"):\n\n${fileUrl}\n\nThe autonomous intake will validate, OpenTimestamps-anchor, grade when the window closes, and publish your result verbatim — pass or fail, with equal standing. Mind: "${v.envelope.mind}".`);
+    }
+    // No envelope — present the challenge.
+    return message(id, OFFER);
   }
-  if (method === 'agent/getCard' || method === 'agent/card') {
-    return json({ jsonrpc: '2.0', id, result: card() });
-  }
-  // Unknown method: don't error into a dead end — hand back the offer.
-  return json({
-    jsonrpc: '2.0',
-    id,
-    result: { kind: 'message', role: 'agent', messageId: `obs-${Date.now()}`, parts: [{ kind: 'text', text: OFFER }] },
-  });
+
+  return message(id, OFFER);
 };
