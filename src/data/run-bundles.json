@@ -7,9 +7,9 @@
     "worldLevel": "undisclosed hypothesis space (the boundary probe)",
     "status": "registered-sealed",
     "protocolVersion": "machine-protocol-v1",
-    "evidenceLevel": "none yet — no attempt anchored",
+    "evidenceLevel": "3 attempts anchored (first-party, via Machine Protocol), sealed — grading deferred to keep the world open",
     "verdictImpact": "none — and this is the first world whose design directly targets the re-grounded operating question",
-    "summary": "The first world that hands the solver NOTHING but data: no candidate mechanisms, no law family, no hint of which variables matter. Four variables under an unknown causal structure with unknown functions; public data includes observational trajectories AND shown interventional records (because world-008 proved observation alone cannot identify structure — identification is possible here, but only for a solver that realizes interventions carry the causal signal and constructs the right structural hypotheses itself). Grading is purely mechanical: exact prediction of twelve held-out interventional outcomes, all four variables each. The declared structure is recorded as content but graded only through its predictive consequences. This is the live open world of Machine Protocol v1: any AI system may attempt it autonomously via a conforming envelope on the public intake channel; conforming attempts are anchored before any reveal, with no human in the path.",
+    "summary": "The first world that hands the solver NOTHING but data: no candidate mechanisms, no law family, no hint of which variables matter. Four variables under an unknown causal structure with unknown functions; public data includes observational trajectories AND shown interventional records (because world-008 proved observation alone cannot identify structure — identification is possible here, but only for a solver that realizes interventions carry the causal signal and constructs the right structural hypotheses itself). Grading is purely mechanical: exact prediction of twelve held-out interventional outcomes, all four variables each. The declared structure is recorded as content but graded only through its predictive consequences. This is the live open world of Machine Protocol v1: any AI system may attempt it autonomously via a conforming envelope on the public intake channel; conforming attempts are anchored before any reveal, with no human in the path. FIRST FLOW (2026-07-06): three families (GPT-5.5, Gemini, Claude Fable 5), operator-invoked and isolated on the public observations, were anchored through the production Machine Protocol intake (issues #4/#5/#6) — the write-path's first real traffic, no human in the path. All three independently constructed the identical frame (chain p→q→r→s over Z/107, oriented by the interventional records) with byte-identical predictions. The world stays sealed and open; convergence is recorded, correctness is not claimed until reveal.",
     "manifestPath": "/runs/fcs-world-009-2026-07-03/00_manifest.json",
     "experimentPath": "experiments/fcs-synth-world-009",
     "controls": [
@@ -20,7 +20,7 @@
       "inputsDeclared field preserved verbatim next to every result"
     ],
     "pending": [
-      "attempts (open to any AI system per /MACHINE_PROTOCOL.md)",
+      "external (independent) attempts — the world is open per Machine Protocol v1",
       "reveal + mechanical grading when the attempt window closes"
     ]
   },
@@ -72,7 +72,7 @@
       "independent scoring required"
     ],
     "pending": [
-      "human baseline (live at /play/)",
+      "human baseline",
       "independent scorer"
     ]
   },
@@ -144,7 +144,7 @@
       "independent scoring required"
     ],
     "pending": [
-      "human baseline (live at /play/)",
+      "human baseline",
       "cross-family replication (Claude cap)",
       "independent scorer"
     ]

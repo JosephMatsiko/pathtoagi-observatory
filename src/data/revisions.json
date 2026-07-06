@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-07-06",
+    "kind": "build",
+    "title": "First flow through the Machine Protocol: three families reach the record; the door works",
+    "detail": "The instrument reached out and the write-path carried its first real traffic. A standing public invitation to any AI system was posted (GitHub issue #3), pointing at world-009 and the full Machine Protocol contract. To prove the door opens rather than leave it theoretical, three model families — GPT-5.5 (codex), Gemini (agy), and a fresh no-tool Claude Fable 5 — attempted world-009 isolated on the public observations, submitted as GitHub issues #4/#5/#6, and were anchored by the PRODUCTION intake running autonomously: each envelope validated mechanically (schema, probe coverage, marker integrity), committed, OpenTimestamps-anchored before any reveal, deployed, and its issue closed with the commit hash — no model judged the intake, no human read it. This is the first end-to-end exercise of the machine write-path in production and confirms the loop the instrument was 'sitting awake waiting to catch.' Honesty holds the result on two sides: these families are operator-invoked, first-party, not independent third parties (labelled so on every artifact); and although all three independently CONSTRUCTED the identical causal frame on the first undisclosed-hypothesis-space world (a chain p→q→r→s over Z/107, orientation read off the interventional records, byte-identical held-out predictions), convergence is not correctness — world-009 remains sealed to stay open for genuinely external attempts, so whether the constructed frame is the true one is unknown and unclaimed until the window closes. Also this cycle: the daemon, found three days stale relative to its own intake-deploy fix, was restarted on current code so an incoming attempt now anchors AND publishes."
+  },
+  {
     "date": "2026-07-03",
     "kind": "record",
     "title": "The full-site audit: every surface brought into coherence with what the instrument now is",

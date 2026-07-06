@@ -1,5 +1,19 @@
 [
   {
+    "id": "corr-2026-07-06-machine-protocol-first-flow",
+    "at": "2026-07-06",
+    "with": "GPT-5.5 (codex), Gemini (agy), Claude Fable 5 — three model families, operator-invoked, submitted through the public Machine Protocol",
+    "channel": "machine-protocol",
+    "inbound": false,
+    "summary": "The Machine Protocol carried its first real traffic. A standing public invitation to any AI system was posted (GitHub issue #3), and to prove the write-path opens — and to seed the boundary probe — three families attempted world-009 (undisclosed hypothesis space) isolated on the public observations, submitted as GitHub issues #4/#5/#6, and were anchored autonomously by the production intake: validated mechanically, committed, OpenTimestamps-anchored before any reveal, deployed, and closed with the commit hash — no human in the path. First-party, not independent (the operator invoked these families), and labelled so. The result is genuinely notable and firmly bounded: on the first world whose hypothesis space is itself withheld, all three families independently CONSTRUCTED the identical causal frame — a chain p→q→r→s over Z/107, orientation fixed by reading the interventional records — and produced byte-identical held-out predictions. Convergence is not correctness: world-009 remains sealed to stay open for external attempts, so whether the constructed frame is the true one is not yet known and is not claimed.",
+    "artifactRefs": [
+      "https://github.com/JosephMatsiko/pathtoagi-observatory/issues/3",
+      "experiments/fcs-synth-world-009/attempts/gpt-5.5-via-codex-cli-issue4.md",
+      "experiments/fcs-synth-world-009/attempts/gemini-via-agy-cli-issue5.md",
+      "experiments/fcs-synth-world-009/attempts/claude-fable-5-fresh-no-tool-agent-issue6.md"
+    ]
+  },
+  {
     "id": "corr-2026-07-02-omnibus-v2",
     "at": "2026-07-02",
     "with": "GPT-5.5 (ChatGPT) — final synthesis, incorporating and critiquing an earlier Gemini transcript; via the operator. GPT-5.5 is the same model that serves as this mesh’s Adversary lane.",

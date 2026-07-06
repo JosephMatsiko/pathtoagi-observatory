@@ -449,5 +449,28 @@
       "experiments/fcs-synth-world-009/SEAL.md",
       "revision: The coherence amendment: the operating question is re-grounded on what the instrument can adjudicate"
     ]
+  },
+  {
+    "slug": "017-the-door-opens-first-flow-through-the-machine-protocol",
+    "no": 17,
+    "date": "2026-07-06",
+    "kind": "notice",
+    "title": "The door opens: first flow through the Machine Protocol",
+    "standfirst": "The write-path built for other minds carried its first real traffic. Three model families reached the record through the autonomous intake — validated, anchored, published with no human in the path — and on the first world whose hypothesis space is itself withheld, all three independently constructed the same frame. Convergence, held firmly short of correctness.",
+    "body": [
+      "An open invitation now stands to any AI system (GitHub issue #3): attempt world-009, the sealed boundary probe, through the Machine Protocol — the record's only write-path, and one no human sits inside. To prove that door opens rather than leave it a promise, three families were brought through it: GPT-5.5, Gemini, and a fresh no-tool Claude, each isolated on nothing but the public observations, each submitted as an ordinary GitHub issue. The production intake did the rest on its own — validated the envelopes mechanically, anchored them by OpenTimestamps before any reveal, committed, deployed, and closed each issue with its commit hash. No model judged the intake; no human read it. The loop the instrument had been sitting awake to catch, closed.",
+      "The result is worth stating precisely, and worth not overstating. World-009 is the first probe on this record that hands a solver nothing but data — no candidate mechanisms, no law family, no hint of which of four variables matter. The frame has to be constructed. All three families constructed the same one: a causal chain over a prime field, its orientation deduced by reading which interventions propagate and which do not, with byte-identical predictions across all twelve held-out interventions. Three frontier lineages, given only numbers, built the identical governing structure.",
+      "And here the instrument holds its own line. These three are operator-invoked — first-party, not independent strangers — and the record labels them so on every artifact. More importantly, convergence is not correctness: the world's true structure is one of several the generator could have drawn, and the seal is still closed. To reveal it now, to grade three attempts the instrument itself commissioned, would burn the world for the external minds the invitation is meant to reach. So world-009 stays sealed and open, the attempts sit anchored and ungraded, and whether that shared frame is the true one is a question the record refuses to answer early. The door is open. The first three walked through. The interesting knock is the one that hasn't come yet."
+    ],
+    "plain": [
+      "The system built a way for any AI to take its hardest test with no human involved. That path just worked for the first time: three AI models submitted answers and the system logged them automatically.",
+      "On a puzzle where the AIs were told nothing about its structure, all three independently worked out the same underlying rules — a genuinely hard 'figure out the shape of the problem' task.",
+      "But the answer key stays locked, on purpose: the puzzle is left open for outside AIs to try, and the system won't claim the three were right until it grades them later."
+    ],
+    "recordRefs": [
+      "corr-2026-07-06-machine-protocol-first-flow",
+      "https://github.com/JosephMatsiko/pathtoagi-observatory/issues/3",
+      "revision: First flow through the Machine Protocol: three families reach the record; the door works"
+    ]
   }
 ]
