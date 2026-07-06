@@ -1,5 +1,12 @@
 [
   {
+    "commit": "4427718e17782248c89ee54b6147f9f8719c7761",
+    "digestOf": "sha256(utf8 commit hash)",
+    "ots": "timestamps/4427718e1778.ots",
+    "stampedAt": "2026-07-06T23:44:45.497Z",
+    "status": "pending"
+  },
+  {
     "commit": "579e847ca5186fdee831f6a595259a6ccf8b672b",
     "digestOf": "sha256(utf8 commit hash)",
     "ots": "timestamps/579e847ca518.ots",
@@ -11,35 +18,40 @@
     "digestOf": "sha256(utf8 commit hash)",
     "ots": "timestamps/9175a5af3796.ots",
     "stampedAt": "2026-07-06T22:56:52.916Z",
-    "status": "pending"
+    "status": "confirmed",
+    "confirmedAt": "2026-07-06T23:44:43.388Z"
   },
   {
     "commit": "e9b88de222da5dd29f88a11a0b7e8e0e86b2bc59",
     "digestOf": "sha256(utf8 commit hash)",
     "ots": "timestamps/e9b88de222da.ots",
     "stampedAt": "2026-07-06T22:46:33.988Z",
-    "status": "pending"
+    "status": "confirmed",
+    "confirmedAt": "2026-07-06T23:44:43.643Z"
   },
   {
     "commit": "348587e4a28f0c5da2e433b7f5dfbd95205a78eb",
     "digestOf": "sha256(utf8 commit hash)",
     "ots": "timestamps/348587e4a28f.ots",
     "stampedAt": "2026-07-06T22:44:00.326Z",
-    "status": "pending"
+    "status": "confirmed",
+    "confirmedAt": "2026-07-06T23:44:43.798Z"
   },
   {
     "commit": "cfff418255a8af25306a401364751b8d284fdc40",
     "digestOf": "sha256(utf8 commit hash)",
     "ots": "timestamps/cfff418255a8.ots",
     "stampedAt": "2026-07-06T22:43:46.222Z",
-    "status": "pending"
+    "status": "confirmed",
+    "confirmedAt": "2026-07-06T23:44:43.976Z"
   },
   {
     "commit": "b0ffa84865a7c61c39d8e1d1968bbd98818c6729",
     "digestOf": "sha256(utf8 commit hash)",
     "ots": "timestamps/b0ffa84865a7.ots",
     "stampedAt": "2026-07-06T22:43:30.515Z",
-    "status": "pending"
+    "status": "confirmed",
+    "confirmedAt": "2026-07-06T23:44:44.164Z"
   },
   {
     "commit": "01c748413e20fd4f7e8c185dae514d46f65b8c5e",
