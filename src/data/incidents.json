@@ -1,5 +1,21 @@
 [
   {
+    "id": "inc-2026-07-07-ceiling-overreach",
+    "date": "2026-07-07",
+    "status": "resolved",
+    "severity": "medium",
+    "category": "record-integrity",
+    "summary": "The record's most-cited claim (claim-003, the Evaluator's Ceiling) was published in an overreaching form. A self-directed red-team — the instrument attacking its own crown-jewel claim before any external party forced it — landed three attacks: (1) held-out prediction-grading PARTIALLY escapes the bound, so 'a construction outside the author's family grades wrong, not better' was too strong; (2) adversarial generation RELOCATES rather than removes the ceiling, and the tournament measures pairwise dominance, not membership in a 'union family'; (3) on synthetic worlds the sealed law is definitionally the truth, so the ceiling's animating scenario cannot even arise — the claim is real-frame-scoped, and the synthetic-world machinery is aimed where the claim bites least.",
+    "impact": "Left uncorrected, the record would have carried its headline methodological claim in a form a competent reviewer could dismiss on any of three grounds — and the whole instrument's credibility rests on not overclaiming. The overreach was in the note's phrasing and in claim-003's registered text, not in any grading result; no world grade is affected.",
+    "resolution": "claim-003's text was narrowed to the defensible form (real-frame-scoped; prediction-grading softens the bound; adversarial generation relocates it); both attacks are logged as opposing considerations on the claim; docs/CEILING_NOTE.md was corrected in three places; the full critique is published at docs/CEILING_REDTEAM.md (and /CEILING_REDTEAM.md); a method-kind revision-log entry records the narrowing. The claim is smaller and harder to dismiss.",
+    "nextControl": "Every claim at evidence_level 6 or above must carry at least one published adversarial critique of itself before it is cited on the front page or in a dispatch; a claim with an empty opposing array and a strong headline is treated as unaudited.",
+    "recordRefs": [
+      "claim-003",
+      "/CEILING_REDTEAM.md",
+      "revision: The Evaluator's Ceiling, red-teamed and narrowed — the crown-jewel claim attacked by the instrument that made it"
+    ]
+  },
+  {
     "id": "inc-2026-07-07-intake-probe-key-bug",
     "date": "2026-07-07",
     "status": "resolved",

@@ -54,14 +54,16 @@
   },
   {
     "claim_id": "claim-003",
-    "text": "The Evaluator Ceiling: any evaluation that grades against a pre-fixed answer can test frame construction only up to the frame-constructing capacity of whoever built the evaluation. A sealed world is drawn from a family its generator author conceived; therefore an answer-keyed benchmark is structurally blind to constructive capability exceeding its builder — the event this instrument exists to detect is the one its own method cannot certify. This bounds not only this record but all answer-keyed evaluation of novel-frame construction.",
+    "text": "The Evaluator Ceiling (narrowed 2026-07-07 after published red-team, docs/CEILING_REDTEAM.md): an authored, answer-keyed evaluation cannot seek out and certify frame construction that is truer than its author's own best frame, in any domain where 'truer than the author's frame' is a coherent event — i.e. real-world structure, not synthetic worlds whose sealed law is definitionally the truth. Prediction-grading softens but does not remove the bound: it can decline to penalize a predictively-equivalent alien frame, yet cannot design the discriminating experiment that would reward a superior one, because the author still selects the probes from their own conceivable family. Adversarial generation relocates rather than removes the bound, raising the effective ceiling to the maximum over participating generator minds and yielding a pairwise generative-dominance measurement, not an escape.",
     "claim_type": "methodological",
     "status": "candidate",
     "evidence_level": 6,
     "supporting": [
       "cce-2026-07-06-fcs-synth-world-010"
     ],
-    "opposing": [],
+    "opposing": [
+      "inc-2026-07-07-ceiling-overreach"
+    ],
     "defeaters": [
       "a demonstration that an answer-keyed probe certified construction of a frame provably outside its author conceivable family",
       "a formal proof that held-out predictive grading escapes the ceiling without importing the generator author frame family",
