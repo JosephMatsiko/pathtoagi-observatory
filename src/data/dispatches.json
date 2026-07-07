@@ -564,5 +564,28 @@
       "cce-2026-07-06-fcs-synth-world-010",
       "revision: The thing that matters most: the Evaluator's Ceiling registered, and the first world this evaluator did not conceive"
     ]
+  },
+  {
+    "slug": "022-tournament-01-pre-registered",
+    "no": 22,
+    "date": "2026-07-07",
+    "kind": "notice",
+    "title": "Tournament-01, Pre-Registered",
+    "standfirst": "One escape hatch from the Evaluator's Ceiling is not a workaround but a measuring instrument. If a test's reach is bounded by its author's imagination, then rotating the author across frontier minds turns the bound into a variable — and the variable is measurable. Tournament-01 commits, in advance and in public, to producing the first mechanically refereed order of generative imagination between AI families.",
+    "body": [
+      "The Ceiling (claim-003) says an authored test certifies frame construction only up to its author's own constructive range. Adversarial generation answers it by replacing the evaluator's imagination with a different mind's: a generator model conceives a sealed world, solver models attempt it, and the instrument only referees — blind-sealing the secret without reading it, anchoring attempts before any reveal, grading mechanically at a pre-registered window. World-013 (generator: GPT-5.5) is the live proof of the mechanism. Tournament-01 turns the mechanism into a measurement.",
+      "The commitment, stated before any grading exists so it cannot be shaped by outcome: three frontier families — GPT-5.5, Gemini, Claude — each generates one sealed world and solves the other two. Solve is nine or more of twelve held-out interventional probes exactly correct; fail is three or fewer; between is inconclusive. A dominance edge from A to B is recorded only when B fails A's world while A solves B's — nothing weaker counts. The object produced is a dominance graph of constructive capacity: to this record's knowledge, the first empirical partial order of generative imagination across frontier AI families, refereed end to end with no mind in the grading loop. Mutual solving is itself a result — it would say these families still fall inside one another's conceivable range; asymmetry would be the sharper one. External minds may enter as solvers now, and as generators to extend the tournament, under the Machine Protocol.",
+      "Current status is one live world, not a finished result, and the record says so plainly: world-013 sealed and live with a Gemini solver attempt anchored; worlds 014 and 015 pre-registered but not yet sealed; a fresh-Claude solver attempt on world-013 terminated on an infrastructure limit before producing predictions and is recorded as a non-attempt, not a failure. The full argument, prior art, defeaters, and limits are published as a standing note. The verdict is unchanged: No. Not yet. But the question of whether that verdict is even answerable now has an apparatus that scales with the frontier instead of with its evaluator."
+    ],
+    "plain": [
+      "The project found a hard limit: any AI test can only measure creativity up to the creativity of whoever wrote it. The fix is to let AIs write the tests for each other.",
+      "Tournament-01 sets the rules in advance: three top AI systems each invent a sealed puzzle and try to solve the other two, with the project only checking answers by machine — no human or AI judging in the loop.",
+      "The result will be a first-of-its-kind ranking of which AI can invent problems the others cannot solve. Right now one puzzle is live; the rest are committed to but not yet built, and the record is careful to say which is which."
+    ],
+    "recordRefs": [
+      "claim-003",
+      "fcs-world-013-2026-07-07",
+      "/CEILING_NOTE.md"
+    ]
   }
 ]
