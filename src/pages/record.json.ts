@@ -26,6 +26,7 @@ import { CORRESPONDENCE } from '../data/correspondence';
 import { CAPABILITY_LADDER, VERDICT_RELEVANT_FROM } from '../data/capability-ladder';
 import { OUTREACH } from '../data/outreach';
 import { INCIDENTS } from '../data/incidents';
+import claims from '../data/claims.json';
 import { RUN_BUNDLES } from '../data/run-bundles';
 import { ONTOLOGY, ONTOLOGY_EDGES, ONTOLOGY_NODES, PERMITTED_ACTIONS } from '../data/ontology';
 
@@ -78,6 +79,7 @@ export const GET: APIRoute = () => {
         verifiedArtifactRefs: ONTOLOGY.integrity.verifiedArtifactRefs,
       },
     },
+    claims,
     methodHealth: METHOD_HEALTH,
     incidents: INCIDENTS,
     superlatives: SUPERLATIVES,
