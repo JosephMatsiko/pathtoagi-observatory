@@ -1,5 +1,31 @@
 [
   {
+    "id": "fcs-world-013-2026-07-07",
+    "title": "World-013: the first adversarially-generated world (Ceiling escape hatch)",
+    "registeredAt": "2026-07-07",
+    "track": "F",
+    "worldLevel": "adversarially generated — law conceived by a generator mind, not the evaluator",
+    "status": "registered-sealed",
+    "protocolVersion": "machine-protocol-v1.1",
+    "evidenceLevel": "none yet — sealed; solver attempts pending anchor",
+    "verdictImpact": "none yet — but this is the first probe whose difficulty is not bounded by the evaluator's imagination (claim-003)",
+    "summary": "The first escape hatch through the Evaluator's Ceiling (claim-003), built. GPT-5.5, acting as GENERATOR MIND, invented a law family of its own conception — five variables, undisclosed structure — and produced the sealed world under a secrecy contract (its final message was the single word SEALED; its working log stays off-record). The evaluator encrypted the secret (generator source + law) WITHOUT reading it, via a blind-seal script that emitted only boolean consistency checks (all passed: probe count, order match, valid ranges, consistent variables) and the sha256. The generator is excluded as a solver; solvers are Gemini, a fresh Claude agent, and any external mind per the Machine Protocol. The instrument's only role is the one role that imports no imagination: mechanical refereeing of anchored attempts against the generator's sealed truth. Window closes 2026-07-27 (pre-registered); the autonomous closer reveals and grades with no mind in the path.",
+    "manifestPath": "/runs/fcs-world-013-2026-07-07/00_manifest.json",
+    "experimentPath": "experiments/fcs-synth-world-013",
+    "controls": [
+      "law conceived by a non-evaluator mind (generator: GPT-5.5, excluded as solver)",
+      "blind seal: evaluator never read the secret; boolean consistency checks only",
+      "deterministic held-out interventional grading",
+      "machine-protocol intake, anchor-before-reveal",
+      "prompt built by script from authentic data and diffed"
+    ],
+    "attemptWindowCloses": "2026-07-27",
+    "pending": [
+      "solver attempts (Gemini, fresh Claude; open to any external mind)",
+      "autonomous reveal + mechanical grading at window close"
+    ]
+  },
+  {
     "id": "fcs-world-012-2026-07-07",
     "title": "World-012: wrong-frame attractor replication (interventional format)",
     "registeredAt": "2026-07-07",

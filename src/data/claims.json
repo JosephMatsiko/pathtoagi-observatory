@@ -51,5 +51,36 @@
       "unscaffolded",
       "externally audited"
     ]
+  },
+  {
+    "claim_id": "claim-003",
+    "text": "The Evaluator Ceiling: any evaluation that grades against a pre-fixed answer can test frame construction only up to the frame-constructing capacity of whoever built the evaluation. A sealed world is drawn from a family its generator author conceived; therefore an answer-keyed benchmark is structurally blind to constructive capability exceeding its builder — the event this instrument exists to detect is the one its own method cannot certify. This bounds not only this record but all answer-keyed evaluation of novel-frame construction.",
+    "claim_type": "methodological",
+    "status": "candidate",
+    "evidence_level": 6,
+    "supporting": [
+      "cce-2026-07-06-fcs-synth-world-010"
+    ],
+    "opposing": [],
+    "defeaters": [
+      "a demonstration that an answer-keyed probe certified construction of a frame provably outside its author conceivable family",
+      "a formal proof that held-out predictive grading escapes the ceiling without importing the generator author frame family",
+      "a working counter-design accepted through this record own refutation channel"
+    ],
+    "allowed_language": [
+      "conjecture",
+      "structural bound",
+      "candidate methodological claim"
+    ],
+    "forbidden_language": [
+      "theorem",
+      "proven",
+      "impossibility result (unqualified)"
+    ],
+    "escape_hatches": [
+      "reality-as-generator: registered futures graded by the world itself, where no party holds an answer key",
+      "adversarial generation: one mind constructs the sealed world, a different mind must discover it, the instrument referees mechanically — the test then scales with the generating frontier rather than with the evaluator (first instance: world-013)",
+      "process-grading: scoring the construction trajectory rather than a fixed endpoint (open design problem; not yet mechanically specified)"
+    ]
   }
 ]

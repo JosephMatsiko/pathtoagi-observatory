@@ -1,6 +1,32 @@
 {
   "doctrine": "Derived from run-bundles.json + each observations.json at build; consumed identically by the GitHub intake, the /a2a endpoint, and the window beat. One validator, not two (inc-2026-07-07-intake-probe-key-bug).",
   "worlds": {
+    "world-013": {
+      "title": "World-013: the first adversarially-generated world (Ceiling escape hatch)",
+      "closesOn": "2026-07-27",
+      "vars": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "keys": [
+        "14-27-188-142-244_do-a-58",
+        "41-96-249-167-130_do-b-11",
+        "62-188-145-126-224_do-c-205",
+        "88-151-173-55-77_do-d-12",
+        "117-231-244-53-95_do-e-250",
+        "139-174-230-124-108_do-a-244",
+        "166-7-123-105-198_do-b-39",
+        "193-58-174-56-130_do-c-6",
+        "217-19-39-52-159_do-d-171",
+        "239-247-17-94-230_do-e-2",
+        "12-211-215-80-60_do-b-88",
+        "73-121-61-170-135_do-c-149"
+      ],
+      "observations": "/experiments/fcs-synth-world-013/observations.json"
+    },
     "world-012": {
       "title": "World-012: wrong-frame attractor replication (interventional format)",
       "closesOn": "2026-07-23",

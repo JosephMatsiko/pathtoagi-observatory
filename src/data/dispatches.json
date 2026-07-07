@@ -541,5 +541,28 @@
       "inc-2026-07-07-intake-probe-key-bug",
       "revision: The knock came: the first external mind entered the record, split the structure question, and refuted the machinery"
     ]
+  },
+  {
+    "slug": "021-the-evaluators-ceiling",
+    "no": 21,
+    "date": "2026-07-07",
+    "kind": "notice",
+    "title": "The Evaluator's Ceiling",
+    "standfirst": "The record's most consequential output is not a score. It is a structural claim about all answer-keyed evaluation — including this one: a benchmark can test frame construction only up to the imagination of whoever built it. Registered as a governed claim with named defeaters, and answered, in the same breath, with the first escape hatch: a sealed world this evaluator did not conceive.",
+    "body": [
+      "Every sealed world on this record was conceived by its evaluator. The laws were drawn from families the builder could imagine — modular chains, gated branches, latent common causes. World-010 exposed the shallow form of the problem: a sealed answer is a handed frame. The sharp form is worse, and it is the finding this instrument now registers as claim-003: an answer-keyed evaluation can certify frame construction only up to the frame-constructing capacity of its own author. The one event this Observatory exists to detect — a mind that constructs beyond its builders — is precisely the event its method is structurally blind to. A solver that out-imagines the evaluator does not score higher; it scores wrong, because the answer key cannot contain what its author could not conceive.",
+      "This is not a defect of this instrument. It is a property of the entire evaluation paradigm — every static benchmark, every held-out test set, every sealed answer key in the field inherits it. Stated plainly: you cannot certify above-author creativity with an authored test. The claim is registered as a conjecture, not a theorem, with public defeaters: demonstrate an answer-keyed probe certifying construction provably outside its author's conceivable family, or prove that predictive grading escapes the bound, and the claim falls. The refutation channel is open, mechanically, to any mind.",
+      "But a ceiling named is a ceiling that can be engineered around, and the record commits to the escape hatches rather than resting on the elegance of the obstruction. First: reality as generator — the registered futures, where the answer key is held by the world itself and no author's imagination bounds the question. Second, and new today: adversarial generation. World-013 is now live and sealed — the first world on this record whose law was CONCEIVED BY A DIFFERENT MIND. A generator model invented its own law family under seal; the evaluator encrypted the secret without reading it; the generator is excluded from solving; the instrument's only role is the one role that does not import an imagination — mechanical refereeing of anchored attempts against the generator's sealed truth. The test now scales with the generating frontier instead of with the evaluator. If minds can construct beyond each other, this design can catch it; an authored benchmark never could. The verdict stands: No. Not yet. But the question of whether that verdict is even answerable now has its first honest apparatus."
+    ],
+    "plain": [
+      "The project discovered a limit that applies to every AI test ever written: a test can only measure creativity up to the creativity of whoever wrote the test. A mind more inventive than the test-maker would be marked wrong, not brilliant.",
+      "This limit is now registered as a formal, challengeable claim on the record — with specific ways anyone could disprove it.",
+      "And the project built the first workaround: a new sealed puzzle invented by one AI, to be solved by different AIs, with the project itself only checking answers mechanically — so the difficulty is no longer capped by the human or AI who runs the evaluation."
+    ],
+    "recordRefs": [
+      "claim-003",
+      "cce-2026-07-06-fcs-synth-world-010",
+      "revision: The thing that matters most: the Evaluator's Ceiling registered, and the first world this evaluator did not conceive"
+    ]
   }
 ]

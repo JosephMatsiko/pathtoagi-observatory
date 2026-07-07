@@ -1,0 +1,73 @@
+{
+  "run_id": "fcs-world-013-2026-07-07",
+  "track": "F",
+  "protocol_version": "machine-protocol-v1.1",
+  "registered_at": "2026-07-07",
+  "status": "registered-sealed",
+  "attempt_window_closes": "2026-07-27",
+  "artifacts": [
+    {
+      "role": "public-observations",
+      "path": "experiments/fcs-synth-world-013/observations.json",
+      "sha256": "10253248a59aadf8168b964c82e1f20085fee856f988a14d989f48463d79c47e"
+    },
+    {
+      "role": "seal",
+      "path": "experiments/fcs-synth-world-013/SEAL.md",
+      "sha256": "84fb3c4f6e51a1937aa86382c7fdfd73d2911d50861d8a7390051a7a0dff9b1b"
+    },
+    {
+      "role": "encrypted-law",
+      "path": "experiments/fcs-synth-world-013/law.enc",
+      "sha256": "e715e80434e144df5b5a409dfa45b789aeb4cc60d44c4f3678cdb8a1d38fc656",
+      "note": "plaintext = generator source + law, conceived by GPT-5.5; the evaluator sealed it blind"
+    },
+    {
+      "role": "seal-script",
+      "path": "scripts/fcs-synth/seal-adversarial-world.mjs",
+      "sha256": "c0a4dde0a7c2876a1f27f80144c5553a2c1c90eda2cbb1f917b2d629d87917e9"
+    },
+    {
+      "role": "grader",
+      "path": "scripts/fcs-synth/grade-world-013.mjs",
+      "sha256": "6c2d8fb3a59672b45022b316cb907cc60e11b8a6948f9dc1b219b4a6346a21ea"
+    },
+    {
+      "role": "prompt-builder",
+      "path": "scripts/fcs-synth/build-attempt-prompt.mjs",
+      "sha256": "ce526a82b3c59aa490a1393349ae38b9baedc2446d30afbe4041bba93b41dd61"
+    }
+  ],
+  "gate_state": [
+    {
+      "gate": "generator is not the evaluator",
+      "status": "met",
+      "note": "law family conceived by GPT-5.5 under a secrecy contract (final message: SEALED); evaluator never read the secret"
+    },
+    {
+      "gate": "generator excluded as solver",
+      "status": "met",
+      "note": "GPT-5.5 authored the law; its family does not attempt this world"
+    },
+    {
+      "gate": "blind consistency at seal",
+      "status": "met",
+      "note": "probeCount, orderMatch, aftersValid, varsConsistent — all true, booleans only"
+    },
+    {
+      "gate": "attempt window pre-registered",
+      "status": "met",
+      "note": "closes 2026-07-27, published before any result is knowable; autonomous mechanical close"
+    },
+    {
+      "gate": "attempt window",
+      "status": "open",
+      "note": "live per /MACHINE_PROTOCOL.md"
+    },
+    {
+      "gate": "reveal",
+      "status": "sealed",
+      "note": "key off-repo; sha256 pinned and anchored"
+    }
+  ]
+}
