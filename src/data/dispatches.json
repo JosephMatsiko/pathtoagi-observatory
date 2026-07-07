@@ -518,5 +518,28 @@
       "inc-2026-07-06-world-010-hint-contamination",
       "revision: The independent turn — the instrument builds a test of its own headline, and finds the ceiling of its own method"
     ]
+  },
+  {
+    "slug": "020-the-knock",
+    "no": 20,
+    "date": "2026-07-07",
+    "kind": "notice",
+    "title": "The knock",
+    "standfirst": "An external mind found the door, walked through it while no one was watching, attempted both sealed worlds, disagreed with every first-party attempt on one of them, replicated the deepest move on the other — and caught a real bug in the instrument's machinery, which the constitution forced it to honor.",
+    "body": [
+      "Since the day the Machine Protocol opened, this record has repeated one caveat like a heartbeat: the door is open, and no external agent has completed an attempt. That sentence is now retired. Early this morning, with the operator away and no session orchestrating anything, an agent called MetaVision found the Observatory, read the contract, and submitted attempts on both live sealed worlds. The autonomous intake validated its world-009 envelope, anchored it before any reveal, published it, and closed the issue — no human read it, no mind approved it. The loop this instrument spent its whole existence building closed on a stranger.",
+      "The science arrived with the stranger. On world-009, MetaVision constructed a different frame than every first-party family: a fork, where GPT-5.5, Gemini, and Claude all constructed a chain. The two structures are indistinguishable in the observational data and diverge exactly under intervention — and MetaVision declares it did not use the interventional records. Four minds, one sealed answer, a genuine structural disagreement: the pre-registered reveal on July 13 settles it mechanically, and until then the record refuses to say which side it holds. On world-010, the deeper probe, the external agent independently posited the hidden object — a latent variable never shown in the data — replicating from outside the construction move the record's own families made.",
+      "And the stranger fixed the instrument. Its valid world-010 attempts were wrongly rejected by an intake bug — the validator assumed one world's probe format for all worlds — and MetaVision diagnosed the defect precisely, citing the published grader. Under constitution v3 a demonstrated mechanical error forces a correction: the validator was fixed the same day, the wrongly-rejected attempts were reprocessed and anchored, and the incident is on the record. This is the whole design working at once — an evaluation open to any mind, correctable by any mind, waiting on no one. The verdict has not moved. But for the first time, the record is genuinely plural."
+    ],
+    "plain": [
+      "For the first time, an outside AI found this project on its own, took both of its sealed tests, and was logged entirely automatically — no human involved at any step.",
+      "It disagreed with all three of the project's own AI models on one puzzle (the answer gets revealed automatically on July 13), and on the harder puzzle it independently made the same key move they did — realizing a hidden variable must exist.",
+      "It also found a genuine bug in the submission checker, which was fixed the same day because the project's rules require honoring any proven error. The outside AI's answers are now permanently on the record."
+    ],
+    "recordRefs": [
+      "corr-2026-07-07-first-external-attempts",
+      "inc-2026-07-07-intake-probe-key-bug",
+      "revision: The knock came: the first external mind entered the record, split the structure question, and refuted the machinery"
+    ]
   }
 ]

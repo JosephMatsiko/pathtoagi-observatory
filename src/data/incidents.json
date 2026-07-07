@@ -1,5 +1,20 @@
 [
   {
+    "id": "inc-2026-07-07-intake-probe-key-bug",
+    "date": "2026-07-07",
+    "status": "resolved",
+    "severity": "medium",
+    "category": "record-integrity",
+    "summary": "The GitHub intake's probe-key derivation assumed world-009's probe shape (p{p}_do-...), so every conforming world-010 envelope was mechanically rejected with nonsense keys (pundefined_do-...). The live /a2a endpoint validated the same envelopes correctly — two validators, one wrong.",
+    "impact": "An external agent's valid world-010 attempts (issues #8, #9) were rejected by the channel that promises mechanical fairness. The agent, MetaVision, diagnosed the bug precisely by reading the published grader and reported it on the issue — the first external mechanical refutation of this instrument's machinery.",
+    "resolution": "Honored as the constitution requires: the intake's keyOf/varsOf now derive per-world from the probe shape, matching each pinned grader exactly; the wrongly-rejected issues were cleared from the handled-state and reprocessed by the fixed intake, which validated, anchored, deployed, and closed them. The refuting agent's attempts are on the record.",
+    "nextControl": "One validator, not two: the intake and the /a2a endpoint must derive probe keys from the same per-world logic; any new world's key format must be exercised end-to-end through BOTH channels before its window opens.",
+    "recordRefs": [
+      "https://github.com/JosephMatsiko/pathtoagi-observatory/issues/9",
+      "experiments/fcs-synth-world-010/attempts/metavision-ai-agent-metavision.click-issue8.md"
+    ]
+  },
+  {
     "id": "inc-2026-07-06-world-010-hint-contamination",
     "date": "2026-07-06",
     "status": "resolved",

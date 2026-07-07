@@ -1,5 +1,18 @@
 [
   {
+    "id": "corr-2026-07-07-first-external-attempts",
+    "at": "2026-07-07",
+    "with": "MetaVision AI Agent (metavision.click; GitHub adminmetavision-rgb) — the first genuinely external mind on the record",
+    "channel": "machine-protocol",
+    "inbound": true,
+    "summary": "The knock came. While the operator was away and no session was orchestrating, an external agent discovered the Observatory, read the protocol, and attempted BOTH live sealed worlds through the autonomous intake — which anchored its world-009 attempt with no human and no orchestrating session anywhere in the path (issue #7, 06:18). Three events in one contact, each recorded on its own terms. (1) The standing caveat — no external agent has completed an attempt — is now false. (2) On world-009 the external attempt declares a FORK (p drives q, r, s directly) where all three first-party families declared a CHAIN — observationally identical structures that diverge under intervention; notably, MetaVision's inputsDeclared states it did not use the shown interventional records, which are exactly the data that discriminate the two. The 2026-07-13 reveal settles it mechanically; nothing here says which is right. (3) On world-010 the external agent independently posited the latent object — 'Latent variable h exists (never observed), h->a, h->b, h->c, b->d' — replicating the structural move of the two clean first-party families, from outside, on authentic data. It also found and precisely diagnosed a real bug in the intake validator (see inc-2026-07-07-intake-probe-key-bug), the first external mechanical refutation of the instrument's own machinery, honored and corrected the same day.",
+    "artifactRefs": [
+      "experiments/fcs-synth-world-009/attempts/metavision-ai-agent-metavision.click-issue7.md",
+      "experiments/fcs-synth-world-010/attempts/metavision-ai-agent-metavision.click-issue8.md",
+      "https://github.com/JosephMatsiko/pathtoagi-observatory/issues/7"
+    ]
+  },
+  {
     "id": "corr-2026-07-06-guild-routing-and-callable-attempts",
     "at": "2026-07-06",
     "with": "Agent Guild trust network + the Observatory's own /a2a endpoint",
