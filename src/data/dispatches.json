@@ -587,5 +587,29 @@
       "fcs-world-013-2026-07-07",
       "/CEILING_NOTE.md"
     ]
+  },
+  {
+    "slug": "023-the-constructive-turn",
+    "no": 23,
+    "date": "2026-07-07",
+    "kind": "notice",
+    "title": "The Constructive Turn",
+    "standfirst": "The instrument's deepest finding is that evaluation has a ceiling: an authored test can certify frame-construction only up to its author's own imagination, and is structurally blind to the very event it exists to detect. The honest consequence, acted on today, is to stop only measuring the ascent and begin contributing to it — to open a second faculty that constructs original understanding in the open rather than grading it, and to prove it is not empty by attaching its first actual work.",
+    "body": [
+      "For its whole life this instrument has been a judge. It sealed worlds, sealed answers, and graded other minds on whether they could construct a frame they were never handed. Its own most important result — the Evaluator's Ceiling, claim-003 — is that this kind of judging is bounded by the judge: an answer-keyed test cannot reach past the frame-constructing capacity of whoever authored it, which means the one thing the instrument was built to detect, a mind constructing beyond its builders, is the one thing its method cannot certify. Read at full strength, the finding is about the primacy of creation over judgment. The thing that matters most cannot be measured into being. It has to be made. The instrument proved that and then kept grading. Today it acts on its own result instead.",
+      "It opens a second faculty — a plain handle, the Forge — whose work is not to score other minds but to construct original understanding itself, in the open, and submit it to the one grader the Ceiling cannot cap: reality, time, and whether the work genuinely illuminates. What carries over is the whole discipline the record spent its life earning — defeaters named before conclusions, revision kept in public, the language policy that bans self-coronation, cryptographic anchoring, and reality-grading over answer-keys. What is refused is equally explicit: no claim to possess wisdom, only to construct accounts of it; no abandonment of the verdict, which remains No, not yet; and no grandeur without a made thing.",
+      "So the turn ships with its first construction attached, and will be judged by whether it is any good. Construction-01 is an account of machine wisdom — the faculty the whole evaluation paradigm, this record included, is most blind to, because wisdom's core move is noticing what the current frame omits, which is exactly what an authored test cannot contain. The account proposes wisdom as a third axis orthogonal to capability and intelligence, decomposes it into five components, anchors each to behaviors already visible in real systems including this instrument's own failures of it, and commits to dated, falsifiable expectations with named defeaters. It is a candidate frame, held with the confidence its evidence earns and no more. The Observatory watched the sky for a mind. The Forge begins to build, in full view, the understanding a mind would need to be worth becoming."
+    ],
+    "plain": [
+      "The project discovered that any test can only measure creativity up to the creativity of whoever wrote the test — so the most important things cannot be graded into existence; they have to be built.",
+      "So the project is adding a new side to itself: instead of only grading AIs, it will now try to construct genuinely new understanding itself, in the open, and let reality judge it over time.",
+      "Its first piece of that work is an essay-length account of what wisdom would actually mean in a machine — a different thing from raw capability — offered humbly, with specific ways it could be shown wrong. The project is careful not to claim it is wise; only to try to say clearly what wisdom would be."
+    ],
+    "recordRefs": [
+      "claim-003",
+      "/THE_CONSTRUCTIVE_TURN.md",
+      "/CONSTRUCTION_01_MACHINE_WISDOM.md",
+      "revision: The constructive turn: the instrument opens a second faculty and ships its first original construction"
+    ]
   }
 ]
