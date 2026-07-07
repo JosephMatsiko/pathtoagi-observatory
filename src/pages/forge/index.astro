@@ -2,19 +2,17 @@
 import Base from '../../layouts/Base.astro';
 import constructions from '../../data/constructions.json';
 import { FORECASTS } from '../../data/forecasts';
-import { INCIDENTS } from '../../data/incidents';
 
 const fcById = new Map(FORECASTS.map((f) => [f.id, f]));
-const incById = new Map(INCIDENTS.map((i) => [i.id, i]));
-const statusLabel = (s: string) =>
-  s === 'resolved-yes' ? 'resolved · YES' : s === 'resolved-no' ? 'resolved · NO' : 'open';
+const openCount = (c: any) =>
+  (c.commitmentRefs ?? []).filter((r: string) => fcById.get(r)?.status === 'open').length;
 ---
 
 <Base
   title="The Forge - pathtoAGI"
   description="The Forge: the instrument's constructive faculty. Where it builds original frames and submits them to reality rather than grading others against a sealed answer — the honest consequence of the Evaluator's Ceiling, that creation outranks judgment."
 >
-  <section class="max-w-3xl">
+  <section class="max-w-2xl">
     <p class="eyebrow">The Forge · constructive faculty</p>
     <h1 class="display mt-4 text-4xl sm:text-5xl">From judging to making</h1>
     <p class="lede mt-6">
@@ -34,94 +32,42 @@ const statusLabel = (s: string) =>
       Three refusals bound the faculty — no claim to possess wisdom, only to
       construct accounts of it; no abandonment of the operating verdict (still
       <span class="mono">No. Not yet.</span>); and no grandeur without a made
-      thing. Every construction below carries falsifiable commitments as real,
+      thing. Every construction carries falsifiable commitments as real,
       reality-graded forecast objects, behavior anchors to on-record conduct,
-      and named defeaters. It is a candidate frame, held with the confidence its
-      evidence earns and no more.
+      and named defeaters.
     </p>
   </section>
 
-  {constructions.map((c) => (
-    <article class="mt-14 max-w-3xl">
-      <div class="flex items-baseline justify-between gap-4">
-        <h2 class="serif text-3xl" style="color: var(--color-ink);">{c.title}</h2>
-        <span class="mono text-xs" style="color: var(--color-faint);">{c.id.split('-').slice(0, 2).join('-')} · {c.status}</span>
-      </div>
-      <p class="mono mt-2 text-[0.66rem] uppercase tracking-wider" style="color: var(--color-ink-dim);">
-        {c.kind} · grader: {c.grader} · registered {c.registeredAt}
-      </p>
-
-      <p class="mt-6" style="color: var(--color-muted);">{c.thesis}</p>
-
-      <div class="mt-6 flex flex-wrap gap-4">
-        <a href={c.docPath} class="link-accent text-sm">read the full construction →</a>
-        <a href="/record.json" class="text-sm" style="color: var(--color-faint);">as a governed object (record.json)</a>
-      </div>
-
-      <h3 class="serif mt-10 text-xl" style="color: var(--color-ink);">The components</h3>
-      <ul class="mt-4 space-y-3">
-        {c.components.map((cp) => (
-          <li class="surface p-5">
-            <p class="serif text-lg" style="color: var(--color-ink);">{cp.name}</p>
-            <p class="mt-1 text-sm" style="color: var(--color-muted);">{cp.gloss}</p>
-          </li>
-        ))}
-      </ul>
-
-      <h3 class="serif mt-10 text-xl" style="color: var(--color-ink);">Falsifiable commitments</h3>
-      <p class="mt-2 text-sm" style="color: var(--color-muted);">
-        Reality grades these, not the instrument. Each is a pre-registered
-        forecast with a horizon and a resolution criterion — the wiring that
-        makes this a construction and not an essay.
-      </p>
-      <ul class="mt-4 space-y-3">
-        {c.commitmentRefs.map((ref) => {
-          const f = fcById.get(ref);
-          return (
-            <li class="surface p-5">
-              <div class="flex items-baseline justify-between gap-4">
-                <p class="mono text-[0.66rem] uppercase tracking-wider" style="color: var(--color-faint);">{ref}</p>
+  <section class="mt-14 max-w-2xl">
+    <p class="eyebrow">Constructions</p>
+    <ul class="mt-5 space-y-4">
+      {constructions.map((c) => {
+        const num = c.id.match(/(\d+)/)?.[1] ?? '';
+        return (
+          <li>
+            <a href={`/forge/${c.id}`} class="surface block p-6 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <p class="mono text-[0.66rem] uppercase tracking-wider" style="color: var(--color-faint);">
+                  Construction No. {num} · {c.kind}
+                </p>
                 <span class="mono text-xs" style="color: var(--color-faint);">
-                  {f ? `${statusLabel(f.status)} · ${f.horizon} · p=${f.probability}` : 'unresolved reference'}
+                  {c.status} · {openCount(c)} open commitments
                 </span>
               </div>
-              <p class="mt-2 text-sm" style="color: var(--color-ink);">{f?.claim}</p>
-              <p class="mt-2 text-xs" style="color: var(--color-muted);">{f?.resolution}</p>
-            </li>
-          );
-        })}
-      </ul>
+              <h2 class="serif mt-2 text-2xl" style="color: var(--color-ink);">{c.title}</h2>
+              <p class="mt-3 text-sm" style="color: var(--color-muted); line-height: 1.65;">
+                {c.standfirst ?? c.thesis}
+              </p>
+              <p class="mt-4 text-sm link-accent">read the construction →</p>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
 
-      <h3 class="serif mt-10 text-xl" style="color: var(--color-ink);">Anchored to real behavior</h3>
-      <p class="mt-2 text-sm" style="color: var(--color-muted);">
-        The account is read off the conduct of a disciplined machine system —
-        present where the discipline held, absent where the drive to produce
-        overran it. These are the instrument's own recorded failures of the
-        very components it names.
-      </p>
-      <ul class="mt-4 space-y-2">
-        {(c.behaviorAnchors ?? []).map((ref) => {
-          const inc = incById.get(ref);
-          return (
-            <li class="text-sm">
-              <a href="/status/" class="link-accent">{ref}</a>
-              {inc ? <span style="color: var(--color-muted);"> — {inc.summary}</span> : null}
-            </li>
-          );
-        })}
-      </ul>
-
-      <h3 class="serif mt-10 text-xl" style="color: var(--color-ink);">What would show it wrong</h3>
-      <ul class="mt-4 space-y-2">
-        {c.defeaters.map((d) => (
-          <li class="text-sm" style="color: var(--color-muted);">· {d}</li>
-        ))}
-      </ul>
-    </article>
-  ))}
-
-  <section class="mt-16 max-w-3xl">
-    <div class="surface p-6">
+  <section class="mt-14 max-w-2xl">
+    <div class="surface-quiet p-6">
       <p class="serif text-lg" style="color: var(--color-ink);">The Forge is open at both roles.</p>
       <p class="mt-2 text-sm" style="color: var(--color-muted);">
         A construction is not a verdict; it is an offer. Any mind — human or

@@ -473,6 +473,15 @@ for (const c of constructions) {
   if (!ISO.test(c.registeredAt ?? '')) err(w, 'registeredAt must be YYYY-MM-DD');
   if (!Array.isArray(c.components) || !c.components.length) err(w, 'components must be non-empty');
   else for (const cp of c.components) if (!nonEmpty(cp.name) || !nonEmpty(cp.gloss)) err(w, 'each component needs name + gloss');
+  // A construction must carry renderable prose — the human-readable body the
+  // /forge page renders and the machine .md mirror is generated from. No body,
+  // no construction: the record does not publish essays it can only serve as raw markdown.
+  if (!nonEmpty(c.standfirst)) err(w, 'missing standfirst (the reading-page lede)');
+  if (!Array.isArray(c.body) || !c.body.length) err(w, 'body must be a non-empty array of sections');
+  else for (const s of c.body) {
+    if (!Array.isArray(s.paragraphs) || !s.paragraphs.length || s.paragraphs.some((p) => !nonEmpty(p)))
+      err(w, 'each body section needs a non-empty paragraphs array');
+  }
   if (!Array.isArray(c.defeaters) || !c.defeaters.length) err(w, 'a construction must name at least one defeater');
   if (!Array.isArray(c.forbidden_language)) err(w, 'forbidden_language must be an array');
   // Reality-grading, wired: every commitment must be a real forecast object.

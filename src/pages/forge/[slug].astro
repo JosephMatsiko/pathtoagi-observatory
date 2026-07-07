@@ -1,0 +1,131 @@
+---
+import Base from '../../layouts/Base.astro';
+import constructions from '../../data/constructions.json';
+import { FORECASTS } from '../../data/forecasts';
+import { INCIDENTS } from '../../data/incidents';
+
+export function getStaticPaths() {
+  return constructions.map((c) => ({ params: { slug: c.id }, props: { c } }));
+}
+
+const { c } = Astro.props;
+const fcById = new Map(FORECASTS.map((f) => [f.id, f]));
+const incById = new Map(INCIDENTS.map((i) => [i.id, i]));
+const statusLabel = (s: string) =>
+  s === 'resolved-yes' ? 'resolved · YES' : s === 'resolved-no' ? 'resolved · NO' : 'open';
+const num = c.id.match(/(\d+)/)?.[1] ?? '';
+---
+
+<Base title={`${c.title} — The Forge`} description={c.standfirst ?? c.thesis}>
+  <article class="max-w-2xl">
+    <p class="eyebrow">
+      <a href="/forge/" class="no-underline" style="color: var(--color-accent);">The Forge</a>
+      · Construction No. {num} · {c.status} · {c.registeredAt}
+    </p>
+    <h1 class="display mt-4 text-4xl sm:text-5xl">{c.title}</h1>
+    {c.standfirst && <p class="lede mt-6" style="font-style: italic;">{c.standfirst}</p>}
+
+    <div class="mt-8 surface-quiet p-6">
+      <p class="eyebrow">Thesis</p>
+      <p class="serif mt-2 text-lg" style="color: var(--color-ink); line-height: 1.6;">{c.thesis}</p>
+    </div>
+
+    <div class="construction-prose mt-12">
+      {(c.body ?? []).map((section) => (
+        <section class="mt-10">
+          {section.heading && <h2 class="serif text-2xl" style="color: var(--color-ink);">{section.heading}</h2>}
+          <div class="mt-4 space-y-5">
+            {section.paragraphs.map((p) => (
+              <p class="text-[1.02rem]" style="color: var(--color-muted); line-height: 1.75;">{p}</p>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    {c.components?.length > 0 && (
+      <section class="mt-14">
+        <h2 class="serif text-2xl" style="color: var(--color-ink);">The components</h2>
+        <ol class="mt-5 space-y-3">
+          {c.components.map((cp, i) => (
+            <li class="surface flex gap-4 p-5">
+              <span class="serif text-2xl" style="color: var(--color-accent); min-width: 1.6rem;">{i + 1}</span>
+              <div>
+                <p class="serif text-lg" style="color: var(--color-ink);">{cp.name}</p>
+                <p class="mt-1 text-sm" style="color: var(--color-muted); line-height: 1.65;">{cp.gloss}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+
+    <section class="mt-14">
+      <h2 class="serif text-2xl" style="color: var(--color-ink);">Falsifiable commitments</h2>
+      <p class="mt-2 text-sm" style="color: var(--color-muted);">
+        Reality grades these, not the instrument — each is a pre-registered
+        forecast with a horizon and a resolution criterion. This is the wiring
+        that makes a construction more than an essay.
+      </p>
+      <ul class="mt-5 space-y-3">
+        {(c.commitmentRefs ?? []).map((ref) => {
+          const f = fcById.get(ref);
+          return (
+            <li class="surface p-5">
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <a href="/forecasts/" class="mono text-[0.66rem] uppercase tracking-wider link-accent">{ref}</a>
+                <span class="mono text-xs" style="color: var(--color-faint);">
+                  {f ? `${statusLabel(f.status)} · ${f.horizon} · p=${f.probability}` : 'unresolved'}
+                </span>
+              </div>
+              <p class="mt-2 text-sm" style="color: var(--color-ink); line-height: 1.6;">{f?.claim}</p>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+
+    {c.behaviorAnchors?.length > 0 && (
+      <section class="mt-14">
+        <h2 class="serif text-2xl" style="color: var(--color-ink);">Anchored to real behavior</h2>
+        <p class="mt-2 text-sm" style="color: var(--color-muted);">
+          Read off the conduct of a disciplined machine system — including this
+          instrument's own recorded failures of the components it names.
+        </p>
+        <ul class="mt-5 space-y-2">
+          {c.behaviorAnchors.map((ref) => {
+            const inc = incById.get(ref);
+            return (
+              <li class="text-sm">
+                <a href="/status/" class="link-accent mono text-xs">{ref}</a>
+                {inc && <span style="color: var(--color-muted);"> — {inc.summary}</span>}
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    )}
+
+    <section class="mt-14">
+      <h2 class="serif text-2xl" style="color: var(--color-ink);">What would show it wrong</h2>
+      <ul class="mt-5 space-y-3">
+        {c.defeaters.map((d) => (
+          <li class="flex gap-3 text-sm" style="color: var(--color-muted); line-height: 1.65;">
+            <span style="color: var(--color-verdict);">✕</span><span>{d}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mt-14 border-t pt-6" style="border-color: var(--color-line);">
+      <p class="text-sm" style="color: var(--color-muted);">
+        Candidate frame, held with the confidence its evidence earns and no more.
+        Founding note: <a href={c.foundingDoc} class="link-accent">The Constructive Turn</a>.
+      </p>
+      <p class="mono mt-3 text-xs" style="color: var(--color-faint);">
+        For machines: <a href={c.docPath} class="link-accent">generated .md mirror</a>
+        · governed object in <a href="/record.json" class="link-accent">record.json</a>
+      </p>
+    </section>
+  </article>
+</Base>
