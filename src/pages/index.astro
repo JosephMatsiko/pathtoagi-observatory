@@ -13,6 +13,7 @@ import runBundles from '../data/run-bundles.json';
 const topTheories = [...THEORIES].sort((a, b) => b.health - a.health).slice(0, 3);
 const leader = topTheories[0];
 const gradedWorlds = runBundles.filter((b: { status: string }) => b.status === 'graded').length;
+const liveWorlds = runBundles.filter((b: { status: string }) => b.status === 'registered-sealed').length;
 const recentEvidence = EVIDENCE.slice(0, 2);
 const liveForecast = FORECASTS.find((f) => f.id === 'fc-verdict-holds')!;
 ---
@@ -91,7 +92,7 @@ const liveForecast = FORECASTS.find((f) => f.id === 'fc-verdict-holds')!;
     <a href="/runs/" class="surface-quiet block p-5 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
       <p class="eyebrow">Sealed worlds · graded</p>
       <p class="tabular mt-2 text-3xl" style="color: var(--color-accent);">
-        {gradedWorlds}<span class="text-base" style="color: var(--color-faint);"> graded · 1 live</span>
+        {gradedWorlds}<span class="text-base" style="color: var(--color-faint);"> graded · {liveWorlds} live</span>
       </p>
       <p class="mt-1 text-sm" style="color: var(--color-muted);">
         Contamination floor zero by construction. Every failure occurs where the

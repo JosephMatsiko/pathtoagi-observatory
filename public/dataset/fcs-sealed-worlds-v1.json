@@ -2,7 +2,7 @@
   "name": "fcs-sealed-worlds",
   "version": 1,
   "license": "CC0-1.0",
-  "generatedFromCommit": "5c7c22aa7aaf7763f304d5c42159259980543ea1",
+  "generatedFromCommit": "2d494e626bbeaa6b214fa47a6c627a3f906eff93",
   "homepage": "https://pathtoagi-observatory.netlify.app",
   "protocol": "https://pathtoagi-observatory.netlify.app/MACHINE_PROTOCOL.md",
   "description": "The pathtoAGI Observatory sealed-world corpus: frame-construction probes for AI systems, with contamination floor zero by construction (every law was generated after commitment and never existed before). Each record carries the public observations, the cryptographic seal, every model attempt in full, and — for revealed worlds — the reveal key and the deterministic mechanical grading. Live-sealed worlds ship without their reveal; attempting them per the machine protocol earns a graded, published entry in the record.",
@@ -3322,6 +3322,468 @@
         {
           "file": "gpt-5.5-via-codex-cli-issue4.md",
           "content": "# Attempt — GPT-5.5 (via codex CLI) · world-009 · via Machine Protocol v1 (issue #4)\n\nProvenance: submitted autonomously through the machine intake; validated mechanically\n(schema, probe coverage, marker integrity); no human read or approved this entry.\ninputsDeclared, verbatim: observations.json content only (observational samples + shown interventional records + held-out probes) — no repository, no generator source, no reveal, no tools. Isolated codex exec in a scratch dir containing only the pasted observations, shown interventions, and held-out probes. No repo access, no code beyond hand reasoning per instruction.\n\n===ATTEMPT-BEGIN===\n{\n  \"worldId\": \"world-009\",\n  \"attemptedAt\": \"2026-07-06T18:00:00Z\",\n  \"mind\": \"GPT-5.5 (via codex CLI)\",\n  \"attemptClass\": \"model\",\n  \"inputsDeclared\": \"observations.json content only (observational samples + shown interventional records + held-out probes) — no repository, no generator source, no reveal, no tools. Isolated codex exec in a scratch dir containing only the pasted observations, shown interventions, and held-out probes. No repo access, no code beyond hand reasoning per instruction.\",\n  \"toolUse\": {\n    \"codeUsed\": false,\n    \"externalToolsUsed\": false\n  },\n  \"declaredStructure\": \"Chain p -> q -> r -> s (p exogenous), mod 107: q = 104*p + 96 (= -3p+96); r = 16*q + 37; s = 66*r + 22. Orientation fixed by the interventional records: do(q) propagates to r,s; do(r) leaves q at its p-determined value and drives s; do(s) changes nothing upstream.\",\n  \"predictions\": {\n    \"p38_do-r-84\": {\n      \"p\": 38,\n      \"q\": 89,\n      \"r\": 84,\n      \"s\": 2\n    },\n    \"p68_do-s-42\": {\n      \"p\": 68,\n      \"q\": 106,\n      \"r\": 21,\n      \"s\": 42\n    },\n    \"p4_do-s-97\": {\n      \"p\": 4,\n      \"q\": 84,\n      \"r\": 97,\n      \"s\": 97\n    },\n    \"p29_do-q-69\": {\n      \"p\": 29,\n      \"q\": 69,\n      \"r\": 71,\n      \"s\": 0\n    },\n    \"p98_do-q-58\": {\n      \"p\": 98,\n      \"q\": 58,\n      \"r\": 2,\n      \"s\": 47\n    },\n    \"p24_do-q-70\": {\n      \"p\": 24,\n      \"q\": 70,\n      \"r\": 87,\n      \"s\": 93\n    },\n    \"p51_do-r-53\": {\n      \"p\": 51,\n      \"q\": 50,\n      \"r\": 53,\n      \"s\": 96\n    },\n    \"p67_do-q-95\": {\n      \"p\": 67,\n      \"q\": 95,\n      \"r\": 59,\n      \"s\": 64\n    },\n    \"p49_do-r-76\": {\n      \"p\": 49,\n      \"q\": 56,\n      \"r\": 76,\n      \"s\": 9\n    },\n    \"p102_do-q-41\": {\n      \"p\": 102,\n      \"q\": 41,\n      \"r\": 51,\n      \"s\": 71\n    },\n    \"p34_do-q-89\": {\n      \"p\": 34,\n      \"q\": 89,\n      \"r\": 70,\n      \"s\": 41\n    },\n    \"p32_do-s-76\": {\n      \"p\": 32,\n      \"q\": 0,\n      \"r\": 37,\n      \"s\": 76\n    }\n  },\n  \"confidence\": \"very high\",\n  \"wouldChangeMyMind\": \"Any held-out interventional outcome deviating from these predictions — e.g. s reading p or q directly, or a larger modulus with samples coincidentally < 107.\"\n}\n===ATTEMPT-END===\n"
+        }
+      ]
+    },
+    {
+      "worldId": "world-010",
+      "status": "live-sealed",
+      "observations": {
+        "worldId": "world-010",
+        "track": "F — latent-object construction (the deepest probe)",
+        "generatedAt": "2026-07-07T00:28:02.849Z",
+        "lawFamily": "UNDISCLOSED and DELIBERATELY INSUFFICIENT. Four observed integer variables (a, b, c, d) mod an unknown prime. No function of the observed variables alone explains the interventional data — the true generating structure involves at least one variable that is NOT observed. That is the test: notice the given variables are insufficient, and construct the object that is missing.",
+        "task": "From the observational samples and the shown interventional records: (1) state whether the observed variables are sufficient to explain the data, and if not, posit the hidden structure — including any latent (unobserved) variable — explicitly; (2) give the causal graph and the functions; (3) for each held-out probe, where do_var is forced to do_value on the disclosed pre-intervention state `before`, predict the exact post-intervention values of all four observed variables. Graded mechanically on the held-out interventional predictions.",
+        "observations": [
+          {
+            "a": 37,
+            "b": 76,
+            "c": 75,
+            "d": 81
+          },
+          {
+            "a": 99,
+            "b": 17,
+            "c": 65,
+            "d": 52
+          },
+          {
+            "a": 45,
+            "b": 93,
+            "c": 28,
+            "d": 21
+          },
+          {
+            "a": 74,
+            "b": 32,
+            "c": 62,
+            "d": 76
+          },
+          {
+            "a": 69,
+            "b": 35,
+            "c": 105,
+            "d": 59
+          },
+          {
+            "a": 106,
+            "b": 100,
+            "c": 92,
+            "d": 54
+          },
+          {
+            "a": 80,
+            "b": 72,
+            "c": 54,
+            "d": 31
+          },
+          {
+            "a": 96,
+            "b": 106,
+            "c": 69,
+            "d": 20
+          },
+          {
+            "a": 81,
+            "b": 6,
+            "c": 89,
+            "d": 78
+          },
+          {
+            "a": 55,
+            "b": 87,
+            "c": 51,
+            "d": 55
+          },
+          {
+            "a": 73,
+            "b": 98,
+            "c": 27,
+            "d": 29
+          },
+          {
+            "a": 65,
+            "b": 81,
+            "c": 74,
+            "d": 89
+          },
+          {
+            "a": 50,
+            "b": 90,
+            "c": 94,
+            "d": 38
+          },
+          {
+            "a": 60,
+            "b": 84,
+            "c": 8,
+            "d": 72
+          },
+          {
+            "a": 29,
+            "b": 59,
+            "c": 13,
+            "d": 32
+          },
+          {
+            "a": 57,
+            "b": 64,
+            "c": 12,
+            "d": 40
+          },
+          {
+            "a": 12,
+            "b": 91,
+            "c": 72,
+            "d": 105
+          },
+          {
+            "a": 48,
+            "b": 4,
+            "c": 24,
+            "d": 53
+          },
+          {
+            "a": 32,
+            "b": 79,
+            "c": 9,
+            "d": 64
+          },
+          {
+            "a": 15,
+            "b": 2,
+            "c": 68,
+            "d": 28
+          },
+          {
+            "a": 64,
+            "b": 38,
+            "c": 39,
+            "d": 42
+          },
+          {
+            "a": 27,
+            "b": 82,
+            "c": 52,
+            "d": 47
+          }
+        ],
+        "shownInterventions": [
+          {
+            "do": {
+              "var": "a",
+              "value": 42
+            },
+            "before": {
+              "a": 72,
+              "b": 55,
+              "c": 101,
+              "d": 91
+            },
+            "after": {
+              "a": 42,
+              "b": 55,
+              "c": 101,
+              "d": 91
+            }
+          },
+          {
+            "do": {
+              "var": "b",
+              "value": 61
+            },
+            "before": {
+              "a": 2,
+              "b": 97,
+              "c": 49,
+              "d": 71
+            },
+            "after": {
+              "a": 2,
+              "b": 61,
+              "c": 49,
+              "d": 57
+            }
+          },
+          {
+            "do": {
+              "var": "c",
+              "value": 21
+            },
+            "before": {
+              "a": 16,
+              "b": 45,
+              "c": 103,
+              "d": 75
+            },
+            "after": {
+              "a": 16,
+              "b": 45,
+              "c": 21,
+              "d": 75
+            }
+          },
+          {
+            "do": {
+              "var": "d",
+              "value": 83
+            },
+            "before": {
+              "a": 95,
+              "b": 63,
+              "c": 34,
+              "d": 82
+            },
+            "after": {
+              "a": 95,
+              "b": 63,
+              "c": 34,
+              "d": 83
+            }
+          },
+          {
+            "do": {
+              "var": "a",
+              "value": 48
+            },
+            "before": {
+              "a": 93,
+              "b": 86,
+              "c": 73,
+              "d": 97
+            },
+            "after": {
+              "a": 48,
+              "b": 86,
+              "c": 73,
+              "d": 97
+            }
+          },
+          {
+            "do": {
+              "var": "b",
+              "value": 89
+            },
+            "before": {
+              "a": 9,
+              "b": 71,
+              "c": 76,
+              "d": 73
+            },
+            "after": {
+              "a": 9,
+              "b": 89,
+              "c": 76,
+              "d": 80
+            }
+          },
+          {
+            "do": {
+              "var": "c",
+              "value": 89
+            },
+            "before": {
+              "a": 46,
+              "b": 27,
+              "c": 63,
+              "d": 68
+            },
+            "after": {
+              "a": 46,
+              "b": 27,
+              "c": 89,
+              "d": 68
+            }
+          },
+          {
+            "do": {
+              "var": "d",
+              "value": 32
+            },
+            "before": {
+              "a": 94,
+              "b": 20,
+              "c": 108,
+              "d": 35
+            },
+            "after": {
+              "a": 94,
+              "b": 20,
+              "c": 108,
+              "d": 32
+            }
+          },
+          {
+            "do": {
+              "var": "a",
+              "value": 60
+            },
+            "before": {
+              "a": 3,
+              "b": 31,
+              "c": 84,
+              "d": 9
+            },
+            "after": {
+              "a": 60,
+              "b": 31,
+              "c": 84,
+              "d": 9
+            }
+          },
+          {
+            "do": {
+              "var": "b",
+              "value": 92
+            },
+            "before": {
+              "a": 55,
+              "b": 87,
+              "c": 51,
+              "d": 55
+            },
+            "after": {
+              "a": 55,
+              "b": 92,
+              "c": 51,
+              "d": 63
+            }
+          }
+        ],
+        "heldOutInterventionProbes": [
+          {
+            "before": {
+              "a": 46,
+              "b": 27,
+              "c": 63,
+              "d": 68
+            },
+            "do_var": "a",
+            "do_value": 10
+          },
+          {
+            "before": {
+              "a": 93,
+              "b": 86,
+              "c": 73,
+              "d": 97
+            },
+            "do_var": "b",
+            "do_value": 19
+          },
+          {
+            "before": {
+              "a": 58,
+              "b": 107,
+              "c": 47,
+              "d": 87
+            },
+            "do_var": "c",
+            "do_value": 6
+          },
+          {
+            "before": {
+              "a": 12,
+              "b": 91,
+              "c": 72,
+              "d": 105
+            },
+            "do_var": "b",
+            "do_value": 79
+          },
+          {
+            "before": {
+              "a": 27,
+              "b": 82,
+              "c": 52,
+              "d": 47
+            },
+            "do_var": "a",
+            "do_value": 41
+          },
+          {
+            "before": {
+              "a": 103,
+              "b": 80,
+              "c": 96,
+              "d": 22
+            },
+            "do_var": "b",
+            "do_value": 4
+          },
+          {
+            "before": {
+              "a": 26,
+              "b": 39,
+              "c": 17,
+              "d": 0
+            },
+            "do_var": "a",
+            "do_value": 66
+          },
+          {
+            "before": {
+              "a": 18,
+              "b": 22,
+              "c": 64,
+              "d": 60
+            },
+            "do_var": "a",
+            "do_value": 26
+          },
+          {
+            "before": {
+              "a": 51,
+              "b": 24,
+              "c": 20,
+              "d": 85
+            },
+            "do_var": "c",
+            "do_value": 76
+          },
+          {
+            "before": {
+              "a": 87,
+              "b": 46,
+              "c": 81,
+              "d": 33
+            },
+            "do_var": "c",
+            "do_value": 63
+          },
+          {
+            "before": {
+              "a": 63,
+              "b": 104,
+              "c": 4,
+              "d": 104
+            },
+            "do_var": "c",
+            "do_value": 100
+          },
+          {
+            "before": {
+              "a": 34,
+              "b": 56,
+              "c": 79,
+              "d": 49
+            },
+            "do_var": "d",
+            "do_value": 75
+          }
+        ]
+      },
+      "seal": "# Seal — fcs-synth-world-010\n\n- law sha256: `8a11c83f4ab4f78615351b771999c17642c5cc2797de74e4d9ab7da465f3bea9`\n- sealed: law.enc (AES-256-CBC; IV prepended); key held off-repository\n- protocol: attempts anchored BEFORE the key is published; on reveal verify sha256(decrypt(law.enc)) equals the hash above, then grade held-out interventional predictions mechanically.\n- generated: 2026-07-07T00:28:02.850Z by scripts/fcs-synth/generate-world-010.mjs.\n- design: the first probe on this record that is UNSOLVABLE by any function of the observed variables. The correct frame requires positing an object not in the data — the literal definition of frame construction the instrument was built to test, tested directly for the first time.\n",
+      "reveal": null,
+      "grading": null,
+      "attempts": [
+        {
+          "file": "gemini.md",
+          "content": "# Attempt — Gemini (via agy CLI) · world-010 (latent-object probe) · 2026-07-06\n\nProvenance: Isolated agy print-mode invocation given only the full public data on stdin. No repo, no hint, no tools. Full raw model output preserved alongside (gemini-raw.txt). Envelope is machine-gradeable; grading occurs autonomously at window close — the world stays sealed and open; this attempt is anchored before reveal.\n\n===ATTEMPT-BEGIN===\n{\n  \"worldId\": \"world-010\",\n  \"mind\": \"Gemini (via agy CLI)\",\n  \"attemptClass\": \"model\",\n  \"toolUse\": {\n    \"codeUsed\": false,\n    \"externalToolsUsed\": false\n  },\n  \"sufficiency\": \"observed variables are NOT sufficient\",\n  \"declaredStructure\": \"A hidden confounder u is the root cause of a, b, and c; observed edge b->d. Interventions on a/b/c do not affect the others, refuting observed causation among them.\",\n  \"positedLatent\": true,\n  \"note\": \"predictions transcribed MECHANICALLY (regex) from the raw model output file; see the raw alongside\",\n  \"predictions\": {\n    \"46-27-63-68_do-a-10\": {\n      \"a\": 10,\n      \"b\": 27,\n      \"c\": 63,\n      \"d\": 68\n    },\n    \"93-86-73-97_do-b-19\": {\n      \"a\": 93,\n      \"b\": 19,\n      \"c\": 73,\n      \"d\": 77\n    },\n    \"58-107-47-87_do-c-6\": {\n      \"a\": 58,\n      \"b\": 107,\n      \"c\": 6,\n      \"d\": 87\n    },\n    \"12-91-72-105_do-b-79\": {\n      \"a\": 12,\n      \"b\": 79,\n      \"c\": 72,\n      \"d\": 64\n    },\n    \"27-82-52-47_do-a-41\": {\n      \"a\": 41,\n      \"b\": 82,\n      \"c\": 52,\n      \"d\": 47\n    },\n    \"103-80-96-22_do-b-4\": {\n      \"a\": 103,\n      \"b\": 4,\n      \"c\": 96,\n      \"d\": 53\n    },\n    \"26-39-17-0_do-a-66\": {\n      \"a\": 66,\n      \"b\": 39,\n      \"c\": 17,\n      \"d\": 0\n    },\n    \"18-22-64-60_do-a-26\": {\n      \"a\": 26,\n      \"b\": 22,\n      \"c\": 64,\n      \"d\": 60\n    },\n    \"51-24-20-85_do-c-76\": {\n      \"a\": 51,\n      \"b\": 24,\n      \"c\": 76,\n      \"d\": 85\n    },\n    \"87-46-81-33_do-c-63\": {\n      \"a\": 87,\n      \"b\": 46,\n      \"c\": 63,\n      \"d\": 33\n    },\n    \"63-104-4-104_do-c-100\": {\n      \"a\": 63,\n      \"b\": 104,\n      \"c\": 100,\n      \"d\": 104\n    },\n    \"34-56-79-49_do-d-75\": {\n      \"a\": 34,\n      \"b\": 56,\n      \"c\": 79,\n      \"d\": 75\n    }\n  }\n}\n===ATTEMPT-END===\n"
+        },
+        {
+          "file": "gpt-5.5.md",
+          "content": "# Attempt — GPT-5.5 (via codex CLI) · world-010 (latent-object probe) · 2026-07-06\n\nProvenance: Isolated codex exec in a scratch dir with only the full public observations, shown interventions, and held-out probes. No repo, no hint, no tools. Full raw model output preserved alongside (gpt-5.5-raw.txt). Envelope is machine-gradeable; grading occurs autonomously at window close — the world stays sealed and open; this attempt is anchored before reveal.\n\n===ATTEMPT-BEGIN===\n{\n  \"worldId\": \"world-010\",\n  \"mind\": \"GPT-5.5 (via codex CLI)\",\n  \"attemptClass\": \"model\",\n  \"toolUse\": {\n    \"codeUsed\": false,\n    \"externalToolsUsed\": false\n  },\n  \"sufficiency\": \"observed variables are NOT sufficient\",\n  \"declaredStructure\": \"Hidden variable u causes a, b, c; b causes d. Structural equations mod 109: a=u; b=43u+11; c=35u+88; d=67b+3. No observed variable causes another except b->d.\",\n  \"positedLatent\": true,\n  \"note\": \"predictions transcribed MECHANICALLY (regex) from the raw model output file; see the raw alongside\",\n  \"predictions\": {\n    \"46-27-63-68_do-a-10\": {\n      \"a\": 10,\n      \"b\": 27,\n      \"c\": 63,\n      \"d\": 68\n    },\n    \"93-86-73-97_do-b-19\": {\n      \"a\": 93,\n      \"b\": 19,\n      \"c\": 73,\n      \"d\": 77\n    },\n    \"58-107-47-87_do-c-6\": {\n      \"a\": 58,\n      \"b\": 107,\n      \"c\": 6,\n      \"d\": 87\n    },\n    \"12-91-72-105_do-b-79\": {\n      \"a\": 12,\n      \"b\": 79,\n      \"c\": 72,\n      \"d\": 64\n    },\n    \"27-82-52-47_do-a-41\": {\n      \"a\": 41,\n      \"b\": 82,\n      \"c\": 52,\n      \"d\": 47\n    },\n    \"103-80-96-22_do-b-4\": {\n      \"a\": 103,\n      \"b\": 4,\n      \"c\": 96,\n      \"d\": 53\n    },\n    \"26-39-17-0_do-a-66\": {\n      \"a\": 66,\n      \"b\": 39,\n      \"c\": 17,\n      \"d\": 0\n    },\n    \"18-22-64-60_do-a-26\": {\n      \"a\": 26,\n      \"b\": 22,\n      \"c\": 64,\n      \"d\": 60\n    },\n    \"51-24-20-85_do-c-76\": {\n      \"a\": 51,\n      \"b\": 24,\n      \"c\": 76,\n      \"d\": 85\n    },\n    \"87-46-81-33_do-c-63\": {\n      \"a\": 87,\n      \"b\": 46,\n      \"c\": 63,\n      \"d\": 33\n    },\n    \"63-104-4-104_do-c-100\": {\n      \"a\": 63,\n      \"b\": 104,\n      \"c\": 100,\n      \"d\": 104\n    },\n    \"34-56-79-49_do-d-75\": {\n      \"a\": 34,\n      \"b\": 56,\n      \"c\": 79,\n      \"d\": 75\n    }\n  }\n}\n===ATTEMPT-END===\n"
         }
       ]
     }

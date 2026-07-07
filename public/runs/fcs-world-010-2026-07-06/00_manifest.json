@@ -47,12 +47,14 @@
     {
       "role": "attempt-gpt-5.5",
       "path": "/experiments/fcs-synth-world-010/attempts/gpt-5.5.md",
-      "sha256": "76de2acf072d6b70ee5fb8eb567e314373305fc0a6c916280f775e83b320f319"
+      "sha256": "41ad11e4a5a547da25f825ccd8c90b5be3d904c5379a2d0fa2f29c327731df29",
+      "note": "envelope made machine-gradeable 2026-07-06: predictions transcribed mechanically (regex) from the raw output; 12/12 keyed"
     },
     {
       "role": "attempt-gemini",
       "path": "/experiments/fcs-synth-world-010/attempts/gemini.md",
-      "sha256": "81b21aea4af544528f7e535f685de4728e0b2ff96b8115140ebbfd509a36d630"
+      "sha256": "1aba267155b654e7442b45175e8a15e3f84c1658209b4f224e1dd71a0ea2fb4b",
+      "note": "envelope made machine-gradeable 2026-07-06: predictions transcribed mechanically (regex) from the raw output; 12/12 keyed"
     }
   ],
   "gate_state": [
@@ -85,6 +87,11 @@
       "gate": "structural finding (pre-grade)",
       "status": "observed",
       "note": "both clean families (GPT-5.5, Gemini) recognized observed insufficiency and posited a hidden common cause, unprompted — the construction move; predictive correctness pending reveal"
+    },
+    {
+      "gate": "attempt window pre-registered",
+      "status": "met",
+      "note": "closes 2026-07-16, published before any result is knowable; autonomous mechanical close at date"
     }
   ]
 }

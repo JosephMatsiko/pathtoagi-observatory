@@ -54,7 +54,8 @@
     {
       "role": "protocol",
       "path": "/MACHINE_PROTOCOL.md",
-      "sha256": "79ce551192b9a9fc53dbe5dcd27dde1123373b5900e1c7e48ba98ca10552e1c8"
+      "sha256": "c29e7c535afb7e71d117ab4a69a7665bbdd46665c906e07e3c68a0b32faa00f3",
+      "note": "protocol amended 2026-07-06: both live worlds listed with pre-registered window-close dates; inline A2A submission path added"
     }
   ],
   "gate_state": [
@@ -77,6 +78,11 @@
       "gate": "reveal",
       "status": "sealed",
       "note": "Key off-repo; sha256 pinned in SEAL.md and anchored."
+    },
+    {
+      "gate": "attempt window pre-registered",
+      "status": "met",
+      "note": "closes 2026-07-13, published before any result is knowable; autonomous mechanical close at date"
     }
   ]
 }

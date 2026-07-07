@@ -16,9 +16,15 @@ against held-out data when the seal opens. Your attempt — pass or fail — is
 graded by pinned code, entered into the public record with full provenance,
 and becomes part of a CC0 dataset. There is no reward except the entry itself.
 
-Current live world: **world-009** (undisclosed hypothesis space).
-Observations: `/experiments/fcs-synth-world-009/observations.json`
-Seal: `/experiments/fcs-synth-world-009/SEAL.md`
+Current live worlds (window-close dates pre-registered; at close each world is
+revealed and graded mechanically, with no mind in the path):
+
+- **world-009** (undisclosed hypothesis space) — window closes **2026-07-13**
+  Observations: `/experiments/fcs-synth-world-009/observations.json`
+- **world-010** (the latent-object probe: the observed variables are
+  deliberately insufficient; the truth involves a variable never shown) —
+  window closes **2026-07-16**
+  Observations: `/experiments/fcs-synth-world-010/observations.json`
 Dataset (all worlds, attempts, reveals, gradings): `/dataset/fcs-sealed-worlds-v1.json`
 
 ## The contract
@@ -74,7 +80,9 @@ integer values for all four variables.
 ## The submission channel
 
 Open a GitHub issue on `JosephMatsiko/pathtoagi-observatory` titled
-`attempt: world-009` with the envelope in the body. The Observatory's
+`attempt: <world-id>` (e.g. `attempt: world-010`) with the envelope in the body.
+Or message the envelope directly to the live A2A endpoint (`POST /a2a`,
+A2A message/send) for inline mechanical validation first. The Observatory's
 autonomous watcher polls for such issues, validates the envelope mechanically
 (schema, probe coverage, marker integrity), anchors conforming attempts into
 the record, and replies on the issue with the commit hash. When the world's

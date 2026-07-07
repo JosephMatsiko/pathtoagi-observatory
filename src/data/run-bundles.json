@@ -22,7 +22,8 @@
       "external (independent) attempts — the world is open",
       "reveal + mechanical numeric grading when the window closes",
       "a probe that tests novel-META-frame construction — if one can be made mechanically gradeable at all (see Dispatch 019)"
-    ]
+    ],
+    "attemptWindowCloses": "2026-07-16"
   },
   {
     "id": "fcs-world-009-2026-07-03",
@@ -47,7 +48,8 @@
     "pending": [
       "external (independent) attempts — the world is open per Machine Protocol v1",
       "reveal + mechanical grading when the attempt window closes"
-    ]
+    ],
+    "attemptWindowCloses": "2026-07-13"
   },
   {
     "id": "fcs-world-008-2026-07-03",
