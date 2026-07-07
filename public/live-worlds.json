@@ -1,0 +1,104 @@
+{
+  "doctrine": "Derived from run-bundles.json + each observations.json at build; consumed identically by the GitHub intake, the /a2a endpoint, and the window beat. One validator, not two (inc-2026-07-07-intake-probe-key-bug).",
+  "worlds": {
+    "world-012": {
+      "title": "World-012: wrong-frame attractor replication (interventional format)",
+      "closesOn": "2026-07-23",
+      "vars": [
+        "x",
+        "y",
+        "z"
+      ],
+      "keys": [
+        "13-20-21_do-z-40",
+        "40-17-11_do-z-42",
+        "121-34-110_do-x-124",
+        "108-98-27_do-x-26",
+        "110-10-30_do-z-28",
+        "119-122-107_do-z-0",
+        "37-102-125_do-y-51",
+        "72-84-65_do-z-98",
+        "78-41-91_do-y-65",
+        "23-33-22_do-z-40",
+        "122-117-48_do-z-11",
+        "3-7-20_do-z-56"
+      ],
+      "observations": "/experiments/fcs-synth-world-012/observations.json"
+    },
+    "world-011": {
+      "title": "World-011: latent-object replication (fresh draw)",
+      "closesOn": "2026-07-20",
+      "vars": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "keys": [
+        "38-5-6-41_do-c-83",
+        "88-112-3-24_do-b-7",
+        "34-10-65-74_do-a-49",
+        "54-98-109-22_do-c-48",
+        "87-85-46-4_do-c-110",
+        "80-9-8-90_do-d-42",
+        "112-82-101-52_do-b-38",
+        "92-107-57-104_do-c-76",
+        "112-82-101-52_do-b-18",
+        "19-57-32-0_do-c-85",
+        "60-34-77-29_do-c-85",
+        "93-21-14-11_do-b-48"
+      ],
+      "observations": "/experiments/fcs-synth-world-011/observations.json"
+    },
+    "world-010": {
+      "title": "World-010: the latent-object probe (invent what isn't in the data)",
+      "closesOn": "2026-07-16",
+      "vars": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "keys": [
+        "46-27-63-68_do-a-10",
+        "93-86-73-97_do-b-19",
+        "58-107-47-87_do-c-6",
+        "12-91-72-105_do-b-79",
+        "27-82-52-47_do-a-41",
+        "103-80-96-22_do-b-4",
+        "26-39-17-0_do-a-66",
+        "18-22-64-60_do-a-26",
+        "51-24-20-85_do-c-76",
+        "87-46-81-33_do-c-63",
+        "63-104-4-104_do-c-100",
+        "34-56-79-49_do-d-75"
+      ],
+      "observations": "/experiments/fcs-synth-world-010/observations.json"
+    },
+    "world-009": {
+      "title": "World-009: the undisclosed hypothesis space — the live open world",
+      "closesOn": "2026-07-13",
+      "vars": [
+        "p",
+        "q",
+        "r",
+        "s"
+      ],
+      "keys": [
+        "p38_do-r-84",
+        "p68_do-s-42",
+        "p4_do-s-97",
+        "p29_do-q-69",
+        "p98_do-q-58",
+        "p24_do-q-70",
+        "p51_do-r-53",
+        "p67_do-q-95",
+        "p49_do-r-76",
+        "p102_do-q-41",
+        "p34_do-q-89",
+        "p32_do-s-76"
+      ],
+      "observations": "/experiments/fcs-synth-world-009/observations.json"
+    }
+  }
+}

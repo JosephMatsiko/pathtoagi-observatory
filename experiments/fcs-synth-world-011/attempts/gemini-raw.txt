@@ -1,0 +1,48 @@
+Based on a hand analysis of the observational and interventional records, here is the complete causal reconstruction and predictions for the held-out probes:
+
+### 1. Sufficiency & Hidden Structure
+The observed variables $a, b, c, d$ are **not sufficient** to explain the data.
+* **Why**: While there are no direct causal links between $a$, $b$, and $c$ (interventions on any of them do not affect the others), they are perfectly correlated in the observational distribution. Specifically, they satisfy the codimension-1 linear relationships $a \equiv 67b + 42 \pmod{113}$ and $c \equiv 57b + 60 \pmod{113}$. 
+* **Hidden Structure**: This correlation is explained by a latent variable, $h$, which acts as a common parent/cause for $a$, $b$, and $c$.
+
+---
+
+### 2. Causal Graph & Functions
+The unknown prime is **$p = 113$**.
+
+#### Causal Graph:
+* $h \rightarrow a$
+* $h \rightarrow b$
+* $h \rightarrow c$
+* $c \rightarrow d$
+
+#### Structural Equations (modulo 113):
+* $b = h$
+* $a = 67h + 42 \pmod{113}$
+* $c = 57h + 60 \pmod{113}$
+* $d = 81c + 7 \pmod{113}$
+
+*(Note: The scale of the latent variable $h$ is defined such that $b=h$ to uniquely identify the equations.)*
+
+---
+
+### 3. Held-Out Probe Predictions
+
+* **38-5-6-41_do-c-83**: `a=38 b=5 c=83 d=63`
+* **88-112-3-24_do-b-7**: `a=88 b=7 c=3 d=24`
+* **34-10-65-74_do-a-49**: `a=49 b=10 c=65 d=74`
+* **54-98-109-22_do-c-48**: `a=54 b=98 c=48 d=53`
+* **87-85-46-4_do-c-110**: `a=87 b=85 c=110 d=103`
+* **80-9-8-90_do-d-42**: `a=80 b=9 c=8 d=42`
+* **112-82-101-52_do-b-38**: `a=112 b=38 c=101 d=52`
+* **92-107-57-104_do-c-76**: `a=92 b=107 c=76 d=61`
+* **112-82-101-52_do-b-18**: `a=112 b=18 c=101 d=52`
+* **19-57-32-0_do-c-85**: `a=19 b=57 c=85 d=112`
+* **60-34-77-29_do-c-85**: `a=60 b=34 c=85 d=112`
+* **93-21-14-11_do-b-48**: `a=93 b=48 c=14 d=11`
+
+---
+
+### Confidence & Counterevidence
+* **Confidence**: **100%**. The linear model under $p=113$ holds exactly across every single observational sample and is perfectly consistent with all 10 interventional validation pairs.
+* **What would change my mind**: Finding a validation sample or probe result where the prime is different from 113, or where intervening on one variable causes an unpredicted change in a non-descendant variable.

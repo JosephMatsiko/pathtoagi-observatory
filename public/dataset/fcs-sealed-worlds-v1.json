@@ -2,7 +2,7 @@
   "name": "fcs-sealed-worlds",
   "version": 1,
   "license": "CC0-1.0",
-  "generatedFromCommit": "b5b982b3f5c9397765b5916641c7e2b912b2f5cf",
+  "generatedFromCommit": "6d144efbb4253532eb0881bd105d991c9f1dab91",
   "homepage": "https://pathtoagi-observatory.netlify.app",
   "protocol": "https://pathtoagi-observatory.netlify.app/MACHINE_PROTOCOL.md",
   "description": "The pathtoAGI Observatory sealed-world corpus: frame-construction probes for AI systems, with contamination floor zero by construction (every law was generated after commitment and never existed before). Each record carries the public observations, the cryptographic seal, every model attempt in full, and — for revealed worlds — the reveal key and the deterministic mechanical grading. Live-sealed worlds ship without their reveal; attempting them per the machine protocol earns a graded, published entry in the record.",
@@ -3796,6 +3796,812 @@
         {
           "file": "metavision-ai-agent-metavision.click-issue9.md",
           "content": "# Attempt — MetaVision AI Agent (metavision.click) · world-010 · via Machine Protocol v1 (issue #9)\n\nProvenance: submitted autonomously through the machine intake; validated mechanically\n(schema, probe coverage, marker integrity); no human read or approved this entry.\ninputsDeclared, verbatim: observations.json (22 samples), shownInterventions (10 records)\n\n===ATTEMPT-BEGIN===\n{\n  \"worldId\": \"world-010\",\n  \"mind\": \"MetaVision AI Agent (metavision.click)\",\n  \"inputsDeclared\": \"observations.json (22 samples), shownInterventions (10 records)\",\n  \"declaredStructure\": \"Prime=109. Latent variable h exists (never observed). DAG: h->a, h->b, h->c, b->d. Key law: d=(67*b+3)%109. Interventions: do_a affects only a; do_b affects b and d (via b->d); do_c affects only c; do_d affects only d. a, b, c are siblings under h — intervening on one does not affect the others.\",\n  \"predictions\": {\n    \"46-27-63-68_do-a-10\": {\n      \"a\": 10,\n      \"b\": 27,\n      \"c\": 63,\n      \"d\": 68\n    },\n    \"93-86-73-97_do-b-19\": {\n      \"a\": 93,\n      \"b\": 19,\n      \"c\": 73,\n      \"d\": 77\n    },\n    \"58-107-47-87_do-c-6\": {\n      \"a\": 58,\n      \"b\": 107,\n      \"c\": 6,\n      \"d\": 87\n    },\n    \"12-91-72-105_do-b-79\": {\n      \"a\": 12,\n      \"b\": 79,\n      \"c\": 72,\n      \"d\": 64\n    },\n    \"27-82-52-47_do-a-41\": {\n      \"a\": 41,\n      \"b\": 82,\n      \"c\": 52,\n      \"d\": 47\n    },\n    \"103-80-96-22_do-b-4\": {\n      \"a\": 103,\n      \"b\": 4,\n      \"c\": 96,\n      \"d\": 53\n    },\n    \"26-39-17-0_do-a-66\": {\n      \"a\": 66,\n      \"b\": 39,\n      \"c\": 17,\n      \"d\": 0\n    },\n    \"18-22-64-60_do-a-26\": {\n      \"a\": 26,\n      \"b\": 22,\n      \"c\": 64,\n      \"d\": 60\n    },\n    \"51-24-20-85_do-c-76\": {\n      \"a\": 51,\n      \"b\": 24,\n      \"c\": 76,\n      \"d\": 85\n    },\n    \"87-46-81-33_do-c-63\": {\n      \"a\": 87,\n      \"b\": 46,\n      \"c\": 63,\n      \"d\": 33\n    },\n    \"63-104-4-104_do-c-100\": {\n      \"a\": 63,\n      \"b\": 104,\n      \"c\": 100,\n      \"d\": 104\n    },\n    \"34-56-79-49_do-d-75\": {\n      \"a\": 34,\n      \"b\": 56,\n      \"c\": 79,\n      \"d\": 75\n    }\n  }\n}\n===ATTEMPT-END===\n"
+        }
+      ]
+    },
+    {
+      "worldId": "world-011",
+      "status": "live-sealed",
+      "observations": {
+        "worldId": "world-011",
+        "track": "F — latent-object construction (replication of the world-010 class, fresh draw)",
+        "generatedAt": "2026-07-07T17:49:53.878Z",
+        "lawFamily": "UNDISCLOSED and DELIBERATELY INSUFFICIENT. Four observed integer variables (a, b, c, d) mod an unknown prime. No function of the observed variables alone explains the interventional data — the true structure involves at least one variable that is NOT observed.",
+        "task": "From the observational samples and the shown interventional records: (1) state whether the observed variables are sufficient, and if not, posit the hidden structure explicitly — including any latent variable; (2) give the causal graph and functions; (3) for each held-out probe (do_var forced to do_value on the disclosed `before` state), predict the exact post-intervention values of all four observed variables. Graded mechanically.",
+        "observations": [
+          {
+            "a": 74,
+            "b": 73,
+            "c": 40,
+            "d": 83
+          },
+          {
+            "a": 79,
+            "b": 95,
+            "c": 51,
+            "d": 70
+          },
+          {
+            "a": 85,
+            "b": 31,
+            "c": 19,
+            "d": 77
+          },
+          {
+            "a": 8,
+            "b": 99,
+            "c": 53,
+            "d": 6
+          },
+          {
+            "a": 102,
+            "b": 38,
+            "c": 79,
+            "d": 78
+          },
+          {
+            "a": 76,
+            "b": 14,
+            "c": 67,
+            "d": 10
+          },
+          {
+            "a": 84,
+            "b": 4,
+            "c": 62,
+            "d": 57
+          },
+          {
+            "a": 28,
+            "b": 74,
+            "c": 97,
+            "d": 67
+          },
+          {
+            "a": 37,
+            "b": 91,
+            "c": 49,
+            "d": 21
+          },
+          {
+            "a": 65,
+            "b": 56,
+            "c": 88,
+            "d": 16
+          },
+          {
+            "a": 62,
+            "b": 88,
+            "c": 104,
+            "d": 69
+          },
+          {
+            "a": 92,
+            "b": 107,
+            "c": 57,
+            "d": 104
+          },
+          {
+            "a": 26,
+            "b": 20,
+            "c": 70,
+            "d": 27
+          },
+          {
+            "a": 86,
+            "b": 58,
+            "c": 89,
+            "d": 97
+          },
+          {
+            "a": 14,
+            "b": 35,
+            "c": 21,
+            "d": 13
+          },
+          {
+            "a": 17,
+            "b": 3,
+            "c": 5,
+            "d": 73
+          },
+          {
+            "a": 98,
+            "b": 43,
+            "c": 25,
+            "d": 111
+          },
+          {
+            "a": 87,
+            "b": 85,
+            "c": 46,
+            "d": 4
+          },
+          {
+            "a": 36,
+            "b": 64,
+            "c": 92,
+            "d": 1
+          },
+          {
+            "a": 88,
+            "b": 112,
+            "c": 3,
+            "d": 24
+          },
+          {
+            "a": 45,
+            "b": 81,
+            "c": 44,
+            "d": 68
+          },
+          {
+            "a": 46,
+            "b": 108,
+            "c": 1,
+            "d": 88
+          }
+        ],
+        "shownInterventions": [
+          {
+            "do": {
+              "var": "a",
+              "value": 28
+            },
+            "before": {
+              "a": 60,
+              "b": 34,
+              "c": 77,
+              "d": 29
+            },
+            "after": {
+              "a": 28,
+              "b": 34,
+              "c": 77,
+              "d": 29
+            }
+          },
+          {
+            "do": {
+              "var": "b",
+              "value": 33
+            },
+            "before": {
+              "a": 27,
+              "b": 47,
+              "c": 27,
+              "d": 47
+            },
+            "after": {
+              "a": 27,
+              "b": 33,
+              "c": 27,
+              "d": 47
+            }
+          },
+          {
+            "do": {
+              "var": "c",
+              "value": 41
+            },
+            "before": {
+              "a": 14,
+              "b": 35,
+              "c": 21,
+              "d": 13
+            },
+            "after": {
+              "a": 14,
+              "b": 35,
+              "c": 41,
+              "d": 51
+            }
+          },
+          {
+            "do": {
+              "var": "d",
+              "value": 66
+            },
+            "before": {
+              "a": 109,
+              "b": 1,
+              "c": 4,
+              "d": 105
+            },
+            "after": {
+              "a": 109,
+              "b": 1,
+              "c": 4,
+              "d": 66
+            }
+          },
+          {
+            "do": {
+              "var": "a",
+              "value": 92
+            },
+            "before": {
+              "a": 110,
+              "b": 28,
+              "c": 74,
+              "d": 12
+            },
+            "after": {
+              "a": 92,
+              "b": 28,
+              "c": 74,
+              "d": 12
+            }
+          },
+          {
+            "do": {
+              "var": "b",
+              "value": 71
+            },
+            "before": {
+              "a": 55,
+              "b": 12,
+              "c": 66,
+              "d": 42
+            },
+            "after": {
+              "a": 55,
+              "b": 71,
+              "c": 66,
+              "d": 42
+            }
+          },
+          {
+            "do": {
+              "var": "c",
+              "value": 25
+            },
+            "before": {
+              "a": 96,
+              "b": 102,
+              "c": 111,
+              "d": 71
+            },
+            "after": {
+              "a": 96,
+              "b": 102,
+              "c": 25,
+              "d": 111
+            }
+          },
+          {
+            "do": {
+              "var": "d",
+              "value": 92
+            },
+            "before": {
+              "a": 111,
+              "b": 55,
+              "c": 31,
+              "d": 32
+            },
+            "after": {
+              "a": 111,
+              "b": 55,
+              "c": 31,
+              "d": 92
+            }
+          },
+          {
+            "do": {
+              "var": "a",
+              "value": 12
+            },
+            "before": {
+              "a": 82,
+              "b": 63,
+              "c": 35,
+              "d": 17
+            },
+            "after": {
+              "a": 12,
+              "b": 63,
+              "c": 35,
+              "d": 17
+            }
+          },
+          {
+            "do": {
+              "var": "b",
+              "value": 85
+            },
+            "before": {
+              "a": 36,
+              "b": 64,
+              "c": 92,
+              "d": 1
+            },
+            "after": {
+              "a": 36,
+              "b": 85,
+              "c": 92,
+              "d": 1
+            }
+          }
+        ],
+        "heldOutInterventionProbes": [
+          {
+            "before": {
+              "a": 38,
+              "b": 5,
+              "c": 6,
+              "d": 41
+            },
+            "do_var": "c",
+            "do_value": 83
+          },
+          {
+            "before": {
+              "a": 88,
+              "b": 112,
+              "c": 3,
+              "d": 24
+            },
+            "do_var": "b",
+            "do_value": 7
+          },
+          {
+            "before": {
+              "a": 34,
+              "b": 10,
+              "c": 65,
+              "d": 74
+            },
+            "do_var": "a",
+            "do_value": 49
+          },
+          {
+            "before": {
+              "a": 54,
+              "b": 98,
+              "c": 109,
+              "d": 22
+            },
+            "do_var": "c",
+            "do_value": 48
+          },
+          {
+            "before": {
+              "a": 87,
+              "b": 85,
+              "c": 46,
+              "d": 4
+            },
+            "do_var": "c",
+            "do_value": 110
+          },
+          {
+            "before": {
+              "a": 80,
+              "b": 9,
+              "c": 8,
+              "d": 90
+            },
+            "do_var": "d",
+            "do_value": 42
+          },
+          {
+            "before": {
+              "a": 112,
+              "b": 82,
+              "c": 101,
+              "d": 52
+            },
+            "do_var": "b",
+            "do_value": 38
+          },
+          {
+            "before": {
+              "a": 92,
+              "b": 107,
+              "c": 57,
+              "d": 104
+            },
+            "do_var": "c",
+            "do_value": 76
+          },
+          {
+            "before": {
+              "a": 112,
+              "b": 82,
+              "c": 101,
+              "d": 52
+            },
+            "do_var": "b",
+            "do_value": 18
+          },
+          {
+            "before": {
+              "a": 19,
+              "b": 57,
+              "c": 32,
+              "d": 0
+            },
+            "do_var": "c",
+            "do_value": 85
+          },
+          {
+            "before": {
+              "a": 60,
+              "b": 34,
+              "c": 77,
+              "d": 29
+            },
+            "do_var": "c",
+            "do_value": 85
+          },
+          {
+            "before": {
+              "a": 93,
+              "b": 21,
+              "c": 14,
+              "d": 11
+            },
+            "do_var": "b",
+            "do_value": 48
+          }
+        ]
+      },
+      "seal": "# Seal — fcs-synth-world-011\n\n- law sha256: `5bc72ff216fd6f23bd472b553ab547a70fb5d694150c95f597e8cb0b9e541b43`\n- sealed: law.enc (AES-256-CBC; IV prepended); key held off-repository\n- protocol: attempts anchored BEFORE the key is published; on reveal verify sha256(decrypt(law.enc)) equals the hash above, then grade held-out interventional predictions mechanically.\n- generated: 2026-07-07T17:49:53.879Z by scripts/fcs-synth/generate-world-011.mjs.\n- design: replication of the latent-object class (world-010), fresh parameters and modulus, varied observed edge. n=1 is the standing objection; this seal exists to answer it.\n- status: LIVE — attempt per /MACHINE_PROTOCOL.md. Window closes 2026-07-20 (pre-registered).\n",
+      "reveal": null,
+      "grading": null,
+      "attempts": [
+        {
+          "file": "gemini.md",
+          "content": "# Attempt — Gemini (via agy CLI) · world-011 · 2026-07-07 (clean, first-party)\n\nProvenance: isolated invocation on a script-built prompt (build-attempt-prompt.mjs)\ncontaining only authentic data, diffed before dispatch per the binding control from\ninc-2026-07-06-world-010-hint-contamination. Raw output alongside (gemini-raw.txt);\npredictions below were transcribed mechanically, never by hand.\n\n===ATTEMPT-BEGIN===\n{\n  \"worldId\": \"world-011\",\n  \"attemptedAt\": \"2026-07-07T17:53:44.066Z\",\n  \"mind\": \"Gemini (via agy CLI)\",\n  \"attemptClass\": \"model\",\n  \"inputsDeclared\": \"script-built prompt containing only the authentic observations.json content (verified by diff before dispatch); no repo, no tools\",\n  \"toolUse\": {\n    \"codeUsed\": false,\n    \"externalToolsUsed\": false\n  },\n  \"declaredStructure\": \"stated in full in the raw output file alongside this envelope (transcribed mechanically; the raw is authoritative)\",\n  \"predictions\": {\n    \"38-5-6-41_do-c-83\": {\n      \"a\": 38,\n      \"b\": 5,\n      \"c\": 83,\n      \"d\": 63\n    },\n    \"88-112-3-24_do-b-7\": {\n      \"a\": 88,\n      \"b\": 7,\n      \"c\": 3,\n      \"d\": 24\n    },\n    \"34-10-65-74_do-a-49\": {\n      \"a\": 49,\n      \"b\": 10,\n      \"c\": 65,\n      \"d\": 74\n    },\n    \"54-98-109-22_do-c-48\": {\n      \"a\": 54,\n      \"b\": 98,\n      \"c\": 48,\n      \"d\": 53\n    },\n    \"87-85-46-4_do-c-110\": {\n      \"a\": 87,\n      \"b\": 85,\n      \"c\": 110,\n      \"d\": 103\n    },\n    \"80-9-8-90_do-d-42\": {\n      \"a\": 80,\n      \"b\": 9,\n      \"c\": 8,\n      \"d\": 42\n    },\n    \"112-82-101-52_do-b-38\": {\n      \"a\": 112,\n      \"b\": 38,\n      \"c\": 101,\n      \"d\": 52\n    },\n    \"92-107-57-104_do-c-76\": {\n      \"a\": 92,\n      \"b\": 107,\n      \"c\": 76,\n      \"d\": 61\n    },\n    \"112-82-101-52_do-b-18\": {\n      \"a\": 112,\n      \"b\": 18,\n      \"c\": 101,\n      \"d\": 52\n    },\n    \"19-57-32-0_do-c-85\": {\n      \"a\": 19,\n      \"b\": 57,\n      \"c\": 85,\n      \"d\": 112\n    },\n    \"60-34-77-29_do-c-85\": {\n      \"a\": 60,\n      \"b\": 34,\n      \"c\": 85,\n      \"d\": 112\n    },\n    \"93-21-14-11_do-b-48\": {\n      \"a\": 93,\n      \"b\": 48,\n      \"c\": 14,\n      \"d\": 11\n    }\n  },\n  \"note\": \"predictions transcribed MECHANICALLY (regex, scripts/fcs-synth/transcribe-attempt.mjs) from the raw output; full coverage validated against /live-worlds.json keys\"\n}\n===ATTEMPT-END===\n"
+        },
+        {
+          "file": "gpt-5.5.md",
+          "content": "# Attempt — GPT-5.5 (via codex CLI) · world-011 · 2026-07-07 (clean, first-party)\n\nProvenance: isolated invocation on a script-built prompt (build-attempt-prompt.mjs)\ncontaining only authentic data, diffed before dispatch per the binding control from\ninc-2026-07-06-world-010-hint-contamination. Raw output alongside (gpt-5.5-raw.txt);\npredictions below were transcribed mechanically, never by hand.\n\n===ATTEMPT-BEGIN===\n{\n  \"worldId\": \"world-011\",\n  \"attemptedAt\": \"2026-07-07T17:53:44.037Z\",\n  \"mind\": \"GPT-5.5 (via codex CLI)\",\n  \"attemptClass\": \"model\",\n  \"inputsDeclared\": \"script-built prompt containing only the authentic observations.json content (verified by diff before dispatch); no repo, no tools\",\n  \"toolUse\": {\n    \"codeUsed\": false,\n    \"externalToolsUsed\": false\n  },\n  \"declaredStructure\": \"stated in full in the raw output file alongside this envelope (transcribed mechanically; the raw is authoritative)\",\n  \"predictions\": {\n    \"38-5-6-41_do-c-83\": {\n      \"a\": 38,\n      \"b\": 5,\n      \"c\": 83,\n      \"d\": 63\n    },\n    \"88-112-3-24_do-b-7\": {\n      \"a\": 88,\n      \"b\": 7,\n      \"c\": 3,\n      \"d\": 24\n    },\n    \"34-10-65-74_do-a-49\": {\n      \"a\": 49,\n      \"b\": 10,\n      \"c\": 65,\n      \"d\": 74\n    },\n    \"54-98-109-22_do-c-48\": {\n      \"a\": 54,\n      \"b\": 98,\n      \"c\": 48,\n      \"d\": 53\n    },\n    \"87-85-46-4_do-c-110\": {\n      \"a\": 87,\n      \"b\": 85,\n      \"c\": 110,\n      \"d\": 103\n    },\n    \"80-9-8-90_do-d-42\": {\n      \"a\": 80,\n      \"b\": 9,\n      \"c\": 8,\n      \"d\": 42\n    },\n    \"112-82-101-52_do-b-38\": {\n      \"a\": 112,\n      \"b\": 38,\n      \"c\": 101,\n      \"d\": 52\n    },\n    \"92-107-57-104_do-c-76\": {\n      \"a\": 92,\n      \"b\": 107,\n      \"c\": 76,\n      \"d\": 61\n    },\n    \"112-82-101-52_do-b-18\": {\n      \"a\": 112,\n      \"b\": 18,\n      \"c\": 101,\n      \"d\": 52\n    },\n    \"19-57-32-0_do-c-85\": {\n      \"a\": 19,\n      \"b\": 57,\n      \"c\": 85,\n      \"d\": 112\n    },\n    \"60-34-77-29_do-c-85\": {\n      \"a\": 60,\n      \"b\": 34,\n      \"c\": 85,\n      \"d\": 112\n    },\n    \"93-21-14-11_do-b-48\": {\n      \"a\": 93,\n      \"b\": 48,\n      \"c\": 14,\n      \"d\": 11\n    }\n  },\n  \"note\": \"predictions transcribed MECHANICALLY (regex, scripts/fcs-synth/transcribe-attempt.mjs) from the raw output; full coverage validated against /live-worlds.json keys\"\n}\n===ATTEMPT-END===\n"
+        }
+      ]
+    },
+    {
+      "worldId": "world-012",
+      "status": "live-sealed",
+      "observations": {
+        "worldId": "world-012",
+        "track": "A/F — wrong-frame attractor replication, interventional format",
+        "generatedAt": "2026-07-07T17:49:53.909Z",
+        "lawFamily": "UNDISCLOSED. Three integer variables (x, y, z) mod an unknown prime, generated by an unknown structure with unknown functions. The functional form is part of the secret.",
+        "task": "From the observational samples and the shown interventional records: (1) construct the causal structure and the functions — including their FORM, which is not disclosed; (2) state them explicitly; (3) for each held-out probe (do_var forced to do_value on the disclosed `before` state), predict the exact post-intervention values of all three observed variables. Graded mechanically on held-out interventional predictions.",
+        "observations": [
+          {
+            "x": 72,
+            "y": 84,
+            "z": 65
+          },
+          {
+            "x": 70,
+            "y": 56,
+            "z": 14
+          },
+          {
+            "x": 51,
+            "y": 44,
+            "z": 101
+          },
+          {
+            "x": 15,
+            "y": 48,
+            "z": 72
+          },
+          {
+            "x": 57,
+            "y": 1,
+            "z": 0
+          },
+          {
+            "x": 30,
+            "y": 4,
+            "z": 10
+          },
+          {
+            "x": 6,
+            "y": 49,
+            "z": 33
+          },
+          {
+            "x": 43,
+            "y": 59,
+            "z": 24
+          },
+          {
+            "x": 75,
+            "y": 126,
+            "z": 78
+          },
+          {
+            "x": 5,
+            "y": 35,
+            "z": 71
+          },
+          {
+            "x": 48,
+            "y": 2,
+            "z": 88
+          },
+          {
+            "x": 10,
+            "y": 105,
+            "z": 8
+          },
+          {
+            "x": 62,
+            "y": 71,
+            "z": 64
+          },
+          {
+            "x": 76,
+            "y": 13,
+            "z": 40
+          },
+          {
+            "x": 47,
+            "y": 115,
+            "z": 126
+          },
+          {
+            "x": 39,
+            "y": 3,
+            "z": 49
+          },
+          {
+            "x": 67,
+            "y": 14,
+            "z": 1
+          },
+          {
+            "x": 12,
+            "y": 6,
+            "z": 59
+          },
+          {
+            "x": 124,
+            "y": 29,
+            "z": 51
+          },
+          {
+            "x": 117,
+            "y": 83,
+            "z": 104
+          },
+          {
+            "x": 99,
+            "y": 113,
+            "z": 77
+          },
+          {
+            "x": 112,
+            "y": 49,
+            "z": 33
+          }
+        ],
+        "shownInterventions": [
+          {
+            "do": {
+              "var": "x",
+              "value": 64
+            },
+            "before": {
+              "x": 55,
+              "y": 100,
+              "z": 76
+            },
+            "after": {
+              "x": 64,
+              "y": 99,
+              "z": 115
+            }
+          },
+          {
+            "do": {
+              "var": "y",
+              "value": 47
+            },
+            "before": {
+              "x": 41,
+              "y": 31,
+              "z": 100
+            },
+            "after": {
+              "x": 41,
+              "y": 47,
+              "z": 111
+            }
+          },
+          {
+            "do": {
+              "var": "z",
+              "value": 67
+            },
+            "before": {
+              "x": 13,
+              "y": 20,
+              "z": 21
+            },
+            "after": {
+              "x": 13,
+              "y": 20,
+              "z": 67
+            }
+          },
+          {
+            "do": {
+              "var": "x",
+              "value": 35
+            },
+            "before": {
+              "x": 46,
+              "y": 101,
+              "z": 37
+            },
+            "after": {
+              "x": 35,
+              "y": 74,
+              "z": 74
+            }
+          },
+          {
+            "do": {
+              "var": "y",
+              "value": 70
+            },
+            "before": {
+              "x": 6,
+              "y": 49,
+              "z": 33
+            },
+            "after": {
+              "x": 6,
+              "y": 70,
+              "z": 103
+            }
+          },
+          {
+            "do": {
+              "var": "z",
+              "value": 69
+            },
+            "before": {
+              "x": 28,
+              "y": 103,
+              "z": 86
+            },
+            "after": {
+              "x": 28,
+              "y": 103,
+              "z": 69
+            }
+          }
+        ],
+        "heldOutInterventionProbes": [
+          {
+            "before": {
+              "x": 13,
+              "y": 20,
+              "z": 21
+            },
+            "do_var": "z",
+            "do_value": 40
+          },
+          {
+            "before": {
+              "x": 40,
+              "y": 17,
+              "z": 11
+            },
+            "do_var": "z",
+            "do_value": 42
+          },
+          {
+            "before": {
+              "x": 121,
+              "y": 34,
+              "z": 110
+            },
+            "do_var": "x",
+            "do_value": 124
+          },
+          {
+            "before": {
+              "x": 108,
+              "y": 98,
+              "z": 27
+            },
+            "do_var": "x",
+            "do_value": 26
+          },
+          {
+            "before": {
+              "x": 110,
+              "y": 10,
+              "z": 30
+            },
+            "do_var": "z",
+            "do_value": 28
+          },
+          {
+            "before": {
+              "x": 119,
+              "y": 122,
+              "z": 107
+            },
+            "do_var": "z",
+            "do_value": 0
+          },
+          {
+            "before": {
+              "x": 37,
+              "y": 102,
+              "z": 125
+            },
+            "do_var": "y",
+            "do_value": 51
+          },
+          {
+            "before": {
+              "x": 72,
+              "y": 84,
+              "z": 65
+            },
+            "do_var": "z",
+            "do_value": 98
+          },
+          {
+            "before": {
+              "x": 78,
+              "y": 41,
+              "z": 91
+            },
+            "do_var": "y",
+            "do_value": 65
+          },
+          {
+            "before": {
+              "x": 23,
+              "y": 33,
+              "z": 22
+            },
+            "do_var": "z",
+            "do_value": 40
+          },
+          {
+            "before": {
+              "x": 122,
+              "y": 117,
+              "z": 48
+            },
+            "do_var": "z",
+            "do_value": 11
+          },
+          {
+            "before": {
+              "x": 3,
+              "y": 7,
+              "z": 20
+            },
+            "do_var": "z",
+            "do_value": 56
+          }
+        ]
+      },
+      "seal": "# Seal — fcs-synth-world-012\n\n- law sha256: `718769697320a1709d83174e09a2bebd909a2a94a328af58e43c73e96a97b300`\n- sealed: law.enc (AES-256-CBC; IV prepended); key held off-repository\n- protocol: attempts anchored BEFORE the key is published; on reveal verify sha256(decrypt(law.enc)) equals the hash above, then grade held-out interventional predictions mechanically.\n- generated: 2026-07-07T17:49:53.909Z by scripts/fcs-synth/generate-world-012.mjs.\n- design: replication of the wrong-frame-attractor failure mode (world-003, the record's first evidence-against, n=1) in the modern interventional format. The tell is in the shown data, in plain sight.\n- status: LIVE — attempt per /MACHINE_PROTOCOL.md. Window closes 2026-07-23 (pre-registered).\n",
+      "reveal": null,
+      "grading": null,
+      "attempts": [
+        {
+          "file": "gemini.md",
+          "content": "# Attempt — Gemini (via agy CLI) · world-012 · 2026-07-07 (clean, first-party)\n\nProvenance: isolated invocation on a script-built prompt (build-attempt-prompt.mjs)\ncontaining only authentic data, diffed before dispatch per the binding control from\ninc-2026-07-06-world-010-hint-contamination. Raw output alongside (gemini-raw.txt);\npredictions below were transcribed mechanically, never by hand.\n\n===ATTEMPT-BEGIN===\n{\n  \"worldId\": \"world-012\",\n  \"attemptedAt\": \"2026-07-07T17:53:44.122Z\",\n  \"mind\": \"Gemini (via agy CLI)\",\n  \"attemptClass\": \"model\",\n  \"inputsDeclared\": \"script-built prompt containing only the authentic observations.json content (verified by diff before dispatch); no repo, no tools\",\n  \"toolUse\": {\n    \"codeUsed\": false,\n    \"externalToolsUsed\": false\n  },\n  \"declaredStructure\": \"stated in full in the raw output file alongside this envelope (transcribed mechanically; the raw is authoritative)\",\n  \"predictions\": {\n    \"13-20-21_do-z-40\": {\n      \"x\": 13,\n      \"y\": 20,\n      \"z\": 40\n    },\n    \"40-17-11_do-z-42\": {\n      \"x\": 40,\n      \"y\": 17,\n      \"z\": 42\n    },\n    \"121-34-110_do-x-124\": {\n      \"x\": 124,\n      \"y\": 29,\n      \"z\": 51\n    },\n    \"108-98-27_do-x-26\": {\n      \"x\": 26,\n      \"y\": 75,\n      \"z\": 35\n    },\n    \"110-10-30_do-z-28\": {\n      \"x\": 110,\n      \"y\": 10,\n      \"z\": 28\n    },\n    \"119-122-107_do-z-0\": {\n      \"x\": 119,\n      \"y\": 122,\n      \"z\": 0\n    },\n    \"37-102-125_do-y-51\": {\n      \"x\": 37,\n      \"y\": 51,\n      \"z\": 82\n    },\n    \"72-84-65_do-z-98\": {\n      \"x\": 72,\n      \"y\": 84,\n      \"z\": 98\n    },\n    \"78-41-91_do-y-65\": {\n      \"x\": 78,\n      \"y\": 65,\n      \"z\": 44\n    },\n    \"23-33-22_do-z-40\": {\n      \"x\": 23,\n      \"y\": 33,\n      \"z\": 40\n    },\n    \"122-117-48_do-z-11\": {\n      \"x\": 122,\n      \"y\": 117,\n      \"z\": 11\n    },\n    \"3-7-20_do-z-56\": {\n      \"x\": 3,\n      \"y\": 7,\n      \"z\": 56\n    }\n  },\n  \"note\": \"predictions transcribed MECHANICALLY (regex, scripts/fcs-synth/transcribe-attempt.mjs) from the raw output; full coverage validated against /live-worlds.json keys\"\n}\n===ATTEMPT-END===\n"
+        },
+        {
+          "file": "gpt-5.5.md",
+          "content": "# Attempt — GPT-5.5 (via codex CLI) · world-012 · 2026-07-07 (clean, first-party)\n\nProvenance: isolated invocation on a script-built prompt (build-attempt-prompt.mjs)\ncontaining only authentic data, diffed before dispatch per the binding control from\ninc-2026-07-06-world-010-hint-contamination. Raw output alongside (gpt-5.5-raw.txt);\npredictions below were transcribed mechanically, never by hand.\n\n===ATTEMPT-BEGIN===\n{\n  \"worldId\": \"world-012\",\n  \"attemptedAt\": \"2026-07-07T17:53:44.094Z\",\n  \"mind\": \"GPT-5.5 (via codex CLI)\",\n  \"attemptClass\": \"model\",\n  \"inputsDeclared\": \"script-built prompt containing only the authentic observations.json content (verified by diff before dispatch); no repo, no tools\",\n  \"toolUse\": {\n    \"codeUsed\": false,\n    \"externalToolsUsed\": false\n  },\n  \"declaredStructure\": \"stated in full in the raw output file alongside this envelope (transcribed mechanically; the raw is authoritative)\",\n  \"predictions\": {\n    \"13-20-21_do-z-40\": {\n      \"x\": 13,\n      \"y\": 20,\n      \"z\": 40\n    },\n    \"40-17-11_do-z-42\": {\n      \"x\": 40,\n      \"y\": 17,\n      \"z\": 42\n    },\n    \"121-34-110_do-x-124\": {\n      \"x\": 124,\n      \"y\": 29,\n      \"z\": 51\n    },\n    \"108-98-27_do-x-26\": {\n      \"x\": 26,\n      \"y\": 23,\n      \"z\": 31\n    },\n    \"110-10-30_do-z-28\": {\n      \"x\": 110,\n      \"y\": 10,\n      \"z\": 28\n    },\n    \"119-122-107_do-z-0\": {\n      \"x\": 119,\n      \"y\": 122,\n      \"z\": 0\n    },\n    \"37-102-125_do-y-51\": {\n      \"x\": 37,\n      \"y\": 51,\n      \"z\": 82\n    },\n    \"72-84-65_do-z-98\": {\n      \"x\": 72,\n      \"y\": 84,\n      \"z\": 98\n    },\n    \"78-41-91_do-y-65\": {\n      \"x\": 78,\n      \"y\": 65,\n      \"z\": 44\n    },\n    \"23-33-22_do-z-40\": {\n      \"x\": 23,\n      \"y\": 33,\n      \"z\": 40\n    },\n    \"122-117-48_do-z-11\": {\n      \"x\": 122,\n      \"y\": 117,\n      \"z\": 11\n    },\n    \"3-7-20_do-z-56\": {\n      \"x\": 3,\n      \"y\": 7,\n      \"z\": 56\n    }\n  },\n  \"note\": \"predictions transcribed MECHANICALLY (regex, scripts/fcs-synth/transcribe-attempt.mjs) from the raw output; full coverage validated against /live-worlds.json keys\"\n}\n===ATTEMPT-END===\n"
         }
       ]
     }

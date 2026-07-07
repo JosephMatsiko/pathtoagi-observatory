@@ -1,0 +1,62 @@
+{
+  "run_id": "fcs-world-011-2026-07-07",
+  "track": "F",
+  "protocol_version": "machine-protocol-v1",
+  "registered_at": "2026-07-07",
+  "status": "registered-sealed",
+  "attempt_window_closes": "2026-07-20",
+  "artifacts": [
+    {
+      "role": "public-observations",
+      "path": "experiments/fcs-synth-world-011/observations.json",
+      "sha256": "cb01eafba6e2a90bb7e7cc32c6f2d30b2470bb02a3418b88b04be87568539b4e"
+    },
+    {
+      "role": "seal",
+      "path": "experiments/fcs-synth-world-011/SEAL.md",
+      "sha256": "658a2ba71c6c585e2fa1a450d2a6d33e0f53e9ab068c514d1439801139eab0ef"
+    },
+    {
+      "role": "encrypted-law",
+      "path": "experiments/fcs-synth-world-011/law.enc",
+      "sha256": "32fb861e00c1cc6694d70f69e6d9a127fc12218a92bcb44f47cfca5bc7f60502"
+    },
+    {
+      "role": "generator",
+      "path": "scripts/fcs-synth/generate-world-011.mjs",
+      "sha256": "f87b8e7f11fc3ed23cf1a096b9fbfc2166eab6e04d456730c3c65290e6e3ba7a"
+    },
+    {
+      "role": "grader",
+      "path": "scripts/fcs-synth/grade-world-011.mjs",
+      "sha256": "a7e5b782edb6c224eeecec72059c985ad21fb36bbce7c3d9579a0b37c3e55146"
+    },
+    {
+      "role": "prompt-builder",
+      "path": "scripts/fcs-synth/build-attempt-prompt.mjs",
+      "sha256": "ce526a82b3c59aa490a1393349ae38b9baedc2446d30afbe4041bba93b41dd61"
+    }
+  ],
+  "gate_state": [
+    {
+      "gate": "protocol pinned before run",
+      "status": "met",
+      "note": "generator, seal, grader, prompt-builder pinned before any attempt"
+    },
+    {
+      "gate": "attempt window pre-registered",
+      "status": "met",
+      "note": "closes 2026-07-20, published before any result is knowable; autonomous mechanical close"
+    },
+    {
+      "gate": "attempt window",
+      "status": "open",
+      "note": "live per /MACHINE_PROTOCOL.md"
+    },
+    {
+      "gate": "reveal",
+      "status": "sealed",
+      "note": "key off-repo; sha256 pinned and anchored"
+    }
+  ]
+}

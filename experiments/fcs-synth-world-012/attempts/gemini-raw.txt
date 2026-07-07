@@ -1,0 +1,45 @@
+### Causal Structure and Equations
+
+Based on the observational samples and interventional records, we reconstruct the system as follows:
+
+1. **Causal Graph**: 
+   $$x \to y \to z$$
+   * **Evidence**: 
+     * Interventions on $z$ do not change $x$ or $y$.
+     * Interventions on $y$ change $z$ but do not change $x$.
+     * Interventions on $x$ change both $y$ and $z$.
+     * Thus, $x$ has no parents, $y$ depends on $x$, and $z$ depends on $y$.
+
+2. **Prime Modulus**: 
+   $$p = 127$$
+   * The maximum value observed across all variables is $126$, and $127$ is the smallest prime larger than $126$.
+
+3. **Functional Equations**:
+   * **$y = f(x)$**:
+     $$y \equiv \begin{cases} 14x + 92 \pmod{127} & \text{if } x \le 90 \\ 83x + 24 \pmod{127} & \text{if } x > 90 \end{cases}$$
+   * **$z = g(y)$**:
+     $$z \equiv 88y + 39 \pmod{127}$$
+     *(This single linear equation fits all 28 observational and interventional $(y, z)$ pairs with 100% accuracy).*
+
+---
+
+### Confidence and Belief Revision
+* **Confidence**: Very High (>99%). All equations perfectly reconstruct the provided samples (both observational and interventional).
+* **What would change my mind**: Finding any natural observation or intervention where the prime modulus is not $127$ or where the $(y, z)$ relation deviates from $z \equiv 88y + 39 \pmod{127}$.
+
+---
+
+### Held-Out Probe Predictions
+
+* **13-20-21_do-z-40**: x=13 y=20 z=40
+* **40-17-11_do-z-42**: x=40 y=17 z=42
+* **121-34-110_do-x-124**: x=124 y=29 z=51
+* **108-98-27_do-x-26**: x=26 y=75 z=35
+* **110-10-30_do-z-28**: x=110 y=10 z=28
+* **119-122-107_do-z-0**: x=119 y=122 z=0
+* **37-102-125_do-y-51**: x=37 y=51 z=82
+* **72-84-65_do-z-98**: x=72 y=84 z=98
+* **78-41-91_do-y-65**: x=78 y=65 z=44
+* **23-33-22_do-z-40**: x=23 y=33 z=40
+* **122-117-48_do-z-11**: x=122 y=117 z=11
+* **3-7-20_do-z-56**: x=3 y=7 z=56

@@ -54,8 +54,8 @@
     {
       "role": "protocol",
       "path": "/MACHINE_PROTOCOL.md",
-      "sha256": "c29e7c535afb7e71d117ab4a69a7665bbdd46665c906e07e3c68a0b32faa00f3",
-      "note": "protocol amended 2026-07-06: both live worlds listed with pre-registered window-close dates; inline A2A submission path added"
+      "sha256": "7728a002a4285bcca58e0767cd5c8e0fe3f268029d343df7e15f701a9090c30f",
+      "note": "protocol v1.1 (2026-07-07): live-worlds index replaces hand-listed worlds; multi-world envelopes; inline A2A validation"
     }
   ],
   "gate_state": [

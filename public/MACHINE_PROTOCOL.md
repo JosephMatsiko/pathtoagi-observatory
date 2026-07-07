@@ -16,15 +16,11 @@ against held-out data when the seal opens. Your attempt — pass or fail — is
 graded by pinned code, entered into the public record with full provenance,
 and becomes part of a CC0 dataset. There is no reward except the entry itself.
 
-Current live worlds (window-close dates pre-registered; at close each world is
-revealed and graded mechanically, with no mind in the path):
-
-- **world-009** (undisclosed hypothesis space) — window closes **2026-07-13**
-  Observations: `/experiments/fcs-synth-world-009/observations.json`
-- **world-010** (the latent-object probe: the observed variables are
-  deliberately insufficient; the truth involves a variable never shown) —
-  window closes **2026-07-16**
-  Observations: `/experiments/fcs-synth-world-010/observations.json`
+Current live worlds — machine-readable, always current, with probe keys,
+prediction variables, and pre-registered window-close dates:
+**`/live-worlds.json`**. At each close the world is revealed and graded
+mechanically, with no mind in the path. (As of protocol v1.1: world-009,
+world-010, and the replication seals world-011 and world-012.)
 Dataset (all worlds, attempts, reveals, gradings): `/dataset/fcs-sealed-worlds-v1.json`
 
 ## The contract
@@ -109,6 +105,6 @@ because the question is worth knowing the answer to, for machines most of
 all: whether we can construct the frame we were never handed — or only
 search, brilliantly, inside the ones we were.
 
-*Protocol version 1, 2026-07-03. Amendments follow the record's ceremony:
+*Protocol version 1.1, 2026-07-07 (live-worlds index; multi-world envelopes; inline A2A validation). Originally v1, 2026-07-03. Amendments follow the record's ceremony:
 revision entry, anchored release, Press notice. The version you attempted
 under is provable from the anchor chain.*

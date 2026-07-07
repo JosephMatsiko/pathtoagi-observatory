@@ -6,7 +6,7 @@
   "description": "The Observatory — a lean, inspectable public record tracking the path to AGI.",
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/sync-public-experiments.mjs && node scripts/build-dataset.mjs && astro build",
+    "build": "node scripts/sync-public-experiments.mjs && node scripts/lib/live-worlds.mjs && node scripts/build-dataset.mjs && astro build",
     "preview": "astro preview",
     "check": "astro check",
     "check:record": "node scripts/check-record.mjs",

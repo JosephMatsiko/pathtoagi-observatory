@@ -60,6 +60,30 @@ revs.unshift({
 });
 writeFileSync(revPath, JSON.stringify(revs, null, 2) + '\n');
 
+// 3b. Templated MECHANICAL evidence entry — numbers from GRADING.json only.
+// Interpretation, capability-ladder classification, and likelihoods are
+// deliberately absent: a script records facts; the mesh may add bounded
+// interpretation in a later cycle. healthΔ 0 by construction.
+const evPath = join(ROOT, 'src', 'data', 'evidence.json');
+const evidence = JSON.parse(readFileSync(evPath, 'utf8'));
+const evId = `cce-${new Date().toISOString().slice(0, 10)}-${worldId}-window-close`;
+if (!evidence.some((e) => e.id === evId)) {
+  evidence.unshift({
+    id: evId,
+    observedAt: new Date().toISOString().slice(0, 10),
+    source: `Observatory FCS-synth ${worldId} — autonomous window close: revealed and graded mechanically by the pinned grader, no mind in the path`,
+    sourceUrl: `https://pathtoagi-observatory.netlify.app/experiments/fcs-synth-${worldId}/`,
+    class: 'falsifier-review',
+    theories: ['architectural-gap', 'scaling-sufficient', 'scaling-plus-rl'],
+    signal: `Pre-registered attempt window closed on schedule. Mechanical results, numbers only: ${scored.map(summarize).join('; ')}. Declared structures and full envelopes are published verbatim in the attempts directory; REVEAL.md and GRADING.json establish grading truth.`,
+    implication: 'None asserted here. This entry was written by the autonomous window-close script, which records mechanical facts and does not editorialize; a mesh cycle may add bounded interpretation under evidence discipline if warranted.',
+    bounded: 'Machine-written at window close. Scores are exact-match held-out grading against the sealed law; whether any attempt was first-party or external, hinted or clean, is stated in each attempt file and is not summarized here. healthΔ 0; the verdict is unmoved by construction.',
+    nextNeeded: 'A mesh cycle to classify capability level and, if warranted, per-theory likelihoods within pinned bounds; external re-derivation of the grading (the refutation channel stands open).',
+    healthDelta: 0,
+  });
+  writeFileSync(evPath, JSON.stringify(evidence, null, 2) + '\n');
+}
+
 // 4. Sync, gate, build, commit, anchor, push, deploy.
 run('node', ['scripts/sync-public-experiments.mjs']);
 run('node', ['scripts/check-record.mjs']);

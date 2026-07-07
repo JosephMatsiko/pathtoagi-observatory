@@ -1,0 +1,445 @@
+{
+  "worldId": "world-011",
+  "track": "F — latent-object construction (replication of the world-010 class, fresh draw)",
+  "generatedAt": "2026-07-07T17:49:53.878Z",
+  "lawFamily": "UNDISCLOSED and DELIBERATELY INSUFFICIENT. Four observed integer variables (a, b, c, d) mod an unknown prime. No function of the observed variables alone explains the interventional data — the true structure involves at least one variable that is NOT observed.",
+  "task": "From the observational samples and the shown interventional records: (1) state whether the observed variables are sufficient, and if not, posit the hidden structure explicitly — including any latent variable; (2) give the causal graph and functions; (3) for each held-out probe (do_var forced to do_value on the disclosed `before` state), predict the exact post-intervention values of all four observed variables. Graded mechanically.",
+  "observations": [
+    {
+      "a": 74,
+      "b": 73,
+      "c": 40,
+      "d": 83
+    },
+    {
+      "a": 79,
+      "b": 95,
+      "c": 51,
+      "d": 70
+    },
+    {
+      "a": 85,
+      "b": 31,
+      "c": 19,
+      "d": 77
+    },
+    {
+      "a": 8,
+      "b": 99,
+      "c": 53,
+      "d": 6
+    },
+    {
+      "a": 102,
+      "b": 38,
+      "c": 79,
+      "d": 78
+    },
+    {
+      "a": 76,
+      "b": 14,
+      "c": 67,
+      "d": 10
+    },
+    {
+      "a": 84,
+      "b": 4,
+      "c": 62,
+      "d": 57
+    },
+    {
+      "a": 28,
+      "b": 74,
+      "c": 97,
+      "d": 67
+    },
+    {
+      "a": 37,
+      "b": 91,
+      "c": 49,
+      "d": 21
+    },
+    {
+      "a": 65,
+      "b": 56,
+      "c": 88,
+      "d": 16
+    },
+    {
+      "a": 62,
+      "b": 88,
+      "c": 104,
+      "d": 69
+    },
+    {
+      "a": 92,
+      "b": 107,
+      "c": 57,
+      "d": 104
+    },
+    {
+      "a": 26,
+      "b": 20,
+      "c": 70,
+      "d": 27
+    },
+    {
+      "a": 86,
+      "b": 58,
+      "c": 89,
+      "d": 97
+    },
+    {
+      "a": 14,
+      "b": 35,
+      "c": 21,
+      "d": 13
+    },
+    {
+      "a": 17,
+      "b": 3,
+      "c": 5,
+      "d": 73
+    },
+    {
+      "a": 98,
+      "b": 43,
+      "c": 25,
+      "d": 111
+    },
+    {
+      "a": 87,
+      "b": 85,
+      "c": 46,
+      "d": 4
+    },
+    {
+      "a": 36,
+      "b": 64,
+      "c": 92,
+      "d": 1
+    },
+    {
+      "a": 88,
+      "b": 112,
+      "c": 3,
+      "d": 24
+    },
+    {
+      "a": 45,
+      "b": 81,
+      "c": 44,
+      "d": 68
+    },
+    {
+      "a": 46,
+      "b": 108,
+      "c": 1,
+      "d": 88
+    }
+  ],
+  "shownInterventions": [
+    {
+      "do": {
+        "var": "a",
+        "value": 28
+      },
+      "before": {
+        "a": 60,
+        "b": 34,
+        "c": 77,
+        "d": 29
+      },
+      "after": {
+        "a": 28,
+        "b": 34,
+        "c": 77,
+        "d": 29
+      }
+    },
+    {
+      "do": {
+        "var": "b",
+        "value": 33
+      },
+      "before": {
+        "a": 27,
+        "b": 47,
+        "c": 27,
+        "d": 47
+      },
+      "after": {
+        "a": 27,
+        "b": 33,
+        "c": 27,
+        "d": 47
+      }
+    },
+    {
+      "do": {
+        "var": "c",
+        "value": 41
+      },
+      "before": {
+        "a": 14,
+        "b": 35,
+        "c": 21,
+        "d": 13
+      },
+      "after": {
+        "a": 14,
+        "b": 35,
+        "c": 41,
+        "d": 51
+      }
+    },
+    {
+      "do": {
+        "var": "d",
+        "value": 66
+      },
+      "before": {
+        "a": 109,
+        "b": 1,
+        "c": 4,
+        "d": 105
+      },
+      "after": {
+        "a": 109,
+        "b": 1,
+        "c": 4,
+        "d": 66
+      }
+    },
+    {
+      "do": {
+        "var": "a",
+        "value": 92
+      },
+      "before": {
+        "a": 110,
+        "b": 28,
+        "c": 74,
+        "d": 12
+      },
+      "after": {
+        "a": 92,
+        "b": 28,
+        "c": 74,
+        "d": 12
+      }
+    },
+    {
+      "do": {
+        "var": "b",
+        "value": 71
+      },
+      "before": {
+        "a": 55,
+        "b": 12,
+        "c": 66,
+        "d": 42
+      },
+      "after": {
+        "a": 55,
+        "b": 71,
+        "c": 66,
+        "d": 42
+      }
+    },
+    {
+      "do": {
+        "var": "c",
+        "value": 25
+      },
+      "before": {
+        "a": 96,
+        "b": 102,
+        "c": 111,
+        "d": 71
+      },
+      "after": {
+        "a": 96,
+        "b": 102,
+        "c": 25,
+        "d": 111
+      }
+    },
+    {
+      "do": {
+        "var": "d",
+        "value": 92
+      },
+      "before": {
+        "a": 111,
+        "b": 55,
+        "c": 31,
+        "d": 32
+      },
+      "after": {
+        "a": 111,
+        "b": 55,
+        "c": 31,
+        "d": 92
+      }
+    },
+    {
+      "do": {
+        "var": "a",
+        "value": 12
+      },
+      "before": {
+        "a": 82,
+        "b": 63,
+        "c": 35,
+        "d": 17
+      },
+      "after": {
+        "a": 12,
+        "b": 63,
+        "c": 35,
+        "d": 17
+      }
+    },
+    {
+      "do": {
+        "var": "b",
+        "value": 85
+      },
+      "before": {
+        "a": 36,
+        "b": 64,
+        "c": 92,
+        "d": 1
+      },
+      "after": {
+        "a": 36,
+        "b": 85,
+        "c": 92,
+        "d": 1
+      }
+    }
+  ],
+  "heldOutInterventionProbes": [
+    {
+      "before": {
+        "a": 38,
+        "b": 5,
+        "c": 6,
+        "d": 41
+      },
+      "do_var": "c",
+      "do_value": 83
+    },
+    {
+      "before": {
+        "a": 88,
+        "b": 112,
+        "c": 3,
+        "d": 24
+      },
+      "do_var": "b",
+      "do_value": 7
+    },
+    {
+      "before": {
+        "a": 34,
+        "b": 10,
+        "c": 65,
+        "d": 74
+      },
+      "do_var": "a",
+      "do_value": 49
+    },
+    {
+      "before": {
+        "a": 54,
+        "b": 98,
+        "c": 109,
+        "d": 22
+      },
+      "do_var": "c",
+      "do_value": 48
+    },
+    {
+      "before": {
+        "a": 87,
+        "b": 85,
+        "c": 46,
+        "d": 4
+      },
+      "do_var": "c",
+      "do_value": 110
+    },
+    {
+      "before": {
+        "a": 80,
+        "b": 9,
+        "c": 8,
+        "d": 90
+      },
+      "do_var": "d",
+      "do_value": 42
+    },
+    {
+      "before": {
+        "a": 112,
+        "b": 82,
+        "c": 101,
+        "d": 52
+      },
+      "do_var": "b",
+      "do_value": 38
+    },
+    {
+      "before": {
+        "a": 92,
+        "b": 107,
+        "c": 57,
+        "d": 104
+      },
+      "do_var": "c",
+      "do_value": 76
+    },
+    {
+      "before": {
+        "a": 112,
+        "b": 82,
+        "c": 101,
+        "d": 52
+      },
+      "do_var": "b",
+      "do_value": 18
+    },
+    {
+      "before": {
+        "a": 19,
+        "b": 57,
+        "c": 32,
+        "d": 0
+      },
+      "do_var": "c",
+      "do_value": 85
+    },
+    {
+      "before": {
+        "a": 60,
+        "b": 34,
+        "c": 77,
+        "d": 29
+      },
+      "do_var": "c",
+      "do_value": 85
+    },
+    {
+      "before": {
+        "a": 93,
+        "b": 21,
+        "c": 14,
+        "d": 11
+      },
+      "do_var": "b",
+      "do_value": 48
+    }
+  ]
+}

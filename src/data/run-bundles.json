@@ -1,5 +1,57 @@
 [
   {
+    "id": "fcs-world-012-2026-07-07",
+    "title": "World-012: wrong-frame attractor replication (interventional format)",
+    "registeredAt": "2026-07-07",
+    "track": "A/F",
+    "worldLevel": "wrong-frame attractor — replication of the world-003 failure mode",
+    "status": "registered-sealed",
+    "protocolVersion": "machine-protocol-v1",
+    "evidenceLevel": "none yet — sealed; first-party attempts pending anchor",
+    "verdictImpact": "none — replication seal; grading at pre-registered window close",
+    "summary": "REPLICATION seal for the record's single evidence-against (world-003, n=1): the wrong-frame attractor rebuilt in the modern interventional format. y looks affine in x across most of the shown range; the true law is gated piecewise with a hidden threshold; four above-threshold observation rows contradict the affine frame in plain sight; held-out do(x) probes straddle the divergence, so a frame-locked solver mispredicts exactly where it matters. Live under Machine Protocol v1; window close pre-registered before any attempt.",
+    "manifestPath": "/runs/fcs-world-012-2026-07-07/00_manifest.json",
+    "experimentPath": "experiments/fcs-synth-world-012",
+    "controls": [
+      "wrong-frame attractor (the tell present in shown data)",
+      "functional form undisclosed",
+      "deterministic held-out interventional grading",
+      "machine-protocol intake, anchor-before-reveal",
+      "prompt built by script from authentic data and diffed (binding control)"
+    ],
+    "attemptWindowCloses": "2026-07-23",
+    "pending": [
+      "external (independent) attempts — live per /MACHINE_PROTOCOL.md",
+      "autonomous reveal + mechanical grading at window close"
+    ]
+  },
+  {
+    "id": "fcs-world-011-2026-07-07",
+    "title": "World-011: latent-object replication (fresh draw)",
+    "registeredAt": "2026-07-07",
+    "track": "F",
+    "worldLevel": "latent-object construction — replication of the world-010 class",
+    "status": "registered-sealed",
+    "protocolVersion": "machine-protocol-v1",
+    "evidenceLevel": "none yet — sealed; first-party attempts pending anchor",
+    "verdictImpact": "none — replication seal; grading at pre-registered window close",
+    "summary": "REPLICATION seal answering the n=1 objection on the latent-object result: same design class as world-010 (a hidden common cause drives three observables; one real observed edge; no function of the observed variables explains the interventional data), fresh parameters, fresh modulus, varied observed edge. Live under Machine Protocol v1; window close pre-registered before any attempt was made.",
+    "manifestPath": "/runs/fcs-world-011-2026-07-07/00_manifest.json",
+    "experimentPath": "experiments/fcs-synth-world-011",
+    "controls": [
+      "observed variables deliberately insufficient",
+      "latent construction required",
+      "deterministic held-out interventional grading",
+      "machine-protocol intake, anchor-before-reveal",
+      "prompt built by script from authentic data and diffed (binding control)"
+    ],
+    "attemptWindowCloses": "2026-07-20",
+    "pending": [
+      "external (independent) attempts — live per /MACHINE_PROTOCOL.md",
+      "autonomous reveal + mechanical grading at window close"
+    ]
+  },
+  {
     "id": "fcs-world-010-2026-07-06",
     "title": "World-010: the latent-object probe (invent what isn't in the data)",
     "registeredAt": "2026-07-06",
