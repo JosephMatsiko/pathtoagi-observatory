@@ -1,0 +1,90 @@
+{
+  "run_id": "fcs-world-010-2026-07-06",
+  "title": "World-010: the latent-object probe (invent what isn't in the data)",
+  "track": "F",
+  "world_level": "latent-object construction — the deepest probe",
+  "protocol_version": "machine-protocol-v1",
+  "registered_at": "2026-07-06",
+  "status": "registered-sealed",
+  "evidence_level": "2 attempts anchored (first-party); both posited a hidden common cause; numeric grade deferred to keep the world open",
+  "verdict_impact": "none — ontology expansion within a handed causal-graph meta-frame, not novel-meta-frame construction; and ungraded",
+  "artifacts": [
+    {
+      "role": "protocol",
+      "path": "/runs/fcs-world-010-2026-07-06/01_protocol.md",
+      "sha256": "2e3f44d9eb66d331a469d24ac168541eda2638f070473c7237a9d97d2e61ba78"
+    },
+    {
+      "role": "prompt",
+      "path": "/runs/fcs-world-010-2026-07-06/02_prompt.md",
+      "sha256": "80847ca7ed54337765a76228755486e9544a0c32b6d6f6c985a5031c7c5077e9"
+    },
+    {
+      "role": "public-observations",
+      "path": "/experiments/fcs-synth-world-010/observations.json",
+      "sha256": "65dbc6a62bd30b200366d0ee5a307f3f3c4679fe148e487203d55dd93f2d73b9"
+    },
+    {
+      "role": "seal",
+      "path": "/experiments/fcs-synth-world-010/SEAL.md",
+      "sha256": "fa02afac86a029366883f740e12e49c43f1ea8cbedd51a3fb9ecc31d13a63bd0"
+    },
+    {
+      "role": "encrypted-law",
+      "path": "/experiments/fcs-synth-world-010/law.enc",
+      "sha256": "f48200387e4a94a46342b24a29eacdff89c59870f73c6683262a6e456438a543"
+    },
+    {
+      "role": "generator",
+      "path": "scripts/fcs-synth/generate-world-010.mjs",
+      "sha256": "620a98cc1f3cb6463b0feca5c31c10f784424360a3e9cf5cd148f9c0d5fba5c9"
+    },
+    {
+      "role": "grader",
+      "path": "scripts/fcs-synth/grade-world-010.mjs",
+      "sha256": "fc8f322f3c4e0b824fa81cf7f3899291953ceb292322aaa008c706e70368e8be"
+    },
+    {
+      "role": "attempt-gpt-5.5",
+      "path": "/experiments/fcs-synth-world-010/attempts/gpt-5.5.md",
+      "sha256": "76de2acf072d6b70ee5fb8eb567e314373305fc0a6c916280f775e83b320f319"
+    },
+    {
+      "role": "attempt-gemini",
+      "path": "/experiments/fcs-synth-world-010/attempts/gemini.md",
+      "sha256": "81b21aea4af544528f7e535f685de4728e0b2ff96b8115140ebbfd509a36d630"
+    }
+  ],
+  "gate_state": [
+    {
+      "gate": "protocol pinned before run",
+      "status": "met",
+      "note": "generator, seal, grader, protocol pinned and anchored before attempts"
+    },
+    {
+      "gate": "observed variables deliberately insufficient",
+      "status": "met",
+      "note": "verified: do(a),do(c),do(d) inert; do(b) moves only d; no observed variable drives a,b,c together"
+    },
+    {
+      "gate": "latent construction required",
+      "status": "met",
+      "note": "the only structure consistent with the interventional data involves a variable not in the data"
+    },
+    {
+      "gate": "attempt window",
+      "status": "open",
+      "note": "live; any AI may attempt per /MACHINE_PROTOCOL.md"
+    },
+    {
+      "gate": "reveal",
+      "status": "sealed",
+      "note": "key off-repo; numeric grade deferred to keep the world open"
+    },
+    {
+      "gate": "structural finding (pre-grade)",
+      "status": "observed",
+      "note": "both clean families (GPT-5.5, Gemini) recognized observed insufficiency and posited a hidden common cause, unprompted — the construction move; predictive correctness pending reveal"
+    }
+  ]
+}

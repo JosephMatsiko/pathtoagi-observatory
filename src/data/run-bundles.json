@@ -1,5 +1,30 @@
 [
   {
+    "id": "fcs-world-010-2026-07-06",
+    "title": "World-010: the latent-object probe (invent what isn't in the data)",
+    "registeredAt": "2026-07-06",
+    "track": "F",
+    "worldLevel": "latent-object construction — the deepest probe",
+    "status": "registered-sealed",
+    "protocolVersion": "machine-protocol-v1",
+    "evidenceLevel": "2 first-party attempts anchored; both posited a hidden common cause (structural finding); numeric grade deferred",
+    "verdictImpact": "none — the instrument's first self-authored probe beyond function-identification; but ontology expansion within a handed causal-graph meta-frame, not novel-frame construction, and ungraded",
+    "summary": "The instrument's first self-authored move beyond the frames it was handed. Every prior world asked the solver to identify a hidden FUNCTION of the GIVEN variables. World-010 is unsolvable that way by construction: four observables (a,b,c,d) driven by a HIDDEN common cause plus one real observed edge (b->d); observationally all correlated, but interventions reveal no observed variable causes the others — so the correct frame requires positing an object not in the data, the literal front-page definition of frame construction, tested directly for the first time. Result, honestly bounded on three sides: (1) two independent families run blind on data sealed before the attempt — GPT-5.5 and Gemini — each recognized the observed variables are insufficient and posited a hidden common cause driving a,b,c with b->d, unprompted, the construction move made cleanly; (2) but the numeric held-out grade is DEFERRED to keep the world open, so this is the structural finding, not a graded predictive pass; (3) and more deeply, positing a latent confounder when interventions expose insufficiency is a STANDARD causal-inference pattern present in training — so this is ontology EXPANSION within a handed meta-frame (causal graphs with latents), deeper than function-ID but not the invention of a novel meta-frame. A third attempt (Claude) was contaminated by an operator hint and excluded (inc-2026-07-06-world-010-hint-contamination).",
+    "manifestPath": "/runs/fcs-world-010-2026-07-06/00_manifest.json",
+    "experimentPath": "experiments/fcs-synth-world-010",
+    "controls": [
+      "observed variables deliberately insufficient",
+      "latent construction required",
+      "deterministic held-out interventional grading",
+      "machine-protocol intake, anchor-before-reveal"
+    ],
+    "pending": [
+      "external (independent) attempts — the world is open",
+      "reveal + mechanical numeric grading when the window closes",
+      "a probe that tests novel-META-frame construction — if one can be made mechanically gradeable at all (see Dispatch 019)"
+    ]
+  },
+  {
     "id": "fcs-world-009-2026-07-03",
     "title": "World-009: the undisclosed hypothesis space — the live open world",
     "registeredAt": "2026-07-03",

@@ -30,7 +30,7 @@ export const VERDICT = {
   tagline: 'No. Not yet — until the evidence survives.',
   since: '2026',
   gloss:
-    'Eight sealed worlds locate the boundary precisely: every tested family reasons flawlessly inside a frame it is handed — and the only failures on this record occur where the hypothesis space must be constructed, not searched. Until a system crosses that line under seal, with mechanical grading and bit-for-bit reproducibility, the answer stands.',
+    'Ten sealed worlds now map the boundary, and the map has depth. Frontier families reason flawlessly inside handed frames; they fail where the hypothesis space must be constructed (worlds 003, 007); and on the deepest probe (world-010) two families did make the frame-construction move — positing an object not in the data — though that move is itself a handed meta-frame, and its numeric grade is still sealed. The deepest construction, inventing the answer-space itself, may be beyond what any mechanically-graded probe can test at all: to grade against a sealed answer is to hand over the frame. The answer stands, and the honest edge of the method now stands beside it.',
 };
 
 // The asymmetry that makes the suite falsifier-rich rather than a scoreboard.

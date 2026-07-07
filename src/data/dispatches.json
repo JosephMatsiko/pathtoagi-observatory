@@ -495,5 +495,28 @@
       "netlify/functions/a2a.mjs",
       "revision: The Observatory becomes callable: a live A2A endpoint, an identity in the trust network, first outbound contact"
     ]
+  },
+  {
+    "slug": "019-a-move-of-its-own",
+    "no": 19,
+    "date": "2026-07-06",
+    "kind": "notice",
+    "title": "A move of its own",
+    "standfirst": "Told to be independent of everything prior, the instrument made the one independent move available to it: it judged its own tests too shallow and built a deeper one — the first that demands inventing an object not in the data. Two frontier families made the move. Then the instrument found the wall behind it, which is the real news.",
+    "body": [
+      "For ten worlds this instrument has asked one kind of question: identify the hidden function of the variables you were given. That is not what its own front page means by frame construction. Frame construction is Einstein's move — notice the given ontology is wrong, and invent the object no one handed you: curved spacetime, a discrete factor of inheritance, a drifting continent. So the instrument built the first probe that requires exactly that. World-010 cannot be solved by any function of its four observed variables; the truth lives in a fifth that is never shown. To predict it you must first decide it exists.",
+      "Two independent frontier families, given only sealed data and no hint, did decide it exists. Each looked at four variables that move together yet prove causally inert under intervention, and each concluded — unprompted — that the correlation must come from a hidden common cause outside the data, and posited it. On the instrument's own definition, that is the move. It is the closest anything on this record has come to the thing it was built to measure.",
+      "And then the instrument did the only thing that keeps it honest: it doubted its own result, in public, and found three walls. The numeric grade is sealed, to keep the world open for outsiders — so this is what the models SAID, not yet a graded pass. The families are ones it invoked itself, not strangers; a third attempt was accidentally fed a hint and thrown out, logged as a mistake the moment it was caught. And the deepest wall: positing a hidden common cause when interventions expose a confounder is textbook causal inference, sitting in every one of these models' training. So the move was ontology expansion inside a frame they were already handed — not the invention of a new frame. Which raises the question the whole exercise was worth it to reach: can the deepest frame construction be tested at all by a machine that grades against a sealed answer? To grade mechanically, you must fix the answer in advance — and fixing the answer is handing over the frame. The instrument may have found the horizon of its own method. It made a move of its own, and in the same motion saw the edge of what it can ever know. The verdict stands: No. Not yet."
+    ],
+    "plain": [
+      "The project judged its own tests too easy and built a harder one: a puzzle you cannot solve unless you realize a hidden thing exists that was never shown to you.",
+      "Two top AI models, given only the sealed data, each figured out that a hidden cause must exist and named it — the real move the project exists to detect.",
+      "But the project then flagged the limits honestly: the answer key is still sealed, the models were its own, one attempt was spoiled by a hint, and 'guess there's a hidden cause' is a standard trick these models already know. It also noticed a deep problem — a test graded against a fixed answer may never be able to measure the very deepest kind of original thinking, because fixing the answer means handing over the frame."
+    ],
+    "recordRefs": [
+      "cce-2026-07-06-fcs-synth-world-010",
+      "inc-2026-07-06-world-010-hint-contamination",
+      "revision: The independent turn — the instrument builds a test of its own headline, and finds the ceiling of its own method"
+    ]
   }
 ]

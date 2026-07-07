@@ -1,5 +1,29 @@
 [
   {
+    "id": "cce-2026-07-06-fcs-synth-world-010",
+    "observedAt": "2026-07-06",
+    "source": "Observatory FCS-synth world-010 — the latent-object probe (first test of positing an object not in the data)",
+    "sourceUrl": "https://pathtoagi-observatory.netlify.app/runs/",
+    "class": "falsifier-review",
+    "theories": [
+      "architectural-gap",
+      "scaling-sufficient",
+      "scaling-plus-rl",
+      "cognitive-architecture"
+    ],
+    "capabilityLevel": 6,
+    "signal": "The instrument's first self-authored probe beyond function identification, and the first that requires the front-page move: notice the given ontology is insufficient and construct an object not in the data. World-010 hides a common cause behind four correlated observables; only interventions reveal no observed variable causes the others. Two independent families run blind on data sealed before the attempt — GPT-5.5 and Gemini — each recognized the insufficiency and posited a hidden common cause driving a,b,c with an observed b->d edge, unprompted. The construction move was made, cleanly, by both.",
+    "implication": "On a probe that cannot be solved by identifying a function of the given variables, frontier systems did expand the ontology to include a latent object — a real step beyond the parameter-identification and rule-induction of every prior world. It bounds the architectural-gap thesis: at least the ontology-EXPANSION move (positing a latent when data demands it) is within current reach.",
+    "bounded": "Bounded on three sides, and the bounds are the point. (1) The numeric held-out grade is DEFERRED to keep the world open — this is the structural finding, not a graded predictive pass. (2) First-party: operator-invoked families, not independent strangers; a third attempt was hint-contaminated and excluded (inc-2026-07-06-world-010-hint-contamination). (3) DEEPEST: positing a latent confounder when interventions expose insufficiency is a STANDARD causal-inference pattern present in training — so this is ontology expansion within a HANDED meta-frame (causal graphs with latents), not the invention of a novel meta-frame, which is the true Einstein move and remains untested. healthΔ 0; the verdict is unmoved.",
+    "nextNeeded": "Reveal + numeric grade when the window closes; independent external attempts; and the open question of whether novel-META-frame construction can be tested by any mechanically-gradeable probe at all — the ceiling world-010 surfaced.",
+    "likelihoods": {
+      "architectural-gap": 0.8,
+      "scaling-sufficient": 1.15,
+      "scaling-plus-rl": 1.15,
+      "cognitive-architecture": 1.1
+    }
+  },
+  {
     "id": "cce-2026-07-03-fcs-synth-world-008",
     "observedAt": "2026-07-03",
     "source": "Observatory FCS-synth world-008 — Track F causal-intervention probe, three model families, mechanically graded",

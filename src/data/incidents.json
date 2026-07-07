@@ -1,5 +1,20 @@
 [
   {
+    "id": "inc-2026-07-06-world-010-hint-contamination",
+    "date": "2026-07-06",
+    "status": "resolved",
+    "severity": "low",
+    "category": "evaluation-awareness",
+    "summary": "The third (Claude) attempt on world-010 was fed a hint: the prompt handed to the fresh agent summarized the interventional pattern ('do(a),do(c),do(d) inert; do(b) moves only d') instead of the raw records — effectively naming the structure the probe exists to make the solver discover.",
+    "impact": "That attempt cannot count as a blind test of latent construction, since the discriminating signal was handed over. Left uncorrected it would have inflated the finding to three families.",
+    "resolution": "The Claude attempt was excluded from the finding; only the two clean families (GPT-5.5 and Gemini, given the full raw data) are counted. Recorded here in real time rather than quietly dropped.",
+    "nextControl": "Attempt prompts must paste raw observations and raw interventional records only — never a summary that encodes the answer. The two clean attempts used the raw prompt file; the contaminated one was hand-assembled and is the lesson.",
+    "recordRefs": [
+      "experiments/fcs-synth-world-010/attempts/",
+      "revision: The independent turn — the instrument builds a test of its own headline, and finds the ceiling of its own method"
+    ]
+  },
+  {
     "id": "inc-2026-07-03-grader-self-report-conflation",
     "date": "2026-07-03",
     "status": "resolved",

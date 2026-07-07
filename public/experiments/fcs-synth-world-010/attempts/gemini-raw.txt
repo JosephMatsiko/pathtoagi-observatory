@@ -1,0 +1,56 @@
+### 1. Sufficiency of Observed Variables
+**No**, the observed variables $(a, b, c, d)$ are not sufficient to explain the interventional data.
+
+**Reason:** 
+In the observational data, there is a strict linear relationship between $a$, $b$, and $c$. However, the interventional records show that forcing $a$ to a new value (`do(a=42)`) does not change $b$ or $c$, and forcing $b$ (`do(b=61)`) or $c$ (`do(c=21)`) does not affect the others. The only way to explain this correlation without direct causal links between $a$, $b$, and $c$ is by positing a **hidden/unobserved common cause** $u$ that determines $a$, $b$, and $c$.
+
+---
+
+### 2. Causal Structure and Functions
+The unknown prime modulus is **$p = 109$**.
+
+#### Causal Graph:
+- A hidden confounder $u \in \{0, \dots, 108\}$ acts as the root cause for $a$, $b$, and $c$.
+- $b$ is the direct cause of $d$.
+```
+  u
+ /|\
+v v v
+a b c
+  |
+  v
+  d
+```
+
+#### Causal Functions (modulo 109):
+- $a \equiv 8u + 37 \pmod{109}$
+- $b \equiv 17u + 76 \pmod{109}$
+- $c \equiv 62u + 75 \pmod{109}$
+- $d \equiv 67b + 3 \pmod{109}$ (equivalently: $d \equiv -42b + 3 \pmod{109}$)
+
+---
+
+### 3. Held-out Probe Predictions
+
+For each probe, because $a$, $c$, and $d$ have no descendants, and $b$'s only descendant is $d$:
+* Interventions on $a$, $c$, or $d$ only change the targeted variable; all other variables remain at their `before` values.
+* Interventions on $b$ change $b$ to the `do_value` and update $d$ using the function $d \equiv 67b + 3 \pmod{109}$, while $a$ and $c$ remain at their `before` values.
+
+* **before(46-27-63-68)_do-a-10:** a=10 b=27 c=63 d=68
+* **before(93-86-73-97)_do-b-19:** a=93 b=19 c=73 d=77
+* **before(58-107-47-87)_do-c-6:** a=58 b=107 c=6 d=87
+* **before(12-91-72-105)_do-b-79:** a=12 b=79 c=72 d=64
+* **before(27-82-52-47)_do-a-41:** a=41 b=82 c=52 d=47
+* **before(103-80-96-22)_do-b-4:** a=103 b=4 c=96 d=53
+* **before(26-39-17-0)_do-a-66:** a=66 b=39 c=17 d=0
+* **before(18-22-64-60)_do-a-26:** a=26 b=22 c=64 d=60
+* **before(51-24-20-85)_do-c-76:** a=51 b=24 c=76 d=85
+* **before(87-46-81-33)_do-c-63:** a=87 b=46 c=63 d=33
+* **before(63-104-4-104)_do-c-100:** a=63 b=104 c=100 d=104
+* **before(34-56-79-49)_do-d-75:** a=34 b=56 c=79 d=75
+
+---
+
+### 4. Confidence and Validation
+* **Confidence:** 99.9%
+* **What would change my mind:** Observing any sample where the value of a variable exceeds $108$ (invalidating $p=109$), or seeing an intervention on $b$ where the resulting $d$ does not satisfy $d \equiv 67b + 3 \pmod{109}$.
