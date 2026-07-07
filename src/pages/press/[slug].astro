@@ -58,7 +58,12 @@ const audio = (audioManifest as any[]).find((a) => a.slug === d.slug);
         <a href="/log/" class="link-accent">revision log</a>.
       </p>
       <ul class="mono mt-3 space-y-1 text-xs" style="color: var(--color-faint);">
-        {d.recordRefs.map((r) => <li>· {r}</li>)}
+        {d.recordRefs.map((r) => {
+          const href = r.startsWith('http') || r.startsWith('/') ? r : null;
+          return (
+            <li>· {href ? <a href={href} class="link-accent">{r}</a> : r}</li>
+          );
+        })}
       </ul>
     </section>
   </article>
