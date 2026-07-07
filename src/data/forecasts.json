@@ -44,6 +44,50 @@
     "registeredAt": "2026-07-07"
   },
   {
+    "id": "fc-sov-liquidity-default",
+    "registered": "2026-07-07",
+    "claim": "Construction-02 commitment: model liquidity becomes a recognized enterprise-architecture default — model-agnostic control layers that treat frontier models as swappable inputs proliferate as standard practice, not niche.",
+    "probability": 0.72,
+    "horizon": "by 2027-12-31",
+    "horizonDate": "2027-12-31",
+    "resolution": "Resolves YES if, by 2027-12-31, multiple major enterprise-AI platforms and analyst frameworks treat multi-provider model-agnosticism (switch models with low friction) as a default architectural expectation rather than an advanced option. Resolves NO if single-provider lock-in remains the unquestioned norm for enterprise AI.",
+    "theories": [
+      "scaling-plus-rl",
+      "architectural-gap"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-07"
+  },
+  {
+    "id": "fc-sov-vertical-entry",
+    "registered": "2026-07-07",
+    "claim": "Construction-02 commitment: the tribal-knowledge-migration threat materializes visibly — at least one major frontier model provider moves up-stack to compete directly with the core workflows of its own enterprise customers.",
+    "probability": 0.6,
+    "horizon": "by 2027-12-31",
+    "horizonDate": "2027-12-31",
+    "resolution": "Resolves YES if, by 2027-12-31, a major frontier provider publicly launches a product or vertical that directly competes with a workflow category its enterprise API customers built on it (documented vertical entry / 'provider replaces you'). Resolves NO if providers stay confined to the model layer.",
+    "theories": [
+      "scaling-plus-rl"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-07"
+  },
+  {
+    "id": "fc-sov-open-epistemics",
+    "registered": "2026-07-07",
+    "claim": "Construction-02 commitment (the epistemic inversion): for truth-seeking rather than alpha-compounding, exposure beats hoarding — through 2027 the AI-capability claims that earn the most durable credibility are those accompanied by reproducible or independently-checkable artifacts, not sealed internal evaluations.",
+    "probability": 0.62,
+    "horizon": "by 2027-12-31",
+    "horizonDate": "2027-12-31",
+    "resolution": "Resolves YES if, by 2027-12-31, the pattern holds that capability claims backed by open/reproducible artifacts (public eval harnesses, third-party reproduction, open weights) command more durable credibility than claims resting only on sealed internal numbers, as reflected in how the field and independent evaluators treat them. Resolves NO if sealed internal evals command equal-or-greater durable trust.",
+    "theories": [
+      "architectural-gap",
+      "scaling-sufficient"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-07"
+  },
+  {
     "id": "fc-fable5-cap-transition",
     "registered": "2026-07-01",
     "claim": "Anthropic's Fable 5 weekly-usage inclusion for Max plans ends as scheduled on 2026-07-07 (shifting to usage credits) with no new suspension or export-control action before then.",

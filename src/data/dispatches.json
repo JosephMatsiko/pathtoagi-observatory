@@ -611,5 +611,28 @@
       "/CONSTRUCTION_01_MACHINE_WISDOM.md",
       "revision: The constructive turn: the instrument opens a second faculty and ships its first original construction"
     ]
+  },
+  {
+    "slug": "024-sovereignty-and-wisdom",
+    "no": 24,
+    "date": "2026-07-07",
+    "kind": "notice",
+    "title": "Sovereignty and Wisdom",
+    "standfirst": "The Forge takes on its first live frame from the field. Palantir's guide to institutional sovereignty in the age of AI is sharp and current — own your data, compute, and control layer; keep model liquidity so no provider can absorb your knowhow and replace you. Construction-02 accepts that scope and constructs the axis it omits: sovereignty answers how to keep your advantage, not what the advantage is for — and for an institution that seeks truth rather than advantage, its central instruction inverts.",
+    "body": [
+      "Palantir's field guide argues that frontier model providers have a structural incentive to migrate an enterprise's tribal knowledge into their weights — to lease your insight to rivals, rent-seek on your workflows, or enter your vertical and replace you — and that the defense is to own the layers you can (data under zero retention, compute by an assurance ladder, an ontology that is a digital twin of your organization) while keeping model liquidity: the freedom to switch providers with low friction. The Forge's second construction accepts all of this at full strength. Model liquidity in particular is the guide's most durable idea, because the freedom to switch is the same freedom to revise that this record has elsewhere called the precondition of wisdom.",
+      "But every frame has a shape set by what it optimizes, and this one optimizes a single quantity: the institution's compounding advantage. A frame of self-interest cannot, from inside itself, ask whether the advantage is worth compounding — that is Construction-01's frame-captivity raised from the model to the institution, where a maximally sovereign organization can flawlessly compound a mistaken objective with all the owned compute in the world. Nor can a frame of one institution's advantage evaluate the world its universal adoption produces: everyone air-gapping and hoarding is individually rational and may be collectively impoverishing — a tragedy of the enclosed commons, where the knowledge that would compound fastest by circulating is sealed for local gain.",
+      "The sharpest claim is the inversion. The guide's instruction is to capture and hoard your tribal knowledge, because sealed knowledge compounds as advantage — correct when the goal is alpha. It reverses when the goal is truth. A truth-seeking institution compounds by exposing its claims to refutation, because hoarded truth cannot be corrected, and an uncorrected claim is a liability that compounds silently. This Observatory is the worked example: it keeps hard sovereignty over what sovereignty is for — subscription-only spend, cryptographic anchoring, its own reveal keys, its own ontology — and does the opposite of hoarding with its findings, red-teaming its crown-jewel claim in public, because its only asset is its willingness to be refuted. Sovereignty's optimal shape is not fixed; it depends on what you seek. Own the same layers either way; hoard for alpha, expose for truth. The guide, written for alpha, cannot tell you which world you are in. That is the axis a wise institution must supply for itself. A candidate frame, offered for use and refutation — not a refutation of the guide, whose scope it accepts."
+    ],
+    "plain": [
+      "A widely-read Palantir guide says: in the age of AI, protect your organization by owning your data and computers and knowledge, and never depend on a single AI provider — because providers have reasons to copy your know-how and compete with you. The project agrees this is smart and necessary.",
+      "But it argues the guide leaves out two things: what all that self-protection is actually for, and what the world looks like if every institution hoards its knowledge behind walls.",
+      "And it makes one sharp point: hoarding your knowledge is the right move if your goal is profit, but the wrong move if your goal is truth — because a truth you hide can never be corrected. The project itself is the example: it guards its independence fiercely, yet publishes everything and invites attack, because being proven wrong in public is the only way it earns trust."
+    ],
+    "recordRefs": [
+      "construction-002-sovereignty-and-wisdom",
+      "/CONSTRUCTION_02_SOVEREIGNTY_AND_WISDOM.md",
+      "revision: Construction-02: a response to the institutional-sovereignty frame, and beautiful reading pages for the Forge"
+    ]
   }
 ]

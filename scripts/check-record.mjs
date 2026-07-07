@@ -490,10 +490,15 @@ for (const c of constructions) {
   else for (const ref of c.commitmentRefs) if (!fcIds.has(ref)) err(w, `commitmentRef "${ref}" does not resolve to a forecast`);
   // Behavior-anchoring: claims tied to on-record incidents/evidence, not air.
   for (const ref of c.behaviorAnchors ?? []) if (!incidentIds.has(ref) && !evIds.has(ref)) err(w, `behaviorAnchor "${ref}" does not resolve to an incident or evidence entry`);
-  for (const k of ['docPath', 'foundingDoc']) {
-    if (!nonEmpty(c[k])) { err(w, `missing ${k}`); continue; }
-    const p = c[k].startsWith('/') ? join(ROOT, 'public', c[k].slice(1)) : join(ROOT, c[k]);
-    if (!existsSync(p)) err(w, `${k} not found on disk: ${c[k]}`);
+  // docPath is a GENERATED machine-mirror (build-constructions-md.mjs emits it
+  // from `body`), so the gate validates its format, not pre-existence — the
+  // body is the source of truth and is validated above. foundingDoc is a real
+  // authored source file and must exist on disk.
+  if (!nonEmpty(c.docPath) || !/^\/[\w./-]+\.md$/.test(c.docPath)) err(w, 'docPath must be a "/…​.md" generated-mirror path');
+  if (!nonEmpty(c.foundingDoc)) err(w, 'missing foundingDoc');
+  else {
+    const p = c.foundingDoc.startsWith('/') ? join(ROOT, 'public', c.foundingDoc.slice(1)) : join(ROOT, c.foundingDoc);
+    if (!existsSync(p)) err(w, `foundingDoc not found on disk: ${c.foundingDoc}`);
   }
 }
 
