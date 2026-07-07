@@ -59,7 +59,10 @@ const audio = (audioManifest as any[]).find((a) => a.slug === d.slug);
       </p>
       <ul class="mono mt-3 space-y-1 text-xs" style="color: var(--color-faint);">
         {d.recordRefs.map((r) => {
-          const href = r.startsWith('http') || r.startsWith('/') ? r : null;
+          // Only linkify a ref that is ENTIRELY a clean URL/path (no trailing
+          // description). Many refs are "/path — what it is"; those render as
+          // text so we never emit an href with spaces baked into it.
+          const href = /^(https?:\/\/|\/)[^\s]+$/.test(r) ? r : null;
           return (
             <li>· {href ? <a href={href} class="link-accent">{r}</a> : r}</li>
           );

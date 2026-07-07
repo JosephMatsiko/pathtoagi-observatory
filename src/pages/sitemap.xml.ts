@@ -2,14 +2,16 @@
 import type { APIRoute } from 'astro';
 import { THEORIES } from '../data/theories';
 import { DISPATCHES } from '../data/dispatches';
+import CONSTRUCTIONS from '../data/constructions.json';
 
 const BASE = 'https://pathtoagi-observatory.netlify.app';
 const routes = [
-  '/', '/method/', '/test/', '/theories/', '/evidence/', '/forecasts/',
-  '/log/', '/runs/', '/ontology/', '/challenges/', '/status/', '/reproduce/',
+  '/', '/method/', '/test/', '/forge/', '/theories/', '/evidence/', '/forecasts/',
+  '/log/', '/runs/', '/ontology/', '/status/', '/reproduce/',
   '/press/', '/governance/', '/to-the-systems-reading-this/',
   '/MACHINE_PROTOCOL.md', '/dataset/fcs-sealed-worlds-v1.json', '/record.json',
   ...DISPATCHES.map((d) => `/press/${d.slug}/`),
+  ...CONSTRUCTIONS.map((c) => `/forge/${c.id}/`),
   ...THEORIES.map((t) => `/theories/${t.id}/`),
 ];
 

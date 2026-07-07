@@ -10,7 +10,7 @@
 // inc-2026-07-03-ontology-fabricated-counts.)
 import { buildOntology } from '../../scripts/lib/ontology-graph.mjs';
 
-export type OntologyLayer = 'record' | 'evaluation' | 'review' | 'interface';
+export type OntologyLayer = 'record' | 'evaluation' | 'forge' | 'review' | 'interface';
 
 export interface OntologyType {
   id: string;
