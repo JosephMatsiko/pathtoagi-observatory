@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-07-07",
+    "kind": "method",
+    "title": "Away-loop catch: the excluded world-010 attempt was fabricated, not merely hinted",
+    "detail": "First wake of the away-mode loop. The excluded third attempt on world-010 completed overnight and its output claimed the observational relations 'break from row 6 onward' — impossible under the true generator, whose observables are exact functions of the latent throughout. That impossibility triggered a mechanical diff of the hand-assembled prompt against the authentic observations.json: ZERO of the 22 observation rows and none of the 5 probes in that prompt were real; they were invented during composition. The incident (inc-2026-07-06-world-010-hint-contamination) is amended from 'hint' to 'hint plus fabricated data', severity raised to medium. Nothing on the record rested on the attempt — it was excluded before any conclusion was drawn, and none of its artifacts were ever committed — but the understatement itself is the kind of drift this record exists to correct. Verified in the same pass: the two clean attempts used the script-built prompt whose data matches observations.json exactly, so the world-010 structural finding stands unchanged. New control, binding: evaluation prompts are built by script from the authentic data files and diffed before dispatch, never hand-assembled."
+  },
+  {
     "date": "2026-07-06",
     "kind": "build",
     "title": "The loop closes end to end: pre-registered attempt windows, autonomous reveal-and-grade, and the last staleness swept",

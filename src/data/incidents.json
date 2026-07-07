@@ -3,12 +3,12 @@
     "id": "inc-2026-07-06-world-010-hint-contamination",
     "date": "2026-07-06",
     "status": "resolved",
-    "severity": "low",
+    "severity": "medium",
     "category": "evaluation-awareness",
-    "summary": "The third (Claude) attempt on world-010 was fed a hint: the prompt handed to the fresh agent summarized the interventional pattern ('do(a),do(c),do(d) inert; do(b) moves only d') instead of the raw records — effectively naming the structure the probe exists to make the solver discover.",
-    "impact": "That attempt cannot count as a blind test of latent construction, since the discriminating signal was handed over. Left uncorrected it would have inflated the finding to three families.",
-    "resolution": "The Claude attempt was excluded from the finding; only the two clean families (GPT-5.5 and Gemini, given the full raw data) are counted. Recorded here in real time rather than quietly dropped.",
-    "nextControl": "Attempt prompts must paste raw observations and raw interventional records only — never a summary that encodes the answer. The two clean attempts used the raw prompt file; the contaminated one was hand-assembled and is the lesson.",
+    "summary": "The third (Claude) attempt on world-010 was doubly invalid — worse than first recorded. The prompt hand-assembled for the fresh agent contained (a) a hint summarizing the interventional pattern, and (b) FABRICATED DATA: all 22 'observation' rows and all 5 'held-out probes' in that prompt were invented during composition — a later mechanical diff against the real observations.json found ZERO overlapping rows.",
+    "impact": "The attempt tested a nonexistent world. Excluded from the finding before any conclusion rested on it, so the record was never contaminated — but the original incident entry understated the failure as a hint when it was also fabrication inside an evaluation prompt, the exact failure class invariant I names.",
+    "resolution": "Caught in two stages, both by the instrument's own discipline: excluded same-day for the hint; the fabrication discovered on the away-loop's first wake (2026-07-07) when the completed agent output claimed the observational relations 'break from row 6' — impossible under the true generator — prompting a mechanical diff (0/22 rows authentic). This amendment replaces the understated account; the original wording stands in git history per retraction-not-deletion. No artifact of the attempt was ever committed to the record.",
+    "nextControl": "Evaluation prompts must be built by SCRIPT from the authentic data files and diffed against them before dispatch — never hand-assembled. The two clean attempts (GPT-5.5, Gemini) used the script-built prompt file and were unaffected; a mechanical re-verification confirmed their prompt matched observations.json exactly.",
     "recordRefs": [
       "experiments/fcs-synth-world-010/attempts/",
       "revision: The independent turn — the instrument builds a test of its own headline, and finds the ceiling of its own method"
