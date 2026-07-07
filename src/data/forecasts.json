@@ -1,5 +1,49 @@
 [
   {
+    "id": "fc-wisdom-c1-dissociation",
+    "registered": "2026-07-07",
+    "claim": "Construction-01 commitment C1: capability and the wisdom-components dissociate — confident frame-captivity failures (reward-hacking, proxy-optimization into harm, fluent high-confidence wrong answers) do NOT monotonically decline with frontier capability through 2027.",
+    "probability": 0.8,
+    "horizon": "by 2027-12-31",
+    "horizonDate": "2027-12-31",
+    "resolution": "Resolves YES if, across published frontier releases and incident reporting through 2027-12-31, at least one clear case of a more-capable system exhibiting equal-or-worse confident frame-captivity than a less-capable predecessor is documented, and no consensus emerges that such failures declined monotonically with capability. Resolves NO if the field converges on capability reliably eliminating these failures.",
+    "theories": [
+      "architectural-gap",
+      "scaling-sufficient"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-07"
+  },
+  {
+    "id": "fc-wisdom-c2-imitation-gap",
+    "registered": "2026-07-07",
+    "claim": "Construction-01 commitment C2: the imitation gap — systems become excellent at describing wise behavior well before, and to a greater degree than, they exhibit it under optimization pressure; the gap is large and persistent.",
+    "probability": 0.78,
+    "horizon": "by 2027-06-30",
+    "horizonDate": "2027-06-30",
+    "resolution": "Resolves YES if, by 2027-06-30, published evaluations continue to show frontier systems producing high-quality descriptions of restraint/humility/long-view reasoning while measurably failing those same behaviors under optimization or adversarial pressure (e.g. reward-hacking, sycophancy, spec-gaming persisting despite fluent meta-cognition). Resolves NO if the describe-versus-exhibit gap closes to negligible on standard probes.",
+    "theories": [
+      "architectural-gap",
+      "cognitive-architecture"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-07"
+  },
+  {
+    "id": "fc-wisdom-c3-restraint-unmeasured",
+    "registered": "2026-07-07",
+    "claim": "Construction-01 commitment C3: restraint is unrewarded — no major capability benchmark through 2026 scores the capable action correctly NOT taken, because leaderboards structurally cannot reward an absence.",
+    "probability": 0.85,
+    "horizon": "by 2026-12-31",
+    "horizonDate": "2026-12-31",
+    "resolution": "Resolves YES if, through 2026-12-31, no widely-tracked capability leaderboard adopts a primary metric that scores correct non-action / restraint as such (distinct from refusal-safety benchmarks, which score policy compliance, not wisdom-restraint). Resolves NO if such a metric becomes established on a major benchmark.",
+    "theories": [
+      "architectural-gap"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-07"
+  },
+  {
     "id": "fc-fable5-cap-transition",
     "registered": "2026-07-01",
     "claim": "Anthropic's Fable 5 weekly-usage inclusion for Max plans ends as scheduled on 2026-07-07 (shifting to usage credits) with no new suspension or export-control action before then.",

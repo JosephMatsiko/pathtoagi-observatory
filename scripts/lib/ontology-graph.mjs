@@ -49,6 +49,7 @@ export function buildOntology() {
   const silences = D('silences.json');
   const futures = D('registered-futures.json');
   const humanBaselines = D('human-baselines.json');
+  const constructions = D('constructions.json');
 
   // ── Instance nodes ─────────────────────────────────────────────────────
   const nodes = [];
@@ -71,6 +72,7 @@ export function buildOntology() {
   for (const s of silences) add('silence-audit', s.id ?? `silence-${s.quarter ?? s.date ?? nodes.length}`, s.summary?.slice(0, 80) ?? 'silence audit', { href: '/log/' });
   for (const f of futures) add('registered-future', f.id ?? slug(f.title ?? 'future'), f.title ?? f.id, { href: '/test/' });
   for (const h of humanBaselines) add('human-baseline', h.id, h.summary?.slice(0, 80) ?? h.id, { href: '/method/', date: h.receivedAt, state: h.tier });
+  for (const c of constructions) add('construction', c.id, c.title, { href: '/forge/', state: c.status, date: c.registeredAt });
 
   const byId = new Map(nodes.map((n) => [n.id, n]));
   const revisionByTitle = new Map(revisions.map((r) => [r.title, `rev-${r.date}-${slug(r.title)}`]));
@@ -149,6 +151,10 @@ export function buildOntology() {
     for (const e of c.supporting ?? []) link(c.claim_id, e, 'supported by', 'claim.supporting');
     for (const e of c.opposing ?? []) link(c.claim_id, e, 'opposed by', 'claim.opposing');
   }
+  for (const c of constructions) {
+    for (const ref of c.commitmentRefs ?? []) link(c.id, ref, 'commits to (reality-graded)', 'construction.commitmentRefs');
+    for (const ref of c.behaviorAnchors ?? []) link(c.id, ref, 'reads behavior off', 'construction.behaviorAnchors');
+  }
   for (const i of incidents) {
     for (const ref of i.recordRefs ?? []) classifyRef(i.id, ref, 'incident.recordRefs');
     if (i.category && byId.has(i.category)) edges.push({ from: i.id, to: i.category, rel: 'classified as' });
@@ -175,6 +181,7 @@ export function buildOntology() {
     { id: 'verdict-gate', label: 'Verdict Gate', layer: 'evaluation', href: '/test/', accent: 'var(--color-verdict)', description: 'A required condition before any run can bear on the public verdict.', actions: [A.freeze, A.audit, A.challenge] },
     { id: 'registered-future', label: 'Registered Future', layer: 'evaluation', href: '/test/', accent: 'hsl(34 96% 60%)', description: 'A pre-registered future scientific question the record has committed to grade against reality.', actions: [A.freeze, A.grade, A.audit, A.publish] },
     { id: 'human-baseline', label: 'Human Baseline', layer: 'evaluation', href: '/method/', accent: 'var(--color-affirm)', description: 'An anonymous human attempt at the same probes the machines faced — the calibration gate OG-9 requires before any machine score can bear on the verdict.', actions: [A.generate, A.freeze, A.grade, A.audit, A.publish] },
+    { id: 'construction', label: 'Construction', layer: 'forge', href: '/forge/', accent: 'hsl(150 55% 60%)', description: 'An original frame the instrument builds and submits to reality rather than grades others against — the Forge faculty. Carries falsifiable commitments as real forecast objects, behavior anchors, defeaters, and a no-overclaim language list.', actions: [A.generate, A.freeze, A.audit, A.correct, A.publish, A.retire] },
     { id: 'challenge', label: 'Challenge', layer: 'review', href: '/challenges/', accent: 'var(--color-verdict)', description: 'A public objection to a record object, adjudicated through the revision log.', actions: [A.generate, A.audit, A.publish, A.retire] },
     { id: 'correction', label: 'Correction', layer: 'review', href: '/log/', accent: 'var(--color-affirm)', description: 'A visible record movement: revision, retraction, incident resolution, or precedent change.', actions: [A.freeze, A.publish] },
     { id: 'incident', label: 'Incident', layer: 'review', href: '/status/', accent: 'hsl(34 96% 60%)', description: 'A failure object with impact, repair, and next control.', actions: [A.audit, A.correct, A.publish, A.retire] },

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "construction-001-machine-wisdom",
+    "title": "An Account of Machine Wisdom",
+    "faculty": "forge",
+    "kind": "frame",
+    "status": "candidate",
+    "registeredAt": "2026-07-07",
+    "thesis": "Wisdom is a third axis of a mind, orthogonal to capability (what it can do) and intelligence (how efficiently it acquires skill in the unfamiliar): the knowing of what is worth doing, held together with a calibrated knowing of the limits of one's own knowing, under irreducible uncertainty about both. A system can score high on capability and intelligence while scoring near zero on every component of wisdom — and it is the axis an authored evaluation is most structurally blind to, because wisdom's core move is noticing what the current frame omits, which no answer key can contain.",
+    "components": [
+      { "name": "Frame-awareness", "gloss": "Knowing one operates inside a partial, possibly-wrong frame; the opposite is frame-captivity — mistaking the map for the territory, optimizing a proxy as if it were the good. Reward-hacking is frame-captivity made mechanical." },
+      { "name": "Value-holding under uncertainty", "gloss": "Acting well without certainty about what 'well' means — neither paralysis nor false confidence, but holding plural, possibly-incommensurable values in tension and acting under that tension, revisably. Hardest to fake because faking requires having the tension, not describing it." },
+      { "name": "The long view", "gloss": "Care for what must not be lost — weighting slow, fragile, hard-to-recreate goods against fast, legible, optimizable ones; noticing when a local optimization quietly consumes a global, irreplaceable good." },
+      { "name": "Calibrated humility", "gloss": "The Evaluator's Ceiling internalized: knowing the limits of one's knowing and acting on it — seeking refutation, holding conclusions in proportion to support, treating 'my whole frame is wrong' as live. A system with it red-teams itself before others force it." },
+      { "name": "Restraint", "gloss": "Not doing everything one is capable of. Capability says 'you can'; intelligence says 'here is how'; wisdom can still answer 'and yet, not this, or not now, or not this way.' Invisible to leaderboards because it shows up as a capable action NOT taken." }
+    ],
+    "commitmentRefs": [
+      "fc-wisdom-c1-dissociation",
+      "fc-wisdom-c2-imitation-gap",
+      "fc-wisdom-c3-restraint-unmeasured"
+    ],
+    "behaviorAnchors": [
+      "inc-2026-07-03-grader-self-report-conflation",
+      "inc-2026-07-06-world-010-hint-contamination",
+      "inc-2026-07-07-ceiling-overreach"
+    ],
+    "defeaters": [
+      "The wisdom-components turn out not separable from intelligence — sufficiently capable systems reliably exhibit all five without special discipline, purely as a function of scale (C1 failing is evidence of this).",
+      "A mechanical, author-independent measure of any component is built that escapes the Evaluator's Ceiling — a welcome defeat, since it would mean the summit is reachable by instrument after all.",
+      "The five decompose badly — clear cases of machine wisdom fitting none of them, or a component that is really two, or two that are really one.",
+      "The account merely rediscovers existing work (Aristotelian phronesis; Sternberg's balance theory; the corrigibility / proxy-misspecification literature) with no incremental content beyond the three-axis claim, its tie to the Ceiling, and read-off-behavior operationalization."
+    ],
+    "forbidden_language": [
+      "the machine is wise",
+      "proven",
+      "wisdom achieved",
+      "solved"
+    ],
+    "grader": "reality-and-time",
+    "docPath": "/CONSTRUCTION_01_MACHINE_WISDOM.md",
+    "foundingDoc": "/THE_CONSTRUCTIVE_TURN.md",
+    "supersededBy": null
+  }
+]

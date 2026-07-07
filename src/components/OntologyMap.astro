@@ -7,6 +7,7 @@ import { ONTOLOGY, ONTOLOGY_EDGES, ONTOLOGY_NODES, PERMITTED_ACTIONS } from '../
 const LAYERS: { id: string; label: string }[] = [
   { id: 'record', label: 'Record' },
   { id: 'evaluation', label: 'Evaluation' },
+  { id: 'forge', label: 'Forge' },
   { id: 'review', label: 'Review' },
   { id: 'interface', label: 'Interface' },
 ];
@@ -66,7 +67,8 @@ const nodeById = new Map(ONTOLOGY_NODES.map((n) => [n.id, n]));
             );
           })}
           {ONTOLOGY_NODES.map((node) => {
-            const p = positions.get(node.id)!;
+            const p = positions.get(node.id);
+            if (!p) return null;
             return (
               <a href={node.href}>
                 <g class="ontology-node">

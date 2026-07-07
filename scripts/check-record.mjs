@@ -453,6 +453,41 @@ for (const h of humanBaselines) {
     err(w, 'baseline records must stay anonymous');
 }
 
+// ── constructions.json (the Forge: original constructions, not evaluations) ──
+// A construction is an original frame the instrument builds and submits to
+// reality rather than grades others against. It must name its falsifiable
+// commitments as real forecast objects (reality-grading, not self-grading),
+// anchor its claims to on-record behavior, name defeaters, and carry a
+// no-overclaim language list. This is what makes the Forge a governed faculty
+// and not a folder of essays.
+const CONSTRUCTION_STATUS = new Set(['candidate', 'revised', 'retired', 'superseded']);
+const constructions = read('constructions.json');
+const conIds = new Set();
+for (const c of constructions) {
+  const w = `construction[${c.id ?? '?'}]`;
+  if (!nonEmpty(c.id)) err(w, 'missing id');
+  else if (conIds.has(c.id)) err(w, 'duplicate id');
+  else conIds.add(c.id);
+  for (const k of ['title', 'faculty', 'kind', 'thesis', 'grader']) if (!nonEmpty(c[k])) err(w, `missing ${k}`);
+  if (!CONSTRUCTION_STATUS.has(c.status)) err(w, `invalid status "${c.status}"`);
+  if (!ISO.test(c.registeredAt ?? '')) err(w, 'registeredAt must be YYYY-MM-DD');
+  if (!Array.isArray(c.components) || !c.components.length) err(w, 'components must be non-empty');
+  else for (const cp of c.components) if (!nonEmpty(cp.name) || !nonEmpty(cp.gloss)) err(w, 'each component needs name + gloss');
+  if (!Array.isArray(c.defeaters) || !c.defeaters.length) err(w, 'a construction must name at least one defeater');
+  if (!Array.isArray(c.forbidden_language)) err(w, 'forbidden_language must be an array');
+  // Reality-grading, wired: every commitment must be a real forecast object.
+  if (!Array.isArray(c.commitmentRefs) || !c.commitmentRefs.length)
+    err(w, 'a construction must commit to at least one falsifiable forecast (commitmentRefs)');
+  else for (const ref of c.commitmentRefs) if (!fcIds.has(ref)) err(w, `commitmentRef "${ref}" does not resolve to a forecast`);
+  // Behavior-anchoring: claims tied to on-record incidents/evidence, not air.
+  for (const ref of c.behaviorAnchors ?? []) if (!incidentIds.has(ref) && !evIds.has(ref)) err(w, `behaviorAnchor "${ref}" does not resolve to an incident or evidence entry`);
+  for (const k of ['docPath', 'foundingDoc']) {
+    if (!nonEmpty(c[k])) { err(w, `missing ${k}`); continue; }
+    const p = c[k].startsWith('/') ? join(ROOT, 'public', c[k].slice(1)) : join(ROOT, c[k]);
+    if (!existsSync(p)) err(w, `${k} not found on disk: ${c[k]}`);
+  }
+}
+
 // ── ontology instance graph: referential integrity ───────────────────────────
 // The graph is computed from the same data validated above; the gate's job
 // here is lineage: every typed cross-reference in the record must resolve to
@@ -483,5 +518,5 @@ if (errors.length) {
   for (const e of errors) console.error('  - ' + e);
   process.exit(1);
 }
-console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${runBundles.length} run-bundles · ${dispatches.length} dispatches · ${silences.length} silence-audits · ${precedents.length} precedents · ${challenges.length} challenges · ${futures.length} futures · ${correspondence.length} correspondence · ${incidents.length} incidents · ${outreach.length} outreach · ${claims.length} claims · ${failureTypes.length} failure-types · constitution pinned — all valid`);
+console.log(`✓ record conformance: ${evidence.length} evidence · ${forecasts.length} forecasts · ${revisions.length} revisions · ${THEORY_IDS.size} theories · ${sups.length} superlatives · ${cycles.length} cycles · ${runBundles.length} run-bundles · ${dispatches.length} dispatches · ${silences.length} silence-audits · ${precedents.length} precedents · ${challenges.length} challenges · ${futures.length} futures · ${correspondence.length} correspondence · ${incidents.length} incidents · ${outreach.length} outreach · ${claims.length} claims · ${constructions.length} constructions · ${failureTypes.length} failure-types · constitution pinned — all valid`);
 console.log(`✓ ontology graph: ${ontology.instances.nodes.length} governed objects · ${ontology.instances.edges.length} typed edges · ${ontology.integrity.verifiedArtifactRefs} artifact refs verified on disk · 0 dangling`);
