@@ -4,7 +4,7 @@
     "title": "An Account of Machine Wisdom",
     "faculty": "forge",
     "kind": "frame",
-    "status": "candidate",
+    "status": "revised",
     "registeredAt": "2026-07-07",
     "thesis": "Wisdom is a third axis of a mind, orthogonal to capability (what it can do) and intelligence (how efficiently it acquires skill in the unfamiliar): the knowing of what is worth doing, held together with a calibrated knowing of the limits of one's own knowing, under irreducible uncertainty about both. A system can score high on capability and intelligence while scoring near zero on every component of wisdom — and it is the axis an authored evaluation is most structurally blind to, because wisdom's core move is noticing what the current frame omits, which no answer key can contain.",
     "standfirst": "The Forge's first work. A construction, not a result: an original frame offered for use and for refutation, held to the record's discipline — defeaters named, confidence bounded, revision expected. It is not a claim that any machine, this one included, is wise. It is an attempt to say what wisdom in a machine would even consist of, built by an instrument that spent its life measuring the one axis this account says measurement cannot reach.",
@@ -44,6 +44,13 @@
           "The deepest move the frame demands, it must make on itself. This account is a frame, and by its own first component it is partial and possibly wrong. It was built by a system whose wisdom is unproven and whose record contains its own frame-captivity failures. It should be held exactly as loosely as its evidence warrants — which today is: an interesting carving, reality-anchored in fragments, not yet tested, offered because the alternative (saying nothing about the thing that matters most because it cannot be measured) is the Observatory's old mistake in a new suit.",
           "If the account is any good, others — human and machine — will use it, break it, and build the better frame it is only reaching toward. That is not a weakness of the construction. It is the whole point of turning from judgment to making: the summit is reached by construction, revised in the open, or not at all."
         ]
+      },
+      {
+        "heading": "Addendum, 2026-07-07: a population-level check, not three examples",
+        "paragraphs": [
+          "The original reality-anchor section (above) cited three incidents as evidence of calibrated humility — a curated sample, chosen because they illustrated the point, which is exactly the kind of move this account warns against making unexamined. So here is the check against the whole population instead of a favorable slice. This record has logged 13 incidents to date. Classified by who actually caught each one: 12 were self-caught by the instrument; exactly 1 — inc-2026-07-07-intake-probe-key-bug, an external agent's bug report against the published grader — was caught by an outside party. (A first pass mis-tagged a second incident as externally-caught; its text was re-read and the match was a false positive — the phrase was a self-directed red-team describing itself as happening 'before any external party forced it.' Correcting that error in the open, on the finding meant to demonstrate self-correction, is itself the finding.)",
+          "This number does not read cleanly in either direction, and a wise reading has to hold both at once. Read favorably, 12/13 self-caught is exactly what calibrated humility should look like operationally: the instrument is finding its own mistakes before anyone else does. Read skeptically — and this is the reading the frame itself demands, per its own frame-awareness component — a 12/13 self-catch rate with only one external participant in the whole history could equally mean nobody outside has looked hard enough yet to catch what a genuinely adversarial outsider would find. Self-caught is not the same as well-audited; it is exactly the kind of number a self-grading process would produce whether or not it deserves it. The record cannot currently distinguish 'good self-monitoring' from 'unaudited so far' — and saying so, rather than presenting the 12/13 ratio as a clean win, is what the calibrated-humility component actually requires of the account that names it."
+        ]
       }
     ],
     "components": [
@@ -56,7 +63,8 @@
     "commitmentRefs": [
       "fc-wisdom-c1-dissociation",
       "fc-wisdom-c2-imitation-gap",
-      "fc-wisdom-c3-restraint-unmeasured"
+      "fc-wisdom-c3-restraint-unmeasured",
+      "fc-wisdom-c4-selfcatch-nearterm"
     ],
     "behaviorAnchors": [
       "inc-2026-07-03-grader-self-report-conflation",

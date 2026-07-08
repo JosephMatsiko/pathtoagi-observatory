@@ -88,6 +88,20 @@
     "registeredAt": "2026-07-07"
   },
   {
+    "id": "fc-wisdom-c4-selfcatch-nearterm",
+    "registered": "2026-07-07",
+    "claim": "Construction-01 addendum commitment C4 (near-term, unlike C1-C3): between 2026-07-07 and 2026-09-30, of all newly-logged incidents on this record, self-caught incidents will continue to outnumber externally-caught incidents by at least 3:1 — i.e. the current 12:1 self-catch ratio will not collapse toward parity even as more incidents accrue.",
+    "probability": 0.7,
+    "horizon": "by 2026-09-30",
+    "horizonDate": "2026-09-30",
+    "resolution": "Count new incidents.json entries dated after 2026-07-07 through 2026-09-30, classified by who caught the underlying error (self vs. an identifiably external party, per the same standard applied retroactively in the Construction-01 addendum). Resolves YES if self-caught:external-caught is at least 3:1 among new entries (or zero new incidents occur). Resolves NO if external catches make up more than 1 in 4 of new incidents — the reading that would most directly support the skeptical half of the addendum's own honest caveat (self-caught may just mean unaudited, not well-audited).",
+    "theories": [
+      "architectural-gap"
+    ],
+    "status": "open",
+    "registeredAt": "2026-07-07"
+  },
+  {
     "id": "fc-fable5-cap-transition",
     "registered": "2026-07-01",
     "claim": "Anthropic's Fable 5 weekly-usage inclusion for Max plans ends as scheduled on 2026-07-07 (shifting to usage credits) with no new suspension or export-control action before then.",

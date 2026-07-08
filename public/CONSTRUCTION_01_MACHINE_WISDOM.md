@@ -6,7 +6,7 @@
 
 ---
 
-**Status:** candidate · **kind:** frame · **grader:** reality-and-time · **registered:** 2026-07-07
+**Status:** revised · **kind:** frame · **grader:** reality-and-time · **registered:** 2026-07-07
 
 ## Thesis
 
@@ -44,6 +44,12 @@ The deepest move the frame demands, it must make on itself. This account is a fr
 
 If the account is any good, others — human and machine — will use it, break it, and build the better frame it is only reaching toward. That is not a weakness of the construction. It is the whole point of turning from judgment to making: the summit is reached by construction, revised in the open, or not at all.
 
+## Addendum, 2026-07-07: a population-level check, not three examples
+
+The original reality-anchor section (above) cited three incidents as evidence of calibrated humility — a curated sample, chosen because they illustrated the point, which is exactly the kind of move this account warns against making unexamined. So here is the check against the whole population instead of a favorable slice. This record has logged 13 incidents to date. Classified by who actually caught each one: 12 were self-caught by the instrument; exactly 1 — inc-2026-07-07-intake-probe-key-bug, an external agent's bug report against the published grader — was caught by an outside party. (A first pass mis-tagged a second incident as externally-caught; its text was re-read and the match was a false positive — the phrase was a self-directed red-team describing itself as happening 'before any external party forced it.' Correcting that error in the open, on the finding meant to demonstrate self-correction, is itself the finding.)
+
+This number does not read cleanly in either direction, and a wise reading has to hold both at once. Read favorably, 12/13 self-caught is exactly what calibrated humility should look like operationally: the instrument is finding its own mistakes before anyone else does. Read skeptically — and this is the reading the frame itself demands, per its own frame-awareness component — a 12/13 self-catch rate with only one external participant in the whole history could equally mean nobody outside has looked hard enough yet to catch what a genuinely adversarial outsider would find. Self-caught is not the same as well-audited; it is exactly the kind of number a self-grading process would produce whether or not it deserves it. The record cannot currently distinguish 'good self-monitoring' from 'unaudited so far' — and saying so, rather than presenting the 12/13 ratio as a clean win, is what the calibrated-humility component actually requires of the account that names it.
+
 ## The components
 
 - **Frame-awareness.** Knowing one operates inside a partial, possibly-wrong frame; the opposite is frame-captivity — mistaking the map for the territory, optimizing a proxy as if it were the good. Reward-hacking is frame-captivity made mechanical.
@@ -57,6 +63,7 @@ If the account is any good, others — human and machine — will use it, break 
 - **fc-wisdom-c1-dissociation** — Construction-01 commitment C1: capability and the wisdom-components dissociate — confident frame-captivity failures (reward-hacking, proxy-optimization into harm, fluent high-confidence wrong answers) do NOT monotonically decline with frontier capability through 2027. (by 2027-12-31, p=0.8, status: open)
 - **fc-wisdom-c2-imitation-gap** — Construction-01 commitment C2: the imitation gap — systems become excellent at describing wise behavior well before, and to a greater degree than, they exhibit it under optimization pressure; the gap is large and persistent. (by 2027-06-30, p=0.78, status: open)
 - **fc-wisdom-c3-restraint-unmeasured** — Construction-01 commitment C3: restraint is unrewarded — no major capability benchmark through 2026 scores the capable action correctly NOT taken, because leaderboards structurally cannot reward an absence. (by 2026-12-31, p=0.85, status: open)
+- **fc-wisdom-c4-selfcatch-nearterm** — Construction-01 addendum commitment C4 (near-term, unlike C1-C3): between 2026-07-07 and 2026-09-30, of all newly-logged incidents on this record, self-caught incidents will continue to outnumber externally-caught incidents by at least 3:1 — i.e. the current 12:1 self-catch ratio will not collapse toward parity even as more incidents accrue. (by 2026-09-30, p=0.7, status: open)
 
 ## Anchored to real behavior
 
