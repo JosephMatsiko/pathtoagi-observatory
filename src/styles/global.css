@@ -43,11 +43,13 @@ html {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-height: 100dvh;
+  overflow-x: hidden;
   background-image:
     radial-gradient(
       ellipse 80% 50% at 50% -10%,
@@ -59,6 +61,30 @@ body {
 
 a {
   color: inherit;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 50;
+  transform: translateY(-150%);
+  border: 1px solid var(--color-accent);
+  border-radius: 0.5rem;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  padding: 0.65rem 0.85rem;
+  text-decoration: none;
+  transition: transform 160ms var(--ease-out);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: none;
+}
+
+main:focus {
+  outline: none;
 }
 
 ::selection {
