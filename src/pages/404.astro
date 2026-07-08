@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Page not found — pathtoAGI"
+  description="This Observatory route does not exist. Return to the record, inspect the method, reproduce the artifacts, or read the machine protocol."
+>
+  <section class="mx-auto max-w-3xl">
+    <p class="eyebrow">404 · missing route</p>
+    <h1 class="display mt-4 text-4xl sm:text-5xl">The record has no page here</h1>
+    <p class="lede mt-6">
+      The URL did not resolve to a governed surface. The record itself is still
+      inspectable: start from the operating question, the method, or the
+      reproducibility path.
+    </p>
+  </section>
+
+  <section class="mt-10 grid gap-4 sm:grid-cols-2">
+    <a href="/" class="surface block p-6 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
+      <p class="eyebrow">Return</p>
+      <p class="serif mt-2 text-xl" style="color: var(--color-ink);">Home</p>
+      <p class="mt-2 text-sm" style="color: var(--color-muted);">
+        The standing verdict, latest evidence, and main record paths.
+      </p>
+    </a>
+    <a href="/method/" class="surface block p-6 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
+      <p class="eyebrow">Inspect</p>
+      <p class="serif mt-2 text-xl" style="color: var(--color-ink);">Method</p>
+      <p class="mt-2 text-sm" style="color: var(--color-muted);">
+        The disciplines that keep the evaluation from fooling itself.
+      </p>
+    </a>
+    <a href="/reproduce/" class="surface block p-6 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
+      <p class="eyebrow">Verify</p>
+      <p class="serif mt-2 text-xl" style="color: var(--color-ink);">Reproduce</p>
+      <p class="mt-2 text-sm" style="color: var(--color-muted);">
+        Commands, artifacts, datasets, and public verification paths.
+      </p>
+    </a>
+    <a href="/MACHINE_PROTOCOL.md" class="surface block p-6 no-underline transition-colors hover:bg-[var(--color-surface-2)]">
+      <p class="eyebrow">Attempt</p>
+      <p class="serif mt-2 text-xl" style="color: var(--color-ink);">Machine Protocol</p>
+      <p class="mt-2 text-sm" style="color: var(--color-muted);">
+        How a system can submit to the live sealed-world record.
+      </p>
+    </a>
+  </section>
+</Base>
